@@ -30,10 +30,6 @@ typed Ballerina clients for them, grouped by business module.
 | `ballerinax/sap.businessone.humanresources` | [`ballerina/humanresources`](ballerina/humanresources) | Employees, teams, HR setup |
 | `ballerinax/sap.businessone.localization` | [`ballerina/localization`](ballerina/localization) | Country-specific objects and electronic documents |
 
-Each connector's `README.md` contains an overview, a setup guide, and a quickstart. The module connectors are
-generated from per-module OpenAPI specifications (under [`docs/spec`](docs/spec)) that are derived from the
-Service Layer `$metadata` and post-processed so the generated clients use the session-auth wrapper.
-
 ## Build options
 
 Execute the commands below to build from the source.
