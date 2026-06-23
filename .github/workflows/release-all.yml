@@ -1,0 +1,55 @@
+name: Publish Release (All Packages)
+
+# Releases every package in dependency order: the sap.businessone wrapper
+# first, then each module connector sequentially (max-parallel: 1, because
+# every release pushes a version-bump commit and a release branch).
+#
+# fail-fast is disabled so one failing connector does not block the rest;
+# re-run the single-package "Publish Release" workflow for any that failed.
+on:
+  workflow_dispatch:
+    inputs:
+      release-wrapper:
+        type: boolean
+        description: Release the sap.businessone wrapper first
+        required: true
+        default: true
+
+jobs:
+  release-wrapper:
+    name: Release Wrapper (sap.businessone)
+    if: ${{ github.repository_owner == 'ballerina-platform' && inputs.release-wrapper }}
+    uses: ./.github/workflows/release-template.yml
+    secrets: inherit
+    with:
+      package-name: businessone
+
+  release-connectors:
+    name: Release Connectors
+    needs: release-wrapper
+    # Run even when the wrapper job was skipped (release-wrapper=false),
+    # but not when it failed.
+    if: ${{ always() && github.repository_owner == 'ballerina-platform' && needs.release-wrapper.result != 'failure' && needs.release-wrapper.result != 'cancelled' }}
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        package:
+          - administration
+          - financials
+          - fixedassets
+          - businesspartners
+          - crm
+          - sales
+          - purchasing
+          - banking
+          - inventory
+          - production
+          - projects
+          - service
+          - humanresources
+          - localization
+    uses: ./.github/workflows/release-template.yml
+    secrets: inherit
+    with:
+      package-name: ${{ matrix.package }}

@@ -1,0 +1,37 @@
+name: Publish Release
+
+# Releases one package. The wrapper (businessone) must be released to
+# Ballerina Central before the first release of any connector that depends
+# on it; use "Publish Release (All Packages)" for an ordered full release.
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        type: choice
+        description: Select Package
+        required: true
+        options:
+          - businessone
+          - administration
+          - financials
+          - fixedassets
+          - businesspartners
+          - crm
+          - sales
+          - purchasing
+          - banking
+          - inventory
+          - production
+          - projects
+          - service
+          - humanresources
+          - localization
+
+jobs:
+  call_workflow:
+    name: Run Release Workflow
+    if: ${{ github.repository_owner == 'ballerina-platform' }}
+    uses: ./.github/workflows/release-template.yml
+    secrets: inherit
+    with:
+      package-name: ${{ inputs.package }}

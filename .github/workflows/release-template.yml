@@ -1,0 +1,103 @@
+name: Publish Release (SAP Business One Package)
+
+# Reusable per-package release workflow, mirroring
+# ballerina-library/.github/workflows/s4hana-release-template.yml.
+
+on:
+  workflow_call:
+    inputs:
+      package-name:
+        required: true
+        type: string
+
+jobs:
+  call_workflow:
+    name: Release Package
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Get Ballerina Version
+        run: |
+          BAL_VERSION=$(grep -w 'ballerinaLangVersion' gradle.properties | cut -d= -f2 | rev | cut --complement -d- -f1 | rev)
+          if [ -z "$BAL_VERSION" ]; then
+            BAL_VERSION="latest"
+          fi
+          echo "BAL_VERSION=$BAL_VERSION" >> $GITHUB_ENV
+          echo "Ballerina Version: $BAL_VERSION"
+
+      - name: Set Up Ballerina
+        uses: ballerina-platform/setup-ballerina@v1.1.0
+        with:
+          version: ${{ env.BAL_VERSION }}
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 21.0.3
+
+        # This step is because this repository is a collection of packages
+      - name: Change version in gradle.properties
+        run: |
+          git config --global user.name ${{ secrets.BALLERINA_BOT_USERNAME }}
+          git config --global user.email ${{ secrets.BALLERINA_BOT_EMAIL }}
+          PACKAGE_VERSION=$((grep -w '${{ inputs.package-name }}Version' | cut -d= -f2) < gradle.properties)
+          VERSION=$((grep -w 'version' | cut -d= -f2) < gradle.properties)
+          if [[ "$VERSION" == "$PACKAGE_VERSION" ]]; then
+            echo "Version is already up to date"
+            exit 0
+          fi
+          sed -i "s/version=\(.*\)/version=$PACKAGE_VERSION/g" gradle.properties
+          git commit -m "[Automated] Update version to match package version" gradle.properties
+
+      - name: Build without Tests
+        env:
+          packageUser: ${{ github.actor }}
+          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./gradlew build -x test
+
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        env:
+          TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db,public.ecr.aws/aquasecurity/trivy-db
+          TRIVY_JAVA_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-java-db,public.ecr.aws/aquasecurity/trivy-java-db
+        with:
+          scan-type: "rootfs"
+          scan-ref: "${{ github.workspace }}/ballerina"
+          format: "table"
+          timeout: "10m0s"
+          exit-code: "1"
+          skip-dirs: "resources"
+          scanners: "vuln"
+          cache-dir: "/tmp/trivy-cache"
+
+      - name: Get Release Version
+        run: echo "VERSION=$((grep -w 'version' | cut -d= -f2) < gradle.properties | rev | cut -d- -f2 | rev)" >> $GITHUB_ENV
+
+      - name: Checkout to Release Branch
+        run: |
+          echo "Version: ${VERSION}"
+          git checkout -b release-${{ inputs.package-name }}-${VERSION}
+
+      - name: Publish Package
+        env:
+          GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          BALLERINA_CENTRAL_ACCESS_TOKEN: ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN }}
+          packageUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
+          packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
+          publishUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
+          publishPAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
+        run: |
+          ./gradlew clean :businessone-ballerina:${{ inputs.package-name }}:release -x :businessone-examples:test -Prelease.useAutomaticVersion=true
+          ./gradlew -Pversion=${VERSION} -P${{ inputs.package-name }}Version=${VERSION} :businessone-ballerina:${{ inputs.package-name }}:publish -x test -PpublishToCentral=true
+
+      - name: GitHub Release and Release Sync PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+        run: |
+          git push origin release-${{ inputs.package-name }}-${VERSION}
+          gh release create ${{ inputs.package-name }}-v$VERSION --title "${{ inputs.package-name }}-v$VERSION"
+          gh pr create --base ${GITHUB_REF##*/} --title "[Automated] Sync ${GITHUB_REF##*/} after ${{ inputs.package-name }}-$VERSION release" --body "Sync ${GITHUB_REF##*/} after ${{ inputs.package-name }}-$VERSION release"
