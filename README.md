@@ -27,9 +27,9 @@ This repository hosts the [Ballerina](https://ballerina.io/) connector family fo
 | `ballerinax/sap.businessone.localization` | [`ballerina/localization`](ballerina/localization) | Country-specific objects and electronic documents |
 
 The module connectors are generated from per-module OpenAPI specifications (under [`docs/spec`](docs/spec))
-that are derived from the Service Layer `$metadata` and post-processed with
-[`tools/sanitize_connector.py`](tools/sanitize_connector.py) to use the session-auth wrapper. The
-transformations applied to the generated code are documented in [`docs/sanitations.md`](docs/sanitations.md).
+that are derived from the Service Layer `$metadata` and post-processed so the generated clients use the
+session-auth wrapper. The transformations applied to the specifications and the generated code are documented
+in [`docs/sanitations.md`](docs/sanitations.md).
 
 ## Authentication
 
@@ -64,6 +64,6 @@ public function main() returns error? {
 ```sh
 cd ballerina/<module>
 bal openapi -i ../../docs/spec/<module>.json --mode client --client-methods remote
-python3 ../../tools/sanitize_connector.py . <module>
+# then apply the sanitizations described in docs/sanitations.md
 bal pack
 ```

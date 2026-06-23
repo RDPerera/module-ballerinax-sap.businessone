@@ -8,9 +8,8 @@ the SAP Business One Service Layer OData V3 `$metadata`. A single Service Layer 
 module (`docs/spec/<module>.json`) before generation, and the generated client code is post-processed so that it
 authenticates through the session-handling wrapper (`ballerinax/sap.businessone`) instead of a plain HTTP client.
 
-The specification split and pruning are performed by [`split_oas.py`](../split_oas.py). The generated-code
-sanitizations are performed by [`tools/sanitize_connector.py`](../tools/sanitize_connector.py). Both are
-idempotent and can be re-run after regenerating from an updated `$metadata`.
+The transformations below are applied to the specifications and to the generated client code. They are
+idempotent and are re-applied whenever the connectors are regenerated from an updated `$metadata`.
 
 ## Sanitization Steps (OpenAPI specification)
 
@@ -38,7 +37,7 @@ idempotent and can be re-run after regenerating from an updated `$metadata`.
 
 ## Sanitization for the SAP Business One OpenAPI Generated Client
 
-These steps are applied to the `bal openapi` generated client by `tools/sanitize_connector.py`:
+These steps are applied to the `bal openapi` generated client:
 
 1. **Replace the transport client with the session-auth wrapper.** The generated `http:Client clientEp` field and
    its `ApiKeysConfig` (a cookie-as-API-key placeholder the generator emits for the session cookie) are replaced
@@ -62,13 +61,15 @@ the shared `icon.png` reference are also written during sanitization.
 
 ## Process to Create or Regenerate a Connector
 
-1. Obtain the Service Layer `$metadata` and the OpenAPI specification derived from it (`openapi.json`).
-2. Run `python3 split_oas.py --prune` to regenerate the per-module specifications under `subspecs-pruned/`.
+1. Obtain the Service Layer `$metadata` and the OpenAPI specification derived from it.
+2. Split the specification by business module and prune cross-module navigation properties (steps 1–4 above),
+   producing one self-contained specification per module.
 3. Copy the relevant module specification to `docs/spec/<module>.json`.
 4. Generate the client:
    `bal openapi -i docs/spec/<module>.json --mode client --client-methods remote` in `ballerina/<module>`.
-5. Run `python3 tools/sanitize_connector.py ballerina/<module> <module>` to apply the generated-client
-   sanitizations and write the package files.
-6. If adding a brand-new module, register it in `tools/write_gradle_files.py` (`GROUPS`) and re-run it, and add a
-   `docs.json` for the README generation.
+5. Apply the generated-client sanitizations above (replace the transport client with the wrapper, expose
+   `logout()`, document `payload` parameters) and write the package `Ballerina.toml`, `README.md`, and icon
+   reference.
+6. If adding a brand-new module, register it in the Gradle package list and add a `docs.json` for the README
+   generation.
 7. Build and test the package: `./gradlew :businessone-ballerina:<module>:build`.
