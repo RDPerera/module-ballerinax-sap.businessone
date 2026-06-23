@@ -20,8 +20,9 @@ import ballerina/os;
 import ballerina/test;
 
 // Tests run against the bundled mock Service Layer by default. Set B1_SERVICE_URL
-// (and B1_COMPANY_DB / B1_USERNAME / B1_PASSWORD) to run them against a live
-// Service Layer instead.
+// (and B1_COMPANY_DB / B1_USERNAME / B1_PASSWORD) to run the read tests against a
+// live Service Layer instead; the create/update/get-by-key tests are disabled
+// against a live server.
 final boolean isLiveServer = os:getEnv("B1_SERVICE_URL") != "";
 
 final string serviceUrl = isLiveServer ? os:getEnv("B1_SERVICE_URL") : "https://localhost:9100/b1s/v1";
@@ -45,11 +46,28 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    AlternateCatNum_CollectionResponse response = check b1->alternateCatNumList();
+    Items_CollectionResponse response = check b1->itemsList();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
     }
+}
+
+@test:Config {enable: !isLiveServer}
+function testGetByKey() returns error? {
+    Item entity = check b1->itemsGet("I00001");
+    test:assertEquals(entity.ItemCode, "I00001");
+}
+
+@test:Config {enable: !isLiveServer}
+function testCreate() returns error? {
+    Item created = check b1->itemsCreate({ItemCode: "N0001", ItemName: "New Item"});
+    test:assertEquals(created.ItemCode, "N0001");
+}
+
+@test:Config {enable: !isLiveServer}
+function testUpdate() returns error? {
+    check b1->itemsUpdate("I00001", {ItemName: "Updated"});
 }
 
 @test:AfterSuite

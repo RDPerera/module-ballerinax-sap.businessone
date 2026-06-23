@@ -16,8 +16,7 @@
 import ballerina/http;
 
 # Mock SAP Business One Service Layer for the purchasing connector tests. Session
-# protected and served over TLS with the shared self-signed certificate, like
-# the real Service Layer.
+# protected and served over TLS with the shared self-signed certificate.
 
 const string SESSION = "mock-session";
 
@@ -60,8 +59,28 @@ service / on mockListener {
             return res;
         }
 
-        if method == "GET" && path == "/b1s/v1/CorrectionPurchaseInvoice" {
-            res.setJsonPayload({"odata.metadata": "https://mock/b1s/v1/$metadata", value: [{}]});
+        if method == "GET" && path == "/b1s/v1/PurchaseOrders" {
+            res.setJsonPayload({"odata.metadata": "https://mock/b1s/v1/$metadata", value: [{DocEntry: 1, DocNum: 5001, CardCode: "V10000"}]});
+            return res;
+        }
+
+        if method == "GET" && path == "/b1s/v1/PurchaseOrders(1)" {
+            res.setJsonPayload({DocEntry: 1, DocNum: 5001, CardCode: "V10000"});
+            return res;
+        }
+
+        if method == "POST" && path == "/b1s/v1/PurchaseOrders" {
+            json body = check req.getJsonPayload();
+            map<json> created = <map<json>>body;
+            created["DocEntry"] = 77;
+            created["DocNum"] = 5077;
+            res.statusCode = 201;
+            res.setJsonPayload(created);
+            return res;
+        }
+
+        if method == "PATCH" && path == "/b1s/v1/PurchaseOrders(1)" {
+            res.statusCode = 204;
             return res;
         }
 

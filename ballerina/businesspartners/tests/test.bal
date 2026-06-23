@@ -20,8 +20,9 @@ import ballerina/os;
 import ballerina/test;
 
 // Tests run against the bundled mock Service Layer by default. Set B1_SERVICE_URL
-// (and B1_COMPANY_DB / B1_USERNAME / B1_PASSWORD) to run them against a live
-// Service Layer instead.
+// (and B1_COMPANY_DB / B1_USERNAME / B1_PASSWORD) to run the read tests against a
+// live Service Layer instead; the create/update/get-by-key tests are disabled
+// against a live server.
 final boolean isLiveServer = os:getEnv("B1_SERVICE_URL") != "";
 
 final string serviceUrl = isLiveServer ? os:getEnv("B1_SERVICE_URL") : "https://localhost:9095/b1s/v1";
@@ -45,11 +46,28 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    BPFiscalRegistryID_CollectionResponse response = check b1->bPFiscalRegistryIDList();
+    BusinessPartners_CollectionResponse response = check b1->businessPartnersList();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
     }
+}
+
+@test:Config {enable: !isLiveServer}
+function testGetByKey() returns error? {
+    BusinessPartner entity = check b1->businessPartnersGet("C20000");
+    test:assertEquals(entity.CardCode, "C20000");
+}
+
+@test:Config {enable: !isLiveServer}
+function testCreate() returns error? {
+    BusinessPartner created = check b1->businessPartnersCreate({CardCode: "N9", CardName: "New BP"});
+    test:assertEquals(created.CardCode, "N9");
+}
+
+@test:Config {enable: !isLiveServer}
+function testUpdate() returns error? {
+    check b1->businessPartnersUpdate("C20000", {CardName: "Updated"});
 }
 
 @test:AfterSuite
