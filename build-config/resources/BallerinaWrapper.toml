@@ -1,0 +1,22 @@
+[package]
+org = "ballerinax"
+name = "sap.businessone"
+version = "@toml.version@"
+distribution = "2201.13.0"
+authors = ["Ballerina"]
+keywords = ["Business Management/ERP", "Cost/Paid", "Vendor/SAP", "Area/ERP & Business Operations", "Type/Connector"]
+repository = "https://github.com/ballerina-platform/module-ballerinax-sap.businessone"
+icon = "../icon.png"
+license = ["Apache-2.0"]
+
+[build-options]
+observabilityIncluded = true
+
+[platform.java21]
+graalvmCompatible = true
+
+[[platform.java21.dependency]]
+groupId = "io.ballerina.lib"
+artifactId = "sap.businessone-native"
+version = "@toml.version@"
+path = "../../native/build/libs/sap.businessone-native-@toml.version@.jar"

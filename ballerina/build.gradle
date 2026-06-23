@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2026, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+import groovy.json.JsonSlurper
+
+description = 'Ballerina - SAP Business One Packages'
+
+subprojects {
+    ext {
+        packageOrg = "ballerinax"
+        connectorTomlPlaceHolder = new File("${project.rootDir}/build-config/resources/BallerinaConnector.toml")
+        wrapperTomlPlaceHolder = new File("${project.rootDir}/build-config/resources/BallerinaWrapper.toml")
+    }
+}
+
+task build {
+    dependsOn subprojects.collect { ":businessone-ballerina:${it.name}:build" }
+}
+
+task clean {
+    dependsOn subprojects.collect { ":businessone-ballerina:${it.name}:clean" }
+}
+
+def readmeMdPlaceholder = new File("${project.rootDir}/build-config/resources/README.md")
+
+task updateDocumentationFiles {
+    doLast {
+        def files = []
+        new File("${project.rootDir}/ballerina").eachDir { files << it.name }
+
+        for (String dir in files) {
+
+            if (dir == "businessone") {
+                continue
+            }
+
+            def packageProperties = new File("${project.rootDir}/ballerina/${dir}/docs.json")
+            def parsedJson = new JsonSlurper().parseText(packageProperties.text)
+
+            def readmeMdFile = new File("${project.rootDir}/ballerina/${dir}/README.md")
+
+            def newReadmeMdFile = readmeMdPlaceholder.text
+            newReadmeMdFile = newReadmeMdFile.replace("@package-name@", "sap.businessone.${dir}")
+            newReadmeMdFile = newReadmeMdFile.replace("@description@", parsedJson.description)
+            newReadmeMdFile = newReadmeMdFile.replace("@key-features@", parsedJson."key-features".collect { "- ${it}" }.join("\n"))
+            newReadmeMdFile = newReadmeMdFile.replace("@import-statement@", parsedJson."import-statement")
+            newReadmeMdFile = newReadmeMdFile.replace("@client-init@", parsedJson."client-init")
+            newReadmeMdFile = newReadmeMdFile.replace("@api-invocation@", parsedJson."api-invocation")
+
+            readmeMdFile.text = newReadmeMdFile
+        }
+    }
+}
