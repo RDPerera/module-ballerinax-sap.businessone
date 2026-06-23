@@ -32,6 +32,9 @@ done
 echo "Successfully cleaned the cache directories"
 
 find "$BAL_HOME_DIR" -type d -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d '' dir; do
+  # Skip non-package directories (e.g. the shared test resources/cert folder).
+  [ -f "$dir/Ballerina.toml" ] || continue
+
   # Read Ballerina package name
   BAL_PACKAGE_NAME=$(awk -F'"' '/^name/ {print $2}' "$dir/Ballerina.toml")
 

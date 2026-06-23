@@ -61,6 +61,8 @@ jobs:
           folders=()
           cd ballerina
           for dir in $(find . -type d -maxdepth 1 -mindepth 1 | cut -c3-); do
+            # Skip non-package directories (e.g. the shared test resources/cert folder).
+            [ -f "$dir/Ballerina.toml" ] || continue
             folders+=("$dir");
           done
           echo "directories=$(jq -nc --args '$ARGS.positional' ${folders[@]})" >> $GITHUB_OUTPUT
