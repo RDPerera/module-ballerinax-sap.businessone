@@ -1,0 +1,11 @@
+{
+  "description": "The SAP Business One Fixed Assets connector provides APIs for the fixed asset objects of SAP Business One: asset classes, depreciation setup, capitalization, retirement, and transfers, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Manage asset master data and asset classes",
+    "Run capitalization, retirement, transfer, and manual depreciation documents",
+    "Configure depreciation types, areas, and account determinations"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.fixedassets;",
+  "client-init": "fixedassets:Client b1Client = check new (",
+  "api-invocation": "fixedassets:AssetClasses_CollectionResponse response = check b1Client->assetClassesList();"
+}

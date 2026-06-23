@@ -1,0 +1,11 @@
+{
+  "description": "The SAP Business One Human Resources connector provides APIs for the human resources objects of SAP Business One: employee master data, teams, and HR setup, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Manage employee master data and employee roles",
+    "Maintain teams, positions, and employment categories",
+    "Track employee transfers and statuses"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.humanresources;",
+  "client-init": "humanresources:Client b1Client = check new (",
+  "api-invocation": "humanresources:EmployeesInfo_CollectionResponse response = check b1Client->employeesInfoList();"
+}

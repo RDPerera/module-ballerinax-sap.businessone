@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Administration & Setup connector provides APIs for the administration and setup objects of SAP Business One: users, user groups, approval procedures, alerts, queries, countries, currencies, and Web Client settings, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Manage users, user groups, and permissions",
+    "Configure approval templates, stages, and requests",
+    "Maintain general setup data such as countries, currencies, and branches",
+    "Manage saved SQL/user queries and Web Client preferences"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.administration;",
+  "client-init": "administration:Client b1Client = check new (",
+  "api-invocation": "administration:Users_CollectionResponse response = check b1Client->usersList();"
+}

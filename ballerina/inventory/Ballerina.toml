@@ -1,0 +1,22 @@
+[package]
+org = "ballerinax"
+name = "sap.businessone.inventory"
+version = "1.0.0"
+distribution = "2201.13.0"
+authors = ["Ballerina"]
+keywords = ["Business Management/ERP", "Cost/Paid", "Vendor/SAP", "Area/ERP & Business Operations", "Type/Connector"]
+repository = "https://github.com/ballerina-platform/module-ballerinax-sap.businessone"
+icon = "../icon.png"
+license = ["Apache-2.0"]
+
+[build-options]
+observabilityIncluded = true
+
+# TODO: drop `repository = "local"` once ballerinax/sap.businessone is
+# published to Ballerina Central. Until then the wrapper is resolved from the
+# local repository; the gradle build pushes it there automatically.
+[[dependency]]
+org = "ballerinax"
+name = "sap.businessone"
+version = "1.0.0"
+repository = "local"

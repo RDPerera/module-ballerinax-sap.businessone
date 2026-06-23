@@ -1,0 +1,11 @@
+{
+  "description": "The SAP Business One CRM connector provides APIs for the CRM objects of SAP Business One: activities, campaigns, target groups, and sales opportunities, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Log and query activities (calls, meetings, tasks, notes)",
+    "Manage campaigns and target groups",
+    "Track sales opportunities, stages, and competitors"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.crm;",
+  "client-init": "crm:Client b1Client = check new (",
+  "api-invocation": "crm:SalesOpportunities_CollectionResponse response = check b1Client->salesOpportunitiesList();"
+}
