@@ -28,6 +28,7 @@ description = 'Ballerina - SAP Business One Human Resources APIs'
 def packageName = "sap.businessone.humanresources"
 def moduleVersion = project.humanresourcesVersion.replace("-SNAPSHOT", "")
 def ballerinaTomlFile = file("${project.projectDir}/Ballerina.toml")
+def packageKeywords = '["Name/SAP Business One Human Resources", "Area/ERP & Business Operations", "Vendor/SAP", "Cost/Paid", "Type/Connector", "SAP Business One", "Human Resources", "ERP"]'
 
 ballerina {
     packageOrganization = project.ext.packageOrg
@@ -41,6 +42,7 @@ task updateTomlFiles {
     doLast {
         def newBallerinaToml = connectorTomlPlaceHolder.text.replace("@package.name@", packageName)
         newBallerinaToml = newBallerinaToml.replace("@toml.version@", moduleVersion)
+        newBallerinaToml = newBallerinaToml.replace("@keywords@", packageKeywords)
         ballerinaTomlFile.text = newBallerinaToml
     }
 }
