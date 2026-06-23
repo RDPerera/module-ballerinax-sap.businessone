@@ -1,0 +1,5143 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SAP Business One Service Layer - Service",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://{server}:{port}/b1s/v1",
+      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "variables": {
+        "server": {
+          "default": "localhost",
+          "description": "Service Layer host."
+        },
+        "port": {
+          "default": "50000",
+          "description": "Service Layer HTTPS port (default 50000)."
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "B1Session": []
+    }
+  ],
+  "paths": {
+    "/ContractTemplates": {
+      "get": {
+        "tags": [
+          "ContractTemplates"
+        ],
+        "operationId": "ContractTemplates_List",
+        "summary": "Query the ContractTemplates collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContractTemplates_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ContractTemplates"
+        ],
+        "operationId": "ContractTemplates_Create",
+        "summary": "Create a new ContractTemplate.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContractTemplate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContractTemplate"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ContractTemplates('{TemplateName}')": {
+      "get": {
+        "tags": [
+          "ContractTemplates"
+        ],
+        "operationId": "ContractTemplates_Get",
+        "summary": "Get a single ContractTemplate by key.",
+        "parameters": [
+          {
+            "name": "TemplateName",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TemplateName' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContractTemplate"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ContractTemplates"
+        ],
+        "operationId": "ContractTemplates_Update",
+        "summary": "Partially update a ContractTemplate (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "TemplateName",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TemplateName' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContractTemplate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ContractTemplates"
+        ],
+        "operationId": "ContractTemplates_Delete",
+        "summary": "Delete a ContractTemplate.",
+        "parameters": [
+          {
+            "name": "TemplateName",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TemplateName' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CustomerEquipmentCards": {
+      "get": {
+        "tags": [
+          "CustomerEquipmentCards"
+        ],
+        "operationId": "CustomerEquipmentCards_List",
+        "summary": "Query the CustomerEquipmentCards collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerEquipmentCards_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CustomerEquipmentCards"
+        ],
+        "operationId": "CustomerEquipmentCards_Create",
+        "summary": "Create a new CustomerEquipmentCard.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerEquipmentCard"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerEquipmentCard"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CustomerEquipmentCards({EquipmentCardNum})": {
+      "get": {
+        "tags": [
+          "CustomerEquipmentCards"
+        ],
+        "operationId": "CustomerEquipmentCards_Get",
+        "summary": "Get a single CustomerEquipmentCard by key.",
+        "parameters": [
+          {
+            "name": "EquipmentCardNum",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerEquipmentCard"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "CustomerEquipmentCards"
+        ],
+        "operationId": "CustomerEquipmentCards_Update",
+        "summary": "Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "EquipmentCardNum",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerEquipmentCard"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CustomerEquipmentCards"
+        ],
+        "operationId": "CustomerEquipmentCards_Delete",
+        "summary": "Delete a CustomerEquipmentCard.",
+        "parameters": [
+          {
+            "name": "EquipmentCardNum",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/KnowledgeBaseSolutions": {
+      "get": {
+        "tags": [
+          "KnowledgeBaseSolutions"
+        ],
+        "operationId": "KnowledgeBaseSolutions_List",
+        "summary": "Query the KnowledgeBaseSolutions collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeBaseSolutions_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "KnowledgeBaseSolutions"
+        ],
+        "operationId": "KnowledgeBaseSolutions_Create",
+        "summary": "Create a new KnowledgeBaseSolution.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeBaseSolution"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeBaseSolution"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/KnowledgeBaseSolutions({SolutionCode})": {
+      "get": {
+        "tags": [
+          "KnowledgeBaseSolutions"
+        ],
+        "operationId": "KnowledgeBaseSolutions_Get",
+        "summary": "Get a single KnowledgeBaseSolution by key.",
+        "parameters": [
+          {
+            "name": "SolutionCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeBaseSolution"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "KnowledgeBaseSolutions"
+        ],
+        "operationId": "KnowledgeBaseSolutions_Update",
+        "summary": "Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SolutionCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeBaseSolution"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "KnowledgeBaseSolutions"
+        ],
+        "operationId": "KnowledgeBaseSolutions_Delete",
+        "summary": "Delete a KnowledgeBaseSolution.",
+        "parameters": [
+          {
+            "name": "SolutionCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Queue": {
+      "get": {
+        "tags": [
+          "Queue"
+        ],
+        "operationId": "Queue_List",
+        "summary": "Query the Queue collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Queue_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Queue"
+        ],
+        "operationId": "Queue_Create",
+        "summary": "Create a new Queue.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Queue"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Queue"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Queue('{QueueID}')": {
+      "get": {
+        "tags": [
+          "Queue"
+        ],
+        "operationId": "Queue_Get",
+        "summary": "Get a single Queue by key.",
+        "parameters": [
+          {
+            "name": "QueueID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'QueueID' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Queue"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Queue"
+        ],
+        "operationId": "Queue_Update",
+        "summary": "Partially update a Queue (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "QueueID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'QueueID' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Queue"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Queue"
+        ],
+        "operationId": "Queue_Delete",
+        "summary": "Delete a Queue.",
+        "parameters": [
+          {
+            "name": "QueueID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'QueueID' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallOrigins": {
+      "get": {
+        "tags": [
+          "ServiceCallOrigins"
+        ],
+        "operationId": "ServiceCallOrigins_List",
+        "summary": "Query the ServiceCallOrigins collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallOrigins_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallOrigins"
+        ],
+        "operationId": "ServiceCallOrigins_Create",
+        "summary": "Create a new ServiceCallOrigin.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallOrigin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallOrigin"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallOrigins({OriginID})": {
+      "get": {
+        "tags": [
+          "ServiceCallOrigins"
+        ],
+        "operationId": "ServiceCallOrigins_Get",
+        "summary": "Get a single ServiceCallOrigin by key.",
+        "parameters": [
+          {
+            "name": "OriginID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'OriginID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallOrigin"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallOrigins"
+        ],
+        "operationId": "ServiceCallOrigins_Update",
+        "summary": "Partially update a ServiceCallOrigin (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "OriginID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'OriginID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallOrigin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallOrigins"
+        ],
+        "operationId": "ServiceCallOrigins_Delete",
+        "summary": "Delete a ServiceCallOrigin.",
+        "parameters": [
+          {
+            "name": "OriginID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'OriginID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallOriginsService_GetServiceCallOriginList": {
+      "post": {
+        "tags": [
+          "ServiceCallOriginsService"
+        ],
+        "operationId": "ServiceCallOriginsService_GetServiceCallOriginList",
+        "summary": "Service Layer function import 'ServiceCallOriginsService_GetServiceCallOriginList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallOriginParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemSubTypes": {
+      "get": {
+        "tags": [
+          "ServiceCallProblemSubTypes"
+        ],
+        "operationId": "ServiceCallProblemSubTypes_List",
+        "summary": "Query the ServiceCallProblemSubTypes collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemSubTypes_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallProblemSubTypes"
+        ],
+        "operationId": "ServiceCallProblemSubTypes_Create",
+        "summary": "Create a new ServiceCallProblemSubType.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemSubType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemSubType"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemSubTypes({ProblemSubTypeID})": {
+      "get": {
+        "tags": [
+          "ServiceCallProblemSubTypes"
+        ],
+        "operationId": "ServiceCallProblemSubTypes_Get",
+        "summary": "Get a single ServiceCallProblemSubType by key.",
+        "parameters": [
+          {
+            "name": "ProblemSubTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemSubType"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallProblemSubTypes"
+        ],
+        "operationId": "ServiceCallProblemSubTypes_Update",
+        "summary": "Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ProblemSubTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemSubType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallProblemSubTypes"
+        ],
+        "operationId": "ServiceCallProblemSubTypes_Delete",
+        "summary": "Delete a ServiceCallProblemSubType.",
+        "parameters": [
+          {
+            "name": "ProblemSubTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList": {
+      "post": {
+        "tags": [
+          "ServiceCallProblemSubTypesService"
+        ],
+        "operationId": "ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList",
+        "summary": "Service Layer function import 'ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallProblemSubTypeParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemTypes": {
+      "get": {
+        "tags": [
+          "ServiceCallProblemTypes"
+        ],
+        "operationId": "ServiceCallProblemTypes_List",
+        "summary": "Query the ServiceCallProblemTypes collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemTypes_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallProblemTypes"
+        ],
+        "operationId": "ServiceCallProblemTypes_Create",
+        "summary": "Create a new ServiceCallProblemType.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemType"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemTypes({ProblemTypeID})": {
+      "get": {
+        "tags": [
+          "ServiceCallProblemTypes"
+        ],
+        "operationId": "ServiceCallProblemTypes_Get",
+        "summary": "Get a single ServiceCallProblemType by key.",
+        "parameters": [
+          {
+            "name": "ProblemTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallProblemType"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallProblemTypes"
+        ],
+        "operationId": "ServiceCallProblemTypes_Update",
+        "summary": "Partially update a ServiceCallProblemType (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ProblemTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallProblemTypes"
+        ],
+        "operationId": "ServiceCallProblemTypes_Delete",
+        "summary": "Delete a ServiceCallProblemType.",
+        "parameters": [
+          {
+            "name": "ProblemTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallProblemTypesService_GetServiceCallProblemTypeList": {
+      "post": {
+        "tags": [
+          "ServiceCallProblemTypesService"
+        ],
+        "operationId": "ServiceCallProblemTypesService_GetServiceCallProblemTypeList",
+        "summary": "Service Layer function import 'ServiceCallProblemTypesService_GetServiceCallProblemTypeList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallProblemTypeParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallSolutionStatus": {
+      "get": {
+        "tags": [
+          "ServiceCallSolutionStatus"
+        ],
+        "operationId": "ServiceCallSolutionStatus_List",
+        "summary": "Query the ServiceCallSolutionStatus collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallSolutionStatus_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallSolutionStatus"
+        ],
+        "operationId": "ServiceCallSolutionStatus_Create",
+        "summary": "Create a new ServiceCallSolutionStatus.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallSolutionStatus({StatusId})": {
+      "get": {
+        "tags": [
+          "ServiceCallSolutionStatus"
+        ],
+        "operationId": "ServiceCallSolutionStatus_Get",
+        "summary": "Get a single ServiceCallSolutionStatus by key.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallSolutionStatus"
+        ],
+        "operationId": "ServiceCallSolutionStatus_Update",
+        "summary": "Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallSolutionStatus"
+        ],
+        "operationId": "ServiceCallSolutionStatus_Delete",
+        "summary": "Delete a ServiceCallSolutionStatus.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList": {
+      "post": {
+        "tags": [
+          "ServiceCallSolutionStatusService"
+        ],
+        "operationId": "ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList",
+        "summary": "Service Layer function import 'ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallSolutionStatusParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallStatus": {
+      "get": {
+        "tags": [
+          "ServiceCallStatus"
+        ],
+        "operationId": "ServiceCallStatus_List",
+        "summary": "Query the ServiceCallStatus collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallStatus_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallStatus"
+        ],
+        "operationId": "ServiceCallStatus_Create",
+        "summary": "Create a new ServiceCallStatus.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallStatus"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallStatus({StatusId})": {
+      "get": {
+        "tags": [
+          "ServiceCallStatus"
+        ],
+        "operationId": "ServiceCallStatus_Get",
+        "summary": "Get a single ServiceCallStatus by key.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallStatus"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallStatus"
+        ],
+        "operationId": "ServiceCallStatus_Update",
+        "summary": "Partially update a ServiceCallStatus (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallStatus"
+        ],
+        "operationId": "ServiceCallStatus_Delete",
+        "summary": "Delete a ServiceCallStatus.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallStatusService_GetServiceCallStatusList": {
+      "post": {
+        "tags": [
+          "ServiceCallStatusService"
+        ],
+        "operationId": "ServiceCallStatusService_GetServiceCallStatusList",
+        "summary": "Service Layer function import 'ServiceCallStatusService_GetServiceCallStatusList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallStatusParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallTypes": {
+      "get": {
+        "tags": [
+          "ServiceCallTypes"
+        ],
+        "operationId": "ServiceCallTypes_List",
+        "summary": "Query the ServiceCallTypes collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallTypes_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCallTypes"
+        ],
+        "operationId": "ServiceCallTypes_Create",
+        "summary": "Create a new ServiceCallType.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallType"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallTypes({CallTypeID})": {
+      "get": {
+        "tags": [
+          "ServiceCallTypes"
+        ],
+        "operationId": "ServiceCallTypes_Get",
+        "summary": "Get a single ServiceCallType by key.",
+        "parameters": [
+          {
+            "name": "CallTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCallType"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCallTypes"
+        ],
+        "operationId": "ServiceCallTypes_Update",
+        "summary": "Partially update a ServiceCallType (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "CallTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCallTypes"
+        ],
+        "operationId": "ServiceCallTypes_Delete",
+        "summary": "Delete a ServiceCallType.",
+        "parameters": [
+          {
+            "name": "CallTypeID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCallTypesService_GetServiceCallTypeList": {
+      "post": {
+        "tags": [
+          "ServiceCallTypesService"
+        ],
+        "operationId": "ServiceCallTypesService_GetServiceCallTypeList",
+        "summary": "Service Layer function import 'ServiceCallTypesService_GetServiceCallTypeList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ServiceCallTypeParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCalls": {
+      "get": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_List",
+        "summary": "Query the ServiceCalls collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCalls_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_Create",
+        "summary": "Create a new ServiceCall.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCall"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCall"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCalls({ServiceCallID})": {
+      "get": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_Get",
+        "summary": "Get a single ServiceCall by key.",
+        "parameters": [
+          {
+            "name": "ServiceCallID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceCall"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_Update",
+        "summary": "Partially update a ServiceCall (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ServiceCallID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCall"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_Delete",
+        "summary": "Delete a ServiceCall.",
+        "parameters": [
+          {
+            "name": "ServiceCallID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceCalls({ServiceCallID})/Close": {
+      "post": {
+        "tags": [
+          "ServiceCalls"
+        ],
+        "operationId": "ServiceCalls_Close",
+        "summary": "Bound action 'Close' on ServiceCalls (binding type ServiceCall).",
+        "parameters": [
+          {
+            "name": "ServiceCallID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceContracts": {
+      "get": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_List",
+        "summary": "Query the ServiceContracts collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceContracts_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Create",
+        "summary": "Create a new ServiceContract.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceContract"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceContracts({ContractID})": {
+      "get": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Get",
+        "summary": "Get a single ServiceContract by key.",
+        "parameters": [
+          {
+            "name": "ContractID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ContractID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceContract"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Update",
+        "summary": "Partially update a ServiceContract (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ContractID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ContractID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Delete",
+        "summary": "Delete a ServiceContract.",
+        "parameters": [
+          {
+            "name": "ContractID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ContractID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceContracts({ContractID})/Cancel": {
+      "post": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Cancel",
+        "summary": "Bound action 'Cancel' on ServiceContracts (binding type ServiceContract).",
+        "parameters": [
+          {
+            "name": "ContractID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ContractID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceContracts({ContractID})/Close": {
+      "post": {
+        "tags": [
+          "ServiceContracts"
+        ],
+        "operationId": "ServiceContracts_Close",
+        "summary": "Bound action 'Close' on ServiceContracts (binding type ServiceContract).",
+        "parameters": [
+          {
+            "name": "ContractID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ContractID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "B1SESSION",
+        "description": "Session cookie returned by POST /Login."
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated navigation properties to expand.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "required": false,
+        "description": "OData filter expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "required": false,
+        "description": "Set to 'allpages' to include the total count (odata.count).",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "required": false,
+        "description": "OData orderby expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "required": false,
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated list of properties to return.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "required": false,
+        "description": "Number of records to skip (paging).",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "required": false,
+        "description": "Maximum number of records to return.",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "schemas": {
+      "BoAddressType": {
+        "type": "string",
+        "enum": [
+          "bo_ShipTo",
+          "bo_BillTo"
+        ],
+        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name."
+      },
+      "BoContractTypes": {
+        "type": "string",
+        "enum": [
+          "ct_Customer",
+          "ct_ItemGroup",
+          "ct_SerialNumber"
+        ],
+        "description": "OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoDurations": {
+        "type": "string",
+        "enum": [
+          "du_Seconds",
+          "du_Minuts",
+          "du_Hours",
+          "du_Days"
+        ],
+        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name."
+      },
+      "BoEquipmentBPType": {
+        "type": "string",
+        "enum": [
+          "et_Sales",
+          "et_Purchasing",
+          "et_SalesAndPurchasing"
+        ],
+        "description": "OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name."
+      },
+      "BoRemindUnits": {
+        "type": "string",
+        "enum": [
+          "reu_Days",
+          "reu_Weeks",
+          "reu_Month"
+        ],
+        "description": "OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name."
+      },
+      "BoResolutionUnits": {
+        "type": "string",
+        "enum": [
+          "rsu_Days",
+          "rsu_Hours"
+        ],
+        "description": "OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name."
+      },
+      "BoResponseUnit": {
+        "type": "string",
+        "enum": [
+          "boru_Day",
+          "boru_Hour"
+        ],
+        "description": "OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name."
+      },
+      "BoSerialNumberStatus": {
+        "type": "string",
+        "enum": [
+          "sns_Active",
+          "sns_Returned",
+          "sns_Terminated",
+          "sns_Loaned",
+          "sns_InLab"
+        ],
+        "description": "OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name."
+      },
+      "BoServiceTypes": {
+        "type": "string",
+        "enum": [
+          "bst_Regular",
+          "bst_Warranty"
+        ],
+        "description": "OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoStckTrnDir": {
+        "type": "string",
+        "enum": [
+          "bos_TransferToTechnician",
+          "bos_TransferFromTechnician"
+        ],
+        "description": "OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name."
+      },
+      "BoSvcCallPriorities": {
+        "type": "string",
+        "enum": [
+          "scp_Low",
+          "scp_Medium",
+          "scp_High"
+        ],
+        "description": "OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name."
+      },
+      "BoSvcContractStatus": {
+        "type": "string",
+        "enum": [
+          "scs_Approved",
+          "scs_Frozen",
+          "scs_Draft",
+          "scs_Terminated"
+        ],
+        "description": "OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name."
+      },
+      "BoSvcEpxDocTypes": {
+        "type": "string",
+        "enum": [
+          "edt_Invoice",
+          "edt_Delivery",
+          "edt_Return",
+          "edt_StockTransfer",
+          "edt_CreditMemo",
+          "edt_Order",
+          "edt_Quotation",
+          "edt_AP_Invoice",
+          "edt_AP_CreditMemo",
+          "edt_GoodsReceipt",
+          "edt_GoodsReturn",
+          "edt_PurchaseOrder",
+          "edt_PurchaseQuotation",
+          "edt_AR_CorrectionInvoice",
+          "edt_AP_CorrectionInvoice",
+          "edt_Return_Request",
+          "edt_Goods_Return_Request"
+        ],
+        "description": "OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoSvcExpPartTypes": {
+        "type": "string",
+        "enum": [
+          "sep_Inventory",
+          "sep_NonInventory"
+        ],
+        "description": "OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoYesNoEnum": {
+        "type": "string",
+        "enum": [
+          "tNO",
+          "tYES"
+        ],
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
+      },
+      "ContractTemplate": {
+        "type": "object",
+        "properties": {
+          "TemplateName": {
+            "type": "string"
+          },
+          "TemplateIsDeleted": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TemplateIsRenewal": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "RemindBeforeRenewal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RemindUnit": {
+            "$ref": "#/components/schemas/BoRemindUnits"
+          },
+          "DurationOfCoverage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResponseValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResolutionUnit": {
+            "$ref": "#/components/schemas/BoResolutionUnits"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ContractType": {
+            "$ref": "#/components/schemas/BoContractTypes"
+          },
+          "MondayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TuesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "WednesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ThursdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "FridayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SaturdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SundayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "MondayStart": {
+            "type": "string"
+          },
+          "MondayEnd": {
+            "type": "string"
+          },
+          "TuesdayStart": {
+            "type": "string"
+          },
+          "TuesdayEnd": {
+            "type": "string"
+          },
+          "WednesdayStart": {
+            "type": "string"
+          },
+          "WednesdayEnd": {
+            "type": "string"
+          },
+          "ThursdayStart": {
+            "type": "string"
+          },
+          "ThursdayEnd": {
+            "type": "string"
+          },
+          "FridayStart": {
+            "type": "string"
+          },
+          "FridayEnd": {
+            "type": "string"
+          },
+          "SaturdayStart": {
+            "type": "string"
+          },
+          "SaturdayEnd": {
+            "type": "string"
+          },
+          "SundayStart": {
+            "type": "string"
+          },
+          "SundayEnd": {
+            "type": "string"
+          },
+          "IncludeParts": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeLabor": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeTravel": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "IncludeHolidays": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ResponseUnit": {
+            "$ref": "#/components/schemas/BoResponseUnit"
+          },
+          "ResolutionTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceContracts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceContract"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ContractTemplates_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContractTemplate"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerEquipmentCard": {
+        "type": "object",
+        "properties": {
+          "EquipmentCardNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CustomerCode": {
+            "type": "string"
+          },
+          "CustomerName": {
+            "type": "string"
+          },
+          "ContactEmployeeCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DirectCustomerCode": {
+            "type": "string"
+          },
+          "DirectCustomerName": {
+            "type": "string"
+          },
+          "ManufacturerSerialNum": {
+            "type": "string"
+          },
+          "InternalSerialNum": {
+            "type": "string"
+          },
+          "RequiredResolutionTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RequiredResolutionUnit": {
+            "$ref": "#/components/schemas/BoResolutionUnits"
+          },
+          "ItemCode": {
+            "type": "string"
+          },
+          "ItemDescription": {
+            "type": "string"
+          },
+          "InvoiceCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InvoiceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DeliveryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ContactPhone": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "CountryCode": {
+            "type": "string"
+          },
+          "StateCode": {
+            "type": "string"
+          },
+          "InstallLocation": {
+            "type": "string"
+          },
+          "ContractCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ContractStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ContractEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "DeliveryCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DeliveryNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StatusOfSerialNumber": {
+            "$ref": "#/components/schemas/BoSerialNumberStatus"
+          },
+          "ReplaceSN": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DefaultTechnician": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ReplacedBySN": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Defaultterritory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BuildingFloorRoom": {
+            "type": "string"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "ServiceBPType": {
+            "$ref": "#/components/schemas/BoEquipmentBPType"
+          },
+          "CustomerEquipmentCardBusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerEquipmentCardBusinessPartner"
+            }
+          },
+          "ServiceContract": {
+            "$ref": "#/components/schemas/ServiceContract"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CustomerEquipmentCardBusinessPartner": {
+        "type": "object",
+        "properties": {
+          "BPCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CustomerEquipmentCards_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerEquipmentCard"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "KnowledgeBaseSolution": {
+        "type": "object",
+        "properties": {
+          "ItemCode": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreatedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "LastUpdatedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LastUpdateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Solution": {
+            "type": "string"
+          },
+          "Symptom": {
+            "type": "string"
+          },
+          "Cause": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "SolutionCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceCallSolutionStatus": {
+            "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+          }
+        },
+        "additionalProperties": true
+      },
+      "KnowledgeBaseSolutions_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseSolution"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "Queue": {
+        "type": "object",
+        "properties": {
+          "QueueID": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Inactive": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "QueueManager": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "QueueEmail": {
+            "type": "string"
+          },
+          "QueueMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QueueMember"
+            }
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "QueueMember": {
+        "type": "object",
+        "properties": {
+          "QueueID": {
+            "type": "string"
+          },
+          "MemberUserID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "Queue_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Queue"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCall": {
+        "type": "object",
+        "properties": {
+          "ServiceCallID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Subject": {
+            "type": "string"
+          },
+          "CustomerCode": {
+            "type": "string"
+          },
+          "CustomerName": {
+            "type": "string"
+          },
+          "ContactCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ManufacturerSerialNum": {
+            "type": "string"
+          },
+          "InternalSerialNum": {
+            "type": "string"
+          },
+          "ContractID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ContractEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResolutionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResolutionTime": {
+            "type": "string"
+          },
+          "Origin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ItemCode": {
+            "type": "string"
+          },
+          "ItemDescription": {
+            "type": "string"
+          },
+          "ItemGroupCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Priority": {
+            "$ref": "#/components/schemas/BoSvcCallPriorities"
+          },
+          "CallType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProblemType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AssigneeCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "TechnicianCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Resolution": {
+            "type": "string"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CreationTime": {
+            "type": "string"
+          },
+          "Responder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UpdatedTime": {
+            "type": "string"
+          },
+          "BelongsToAQueue": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ResponseByTime": {
+            "type": "string"
+          },
+          "ResponseByDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResolutionOnDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResponseOnTime": {
+            "type": "string"
+          },
+          "ResponseOnDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ClosingTime": {
+            "type": "string"
+          },
+          "AssignedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Queue": {
+            "type": "string"
+          },
+          "ResponseAssignee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EntitledforService": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ResolutionOnTime": {
+            "type": "string"
+          },
+          "AssignedTime": {
+            "type": "string"
+          },
+          "ClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Series": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandWritten": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "PeriodIndicator": {
+            "type": "string"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "StartTime": {
+            "type": "string"
+          },
+          "EndDueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "Duration": {
+            "type": "number",
+            "format": "double"
+          },
+          "DurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "Reminder": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderPeriod": {
+            "type": "number",
+            "format": "double"
+          },
+          "ReminderType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "Location": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AddressName": {
+            "type": "string"
+          },
+          "AddressType": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "Room": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "DisplayInCalendar": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "CustomerRefNo": {
+            "type": "string"
+          },
+          "ProblemSubType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceBPType": {
+            "$ref": "#/components/schemas/ServiceTypeEnum"
+          },
+          "BPContactPerson": {
+            "type": "string"
+          },
+          "BPPhone1": {
+            "type": "string"
+          },
+          "BPPhone2": {
+            "type": "string"
+          },
+          "BPCellular": {
+            "type": "string"
+          },
+          "BPFax": {
+            "type": "string"
+          },
+          "BPeMail": {
+            "type": "string"
+          },
+          "BPProjectCode": {
+            "type": "string"
+          },
+          "BPTerritory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPShipToCode": {
+            "type": "string"
+          },
+          "BPShipToAddress": {
+            "type": "string"
+          },
+          "BPBillToCode": {
+            "type": "string"
+          },
+          "BPBillToAddress": {
+            "type": "string"
+          },
+          "Telephone": {
+            "type": "string"
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "SupplementaryCode": {
+            "type": "string"
+          },
+          "ServiceCallActivities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallActivity"
+            }
+          },
+          "ServiceCallInventoryExpenses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallInventoryExpense"
+            }
+          },
+          "ServiceCallSolutions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallSolution"
+            }
+          },
+          "ServiceCallSchedulings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallScheduling"
+            }
+          },
+          "ServiceCallBPAddressComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallBPAddressComponent"
+            }
+          },
+          "ServiceContract": {
+            "$ref": "#/components/schemas/ServiceContract"
+          },
+          "ServiceCallOrigin": {
+            "$ref": "#/components/schemas/ServiceCallOrigin"
+          },
+          "ServiceCallStatus": {
+            "$ref": "#/components/schemas/ServiceCallStatus"
+          },
+          "ServiceCallType": {
+            "$ref": "#/components/schemas/ServiceCallType"
+          },
+          "ServiceCallProblemType": {
+            "$ref": "#/components/schemas/ServiceCallProblemType"
+          },
+          "Queue2": {
+            "$ref": "#/components/schemas/Queue"
+          },
+          "ServiceCallProblemSubType": {
+            "$ref": "#/components/schemas/ServiceCallProblemSubType"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallActivity": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ActivityCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallBPAddressComponent": {
+        "type": "object",
+        "properties": {
+          "ShipToStreet": {
+            "type": "string"
+          },
+          "ShipToStreetNo": {
+            "type": "string"
+          },
+          "ShipToBlock": {
+            "type": "string"
+          },
+          "ShipToBuilding": {
+            "type": "string"
+          },
+          "ShipToCity": {
+            "type": "string"
+          },
+          "ShipToZipCode": {
+            "type": "string"
+          },
+          "ShipToState": {
+            "type": "string"
+          },
+          "ShipToCounty": {
+            "type": "string"
+          },
+          "ShipToCountry": {
+            "type": "string"
+          },
+          "ShipToAddressType": {
+            "type": "string"
+          },
+          "ShipToAddress2": {
+            "type": "string"
+          },
+          "ShipToAddress3": {
+            "type": "string"
+          },
+          "ShipToGlobalLocationNumber": {
+            "type": "string"
+          },
+          "BillToStreet": {
+            "type": "string"
+          },
+          "BillToStreetNo": {
+            "type": "string"
+          },
+          "BillToBlock": {
+            "type": "string"
+          },
+          "BillToBuilding": {
+            "type": "string"
+          },
+          "BillToCity": {
+            "type": "string"
+          },
+          "BillToZipCode": {
+            "type": "string"
+          },
+          "BillToState": {
+            "type": "string"
+          },
+          "BillToCounty": {
+            "type": "string"
+          },
+          "BillToCountry": {
+            "type": "string"
+          },
+          "BillToAddressType": {
+            "type": "string"
+          },
+          "BillToAddress2": {
+            "type": "string"
+          },
+          "BillToAddress3": {
+            "type": "string"
+          },
+          "BillToGlobalLocationNumber": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallInventoryExpense": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PartType": {
+            "$ref": "#/components/schemas/BoSvcExpPartTypes"
+          },
+          "DocumentType": {
+            "$ref": "#/components/schemas/BoSvcEpxDocTypes"
+          },
+          "DocumentPostingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "DocumentNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StockTransferDirection": {
+            "$ref": "#/components/schemas/BoStckTrnDir"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallOrigin": {
+        "type": "object",
+        "properties": {
+          "OriginID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallOriginParams": {
+        "type": "object",
+        "properties": {
+          "OriginID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallOrigins_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallOrigin"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCallProblemSubType": {
+        "type": "object",
+        "properties": {
+          "ProblemSubTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemSubTypeParams": {
+        "type": "object",
+        "properties": {
+          "ProblemSubTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemSubTypes_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallProblemSubType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCallProblemType": {
+        "type": "object",
+        "properties": {
+          "ProblemTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemTypeParams": {
+        "type": "object",
+        "properties": {
+          "ProblemTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemTypes_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallProblemType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCallScheduling": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Technician": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandledBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "StartTime": {
+            "type": "string"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "Duration": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "DurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "ActualDurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "Reminder": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderPeriod": {
+            "type": "number",
+            "format": "double"
+          },
+          "ReminderType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "ReminderSent": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ReminderTime": {
+            "type": "string"
+          },
+          "DisplayInCalendar": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsUnscheduled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Location": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AddressName": {
+            "type": "string"
+          },
+          "AddressText": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "Room": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Address2": {
+            "type": "string"
+          },
+          "Address3": {
+            "type": "string"
+          },
+          "AddressType": {
+            "type": "string"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "TaxOffice": {
+            "type": "string"
+          },
+          "GlobalLocNum": {
+            "type": "string"
+          },
+          "IsClosed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Remark": {
+            "type": "string"
+          },
+          "AddressTypeBS": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "SignatureName": {
+            "type": "string"
+          },
+          "SalesOrders": {
+            "type": "string"
+          },
+          "CheckInDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CheckInTime": {
+            "type": "string"
+          },
+          "CheckInLocation": {
+            "type": "string"
+          },
+          "CheckInLatitude": {
+            "type": "string"
+          },
+          "CheckInLongitude": {
+            "type": "string"
+          },
+          "CheckOutDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CheckOutTime": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallSolution": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SolutionID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallSolutionStatus": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "KnowledgeBaseSolutions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseSolution"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallSolutionStatusParams": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallSolutionStatus_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCallStatus": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallStatusParams": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallStatus_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallStatus"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCallType": {
+        "type": "object",
+        "properties": {
+          "CallTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallTypeParams": {
+        "type": "object",
+        "properties": {
+          "CallTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallTypes_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceCalls_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceContract": {
+        "type": "object",
+        "properties": {
+          "ContractID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CustomerCode": {
+            "type": "string"
+          },
+          "CustomerName": {
+            "type": "string"
+          },
+          "ContactCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/BoSvcContractStatus"
+          },
+          "ContractTemplate": {
+            "type": "string"
+          },
+          "ContractType": {
+            "$ref": "#/components/schemas/BoContractTypes"
+          },
+          "Renewal": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RemindUnit": {
+            "$ref": "#/components/schemas/BoRemindUnits"
+          },
+          "DurationOfCoverage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResolutionTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResolutionUnit": {
+            "$ref": "#/components/schemas/BoResolutionUnits"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "MondayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TuesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "WednesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ThursdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "FridayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SaturdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SundayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "MondayStart": {
+            "type": "string"
+          },
+          "MondayEnd": {
+            "type": "string"
+          },
+          "TuesdayStart": {
+            "type": "string"
+          },
+          "TuesdayEnd": {
+            "type": "string"
+          },
+          "WednesdayStart": {
+            "type": "string"
+          },
+          "WednesdayEnd": {
+            "type": "string"
+          },
+          "ThursdayStart": {
+            "type": "string"
+          },
+          "ThursdayEnd": {
+            "type": "string"
+          },
+          "FridayStart": {
+            "type": "string"
+          },
+          "FridayEnd": {
+            "type": "string"
+          },
+          "SaturdayStart": {
+            "type": "string"
+          },
+          "SaturdayEnd": {
+            "type": "string"
+          },
+          "SundayStart": {
+            "type": "string"
+          },
+          "SundayEnd": {
+            "type": "string"
+          },
+          "IncludeParts": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeLabor": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeTravel": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TemplateRemarks": {
+            "type": "string"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "IncludeHolidays": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ServiceType": {
+            "$ref": "#/components/schemas/BoServiceTypes"
+          },
+          "ResponseUnit": {
+            "$ref": "#/components/schemas/BoResponseUnit"
+          },
+          "ResponseTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TerminationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceBPType": {
+            "$ref": "#/components/schemas/ServiceTypeEnum"
+          },
+          "ServiceContract_Lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceContract_Line"
+            }
+          },
+          "CustomerEquipmentCards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerEquipmentCard"
+            }
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          },
+          "ContractTemplate2": {
+            "$ref": "#/components/schemas/ContractTemplate"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceContract_Line": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ManufacturerSerialNum": {
+            "type": "string"
+          },
+          "InternalSerialNum": {
+            "type": "string"
+          },
+          "ItemCode": {
+            "type": "string"
+          },
+          "ItemName": {
+            "type": "string"
+          },
+          "ItemGroup": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ItemGroupName": {
+            "type": "string"
+          },
+          "TerminationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceContracts_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceContract"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceLayerError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "message": {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ServiceTypeEnum": {
+        "type": "string",
+        "enum": [
+          "srvcSales",
+          "srvcPurchasing"
+        ],
+        "description": "OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name."
+      }
+    }
+  }
+}

@@ -1,0 +1,6942 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SAP Business One Service Layer - CRM (Activities, Campaigns & Opportunities)",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://{server}:{port}/b1s/v1",
+      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "variables": {
+        "server": {
+          "default": "localhost",
+          "description": "Service Layer host."
+        },
+        "port": {
+          "default": "50000",
+          "description": "Service Layer HTTPS port (default 50000)."
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "B1Session": []
+    }
+  ],
+  "paths": {
+    "/Activities": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "Activities_List",
+        "summary": "Query the Activities collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activities_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "Activities_Create",
+        "summary": "Create a new Activity.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Activities({ActivityCode})": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "Activities_Get",
+        "summary": "Get a single Activity by key.",
+        "parameters": [
+          {
+            "name": "ActivityCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ActivityCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "Activities_Update",
+        "summary": "Partially update a Activity (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ActivityCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ActivityCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "Activities_Delete",
+        "summary": "Delete a Activity.",
+        "parameters": [
+          {
+            "name": "ActivityCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ActivityCode' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_DeleteSingleInstanceFromSeries": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_DeleteSingleInstanceFromSeries",
+        "summary": "Service Layer function import 'ActivitiesService_DeleteSingleInstanceFromSeries'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ActivityInstanceParams": {
+                    "$ref": "#/components/schemas/ActivityInstanceParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_GetActivityList": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_GetActivityList",
+        "summary": "Service Layer function import 'ActivitiesService_GetActivityList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivityParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_GetListByAttendUser": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_GetListByAttendUser",
+        "summary": "Service Layer function import 'ActivitiesService_GetListByAttendUser'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivityParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Activity": {
+                    "$ref": "#/components/schemas/Activity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_GetSingleInstanceFromSeries": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_GetSingleInstanceFromSeries",
+        "summary": "Service Layer function import 'ActivitiesService_GetSingleInstanceFromSeries'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ActivityInstanceParams": {
+                    "$ref": "#/components/schemas/ActivityInstanceParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_GetTopNActivityInstances": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_GetTopNActivityInstances",
+        "summary": "Service Layer function import 'ActivitiesService_GetTopNActivityInstances'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivityInstanceParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ActivityInstancesListParams": {
+                    "$ref": "#/components/schemas/ActivityInstancesListParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_InitData": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_InitData",
+        "summary": "Service Layer function import 'ActivitiesService_InitData'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitiesService_UpdateSingleInstanceInSeries": {
+      "post": {
+        "tags": [
+          "ActivitiesService"
+        ],
+        "operationId": "ActivitiesService_UpdateSingleInstanceInSeries",
+        "summary": "Service Layer function import 'ActivitiesService_UpdateSingleInstanceInSeries'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityParams"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Activity": {
+                    "$ref": "#/components/schemas/Activity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityLocations": {
+      "get": {
+        "tags": [
+          "ActivityLocations"
+        ],
+        "operationId": "ActivityLocations_List",
+        "summary": "Query the ActivityLocations collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityLocations_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActivityLocations"
+        ],
+        "operationId": "ActivityLocations_Create",
+        "summary": "Create a new ActivityLocation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityLocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityLocation"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityLocations({Code})": {
+      "get": {
+        "tags": [
+          "ActivityLocations"
+        ],
+        "operationId": "ActivityLocations_Get",
+        "summary": "Get a single ActivityLocation by key.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityLocation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ActivityLocations"
+        ],
+        "operationId": "ActivityLocations_Update",
+        "summary": "Partially update a ActivityLocation (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityLocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActivityLocations"
+        ],
+        "operationId": "ActivityLocations_Delete",
+        "summary": "Delete a ActivityLocation.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityRecipientLists": {
+      "get": {
+        "tags": [
+          "ActivityRecipientLists"
+        ],
+        "operationId": "ActivityRecipientLists_List",
+        "summary": "Query the ActivityRecipientLists collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityRecipientLists_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActivityRecipientLists"
+        ],
+        "operationId": "ActivityRecipientLists_Create",
+        "summary": "Create a new ActivityRecipientList.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityRecipientList"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityRecipientList"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityRecipientLists({Code})": {
+      "get": {
+        "tags": [
+          "ActivityRecipientLists"
+        ],
+        "operationId": "ActivityRecipientLists_Get",
+        "summary": "Get a single ActivityRecipientList by key.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityRecipientList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ActivityRecipientLists"
+        ],
+        "operationId": "ActivityRecipientLists_Update",
+        "summary": "Partially update a ActivityRecipientList (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityRecipientList"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActivityRecipientLists"
+        ],
+        "operationId": "ActivityRecipientLists_Delete",
+        "summary": "Delete a ActivityRecipientList.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityRecipientListsService_GetList": {
+      "post": {
+        "tags": [
+          "ActivityRecipientListsService"
+        ],
+        "operationId": "ActivityRecipientListsService_GetList",
+        "summary": "Service Layer function import 'ActivityRecipientListsService_GetList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivityRecipientListParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityStatuses": {
+      "get": {
+        "tags": [
+          "ActivityStatuses"
+        ],
+        "operationId": "ActivityStatuses_List",
+        "summary": "Query the ActivityStatuses collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityStatuses_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActivityStatuses"
+        ],
+        "operationId": "ActivityStatuses_Create",
+        "summary": "Create a new ActivityStatus.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityStatus"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityStatuses({StatusId})": {
+      "get": {
+        "tags": [
+          "ActivityStatuses"
+        ],
+        "operationId": "ActivityStatuses_Get",
+        "summary": "Get a single ActivityStatus by key.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityStatus"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ActivityStatuses"
+        ],
+        "operationId": "ActivityStatuses_Update",
+        "summary": "Partially update a ActivityStatus (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActivityStatuses"
+        ],
+        "operationId": "ActivityStatuses_Delete",
+        "summary": "Delete a ActivityStatus.",
+        "parameters": [
+          {
+            "name": "StatusId",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'StatusId' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitySubjectService_GetActivitySubjectList": {
+      "post": {
+        "tags": [
+          "ActivitySubjectService"
+        ],
+        "operationId": "ActivitySubjectService_GetActivitySubjectList",
+        "summary": "Service Layer function import 'ActivitySubjectService_GetActivitySubjectList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivitySubjectParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitySubjectService_GetListByTypeCode": {
+      "post": {
+        "tags": [
+          "ActivitySubjectService"
+        ],
+        "operationId": "ActivitySubjectService_GetListByTypeCode",
+        "summary": "Service Layer function import 'ActivitySubjectService_GetListByTypeCode'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ActivitySubjectParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ActivitySubject": {
+                    "$ref": "#/components/schemas/ActivitySubject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitySubjects": {
+      "get": {
+        "tags": [
+          "ActivitySubjects"
+        ],
+        "operationId": "ActivitySubjects_List",
+        "summary": "Query the ActivitySubjects collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitySubjects_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActivitySubjects"
+        ],
+        "operationId": "ActivitySubjects_Create",
+        "summary": "Create a new ActivitySubject.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitySubject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitySubject"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivitySubjects({Code})": {
+      "get": {
+        "tags": [
+          "ActivitySubjects"
+        ],
+        "operationId": "ActivitySubjects_Get",
+        "summary": "Get a single ActivitySubject by key.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivitySubject"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ActivitySubjects"
+        ],
+        "operationId": "ActivitySubjects_Update",
+        "summary": "Partially update a ActivitySubject (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivitySubject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActivitySubjects"
+        ],
+        "operationId": "ActivitySubjects_Delete",
+        "summary": "Delete a ActivitySubject.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityTypes": {
+      "get": {
+        "tags": [
+          "ActivityTypes"
+        ],
+        "operationId": "ActivityTypes_List",
+        "summary": "Query the ActivityTypes collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityTypes_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ActivityTypes"
+        ],
+        "operationId": "ActivityTypes_Create",
+        "summary": "Create a new ActivityType.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityType"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ActivityTypes({Code})": {
+      "get": {
+        "tags": [
+          "ActivityTypes"
+        ],
+        "operationId": "ActivityTypes_Get",
+        "summary": "Get a single ActivityType by key.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityType"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ActivityTypes"
+        ],
+        "operationId": "ActivityTypes_Update",
+        "summary": "Partially update a ActivityType (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivityType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ActivityTypes"
+        ],
+        "operationId": "ActivityTypes_Delete",
+        "summary": "Delete a ActivityType.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CampaignResponseType": {
+      "get": {
+        "tags": [
+          "CampaignResponseType"
+        ],
+        "operationId": "CampaignResponseType_List",
+        "summary": "Query the CampaignResponseType collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignResponseType_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CampaignResponseType"
+        ],
+        "operationId": "CampaignResponseType_Create",
+        "summary": "Create a new CampaignResponseType.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignResponseType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignResponseType"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CampaignResponseType('{ResponseType}')": {
+      "get": {
+        "tags": [
+          "CampaignResponseType"
+        ],
+        "operationId": "CampaignResponseType_Get",
+        "summary": "Get a single CampaignResponseType by key.",
+        "parameters": [
+          {
+            "name": "ResponseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ResponseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignResponseType"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "CampaignResponseType"
+        ],
+        "operationId": "CampaignResponseType_Update",
+        "summary": "Partially update a CampaignResponseType (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ResponseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ResponseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignResponseType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CampaignResponseType"
+        ],
+        "operationId": "CampaignResponseType_Delete",
+        "summary": "Delete a CampaignResponseType.",
+        "parameters": [
+          {
+            "name": "ResponseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ResponseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CampaignResponseTypeService_GetResponseTypeList": {
+      "post": {
+        "tags": [
+          "CampaignResponseTypeService"
+        ],
+        "operationId": "CampaignResponseTypeService_GetResponseTypeList",
+        "summary": "Service Layer function import 'CampaignResponseTypeService_GetResponseTypeList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CampaignResponseTypeParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Campaigns": {
+      "get": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_List",
+        "summary": "Query the Campaigns collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaigns_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_Create",
+        "summary": "Create a new Campaign.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Campaign"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Campaigns({CampaignNumber})": {
+      "get": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_Get",
+        "summary": "Get a single Campaign by key.",
+        "parameters": [
+          {
+            "name": "CampaignNumber",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CampaignNumber' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Campaign"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_Update",
+        "summary": "Partially update a Campaign (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "CampaignNumber",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CampaignNumber' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Campaign"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_Delete",
+        "summary": "Delete a Campaign.",
+        "parameters": [
+          {
+            "name": "CampaignNumber",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CampaignNumber' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Campaigns({CampaignNumber})/Cancel": {
+      "post": {
+        "tags": [
+          "Campaigns"
+        ],
+        "operationId": "Campaigns_Cancel",
+        "summary": "Bound action 'Cancel' on Campaigns (binding type Campaign).",
+        "parameters": [
+          {
+            "name": "CampaignNumber",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'CampaignNumber' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CampaignsService_GetList": {
+      "post": {
+        "tags": [
+          "CampaignsService"
+        ],
+        "operationId": "CampaignsService_GetList",
+        "summary": "Service Layer function import 'CampaignsService_GetList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CampaignParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/PartnersSetups": {
+      "get": {
+        "tags": [
+          "PartnersSetups"
+        ],
+        "operationId": "PartnersSetups_List",
+        "summary": "Query the PartnersSetups collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartnersSetups_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PartnersSetups"
+        ],
+        "operationId": "PartnersSetups_Create",
+        "summary": "Create a new PartnersSetup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnersSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartnersSetup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/PartnersSetups({PartnerID})": {
+      "get": {
+        "tags": [
+          "PartnersSetups"
+        ],
+        "operationId": "PartnersSetups_Get",
+        "summary": "Get a single PartnersSetup by key.",
+        "parameters": [
+          {
+            "name": "PartnerID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'PartnerID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartnersSetup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PartnersSetups"
+        ],
+        "operationId": "PartnersSetups_Update",
+        "summary": "Partially update a PartnersSetup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "PartnerID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'PartnerID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnersSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PartnersSetups"
+        ],
+        "operationId": "PartnersSetups_Delete",
+        "summary": "Delete a PartnersSetup.",
+        "parameters": [
+          {
+            "name": "PartnerID",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'PartnerID' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/PartnersSetupsService_GetList": {
+      "post": {
+        "tags": [
+          "PartnersSetupsService"
+        ],
+        "operationId": "PartnersSetupsService_GetList",
+        "summary": "Service Layer function import 'PartnersSetupsService_GetList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PartnersSetupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunities": {
+      "get": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_List",
+        "summary": "Query the SalesOpportunities collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunities_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_Create",
+        "summary": "Create a new SalesOpportunities.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunities"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunities"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunities({SequentialNo})": {
+      "get": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_Get",
+        "summary": "Get a single SalesOpportunities by key.",
+        "parameters": [
+          {
+            "name": "SequentialNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequentialNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunities"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_Update",
+        "summary": "Partially update a SalesOpportunities (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequentialNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequentialNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunities"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_Delete",
+        "summary": "Delete a SalesOpportunities.",
+        "parameters": [
+          {
+            "name": "SequentialNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequentialNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunities({SequentialNo})/Close": {
+      "post": {
+        "tags": [
+          "SalesOpportunities"
+        ],
+        "operationId": "SalesOpportunities_Close",
+        "summary": "Bound action 'Close' on SalesOpportunities (binding type SalesOpportunities).",
+        "parameters": [
+          {
+            "name": "SequentialNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequentialNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityCompetitorsSetup": {
+      "get": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetup"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetup_List",
+        "summary": "Query the SalesOpportunityCompetitorsSetup collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityCompetitorsSetup_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetup"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetup_Create",
+        "summary": "Create a new SalesOpportunityCompetitorSetup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityCompetitorSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityCompetitorSetup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityCompetitorsSetup({SequenceNo})": {
+      "get": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetup"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetup_Get",
+        "summary": "Get a single SalesOpportunityCompetitorSetup by key.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityCompetitorSetup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetup"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetup_Update",
+        "summary": "Partially update a SalesOpportunityCompetitorSetup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityCompetitorSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetup"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetup_Delete",
+        "summary": "Delete a SalesOpportunityCompetitorSetup.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList": {
+      "post": {
+        "tags": [
+          "SalesOpportunityCompetitorsSetupService"
+        ],
+        "operationId": "SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList",
+        "summary": "Service Layer function import 'SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SalesOpportunityCompetitorSetupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityInterestsSetup": {
+      "get": {
+        "tags": [
+          "SalesOpportunityInterestsSetup"
+        ],
+        "operationId": "SalesOpportunityInterestsSetup_List",
+        "summary": "Query the SalesOpportunityInterestsSetup collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityInterestsSetup_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOpportunityInterestsSetup"
+        ],
+        "operationId": "SalesOpportunityInterestsSetup_Create",
+        "summary": "Create a new SalesOpportunityInterestSetup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityInterestsSetup({SequenceNo})": {
+      "get": {
+        "tags": [
+          "SalesOpportunityInterestsSetup"
+        ],
+        "operationId": "SalesOpportunityInterestsSetup_Get",
+        "summary": "Get a single SalesOpportunityInterestSetup by key.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesOpportunityInterestsSetup"
+        ],
+        "operationId": "SalesOpportunityInterestsSetup_Update",
+        "summary": "Partially update a SalesOpportunityInterestSetup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesOpportunityInterestsSetup"
+        ],
+        "operationId": "SalesOpportunityInterestsSetup_Delete",
+        "summary": "Delete a SalesOpportunityInterestSetup.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList": {
+      "post": {
+        "tags": [
+          "SalesOpportunityInterestsSetupService"
+        ],
+        "operationId": "SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList",
+        "summary": "Service Layer function import 'SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SalesOpportunityInterestSetupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityReasonsSetup": {
+      "get": {
+        "tags": [
+          "SalesOpportunityReasonsSetup"
+        ],
+        "operationId": "SalesOpportunityReasonsSetup_List",
+        "summary": "Query the SalesOpportunityReasonsSetup collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityReasonsSetup_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOpportunityReasonsSetup"
+        ],
+        "operationId": "SalesOpportunityReasonsSetup_Create",
+        "summary": "Create a new SalesOpportunityReasonSetup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityReasonsSetup({SequenceNo})": {
+      "get": {
+        "tags": [
+          "SalesOpportunityReasonsSetup"
+        ],
+        "operationId": "SalesOpportunityReasonsSetup_Get",
+        "summary": "Get a single SalesOpportunityReasonSetup by key.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesOpportunityReasonsSetup"
+        ],
+        "operationId": "SalesOpportunityReasonsSetup_Update",
+        "summary": "Partially update a SalesOpportunityReasonSetup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesOpportunityReasonsSetup"
+        ],
+        "operationId": "SalesOpportunityReasonsSetup_Delete",
+        "summary": "Delete a SalesOpportunityReasonSetup.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList": {
+      "post": {
+        "tags": [
+          "SalesOpportunityReasonsSetupService"
+        ],
+        "operationId": "SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList",
+        "summary": "Service Layer function import 'SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SalesOpportunityReasonSetupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunitySourcesSetup": {
+      "get": {
+        "tags": [
+          "SalesOpportunitySourcesSetup"
+        ],
+        "operationId": "SalesOpportunitySourcesSetup_List",
+        "summary": "Query the SalesOpportunitySourcesSetup collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunitySourcesSetup_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOpportunitySourcesSetup"
+        ],
+        "operationId": "SalesOpportunitySourcesSetup_Create",
+        "summary": "Create a new SalesOpportunitySourceSetup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunitySourcesSetup({SequenceNo})": {
+      "get": {
+        "tags": [
+          "SalesOpportunitySourcesSetup"
+        ],
+        "operationId": "SalesOpportunitySourcesSetup_Get",
+        "summary": "Get a single SalesOpportunitySourceSetup by key.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesOpportunitySourcesSetup"
+        ],
+        "operationId": "SalesOpportunitySourcesSetup_Update",
+        "summary": "Partially update a SalesOpportunitySourceSetup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesOpportunitySourcesSetup"
+        ],
+        "operationId": "SalesOpportunitySourcesSetup_Delete",
+        "summary": "Delete a SalesOpportunitySourceSetup.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList": {
+      "post": {
+        "tags": [
+          "SalesOpportunitySourcesSetupService"
+        ],
+        "operationId": "SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList",
+        "summary": "Service Layer function import 'SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SalesOpportunitySourceSetupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesStages": {
+      "get": {
+        "tags": [
+          "SalesStages"
+        ],
+        "operationId": "SalesStages_List",
+        "summary": "Query the SalesStages collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesStages_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesStages"
+        ],
+        "operationId": "SalesStages_Create",
+        "summary": "Create a new SalesStage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesStage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesStage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SalesStages({SequenceNo})": {
+      "get": {
+        "tags": [
+          "SalesStages"
+        ],
+        "operationId": "SalesStages_Get",
+        "summary": "Get a single SalesStage by key.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SalesStage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SalesStages"
+        ],
+        "operationId": "SalesStages_Update",
+        "summary": "Partially update a SalesStage (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesStage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SalesStages"
+        ],
+        "operationId": "SalesStages_Delete",
+        "summary": "Delete a SalesStage.",
+        "parameters": [
+          {
+            "name": "SequenceNo",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'SequenceNo' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TargetGroups": {
+      "get": {
+        "tags": [
+          "TargetGroups"
+        ],
+        "operationId": "TargetGroups_List",
+        "summary": "Query the TargetGroups collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TargetGroups_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TargetGroups"
+        ],
+        "operationId": "TargetGroups_Create",
+        "summary": "Create a new TargetGroup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TargetGroup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TargetGroup"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TargetGroups('{TargetGroupCode}')": {
+      "get": {
+        "tags": [
+          "TargetGroups"
+        ],
+        "operationId": "TargetGroups_Get",
+        "summary": "Get a single TargetGroup by key.",
+        "parameters": [
+          {
+            "name": "TargetGroupCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TargetGroupCode' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TargetGroup"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "TargetGroups"
+        ],
+        "operationId": "TargetGroups_Update",
+        "summary": "Partially update a TargetGroup (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "TargetGroupCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TargetGroupCode' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TargetGroup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TargetGroups"
+        ],
+        "operationId": "TargetGroups_Delete",
+        "summary": "Delete a TargetGroup.",
+        "parameters": [
+          {
+            "name": "TargetGroupCode",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'TargetGroupCode' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TargetGroupsService_GetList": {
+      "post": {
+        "tags": [
+          "TargetGroupsService"
+        ],
+        "operationId": "TargetGroupsService_GetList",
+        "summary": "Service Layer function import 'TargetGroupsService_GetList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TargetGroupParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "B1SESSION",
+        "description": "Session cookie returned by POST /Login."
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated navigation properties to expand.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "required": false,
+        "description": "OData filter expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "required": false,
+        "description": "Set to 'allpages' to include the total count (odata.count).",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "required": false,
+        "description": "OData orderby expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "required": false,
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated list of properties to return.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "required": false,
+        "description": "Number of records to skip (paging).",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "required": false,
+        "description": "Maximum number of records to return.",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "schemas": {
+      "Activities_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "Activity": {
+        "type": "object",
+        "properties": {
+          "ActivityCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CardCode": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "ActivityDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ActivityTime": {
+            "type": "string"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Closed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "CloseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Phone": {
+            "type": "string"
+          },
+          "Fax": {
+            "type": "string"
+          },
+          "Subject": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocType": {
+            "type": "string"
+          },
+          "DocNum": {
+            "type": "string"
+          },
+          "DocEntry": {
+            "type": "string"
+          },
+          "Priority": {
+            "$ref": "#/components/schemas/BoMsgPriorities"
+          },
+          "Details": {
+            "type": "string"
+          },
+          "Activity": {
+            "$ref": "#/components/schemas/BoActivities"
+          },
+          "ActivityType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Location": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartTime": {
+            "type": "string"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "Duration": {
+            "type": "number",
+            "format": "double"
+          },
+          "DurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "SalesEmployee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ContactPersonCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandledBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Reminder": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderPeriod": {
+            "type": "number",
+            "format": "double"
+          },
+          "ReminderType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "City": {
+            "type": "string"
+          },
+          "PersonalFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "ParentObjectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ParentObjectType": {
+            "type": "string"
+          },
+          "Room": {
+            "type": "string"
+          },
+          "InactiveFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "State": {
+            "type": "string"
+          },
+          "PreviousActivity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TentativeFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "EndDueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "DocTypeEx": {
+            "type": "string"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecurrencePattern": {
+            "$ref": "#/components/schemas/RecurrencePatternEnum"
+          },
+          "EndType": {
+            "$ref": "#/components/schemas/EndTypeEnum"
+          },
+          "SeriesStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "SeriesEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "MaxOccurrence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Interval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Sunday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Monday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Tuesday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Wednesday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Thursday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Friday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Saturday": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "RepeatOption": {
+            "$ref": "#/components/schemas/RepeatOptionEnum"
+          },
+          "BelongedSeriesNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsRemoved": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "AddressName": {
+            "type": "string"
+          },
+          "AddressType": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "HandledByEmployee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecurrenceSequenceSpecifier": {
+            "$ref": "#/components/schemas/RecurrenceSequenceEnum"
+          },
+          "RecurrenceDayInMonth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecurrenceMonth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecurrenceDayOfWeek": {
+            "$ref": "#/components/schemas/RecurrenceDayOfWeekEnum"
+          },
+          "SalesOpportunityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesOpportunityLine": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandledByRecipientList": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Office365EventId": {
+            "type": "string"
+          },
+          "DataVersion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UserSignature": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UserSignature2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EmailedFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "CheckInListParams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CheckInParams"
+            }
+          },
+          "ActivityMultipleRecipients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityMultipleRecipient"
+            }
+          },
+          "ActivitySubject": {
+            "$ref": "#/components/schemas/ActivitySubject"
+          },
+          "ActivityType2": {
+            "$ref": "#/components/schemas/ActivityType"
+          },
+          "ActivityLocation": {
+            "$ref": "#/components/schemas/ActivityLocation"
+          },
+          "ActivityStatus": {
+            "$ref": "#/components/schemas/ActivityStatus"
+          },
+          "ActivityRecipientList": {
+            "$ref": "#/components/schemas/ActivityRecipientList"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ActivityInstanceParams": {
+        "type": "object",
+        "properties": {
+          "ActivityCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InstanceDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityInstancesListParams": {
+        "type": "object",
+        "properties": {
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "InstanceCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityLocation": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ActivityLocations_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityLocation"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ActivityMultipleRecipient": {
+        "type": "object",
+        "properties": {
+          "LineNumer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecipientType": {
+            "$ref": "#/components/schemas/ActivityRecipientObjTypeEnum"
+          },
+          "RecipientCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ActivityParams": {
+        "type": "object",
+        "properties": {
+          "ActivityCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CardCode": {
+            "type": "string"
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Closed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "DocType": {
+            "type": "string"
+          },
+          "DocNum": {
+            "type": "string"
+          },
+          "DocEntry": {
+            "type": "string"
+          },
+          "Priority": {
+            "$ref": "#/components/schemas/BoMsgPriorities"
+          },
+          "Details": {
+            "type": "string"
+          },
+          "Activity": {
+            "$ref": "#/components/schemas/BoActivities"
+          },
+          "StartTime": {
+            "type": "string"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "HandledBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "City": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "Room": {
+            "type": "string"
+          },
+          "InactiveFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "TentativeFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "EndDueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "SalesOpportunityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesOpportunityLine": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EmailedFlag": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityRecipient": {
+        "type": "object",
+        "properties": {
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecipientType": {
+            "$ref": "#/components/schemas/RecipientTypeEnum"
+          },
+          "RecipientCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityRecipientList": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsMultiple": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ActivityRecipientCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityRecipient"
+            }
+          },
+          "Activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityRecipientListParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsMultiple": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityRecipientLists_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityRecipientList"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ActivityRecipientObjTypeEnum": {
+        "type": "string",
+        "enum": [
+          "arotUser",
+          "arotEmployee",
+          "arotRecipientList"
+        ],
+        "description": "OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "ActivityStatus": {
+        "type": "object",
+        "properties": {
+          "StatusDescription": {
+            "type": "string"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StatusName": {
+            "type": "string"
+          },
+          "Activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ActivityStatuses_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityStatus"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ActivitySubject": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ActivityType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsActive": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ActivityType2": {
+            "$ref": "#/components/schemas/ActivityType"
+          },
+          "Activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivitySubjectParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivitySubjects_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivitySubject"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ActivityType": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "ActivitySubjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivitySubject"
+            }
+          },
+          "Activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ActivityTypes_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "BoAPARDocumentTypes": {
+        "type": "string",
+        "enum": [
+          "bodt_Invoice",
+          "bodt_CreditNote",
+          "bodt_DeliveryNote",
+          "bodt_Return",
+          "bodt_Order",
+          "bodt_PurchaseInvoice",
+          "bodt_PurchaseCreditNote",
+          "bodt_PurchaseDeliveryNote",
+          "bodt_PurchaseReturn",
+          "bodt_PurchaseOrder",
+          "bodt_Quotation",
+          "bodt_CorrectionAPInvoice",
+          "bodt_CorrectionARInvoice",
+          "bodt_Zero",
+          "bodt_MinusOne",
+          "bodt_PurchaseQutation"
+        ],
+        "description": "OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoActivities": {
+        "type": "string",
+        "enum": [
+          "cn_Conversation",
+          "cn_Meeting",
+          "cn_Task",
+          "cn_Other",
+          "cn_Note",
+          "cn_Campaign",
+          "cn_Email"
+        ],
+        "description": "OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name."
+      },
+      "BoAddressType": {
+        "type": "string",
+        "enum": [
+          "bo_ShipTo",
+          "bo_BillTo"
+        ],
+        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name."
+      },
+      "BoDurations": {
+        "type": "string",
+        "enum": [
+          "du_Seconds",
+          "du_Minuts",
+          "du_Hours",
+          "du_Days"
+        ],
+        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name."
+      },
+      "BoMsgPriorities": {
+        "type": "string",
+        "enum": [
+          "pr_Low",
+          "pr_Normal",
+          "pr_High"
+        ],
+        "description": "OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name."
+      },
+      "BoSoClosedInTypes": {
+        "type": "string",
+        "enum": [
+          "sos_Months",
+          "sos_Weeks",
+          "sos_Days"
+        ],
+        "description": "OData EnumType 'BoSoClosedInTypes'. Serialised by the Service Layer as the member name."
+      },
+      "BoSoOsStatus": {
+        "type": "string",
+        "enum": [
+          "sos_Open",
+          "sos_Missed",
+          "sos_Sold"
+        ],
+        "description": "OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name."
+      },
+      "BoSoStatus": {
+        "type": "string",
+        "enum": [
+          "so_Open",
+          "so_Closed"
+        ],
+        "description": "OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name."
+      },
+      "BoYesNoEnum": {
+        "type": "string",
+        "enum": [
+          "tNO",
+          "tYES"
+        ],
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
+      },
+      "Campaign": {
+        "type": "object",
+        "properties": {
+          "CampaignNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CampaignName": {
+            "type": "string"
+          },
+          "CampaignType": {
+            "$ref": "#/components/schemas/CampaignTypeEnum"
+          },
+          "TargetGroup": {
+            "type": "string"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/CampaignStatusEnum"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FinishDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "GeneratedByWizard": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "AttachementsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TargetGroupType": {
+            "$ref": "#/components/schemas/TargetGroupTypeEnum"
+          },
+          "CampaignBusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignBusinessPartner"
+            }
+          },
+          "CampaignItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignItem"
+            }
+          },
+          "CampaignPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignPartner"
+            }
+          },
+          "TargetGroup2": {
+            "$ref": "#/components/schemas/TargetGroup"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CampaignAssignToEnum": {
+        "type": "string",
+        "enum": [
+          "catUser",
+          "catEmployee"
+        ],
+        "description": "OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name."
+      },
+      "CampaignBusinessPartner": {
+        "type": "object",
+        "properties": {
+          "CampaignNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CampaignLineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPCode": {
+            "type": "string"
+          },
+          "BPName": {
+            "type": "string"
+          },
+          "BPGroupName": {
+            "type": "string"
+          },
+          "BPIndustryName": {
+            "type": "string"
+          },
+          "BPStatus": {
+            "type": "string"
+          },
+          "ContactCode": {
+            "type": "string"
+          },
+          "ContactTitle": {
+            "type": "string"
+          },
+          "ContactPosition": {
+            "type": "string"
+          },
+          "ContactEmail": {
+            "type": "string"
+          },
+          "ContactTelephone": {
+            "type": "string"
+          },
+          "ContactMobile": {
+            "type": "string"
+          },
+          "ContactFax": {
+            "type": "string"
+          },
+          "ContactAddress": {
+            "type": "string"
+          },
+          "Response": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "RelatedSalesOpportunity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Building": {
+            "type": "string"
+          },
+          "DocType": {
+            "$ref": "#/components/schemas/LinkedDocTypeEnum"
+          },
+          "IsShowLinkedDoc": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "DocNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "MiddleName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "AddressID": {
+            "type": "string"
+          },
+          "AddressType": {
+            "type": "string"
+          },
+          "AddressName2": {
+            "type": "string"
+          },
+          "AddressName3": {
+            "type": "string"
+          },
+          "FederalTaxID": {
+            "type": "string"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "CreateActivity": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "AssignTo": {
+            "$ref": "#/components/schemas/CampaignAssignToEnum"
+          },
+          "AssignName": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResponseType": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CampaignItem": {
+        "type": "object",
+        "properties": {
+          "CampaignNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CampaignLineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ItemCode": {
+            "type": "string"
+          },
+          "ItemName": {
+            "type": "string"
+          },
+          "ItemType": {
+            "$ref": "#/components/schemas/CampaignItemTypeEnum"
+          },
+          "ItemGroup": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CampaignItemTypeEnum": {
+        "type": "string",
+        "enum": [
+          "citItems",
+          "citLabel",
+          "citTravel"
+        ],
+        "description": "OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "CampaignParams": {
+        "type": "object",
+        "properties": {
+          "CampaignNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CampaignName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignPartner": {
+        "type": "object",
+        "properties": {
+          "CampaignNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CampaignLineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PartnerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelationshipCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelatedBP": {
+            "type": "string"
+          },
+          "Details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CampaignResponseType": {
+        "type": "object",
+        "properties": {
+          "ResponseTypeDescription": {
+            "type": "string"
+          },
+          "ResponseType": {
+            "type": "string"
+          },
+          "IsActive": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignResponseTypeParams": {
+        "type": "object",
+        "properties": {
+          "ResponseType": {
+            "type": "string"
+          },
+          "ResponseTypeDescription": {
+            "type": "string"
+          },
+          "IsActive": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignResponseType_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignResponseType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "CampaignStatusEnum": {
+        "type": "string",
+        "enum": [
+          "csOpen",
+          "csFinished",
+          "csCanceled"
+        ],
+        "description": "OData EnumType 'CampaignStatusEnum'. Serialised by the Service Layer as the member name."
+      },
+      "CampaignTypeEnum": {
+        "type": "string",
+        "enum": [
+          "ctEmail",
+          "ctMail",
+          "ctFax",
+          "ctPhoneCall",
+          "ctMeeting",
+          "ctSMS",
+          "ctWeb",
+          "ctOthers"
+        ],
+        "description": "OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "Campaigns_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Campaign"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "CheckInParams": {
+        "type": "object",
+        "properties": {
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Time": {
+            "type": "string"
+          },
+          "Location": {
+            "type": "string"
+          },
+          "Latitude": {
+            "type": "string"
+          },
+          "Longitude": {
+            "type": "string"
+          },
+          "HandledBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandledByEmployee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RecipientType": {
+            "type": "string"
+          },
+          "RecipientName": {
+            "type": "string"
+          },
+          "EmailAddress": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EndTypeEnum": {
+        "type": "string",
+        "enum": [
+          "etNoEndDate",
+          "etByCounter",
+          "etByDate"
+        ],
+        "description": "OData EnumType 'EndTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "LinkedDocTypeEnum": {
+        "type": "string",
+        "enum": [
+          "ldtEmptyLink",
+          "ldtSalesOpportunitiesLink",
+          "ldtSalesQuotationsLink",
+          "ldtSalesOrdersLink",
+          "ldtDeliveriesLink",
+          "ldtARInvoicesLink"
+        ],
+        "description": "OData EnumType 'LinkedDocTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "OpportunityTypeEnum": {
+        "type": "string",
+        "enum": [
+          "boOpSales",
+          "boOpPurchasing"
+        ],
+        "description": "OData EnumType 'OpportunityTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "PartnersSetup": {
+        "type": "object",
+        "properties": {
+          "PartnerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "DefaultRelationship": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelatedBP": {
+            "type": "string"
+          },
+          "Details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PartnersSetupParams": {
+        "type": "object",
+        "properties": {
+          "PartnerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "DefaultRelationship": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelatedBP": {
+            "type": "string"
+          },
+          "Details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PartnersSetups_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PartnersSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "RecipientTypeEnum": {
+        "type": "string",
+        "enum": [
+          "rtUser",
+          "rtEmployee"
+        ],
+        "description": "OData EnumType 'RecipientTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "RecurrenceDayOfWeekEnum": {
+        "type": "string",
+        "enum": [
+          "rdowDay",
+          "rdowWeekDay",
+          "rdowWeekendDay",
+          "rdowSun",
+          "rdowMon",
+          "rdowTue",
+          "rdowWed",
+          "rdowThu",
+          "rdowFri",
+          "rdowSat"
+        ],
+        "description": "OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name."
+      },
+      "RecurrencePatternEnum": {
+        "type": "string",
+        "enum": [
+          "rpNone",
+          "rpDaily",
+          "rpWeekly",
+          "rpMonthly",
+          "rpAnnually"
+        ],
+        "description": "OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name."
+      },
+      "RecurrenceSequenceEnum": {
+        "type": "string",
+        "enum": [
+          "rsFirst",
+          "rsSecond",
+          "rsThird",
+          "rsFourth",
+          "rsLast"
+        ],
+        "description": "OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name."
+      },
+      "RepeatOptionEnum": {
+        "type": "string",
+        "enum": [
+          "roByDate",
+          "roByWeekDay"
+        ],
+        "description": "OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name."
+      },
+      "SalesOpportunities": {
+        "type": "object",
+        "properties": {
+          "SequentialNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CardCode": {
+            "type": "string"
+          },
+          "SalesPerson": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ContactPerson": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Source": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InterestField1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InterestField2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InterestField3": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InterestLevel": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "PredictedClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "MaxLocalTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "MaxSystemTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "WeightedSumLC": {
+            "type": "number",
+            "format": "double"
+          },
+          "WeightedSumSC": {
+            "type": "number",
+            "format": "double"
+          },
+          "GrossProfit": {
+            "type": "number",
+            "format": "double"
+          },
+          "GrossProfitTotalLocal": {
+            "type": "number",
+            "format": "double"
+          },
+          "GrossProfitTotalSystem": {
+            "type": "number",
+            "format": "double"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/BoSoOsStatus"
+          },
+          "ReasonForClosing": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TotalAmountLocal": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalAmounSystem": {
+            "type": "number",
+            "format": "double"
+          },
+          "ClosingGrossProfitLocal": {
+            "type": "number",
+            "format": "double"
+          },
+          "ClosingGrossProfitSystem": {
+            "type": "number",
+            "format": "double"
+          },
+          "ClosingPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "CurrentStageNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CurrentStageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "OpportunityName": {
+            "type": "string"
+          },
+          "Industry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LinkedDocumentType": {
+            "type": "string"
+          },
+          "DataOwnershipfield": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StatusRemarks": {
+            "type": "string"
+          },
+          "ProjectCode": {
+            "type": "string"
+          },
+          "BPChanelName": {
+            "type": "string"
+          },
+          "UserSignature": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CustomerName": {
+            "type": "string"
+          },
+          "DocumentCheckbox": {
+            "type": "string"
+          },
+          "LinkedDocumentNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Territory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "BPChannelContact": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPChanelCode": {
+            "type": "string"
+          },
+          "ClosingType": {
+            "$ref": "#/components/schemas/BoSoClosedInTypes"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "OpportunityType": {
+            "$ref": "#/components/schemas/OpportunityTypeEnum"
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "UpdateTime": {
+            "type": "string"
+          },
+          "SalesOpportunitiesLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitiesLine"
+            }
+          },
+          "SalesOpportunitiesCompetition": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitiesCompetitionItem"
+            }
+          },
+          "SalesOpportunitiesPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitiesPartner"
+            }
+          },
+          "SalesOpportunitiesInterests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitiesInterest"
+            }
+          },
+          "SalesOpportunitiesReasons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitiesReason"
+            }
+          },
+          "SalesOpportunitySourceSetup": {
+            "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+          },
+          "SalesOpportunityInterestSetup": {
+            "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+          },
+          "SalesOpportunityReasonSetup": {
+            "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+          },
+          "SalesStage": {
+            "$ref": "#/components/schemas/SalesStage"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunitiesCompetitionItem": {
+        "type": "object",
+        "properties": {
+          "RowNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Competition": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Details": {
+            "type": "string"
+          },
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "WonOrLost": {
+            "type": "string"
+          },
+          "ThreatLevel": {
+            "$ref": "#/components/schemas/ThreatLevelEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunitiesInterest": {
+        "type": "object",
+        "properties": {
+          "RowNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PrimaryInterest": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "InterestId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunitiesLine": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesPerson": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "StageKey": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PercentageRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "MaxLocalTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "MaxSystemTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "Contact": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/BoSoStatus"
+          },
+          "WeightedAmountLocal": {
+            "type": "number",
+            "format": "double"
+          },
+          "WeightedAmountSystem": {
+            "type": "number",
+            "format": "double"
+          },
+          "DocumentNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocumentType": {
+            "$ref": "#/components/schemas/BoAPARDocumentTypes"
+          },
+          "DocumentCheckbox": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ContactPerson": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPChanelName": {
+            "type": "string"
+          },
+          "BPChanelCode": {
+            "type": "string"
+          },
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DataOwnershipfield": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPChannelContact": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunitiesPartner": {
+        "type": "object",
+        "properties": {
+          "RowNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Partners": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Details": {
+            "type": "string"
+          },
+          "RelationshipCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunitiesReason": {
+        "type": "object",
+        "properties": {
+          "RowNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Reason": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesOpportunities_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunities"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "SalesOpportunityCompetitorSetup": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "ThreatLevel": {
+            "$ref": "#/components/schemas/ThreatLevelEnum"
+          },
+          "Details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityCompetitorSetupParams": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "ThreatLevel": {
+            "$ref": "#/components/schemas/ThreatLevelEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityCompetitorsSetup_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunityCompetitorSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "SalesOpportunityInterestSetup": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Sort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesOpportunities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunities"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityInterestSetupParams": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityInterestsSetup_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunityInterestSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "SalesOpportunityReasonSetup": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Sort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesOpportunities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunities"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityReasonSetupParams": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunityReasonsSetup_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunityReasonSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "SalesOpportunitySourceSetup": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Sort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesOpportunities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunities"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunitySourceSetupParams": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalesOpportunitySourcesSetup_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunitySourceSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "SalesStage": {
+        "type": "object",
+        "properties": {
+          "SequenceNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Stageno": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ClosingPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "Cancelled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsSales": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsPurchasing": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SalesOpportunities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesOpportunities"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "SalesStages_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalesStage"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceLayerError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "message": {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "TargetGroup": {
+        "type": "object",
+        "properties": {
+          "TargetGroupCode": {
+            "type": "string"
+          },
+          "TargetGroupName": {
+            "type": "string"
+          },
+          "TargetGroupType": {
+            "$ref": "#/components/schemas/TargetGroupTypeEnum"
+          },
+          "TargetGroupsDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TargetGroupsDetail"
+            }
+          },
+          "Campaigns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Campaign"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "TargetGroupParams": {
+        "type": "object",
+        "properties": {
+          "TargetGroupCode": {
+            "type": "string"
+          },
+          "TargetGroupName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TargetGroupTypeEnum": {
+        "type": "string",
+        "enum": [
+          "tgtCustomer",
+          "tgtVendor"
+        ],
+        "description": "OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "TargetGroupsDetail": {
+        "type": "object",
+        "properties": {
+          "TargetGroupCode": {
+            "type": "string"
+          },
+          "BusinessPartnerCode": {
+            "type": "string"
+          },
+          "BusinessPartnerName": {
+            "type": "string"
+          },
+          "GroupCode": {
+            "type": "string"
+          },
+          "Industry": {
+            "type": "string"
+          },
+          "ActiveStatus": {
+            "$ref": "#/components/schemas/TargetGroupsDetailStatusEnum"
+          },
+          "ContactPerson": {
+            "type": "string"
+          },
+          "Title": {
+            "type": "string"
+          },
+          "Position": {
+            "type": "string"
+          },
+          "E_Mail": {
+            "type": "string"
+          },
+          "Telephone": {
+            "type": "string"
+          },
+          "MobilePhone": {
+            "type": "string"
+          },
+          "Fax": {
+            "type": "string"
+          },
+          "Address": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Building": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TargetGroupsDetailStatusEnum": {
+        "type": "string",
+        "enum": [
+          "tdsActive",
+          "tdsInactive"
+        ],
+        "description": "OData EnumType 'TargetGroupsDetailStatusEnum'. Serialised by the Service Layer as the member name."
+      },
+      "TargetGroups_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TargetGroup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ThreatLevelEnum": {
+        "type": "string",
+        "enum": [
+          "tlLow",
+          "tlMedium",
+          "tlHigh"
+        ],
+        "description": "OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name."
+      }
+    }
+  }
+}
