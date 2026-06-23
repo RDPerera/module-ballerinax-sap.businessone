@@ -25,7 +25,17 @@ isolated function hasSession(http:Request req) returns boolean {
     return cookies is string && cookies.includes("B1SESSION=" + SESSION);
 }
 
-listener http:Listener salesMockListener = new (9092);
+// Served over TLS with the shared self-signed certificate (ballerina/resources),
+// so the mock mirrors the real Service Layer's HTTPS endpoint. Paths are relative
+// to the package directory, which is the working directory during `bal test`.
+listener http:Listener salesMockListener = new (9092,
+    secureSocket = {
+        key: {
+            certFile: "../resources/public.crt",
+            keyFile: "../resources/private.key"
+        }
+    }
+);
 
 service / on salesMockListener {
 

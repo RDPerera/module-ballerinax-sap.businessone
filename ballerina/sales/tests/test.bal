@@ -24,7 +24,7 @@ import ballerina/test;
 // read-only tests against a live Service Layer instead.
 final boolean isLiveServer = os:getEnv("B1_SERVICE_URL") != "";
 
-final string serviceUrl = isLiveServer ? os:getEnv("B1_SERVICE_URL") : "http://localhost:9092/b1s/v1";
+final string serviceUrl = isLiveServer ? os:getEnv("B1_SERVICE_URL") : "https://localhost:9092/b1s/v1";
 final string companyDb = isLiveServer ? os:getEnv("B1_COMPANY_DB") : "TEST_DB";
 final string username = isLiveServer ? os:getEnv("B1_USERNAME") : "tester";
 final string password = isLiveServer ? os:getEnv("B1_PASSWORD") : "secret";
@@ -38,7 +38,8 @@ function initializeClient() returns error? {
         b1 = check new ({companyDb, username, password}, {secureSocket: {enable: false}}, serviceUrl);
     } else {
         log:printInfo("Running sales connector tests against the mock Service Layer");
-        b1 = check new ({companyDb, username, password}, serviceUrl = serviceUrl);
+        // Trust the mock's shared self-signed certificate.
+        b1 = check new ({companyDb, username, password}, {secureSocket: {cert: "../resources/public.crt"}}, serviceUrl);
     }
 }
 

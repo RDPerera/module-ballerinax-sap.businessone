@@ -18,9 +18,13 @@ import sap.businessone.mock as _;
 import ballerina/http;
 import ballerina/test;
 
-const string MOCK_URL = "http://localhost:9091/b1s/v1";
+const string MOCK_URL = "https://localhost:9091/b1s/v1";
 
-final http:Client controlClient = check new ("http://localhost:9091");
+// The mock is served over TLS with the shared self-signed certificate, so
+// clients in these tests trust that certificate.
+final http:ClientConfiguration MOCK_CONFIG = {secureSocket: {cert: "../resources/public.crt"}};
+
+final http:Client controlClient = check new ("https://localhost:9091", MOCK_CONFIG);
 
 type Item record {
     string ItemCode?;
@@ -34,7 +38,7 @@ type ItemsEnvelope record {
 
 @test:Config {}
 function testGetWithDataBinding() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     ItemsEnvelope items = check b1->get("/Items");
     test:assertEquals((items.value ?: []).length(), 2, "expected two mock items");
     test:assertEquals((items.value ?: [])[0].ItemCode, "A00001");
@@ -45,28 +49,28 @@ function testGetWithQueryParamsKeepsSession() returns error? {
     // Regression guard: session cookies must be attached on requests that
     // carry query strings (the http module cookie store fails to do this for
     // path-scoped cookies, which is why the client manages cookies itself).
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     ItemsEnvelope items = check b1->/Items(targetType = ItemsEnvelope, \$top = 2, \$select = "ItemCode");
     test:assertEquals((items.value ?: []).length(), 2);
 }
 
 @test:Config {}
 function testGetSingleByODataKey() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     Item item = check b1->get("/Items('A00001')");
     test:assertEquals(item.ItemName, "Mock Printer");
 }
 
 @test:Config {}
 function testPostEcho() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     Item created = check b1->post("/Items", {ItemCode: "N10001", ItemName: "New Item"});
     test:assertEquals(created.ItemCode, "N10001");
 }
 
 @test:Config {}
 function testLoginFailure() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "wrong"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "wrong"}, MOCK_CONFIG);
     ItemsEnvelope|ClientError items = b1->get("/Items");
     test:assertTrue(items is LoginFailure, "expected a LoginFailure error");
     if items is error {
@@ -76,7 +80,7 @@ function testLoginFailure() returns error? {
 
 @test:Config {}
 function testSessionExpiryTriggersRelogin() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     ItemsEnvelope _ = check b1->get("/Items");
     record {int count;} before = check controlClient->get("/control/loginCount");
 
@@ -92,14 +96,14 @@ function testSessionExpiryTriggersRelogin() returns error? {
 
 @test:Config {}
 function testHead() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     http:Response res = check b1->head("/Items");
     test:assertEquals(res.statusCode, 200);
 }
 
 @test:Config {}
 function testLogout() returns error? {
-    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"});
+    Client b1 = check new (MOCK_URL, {companyDb: "TEST_DB", username: "tester", password: "secret"}, MOCK_CONFIG);
     ItemsEnvelope _ = check b1->get("/Items");
     check b1->logout();
     // A further call simply starts a fresh session.
