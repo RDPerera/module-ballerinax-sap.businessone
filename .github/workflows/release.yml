@@ -1,8 +1,9 @@
 name: Publish Release
 
-# Releases one package. The wrapper (businessone) must be released to
-# Ballerina Central before the first release of any connector that depends
-# on it; use "Publish Release (All Packages)" for an ordered full release.
+# Releases one package using the standard ballerina-library release template.
+# The wrapper (businessone) must be released to Ballerina Central before the
+# first release of any connector that depends on it; use
+# "Publish Release (All Packages)" for an ordered full release.
 on:
   workflow_dispatch:
     inputs:
@@ -31,7 +32,8 @@ jobs:
   call_workflow:
     name: Run Release Workflow
     if: ${{ github.repository_owner == 'ballerina-platform' }}
-    uses: ./.github/workflows/release-template.yml
+    uses: ballerina-platform/ballerina-library/.github/workflows/s4hana-release-template.yml@main
     secrets: inherit
     with:
-      package-name: ${{ inputs.package }}
+      hana-connector-group: businessone
+      hana-connector-name: ${{ inputs.package }}

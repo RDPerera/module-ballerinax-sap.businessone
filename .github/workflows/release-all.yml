@@ -1,8 +1,9 @@
 name: Publish Release (All Packages)
 
-# Releases every package in dependency order: the sap.businessone wrapper
-# first, then each module connector sequentially (max-parallel: 1, because
-# every release pushes a version-bump commit and a release branch).
+# Releases every package in dependency order using the standard
+# ballerina-library release template: the sap.businessone wrapper first, then
+# each module connector sequentially (max-parallel: 1, because every release
+# pushes a version-bump commit and a release branch).
 #
 # fail-fast is disabled so one failing connector does not block the rest;
 # re-run the single-package "Publish Release" workflow for any that failed.
@@ -19,16 +20,15 @@ jobs:
   release-wrapper:
     name: Release Wrapper (sap.businessone)
     if: ${{ github.repository_owner == 'ballerina-platform' && inputs.release-wrapper }}
-    uses: ./.github/workflows/release-template.yml
+    uses: ballerina-platform/ballerina-library/.github/workflows/s4hana-release-template.yml@main
     secrets: inherit
     with:
-      package-name: businessone
+      hana-connector-group: businessone
+      hana-connector-name: businessone
 
   release-connectors:
     name: Release Connectors
     needs: release-wrapper
-    # Run even when the wrapper job was skipped (release-wrapper=false),
-    # but not when it failed.
     if: ${{ always() && github.repository_owner == 'ballerina-platform' && needs.release-wrapper.result != 'failure' && needs.release-wrapper.result != 'cancelled' }}
     strategy:
       fail-fast: false
@@ -49,7 +49,8 @@ jobs:
           - service
           - humanresources
           - localization
-    uses: ./.github/workflows/release-template.yml
+    uses: ballerina-platform/ballerina-library/.github/workflows/s4hana-release-template.yml@main
     secrets: inherit
     with:
-      package-name: ${{ matrix.package }}
+      hana-connector-group: businessone
+      hana-connector-name: ${{ matrix.package }}
