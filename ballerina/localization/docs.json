@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Localization & Electronic Documents connector provides APIs for the country-specific and electronic document objects of SAP Business One: electronic documents and file formats, Brazil Nota Fiscal codes, India GST data, Israel deduction documents, and more, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Process electronic documents and communication actions",
+    "Maintain Brazil Nota Fiscal, CEST, and NCM code setup",
+    "Manage India HSN/SAC codes and e-way bill transporters",
+    "Work with Israel deduction (ISD) documents"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.localization;",
+  "client-init": "localization:Client b1Client = check new (",
+  "api-invocation": "localization:ElectronicDocuments_CollectionResponse response = check b1Client->electronicDocumentsList();"
+}

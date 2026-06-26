@@ -1,0 +1,18 @@
+[package]
+org = "wso2"
+name = "open_sales_orders"
+version = "0.1.0"
+distribution = "2201.13.0"
+
+# Resolved from the local Ballerina repository until published to Central.
+[[dependency]]
+org = "ballerinax"
+name = "sap.businessone"
+version = "1.0.0"
+repository = "local"
+
+[[dependency]]
+org = "ballerinax"
+name = "sap.businessone.sales"
+version = "1.0.0"
+repository = "local"

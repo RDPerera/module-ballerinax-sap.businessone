@@ -1,0 +1,11 @@
+{
+  "description": "The SAP Business One Purchasing (A/P) connector provides APIs for the purchasing (A/P) documents of SAP Business One: purchase requests, quotations, orders, goods receipts, returns, invoices, and landed costs, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Create, read, update, close, and cancel purchasing documents",
+    "Process goods receipt POs and A/P invoices",
+    "Manage landed costs and import postings"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.purchasing;",
+  "client-init": "purchasing:Client b1Client = check new (",
+  "api-invocation": "purchasing:PurchaseOrders_CollectionResponse response = check b1Client->purchaseOrdersList();"
+}

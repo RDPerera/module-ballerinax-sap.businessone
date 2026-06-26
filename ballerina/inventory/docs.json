@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Inventory connector provides APIs for the inventory objects of SAP Business One: items, warehouses, price lists, stock transactions, batches, serials, and bin locations, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Manage item master data, groups, and properties",
+    "Post goods receipts, goods issues, stock transfers, and inventory countings",
+    "Maintain price lists, special prices, and discount groups",
+    "Track batch and serial numbers and bin locations"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.inventory;",
+  "client-init": "inventory:Client b1Client = check new (",
+  "api-invocation": "inventory:Items_CollectionResponse response = check b1Client->itemsList();"
+}

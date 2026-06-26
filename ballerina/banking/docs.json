@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Banking & Payments connector provides APIs for the banking objects of SAP Business One: incoming and outgoing payments, deposits, checks, bank statements, and reconciliations, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Create and query incoming and vendor (outgoing) payments",
+    "Process deposits, checks for payment, and bills of exchange",
+    "Work with bank statements and internal reconciliations",
+    "Run the payment wizard objects"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.banking;",
+  "client-init": "banking:Client b1Client = check new (",
+  "api-invocation": "banking:IncomingPayments_CollectionResponse response = check b1Client->incomingPaymentsList();"
+}

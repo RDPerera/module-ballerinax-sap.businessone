@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Sales (A/R) connector provides APIs for the sales (A/R) documents of SAP Business One: quotations, orders, deliveries, returns, invoices, credit memos, and dunning, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Create, read, update, close, and cancel sales documents",
+    "Work with document lines, expenses, and serial/batch allocations",
+    "Manage blanket agreements and sales tax invoices",
+    "Drive document flows such as order-to-invoice"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.sales;",
+  "client-init": "sales:Client b1Client = check new (",
+  "api-invocation": "sales:Orders_CollectionResponse response = check b1Client->ordersList();"
+}

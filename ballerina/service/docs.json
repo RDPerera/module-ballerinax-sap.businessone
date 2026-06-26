@@ -1,0 +1,12 @@
+{
+  "description": "The SAP Business One Service connector provides APIs for the service module objects of SAP Business One: service calls, contracts, customer equipment cards, and the knowledge base, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Create and process service calls with activities and resolutions",
+    "Manage service contracts and contract templates",
+    "Maintain customer equipment cards",
+    "Query and extend the solutions knowledge base"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.service;",
+  "client-init": "service:Client b1Client = check new (",
+  "api-invocation": "service:ServiceCalls_CollectionResponse response = check b1Client->serviceCallsList();"
+}
