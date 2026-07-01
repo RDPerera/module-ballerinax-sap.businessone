@@ -11,12 +11,12 @@
       "description": "SAP Business One Service Layer (OData V3 endpoint).",
       "variables": {
         "server": {
-          "default": "localhost",
-          "description": "Service Layer host."
+          "description": "Service Layer host.",
+          "default": "localhost"
         },
         "port": {
-          "default": "50000",
-          "description": "Service Layer HTTPS port (default 50000)."
+          "description": "Service Layer HTTPS port (default 50000).",
+          "default": "50000"
         }
       }
     }
@@ -32,8 +32,8 @@
         "tags": [
           "ContractTemplates"
         ],
-        "operationId": "ContractTemplates_List",
         "summary": "Query the ContractTemplates collection.",
+        "operationId": "List_ContractTemplates",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -62,11 +62,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ContractTemplates_CollectionResponse"
+                  "$ref": "#/components/schemas/ContractTemplatesCollectionResponse"
                 }
               }
             }
@@ -87,21 +87,21 @@
         "tags": [
           "ContractTemplates"
         ],
-        "operationId": "ContractTemplates_Create",
         "summary": "Create a new ContractTemplate.",
+        "operationId": "Create_ContractTemplates",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ContractTemplate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -123,19 +123,21 @@
         }
       }
     },
-    "/ContractTemplates('{TemplateName}')": {
+    "/ContractTemplates('{templateName}')": {
       "get": {
         "tags": [
           "ContractTemplates"
         ],
-        "operationId": "ContractTemplates_Get",
         "summary": "Get a single ContractTemplate by key.",
+        "operationId": "Get_ContractTemplates",
         "parameters": [
           {
-            "name": "TemplateName",
+            "name": "templateName",
             "in": "path",
+            "description": "Key property 'TemplateName' (Edm.String)",
             "required": true,
-            "description": "Key property 'TemplateName' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -149,7 +151,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -180,36 +182,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ContractTemplates"
         ],
-        "operationId": "ContractTemplates_Update",
-        "summary": "Partially update a ContractTemplate (PATCH/MERGE semantics).",
+        "summary": "Delete a ContractTemplate.",
+        "operationId": "Delete_ContractTemplates",
         "parameters": [
           {
-            "name": "TemplateName",
+            "name": "templateName",
             "in": "path",
+            "description": "Key property 'TemplateName' (Edm.String)",
             "required": true,
-            "description": "Key property 'TemplateName' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ContractTemplate"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -223,26 +217,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ContractTemplates"
         ],
-        "operationId": "ContractTemplates_Delete",
-        "summary": "Delete a ContractTemplate.",
+        "summary": "Partially update a ContractTemplate (PATCH/MERGE semantics).",
+        "operationId": "Update_ContractTemplates",
         "parameters": [
           {
-            "name": "TemplateName",
+            "name": "templateName",
             "in": "path",
+            "description": "Key property 'TemplateName' (Edm.String)",
             "required": true,
-            "description": "Key property 'TemplateName' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContractTemplate"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -262,8 +268,8 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "operationId": "CustomerEquipmentCards_List",
         "summary": "Query the CustomerEquipmentCards collection.",
+        "operationId": "List_CustomerEquipmentCards",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -292,11 +298,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CustomerEquipmentCards_CollectionResponse"
+                  "$ref": "#/components/schemas/CustomerEquipmentCardsCollectionResponse"
                 }
               }
             }
@@ -317,21 +323,21 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "operationId": "CustomerEquipmentCards_Create",
         "summary": "Create a new CustomerEquipmentCard.",
+        "operationId": "Create_CustomerEquipmentCards",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CustomerEquipmentCard"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -353,19 +359,21 @@
         }
       }
     },
-    "/CustomerEquipmentCards({EquipmentCardNum})": {
+    "/CustomerEquipmentCards({equipmentCardNum})": {
       "get": {
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "operationId": "CustomerEquipmentCards_Get",
         "summary": "Get a single CustomerEquipmentCard by key.",
+        "operationId": "Get_CustomerEquipmentCards",
         "parameters": [
           {
-            "name": "EquipmentCardNum",
+            "name": "equipmentCardNum",
             "in": "path",
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -380,7 +388,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -411,37 +419,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "operationId": "CustomerEquipmentCards_Update",
-        "summary": "Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).",
+        "summary": "Delete a CustomerEquipmentCard.",
+        "operationId": "Delete_CustomerEquipmentCards",
         "parameters": [
           {
-            "name": "EquipmentCardNum",
+            "name": "equipmentCardNum",
             "in": "path",
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerEquipmentCard"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -455,27 +455,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "operationId": "CustomerEquipmentCards_Delete",
-        "summary": "Delete a CustomerEquipmentCard.",
+        "summary": "Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).",
+        "operationId": "Update_CustomerEquipmentCards",
         "parameters": [
           {
-            "name": "EquipmentCardNum",
+            "name": "equipmentCardNum",
             "in": "path",
+            "description": "Key property 'EquipmentCardNum' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EquipmentCardNum' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerEquipmentCard"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -495,8 +507,8 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "operationId": "KnowledgeBaseSolutions_List",
         "summary": "Query the KnowledgeBaseSolutions collection.",
+        "operationId": "List_KnowledgeBaseSolutions",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -525,11 +537,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/KnowledgeBaseSolutions_CollectionResponse"
+                  "$ref": "#/components/schemas/KnowledgeBaseSolutionsCollectionResponse"
                 }
               }
             }
@@ -550,21 +562,21 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "operationId": "KnowledgeBaseSolutions_Create",
         "summary": "Create a new KnowledgeBaseSolution.",
+        "operationId": "Create_KnowledgeBaseSolutions",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/KnowledgeBaseSolution"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -586,19 +598,21 @@
         }
       }
     },
-    "/KnowledgeBaseSolutions({SolutionCode})": {
+    "/KnowledgeBaseSolutions({solutionCode})": {
       "get": {
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "operationId": "KnowledgeBaseSolutions_Get",
         "summary": "Get a single KnowledgeBaseSolution by key.",
+        "operationId": "Get_KnowledgeBaseSolutions",
         "parameters": [
           {
-            "name": "SolutionCode",
+            "name": "solutionCode",
             "in": "path",
+            "description": "Key property 'SolutionCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -613,7 +627,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -644,37 +658,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "operationId": "KnowledgeBaseSolutions_Update",
-        "summary": "Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).",
+        "summary": "Delete a KnowledgeBaseSolution.",
+        "operationId": "Delete_KnowledgeBaseSolutions",
         "parameters": [
           {
-            "name": "SolutionCode",
+            "name": "solutionCode",
             "in": "path",
+            "description": "Key property 'SolutionCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KnowledgeBaseSolution"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -688,27 +694,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "operationId": "KnowledgeBaseSolutions_Delete",
-        "summary": "Delete a KnowledgeBaseSolution.",
+        "summary": "Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).",
+        "operationId": "Update_KnowledgeBaseSolutions",
         "parameters": [
           {
-            "name": "SolutionCode",
+            "name": "solutionCode",
             "in": "path",
+            "description": "Key property 'SolutionCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'SolutionCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeBaseSolution"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -728,8 +746,8 @@
         "tags": [
           "Queue"
         ],
-        "operationId": "Queue_List",
         "summary": "Query the Queue collection.",
+        "operationId": "List_Queue",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -758,11 +776,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Queue_CollectionResponse"
+                  "$ref": "#/components/schemas/QueueCollectionResponse"
                 }
               }
             }
@@ -783,21 +801,21 @@
         "tags": [
           "Queue"
         ],
-        "operationId": "Queue_Create",
         "summary": "Create a new Queue.",
+        "operationId": "Create_Queue",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Queue"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -819,19 +837,21 @@
         }
       }
     },
-    "/Queue('{QueueID}')": {
+    "/Queue('{queueID}')": {
       "get": {
         "tags": [
           "Queue"
         ],
-        "operationId": "Queue_Get",
         "summary": "Get a single Queue by key.",
+        "operationId": "Get_Queue",
         "parameters": [
           {
-            "name": "QueueID",
+            "name": "queueID",
             "in": "path",
+            "description": "Key property 'QueueID' (Edm.String)",
             "required": true,
-            "description": "Key property 'QueueID' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -845,7 +865,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -876,36 +896,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Queue"
         ],
-        "operationId": "Queue_Update",
-        "summary": "Partially update a Queue (PATCH/MERGE semantics).",
+        "summary": "Delete a Queue.",
+        "operationId": "Delete_Queue",
         "parameters": [
           {
-            "name": "QueueID",
+            "name": "queueID",
             "in": "path",
+            "description": "Key property 'QueueID' (Edm.String)",
             "required": true,
-            "description": "Key property 'QueueID' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Queue"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -919,26 +931,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Queue"
         ],
-        "operationId": "Queue_Delete",
-        "summary": "Delete a Queue.",
+        "summary": "Partially update a Queue (PATCH/MERGE semantics).",
+        "operationId": "Update_Queue",
         "parameters": [
           {
-            "name": "QueueID",
+            "name": "queueID",
             "in": "path",
+            "description": "Key property 'QueueID' (Edm.String)",
             "required": true,
-            "description": "Key property 'QueueID' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Queue"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -958,8 +982,8 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "operationId": "ServiceCallOrigins_List",
         "summary": "Query the ServiceCallOrigins collection.",
+        "operationId": "List_ServiceCallOrigins",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -988,11 +1012,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallOrigins_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallOriginsCollectionResponse"
                 }
               }
             }
@@ -1013,21 +1037,21 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "operationId": "ServiceCallOrigins_Create",
         "summary": "Create a new ServiceCallOrigin.",
+        "operationId": "Create_ServiceCallOrigins",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallOrigin"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1049,19 +1073,21 @@
         }
       }
     },
-    "/ServiceCallOrigins({OriginID})": {
+    "/ServiceCallOrigins({originID})": {
       "get": {
         "tags": [
           "ServiceCallOrigins"
         ],
-        "operationId": "ServiceCallOrigins_Get",
         "summary": "Get a single ServiceCallOrigin by key.",
+        "operationId": "Get_ServiceCallOrigins",
         "parameters": [
           {
-            "name": "OriginID",
+            "name": "originID",
             "in": "path",
+            "description": "Key property 'OriginID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'OriginID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1076,7 +1102,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1107,37 +1133,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallOrigins"
         ],
-        "operationId": "ServiceCallOrigins_Update",
-        "summary": "Partially update a ServiceCallOrigin (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallOrigin.",
+        "operationId": "Delete_ServiceCallOrigins",
         "parameters": [
           {
-            "name": "OriginID",
+            "name": "originID",
             "in": "path",
+            "description": "Key property 'OriginID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'OriginID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallOrigin"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1151,27 +1169,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallOrigins"
         ],
-        "operationId": "ServiceCallOrigins_Delete",
-        "summary": "Delete a ServiceCallOrigin.",
+        "summary": "Partially update a ServiceCallOrigin (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallOrigins",
         "parameters": [
           {
-            "name": "OriginID",
+            "name": "originID",
             "in": "path",
+            "description": "Key property 'OriginID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'OriginID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallOrigin"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1191,18 +1221,19 @@
         "tags": [
           "ServiceCallOriginsService"
         ],
-        "operationId": "ServiceCallOriginsService_GetServiceCallOriginList",
         "summary": "Service Layer function import 'ServiceCallOriginsService_GetServiceCallOriginList'.",
+        "operationId": "ServiceCallOriginsService_GetServiceCallOriginList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1233,8 +1264,8 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "operationId": "ServiceCallProblemSubTypes_List",
         "summary": "Query the ServiceCallProblemSubTypes collection.",
+        "operationId": "List_ServiceCallProblemSubTypes",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1263,11 +1294,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallProblemSubTypes_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallProblemSubTypesCollectionResponse"
                 }
               }
             }
@@ -1288,21 +1319,21 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "operationId": "ServiceCallProblemSubTypes_Create",
         "summary": "Create a new ServiceCallProblemSubType.",
+        "operationId": "Create_ServiceCallProblemSubTypes",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallProblemSubType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1324,19 +1355,21 @@
         }
       }
     },
-    "/ServiceCallProblemSubTypes({ProblemSubTypeID})": {
+    "/ServiceCallProblemSubTypes({problemSubTypeID})": {
       "get": {
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "operationId": "ServiceCallProblemSubTypes_Get",
         "summary": "Get a single ServiceCallProblemSubType by key.",
+        "operationId": "Get_ServiceCallProblemSubTypes",
         "parameters": [
           {
-            "name": "ProblemSubTypeID",
+            "name": "problemSubTypeID",
             "in": "path",
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1351,7 +1384,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1382,37 +1415,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "operationId": "ServiceCallProblemSubTypes_Update",
-        "summary": "Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallProblemSubType.",
+        "operationId": "Delete_ServiceCallProblemSubTypes",
         "parameters": [
           {
-            "name": "ProblemSubTypeID",
+            "name": "problemSubTypeID",
             "in": "path",
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallProblemSubType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1426,27 +1451,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "operationId": "ServiceCallProblemSubTypes_Delete",
-        "summary": "Delete a ServiceCallProblemSubType.",
+        "summary": "Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallProblemSubTypes",
         "parameters": [
           {
-            "name": "ProblemSubTypeID",
+            "name": "problemSubTypeID",
             "in": "path",
+            "description": "Key property 'ProblemSubTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemSubTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemSubType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1466,18 +1503,19 @@
         "tags": [
           "ServiceCallProblemSubTypesService"
         ],
-        "operationId": "ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList",
         "summary": "Service Layer function import 'ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList'.",
+        "operationId": "ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1508,8 +1546,8 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "operationId": "ServiceCallProblemTypes_List",
         "summary": "Query the ServiceCallProblemTypes collection.",
+        "operationId": "List_ServiceCallProblemTypes",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1538,11 +1576,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallProblemTypes_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallProblemTypesCollectionResponse"
                 }
               }
             }
@@ -1563,21 +1601,21 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "operationId": "ServiceCallProblemTypes_Create",
         "summary": "Create a new ServiceCallProblemType.",
+        "operationId": "Create_ServiceCallProblemTypes",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallProblemType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1599,19 +1637,21 @@
         }
       }
     },
-    "/ServiceCallProblemTypes({ProblemTypeID})": {
+    "/ServiceCallProblemTypes({problemTypeID})": {
       "get": {
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "operationId": "ServiceCallProblemTypes_Get",
         "summary": "Get a single ServiceCallProblemType by key.",
+        "operationId": "Get_ServiceCallProblemTypes",
         "parameters": [
           {
-            "name": "ProblemTypeID",
+            "name": "problemTypeID",
             "in": "path",
+            "description": "Key property 'ProblemTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1626,7 +1666,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1657,37 +1697,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "operationId": "ServiceCallProblemTypes_Update",
-        "summary": "Partially update a ServiceCallProblemType (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallProblemType.",
+        "operationId": "Delete_ServiceCallProblemTypes",
         "parameters": [
           {
-            "name": "ProblemTypeID",
+            "name": "problemTypeID",
             "in": "path",
+            "description": "Key property 'ProblemTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallProblemType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1701,27 +1733,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "operationId": "ServiceCallProblemTypes_Delete",
-        "summary": "Delete a ServiceCallProblemType.",
+        "summary": "Partially update a ServiceCallProblemType (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallProblemTypes",
         "parameters": [
           {
-            "name": "ProblemTypeID",
+            "name": "problemTypeID",
             "in": "path",
+            "description": "Key property 'ProblemTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ProblemTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallProblemType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1741,18 +1785,19 @@
         "tags": [
           "ServiceCallProblemTypesService"
         ],
-        "operationId": "ServiceCallProblemTypesService_GetServiceCallProblemTypeList",
         "summary": "Service Layer function import 'ServiceCallProblemTypesService_GetServiceCallProblemTypeList'.",
+        "operationId": "ServiceCallProblemTypesService_GetServiceCallProblemTypeList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1783,8 +1828,8 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "operationId": "ServiceCallSolutionStatus_List",
         "summary": "Query the ServiceCallSolutionStatus collection.",
+        "operationId": "List_ServiceCallSolutionStatus",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1813,11 +1858,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallSolutionStatus_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallSolutionStatusCollectionResponse"
                 }
               }
             }
@@ -1838,21 +1883,21 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "operationId": "ServiceCallSolutionStatus_Create",
         "summary": "Create a new ServiceCallSolutionStatus.",
+        "operationId": "Create_ServiceCallSolutionStatus",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallSolutionStatus"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1874,19 +1919,21 @@
         }
       }
     },
-    "/ServiceCallSolutionStatus({StatusId})": {
+    "/ServiceCallSolutionStatus({statusId})": {
       "get": {
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "operationId": "ServiceCallSolutionStatus_Get",
         "summary": "Get a single ServiceCallSolutionStatus by key.",
+        "operationId": "Get_ServiceCallSolutionStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1901,7 +1948,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1932,37 +1979,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "operationId": "ServiceCallSolutionStatus_Update",
-        "summary": "Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallSolutionStatus.",
+        "operationId": "Delete_ServiceCallSolutionStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallSolutionStatus"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1976,27 +2015,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "operationId": "ServiceCallSolutionStatus_Delete",
-        "summary": "Delete a ServiceCallSolutionStatus.",
+        "summary": "Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallSolutionStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2016,18 +2067,19 @@
         "tags": [
           "ServiceCallSolutionStatusService"
         ],
-        "operationId": "ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList",
         "summary": "Service Layer function import 'ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList'.",
+        "operationId": "ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2058,8 +2110,8 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "operationId": "ServiceCallStatus_List",
         "summary": "Query the ServiceCallStatus collection.",
+        "operationId": "List_ServiceCallStatus",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2088,11 +2140,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallStatus_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallStatusCollectionResponse"
                 }
               }
             }
@@ -2113,21 +2165,21 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "operationId": "ServiceCallStatus_Create",
         "summary": "Create a new ServiceCallStatus.",
+        "operationId": "Create_ServiceCallStatus",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallStatus"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2149,19 +2201,21 @@
         }
       }
     },
-    "/ServiceCallStatus({StatusId})": {
+    "/ServiceCallStatus({statusId})": {
       "get": {
         "tags": [
           "ServiceCallStatus"
         ],
-        "operationId": "ServiceCallStatus_Get",
         "summary": "Get a single ServiceCallStatus by key.",
+        "operationId": "Get_ServiceCallStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2176,7 +2230,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2207,37 +2261,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallStatus"
         ],
-        "operationId": "ServiceCallStatus_Update",
-        "summary": "Partially update a ServiceCallStatus (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallStatus.",
+        "operationId": "Delete_ServiceCallStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallStatus"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2251,27 +2297,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallStatus"
         ],
-        "operationId": "ServiceCallStatus_Delete",
-        "summary": "Delete a ServiceCallStatus.",
+        "summary": "Partially update a ServiceCallStatus (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallStatus"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2291,18 +2349,19 @@
         "tags": [
           "ServiceCallStatusService"
         ],
-        "operationId": "ServiceCallStatusService_GetServiceCallStatusList",
         "summary": "Service Layer function import 'ServiceCallStatusService_GetServiceCallStatusList'.",
+        "operationId": "ServiceCallStatusService_GetServiceCallStatusList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2333,8 +2392,8 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "operationId": "ServiceCallTypes_List",
         "summary": "Query the ServiceCallTypes collection.",
+        "operationId": "List_ServiceCallTypes",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2363,11 +2422,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCallTypes_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallTypesCollectionResponse"
                 }
               }
             }
@@ -2388,21 +2447,21 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "operationId": "ServiceCallTypes_Create",
         "summary": "Create a new ServiceCallType.",
+        "operationId": "Create_ServiceCallTypes",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCallType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2424,19 +2483,21 @@
         }
       }
     },
-    "/ServiceCallTypes({CallTypeID})": {
+    "/ServiceCallTypes({callTypeID})": {
       "get": {
         "tags": [
           "ServiceCallTypes"
         ],
-        "operationId": "ServiceCallTypes_Get",
         "summary": "Get a single ServiceCallType by key.",
+        "operationId": "Get_ServiceCallTypes",
         "parameters": [
           {
-            "name": "CallTypeID",
+            "name": "callTypeID",
             "in": "path",
+            "description": "Key property 'CallTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2451,7 +2512,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2482,37 +2543,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCallTypes"
         ],
-        "operationId": "ServiceCallTypes_Update",
-        "summary": "Partially update a ServiceCallType (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCallType.",
+        "operationId": "Delete_ServiceCallTypes",
         "parameters": [
           {
-            "name": "CallTypeID",
+            "name": "callTypeID",
             "in": "path",
+            "description": "Key property 'CallTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCallType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2526,27 +2579,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCallTypes"
         ],
-        "operationId": "ServiceCallTypes_Delete",
-        "summary": "Delete a ServiceCallType.",
+        "summary": "Partially update a ServiceCallType (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCallTypes",
         "parameters": [
           {
-            "name": "CallTypeID",
+            "name": "callTypeID",
             "in": "path",
+            "description": "Key property 'CallTypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'CallTypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCallType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2566,18 +2631,19 @@
         "tags": [
           "ServiceCallTypesService"
         ],
-        "operationId": "ServiceCallTypesService_GetServiceCallTypeList",
         "summary": "Service Layer function import 'ServiceCallTypesService_GetServiceCallTypeList'.",
+        "operationId": "ServiceCallTypesService_GetServiceCallTypeList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2608,8 +2674,8 @@
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_List",
         "summary": "Query the ServiceCalls collection.",
+        "operationId": "List_ServiceCalls",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2638,11 +2704,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceCalls_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceCallsCollectionResponse"
                 }
               }
             }
@@ -2663,21 +2729,21 @@
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_Create",
         "summary": "Create a new ServiceCall.",
+        "operationId": "Create_ServiceCalls",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceCall"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2699,19 +2765,21 @@
         }
       }
     },
-    "/ServiceCalls({ServiceCallID})": {
+    "/ServiceCalls({serviceCallID})": {
       "get": {
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_Get",
         "summary": "Get a single ServiceCall by key.",
+        "operationId": "Get_ServiceCalls",
         "parameters": [
           {
-            "name": "ServiceCallID",
+            "name": "serviceCallID",
             "in": "path",
+            "description": "Key property 'ServiceCallID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2726,7 +2794,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2757,37 +2825,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_Update",
-        "summary": "Partially update a ServiceCall (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceCall.",
+        "operationId": "Delete_ServiceCalls",
         "parameters": [
           {
-            "name": "ServiceCallID",
+            "name": "serviceCallID",
             "in": "path",
+            "description": "Key property 'ServiceCallID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceCall"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2801,27 +2861,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_Delete",
-        "summary": "Delete a ServiceCall.",
+        "summary": "Partially update a ServiceCall (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceCalls",
         "parameters": [
           {
-            "name": "ServiceCallID",
+            "name": "serviceCallID",
             "in": "path",
+            "description": "Key property 'ServiceCallID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceCall"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2836,19 +2908,21 @@
         }
       }
     },
-    "/ServiceCalls({ServiceCallID})/Close": {
+    "/ServiceCalls({serviceCallID})/Close": {
       "post": {
         "tags": [
           "ServiceCalls"
         ],
-        "operationId": "ServiceCalls_Close",
         "summary": "Bound action 'Close' on ServiceCalls (binding type ServiceCall).",
+        "operationId": "ServiceCalls_Close",
         "parameters": [
           {
-            "name": "ServiceCallID",
+            "name": "serviceCallID",
             "in": "path",
+            "description": "Key property 'ServiceCallID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ServiceCallID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2857,7 +2931,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2877,8 +2951,8 @@
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_List",
         "summary": "Query the ServiceContracts collection.",
+        "operationId": "List_ServiceContracts",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2907,11 +2981,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ServiceContracts_CollectionResponse"
+                  "$ref": "#/components/schemas/ServiceContractsCollectionResponse"
                 }
               }
             }
@@ -2932,21 +3006,21 @@
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Create",
         "summary": "Create a new ServiceContract.",
+        "operationId": "Create_ServiceContracts",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ServiceContract"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2968,19 +3042,21 @@
         }
       }
     },
-    "/ServiceContracts({ContractID})": {
+    "/ServiceContracts({contractID})": {
       "get": {
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Get",
         "summary": "Get a single ServiceContract by key.",
+        "operationId": "Get_ServiceContracts",
         "parameters": [
           {
-            "name": "ContractID",
+            "name": "contractID",
             "in": "path",
+            "description": "Key property 'ContractID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContractID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2995,7 +3071,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3026,37 +3102,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Update",
-        "summary": "Partially update a ServiceContract (PATCH/MERGE semantics).",
+        "summary": "Delete a ServiceContract.",
+        "operationId": "Delete_ServiceContracts",
         "parameters": [
           {
-            "name": "ContractID",
+            "name": "contractID",
             "in": "path",
+            "description": "Key property 'ContractID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContractID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceContract"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3070,27 +3138,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Delete",
-        "summary": "Delete a ServiceContract.",
+        "summary": "Partially update a ServiceContract (PATCH/MERGE semantics).",
+        "operationId": "Update_ServiceContracts",
         "parameters": [
           {
-            "name": "ContractID",
+            "name": "contractID",
             "in": "path",
+            "description": "Key property 'ContractID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContractID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceContract"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3105,19 +3185,21 @@
         }
       }
     },
-    "/ServiceContracts({ContractID})/Cancel": {
+    "/ServiceContracts({contractID})/Cancel": {
       "post": {
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Cancel",
         "summary": "Bound action 'Cancel' on ServiceContracts (binding type ServiceContract).",
+        "operationId": "ServiceContracts_Cancel",
         "parameters": [
           {
-            "name": "ContractID",
+            "name": "contractID",
             "in": "path",
+            "description": "Key property 'ContractID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContractID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -3126,7 +3208,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3141,19 +3223,21 @@
         }
       }
     },
-    "/ServiceContracts({ContractID})/Close": {
+    "/ServiceContracts({contractID})/Close": {
       "post": {
         "tags": [
           "ServiceContracts"
         ],
-        "operationId": "ServiceContracts_Close",
         "summary": "Bound action 'Close' on ServiceContracts (binding type ServiceContract).",
+        "operationId": "ServiceContracts_Close",
         "parameters": [
           {
-            "name": "ContractID",
+            "name": "contractID",
             "in": "path",
+            "description": "Key property 'ContractID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContractID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -3162,7 +3246,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3179,391 +3263,102 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "B1Session": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "B1SESSION",
-        "description": "Session cookie returned by POST /Login."
-      }
-    },
-    "parameters": {
-      "Expand": {
-        "name": "$expand",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated navigation properties to expand.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Filter": {
-        "name": "$filter",
-        "in": "query",
-        "required": false,
-        "description": "OData filter expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "InlineCount": {
-        "name": "$inlinecount",
-        "in": "query",
-        "required": false,
-        "description": "Set to 'allpages' to include the total count (odata.count).",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "allpages",
-            "none"
-          ]
-        }
-      },
-      "OrderBy": {
-        "name": "$orderby",
-        "in": "query",
-        "required": false,
-        "description": "OData orderby expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Prefer": {
-        "name": "Prefer",
-        "in": "header",
-        "required": false,
-        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Select": {
-        "name": "$select",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated list of properties to return.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Skip": {
-        "name": "$skip",
-        "in": "query",
-        "required": false,
-        "description": "Number of records to skip (paging).",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "Top": {
-        "name": "$top",
-        "in": "query",
-        "required": false,
-        "description": "Maximum number of records to return.",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "schemas": {
       "BoAddressType": {
         "type": "string",
+        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name",
         "enum": [
           "bo_ShipTo",
           "bo_BillTo"
-        ],
-        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "BoContractTypes": {
+      "ServiceTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "ct_Customer",
-          "ct_ItemGroup",
-          "ct_SerialNumber"
-        ],
-        "description": "OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name."
+          "srvcSales",
+          "srvcPurchasing"
+        ]
       },
-      "BoDurations": {
-        "type": "string",
-        "enum": [
-          "du_Seconds",
-          "du_Minuts",
-          "du_Hours",
-          "du_Days"
-        ],
-        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name."
-      },
-      "BoEquipmentBPType": {
-        "type": "string",
-        "enum": [
-          "et_Sales",
-          "et_Purchasing",
-          "et_SalesAndPurchasing"
-        ],
-        "description": "OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name."
-      },
-      "BoRemindUnits": {
-        "type": "string",
-        "enum": [
-          "reu_Days",
-          "reu_Weeks",
-          "reu_Month"
-        ],
-        "description": "OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name."
-      },
-      "BoResolutionUnits": {
-        "type": "string",
-        "enum": [
-          "rsu_Days",
-          "rsu_Hours"
-        ],
-        "description": "OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name."
-      },
-      "BoResponseUnit": {
-        "type": "string",
-        "enum": [
-          "boru_Day",
-          "boru_Hour"
-        ],
-        "description": "OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name."
-      },
-      "BoSerialNumberStatus": {
-        "type": "string",
-        "enum": [
-          "sns_Active",
-          "sns_Returned",
-          "sns_Terminated",
-          "sns_Loaned",
-          "sns_InLab"
-        ],
-        "description": "OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name."
-      },
-      "BoServiceTypes": {
-        "type": "string",
-        "enum": [
-          "bst_Regular",
-          "bst_Warranty"
-        ],
-        "description": "OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoStckTrnDir": {
-        "type": "string",
-        "enum": [
-          "bos_TransferToTechnician",
-          "bos_TransferFromTechnician"
-        ],
-        "description": "OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name."
-      },
-      "BoSvcCallPriorities": {
-        "type": "string",
-        "enum": [
-          "scp_Low",
-          "scp_Medium",
-          "scp_High"
-        ],
-        "description": "OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name."
-      },
-      "BoSvcContractStatus": {
-        "type": "string",
-        "enum": [
-          "scs_Approved",
-          "scs_Frozen",
-          "scs_Draft",
-          "scs_Terminated"
-        ],
-        "description": "OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name."
-      },
-      "BoSvcEpxDocTypes": {
-        "type": "string",
-        "enum": [
-          "edt_Invoice",
-          "edt_Delivery",
-          "edt_Return",
-          "edt_StockTransfer",
-          "edt_CreditMemo",
-          "edt_Order",
-          "edt_Quotation",
-          "edt_AP_Invoice",
-          "edt_AP_CreditMemo",
-          "edt_GoodsReceipt",
-          "edt_GoodsReturn",
-          "edt_PurchaseOrder",
-          "edt_PurchaseQuotation",
-          "edt_AR_CorrectionInvoice",
-          "edt_AP_CorrectionInvoice",
-          "edt_Return_Request",
-          "edt_Goods_Return_Request"
-        ],
-        "description": "OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoSvcExpPartTypes": {
-        "type": "string",
-        "enum": [
-          "sep_Inventory",
-          "sep_NonInventory"
-        ],
-        "description": "OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoYesNoEnum": {
-        "type": "string",
-        "enum": [
-          "tNO",
-          "tYES"
-        ],
-        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ContractTemplate": {
+      "ServiceContractLine": {
         "type": "object",
         "properties": {
-          "TemplateName": {
-            "type": "string"
-          },
-          "TemplateIsDeleted": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "TemplateIsRenewal": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "RemindBeforeRenewal": {
+          "LineNum": {
             "type": "integer",
             "format": "int32"
           },
-          "RemindUnit": {
-            "$ref": "#/components/schemas/BoRemindUnits"
+          "ManufacturerSerialNum": {
+            "type": "string"
           },
-          "DurationOfCoverage": {
+          "InternalSerialNum": {
+            "type": "string"
+          },
+          "ItemCode": {
+            "type": "string"
+          },
+          "ItemName": {
+            "type": "string"
+          },
+          "ItemGroup": {
             "type": "integer",
             "format": "int32"
           },
-          "ResponseValue": {
-            "type": "integer",
-            "format": "int32"
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
           },
-          "ResolutionUnit": {
-            "$ref": "#/components/schemas/BoResolutionUnits"
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
           },
-          "Description": {
+          "ItemGroupName": {
             "type": "string"
           },
-          "ContractType": {
-            "$ref": "#/components/schemas/BoContractTypes"
-          },
-          "MondayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "TuesdayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "WednesdayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ThursdayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "FridayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "SaturdayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "SundayEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "MondayStart": {
-            "type": "string"
-          },
-          "MondayEnd": {
-            "type": "string"
-          },
-          "TuesdayStart": {
-            "type": "string"
-          },
-          "TuesdayEnd": {
-            "type": "string"
-          },
-          "WednesdayStart": {
-            "type": "string"
-          },
-          "WednesdayEnd": {
-            "type": "string"
-          },
-          "ThursdayStart": {
-            "type": "string"
-          },
-          "ThursdayEnd": {
-            "type": "string"
-          },
-          "FridayStart": {
-            "type": "string"
-          },
-          "FridayEnd": {
-            "type": "string"
-          },
-          "SaturdayStart": {
-            "type": "string"
-          },
-          "SaturdayEnd": {
-            "type": "string"
-          },
-          "SundayStart": {
-            "type": "string"
-          },
-          "SundayEnd": {
-            "type": "string"
-          },
-          "IncludeParts": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "IncludeLabor": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "IncludeTravel": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "Remarks": {
-            "type": "string"
-          },
-          "IncludeHolidays": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ResponseUnit": {
-            "$ref": "#/components/schemas/BoResponseUnit"
-          },
-          "ResolutionTime": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AttachmentEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ServiceContracts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceContract"
-            }
+          "TerminationDate": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": true
       },
-      "ContractTemplates_CollectionResponse": {
+      "ServiceCallActivity": {
         "type": "object",
         "properties": {
-          "odata.metadata": {
-            "type": "string"
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
           },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContractTemplate"
-            }
-          },
-          "odata.nextLink": {
+          "ActivityCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoYesNoEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tNO",
+          "tYES"
+        ]
+      },
+      "BoStckTrnDir": {
+        "type": "string",
+        "description": "OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bos_TransferToTechnician",
+          "bos_TransferFromTechnician"
+        ]
+      },
+      "CustomerEquipmentCardBusinessPartner": {
+        "type": "object",
+        "properties": {
+          "BPCode": {
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": true
       },
       "CustomerEquipmentCard": {
         "type": "object",
@@ -3710,93 +3505,40 @@
         },
         "additionalProperties": true
       },
-      "CustomerEquipmentCardBusinessPartner": {
-        "type": "object",
-        "properties": {
-          "BPCode": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "CustomerEquipmentCards_CollectionResponse": {
+      "ServiceCallSolutionStatusCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CustomerEquipmentCard"
+              "$ref": "#/components/schemas/ServiceCallSolutionStatus"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "KnowledgeBaseSolution": {
-        "type": "object",
-        "properties": {
-          "ItemCode": {
-            "type": "string"
-          },
-          "Status": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Owner": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CreatedBy": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CreationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "LastUpdatedBy": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LastUpdateDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Solution": {
-            "type": "string"
-          },
-          "Symptom": {
-            "type": "string"
-          },
-          "Cause": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "SolutionCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AttachmentEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ServiceCallSolutionStatus": {
-            "$ref": "#/components/schemas/ServiceCallSolutionStatus"
-          }
-        },
-        "additionalProperties": true
+      "BoContractTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "ct_Customer",
+          "ct_ItemGroup",
+          "ct_SerialNumber"
+        ]
       },
-      "KnowledgeBaseSolutions_CollectionResponse": {
+      "KnowledgeBaseSolutionsCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -3805,7 +3547,733 @@
             }
           },
           "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoSerialNumberStatus": {
+        "type": "string",
+        "description": "OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "sns_Active",
+          "sns_Returned",
+          "sns_Terminated",
+          "sns_Loaned",
+          "sns_InLab"
+        ]
+      },
+      "BoSvcExpPartTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "sep_Inventory",
+          "sep_NonInventory"
+        ]
+      },
+      "ServiceCallScheduling": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Technician": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HandledBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "StartTime": {
             "type": "string"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "Duration": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "DurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "ActualDurationType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "Reminder": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderPeriod": {
+            "type": "number",
+            "format": "double"
+          },
+          "ReminderType": {
+            "$ref": "#/components/schemas/BoDurations"
+          },
+          "ReminderSent": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ReminderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ReminderTime": {
+            "type": "string"
+          },
+          "DisplayInCalendar": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsUnscheduled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Location": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AddressName": {
+            "type": "string"
+          },
+          "AddressText": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "Room": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Address2": {
+            "type": "string"
+          },
+          "Address3": {
+            "type": "string"
+          },
+          "AddressType": {
+            "type": "string"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "TaxOffice": {
+            "type": "string"
+          },
+          "GlobalLocNum": {
+            "type": "string"
+          },
+          "IsClosed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Remark": {
+            "type": "string"
+          },
+          "AddressTypeBS": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "SignatureName": {
+            "type": "string"
+          },
+          "SalesOrders": {
+            "type": "string"
+          },
+          "CheckInDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CheckInTime": {
+            "type": "string"
+          },
+          "CheckInLocation": {
+            "type": "string"
+          },
+          "CheckInLatitude": {
+            "type": "string"
+          },
+          "CheckInLongitude": {
+            "type": "string"
+          },
+          "CheckOutDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CheckOutTime": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallStatusParams": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "QueueMember": {
+        "type": "object",
+        "properties": {
+          "QueueID": {
+            "type": "string"
+          },
+          "MemberUserID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallTypesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ServiceCallProblemSubTypesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallProblemSubType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoSvcEpxDocTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "edt_Invoice",
+          "edt_Delivery",
+          "edt_Return",
+          "edt_StockTransfer",
+          "edt_CreditMemo",
+          "edt_Order",
+          "edt_Quotation",
+          "edt_AP_Invoice",
+          "edt_AP_CreditMemo",
+          "edt_GoodsReceipt",
+          "edt_GoodsReturn",
+          "edt_PurchaseOrder",
+          "edt_PurchaseQuotation",
+          "edt_AR_CorrectionInvoice",
+          "edt_AP_CorrectionInvoice",
+          "edt_Return_Request",
+          "edt_Goods_Return_Request"
+        ]
+      },
+      "QueueCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Queue"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ServiceCallSolutionStatus": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "KnowledgeBaseSolutions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseSolution"
+            },
+            "x-ballerina-name": "knowledgeBaseSolutions"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoRemindUnits": {
+        "type": "string",
+        "description": "OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "reu_Days",
+          "reu_Weeks",
+          "reu_Month"
+        ]
+      },
+      "ServiceCallSolution": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SolutionID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallOriginsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallOrigin"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoSvcCallPriorities": {
+        "type": "string",
+        "description": "OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "scp_Low",
+          "scp_Medium",
+          "scp_High"
+        ]
+      },
+      "ServiceCallStatusCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCallStatus"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ServiceCallOriginParams": {
+        "type": "object",
+        "properties": {
+          "OriginID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "originID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallType": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "CallTypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "callTypeID"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            },
+            "x-ballerina-name": "serviceCalls"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemSubType": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "ProblemSubTypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "problemSubTypeID"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            },
+            "x-ballerina-name": "serviceCalls"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallProblemSubTypeParams": {
+        "type": "object",
+        "properties": {
+          "ProblemSubTypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "problemSubTypeID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallBPAddressComponent": {
+        "type": "object",
+        "properties": {
+          "ShipToStreet": {
+            "type": "string"
+          },
+          "ShipToStreetNo": {
+            "type": "string"
+          },
+          "ShipToBlock": {
+            "type": "string"
+          },
+          "ShipToBuilding": {
+            "type": "string"
+          },
+          "ShipToCity": {
+            "type": "string"
+          },
+          "ShipToZipCode": {
+            "type": "string"
+          },
+          "ShipToState": {
+            "type": "string"
+          },
+          "ShipToCounty": {
+            "type": "string"
+          },
+          "ShipToCountry": {
+            "type": "string"
+          },
+          "ShipToAddressType": {
+            "type": "string"
+          },
+          "ShipToAddress2": {
+            "type": "string"
+          },
+          "ShipToAddress3": {
+            "type": "string"
+          },
+          "ShipToGlobalLocationNumber": {
+            "type": "string"
+          },
+          "BillToStreet": {
+            "type": "string"
+          },
+          "BillToStreetNo": {
+            "type": "string"
+          },
+          "BillToBlock": {
+            "type": "string"
+          },
+          "BillToBuilding": {
+            "type": "string"
+          },
+          "BillToCity": {
+            "type": "string"
+          },
+          "BillToZipCode": {
+            "type": "string"
+          },
+          "BillToState": {
+            "type": "string"
+          },
+          "BillToCounty": {
+            "type": "string"
+          },
+          "BillToCountry": {
+            "type": "string"
+          },
+          "BillToAddressType": {
+            "type": "string"
+          },
+          "BillToAddress2": {
+            "type": "string"
+          },
+          "BillToAddress3": {
+            "type": "string"
+          },
+          "BillToGlobalLocationNumber": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallOrigin": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "OriginID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "originID"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            },
+            "x-ballerina-name": "serviceCalls"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceCallStatus": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            },
+            "x-ballerina-name": "serviceCalls"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoSvcContractStatus": {
+        "type": "string",
+        "description": "OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "scs_Approved",
+          "scs_Frozen",
+          "scs_Draft",
+          "scs_Terminated"
+        ]
+      },
+      "ServiceCallProblemType": {
+        "type": "object",
+        "properties": {
+          "ProblemTypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "problemTypeID"
+          },
+          "Active": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "active"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "ServiceCalls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceCall"
+            },
+            "x-ballerina-name": "serviceCalls"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContractTemplatesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContractTemplate"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
@@ -3843,35 +4311,56 @@
         },
         "additionalProperties": true
       },
-      "QueueMember": {
+      "ServiceCallProblemTypeParams": {
         "type": "object",
         "properties": {
-          "QueueID": {
-            "type": "string"
-          },
-          "MemberUserID": {
+          "ProblemTypeID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "problemTypeID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": false
       },
-      "Queue_CollectionResponse": {
+      "ServiceContractsCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Queue"
+              "$ref": "#/components/schemas/ServiceContract"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
+      },
+      "BoEquipmentBPType": {
+        "type": "string",
+        "description": "OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "et_Sales",
+          "et_Purchasing",
+          "et_SalesAndPurchasing"
+        ]
+      },
+      "BoResponseUnit": {
+        "type": "string",
+        "description": "OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "boru_Day",
+          "boru_Hour"
+        ]
       },
       "ServiceCall": {
         "type": "object",
@@ -4207,288 +4696,31 @@
         },
         "additionalProperties": true
       },
-      "ServiceCallActivity": {
+      "CustomerEquipmentCardsCollectionResponse": {
         "type": "object",
         "properties": {
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ActivityCode": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceCallBPAddressComponent": {
-        "type": "object",
-        "properties": {
-          "ShipToStreet": {
-            "type": "string"
-          },
-          "ShipToStreetNo": {
-            "type": "string"
-          },
-          "ShipToBlock": {
-            "type": "string"
-          },
-          "ShipToBuilding": {
-            "type": "string"
-          },
-          "ShipToCity": {
-            "type": "string"
-          },
-          "ShipToZipCode": {
-            "type": "string"
-          },
-          "ShipToState": {
-            "type": "string"
-          },
-          "ShipToCounty": {
-            "type": "string"
-          },
-          "ShipToCountry": {
-            "type": "string"
-          },
-          "ShipToAddressType": {
-            "type": "string"
-          },
-          "ShipToAddress2": {
-            "type": "string"
-          },
-          "ShipToAddress3": {
-            "type": "string"
-          },
-          "ShipToGlobalLocationNumber": {
-            "type": "string"
-          },
-          "BillToStreet": {
-            "type": "string"
-          },
-          "BillToStreetNo": {
-            "type": "string"
-          },
-          "BillToBlock": {
-            "type": "string"
-          },
-          "BillToBuilding": {
-            "type": "string"
-          },
-          "BillToCity": {
-            "type": "string"
-          },
-          "BillToZipCode": {
-            "type": "string"
-          },
-          "BillToState": {
-            "type": "string"
-          },
-          "BillToCounty": {
-            "type": "string"
-          },
-          "BillToCountry": {
-            "type": "string"
-          },
-          "BillToAddressType": {
-            "type": "string"
-          },
-          "BillToAddress2": {
-            "type": "string"
-          },
-          "BillToAddress3": {
-            "type": "string"
-          },
-          "BillToGlobalLocationNumber": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceCallInventoryExpense": {
-        "type": "object",
-        "properties": {
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PartType": {
-            "$ref": "#/components/schemas/BoSvcExpPartTypes"
-          },
-          "DocumentType": {
-            "$ref": "#/components/schemas/BoSvcEpxDocTypes"
-          },
-          "DocumentPostingDate": {
+          "odata.metadata": {
             "type": "string",
-            "format": "date-time"
-          },
-          "DocumentNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StockTransferDirection": {
-            "$ref": "#/components/schemas/BoStckTrnDir"
-          },
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceCallOrigin": {
-        "type": "object",
-        "properties": {
-          "OriginID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ServiceCalls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallOriginParams": {
-        "type": "object",
-        "properties": {
-          "OriginID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallOrigins_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ServiceCallOrigin"
+              "$ref": "#/components/schemas/CustomerEquipmentCard"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "ServiceCallProblemSubType": {
-        "type": "object",
-        "properties": {
-          "ProblemSubTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ServiceCalls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallProblemSubTypeParams": {
-        "type": "object",
-        "properties": {
-          "ProblemSubTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallProblemSubTypes_CollectionResponse": {
+      "ServiceCallProblemTypesCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCallProblemSubType"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceCallProblemType": {
-        "type": "object",
-        "properties": {
-          "ProblemTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ServiceCalls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallProblemTypeParams": {
-        "type": "object",
-        "properties": {
-          "ProblemTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallProblemTypes_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -4497,365 +4729,8 @@
             }
           },
           "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceCallScheduling": {
-        "type": "object",
-        "properties": {
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Technician": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "HandledBy": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StartDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "StartTime": {
-            "type": "string"
-          },
-          "EndDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "EndTime": {
-            "type": "string"
-          },
-          "Duration": {
-            "type": "number",
-            "format": "double"
-          },
-          "ActualDuration": {
-            "type": "number",
-            "format": "double"
-          },
-          "DurationType": {
-            "$ref": "#/components/schemas/BoDurations"
-          },
-          "ActualDurationType": {
-            "$ref": "#/components/schemas/BoDurations"
-          },
-          "Reminder": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ReminderPeriod": {
-            "type": "number",
-            "format": "double"
-          },
-          "ReminderType": {
-            "$ref": "#/components/schemas/BoDurations"
-          },
-          "ReminderSent": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ReminderDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ReminderTime": {
-            "type": "string"
-          },
-          "DisplayInCalendar": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "IsUnscheduled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "Location": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AddressName": {
-            "type": "string"
-          },
-          "AddressText": {
-            "type": "string"
-          },
-          "Street": {
-            "type": "string"
-          },
-          "City": {
-            "type": "string"
-          },
-          "Room": {
-            "type": "string"
-          },
-          "State": {
-            "type": "string"
-          },
-          "Country": {
-            "type": "string"
-          },
-          "Address2": {
-            "type": "string"
-          },
-          "Address3": {
-            "type": "string"
-          },
-          "AddressType": {
-            "type": "string"
-          },
-          "StreetNo": {
-            "type": "string"
-          },
-          "ZipCode": {
-            "type": "string"
-          },
-          "Block": {
-            "type": "string"
-          },
-          "County": {
-            "type": "string"
-          },
-          "TaxOffice": {
-            "type": "string"
-          },
-          "GlobalLocNum": {
-            "type": "string"
-          },
-          "IsClosed": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "Remark": {
-            "type": "string"
-          },
-          "AddressTypeBS": {
-            "$ref": "#/components/schemas/BoAddressType"
-          },
-          "SignatureName": {
-            "type": "string"
-          },
-          "SalesOrders": {
-            "type": "string"
-          },
-          "CheckInDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "CheckInTime": {
-            "type": "string"
-          },
-          "CheckInLocation": {
-            "type": "string"
-          },
-          "CheckInLatitude": {
-            "type": "string"
-          },
-          "CheckInLongitude": {
-            "type": "string"
-          },
-          "CheckOutDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "CheckOutTime": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceCallSolution": {
-        "type": "object",
-        "properties": {
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "SolutionID": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceCallSolutionStatus": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "KnowledgeBaseSolutions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/KnowledgeBaseSolution"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallSolutionStatusParams": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallSolutionStatus_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCallSolutionStatus"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceCallStatus": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ServiceCalls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallStatusParams": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallStatus_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCallStatus"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceCallType": {
-        "type": "object",
-        "properties": {
-          "CallTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ServiceCalls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallTypeParams": {
-        "type": "object",
-        "properties": {
-          "CallTypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ServiceCallTypes_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCallType"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceCalls_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceCall"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
@@ -5026,7 +4901,7 @@
           "ServiceContract_Lines": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ServiceContract_Line"
+              "$ref": "#/components/schemas/ServiceContractLine"
             }
           },
           "CustomerEquipmentCards": {
@@ -5046,64 +4921,6 @@
           }
         },
         "additionalProperties": true
-      },
-      "ServiceContract_Line": {
-        "type": "object",
-        "properties": {
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ManufacturerSerialNum": {
-            "type": "string"
-          },
-          "InternalSerialNum": {
-            "type": "string"
-          },
-          "ItemCode": {
-            "type": "string"
-          },
-          "ItemName": {
-            "type": "string"
-          },
-          "ItemGroup": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StartDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "EndDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ItemGroupName": {
-            "type": "string"
-          },
-          "TerminationDate": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ServiceContracts_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServiceContract"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
       },
       "ServiceLayerError": {
         "type": "object",
@@ -5130,13 +4947,395 @@
           }
         }
       },
-      "ServiceTypeEnum": {
+      "ServiceCallSolutionStatusParams": {
+        "type": "object",
+        "properties": {
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContractTemplate": {
+        "type": "object",
+        "properties": {
+          "TemplateName": {
+            "type": "string"
+          },
+          "TemplateIsDeleted": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TemplateIsRenewal": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "RemindBeforeRenewal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RemindUnit": {
+            "$ref": "#/components/schemas/BoRemindUnits"
+          },
+          "DurationOfCoverage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResponseValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ResolutionUnit": {
+            "$ref": "#/components/schemas/BoResolutionUnits"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ContractType": {
+            "$ref": "#/components/schemas/BoContractTypes"
+          },
+          "MondayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TuesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "WednesdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ThursdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "FridayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SaturdayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SundayEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "MondayStart": {
+            "type": "string"
+          },
+          "MondayEnd": {
+            "type": "string"
+          },
+          "TuesdayStart": {
+            "type": "string"
+          },
+          "TuesdayEnd": {
+            "type": "string"
+          },
+          "WednesdayStart": {
+            "type": "string"
+          },
+          "WednesdayEnd": {
+            "type": "string"
+          },
+          "ThursdayStart": {
+            "type": "string"
+          },
+          "ThursdayEnd": {
+            "type": "string"
+          },
+          "FridayStart": {
+            "type": "string"
+          },
+          "FridayEnd": {
+            "type": "string"
+          },
+          "SaturdayStart": {
+            "type": "string"
+          },
+          "SaturdayEnd": {
+            "type": "string"
+          },
+          "SundayStart": {
+            "type": "string"
+          },
+          "SundayEnd": {
+            "type": "string"
+          },
+          "IncludeParts": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeLabor": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IncludeTravel": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "IncludeHolidays": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ResponseUnit": {
+            "$ref": "#/components/schemas/BoResponseUnit"
+          },
+          "ResolutionTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceContracts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceContract"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "KnowledgeBaseSolution": {
+        "type": "object",
+        "properties": {
+          "ItemCode": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreatedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "LastUpdatedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LastUpdateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Solution": {
+            "type": "string"
+          },
+          "Symptom": {
+            "type": "string"
+          },
+          "Cause": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "SolutionCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceCallSolutionStatus": {
+            "$ref": "#/components/schemas/ServiceCallSolutionStatus"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoDurations": {
         "type": "string",
+        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name",
         "enum": [
-          "srvcSales",
-          "srvcPurchasing"
-        ],
-        "description": "OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name."
+          "du_Seconds",
+          "du_Minuts",
+          "du_Hours",
+          "du_Days"
+        ]
+      },
+      "BoServiceTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bst_Regular",
+          "bst_Warranty"
+        ]
+      },
+      "ServiceCallInventoryExpense": {
+        "type": "object",
+        "properties": {
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PartType": {
+            "$ref": "#/components/schemas/BoSvcExpPartTypes"
+          },
+          "DocumentType": {
+            "$ref": "#/components/schemas/BoSvcEpxDocTypes"
+          },
+          "DocumentPostingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "DocumentNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StockTransferDirection": {
+            "$ref": "#/components/schemas/BoStckTrnDir"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ServiceCallTypeParams": {
+        "type": "object",
+        "properties": {
+          "CallTypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "callTypeID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoResolutionUnits": {
+        "type": "string",
+        "description": "OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rsu_Days",
+          "rsu_Hours"
+        ]
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Comma-separated navigation properties to expand",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarExpand"
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "OData filter expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarFilter"
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Set to 'allpages' to include the total count (odata.count)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        },
+        "x-ballerina-name": "dollarInlinecount"
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "OData orderby expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarOrderby"
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "prefer"
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "description": "Comma-separated list of properties to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarSelect"
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Number of records to skip (paging)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarSkip"
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Maximum number of records to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarTop"
+      }
+    },
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "description": "Session cookie returned by POST /Login.",
+        "name": "B1SESSION",
+        "in": "cookie",
+        "x-ballerina-name": "b1SESSION"
       }
     }
   }

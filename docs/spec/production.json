@@ -11,12 +11,12 @@
       "description": "SAP Business One Service Layer (OData V3 endpoint).",
       "variables": {
         "server": {
-          "default": "localhost",
-          "description": "Service Layer host."
+          "description": "Service Layer host.",
+          "default": "localhost"
         },
         "port": {
-          "default": "50000",
-          "description": "Service Layer HTTPS port (default 50000)."
+          "description": "Service Layer HTTPS port (default 50000).",
+          "default": "50000"
         }
       }
     }
@@ -32,8 +32,8 @@
         "tags": [
           "ProductTrees"
         ],
-        "operationId": "ProductTrees_List",
         "summary": "Query the ProductTrees collection.",
+        "operationId": "List_ProductTrees",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -62,11 +62,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductTrees_CollectionResponse"
+                  "$ref": "#/components/schemas/ProductTreesCollectionResponse"
                 }
               }
             }
@@ -87,21 +87,21 @@
         "tags": [
           "ProductTrees"
         ],
-        "operationId": "ProductTrees_Create",
         "summary": "Create a new ProductTree.",
+        "operationId": "Create_ProductTrees",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProductTree"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -123,19 +123,21 @@
         }
       }
     },
-    "/ProductTrees('{TreeCode}')": {
+    "/ProductTrees('{treeCode}')": {
       "get": {
         "tags": [
           "ProductTrees"
         ],
-        "operationId": "ProductTrees_Get",
         "summary": "Get a single ProductTree by key.",
+        "operationId": "Get_ProductTrees",
         "parameters": [
           {
-            "name": "TreeCode",
+            "name": "treeCode",
             "in": "path",
+            "description": "Key property 'TreeCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'TreeCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -149,7 +151,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -180,36 +182,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ProductTrees"
         ],
-        "operationId": "ProductTrees_Update",
-        "summary": "Partially update a ProductTree (PATCH/MERGE semantics).",
+        "summary": "Delete a ProductTree.",
+        "operationId": "Delete_ProductTrees",
         "parameters": [
           {
-            "name": "TreeCode",
+            "name": "treeCode",
             "in": "path",
+            "description": "Key property 'TreeCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'TreeCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductTree"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -223,26 +217,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ProductTrees"
         ],
-        "operationId": "ProductTrees_Delete",
-        "summary": "Delete a ProductTree.",
+        "summary": "Partially update a ProductTree (PATCH/MERGE semantics).",
+        "operationId": "Update_ProductTrees",
         "parameters": [
           {
-            "name": "TreeCode",
+            "name": "treeCode",
             "in": "path",
+            "description": "Key property 'TreeCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'TreeCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductTree"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -262,8 +268,8 @@
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_List",
         "summary": "Query the ProductionOrders collection.",
+        "operationId": "List_ProductionOrders",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -292,11 +298,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductionOrders_CollectionResponse"
+                  "$ref": "#/components/schemas/ProductionOrdersCollectionResponse"
                 }
               }
             }
@@ -317,21 +323,21 @@
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_Create",
         "summary": "Create a new ProductionOrder.",
+        "operationId": "Create_ProductionOrders",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProductionOrder"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -353,19 +359,21 @@
         }
       }
     },
-    "/ProductionOrders({AbsoluteEntry})": {
+    "/ProductionOrders({absoluteEntry})": {
       "get": {
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_Get",
         "summary": "Get a single ProductionOrder by key.",
+        "operationId": "Get_ProductionOrders",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -380,7 +388,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -411,37 +419,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_Update",
-        "summary": "Partially update a ProductionOrder (PATCH/MERGE semantics).",
+        "summary": "Delete a ProductionOrder.",
+        "operationId": "Delete_ProductionOrders",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductionOrder"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -455,27 +455,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_Delete",
-        "summary": "Delete a ProductionOrder.",
+        "summary": "Partially update a ProductionOrder (PATCH/MERGE semantics).",
+        "operationId": "Update_ProductionOrders",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductionOrder"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -490,19 +502,21 @@
         }
       }
     },
-    "/ProductionOrders({AbsoluteEntry})/Cancel": {
+    "/ProductionOrders({absoluteEntry})/Cancel": {
       "post": {
         "tags": [
           "ProductionOrders"
         ],
-        "operationId": "ProductionOrders_Cancel",
         "summary": "Bound action 'Cancel' on ProductionOrders (binding type ProductionOrder).",
+        "operationId": "ProductionOrders_Cancel",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -511,7 +525,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -531,8 +545,8 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "operationId": "ResourceCapacities_List",
         "summary": "Query the ResourceCapacities collection.",
+        "operationId": "List_ResourceCapacities",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -561,11 +575,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResourceCapacities_CollectionResponse"
+                  "$ref": "#/components/schemas/ResourceCapacitiesCollectionResponse"
                 }
               }
             }
@@ -586,21 +600,21 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "operationId": "ResourceCapacities_Create",
         "summary": "Create a new ResourceCapacity.",
+        "operationId": "Create_ResourceCapacities",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceCapacity"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -622,19 +636,21 @@
         }
       }
     },
-    "/ResourceCapacities({Id})": {
+    "/ResourceCapacities({id})": {
       "get": {
         "tags": [
           "ResourceCapacities"
         ],
-        "operationId": "ResourceCapacities_Get",
         "summary": "Get a single ResourceCapacity by key.",
+        "operationId": "Get_ResourceCapacities",
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "path",
+            "description": "Key property 'Id' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Id' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -649,7 +665,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -680,37 +696,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ResourceCapacities"
         ],
-        "operationId": "ResourceCapacities_Update",
-        "summary": "Partially update a ResourceCapacity (PATCH/MERGE semantics).",
+        "summary": "Delete a ResourceCapacity.",
+        "operationId": "Delete_ResourceCapacities",
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "path",
+            "description": "Key property 'Id' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Id' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ResourceCapacity"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -724,27 +732,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ResourceCapacities"
         ],
-        "operationId": "ResourceCapacities_Delete",
-        "summary": "Delete a ResourceCapacity.",
+        "summary": "Partially update a ResourceCapacity (PATCH/MERGE semantics).",
+        "operationId": "Update_ResourceCapacities",
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "path",
+            "description": "Key property 'Id' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Id' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceCapacity"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -764,18 +784,19 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "operationId": "ResourceCapacitiesService_GetList",
         "summary": "Service Layer function import 'ResourceCapacitiesService_GetList'.",
+        "operationId": "ResourceCapacitiesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -806,18 +827,39 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "operationId": "ResourceCapacitiesService_GetListWithFilter",
         "summary": "Service Layer function import 'ResourceCapacitiesService_GetListWithFilter'.",
+        "operationId": "ResourceCapacitiesService_GetListWithFilter",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ResourceCapacityWithFilterParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/ResourceCapacityWithFilterParams"
+                      }
+                    ],
+                    "x-ballerina-name": "resourceCapacityWithFilterParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -840,21 +882,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "ResourceCapacityWithFilterParams": {
-                    "$ref": "#/components/schemas/ResourceCapacityWithFilterParams"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -863,8 +890,8 @@
         "tags": [
           "ResourceGroups"
         ],
-        "operationId": "ResourceGroups_List",
         "summary": "Query the ResourceGroups collection.",
+        "operationId": "List_ResourceGroups",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -893,11 +920,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResourceGroups_CollectionResponse"
+                  "$ref": "#/components/schemas/ResourceGroupsCollectionResponse"
                 }
               }
             }
@@ -918,21 +945,21 @@
         "tags": [
           "ResourceGroups"
         ],
-        "operationId": "ResourceGroups_Create",
         "summary": "Create a new ResourceGroup.",
+        "operationId": "Create_ResourceGroups",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceGroup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -954,19 +981,21 @@
         }
       }
     },
-    "/ResourceGroups({Code})": {
+    "/ResourceGroups({code})": {
       "get": {
         "tags": [
           "ResourceGroups"
         ],
-        "operationId": "ResourceGroups_Get",
         "summary": "Get a single ResourceGroup by key.",
+        "operationId": "Get_ResourceGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -981,7 +1010,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1012,37 +1041,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ResourceGroups"
         ],
-        "operationId": "ResourceGroups_Update",
-        "summary": "Partially update a ResourceGroup (PATCH/MERGE semantics).",
+        "summary": "Delete a ResourceGroup.",
+        "operationId": "Delete_ResourceGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ResourceGroup"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1056,27 +1077,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ResourceGroups"
         ],
-        "operationId": "ResourceGroups_Delete",
-        "summary": "Delete a ResourceGroup.",
+        "summary": "Partially update a ResourceGroup (PATCH/MERGE semantics).",
+        "operationId": "Update_ResourceGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceGroup"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1096,18 +1129,19 @@
         "tags": [
           "ResourceGroupsService"
         ],
-        "operationId": "ResourceGroupsService_GetList",
         "summary": "Service Layer function import 'ResourceGroupsService_GetList'.",
+        "operationId": "ResourceGroupsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1138,8 +1172,8 @@
         "tags": [
           "ResourceProperties"
         ],
-        "operationId": "ResourceProperties_List",
         "summary": "Query the ResourceProperties collection.",
+        "operationId": "List_ResourceProperties",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1168,11 +1202,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResourceProperties_CollectionResponse"
+                  "$ref": "#/components/schemas/ResourcePropertiesCollectionResponse"
                 }
               }
             }
@@ -1193,21 +1227,21 @@
         "tags": [
           "ResourceProperties"
         ],
-        "operationId": "ResourceProperties_Create",
         "summary": "Create a new ResourceProperty.",
+        "operationId": "Create_ResourceProperties",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceProperty"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1229,19 +1263,21 @@
         }
       }
     },
-    "/ResourceProperties({Code})": {
+    "/ResourceProperties({code})": {
       "get": {
         "tags": [
           "ResourceProperties"
         ],
-        "operationId": "ResourceProperties_Get",
         "summary": "Get a single ResourceProperty by key.",
+        "operationId": "Get_ResourceProperties",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1256,7 +1292,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1287,37 +1323,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "ResourceProperties"
         ],
-        "operationId": "ResourceProperties_Update",
-        "summary": "Partially update a ResourceProperty (PATCH/MERGE semantics).",
+        "summary": "Delete a ResourceProperty.",
+        "operationId": "Delete_ResourceProperties",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ResourceProperty"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1331,27 +1359,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "ResourceProperties"
         ],
-        "operationId": "ResourceProperties_Delete",
-        "summary": "Delete a ResourceProperty.",
+        "summary": "Partially update a ResourceProperty (PATCH/MERGE semantics).",
+        "operationId": "Update_ResourceProperties",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceProperty"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1371,18 +1411,19 @@
         "tags": [
           "ResourcePropertiesService"
         ],
-        "operationId": "ResourcePropertiesService_GetList",
         "summary": "Service Layer function import 'ResourcePropertiesService_GetList'.",
+        "operationId": "ResourcePropertiesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1413,8 +1454,8 @@
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_List",
         "summary": "Query the Resources collection.",
+        "operationId": "List_Resources",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1443,11 +1484,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Resources_CollectionResponse"
+                  "$ref": "#/components/schemas/ResourcesCollectionResponse"
                 }
               }
             }
@@ -1468,21 +1509,21 @@
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_Create",
         "summary": "Create a new Resource.",
+        "operationId": "Create_Resources",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Resource"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1504,19 +1545,21 @@
         }
       }
     },
-    "/Resources('{Code}')": {
+    "/Resources('{code}')": {
       "get": {
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_Get",
         "summary": "Get a single Resource by key.",
+        "operationId": "Get_Resources",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -1530,7 +1573,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1561,36 +1604,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_Update",
-        "summary": "Partially update a Resource (PATCH/MERGE semantics).",
+        "summary": "Delete a Resource.",
+        "operationId": "Delete_Resources",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Resource"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1604,26 +1639,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_Delete",
-        "summary": "Delete a Resource.",
+        "summary": "Partially update a Resource (PATCH/MERGE semantics).",
+        "operationId": "Update_Resources",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resource"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1638,19 +1685,21 @@
         }
       }
     },
-    "/Resources('{Code}')/CreateLinkedItem": {
+    "/Resources('{code}')/CreateLinkedItem": {
       "post": {
         "tags": [
           "Resources"
         ],
-        "operationId": "Resources_CreateLinkedItem",
         "summary": "Bound action 'CreateLinkedItem' on Resources (binding type Resource).",
+        "operationId": "Resources_CreateLinkedItem",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -1658,7 +1707,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1678,18 +1727,19 @@
         "tags": [
           "ResourcesService"
         ],
-        "operationId": "ResourcesService_GetList",
         "summary": "Service Layer function import 'ResourcesService_GetList'.",
+        "operationId": "ResourcesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1720,8 +1770,8 @@
         "tags": [
           "RouteStages"
         ],
-        "operationId": "RouteStages_List",
         "summary": "Query the RouteStages collection.",
+        "operationId": "List_RouteStages",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1750,11 +1800,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RouteStages_CollectionResponse"
+                  "$ref": "#/components/schemas/RouteStagesCollectionResponse"
                 }
               }
             }
@@ -1775,21 +1825,21 @@
         "tags": [
           "RouteStages"
         ],
-        "operationId": "RouteStages_Create",
         "summary": "Create a new RouteStage.",
+        "operationId": "Create_RouteStages",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RouteStage"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1811,19 +1861,21 @@
         }
       }
     },
-    "/RouteStages({InternalNumber})": {
+    "/RouteStages({internalNumber})": {
       "get": {
         "tags": [
           "RouteStages"
         ],
-        "operationId": "RouteStages_Get",
         "summary": "Get a single RouteStage by key.",
+        "operationId": "Get_RouteStages",
         "parameters": [
           {
-            "name": "InternalNumber",
+            "name": "internalNumber",
             "in": "path",
+            "description": "Key property 'InternalNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'InternalNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1838,7 +1890,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1869,37 +1921,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "RouteStages"
         ],
-        "operationId": "RouteStages_Update",
-        "summary": "Partially update a RouteStage (PATCH/MERGE semantics).",
+        "summary": "Delete a RouteStage.",
+        "operationId": "Delete_RouteStages",
         "parameters": [
           {
-            "name": "InternalNumber",
+            "name": "internalNumber",
             "in": "path",
+            "description": "Key property 'InternalNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'InternalNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RouteStage"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1913,27 +1957,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "RouteStages"
         ],
-        "operationId": "RouteStages_Delete",
-        "summary": "Delete a RouteStage.",
+        "summary": "Partially update a RouteStage (PATCH/MERGE semantics).",
+        "operationId": "Update_RouteStages",
         "parameters": [
           {
-            "name": "InternalNumber",
+            "name": "internalNumber",
             "in": "path",
+            "description": "Key property 'InternalNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'InternalNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteStage"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1953,18 +2009,19 @@
         "tags": [
           "RouteStagesService"
         ],
-        "operationId": "RouteStagesService_GetList",
         "summary": "Service Layer function import 'RouteStagesService_GetList'.",
+        "operationId": "RouteStagesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1995,11 +2052,31 @@
         "tags": [
           "RoutingDateCalculationService"
         ],
-        "operationId": "RoutingDateCalculationService_Calculate",
         "summary": "Service Layer function import 'RoutingDateCalculationService_Calculate'.",
+        "operationId": "RoutingDateCalculationService_Calculate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "RoutingDateCalculationInput": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/RoutingDateCalculationInput"
+                      }
+                    ],
+                    "x-ballerina-name": "routingDateCalculationInput"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
@@ -2018,21 +2095,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "RoutingDateCalculationInput": {
-                    "$ref": "#/components/schemas/RoutingDateCalculationInput"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -2041,8 +2103,8 @@
         "tags": [
           "SalesForecast"
         ],
-        "operationId": "SalesForecast_List",
         "summary": "Query the SalesForecast collection.",
+        "operationId": "List_SalesForecast",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2071,11 +2133,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SalesForecast_CollectionResponse"
+                  "$ref": "#/components/schemas/SalesForecastCollectionResponse"
                 }
               }
             }
@@ -2096,21 +2158,21 @@
         "tags": [
           "SalesForecast"
         ],
-        "operationId": "SalesForecast_Create",
         "summary": "Create a new SalesForecast.",
+        "operationId": "Create_SalesForecast",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SalesForecast"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2132,19 +2194,21 @@
         }
       }
     },
-    "/SalesForecast({Numerator})": {
+    "/SalesForecast({numerator})": {
       "get": {
         "tags": [
           "SalesForecast"
         ],
-        "operationId": "SalesForecast_Get",
         "summary": "Get a single SalesForecast by key.",
+        "operationId": "Get_SalesForecast",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2159,7 +2223,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2190,37 +2254,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "SalesForecast"
         ],
-        "operationId": "SalesForecast_Update",
-        "summary": "Partially update a SalesForecast (PATCH/MERGE semantics).",
+        "summary": "Delete a SalesForecast.",
+        "operationId": "Delete_SalesForecast",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SalesForecast"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2234,27 +2290,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "SalesForecast"
         ],
-        "operationId": "SalesForecast_Delete",
-        "summary": "Delete a SalesForecast.",
+        "summary": "Partially update a SalesForecast (PATCH/MERGE semantics).",
+        "operationId": "Update_SalesForecast",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SalesForecast"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2271,225 +2339,34 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "B1Session": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "B1SESSION",
-        "description": "Session cookie returned by POST /Login."
-      }
-    },
-    "parameters": {
-      "Expand": {
-        "name": "$expand",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated navigation properties to expand.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Filter": {
-        "name": "$filter",
-        "in": "query",
-        "required": false,
-        "description": "OData filter expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "InlineCount": {
-        "name": "$inlinecount",
-        "in": "query",
-        "required": false,
-        "description": "Set to 'allpages' to include the total count (odata.count).",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "allpages",
-            "none"
-          ]
-        }
-      },
-      "OrderBy": {
-        "name": "$orderby",
-        "in": "query",
-        "required": false,
-        "description": "OData orderby expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Prefer": {
-        "name": "Prefer",
-        "in": "header",
-        "required": false,
-        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Select": {
-        "name": "$select",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated list of properties to return.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Skip": {
-        "name": "$skip",
-        "in": "query",
-        "required": false,
-        "description": "Number of records to skip (paging).",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "Top": {
-        "name": "$top",
-        "in": "query",
-        "required": false,
-        "description": "Maximum number of records to return.",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "schemas": {
-      "BatchNumber": {
+      "ResourceCapacitiesCollectionResponse": {
         "type": "object",
         "properties": {
-          "BatchNumber": {
-            "type": "string"
-          },
-          "ManufacturerSerialNumber": {
-            "type": "string"
-          },
-          "InternalSerialNumber": {
-            "type": "string"
-          },
-          "ExpiryDate": {
+          "odata.metadata": {
             "type": "string",
-            "format": "date-time"
+            "x-ballerina-name": "odataMetadata"
           },
-          "ManufacturingDate": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceCapacity"
+            }
+          },
+          "odata.nextLink": {
             "type": "string",
-            "format": "date-time"
-          },
-          "AddmisionDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Location": {
-            "type": "string"
-          },
-          "Notes": {
-            "type": "string"
-          },
-          "Quantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "BaseLineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TrackingNote": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TrackingNoteLine": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ItemCode": {
-            "type": "string"
-          },
-          "SystemSerialNumber": {
-            "type": "integer",
-            "format": "int32"
+            "x-ballerina-name": "odataNextLink"
           }
-        },
-        "additionalProperties": true
+        }
       },
-      "BoForecastViewType": {
+      "ResourceTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'ResourceTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "fvtDaily",
-          "fvtWeekly",
-          "fvtMonthly"
-        ],
-        "description": "OData EnumType 'BoForecastViewType'. Serialised by the Service Layer as the member name."
-      },
-      "BoIssueMethod": {
-        "type": "string",
-        "enum": [
-          "im_Backflush",
-          "im_Manual"
-        ],
-        "description": "OData EnumType 'BoIssueMethod'. Serialised by the Service Layer as the member name."
-      },
-      "BoItemTreeTypes": {
-        "type": "string",
-        "enum": [
-          "iNotATree",
-          "iAssemblyTree",
-          "iSalesTree",
-          "iProductionTree",
-          "iTemplateTree",
-          "iIngredient"
-        ],
-        "description": "OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoProductionOrderOriginEnum": {
-        "type": "string",
-        "enum": [
-          "bopooManual",
-          "bopooMRP",
-          "bopooSalesOrder",
-          "bopooProductionOrder"
-        ],
-        "description": "OData EnumType 'BoProductionOrderOriginEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoProductionOrderStatusEnum": {
-        "type": "string",
-        "enum": [
-          "boposPlanned",
-          "boposReleased",
-          "boposClosed",
-          "boposCancelled"
-        ],
-        "description": "OData EnumType 'BoProductionOrderStatusEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoProductionOrderTypeEnum": {
-        "type": "string",
-        "enum": [
-          "bopotStandard",
-          "bopotSpecial",
-          "bopotDisassembly"
-        ],
-        "description": "OData EnumType 'BoProductionOrderTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoUpdateAllocationEnum": {
-        "type": "string",
-        "enum": [
-          "bouaManual",
-          "bouaCalculated",
-          "bouaRunCalculation"
-        ],
-        "description": "OData EnumType 'BoUpdateAllocationEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoYesNoEnum": {
-        "type": "string",
-        "enum": [
-          "tNO",
-          "tYES"
-        ],
-        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
+          "rtMachine",
+          "rtLabor",
+          "rtOther"
+        ]
       },
       "ProductTree": {
         "type": "object",
@@ -2564,144 +2441,60 @@
         },
         "additionalProperties": true
       },
-      "ProductTreeLine": {
-        "type": "object",
-        "properties": {
-          "ItemCode": {
-            "type": "string"
-          },
-          "Quantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "Price": {
-            "type": "number",
-            "format": "double"
-          },
-          "Currency": {
-            "type": "string"
-          },
-          "IssueMethod": {
-            "$ref": "#/components/schemas/BoIssueMethod"
-          },
-          "InventoryUOM": {
-            "type": "string"
-          },
-          "Comment": {
-            "type": "string"
-          },
-          "ParentItem": {
-            "type": "string"
-          },
-          "PriceList": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DistributionRule": {
-            "type": "string"
-          },
-          "Project": {
-            "type": "string"
-          },
-          "DistributionRule2": {
-            "type": "string"
-          },
-          "DistributionRule3": {
-            "type": "string"
-          },
-          "DistributionRule4": {
-            "type": "string"
-          },
-          "DistributionRule5": {
-            "type": "string"
-          },
-          "WipAccount": {
-            "type": "string"
-          },
-          "ItemType": {
-            "$ref": "#/components/schemas/ProductionItemType"
-          },
-          "LineText": {
-            "type": "string"
-          },
-          "AdditionalQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "StageID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ChildNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "VisualOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ItemName": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ProductTreeStage": {
-        "type": "object",
-        "properties": {
-          "Father": {
-            "type": "string"
-          },
-          "StageID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "SequenceNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StageEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "WaitingDays": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ProductTrees_CollectionResponse": {
+      "SalesForecastCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ProductTree"
+              "$ref": "#/components/schemas/SalesForecast"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "ProductionItemType": {
+      "BoYesNoEnum": {
         "type": "string",
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "pit_Item",
-          "pit_Resource",
-          "pit_Text"
-        ],
-        "description": "OData EnumType 'ProductionItemType'. Serialised by the Service Layer as the member name."
+          "tNO",
+          "tYES"
+        ]
+      },
+      "ResourceCapacityOwningTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityOwningTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcotNone",
+          "rcotProductionOrder",
+          "rcotIssueForProduction",
+          "rcotReceiptFromProduction"
+        ]
+      },
+      "BoUpdateAllocationEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoUpdateAllocationEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bouaManual",
+          "bouaCalculated",
+          "bouaRunCalculation"
+        ]
+      },
+      "BoForecastViewType": {
+        "type": "string",
+        "description": "OData EnumType 'BoForecastViewType'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "fvtDaily",
+          "fvtWeekly",
+          "fvtMonthly"
+        ]
       },
       "ProductionOrder": {
         "type": "object",
@@ -2875,291 +2668,77 @@
         },
         "additionalProperties": true
       },
-      "ProductionOrderLine": {
+      "RoutingDateCalculationOutput": {
         "type": "object",
         "properties": {
-          "DocumentAbsoluteEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ItemNo": {
-            "type": "string"
-          },
-          "BaseQuantity": {
+          "Proportion": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "x-ballerina-name": "proportion"
           },
-          "PlannedQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "IssuedQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "ProductionOrderIssueType": {
-            "$ref": "#/components/schemas/BoIssueMethod"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "VisualOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DistributionRule": {
-            "type": "string"
-          },
-          "LocationCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Project": {
-            "type": "string"
-          },
-          "DistributionRule2": {
-            "type": "string"
-          },
-          "DistributionRule3": {
-            "type": "string"
-          },
-          "DistributionRule4": {
-            "type": "string"
-          },
-          "DistributionRule5": {
-            "type": "string"
-          },
-          "UoMEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "UoMCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "WipAccount": {
-            "type": "string"
-          },
-          "ItemType": {
-            "$ref": "#/components/schemas/ProductionItemType"
-          },
-          "LineText": {
-            "type": "string"
-          },
-          "AdditionalQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "ResourceAllocation": {
-            "$ref": "#/components/schemas/ResourceAllocationEnum"
-          },
-          "StartDate": {
+          "ResultDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "EndDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "StageID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RequiredDays": {
-            "type": "number",
-            "format": "double"
-          },
-          "ItemName": {
-            "type": "string"
-          },
-          "WeightOfRecycledPlastic": {
-            "type": "number",
-            "format": "double"
-          },
-          "PlasticPackageExemptionReason": {
-            "type": "string"
-          },
-          "SerialNumbers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SerialNumber"
-            }
-          },
-          "BatchNumbers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BatchNumber"
-            }
+            "format": "date-time",
+            "x-ballerina-name": "resultDate"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": false
       },
-      "ProductionOrdersDocumentReference": {
+      "BatchNumber": {
         "type": "object",
         "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RefDocEntr": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RefDocNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ExtDocNum": {
+          "BatchNumber": {
             "type": "string"
           },
-          "RefObjType": {
-            "$ref": "#/components/schemas/ReferencedObjectTypeEnum"
+          "ManufacturerSerialNumber": {
+            "type": "string"
           },
-          "IssueDate": {
+          "InternalSerialNumber": {
+            "type": "string"
+          },
+          "ExpiryDate": {
             "type": "string",
             "format": "date-time"
           },
-          "Remark": {
+          "ManufacturingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "AddmisionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Location": {
             "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ProductionOrdersSalesOrderLine": {
-        "type": "object",
-        "properties": {
-          "DocEntry": {
+          },
+          "Notes": {
+            "type": "string"
+          },
+          "Quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "BaseLineNumber": {
             "type": "integer",
             "format": "int32"
           },
-          "BaseNumber": {
+          "TrackingNote": {
             "type": "integer",
             "format": "int32"
           },
-          "BaseAbsEntry": {
+          "TrackingNoteLine": {
             "type": "integer",
             "format": "int32"
           },
-          "BaseLine": {
+          "ItemCode": {
+            "type": "string"
+          },
+          "SystemSerialNumber": {
             "type": "integer",
             "format": "int32"
           }
         },
         "additionalProperties": true
-      },
-      "ProductionOrdersStage": {
-        "type": "object",
-        "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StageID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "SequenceNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StageEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "StartDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "EndDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "RequiredDays": {
-            "type": "number",
-            "format": "double"
-          },
-          "WaitingDays": {
-            "type": "number",
-            "format": "double"
-          },
-          "CalculationProportion": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ProductionOrders_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProductionOrder"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ReferencedObjectTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rot_ExternalDocument",
-          "rot_SalesQuotation",
-          "rot_SalesOrder",
-          "rot_DeliveryNotes",
-          "rot_ReturnRequest",
-          "rot_Return",
-          "rot_DownPaymentIncoming",
-          "rot_SalesInvoice",
-          "rot_SalesCreditNote",
-          "rot_CorrectionSalesInvoice",
-          "rot_SalesTaxInvoice",
-          "rot_PurchaseQuotation",
-          "rot_PurchaseOrder",
-          "rot_GoodsReceiptPO",
-          "rot_GoodsReturnRequest",
-          "rot_GoodsReturn",
-          "rot_DownPaymentOutgoing",
-          "rot_PurchaseInvoice",
-          "rot_PurchaseCreditNote",
-          "rot_CorrectionPurchaseInvoice",
-          "rot_PurchaseTaxInvoice",
-          "rot_LandedCosts",
-          "rot_IncomingPayments",
-          "rot_JournalEntry",
-          "rot_ProductionOrder",
-          "rot_InternalReconciliation",
-          "rot_OriginalInvoice",
-          "rot_OriginalARDownPayment",
-          "rot_PurchaseRequest",
-          "rot_GoodsReceipt",
-          "rot_GoodsIssue",
-          "rot_InventoryTransferRequest",
-          "rot_InventoryTransfer",
-          "rot_ChecksforPayment",
-          "rot_MaterialRevaluation",
-          "rot_InventoryCounting",
-          "rot_InventoryPosting",
-          "rot_OutgoingPayments"
-        ],
-        "description": "OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name."
       },
       "Resource": {
         "type": "object",
@@ -3535,549 +3114,59 @@
         },
         "additionalProperties": true
       },
-      "ResourceAllocationEnum": {
+      "ProductionItemType": {
         "type": "string",
+        "description": "OData EnumType 'ProductionItemType'. Serialised by the Service Layer as the member name",
         "enum": [
-          "raOnStartDate",
-          "raOnEndDate",
-          "raStartDateForwards",
-          "raEndDateBackwards"
-        ],
-        "description": "OData EnumType 'ResourceAllocationEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacities_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResourceCapacity"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ResourceCapacity": {
-        "type": "object",
-        "properties": {
-          "Id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Code": {
-            "type": "string"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "Date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Type": {
-            "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
-          },
-          "Capacity": {
-            "type": "number",
-            "format": "double"
-          },
-          "SourceType": {
-            "$ref": "#/components/schemas/ResourceCapacitySourceTypeEnum"
-          },
-          "SourceEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "SourceLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BaseType": {
-            "$ref": "#/components/schemas/ResourceCapacityBaseTypeEnum"
-          },
-          "BaseEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BaseLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Action": {
-            "$ref": "#/components/schemas/ResourceCapacityActionEnum"
-          },
-          "OwningType": {
-            "$ref": "#/components/schemas/ResourceCapacityOwningTypeEnum"
-          },
-          "OwningEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "OwningLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RevertedType": {
-            "$ref": "#/components/schemas/ResourceCapacityRevertedTypeEnum"
-          },
-          "RevertedEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RevertedLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "MemoSource": {
-            "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
-          },
-          "Memo": {
-            "type": "string"
-          },
-          "SingleRunCapacity": {
-            "type": "number",
-            "format": "double"
-          },
-          "SingleRunMemoSource": {
-            "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
-          },
-          "SingleRunMemo": {
-            "type": "string"
-          },
-          "Resource": {
-            "$ref": "#/components/schemas/Resource"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceCapacityActionEnum": {
-        "type": "string",
-        "enum": [
-          "rcaUnknown",
-          "rcaProductionOrderCreate",
-          "rcaProductionOrderClose",
-          "rcaProductionOrderReschedule",
-          "rcaProductionOrderAddLine",
-          "rcaProductionOrderDeleteLine",
-          "rcaProductionOrderUpdateLine",
-          "rcaIssueForProductionCreate",
-          "rcaReceiptFromProductionCreate"
-        ],
-        "description": "OData EnumType 'ResourceCapacityActionEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityBaseTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rcbtNone",
-          "rcbtProductionOrder"
-        ],
-        "description": "OData EnumType 'ResourceCapacityBaseTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityMemoSourceEnum": {
-        "type": "string",
-        "enum": [
-          "rcmsUnknown",
-          "rcmsResourceCapacityForm",
-          "rcmsSetDailyInternalCapacitiesForm"
-        ],
-        "description": "OData EnumType 'ResourceCapacityMemoSourceEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityOwningTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rcotNone",
-          "rcotProductionOrder",
-          "rcotIssueForProduction",
-          "rcotReceiptFromProduction"
-        ],
-        "description": "OData EnumType 'ResourceCapacityOwningTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityParams": {
-        "type": "object",
-        "properties": {
-          "Id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Code": {
-            "type": "string"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "Date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Type": {
-            "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
-          },
-          "Capacity": {
-            "type": "number",
-            "format": "double"
-          },
-          "SourceType": {
-            "$ref": "#/components/schemas/ResourceCapacitySourceTypeEnum"
-          },
-          "SourceEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "SourceLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BaseType": {
-            "$ref": "#/components/schemas/ResourceCapacityBaseTypeEnum"
-          },
-          "BaseEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BaseLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Action": {
-            "$ref": "#/components/schemas/ResourceCapacityActionEnum"
-          },
-          "OwningType": {
-            "$ref": "#/components/schemas/ResourceCapacityOwningTypeEnum"
-          },
-          "OwningEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "OwningLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RevertedType": {
-            "$ref": "#/components/schemas/ResourceCapacityRevertedTypeEnum"
-          },
-          "RevertedEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RevertedLineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "MemoSource": {
-            "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
-          },
-          "Memo": {
-            "type": "string"
-          },
-          "SingleRunCapacity": {
-            "type": "number",
-            "format": "double"
-          },
-          "SingleRunMemoSource": {
-            "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
-          },
-          "SingleRunMemo": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceCapacityRevertedTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rcrtNone",
-          "rcrtIssueForProduction"
-        ],
-        "description": "OData EnumType 'ResourceCapacityRevertedTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacitySourceTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rcstNone",
-          "rcstProductionOrder",
-          "rcstIssueForProduction",
-          "rcstReceiptFromProduction"
-        ],
-        "description": "OData EnumType 'ResourceCapacitySourceTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rctInternal",
-          "rctOrdered",
-          "rctCommitted",
-          "rctConsumed"
-        ],
-        "description": "OData EnumType 'ResourceCapacityTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceCapacityWithFilterParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "Date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Type": {
-            "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceDailyCapacity": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Weekday": {
-            "$ref": "#/components/schemas/ResourceDailyCapacityWeekdayEnum"
-          },
-          "Factor1": {
-            "type": "number",
-            "format": "double"
-          },
-          "Factor2": {
-            "type": "number",
-            "format": "double"
-          },
-          "Factor3": {
-            "type": "number",
-            "format": "double"
-          },
-          "Factor4": {
-            "type": "number",
-            "format": "double"
-          },
-          "Total": {
-            "type": "number",
-            "format": "double"
-          },
-          "Remarks": {
-            "type": "string"
-          },
-          "SingleRun": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceDailyCapacityWeekdayEnum": {
-        "type": "string",
-        "enum": [
-          "rdcwFirst",
-          "rdcwSecond",
-          "rdcwThird",
-          "rdcwFourth",
-          "rdcwFifth",
-          "rdcwSixth",
-          "rdcwSeventh"
-        ],
-        "description": "OData EnumType 'ResourceDailyCapacityWeekdayEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceEmployee": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Employee": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
+          "pit_Item",
+          "pit_Resource",
+          "pit_Text"
+        ]
       },
       "ResourceFixedAsset": {
         "type": "object",
         "properties": {
-          "Code": {
-            "type": "string"
-          },
           "ItemCode": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "itemCode"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
           }
         },
         "additionalProperties": false
       },
-      "ResourceGroup": {
+      "ProductionOrdersCollectionResponse": {
         "type": "object",
         "properties": {
-          "Code": {
-            "type": "integer",
-            "format": "int32"
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
-          "Name": {
-            "type": "string"
-          },
-          "Type": {
-            "$ref": "#/components/schemas/ResourceTypeEnum"
-          },
-          "CostName1": {
-            "type": "string"
-          },
-          "Cost1": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName2": {
-            "type": "string"
-          },
-          "Cost2": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName3": {
-            "type": "string"
-          },
-          "Cost3": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName4": {
-            "type": "string"
-          },
-          "Cost4": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName5": {
-            "type": "string"
-          },
-          "Cost5": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName6": {
-            "type": "string"
-          },
-          "Cost6": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName7": {
-            "type": "string"
-          },
-          "Cost7": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName8": {
-            "type": "string"
-          },
-          "Cost8": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName9": {
-            "type": "string"
-          },
-          "Cost9": {
-            "type": "number",
-            "format": "double"
-          },
-          "CostName10": {
-            "type": "string"
-          },
-          "Cost10": {
-            "type": "number",
-            "format": "double"
-          },
-          "NumOfUnitsText": {
-            "type": "string"
-          },
-          "Resources": {
+          "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Resource"
+              "$ref": "#/components/schemas/ProductionOrder"
             }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "ResourceGroupParams": {
         "type": "object",
         "properties": {
           "Code": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "code"
           },
           "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceGroups_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResourceGroup"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ResourceIssueMethodEnum": {
-        "type": "string",
-        "enum": [
-          "rimBackflush",
-          "rimManual"
-        ],
-        "description": "OData EnumType 'ResourceIssueMethodEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceProperties_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResourceProperty"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "ResourceProperty": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "name"
           }
         },
         "additionalProperties": false
@@ -4087,175 +3176,12 @@
         "properties": {
           "Code": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "code"
           },
           "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ResourceTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rtMachine",
-          "rtLabor",
-          "rtOther"
-        ],
-        "description": "OData EnumType 'ResourceTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ResourceWarehouse": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Warehouse": {
-            "type": "string"
-          },
-          "Locked": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          }
-        },
-        "additionalProperties": true
-      },
-      "Resources_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "RouteStage": {
-        "type": "object",
-        "properties": {
-          "InternalNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "CreationDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "GenerationTime": {
-            "type": "string"
-          },
-          "DateOfUpdate": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RouteStageParams": {
-        "type": "object",
-        "properties": {
-          "InternalNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "CreationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "GenerationTime": {
-            "type": "string"
-          },
-          "DateOfUpdate": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RouteStages_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RouteStage"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "RoutingDateCalculationInput": {
-        "type": "object",
-        "properties": {
-          "ResourceCode": {
-            "type": "string"
-          },
-          "WarehouseCode": {
-            "type": "string"
-          },
-          "CalculateFromDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "CalculateUntilDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "CapacitySum": {
-            "type": "number",
-            "format": "double"
-          },
-          "FirstDateProportion": {
-            "type": "number",
-            "format": "double"
-          },
-          "ResourceAlloc": {
-            "$ref": "#/components/schemas/ResourceAllocationEnum"
-          },
-          "WORObjAbs": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "WORLine": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RoutingDateCalculationOutput": {
-        "type": "object",
-        "properties": {
-          "ResultDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Proportion": {
-            "type": "number",
-            "format": "double"
+            "x-ballerina-name": "name"
           }
         },
         "additionalProperties": false
@@ -4293,42 +3219,239 @@
         },
         "additionalProperties": true
       },
-      "SalesForecastLine": {
+      "ResourceCapacityParams": {
         "type": "object",
         "properties": {
-          "Quantity": {
-            "type": "number",
-            "format": "double"
+          "RevertedEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "revertedEntry"
           },
-          "ForecastedDay": {
+          "Warehouse": {
+            "type": "string",
+            "x-ballerina-name": "warehouse"
+          },
+          "Action": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityActionEnum"
+              }
+            ],
+            "x-ballerina-name": "action"
+          },
+          "BaseLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "baseLineNum"
+          },
+          "SourceType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacitySourceTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "sourceType"
+          },
+          "OwningType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityOwningTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "owningType"
+          },
+          "SingleRunMemoSource": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
+              }
+            ],
+            "x-ballerina-name": "singleRunMemoSource"
+          },
+          "MemoSource": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
+              }
+            ],
+            "x-ballerina-name": "memoSource"
+          },
+          "SingleRunMemo": {
+            "type": "string",
+            "x-ballerina-name": "singleRunMemo"
+          },
+          "RevertedType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityRevertedTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "revertedType"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "SingleRunCapacity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "singleRunCapacity"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "date"
+          },
+          "Type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "type"
+          },
+          "RevertedLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "revertedLineNum"
+          },
+          "Capacity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "capacity"
+          },
+          "BaseType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityBaseTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "baseType"
+          },
+          "SourceEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "sourceEntry"
+          },
+          "SourceLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "sourceLineNum"
+          },
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "id"
+          },
+          "OwningEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "owningEntry"
+          },
+          "BaseEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "baseEntry"
+          },
+          "OwningLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "owningLineNum"
+          },
+          "Memo": {
+            "type": "string",
+            "x-ballerina-name": "memo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RouteStageParams": {
+        "type": "object",
+        "properties": {
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "creationDate"
+          },
+          "DateOfUpdate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "dateOfUpdate"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "InternalNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "internalNumber"
+          },
+          "GenerationTime": {
+            "type": "string",
+            "x-ballerina-name": "generationTime"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoProductionOrderStatusEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoProductionOrderStatusEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "boposPlanned",
+          "boposReleased",
+          "boposClosed",
+          "boposCancelled"
+        ]
+      },
+      "ProductionOrdersStage": {
+        "type": "object",
+        "properties": {
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "StartDate": {
             "type": "string",
             "format": "date-time"
           },
-          "ItemNo": {
-            "type": "string"
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
           },
-          "Warehouse": {
-            "type": "string"
+          "RequiredDays": {
+            "type": "number",
+            "format": "double"
+          },
+          "WaitingDays": {
+            "type": "number",
+            "format": "double"
+          },
+          "CalculationProportion": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": true
-      },
-      "SalesForecast_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SalesForecast"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
       },
       "SerialNumber": {
         "type": "object",
@@ -4394,6 +3517,785 @@
         },
         "additionalProperties": true
       },
+      "ResourceCapacityBaseTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityBaseTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcbtNone",
+          "rcbtProductionOrder"
+        ]
+      },
+      "ProductionOrdersDocumentReference": {
+        "type": "object",
+        "properties": {
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RefDocEntr": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RefDocNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ExtDocNum": {
+            "type": "string"
+          },
+          "RefObjType": {
+            "$ref": "#/components/schemas/ReferencedObjectTypeEnum"
+          },
+          "IssueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Remark": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "RoutingDateCalculationInput": {
+        "type": "object",
+        "properties": {
+          "CapacitySum": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "capacitySum"
+          },
+          "ResourceCode": {
+            "type": "string",
+            "x-ballerina-name": "resourceCode"
+          },
+          "FirstDateProportion": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "firstDateProportion"
+          },
+          "WORObjAbs": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "wORObjAbs"
+          },
+          "WORLine": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "wORLine"
+          },
+          "CalculateFromDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "calculateFromDate"
+          },
+          "WarehouseCode": {
+            "type": "string",
+            "x-ballerina-name": "warehouseCode"
+          },
+          "CalculateUntilDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "calculateUntilDate"
+          },
+          "ResourceAlloc": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceAllocationEnum"
+              }
+            ],
+            "x-ballerina-name": "resourceAlloc"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RouteStagesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RouteStage"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "RouteStage": {
+        "type": "object",
+        "properties": {
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "creationDate"
+          },
+          "DateOfUpdate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "dateOfUpdate"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "InternalNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "internalNumber"
+          },
+          "GenerationTime": {
+            "type": "string",
+            "x-ballerina-name": "generationTime"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceDailyCapacity": {
+        "type": "object",
+        "properties": {
+          "Factor2": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "factor2"
+          },
+          "Weekday": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceDailyCapacityWeekdayEnum"
+              }
+            ],
+            "x-ballerina-name": "weekday"
+          },
+          "Factor1": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "factor1"
+          },
+          "Remarks": {
+            "type": "string",
+            "x-ballerina-name": "remarks"
+          },
+          "Factor4": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "factor4"
+          },
+          "Factor3": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "factor3"
+          },
+          "Total": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "total"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "SingleRun": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "singleRun"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoIssueMethod": {
+        "type": "string",
+        "description": "OData EnumType 'BoIssueMethod'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "im_Backflush",
+          "im_Manual"
+        ]
+      },
+      "ResourceCapacityRevertedTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityRevertedTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcrtNone",
+          "rcrtIssueForProduction"
+        ]
+      },
+      "ProductionOrdersSalesOrderLine": {
+        "type": "object",
+        "properties": {
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BaseNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BaseAbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BaseLine": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ProductTreeStage": {
+        "type": "object",
+        "properties": {
+          "Father": {
+            "type": "string"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "WaitingDays": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ProductTreeLine": {
+        "type": "object",
+        "properties": {
+          "ItemCode": {
+            "type": "string"
+          },
+          "Quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "Warehouse": {
+            "type": "string"
+          },
+          "Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "Currency": {
+            "type": "string"
+          },
+          "IssueMethod": {
+            "$ref": "#/components/schemas/BoIssueMethod"
+          },
+          "InventoryUOM": {
+            "type": "string"
+          },
+          "Comment": {
+            "type": "string"
+          },
+          "ParentItem": {
+            "type": "string"
+          },
+          "PriceList": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DistributionRule": {
+            "type": "string"
+          },
+          "Project": {
+            "type": "string"
+          },
+          "DistributionRule2": {
+            "type": "string"
+          },
+          "DistributionRule3": {
+            "type": "string"
+          },
+          "DistributionRule4": {
+            "type": "string"
+          },
+          "DistributionRule5": {
+            "type": "string"
+          },
+          "WipAccount": {
+            "type": "string"
+          },
+          "ItemType": {
+            "$ref": "#/components/schemas/ProductionItemType"
+          },
+          "LineText": {
+            "type": "string"
+          },
+          "AdditionalQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ChildNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "VisualOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ItemName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ResourceWarehouse": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string"
+          },
+          "Warehouse": {
+            "type": "string"
+          },
+          "Locked": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ResourceCapacityActionEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityActionEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcaUnknown",
+          "rcaProductionOrderCreate",
+          "rcaProductionOrderClose",
+          "rcaProductionOrderReschedule",
+          "rcaProductionOrderAddLine",
+          "rcaProductionOrderDeleteLine",
+          "rcaProductionOrderUpdateLine",
+          "rcaIssueForProductionCreate",
+          "rcaReceiptFromProductionCreate"
+        ]
+      },
+      "SalesForecastLine": {
+        "type": "object",
+        "properties": {
+          "Quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "ForecastedDay": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ItemNo": {
+            "type": "string"
+          },
+          "Warehouse": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoProductionOrderOriginEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoProductionOrderOriginEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bopooManual",
+          "bopooMRP",
+          "bopooSalesOrder",
+          "bopooProductionOrder"
+        ]
+      },
+      "ResourceDailyCapacityWeekdayEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceDailyCapacityWeekdayEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rdcwFirst",
+          "rdcwSecond",
+          "rdcwThird",
+          "rdcwFourth",
+          "rdcwFifth",
+          "rdcwSixth",
+          "rdcwSeventh"
+        ]
+      },
+      "ResourceEmployee": {
+        "type": "object",
+        "properties": {
+          "Employee": {
+            "type": "string",
+            "x-ballerina-name": "employee"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReferencedObjectTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rot_ExternalDocument",
+          "rot_SalesQuotation",
+          "rot_SalesOrder",
+          "rot_DeliveryNotes",
+          "rot_ReturnRequest",
+          "rot_Return",
+          "rot_DownPaymentIncoming",
+          "rot_SalesInvoice",
+          "rot_SalesCreditNote",
+          "rot_CorrectionSalesInvoice",
+          "rot_SalesTaxInvoice",
+          "rot_PurchaseQuotation",
+          "rot_PurchaseOrder",
+          "rot_GoodsReceiptPO",
+          "rot_GoodsReturnRequest",
+          "rot_GoodsReturn",
+          "rot_DownPaymentOutgoing",
+          "rot_PurchaseInvoice",
+          "rot_PurchaseCreditNote",
+          "rot_CorrectionPurchaseInvoice",
+          "rot_PurchaseTaxInvoice",
+          "rot_LandedCosts",
+          "rot_IncomingPayments",
+          "rot_JournalEntry",
+          "rot_ProductionOrder",
+          "rot_InternalReconciliation",
+          "rot_OriginalInvoice",
+          "rot_OriginalARDownPayment",
+          "rot_PurchaseRequest",
+          "rot_GoodsReceipt",
+          "rot_GoodsIssue",
+          "rot_InventoryTransferRequest",
+          "rot_InventoryTransfer",
+          "rot_ChecksforPayment",
+          "rot_MaterialRevaluation",
+          "rot_InventoryCounting",
+          "rot_InventoryPosting",
+          "rot_OutgoingPayments"
+        ]
+      },
+      "ResourceCapacityTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rctInternal",
+          "rctOrdered",
+          "rctCommitted",
+          "rctConsumed"
+        ]
+      },
+      "ResourceGroup": {
+        "type": "object",
+        "properties": {
+          "Cost1": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost1"
+          },
+          "Cost2": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost2"
+          },
+          "Cost3": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost3"
+          },
+          "CostName9": {
+            "type": "string",
+            "x-ballerina-name": "costName9"
+          },
+          "Cost4": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost4"
+          },
+          "CostName8": {
+            "type": "string",
+            "x-ballerina-name": "costName8"
+          },
+          "Cost9": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost9"
+          },
+          "Cost5": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost5"
+          },
+          "Cost6": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost6"
+          },
+          "Cost7": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost7"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          },
+          "Cost8": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost8"
+          },
+          "NumOfUnitsText": {
+            "type": "string",
+            "x-ballerina-name": "numOfUnitsText"
+          },
+          "Cost10": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "cost10"
+          },
+          "Code": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "code"
+          },
+          "Type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "type"
+          },
+          "CostName10": {
+            "type": "string",
+            "x-ballerina-name": "costName10"
+          },
+          "CostName3": {
+            "type": "string",
+            "x-ballerina-name": "costName3"
+          },
+          "CostName2": {
+            "type": "string",
+            "x-ballerina-name": "costName2"
+          },
+          "CostName1": {
+            "type": "string",
+            "x-ballerina-name": "costName1"
+          },
+          "Resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "x-ballerina-name": "resources"
+          },
+          "CostName7": {
+            "type": "string",
+            "x-ballerina-name": "costName7"
+          },
+          "CostName6": {
+            "type": "string",
+            "x-ballerina-name": "costName6"
+          },
+          "CostName5": {
+            "type": "string",
+            "x-ballerina-name": "costName5"
+          },
+          "CostName4": {
+            "type": "string",
+            "x-ballerina-name": "costName4"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoItemTreeTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "iNotATree",
+          "iAssemblyTree",
+          "iSalesTree",
+          "iProductionTree",
+          "iTemplateTree",
+          "iIngredient"
+        ]
+      },
+      "ResourcePropertiesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceProperty"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ProductionOrderLine": {
+        "type": "object",
+        "properties": {
+          "DocumentAbsoluteEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ItemNo": {
+            "type": "string"
+          },
+          "BaseQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "PlannedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "IssuedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "ProductionOrderIssueType": {
+            "$ref": "#/components/schemas/BoIssueMethod"
+          },
+          "Warehouse": {
+            "type": "string"
+          },
+          "VisualOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DistributionRule": {
+            "type": "string"
+          },
+          "LocationCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Project": {
+            "type": "string"
+          },
+          "DistributionRule2": {
+            "type": "string"
+          },
+          "DistributionRule3": {
+            "type": "string"
+          },
+          "DistributionRule4": {
+            "type": "string"
+          },
+          "DistributionRule5": {
+            "type": "string"
+          },
+          "UoMEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UoMCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "WipAccount": {
+            "type": "string"
+          },
+          "ItemType": {
+            "$ref": "#/components/schemas/ProductionItemType"
+          },
+          "LineText": {
+            "type": "string"
+          },
+          "AdditionalQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "ResourceAllocation": {
+            "$ref": "#/components/schemas/ResourceAllocationEnum"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RequiredDays": {
+            "type": "number",
+            "format": "double"
+          },
+          "ItemName": {
+            "type": "string"
+          },
+          "WeightOfRecycledPlastic": {
+            "type": "number",
+            "format": "double"
+          },
+          "PlasticPackageExemptionReason": {
+            "type": "string"
+          },
+          "SerialNumbers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SerialNumber"
+            }
+          },
+          "BatchNumbers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchNumber"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
       "ServiceLayerError": {
         "type": "object",
         "properties": {
@@ -4418,6 +4320,418 @@
             }
           }
         }
+      },
+      "ResourceCapacityMemoSourceEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacityMemoSourceEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcmsUnknown",
+          "rcmsResourceCapacityForm",
+          "rcmsSetDailyInternalCapacitiesForm"
+        ]
+      },
+      "ResourceIssueMethodEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceIssueMethodEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rimBackflush",
+          "rimManual"
+        ]
+      },
+      "ResourceAllocationEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceAllocationEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "raOnStartDate",
+          "raOnEndDate",
+          "raStartDateForwards",
+          "raEndDateBackwards"
+        ]
+      },
+      "ProductTreesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductTree"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ResourceCapacity": {
+        "type": "object",
+        "properties": {
+          "Warehouse": {
+            "type": "string",
+            "x-ballerina-name": "warehouse"
+          },
+          "Action": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityActionEnum"
+              }
+            ],
+            "x-ballerina-name": "action"
+          },
+          "SourceType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacitySourceTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "sourceType"
+          },
+          "SingleRunCapacity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "singleRunCapacity"
+          },
+          "RevertedLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "revertedLineNum"
+          },
+          "Capacity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "capacity"
+          },
+          "SourceEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "sourceEntry"
+          },
+          "RevertedEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "revertedEntry"
+          },
+          "BaseLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "baseLineNum"
+          },
+          "OwningType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityOwningTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "owningType"
+          },
+          "SingleRunMemoSource": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
+              }
+            ],
+            "x-ballerina-name": "singleRunMemoSource"
+          },
+          "Resource": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Resource"
+              }
+            ],
+            "x-ballerina-name": "resource"
+          },
+          "MemoSource": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityMemoSourceEnum"
+              }
+            ],
+            "x-ballerina-name": "memoSource"
+          },
+          "SingleRunMemo": {
+            "type": "string",
+            "x-ballerina-name": "singleRunMemo"
+          },
+          "RevertedType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityRevertedTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "revertedType"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "date"
+          },
+          "Type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "type"
+          },
+          "BaseType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityBaseTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "baseType"
+          },
+          "SourceLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "sourceLineNum"
+          },
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "id"
+          },
+          "OwningEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "owningEntry"
+          },
+          "BaseEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "baseEntry"
+          },
+          "OwningLineNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "owningLineNum"
+          },
+          "Memo": {
+            "type": "string",
+            "x-ballerina-name": "memo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceProperty": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "code"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourcesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ResourceCapacityWithFilterParams": {
+        "type": "object",
+        "properties": {
+          "Warehouse": {
+            "type": "string",
+            "x-ballerina-name": "warehouse"
+          },
+          "Type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceCapacityTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "type"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceGroupsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceGroup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoProductionOrderTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoProductionOrderTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bopotStandard",
+          "bopotSpecial",
+          "bopotDisassembly"
+        ]
+      },
+      "ResourceCapacitySourceTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResourceCapacitySourceTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rcstNone",
+          "rcstProductionOrder",
+          "rcstIssueForProduction",
+          "rcstReceiptFromProduction"
+        ]
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Comma-separated navigation properties to expand",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarExpand"
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "OData filter expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarFilter"
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Set to 'allpages' to include the total count (odata.count)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        },
+        "x-ballerina-name": "dollarInlinecount"
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "OData orderby expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarOrderby"
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "prefer"
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "description": "Comma-separated list of properties to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarSelect"
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Number of records to skip (paging)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarSkip"
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Maximum number of records to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarTop"
+      }
+    },
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "description": "Session cookie returned by POST /Login.",
+        "name": "B1SESSION",
+        "in": "cookie",
+        "x-ballerina-name": "b1SESSION"
       }
     }
   }

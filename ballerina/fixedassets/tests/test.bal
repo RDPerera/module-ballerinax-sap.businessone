@@ -45,7 +45,7 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    AssetCapitalization_CollectionResponse response = check b1->assetCapitalizationList();
+    AssetCapitalizationCollectionResponse response = check b1->listAssetCapitalization();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);

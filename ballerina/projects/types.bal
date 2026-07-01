@@ -17,42 +17,148 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
 public type ProjectManagementConfigurationService_DeletePriorities_body record {
-    PMC_PriorityData[] PMC_PriorityCollection?;
+    @jsondata:Name {value: "PMC_PriorityCollection"}
+    PMCPriorityData[] pMCPriorityCollection?;
 };
 
-# OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name
 public type PMOperationTypeEnum "pm_op_Ignore"|"pm_op_Add"|"pm_op_Subtract";
 
-# OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name.
+public type PMSSummaryData record {|
+    @jsondata:Name {value: "AccumOpenAmountSales"}
+    decimal accumOpenAmountSales?;
+    @jsondata:Name {value: "TotalVariance"}
+    decimal totalVariance?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AccumTotalSales"}
+    decimal accumTotalSales?;
+    @jsondata:Name {value: "AccumTotalVariancePurchase"}
+    decimal accumTotalVariancePurchase?;
+    @jsondata:Name {value: "ActualByProductCost"}
+    decimal actualByProductCost?;
+    @jsondata:Name {value: "PotentialSubprojectAmount"}
+    decimal potentialSubprojectAmount?;
+    @jsondata:Name {value: "TotalAmountPurchase"}
+    decimal totalAmountPurchase?;
+    @jsondata:Name {value: "ActualItemComponentCost"}
+    decimal actualItemComponentCost?;
+    @jsondata:Name {value: "SumOpenAmountPurchase"}
+    decimal sumOpenAmountPurchase?;
+    @jsondata:Name {value: "AccumInvoicedAmountSales"}
+    decimal accumInvoicedAmountSales?;
+    @jsondata:Name {value: "AccumTotalPurchase"}
+    decimal accumTotalPurchase?;
+    @jsondata:Name {value: "AccumVariancePerceptionPurchase"}
+    decimal accumVariancePerceptionPurchase?;
+    @jsondata:Name {value: "AccumPotentialSubprojectAmount"}
+    decimal accumPotentialSubprojectAmount?;
+    @jsondata:Name {value: "DueDate"}
+    string dueDate?;
+    @jsondata:Name {value: "ActualAdditionalCost"}
+    decimal actualAdditionalCost?;
+    @jsondata:Name {value: "AccumVariancePerceptionSales"}
+    decimal accumVariancePerceptionSales?;
+    @jsondata:Name {value: "AccumOpenAmountPurchase"}
+    decimal accumOpenAmountPurchase?;
+    @jsondata:Name {value: "SumOpenAmountSales"}
+    decimal sumOpenAmountSales?;
+    @jsondata:Name {value: "AccumSubprojectBudget"}
+    decimal accumSubprojectBudget?;
+    @jsondata:Name {value: "ActualProductCost"}
+    decimal actualProductCost?;
+    @jsondata:Name {value: "Overdue"}
+    int:Signed32 overdue?;
+    @jsondata:Name {value: "SumInvoicedAmountPurchase"}
+    decimal sumInvoicedAmountPurchase?;
+    @jsondata:Name {value: "VariancePerceptionPurchase"}
+    decimal variancePerceptionPurchase?;
+    @jsondata:Name {value: "TotalAmountSales"}
+    decimal totalAmountSales?;
+    @jsondata:Name {value: "TotalVariancePurchase"}
+    decimal totalVariancePurchase?;
+    @jsondata:Name {value: "AccumInvoicedAmountPurchase"}
+    decimal accumInvoicedAmountPurchase?;
+    @jsondata:Name {value: "SumInvoicedAmountSales"}
+    decimal sumInvoicedAmountSales?;
+    @jsondata:Name {value: "AccumTotalVarianceSales"}
+    decimal accumTotalVarianceSales?;
+    @jsondata:Name {value: "ActualClosingDate"}
+    string actualClosingDate?;
+    @jsondata:Name {value: "VariancePerceptionSales"}
+    decimal variancePerceptionSales?;
+    @jsondata:Name {value: "TotalVarianceSales"}
+    decimal totalVarianceSales?;
+    @jsondata:Name {value: "ActualResourceComponentCost"}
+    decimal actualResourceComponentCost?;
+    @jsondata:Name {value: "SubprojectBudget"}
+    decimal subprojectBudget?;
+|};
+
+# OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name
 public type AmountCatTypeEnum "act_Open"|"act_Invoiced";
 
+public type PMProjectDocumentData record {
+    int:Signed32 AbsEntry?;
+    int:Signed32 Owner?;
+    string ProjectName?;
+    string StartDate?;
+    decimal FinishedPercent?;
+    int:Signed32 DocNum?;
+    int:Signed32 Series?;
+    # OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name
+    ProjectTypeEnum ProjectType?;
+    string BusinessPartner?;
+    string BusinessPartnerName?;
+    int:Signed32 ContactPerson?;
+    int:Signed32 Territory?;
+    int:Signed32 SalesEmployee?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum AllowSubprojects?;
+    # OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name
+    ProjectStatusTypeEnum ProjectStatus?;
+    string DueDate?;
+    string ClosingDate?;
+    string FinancialProject?;
+    # OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name
+    RiskLevelTypeEnum RiskLevel?;
+    int:Signed32 Industry?;
+    string Reason?;
+    int:Signed32 AttachmentEntry?;
+    PMStageData[] PM_StagesCollection?;
+    PMOpenIssueData[] PM_OpenIssuesCollection?;
+    PMDocumentData[] PM_DocumentsCollection?;
+    PMActivityData[] PM_ActivitiesCollection?;
+    PMWorkOrderData[] PM_WorkOrdersCollection?;
+    PMSummaryData PM_SummaryData?;
+    PMDocAttachement[] PM_DocAttachements?;
+    PMStageAttachement[] PM_StageAttachements?;
+    Project Project?;
+};
+
 public type ProjectManagementConfigurationService_DeleteActivities_body record {
-    PMC_ActivityData[] PMC_ActivityCollection?;
+    @jsondata:Name {value: "PMC_ActivityCollection"}
+    PMCActivityData[] pMCActivityCollection?;
 };
 
 public type ProjectManagementConfigurationService_AddTasks_body record {
-    PMC_TaskData[] PMC_TaskCollection?;
+    @jsondata:Name {value: "PMC_TaskCollection"}
+    PMCTaskData[] pMCTaskCollection?;
 };
 
 public type ProjectManagementService_UpdateSubproject_body record {
-    PM_SubprojectDocumentData PM_SubprojectDocumentData?;
+    @jsondata:Name {value: "PM_SubprojectDocumentData"}
+    PMSubprojectDocumentData pMSubprojectDocumentData?;
 };
 
-# Represents the Queries record for the operation: projectManagementsGet
-public type ProjectManagementsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type PM_TimeSheetData record {
+public type PMTimeSheetData record {
     int:Signed32 AbsEntry?;
     int:Signed32 DocNumber?;
-    # OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name
     TimeSheetTypeEnum TimeSheetType?;
     int:Signed32 UserID?;
     string LastName?;
@@ -64,142 +170,179 @@ public type PM_TimeSheetData record {
     string SAPPassport?;
     int:Signed32 AttachmentEntry?;
     string UserCode?;
-    PM_TimeSheetLineData[] PM_TimeSheetLineDataCollection?;
+    PMTimeSheetLineData[] PM_TimeSheetLineDataCollection?;
 };
-
-public type PMC_StageTypeData record {|
-    int:Signed32 StageID?;
-    string StageName?;
-    string StageDescription?;
-|};
 
 public type ProjectManagementConfigurationService_UpdateSubprojectTypes_body record {
-    PMC_SubprojectTypeData[] PMC_SubprojectTypesCollection?;
+    @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
+    PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
 };
 
-# Represents the Queries record for the operation: projectsGet
-public type ProjectsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getProjectManagementTimeSheet
+public type GetProjectManagementTimeSheetQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type PMS_DocAttachement record {|
-    int:Signed32 AbsEntry?;
-    int:Signed32 LineID?;
-    string SourcePath?;
-    string FileName?;
-    string FileExtension?;
-    string AttachementDate?;
+# Represents the Queries record for the operation: getProjectManagements
+public type GetProjectManagementsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type PMCStageTypeData record {|
+    @jsondata:Name {value: "StageDescription"}
+    string stageDescription?;
+    @jsondata:Name {value: "StageName"}
+    string stageName?;
+    @jsondata:Name {value: "StageID"}
+    int:Signed32 stageID?;
 |};
 
-# OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name.
+public type PMCTaskData record {|
+    @jsondata:Name {value: "TaskID"}
+    int:Signed32 taskID?;
+    @jsondata:Name {value: "TaskName"}
+    string taskName?;
+|};
+
+# OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name
 public type PMCategorizeTypeEnum "pm_cat_Ignore"|"pm_cat_OpenAmountAP"|"pm_cat_OpenAmountAR"|"pm_cat_InvoicedAP"|"pm_cat_InvoicedAR";
 
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-public type PM_StageData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    int:Signed32 StageType?;
-    string StartDate?;
-    string CloseDate?;
-    int:Signed32 Task?;
-    string Description?;
-    decimal ExpectedCosts?;
-    decimal InvoicedAmountSales?;
-    decimal OpenAmountSales?;
-    decimal InvoicedAmountPurchase?;
-    decimal OpenAmountPurchase?;
-    decimal PercentualCompletness?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsFinished?;
-    int:Signed32 StageOwner?;
-    int:Signed32 DependsOnStage1?;
-    int:Signed32 DependsOnStage2?;
-    int:Signed32 DependsOnStage3?;
-    int:Signed32 DependsOnStage4?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
-    StageDepTypeEnum StageDependency1Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
-    StageDepTypeEnum StageDependency2Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
-    StageDepTypeEnum StageDependency3Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
-    StageDepTypeEnum StageDependency4Type?;
-    int:Signed32 DependsOnStageID1?;
-    int:Signed32 DependsOnStageID2?;
-    int:Signed32 DependsOnStageID3?;
-    int:Signed32 DependsOnStageID4?;
-    int:Signed32 AttachmentEntry?;
-    string UniqueID?;
-    string FinishedDate?;
-};
-
-public type PMC_PriorityData record {|
-    int:Signed32 PriorityID?;
-    string PriorityName?;
-|};
-
-# Represents the Queries record for the operation: projectManagementsList
-public type ProjectManagementsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name
 public type RiskLevelTypeEnum "rlt_Low"|"rlt_Medium"|"rlt_High";
 
 public type ExpenseTypeData record {|
-    string ExpenseType?;
-    string ExpenseName?;
-    string ExpenseAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum PaidByCompany?;
-    string VatGroup?;
+    @jsondata:Name {value: "ExpenseAccount"}
+    string expenseAccount?;
+    @jsondata:Name {value: "ExpenseName"}
+    string expenseName?;
+    @jsondata:Name {value: "VatGroup"}
+    string vatGroup?;
+    @jsondata:Name {value: "ExpenseType"}
+    string expenseType?;
+    @jsondata:Name {value: "PaidByCompany"}
+    BoYesNoEnum paidByCompany?;
 |};
 
-public type PMS_OpenIssueData record {
+public type ProjectManagementConfigurationService_AddStageTypes_body record {
+    @jsondata:Name {value: "PMC_StageTypeCollection"}
+    PMCStageTypeData[] pMCStageTypeCollection?;
+};
+
+# Represents the Headers record for the operation: listExpenseTypes
+public type ListExpenseTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name
+public type PMDocumentTypeEnum "pmdt_DocumentDraft"|"pmdt_ManualJournalEntry"|"pmdt_SalesQuotation"|"pmdt_SalesOrder"|"pmdt_Delivery"|"pmdt_Return"|"pmdt_ReturnRequest"|"pmdt_ARDownPaymentRequest"|"pmdt_ARDownPaymentInvoice"|"pmdt_ARInvoice"|"pmdt_ARCreditMemo"|"pmdt_ARReserveInvoice"|"pmdt_PurchaseQuotation"|"pmdt_PurchaseOrder"|"pmdt_PurchaseRequest"|"pmdt_GoodsReceiptPO"|"pmdt_GoodsReturn"|"pmdt_GoodsReturnRequest"|"pmdt_APDownPaymentRequest"|"pmdt_APDownPaymentInvoice"|"pmdt_APInvoice"|"pmdt_APCreditMemo"|"pmdt_APReserveInvoice"|"pmdt_ServiceCall"|"pmdt_GoodsReceipt"|"pmdt_GoodsIssue"|"pmdt_ARCorrectionInvoice"|"pmdt_ARCorrectionInvoiceReversal"|"pmdt_APCorrectionInvoice"|"pmdt_APCorrectionInvoiceReversal";
+
+public type PMSWorkOrderData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
-    int:Signed32 Area?;
-    int:Signed32 Priority?;
-    string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Closed?;
-    int:Signed32 SolutionID?;
-    int:Signed32 Responsible?;
-    int:Signed32 EnteredBy?;
-    string EnteredDate?;
-    decimal Effort?;
+    int:Signed32 DocNumber?;
+    int:Signed32 DocEntry?;
 };
 
-public type ProjectManagementConfigurationService_AddStageTypes_body record {
-    PMC_StageTypeData[] PMC_StageTypeCollection?;
-};
+public type PMSummaryData record {|
+    @jsondata:Name {value: "AccumOpenAmountSales"}
+    decimal accumOpenAmountSales?;
+    @jsondata:Name {value: "TotalVariance"}
+    decimal totalVariance?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AccumTotalSales"}
+    decimal accumTotalSales?;
+    @jsondata:Name {value: "AccumTotalVariancePurchase"}
+    decimal accumTotalVariancePurchase?;
+    @jsondata:Name {value: "ActualByProductCost"}
+    decimal actualByProductCost?;
+    @jsondata:Name {value: "PotentialSubprojectAmount"}
+    decimal potentialSubprojectAmount?;
+    @jsondata:Name {value: "TotalAmountPurchase"}
+    decimal totalAmountPurchase?;
+    @jsondata:Name {value: "ActualItemComponentCost"}
+    decimal actualItemComponentCost?;
+    @jsondata:Name {value: "SumOpenAmountPurchase"}
+    decimal sumOpenAmountPurchase?;
+    @jsondata:Name {value: "AccumInvoicedAmountSales"}
+    decimal accumInvoicedAmountSales?;
+    @jsondata:Name {value: "AccumTotalPurchase"}
+    decimal accumTotalPurchase?;
+    @jsondata:Name {value: "AccumVariancePerceptionPurchase"}
+    decimal accumVariancePerceptionPurchase?;
+    @jsondata:Name {value: "AccumPotentialSubprojectAmount"}
+    decimal accumPotentialSubprojectAmount?;
+    @jsondata:Name {value: "DueDate"}
+    string dueDate?;
+    @jsondata:Name {value: "ActualAdditionalCost"}
+    decimal actualAdditionalCost?;
+    @jsondata:Name {value: "AccumVariancePerceptionSales"}
+    decimal accumVariancePerceptionSales?;
+    @jsondata:Name {value: "AccumOpenAmountPurchase"}
+    decimal accumOpenAmountPurchase?;
+    @jsondata:Name {value: "SumOpenAmountSales"}
+    decimal sumOpenAmountSales?;
+    @jsondata:Name {value: "AccumSubprojectBudget"}
+    decimal accumSubprojectBudget?;
+    @jsondata:Name {value: "ActualProductCost"}
+    decimal actualProductCost?;
+    @jsondata:Name {value: "Overdue"}
+    int:Signed32 overdue?;
+    @jsondata:Name {value: "SumInvoicedAmountPurchase"}
+    decimal sumInvoicedAmountPurchase?;
+    @jsondata:Name {value: "VariancePerceptionPurchase"}
+    decimal variancePerceptionPurchase?;
+    @jsondata:Name {value: "TotalAmountSales"}
+    decimal totalAmountSales?;
+    @jsondata:Name {value: "TotalVariancePurchase"}
+    decimal totalVariancePurchase?;
+    @jsondata:Name {value: "AccumInvoicedAmountPurchase"}
+    decimal accumInvoicedAmountPurchase?;
+    @jsondata:Name {value: "SumInvoicedAmountSales"}
+    decimal sumInvoicedAmountSales?;
+    @jsondata:Name {value: "AccumTotalVarianceSales"}
+    decimal accumTotalVarianceSales?;
+    @jsondata:Name {value: "ActualClosingDate"}
+    string actualClosingDate?;
+    @jsondata:Name {value: "VariancePerceptionSales"}
+    decimal variancePerceptionSales?;
+    @jsondata:Name {value: "TotalVarianceSales"}
+    decimal totalVarianceSales?;
+    @jsondata:Name {value: "ActualResourceComponentCost"}
+    decimal actualResourceComponentCost?;
+    @jsondata:Name {value: "SubprojectBudget"}
+    decimal subprojectBudget?;
+|};
 
-public type Projects_CollectionResponse record {
-    string odata\.metadata?;
+public type PMCSubprojectTypeData record {|
+    @jsondata:Name {value: "SubprojectTypeID"}
+    int:Signed32 subprojectTypeID?;
+    @jsondata:Name {value: "SubprojectTypeName"}
+    string subprojectTypeName?;
+|};
+
+public type ProjectsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     Project[] value?;
-    string odata\.nextLink?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
-
-# OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-public type PMDocumentTypeEnum "pmdt_DocumentDraft"|"pmdt_ManualJournalEntry"|"pmdt_SalesQuotation"|"pmdt_SalesOrder"|"pmdt_Delivery"|"pmdt_Return"|"pmdt_ReturnRequest"|"pmdt_ARDownPaymentRequest"|"pmdt_ARDownPaymentInvoice"|"pmdt_ARInvoice"|"pmdt_ARCreditMemo"|"pmdt_ARReserveInvoice"|"pmdt_PurchaseQuotation"|"pmdt_PurchaseOrder"|"pmdt_PurchaseRequest"|"pmdt_GoodsReceiptPO"|"pmdt_GoodsReturn"|"pmdt_GoodsReturnRequest"|"pmdt_APDownPaymentRequest"|"pmdt_APDownPaymentInvoice"|"pmdt_APInvoice"|"pmdt_APCreditMemo"|"pmdt_APReserveInvoice"|"pmdt_ServiceCall"|"pmdt_GoodsReceipt"|"pmdt_GoodsIssue"|"pmdt_ARCorrectionInvoice"|"pmdt_ARCorrectionInvoiceReversal"|"pmdt_APCorrectionInvoice"|"pmdt_APCorrectionInvoiceReversal";
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
 @display {label: "Connection Config"}
@@ -243,89 +386,172 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
+public type PMSubprojectDocumentParams record {|
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+|};
+
 public type ProjectManagementConfigurationService_UpdatePriorities_body record {
-    PMC_PriorityData[] PMC_PriorityCollection?;
+    @jsondata:Name {value: "PMC_PriorityCollection"}
+    PMCPriorityData[] pMCPriorityCollection?;
 };
 
-# Represents the Headers record for the operation: projectsList
-public type ProjectsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type ExpenseTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ExpenseTypeData[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getProjects
+public type GetProjectsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200_5 record {
-    string odata\.metadata?;
-    PMC_TaskData[] value?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCTaskData[] value?;
 };
 
 public type ProjectManagementConfigurationService_UpdateActivities_body record {
-    PMC_ActivityData[] PMC_ActivityCollection?;
+    @jsondata:Name {value: "PMC_ActivityCollection"}
+    PMCActivityData[] pMCActivityCollection?;
 };
 
 public type inline_response_200_6 record {
-    string odata\.metadata?;
-    PM_SubprojectDocumentParams[] value?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMSubprojectDocumentParams[] value?;
 };
 
+public type PMCAreaData record {|
+    @jsondata:Name {value: "AreaName"}
+    string areaName?;
+    @jsondata:Name {value: "AreaID"}
+    int:Signed32 areaID?;
+|};
+
 public type inline_response_200_7 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ProjectParams[] value?;
 };
 
 public type ProjectManagementConfigurationService_DeleteAreas_body record {
-    PMC_AreaData[] PMC_AreaCollection?;
+    @jsondata:Name {value: "PMC_AreaCollection"}
+    PMCAreaData[] pMCAreaCollection?;
 };
 
 public type ProjectManagementConfigurationService_UpdateTasks_body record {
-    PMC_TaskData[] PMC_TaskCollection?;
-};
-
-# Represents the Queries record for the operation: projectManagementTimeSheetGet
-public type ProjectManagementTimeSheetGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "PMC_TaskCollection"}
+    PMCTaskData[] pMCTaskCollection?;
 };
 
 public type ProjectManagementConfigurationService_DeleteSubprojectTypes_body record {
-    PMC_SubprojectTypeData[] PMC_SubprojectTypesCollection?;
+    @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
+    PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
 };
 
-public type PM_WorkOrderData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    int:Signed32 DocNumber?;
-    int:Signed32 DocEntry?;
-};
-
-public type PMC_ActivityData record {|
-    int:Signed32 ActivityID?;
-    string ActivityType?;
-    string LaborItem?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsChargeable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsAbsence?;
+public type PMSDocAttachement record {|
+    @jsondata:Name {value: "SourcePath"}
+    string sourcePath?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AttachementDate"}
+    string attachementDate?;
+    @jsondata:Name {value: "FileName"}
+    string fileName?;
+    @jsondata:Name {value: "FileExtension"}
+    string fileExtension?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
 |};
 
-public type PM_SubprojectDocumentParams record {|
-    int:Signed32 AbsEntry?;
-|};
-
-# OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ProjectTypeEnum "pt_External"|"pt_Internal";
 
-public type PMS_StageAttachement record {|
-    int:Signed32 AbsEntry?;
+public type PMDocumentData record {
     int:Signed32 LineID?;
-    string SourcePath?;
-    string FileName?;
-    string FileExtension?;
-    string AttachementDate?;
+    int:Signed32 StageID?;
+    # OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name
+    PMDocumentTypeEnum DocType?;
+    int:Signed32 DocEntry?;
+    string DocDate?;
+    decimal Total?;
+    int:Signed32 LineNumber?;
+    # OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name
+    LineStatusTypeEnum Status?;
+    # OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name
+    AmountCatTypeEnum AmountCategory?;
+    # OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name
+    PMCategorizeTypeEnum Categorize?;
+    # OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name
+    PMOperationTypeEnum Operation?;
+};
+
+public type Project record {
+    string Code?;
+    string Name?;
+    string ValidFrom?;
+    string ValidTo?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum Active?;
+    PMProjectDocumentData[] ProjectManagements?;
+};
+
+# OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name
+public type TimeSheetTypeEnum "tsh_Employee"|"tsh_User"|"tsh_Other";
+
+public type PMCActivityData record {|
+    @jsondata:Name {value: "ActivityID"}
+    int:Signed32 activityID?;
+    @jsondata:Name {value: "ActivityType"}
+    string activityType?;
+    @jsondata:Name {value: "IsChargeable"}
+    BoYesNoEnum isChargeable?;
+    @jsondata:Name {value: "LaborItem"}
+    string laborItem?;
+    @jsondata:Name {value: "IsAbsence"}
+    BoYesNoEnum isAbsence?;
 |};
 
-public type PMS_StageData record {
+public type ProjectManagementConfigurationService_AddAreas_body record {
+    @jsondata:Name {value: "PMC_AreaCollection"}
+    PMCAreaData[] pMCAreaCollection?;
+};
+
+public type inline_response_200_1 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCAreaData[] value?;
+};
+
+public type inline_response_200_2 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCPriorityData[] value?;
+};
+
+public type inline_response_200_3 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCStageTypeData[] value?;
+};
+
+public type inline_response_200_4 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCSubprojectTypeData[] value?;
+};
+
+public type PMStageData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
     int:Signed32 StageType?;
@@ -339,20 +565,20 @@ public type PMS_StageData record {
     decimal InvoicedAmountPurchase?;
     decimal OpenAmountPurchase?;
     decimal PercentualCompletness?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsFinished?;
     int:Signed32 StageOwner?;
     int:Signed32 DependsOnStage1?;
     int:Signed32 DependsOnStage2?;
     int:Signed32 DependsOnStage3?;
     int:Signed32 DependsOnStage4?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
     StageDepTypeEnum StageDependency1Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
     StageDepTypeEnum StageDependency2Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
     StageDepTypeEnum StageDependency3Type?;
-    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
     StageDepTypeEnum StageDependency4Type?;
     int:Signed32 DependsOnStageID1?;
     int:Signed32 DependsOnStageID2?;
@@ -363,400 +589,114 @@ public type PMS_StageData record {
     string FinishedDate?;
 };
 
-public type Project record {
-    string Code?;
-    string Name?;
-    string ValidFrom?;
-    string ValidTo?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    PM_ProjectDocumentData[] ProjectManagements?;
-};
 
-# Represents the Headers record for the operation: projectManagementTimeSheetList
-public type ProjectManagementTimeSheetListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name.
-public type TimeSheetTypeEnum "tsh_Employee"|"tsh_User"|"tsh_Other";
-
-# Represents the Queries record for the operation: projectManagementTimeSheetList
-public type ProjectManagementTimeSheetListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ProjectManagementConfigurationService_AddAreas_body record {
-    PMC_AreaData[] PMC_AreaCollection?;
-};
-
-public type inline_response_200_1 record {
-    string odata\.metadata?;
-    PMC_AreaData[] value?;
-};
-
-# Represents the Queries record for the operation: expenseTypesList
-public type ExpenseTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type inline_response_200_2 record {
-    string odata\.metadata?;
-    PMC_PriorityData[] value?;
-};
-
-public type inline_response_200_3 record {
-    string odata\.metadata?;
-    PMC_StageTypeData[] value?;
-};
-
-public type inline_response_200_4 record {
-    string odata\.metadata?;
-    PMC_SubprojectTypeData[] value?;
-};
-
-# Represents the Queries record for the operation: projectsList
-public type ProjectsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-
-# Represents the Headers record for the operation: expenseTypesList
-public type ExpenseTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type PMS_DocumentData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    # OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    PMDocumentTypeEnum DocType?;
-    int:Signed32 DocEntry?;
-    string DocDate?;
-    decimal Total?;
-    int:Signed32 LineNumber?;
-    # OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name.
-    LineStatusTypeEnum Status?;
-    # OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name.
-    AmountCatTypeEnum AmountCategory?;
-    # OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name.
-    PMCategorizeTypeEnum Categorize?;
-    # OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name.
-    PMOperationTypeEnum Operation?;
-};
-
-# OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name
 public type SubprojectStatusTypeEnum "sst_Open"|"sst_Closed";
 
 public type ProjectManagementService_GetSubproject_body record {
-    PM_SubprojectDocumentParams PM_SubprojectDocumentParams?;
+    @jsondata:Name {value: "PM_SubprojectDocumentParams"}
+    PMSubprojectDocumentParams pMSubprojectDocumentParams?;
 };
 
-# Represents the Queries record for the operation: expenseTypesGet
-public type ExpenseTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ProjectManagementConfigurationService_DeleteStageTypes_body record {
-    PMC_StageTypeData[] PMC_StageTypeCollection?;
-};
-
-public type PM_ActivityData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    int:Signed32 ActivityID?;
-};
-
-public type PM_StageAttachement record {|
-    int:Signed32 AbsEntry?;
-    int:Signed32 LineID?;
-    string SourcePath?;
-    string FileName?;
-    string FileExtension?;
-    string AttachementDate?;
+public type PMSubprojectParams record {|
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "IsSubproject"}
+    BoYesNoEnum isSubproject?;
 |};
 
-public type ProjectManagementService_AddSubproject_body record {
-    PM_SubprojectDocumentData PM_SubprojectDocumentData?;
+public type ProjectManagementConfigurationService_DeleteStageTypes_body record {
+    @jsondata:Name {value: "PMC_StageTypeCollection"}
+    PMCStageTypeData[] pMCStageTypeCollection?;
 };
 
-public type ProjectManagementTimeSheet_CollectionResponse record {
-    string odata\.metadata?;
-    PM_TimeSheetData[] value?;
-    string odata\.nextLink?;
+public type ProjectManagementService_AddSubproject_body record {
+    @jsondata:Name {value: "PM_SubprojectDocumentData"}
+    PMSubprojectDocumentData pMSubprojectDocumentData?;
 };
 
 public type ProjectManagementService_GetSubprojectsList_body record {
-    PM_SubprojectParams PM_SubprojectParams?;
+    @jsondata:Name {value: "PM_SubprojectParams"}
+    PMSubprojectParams pMSubprojectParams?;
 };
 
 public type ProjectParams record {|
-    string Code?;
-    string Name?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name
 public type ProjectStatusTypeEnum "pst_Started"|"pst_Paused"|"pst_Stopped"|"pst_Finished"|"pst_Canceled";
 
-public type PMS_WorkOrderData record {
+public type PMSDocumentData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
-    int:Signed32 DocNumber?;
-    int:Signed32 DocEntry?;
-};
-
-public type PM_DocAttachement record {|
-    int:Signed32 AbsEntry?;
-    int:Signed32 LineID?;
-    string SourcePath?;
-    string FileName?;
-    string FileExtension?;
-    string AttachementDate?;
-|};
-
-public type PMS_ActivityData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    int:Signed32 ActivityID?;
-};
-
-public type PM_OpenIssueData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    int:Signed32 Area?;
-    int:Signed32 Priority?;
-    string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Closed?;
-    int:Signed32 SolutionID?;
-    int:Signed32 Responsible?;
-    int:Signed32 EnteredBy?;
-    string EnteredDate?;
-    decimal Effort?;
-};
-
-public type inline_response_200 record {
-    string odata\.metadata?;
-    PMC_ActivityData[] value?;
-};
-
-public type ProjectManagementConfigurationService_AddPriorities_body record {
-    PMC_PriorityData[] PMC_PriorityCollection?;
-};
-
-public type PM_DocumentData record {
-    int:Signed32 LineID?;
-    int:Signed32 StageID?;
-    # OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name
     PMDocumentTypeEnum DocType?;
     int:Signed32 DocEntry?;
     string DocDate?;
     decimal Total?;
     int:Signed32 LineNumber?;
-    # OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name
     LineStatusTypeEnum Status?;
-    # OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name
     AmountCatTypeEnum AmountCategory?;
-    # OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name
     PMCategorizeTypeEnum Categorize?;
-    # OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name
     PMOperationTypeEnum Operation?;
 };
 
-public type PMC_AreaData record {|
-    int:Signed32 AreaID?;
-    string AreaName?;
+# Represents the Headers record for the operation: listProjectManagementTimeSheet
+public type ListProjectManagementTimeSheetHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: listExpenseTypes
+public type ListExpenseTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type PMDocAttachement record {|
+    @jsondata:Name {value: "SourcePath"}
+    string sourcePath?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AttachementDate"}
+    string attachementDate?;
+    @jsondata:Name {value: "FileName"}
+    string fileName?;
+    @jsondata:Name {value: "FileExtension"}
+    string fileExtension?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
 |};
 
-# OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name.
-public type LineStatusTypeEnum "lst_Open"|"lst_Closed";
-
-public type PM_SummaryData record {|
-    int:Signed32 LineID?;
-    decimal SubprojectBudget?;
-    decimal SumOpenAmountPurchase?;
-    decimal SumInvoicedAmountPurchase?;
-    decimal TotalAmountPurchase?;
-    decimal TotalVariancePurchase?;
-    decimal VariancePerceptionPurchase?;
-    decimal AccumSubprojectBudget?;
-    decimal AccumOpenAmountPurchase?;
-    decimal AccumInvoicedAmountPurchase?;
-    decimal AccumTotalPurchase?;
-    decimal AccumTotalVariancePurchase?;
-    decimal AccumVariancePerceptionPurchase?;
-    decimal PotentialSubprojectAmount?;
-    decimal SumOpenAmountSales?;
-    decimal SumInvoicedAmountSales?;
-    decimal TotalAmountSales?;
-    decimal TotalVarianceSales?;
-    decimal VariancePerceptionSales?;
-    decimal AccumPotentialSubprojectAmount?;
-    decimal AccumOpenAmountSales?;
-    decimal AccumInvoicedAmountSales?;
-    decimal AccumTotalSales?;
-    decimal AccumTotalVarianceSales?;
-    decimal AccumVariancePerceptionSales?;
-    decimal ActualItemComponentCost?;
-    decimal ActualResourceComponentCost?;
-    decimal ActualAdditionalCost?;
-    decimal ActualProductCost?;
-    decimal ActualByProductCost?;
-    decimal TotalVariance?;
-    string DueDate?;
-    string ActualClosingDate?;
-    int:Signed32 Overdue?;
-|};
-
-public type PMC_TaskData record {|
-    int:Signed32 TaskID?;
-    string TaskName?;
-|};
-
-public type ProjectManagementConfigurationService_DeleteTasks_body record {
-    PMC_TaskData[] PMC_TaskCollection?;
-};
-
-public type PM_SubprojectDocumentData record {
-    int:Signed32 AbsEntry?;
-    int:Signed32 Owner?;
-    string SubprojectName?;
-    string StartDate?;
-    decimal FinishedPercent?;
-    int:Signed32 ParentID?;
-    int:Signed32 ProjectID?;
-    int:Signed32 Order?;
-    int:Signed32 SubprojectType?;
-    decimal SubprojectContribution?;
-    # OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name.
-    SubprojectStatusTypeEnum SubprojectStatus?;
-    string SubprojectEndDate?;
-    decimal ActualCost?;
-    decimal PlannedCost?;
-    int:Signed32 SubprojectDepth?;
-    string DueDate?;
-    PMS_StageData[] PMS_StagesCollection?;
-    PMS_OpenIssueData[] PMS_OpenIssuesCollection?;
-    PMS_DocumentData[] PMS_DocumentsCollection?;
-    PMS_ActivityData[] PMS_ActivitiesCollection?;
-    PMS_WorkOrderData[] PMS_WorkOrdersCollection?;
-    PMS_SummaryData PMS_SummaryData?;
-    PMS_DocAttachement[] PMS_DocAttachements?;
-    PMS_StageAttachement[] PMS_StageAttachements?;
-};
-
-public type ProjectManagements_CollectionResponse record {
-    string odata\.metadata?;
-    PM_ProjectDocumentData[] value?;
-    string odata\.nextLink?;
-};
-
-public type ExpenseTypes_CollectionResponse record {
-    string odata\.metadata?;
-    ExpenseTypeData[] value?;
-    string odata\.nextLink?;
-};
-
-public type ProjectManagementService_DeleteSubproject_body record {
-    PM_SubprojectDocumentParams PM_SubprojectDocumentParams?;
-};
-
-public type ProjectManagementConfigurationService_AddSubprojectTypes_body record {
-    PMC_SubprojectTypeData[] PMC_SubprojectTypesCollection?;
-};
-
-public type ProjectManagementConfigurationService_UpdateStageTypes_body record {
-    PMC_StageTypeData[] PMC_StageTypeCollection?;
-};
-
-# Represents the Headers record for the operation: projectManagementsList
-public type ProjectManagementsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type PMS_SummaryData record {|
-    int:Signed32 LineID?;
-    decimal SubprojectBudget?;
-    decimal SumOpenAmountPurchase?;
-    decimal SumInvoicedAmountPurchase?;
-    decimal TotalAmountPurchase?;
-    decimal TotalVariancePurchase?;
-    decimal VariancePerceptionPurchase?;
-    decimal AccumSubprojectBudget?;
-    decimal AccumOpenAmountPurchase?;
-    decimal AccumInvoicedAmountPurchase?;
-    decimal AccumTotalPurchase?;
-    decimal AccumTotalVariancePurchase?;
-    decimal AccumVariancePerceptionPurchase?;
-    decimal PotentialSubprojectAmount?;
-    decimal SumOpenAmountSales?;
-    decimal SumInvoicedAmountSales?;
-    decimal TotalAmountSales?;
-    decimal TotalVarianceSales?;
-    decimal VariancePerceptionSales?;
-    decimal AccumPotentialSubprojectAmount?;
-    decimal AccumOpenAmountSales?;
-    decimal AccumInvoicedAmountSales?;
-    decimal AccumTotalSales?;
-    decimal AccumTotalVarianceSales?;
-    decimal AccumVariancePerceptionSales?;
-    decimal ActualItemComponentCost?;
-    decimal ActualResourceComponentCost?;
-    decimal ActualAdditionalCost?;
-    decimal ActualProductCost?;
-    decimal ActualByProductCost?;
-    decimal TotalVariance?;
-    string DueDate?;
-    string ActualClosingDate?;
-    int:Signed32 Overdue?;
-|};
-
-public type PM_TimeSheetLineData record {
+public type PMTimeSheetLineData record {
     int:Signed32 LineID?;
     string Date?;
     int:Signed32 ActivityType?;
@@ -774,69 +714,323 @@ public type PM_TimeSheetLineData record {
     string NonBillableTime?;
     string EffectiveTime?;
     string BillableTime?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FullDay?;
     int:Signed32 ProjectID?;
     int:Signed32 SubprojectID?;
     int:Signed32 StageID?;
 };
 
-# OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name.
-public type StageDepTypeEnum "sdt_Project"|"sdt_Subproject";
-
-public type PMC_SubprojectTypeData record {|
-    int:Signed32 SubprojectTypeID?;
-    string SubprojectTypeName?;
-|};
-
-public type ProjectManagementConfigurationService_UpdateAreas_body record {
-    PMC_AreaData[] PMC_AreaCollection?;
+public type inline_response_200 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMCActivityData[] value?;
 };
 
-public type PM_ProjectDocumentData record {
+public type PMOpenIssueData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 Area?;
+    int:Signed32 Priority?;
+    string Remarks?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum Closed?;
+    int:Signed32 SolutionID?;
+    int:Signed32 Responsible?;
+    int:Signed32 EnteredBy?;
+    string EnteredDate?;
+    decimal Effort?;
+};
+
+public type ProjectManagementConfigurationService_AddPriorities_body record {
+    @jsondata:Name {value: "PMC_PriorityCollection"}
+    PMCPriorityData[] pMCPriorityCollection?;
+};
+
+public type PMCPriorityData record {|
+    @jsondata:Name {value: "PriorityName"}
+    string priorityName?;
+    @jsondata:Name {value: "PriorityID"}
+    int:Signed32 priorityID?;
+|};
+
+# OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name
+public type LineStatusTypeEnum "lst_Open"|"lst_Closed";
+
+public type ProjectManagementsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMProjectDocumentData[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type ProjectManagementConfigurationService_DeleteTasks_body record {
+    @jsondata:Name {value: "PMC_TaskCollection"}
+    PMCTaskData[] pMCTaskCollection?;
+};
+
+# Represents the Headers record for the operation: listProjectManagements
+public type ListProjectManagementsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type PMSStageAttachement record {|
+    @jsondata:Name {value: "SourcePath"}
+    string sourcePath?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AttachementDate"}
+    string attachementDate?;
+    @jsondata:Name {value: "FileName"}
+    string fileName?;
+    @jsondata:Name {value: "FileExtension"}
+    string fileExtension?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+|};
+
+public type PMActivityData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 ActivityID?;
+};
+
+public type ProjectManagementService_DeleteSubproject_body record {
+    @jsondata:Name {value: "PM_SubprojectDocumentParams"}
+    PMSubprojectDocumentParams pMSubprojectDocumentParams?;
+};
+
+public type ProjectManagementConfigurationService_AddSubprojectTypes_body record {
+    @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
+    PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
+};
+
+public type ProjectManagementConfigurationService_UpdateStageTypes_body record {
+    @jsondata:Name {value: "PMC_StageTypeCollection"}
+    PMCStageTypeData[] pMCStageTypeCollection?;
+};
+
+public type PMSubprojectDocumentData record {
     int:Signed32 AbsEntry?;
     int:Signed32 Owner?;
-    string ProjectName?;
+    string SubprojectName?;
     string StartDate?;
     decimal FinishedPercent?;
-    int:Signed32 DocNum?;
-    int:Signed32 Series?;
-    # OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name.
-    ProjectTypeEnum ProjectType?;
-    string BusinessPartner?;
-    string BusinessPartnerName?;
-    int:Signed32 ContactPerson?;
-    int:Signed32 Territory?;
-    int:Signed32 SalesEmployee?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum AllowSubprojects?;
-    # OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name.
-    ProjectStatusTypeEnum ProjectStatus?;
+    int:Signed32 ParentID?;
+    int:Signed32 ProjectID?;
+    int:Signed32 Order?;
+    int:Signed32 SubprojectType?;
+    decimal SubprojectContribution?;
+    # OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name
+    SubprojectStatusTypeEnum SubprojectStatus?;
+    string SubprojectEndDate?;
+    decimal ActualCost?;
+    decimal PlannedCost?;
+    int:Signed32 SubprojectDepth?;
     string DueDate?;
-    string ClosingDate?;
-    string FinancialProject?;
-    # OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name.
-    RiskLevelTypeEnum RiskLevel?;
-    int:Signed32 Industry?;
-    string Reason?;
-    int:Signed32 AttachmentEntry?;
-    PM_StageData[] PM_StagesCollection?;
-    PM_OpenIssueData[] PM_OpenIssuesCollection?;
-    PM_DocumentData[] PM_DocumentsCollection?;
-    PM_ActivityData[] PM_ActivitiesCollection?;
-    PM_WorkOrderData[] PM_WorkOrdersCollection?;
-    PM_SummaryData PM_SummaryData?;
-    PM_DocAttachement[] PM_DocAttachements?;
-    PM_StageAttachement[] PM_StageAttachements?;
-    Project Project?;
+    PMSStageData[] PMS_StagesCollection?;
+    PMSOpenIssueData[] PMS_OpenIssuesCollection?;
+    PMSDocumentData[] PMS_DocumentsCollection?;
+    PMSActivityData[] PMS_ActivitiesCollection?;
+    PMSWorkOrderData[] PMS_WorkOrdersCollection?;
+    PMSSummaryData PMS_SummaryData?;
+    PMSDocAttachement[] PMS_DocAttachements?;
+    PMSStageAttachement[] PMS_StageAttachements?;
 };
 
-public type PM_SubprojectParams record {|
-    int:Signed32 AbsEntry?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsSubproject?;
+# Represents the Queries record for the operation: listProjectManagements
+public type ListProjectManagementsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listProjectManagementTimeSheet
+public type ListProjectManagementTimeSheetQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type PMStageAttachement record {|
+    @jsondata:Name {value: "SourcePath"}
+    string sourcePath?;
+    @jsondata:Name {value: "LineID"}
+    int:Signed32 lineID?;
+    @jsondata:Name {value: "AttachementDate"}
+    string attachementDate?;
+    @jsondata:Name {value: "FileName"}
+    string fileName?;
+    @jsondata:Name {value: "FileExtension"}
+    string fileExtension?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
 |};
 
+# Represents the Queries record for the operation: getExpenseTypes
+public type GetExpenseTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type PMSActivityData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 ActivityID?;
+};
+
+public type PMSStageData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 StageType?;
+    string StartDate?;
+    string CloseDate?;
+    int:Signed32 Task?;
+    string Description?;
+    decimal ExpectedCosts?;
+    decimal InvoicedAmountSales?;
+    decimal OpenAmountSales?;
+    decimal InvoicedAmountPurchase?;
+    decimal OpenAmountPurchase?;
+    decimal PercentualCompletness?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum IsFinished?;
+    int:Signed32 StageOwner?;
+    int:Signed32 DependsOnStage1?;
+    int:Signed32 DependsOnStage2?;
+    int:Signed32 DependsOnStage3?;
+    int:Signed32 DependsOnStage4?;
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
+    StageDepTypeEnum StageDependency1Type?;
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
+    StageDepTypeEnum StageDependency2Type?;
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
+    StageDepTypeEnum StageDependency3Type?;
+    # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
+    StageDepTypeEnum StageDependency4Type?;
+    int:Signed32 DependsOnStageID1?;
+    int:Signed32 DependsOnStageID2?;
+    int:Signed32 DependsOnStageID3?;
+    int:Signed32 DependsOnStageID4?;
+    int:Signed32 AttachmentEntry?;
+    string UniqueID?;
+    string FinishedDate?;
+};
+
+public type ProjectManagementTimeSheetCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PMTimeSheetData[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
+public type StageDepTypeEnum "sdt_Project"|"sdt_Subproject";
+
+public type ProjectManagementConfigurationService_UpdateAreas_body record {
+    @jsondata:Name {value: "PMC_AreaCollection"}
+    PMCAreaData[] pMCAreaCollection?;
+};
+
+public type PMSOpenIssueData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 Area?;
+    int:Signed32 Priority?;
+    string Remarks?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum Closed?;
+    int:Signed32 SolutionID?;
+    int:Signed32 Responsible?;
+    int:Signed32 EnteredBy?;
+    string EnteredDate?;
+    decimal Effort?;
+};
+
+public type PMWorkOrderData record {
+    int:Signed32 LineID?;
+    int:Signed32 StageID?;
+    int:Signed32 DocNumber?;
+    int:Signed32 DocEntry?;
+};
+
+# Represents the Queries record for the operation: listProjects
+public type ListProjectsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type ProjectManagementConfigurationService_AddActivities_body record {
-    PMC_ActivityData[] PMC_ActivityCollection?;
+    @jsondata:Name {value: "PMC_ActivityCollection"}
+    PMCActivityData[] pMCActivityCollection?;
+};
+
+# Represents the Headers record for the operation: listProjects
+public type ListProjectsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };

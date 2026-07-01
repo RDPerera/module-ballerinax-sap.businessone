@@ -11,12 +11,12 @@
       "description": "SAP Business One Service Layer (OData V3 endpoint).",
       "variables": {
         "server": {
-          "default": "localhost",
-          "description": "Service Layer host."
+          "description": "Service Layer host.",
+          "default": "localhost"
         },
         "port": {
-          "default": "50000",
-          "description": "Service Layer HTTPS port (default 50000)."
+          "description": "Service Layer HTTPS port (default 50000).",
+          "default": "50000"
         }
       }
     }
@@ -32,8 +32,8 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "operationId": "AssetCapitalization_List",
         "summary": "Query the AssetCapitalization collection.",
+        "operationId": "List_AssetCapitalization",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -62,11 +62,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetCapitalization_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetCapitalizationCollectionResponse"
                 }
               }
             }
@@ -87,21 +87,21 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "operationId": "AssetCapitalization_Create",
         "summary": "Create a new AssetDocument.",
+        "operationId": "Create_AssetCapitalization",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDocument"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -123,19 +123,21 @@
         }
       }
     },
-    "/AssetCapitalization({DocEntry})": {
+    "/AssetCapitalization({docEntry})": {
       "get": {
         "tags": [
           "AssetCapitalization"
         ],
-        "operationId": "AssetCapitalization_Get",
         "summary": "Get a single AssetDocument by key.",
+        "operationId": "Get_AssetCapitalization",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -150,7 +152,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -181,37 +183,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetCapitalization"
         ],
-        "operationId": "AssetCapitalization_Update",
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDocument.",
+        "operationId": "Delete_AssetCapitalization",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDocument"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -225,27 +219,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetCapitalization"
         ],
-        "operationId": "AssetCapitalization_Delete",
-        "summary": "Delete a AssetDocument.",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetCapitalization",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDocument"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -265,8 +271,8 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "operationId": "AssetCapitalizationCreditMemo_List",
         "summary": "Query the AssetCapitalizationCreditMemo collection.",
+        "operationId": "List_AssetCapitalizationCreditMemo",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -295,11 +301,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetCapitalizationCreditMemo_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetCapitalizationCreditMemoCollectionResponse"
                 }
               }
             }
@@ -320,21 +326,21 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "operationId": "AssetCapitalizationCreditMemo_Create",
         "summary": "Create a new AssetDocument.",
+        "operationId": "Create_AssetCapitalizationCreditMemo",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDocument"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -356,19 +362,21 @@
         }
       }
     },
-    "/AssetCapitalizationCreditMemo({DocEntry})": {
+    "/AssetCapitalizationCreditMemo({docEntry})": {
       "get": {
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "operationId": "AssetCapitalizationCreditMemo_Get",
         "summary": "Get a single AssetDocument by key.",
+        "operationId": "Get_AssetCapitalizationCreditMemo",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -383,7 +391,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -414,37 +422,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "operationId": "AssetCapitalizationCreditMemo_Update",
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDocument.",
+        "operationId": "Delete_AssetCapitalizationCreditMemo",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDocument"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -458,27 +458,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "operationId": "AssetCapitalizationCreditMemo_Delete",
-        "summary": "Delete a AssetDocument.",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetCapitalizationCreditMemo",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDocument"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -498,11 +510,31 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "operationId": "AssetCapitalizationCreditMemoService_Cancel",
         "summary": "Service Layer function import 'AssetCapitalizationCreditMemoService_Cancel'.",
+        "operationId": "AssetCapitalizationCreditMemoService_Cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AssetDocumentParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AssetDocumentParams"
+                      }
+                    ],
+                    "x-ballerina-name": "assetDocumentParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -510,21 +542,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AssetDocumentParams": {
-                    "$ref": "#/components/schemas/AssetDocumentParams"
-                  }
                 }
               }
             }
@@ -537,18 +554,19 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "operationId": "AssetCapitalizationCreditMemoService_GetList",
         "summary": "Service Layer function import 'AssetCapitalizationCreditMemoService_GetList'.",
+        "operationId": "AssetCapitalizationCreditMemoService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -579,11 +597,31 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "operationId": "AssetCapitalizationService_Cancel",
         "summary": "Service Layer function import 'AssetCapitalizationService_Cancel'.",
+        "operationId": "AssetCapitalizationService_Cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AssetDocumentParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AssetDocumentParams"
+                      }
+                    ],
+                    "x-ballerina-name": "assetDocumentParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -591,21 +629,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AssetDocumentParams": {
-                    "$ref": "#/components/schemas/AssetDocumentParams"
-                  }
                 }
               }
             }
@@ -618,18 +641,19 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "operationId": "AssetCapitalizationService_GetList",
         "summary": "Service Layer function import 'AssetCapitalizationService_GetList'.",
+        "operationId": "AssetCapitalizationService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -660,8 +684,8 @@
         "tags": [
           "AssetClasses"
         ],
-        "operationId": "AssetClasses_List",
         "summary": "Query the AssetClasses collection.",
+        "operationId": "List_AssetClasses",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -690,11 +714,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetClasses_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetClassesCollectionResponse"
                 }
               }
             }
@@ -715,21 +739,21 @@
         "tags": [
           "AssetClasses"
         ],
-        "operationId": "AssetClasses_Create",
         "summary": "Create a new AssetClass.",
+        "operationId": "Create_AssetClasses",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetClass"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -751,19 +775,21 @@
         }
       }
     },
-    "/AssetClasses('{Code}')": {
+    "/AssetClasses('{code}')": {
       "get": {
         "tags": [
           "AssetClasses"
         ],
-        "operationId": "AssetClasses_Get",
         "summary": "Get a single AssetClass by key.",
+        "operationId": "Get_AssetClasses",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -777,7 +803,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -808,36 +834,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetClasses"
         ],
-        "operationId": "AssetClasses_Update",
-        "summary": "Partially update a AssetClass (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetClass.",
+        "operationId": "Delete_AssetClasses",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetClass"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -851,26 +869,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetClasses"
         ],
-        "operationId": "AssetClasses_Delete",
-        "summary": "Delete a AssetClass.",
+        "summary": "Partially update a AssetClass (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetClasses",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetClass"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -890,18 +920,19 @@
         "tags": [
           "AssetClassesService"
         ],
-        "operationId": "AssetClassesService_GetList",
         "summary": "Service Layer function import 'AssetClassesService_GetList'.",
+        "operationId": "AssetClassesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -932,8 +963,8 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "operationId": "AssetDepreciationGroups_List",
         "summary": "Query the AssetDepreciationGroups collection.",
+        "operationId": "List_AssetDepreciationGroups",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -962,11 +993,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetDepreciationGroups_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetDepreciationGroupsCollectionResponse"
                 }
               }
             }
@@ -987,21 +1018,21 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "operationId": "AssetDepreciationGroups_Create",
         "summary": "Create a new AssetDepreciationGroup.",
+        "operationId": "Create_AssetDepreciationGroups",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDepreciationGroup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1023,19 +1054,21 @@
         }
       }
     },
-    "/AssetDepreciationGroups('{Code}')": {
+    "/AssetDepreciationGroups('{code}')": {
       "get": {
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "operationId": "AssetDepreciationGroups_Get",
         "summary": "Get a single AssetDepreciationGroup by key.",
+        "operationId": "Get_AssetDepreciationGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -1049,7 +1082,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1080,36 +1113,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "operationId": "AssetDepreciationGroups_Update",
-        "summary": "Partially update a AssetDepreciationGroup (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDepreciationGroup.",
+        "operationId": "Delete_AssetDepreciationGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDepreciationGroup"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1123,26 +1148,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "operationId": "AssetDepreciationGroups_Delete",
-        "summary": "Delete a AssetDepreciationGroup.",
+        "summary": "Partially update a AssetDepreciationGroup (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetDepreciationGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDepreciationGroup"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1162,18 +1199,19 @@
         "tags": [
           "AssetDepreciationGroupsService"
         ],
-        "operationId": "AssetDepreciationGroupsService_GetList",
         "summary": "Service Layer function import 'AssetDepreciationGroupsService_GetList'.",
+        "operationId": "AssetDepreciationGroupsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1204,8 +1242,8 @@
         "tags": [
           "AssetGroups"
         ],
-        "operationId": "AssetGroups_List",
         "summary": "Query the AssetGroups collection.",
+        "operationId": "List_AssetGroups",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1234,11 +1272,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetGroups_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetGroupsCollectionResponse"
                 }
               }
             }
@@ -1259,21 +1297,21 @@
         "tags": [
           "AssetGroups"
         ],
-        "operationId": "AssetGroups_Create",
         "summary": "Create a new AssetGroup.",
+        "operationId": "Create_AssetGroups",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetGroup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1295,19 +1333,21 @@
         }
       }
     },
-    "/AssetGroups('{Code}')": {
+    "/AssetGroups('{code}')": {
       "get": {
         "tags": [
           "AssetGroups"
         ],
-        "operationId": "AssetGroups_Get",
         "summary": "Get a single AssetGroup by key.",
+        "operationId": "Get_AssetGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -1321,7 +1361,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1352,36 +1392,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetGroups"
         ],
-        "operationId": "AssetGroups_Update",
-        "summary": "Partially update a AssetGroup (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetGroup.",
+        "operationId": "Delete_AssetGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetGroup"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1395,26 +1427,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetGroups"
         ],
-        "operationId": "AssetGroups_Delete",
-        "summary": "Delete a AssetGroup.",
+        "summary": "Partially update a AssetGroup (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetGroup"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1434,18 +1478,19 @@
         "tags": [
           "AssetGroupsService"
         ],
-        "operationId": "AssetGroupsService_GetList",
         "summary": "Service Layer function import 'AssetGroupsService_GetList'.",
+        "operationId": "AssetGroupsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1476,8 +1521,8 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "operationId": "AssetManualDepreciation_List",
         "summary": "Query the AssetManualDepreciation collection.",
+        "operationId": "List_AssetManualDepreciation",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1506,11 +1551,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetManualDepreciation_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetManualDepreciationCollectionResponse"
                 }
               }
             }
@@ -1531,21 +1576,21 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "operationId": "AssetManualDepreciation_Create",
         "summary": "Create a new AssetDocument.",
+        "operationId": "Create_AssetManualDepreciation",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDocument"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1567,19 +1612,21 @@
         }
       }
     },
-    "/AssetManualDepreciation({DocEntry})": {
+    "/AssetManualDepreciation({docEntry})": {
       "get": {
         "tags": [
           "AssetManualDepreciation"
         ],
-        "operationId": "AssetManualDepreciation_Get",
         "summary": "Get a single AssetDocument by key.",
+        "operationId": "Get_AssetManualDepreciation",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1594,7 +1641,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1625,37 +1672,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetManualDepreciation"
         ],
-        "operationId": "AssetManualDepreciation_Update",
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDocument.",
+        "operationId": "Delete_AssetManualDepreciation",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDocument"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1669,27 +1708,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetManualDepreciation"
         ],
-        "operationId": "AssetManualDepreciation_Delete",
-        "summary": "Delete a AssetDocument.",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetManualDepreciation",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDocument"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1709,11 +1760,31 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "operationId": "AssetManualDepreciationService_Cancel",
         "summary": "Service Layer function import 'AssetManualDepreciationService_Cancel'.",
+        "operationId": "AssetManualDepreciationService_Cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AssetDocumentParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AssetDocumentParams"
+                      }
+                    ],
+                    "x-ballerina-name": "assetDocumentParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1721,21 +1792,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AssetDocumentParams": {
-                    "$ref": "#/components/schemas/AssetDocumentParams"
-                  }
                 }
               }
             }
@@ -1748,18 +1804,19 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "operationId": "AssetManualDepreciationService_GetList",
         "summary": "Service Layer function import 'AssetManualDepreciationService_GetList'.",
+        "operationId": "AssetManualDepreciationService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1790,8 +1847,8 @@
         "tags": [
           "AssetRetirement"
         ],
-        "operationId": "AssetRetirement_List",
         "summary": "Query the AssetRetirement collection.",
+        "operationId": "List_AssetRetirement",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1820,11 +1877,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetRetirement_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetRetirementCollectionResponse"
                 }
               }
             }
@@ -1845,21 +1902,21 @@
         "tags": [
           "AssetRetirement"
         ],
-        "operationId": "AssetRetirement_Create",
         "summary": "Create a new AssetDocument.",
+        "operationId": "Create_AssetRetirement",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDocument"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1881,19 +1938,21 @@
         }
       }
     },
-    "/AssetRetirement({DocEntry})": {
+    "/AssetRetirement({docEntry})": {
       "get": {
         "tags": [
           "AssetRetirement"
         ],
-        "operationId": "AssetRetirement_Get",
         "summary": "Get a single AssetDocument by key.",
+        "operationId": "Get_AssetRetirement",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1908,7 +1967,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1939,37 +1998,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetRetirement"
         ],
-        "operationId": "AssetRetirement_Update",
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDocument.",
+        "operationId": "Delete_AssetRetirement",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDocument"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1983,27 +2034,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetRetirement"
         ],
-        "operationId": "AssetRetirement_Delete",
-        "summary": "Delete a AssetDocument.",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetRetirement",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDocument"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2023,11 +2086,31 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "operationId": "AssetRetirementService_Cancel",
         "summary": "Service Layer function import 'AssetRetirementService_Cancel'.",
+        "operationId": "AssetRetirementService_Cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AssetDocumentParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AssetDocumentParams"
+                      }
+                    ],
+                    "x-ballerina-name": "assetDocumentParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2035,21 +2118,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AssetDocumentParams": {
-                    "$ref": "#/components/schemas/AssetDocumentParams"
-                  }
                 }
               }
             }
@@ -2062,18 +2130,19 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "operationId": "AssetRetirementService_GetList",
         "summary": "Service Layer function import 'AssetRetirementService_GetList'.",
+        "operationId": "AssetRetirementService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2104,18 +2173,19 @@
         "tags": [
           "AssetRevaluationService"
         ],
-        "operationId": "AssetRevaluationService_GetList",
         "summary": "Service Layer function import 'AssetRevaluationService_GetList'.",
+        "operationId": "AssetRevaluationService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2146,8 +2216,8 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "operationId": "AssetRevaluations_List",
         "summary": "Query the AssetRevaluations collection.",
+        "operationId": "List_AssetRevaluations",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2176,11 +2246,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetRevaluations_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetRevaluationsCollectionResponse"
                 }
               }
             }
@@ -2201,21 +2271,21 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "operationId": "AssetRevaluations_Create",
         "summary": "Create a new AssetRevaluation.",
+        "operationId": "Create_AssetRevaluations",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetRevaluation"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2237,19 +2307,21 @@
         }
       }
     },
-    "/AssetRevaluations({DocEntry})": {
+    "/AssetRevaluations({docEntry})": {
       "get": {
         "tags": [
           "AssetRevaluations"
         ],
-        "operationId": "AssetRevaluations_Get",
         "summary": "Get a single AssetRevaluation by key.",
+        "operationId": "Get_AssetRevaluations",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2264,7 +2336,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2295,37 +2367,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetRevaluations"
         ],
-        "operationId": "AssetRevaluations_Update",
-        "summary": "Partially update a AssetRevaluation (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetRevaluation.",
+        "operationId": "Delete_AssetRevaluations",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetRevaluation"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2339,27 +2403,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetRevaluations"
         ],
-        "operationId": "AssetRevaluations_Delete",
-        "summary": "Delete a AssetRevaluation.",
+        "summary": "Partially update a AssetRevaluation (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetRevaluations",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetRevaluation"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2379,8 +2455,8 @@
         "tags": [
           "AssetTransfer"
         ],
-        "operationId": "AssetTransfer_List",
         "summary": "Query the AssetTransfer collection.",
+        "operationId": "List_AssetTransfer",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2409,11 +2485,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetTransfer_CollectionResponse"
+                  "$ref": "#/components/schemas/AssetTransferCollectionResponse"
                 }
               }
             }
@@ -2434,21 +2510,21 @@
         "tags": [
           "AssetTransfer"
         ],
-        "operationId": "AssetTransfer_Create",
         "summary": "Create a new AssetDocument.",
+        "operationId": "Create_AssetTransfer",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetDocument"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2470,19 +2546,21 @@
         }
       }
     },
-    "/AssetTransfer({DocEntry})": {
+    "/AssetTransfer({docEntry})": {
       "get": {
         "tags": [
           "AssetTransfer"
         ],
-        "operationId": "AssetTransfer_Get",
         "summary": "Get a single AssetDocument by key.",
+        "operationId": "Get_AssetTransfer",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2497,7 +2575,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2528,37 +2606,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "AssetTransfer"
         ],
-        "operationId": "AssetTransfer_Update",
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Delete a AssetDocument.",
+        "operationId": "Delete_AssetTransfer",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetDocument"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2572,27 +2642,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "AssetTransfer"
         ],
-        "operationId": "AssetTransfer_Delete",
-        "summary": "Delete a AssetDocument.",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "operationId": "Update_AssetTransfer",
         "parameters": [
           {
-            "name": "DocEntry",
+            "name": "docEntry",
             "in": "path",
+            "description": "Key property 'DocEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'DocEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetDocument"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2612,11 +2694,31 @@
         "tags": [
           "AssetTransferService"
         ],
-        "operationId": "AssetTransferService_Cancel",
         "summary": "Service Layer function import 'AssetTransferService_Cancel'.",
+        "operationId": "AssetTransferService_Cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AssetDocumentParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AssetDocumentParams"
+                      }
+                    ],
+                    "x-ballerina-name": "assetDocumentParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2624,21 +2726,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AssetDocumentParams": {
-                    "$ref": "#/components/schemas/AssetDocumentParams"
-                  }
                 }
               }
             }
@@ -2651,18 +2738,19 @@
         "tags": [
           "AssetTransferService"
         ],
-        "operationId": "AssetTransferService_GetList",
         "summary": "Service Layer function import 'AssetTransferService_GetList'.",
+        "operationId": "AssetTransferService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2693,8 +2781,8 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "operationId": "DepreciationAreas_List",
         "summary": "Query the DepreciationAreas collection.",
+        "operationId": "List_DepreciationAreas",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2723,11 +2811,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DepreciationAreas_CollectionResponse"
+                  "$ref": "#/components/schemas/DepreciationAreasCollectionResponse"
                 }
               }
             }
@@ -2748,21 +2836,21 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "operationId": "DepreciationAreas_Create",
         "summary": "Create a new DepreciationArea.",
+        "operationId": "Create_DepreciationAreas",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DepreciationArea"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2784,19 +2872,21 @@
         }
       }
     },
-    "/DepreciationAreas('{Code}')": {
+    "/DepreciationAreas('{code}')": {
       "get": {
         "tags": [
           "DepreciationAreas"
         ],
-        "operationId": "DepreciationAreas_Get",
         "summary": "Get a single DepreciationArea by key.",
+        "operationId": "Get_DepreciationAreas",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -2810,7 +2900,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2841,36 +2931,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "DepreciationAreas"
         ],
-        "operationId": "DepreciationAreas_Update",
-        "summary": "Partially update a DepreciationArea (PATCH/MERGE semantics).",
+        "summary": "Delete a DepreciationArea.",
+        "operationId": "Delete_DepreciationAreas",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepreciationArea"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2884,26 +2966,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "DepreciationAreas"
         ],
-        "operationId": "DepreciationAreas_Delete",
-        "summary": "Delete a DepreciationArea.",
+        "summary": "Partially update a DepreciationArea (PATCH/MERGE semantics).",
+        "operationId": "Update_DepreciationAreas",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepreciationArea"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2923,18 +3017,19 @@
         "tags": [
           "DepreciationAreasService"
         ],
-        "operationId": "DepreciationAreasService_GetList",
         "summary": "Service Layer function import 'DepreciationAreasService_GetList'.",
+        "operationId": "DepreciationAreasService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2965,8 +3060,8 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "operationId": "DepreciationTypePools_List",
         "summary": "Query the DepreciationTypePools collection.",
+        "operationId": "List_DepreciationTypePools",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2995,11 +3090,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DepreciationTypePools_CollectionResponse"
+                  "$ref": "#/components/schemas/DepreciationTypePoolsCollectionResponse"
                 }
               }
             }
@@ -3020,21 +3115,21 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "operationId": "DepreciationTypePools_Create",
         "summary": "Create a new DepreciationTypePool.",
+        "operationId": "Create_DepreciationTypePools",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DepreciationTypePool"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3056,19 +3151,21 @@
         }
       }
     },
-    "/DepreciationTypePools('{Code}')": {
+    "/DepreciationTypePools('{code}')": {
       "get": {
         "tags": [
           "DepreciationTypePools"
         ],
-        "operationId": "DepreciationTypePools_Get",
         "summary": "Get a single DepreciationTypePool by key.",
+        "operationId": "Get_DepreciationTypePools",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -3082,7 +3179,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3113,36 +3210,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "DepreciationTypePools"
         ],
-        "operationId": "DepreciationTypePools_Update",
-        "summary": "Partially update a DepreciationTypePool (PATCH/MERGE semantics).",
+        "summary": "Delete a DepreciationTypePool.",
+        "operationId": "Delete_DepreciationTypePools",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepreciationTypePool"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3156,26 +3245,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "DepreciationTypePools"
         ],
-        "operationId": "DepreciationTypePools_Delete",
-        "summary": "Delete a DepreciationTypePool.",
+        "summary": "Partially update a DepreciationTypePool (PATCH/MERGE semantics).",
+        "operationId": "Update_DepreciationTypePools",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepreciationTypePool"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3195,18 +3296,19 @@
         "tags": [
           "DepreciationTypePoolsService"
         ],
-        "operationId": "DepreciationTypePoolsService_GetList",
         "summary": "Service Layer function import 'DepreciationTypePoolsService_GetList'.",
+        "operationId": "DepreciationTypePoolsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -3237,8 +3339,8 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "operationId": "DepreciationTypes_List",
         "summary": "Query the DepreciationTypes collection.",
+        "operationId": "List_DepreciationTypes",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -3267,11 +3369,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DepreciationTypes_CollectionResponse"
+                  "$ref": "#/components/schemas/DepreciationTypesCollectionResponse"
                 }
               }
             }
@@ -3292,21 +3394,21 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "operationId": "DepreciationTypes_Create",
         "summary": "Create a new DepreciationType.",
+        "operationId": "Create_DepreciationTypes",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DepreciationType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3328,19 +3430,21 @@
         }
       }
     },
-    "/DepreciationTypes('{Code}')": {
+    "/DepreciationTypes('{code}')": {
       "get": {
         "tags": [
           "DepreciationTypes"
         ],
-        "operationId": "DepreciationTypes_Get",
         "summary": "Get a single DepreciationType by key.",
+        "operationId": "Get_DepreciationTypes",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -3354,7 +3458,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3385,36 +3489,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "DepreciationTypes"
         ],
-        "operationId": "DepreciationTypes_Update",
-        "summary": "Partially update a DepreciationType (PATCH/MERGE semantics).",
+        "summary": "Delete a DepreciationType.",
+        "operationId": "Delete_DepreciationTypes",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepreciationType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3428,26 +3524,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "DepreciationTypes"
         ],
-        "operationId": "DepreciationTypes_Delete",
-        "summary": "Delete a DepreciationType.",
+        "summary": "Partially update a DepreciationType (PATCH/MERGE semantics).",
+        "operationId": "Update_DepreciationTypes",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepreciationType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3467,18 +3575,19 @@
         "tags": [
           "DepreciationTypesService"
         ],
-        "operationId": "DepreciationTypesService_GetList",
         "summary": "Service Layer function import 'DepreciationTypesService_GetList'.",
+        "operationId": "DepreciationTypesService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -3509,8 +3618,8 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "operationId": "FAAccountDeterminations_List",
         "summary": "Query the FAAccountDeterminations collection.",
+        "operationId": "List_FAAccountDeterminations",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -3539,11 +3648,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FAAccountDeterminations_CollectionResponse"
+                  "$ref": "#/components/schemas/FAAccountDeterminationsCollectionResponse"
                 }
               }
             }
@@ -3564,21 +3673,21 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "operationId": "FAAccountDeterminations_Create",
         "summary": "Create a new FAAccountDetermination.",
+        "operationId": "Create_FAAccountDeterminations",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FAAccountDetermination"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3600,19 +3709,21 @@
         }
       }
     },
-    "/FAAccountDeterminations('{Code}')": {
+    "/FAAccountDeterminations('{code}')": {
       "get": {
         "tags": [
           "FAAccountDeterminations"
         ],
-        "operationId": "FAAccountDeterminations_Get",
         "summary": "Get a single FAAccountDetermination by key.",
+        "operationId": "Get_FAAccountDeterminations",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -3626,7 +3737,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -3657,36 +3768,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "FAAccountDeterminations"
         ],
-        "operationId": "FAAccountDeterminations_Update",
-        "summary": "Partially update a FAAccountDetermination (PATCH/MERGE semantics).",
+        "summary": "Delete a FAAccountDetermination.",
+        "operationId": "Delete_FAAccountDeterminations",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FAAccountDetermination"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3700,26 +3803,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "FAAccountDeterminations"
         ],
-        "operationId": "FAAccountDeterminations_Delete",
-        "summary": "Delete a FAAccountDetermination.",
+        "summary": "Partially update a FAAccountDetermination (PATCH/MERGE semantics).",
+        "operationId": "Update_FAAccountDeterminations",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FAAccountDetermination"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3739,18 +3854,19 @@
         "tags": [
           "FAAccountDeterminationsService"
         ],
-        "operationId": "FAAccountDeterminationsService_GetList",
         "summary": "Service Layer function import 'FAAccountDeterminationsService_GetList'.",
+        "operationId": "FAAccountDeterminationsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -3781,11 +3897,31 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "operationId": "FixedAssetItemsService_GetAssetEndBalance",
         "summary": "Service Layer function import 'FixedAssetItemsService_GetAssetEndBalance'.",
+        "operationId": "FixedAssetItemsService_GetAssetEndBalance",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "FixedAssetValuesParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/FixedAssetValuesParams"
+                      }
+                    ],
+                    "x-ballerina-name": "fixedAssetValuesParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
@@ -3804,21 +3940,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "FixedAssetValuesParams": {
-                    "$ref": "#/components/schemas/FixedAssetValuesParams"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -3827,18 +3948,39 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "operationId": "FixedAssetItemsService_GetAssetValuesList",
         "summary": "Service Layer function import 'FixedAssetItemsService_GetAssetValuesList'.",
+        "operationId": "FixedAssetItemsService_GetAssetValuesList",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "FixedAssetValuesParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/FixedAssetValuesParams"
+                      }
+                    ],
+                    "x-ballerina-name": "fixedAssetValuesParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -3861,21 +4003,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "FixedAssetValuesParams": {
-                    "$ref": "#/components/schemas/FixedAssetValuesParams"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -3884,11 +4011,39 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "operationId": "FixedAssetItemsService_UpdateAssetEndBalance",
         "summary": "Service Layer function import 'FixedAssetItemsService_UpdateAssetEndBalance'.",
+        "operationId": "FixedAssetItemsService_UpdateAssetEndBalance",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "FixedAssetEndBalance": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/FixedAssetEndBalance"
+                      }
+                    ],
+                    "x-ballerina-name": "fixedAssetEndBalance"
+                  },
+                  "FixedAssetValuesParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/FixedAssetValuesParams"
+                      }
+                    ],
+                    "x-ballerina-name": "fixedAssetValuesParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -3900,151 +4055,355 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "FixedAssetValuesParams": {
-                    "$ref": "#/components/schemas/FixedAssetValuesParams"
-                  },
-                  "FixedAssetEndBalance": {
-                    "$ref": "#/components/schemas/FixedAssetEndBalance"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }
   },
   "components": {
-    "securitySchemes": {
-      "B1Session": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "B1SESSION",
-        "description": "Session cookie returned by POST /Login."
-      }
-    },
-    "parameters": {
-      "Expand": {
-        "name": "$expand",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated navigation properties to expand.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Filter": {
-        "name": "$filter",
-        "in": "query",
-        "required": false,
-        "description": "OData filter expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "InlineCount": {
-        "name": "$inlinecount",
-        "in": "query",
-        "required": false,
-        "description": "Set to 'allpages' to include the total count (odata.count).",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "allpages",
-            "none"
-          ]
-        }
-      },
-      "OrderBy": {
-        "name": "$orderby",
-        "in": "query",
-        "required": false,
-        "description": "OData orderby expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Prefer": {
-        "name": "Prefer",
-        "in": "header",
-        "required": false,
-        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Select": {
-        "name": "$select",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated list of properties to return.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Skip": {
-        "name": "$skip",
-        "in": "query",
-        "required": false,
-        "description": "Number of records to skip (paging).",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "Top": {
-        "name": "$top",
-        "in": "query",
-        "required": false,
-        "description": "Maximum number of records to return.",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "schemas": {
-      "AcquisitionPeriodControlEnum": {
+      "DepreciationRoundingMethodEnum": {
         "type": "string",
+        "description": "OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "apcProRataTemporis",
-          "apcFirstYearConvention",
-          "apcHalfYear",
-          "apcFullYear"
-        ],
-        "description": "OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name."
+          "drmTruncate",
+          "drmRoundUp",
+          "drmRoundDown"
+        ]
+      },
+      "AssetRevaluationLine": {
+        "type": "object",
+        "properties": {
+          "CurrentNBV": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "currentNBV"
+          },
+          "DistributionRule": {
+            "type": "string",
+            "x-ballerina-name": "distributionRule"
+          },
+          "NewNBV": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "newNBV"
+          },
+          "DistributionRule4": {
+            "type": "string",
+            "x-ballerina-name": "distributionRule4"
+          },
+          "DistributionRule5": {
+            "type": "string",
+            "x-ballerina-name": "distributionRule5"
+          },
+          "DistributionRule2": {
+            "type": "string",
+            "x-ballerina-name": "distributionRule2"
+          },
+          "DistributionRule3": {
+            "type": "string",
+            "x-ballerina-name": "distributionRule3"
+          },
+          "RevaluationPercent": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "revaluationPercent"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
+          },
+          "AssetNumber": {
+            "type": "string",
+            "x-ballerina-name": "assetNumber"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "lineNumber"
+          },
+          "Project": {
+            "type": "string",
+            "x-ballerina-name": "project"
+          },
+          "Remarks": {
+            "type": "string",
+            "x-ballerina-name": "remarks"
+          }
+        },
+        "additionalProperties": false
       },
       "AcquisitionProRataTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "aprtExactlyDailyBase",
           "aprtFirstDayOfCurrentPeriod",
           "aprtFirstDayOfNextPeriod"
-        ],
-        "description": "OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "AreaTypeEnum": {
+      "FixedAssetEndBalance": {
+        "type": "object",
+        "properties": {
+          "SalvageValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "salvageValue"
+          },
+          "AcquisitionCost": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "acquisitionCost"
+          },
+          "NetBookValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "netBookValue"
+          },
+          "OrdinaryDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "ordinaryDepreciationValue"
+          },
+          "SpecialDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "specialDepreciationValue"
+          },
+          "HistoricalAPC": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "historicalAPC"
+          },
+          "UnplanedDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "unplanedDepreciationValue"
+          },
+          "Quantity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "quantity"
+          },
+          "HistoricalNBV": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "historicalNBV"
+          },
+          "WriteUp": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "writeUp"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "atPostingtoGL",
-          "atAdditionalArea",
-          "atDerivedArea"
-        ],
-        "description": "OData EnumType 'AreaTypeEnum'. Serialised by the Service Layer as the member name."
+          "atAssetTypeGeneral",
+          "atAssetTypeLowValueAsset"
+        ]
       },
-      "AssetCapitalizationCreditMemo_CollectionResponse": {
+      "DepreciationTypePool": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "DepreciationTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepreciationType"
+            },
+            "x-ballerina-name": "depreciationTypes"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetValuesParams": {
+        "type": "object",
+        "properties": {
+          "ItemCode": {
+            "type": "string",
+            "x-ballerina-name": "itemCode"
+          },
+          "FiscalYear": {
+            "type": "string",
+            "x-ballerina-name": "fiscalYear"
+          },
+          "DepreciationArea": {
+            "type": "string",
+            "x-ballerina-name": "depreciationArea"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DepreciationTypePoolsCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepreciationTypePool"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "CalculationBaseEnum": {
+        "type": "string",
+        "description": "OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cbYearly",
+          "cbMonthly"
+        ]
+      },
+      "DepreciationArea": {
+        "type": "object",
+        "properties": {
+          "UsageForTaxCorrection": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "usageForTaxCorrection"
+          },
+          "AssetRevaluations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetRevaluation"
+            },
+            "x-ballerina-name": "assetRevaluations"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "AssetCapitalization": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetCapitalization"
+          },
+          "PostingOfDepreciation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PostingOfDepreciationEnum"
+              }
+            ],
+            "x-ballerina-name": "postingOfDepreciation"
+          },
+          "AssetTransfer": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetTransfer"
+          },
+          "TaxCreditControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "taxCreditControl"
+          },
+          "ItemForTaxCorrection": {
+            "type": "string",
+            "x-ballerina-name": "itemForTaxCorrection"
+          },
+          "AreaType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AreaTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "areaType"
+          },
+          "MainBookingArea": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "mainBookingArea"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "DerivedArea": {
+            "type": "string",
+            "x-ballerina-name": "derivedArea"
+          },
+          "TaxType": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "taxType"
+          },
+          "AssetManualDepreciation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetManualDepreciation"
+          },
+          "DirectRevenuePosting": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "directRevenuePosting"
+          },
+          "RetirementMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RetirementMethodEnum"
+              }
+            ],
+            "x-ballerina-name": "retirementMethod"
+          },
+          "AssetRetirement": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetRetirement"
+          },
+          "AssetCapitalizationCreditMemo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetCapitalizationCreditMemo"
+          },
+          "BPForTaxCorrection": {
+            "type": "string",
+            "x-ballerina-name": "bPForTaxCorrection"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetManualDepreciationCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -4053,163 +4412,8 @@
             }
           },
           "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetCapitalization_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetClass": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "AssetType": {
-            "$ref": "#/components/schemas/AssetTypeEnum"
-          },
-          "ValueLimitFrom": {
-            "type": "number",
-            "format": "double"
-          },
-          "ValueLimitTo": {
-            "type": "number",
-            "format": "double"
-          },
-          "BPLID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AttributeGroup": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AssetClassCollection": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetClassLine"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetClassLine": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DepreciationAreaID": {
-            "type": "string"
-          },
-          "ActiveStatus": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "AccountDetermination": {
-            "type": "string"
-          },
-          "DepreciationTypeID": {
-            "type": "string"
-          },
-          "UseLife": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetClassParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetClasses_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetClass"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetDepreciationGroup": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "Group": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetDepreciationGroupParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetDepreciationGroups_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDepreciationGroup"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
@@ -4357,33 +4561,37 @@
         },
         "additionalProperties": true
       },
-      "AssetDocumentAreaJournal": {
+      "AcquisitionPeriodControlEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "apcProRataTemporis",
+          "apcFirstYearConvention",
+          "apcHalfYear",
+          "apcFullYear"
+        ]
+      },
+      "DepreciationAreaParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetRevaluationParams": {
         "type": "object",
         "properties": {
           "DocEntry": {
             "type": "integer",
-            "format": "int32"
-          },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DepreciationArea": {
-            "type": "string"
-          },
-          "JournalRemarks": {
-            "type": "string"
-          },
-          "TransactionNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CancellationJournalRemarks": {
-            "type": "string"
-          },
-          "CancellationTransactionNumber": {
-            "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
           }
         },
         "additionalProperties": false
@@ -4461,67 +4669,94 @@
         },
         "additionalProperties": true
       },
-      "AssetDocumentNewLoc": {
+      "BoYesNoEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tNO",
+          "tYES"
+        ]
+      },
+      "ClosingOptionEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "coByCurrentSystemDate",
+          "coByOriginalDocumentDate",
+          "coBySpecifiedDate"
+        ]
+      },
+      "SubsequentAcquisitionPeriodControlEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "sapcProRataTemporis",
+          "sapcHalfYearConvention",
+          "sapcFullYear"
+        ]
+      },
+      "FixedAssetValues": {
         "type": "object",
         "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
+          "TransactionType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetTransactionTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "transactionType"
           },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AssetNumber": {
-            "type": "string"
-          },
-          "CurLocation": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "NewLocation": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "NBV": {
+          "AcquisitionCost": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "x-ballerina-name": "acquisitionCost"
+          },
+          "NetBookValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "netBookValue"
+          },
+          "Appreciation": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "appreciation"
+          },
+          "DepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "depreciationValue"
+          },
+          "OrdinaryDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "ordinaryDepreciationValue"
+          },
+          "SpecialDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "specialDepreciationValue"
           },
           "Quantity": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "x-ballerina-name": "quantity"
+          },
+          "UnplanedDepreciationValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "unplanedDepreciationValue"
+          },
+          "WriteUp": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "writeUp"
           }
         },
         "additionalProperties": false
-      },
-      "AssetDocumentParams": {
-        "type": "object",
-        "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CancellationOption": {
-            "$ref": "#/components/schemas/ClosingOptionEnum"
-          },
-          "CancellationDate": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetDocumentStatusEnum": {
-        "type": "string",
-        "enum": [
-          "adsPosted",
-          "adsDraft",
-          "adsCancelled"
-        ],
-        "description": "OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name."
       },
       "AssetDocumentTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "adtOrdinaryDepreciation",
           "adtUnplannedDepreciation",
@@ -4531,55 +4766,46 @@
           "adtSales",
           "adtScrapping",
           "adtAssetClassTransfer"
-        ],
-        "description": "OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "AssetGroup": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
+      "StraightLinePeriodControlDepreciationPeriodsEnum": {
+        "type": "string",
+        "description": "OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "slpcdpStandard",
+          "slpcdpIndividual",
+          "slpcdpIndividualUsage"
+        ]
+      },
+      "SubsequentAcquisitionProRataTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "saprtExactlyDailyBase",
+          "saprtFirstDayOfCurrentPeriod",
+          "saprtFirstDayOfNextPeriod"
+        ]
       },
       "AssetGroupParams": {
         "type": "object",
         "properties": {
-          "Code": {
-            "type": "string"
-          },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
           }
         },
         "additionalProperties": false
       },
-      "AssetGroups_CollectionResponse": {
+      "AssetCapitalizationCreditMemoCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetGroup"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetManualDepreciation_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -4588,12 +4814,852 @@
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
+      "SpecialDepreciationMaximumFlagEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SpecialDepreciationMaximumFlagEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "spmfPercentage",
+          "spmfAmount"
+        ]
+      },
+      "AssetDepreciationGroupsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDepreciationGroup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetDocumentParams": {
+        "type": "object",
+        "properties": {
+          "CancellationOption": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ClosingOptionEnum"
+              }
+            ],
+            "x-ballerina-name": "cancellationOption"
+          },
+          "CancellationDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "cancellationDate"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DepreciationCalculationBaseEnum": {
+        "type": "string",
+        "description": "OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "dcbAcquisitionValue",
+          "dcbNetBookValue"
+        ]
+      },
+      "TransferSourceProRataTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tsprtExactlyDailyBase",
+          "tsprtLastDayOfPriorPeriod",
+          "tsprtLastDayofCurrentPeriod"
+        ]
+      },
+      "TransferTargetPeriodControlEnum": {
+        "type": "string",
+        "description": "OData EnumType 'TransferTargetPeriodControlEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "ttpcProRataTemporis"
+        ]
+      },
+      "DepreciationAreasCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepreciationArea"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetDepreciationGroup": {
+        "type": "object",
+        "properties": {
+          "Group": {
+            "type": "string",
+            "x-ballerina-name": "group"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetirementProRataTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rprtExactlyDailyBase",
+          "rprtLastDayOfPriorPeriod",
+          "rprtLastDayOfCurrentPeriod"
+        ]
+      },
+      "AssetRevaluationsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetRevaluation"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetClass": {
+        "type": "object",
+        "properties": {
+          "AssetType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "assetType"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "ValueLimitTo": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "valueLimitTo"
+          },
+          "ValueLimitFrom": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "valueLimitFrom"
+          },
+          "AttributeGroup": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "attributeGroup"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "AssetClassCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetClassLine"
+            },
+            "x-ballerina-name": "assetClassCollection"
+          },
+          "BPLID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "bPLID"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetCapitalizationCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetClassesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetClass"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetDepreciationGroupParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetTransactionTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "att_BeginningOfYear",
+          "att_Acquistion",
+          "att_Retirement",
+          "att_Transfer",
+          "att_WriteUp",
+          "att_OrdinaryDepreciation",
+          "att_UplannedDepreciation",
+          "att_SpecialDepreciation",
+          "att_EndOfYear"
+        ]
+      },
+      "DepreciationTypeParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetTransferCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "AssetClassLine": {
+        "type": "object",
+        "properties": {
+          "DepreciationAreaID": {
+            "type": "string",
+            "x-ballerina-name": "depreciationAreaID"
+          },
+          "AccountDetermination": {
+            "type": "string",
+            "x-ballerina-name": "accountDetermination"
+          },
+          "UseLife": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "useLife"
+          },
+          "DepreciationTypeID": {
+            "type": "string",
+            "x-ballerina-name": "depreciationTypeID"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "lineNumber"
+          },
+          "ActiveStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "activeStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDocumentStatusEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "adsPosted",
+          "adsDraft",
+          "adsCancelled"
+        ]
+      },
+      "SpecialDepreciationCalculationMethodEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SpecialDepreciationCalculationMethodEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "spcmAdditional",
+          "spcmAlternative"
+        ]
+      },
+      "TransferSourcePeriodControlEnum": {
+        "type": "string",
+        "description": "OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tspcProRataTemporis"
+        ]
+      },
+      "AssetDocumentNewLoc": {
+        "type": "object",
+        "properties": {
+          "NBV": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "nBV"
+          },
+          "NewLocation": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "newLocation"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
+          },
+          "Quantity": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "quantity"
+          },
+          "CurLocation": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "curLocation"
+          },
+          "AssetNumber": {
+            "type": "string",
+            "x-ballerina-name": "assetNumber"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "lineNumber"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetGroupsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetGroup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "DepreciationType": {
+        "type": "object",
+        "properties": {
+          "DepreciationTypePool": {
+            "type": "string",
+            "x-ballerina-name": "depreciationTypePool"
+          },
+          "PercentageOfDepreciationReversedInRetirementYear": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "percentageOfDepreciationReversedInRetirementYear"
+          },
+          "StraightLineCalculationMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StraightLineCalculationMethodEnum"
+              }
+            ],
+            "x-ballerina-name": "straightLineCalculationMethod"
+          },
+          "TransferTargetProRataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TransferTargetProRataTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "transferTargetProRataType"
+          },
+          "IncludePreviousDepreciationInCapitalizationPeriod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "includePreviousDepreciationInCapitalizationPeriod"
+          },
+          "ValidFrom": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "validFrom"
+          },
+          "SpecialDepreciationMaximumAmount": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "specialDepreciationMaximumAmount"
+          },
+          "TransferSourcePeriodControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TransferSourcePeriodControlEnum"
+              }
+            ],
+            "x-ballerina-name": "transferSourcePeriodControl"
+          },
+          "AssetTransfer": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetTransfer"
+          },
+          "DepreciationLevelCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepreciationLevel"
+            },
+            "x-ballerina-name": "depreciationLevelCollection"
+          },
+          "SubsequentAcquisitionPeriodControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubsequentAcquisitionPeriodControlEnum"
+              }
+            ],
+            "x-ballerina-name": "subsequentAcquisitionPeriodControl"
+          },
+          "RoundingMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DepreciationRoundingMethodEnum"
+              }
+            ],
+            "x-ballerina-name": "roundingMethod"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "FactorOnlyRelevantToFirstFiscalYear": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "factorOnlyRelevantToFirstFiscalYear"
+          },
+          "IncludeSalvageInDepreciation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "includeSalvageInDepreciation"
+          },
+          "DecliningChangeTo": {
+            "type": "string",
+            "x-ballerina-name": "decliningChangeTo"
+          },
+          "RetirementPeriodControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RetirementPeriodControlEnum"
+              }
+            ],
+            "x-ballerina-name": "retirementPeriodControl"
+          },
+          "SpecialDepreciationNormalDepreciation": {
+            "type": "string",
+            "x-ballerina-name": "specialDepreciationNormalDepreciation"
+          },
+          "TransferTargetPeriodControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TransferTargetPeriodControlEnum"
+              }
+            ],
+            "x-ballerina-name": "transferTargetPeriodControl"
+          },
+          "DepreciationTypePool2": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DepreciationTypePool"
+              }
+            ],
+            "x-ballerina-name": "depreciationTypePool2"
+          },
+          "MinimumDepreciatedValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "minimumDepreciatedValue"
+          },
+          "SpecialDepreciationMaximumFlag": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SpecialDepreciationMaximumFlagEnum"
+              }
+            ],
+            "x-ballerina-name": "specialDepreciationMaximumFlag"
+          },
+          "DecliningPercentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "decliningPercentage"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "StraightLinePercentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "straightLinePercentage"
+          },
+          "AssetCapitalization": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetCapitalization"
+          },
+          "AcquisitionProRataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AcquisitionProRataTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "acquisitionProRataType"
+          },
+          "SpecialDepreciationAlternativeDepreciation": {
+            "type": "string",
+            "x-ballerina-name": "specialDepreciationAlternativeDepreciation"
+          },
+          "DepreciationEndAtLastFullYear": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "depreciationEndAtLastFullYear"
+          },
+          "SpecialDepreciationMaximumPercentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "specialDepreciationMaximumPercentage"
+          },
+          "RetirementProRataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RetirementProRataTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "retirementProRataType"
+          },
+          "AssetRetirement": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetRetirement"
+          },
+          "SalvagePercentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "salvagePercentage"
+          },
+          "DepreciationMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DepreciationMethodEnum"
+              }
+            ],
+            "x-ballerina-name": "depreciationMethod"
+          },
+          "ManualDepreciationReduceDepreciationBase": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "manualDepreciationReduceDepreciationBase"
+          },
+          "DecliningFactor": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "decliningFactor"
+          },
+          "TransferSourceProRataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TransferSourceProRataTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "transferSourceProRataType"
+          },
+          "SpecialDepreciationConcessionPeriodYears": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "specialDepreciationConcessionPeriodYears"
+          },
+          "AssetManualDepreciation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetManualDepreciation"
+          },
+          "RoundYearEndBookValue": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "roundYearEndBookValue"
+          },
+          "SubsequentAcquisitionProRataType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubsequentAcquisitionProRataTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "subsequentAcquisitionProRataType"
+          },
+          "ValidTo": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "validTo"
+          },
+          "CalculationBase": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CalculationBaseEnum"
+              }
+            ],
+            "x-ballerina-name": "calculationBase"
+          },
+          "StraightLinePeriodControlFactor": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "straightLinePeriodControlFactor"
+          },
+          "StraightLinePeriodControlDepreciationPeriods": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StraightLinePeriodControlDepreciationPeriodsEnum"
+              }
+            ],
+            "x-ballerina-name": "straightLinePeriodControlDepreciationPeriods"
+          },
+          "DeltaCoefficient": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "deltaCoefficient"
+          },
+          "MaximumDepreciableValue": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "maximumDepreciableValue"
+          },
+          "AssetCapitalizationCreditMemo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            },
+            "x-ballerina-name": "assetCapitalizationCreditMemo"
+          },
+          "SpecialDepreciationCalculationMethod": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SpecialDepreciationCalculationMethodEnum"
+              }
+            ],
+            "x-ballerina-name": "specialDepreciationCalculationMethod"
+          },
+          "AcquisitionPeriodControl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AcquisitionPeriodControlEnum"
+              }
+            ],
+            "x-ballerina-name": "acquisitionPeriodControl"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetRetirementCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetDocument"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "RetirementMethodEnum": {
+        "type": "string",
+        "description": "OData EnumType 'RetirementMethodEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rmGross",
+          "rmNet"
+        ]
+      },
+      "DepreciationTypesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepreciationType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "PostingOfDepreciationEnum": {
+        "type": "string",
+        "description": "OData EnumType 'PostingOfDepreciationEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "podDirectPosting",
+          "podIndirectPosting"
+        ]
+      },
+      "AssetDocumentAreaJournal": {
+        "type": "object",
+        "properties": {
+          "TransactionNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "transactionNumber"
+          },
+          "CancellationTransactionNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "cancellationTransactionNumber"
+          },
+          "CancellationJournalRemarks": {
+            "type": "string",
+            "x-ballerina-name": "cancellationJournalRemarks"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
+          },
+          "DepreciationArea": {
+            "type": "string",
+            "x-ballerina-name": "depreciationArea"
+          },
+          "JournalRemarks": {
+            "type": "string",
+            "x-ballerina-name": "journalRemarks"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "lineNumber"
+          }
+        },
+        "additionalProperties": false
+      },
       "AssetOriginalTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "aotARInvoice",
           "aotAPCreditMemo",
@@ -4606,635 +5672,130 @@
           "aotManualDepreciation",
           "aotFixedAssetsTransfer",
           "aotRetirement"
-        ],
-        "description": "OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "AssetRetirement_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "AssetRevaluation": {
         "type": "object",
         "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
+          "HandWritten": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "handWritten"
           },
-          "DocNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Series": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PostingDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "AssetValueDate": {
-            "type": "string",
-            "format": "date-time"
+          "IfrsPosting": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "ifrsPosting"
           },
           "Reference": {
-            "type": "string"
-          },
-          "Remarks": {
-            "type": "string"
-          },
-          "JournalRemarks": {
-            "type": "string"
-          },
-          "DepreciationArea": {
-            "type": "string"
-          },
-          "TransId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "HandWritten": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "PeriodIndicator": {
-            "type": "string"
-          },
-          "DocumentDate": {
             "type": "string",
-            "format": "date-time"
-          },
-          "BPLId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BPLName": {
-            "type": "string"
-          },
-          "VATRegNum": {
-            "type": "string"
+            "x-ballerina-name": "reference"
           },
           "RevaluationPercent": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "x-ballerina-name": "revaluationPercent"
           },
-          "IfrsPosting": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "docEntry"
           },
-          "SummerizeByProjects": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
+          "DepreciationArea": {
+            "type": "string",
+            "x-ballerina-name": "depreciationArea"
           },
-          "SummerizeByDistributionRules": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
+          "JournalRemarks": {
+            "type": "string",
+            "x-ballerina-name": "journalRemarks"
           },
           "AssetRevaluationLineCollection": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AssetRevaluationLine"
-            }
+            },
+            "x-ballerina-name": "assetRevaluationLineCollection"
           },
-          "DepreciationArea2": {
-            "$ref": "#/components/schemas/DepreciationArea"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetRevaluationLine": {
-        "type": "object",
-        "properties": {
-          "DocEntry": {
+          "AssetValueDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "assetValueDate"
+          },
+          "PeriodIndicator": {
+            "type": "string",
+            "x-ballerina-name": "periodIndicator"
+          },
+          "Series": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "series"
           },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AssetNumber": {
-            "type": "string"
-          },
-          "CurrentNBV": {
-            "type": "number",
-            "format": "double"
-          },
-          "NewNBV": {
-            "type": "number",
-            "format": "double"
+          "PostingDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "postingDate"
           },
           "Remarks": {
-            "type": "string"
-          },
-          "RevaluationPercent": {
-            "type": "number",
-            "format": "double"
-          },
-          "DistributionRule": {
-            "type": "string"
-          },
-          "DistributionRule2": {
-            "type": "string"
-          },
-          "DistributionRule3": {
-            "type": "string"
-          },
-          "DistributionRule4": {
-            "type": "string"
-          },
-          "DistributionRule5": {
-            "type": "string"
-          },
-          "Project": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetRevaluationParams": {
-        "type": "object",
-        "properties": {
-          "DocEntry": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetRevaluations_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetRevaluation"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetTransactionTypeEnum": {
-        "type": "string",
-        "enum": [
-          "att_BeginningOfYear",
-          "att_Acquistion",
-          "att_Retirement",
-          "att_Transfer",
-          "att_WriteUp",
-          "att_OrdinaryDepreciation",
-          "att_UplannedDepreciation",
-          "att_SpecialDepreciation",
-          "att_EndOfYear"
-        ],
-        "description": "OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "AssetTransfer_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "AssetTypeEnum": {
-        "type": "string",
-        "enum": [
-          "atAssetTypeGeneral",
-          "atAssetTypeLowValueAsset"
-        ],
-        "description": "OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoYesNoEnum": {
-        "type": "string",
-        "enum": [
-          "tNO",
-          "tYES"
-        ],
-        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
-      },
-      "CalculationBaseEnum": {
-        "type": "string",
-        "enum": [
-          "cbYearly",
-          "cbMonthly"
-        ],
-        "description": "OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ClosingOptionEnum": {
-        "type": "string",
-        "enum": [
-          "coByCurrentSystemDate",
-          "coByOriginalDocumentDate",
-          "coBySpecifiedDate"
-        ],
-        "description": "OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name."
-      },
-      "DepreciationArea": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "PostingOfDepreciation": {
-            "$ref": "#/components/schemas/PostingOfDepreciationEnum"
-          },
-          "RetirementMethod": {
-            "$ref": "#/components/schemas/RetirementMethodEnum"
-          },
-          "AreaType": {
-            "$ref": "#/components/schemas/AreaTypeEnum"
-          },
-          "DerivedArea": {
-            "type": "string"
-          },
-          "MainBookingArea": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "DirectRevenuePosting": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "TaxCreditControl": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "TaxType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BPForTaxCorrection": {
-            "type": "string"
-          },
-          "ItemForTaxCorrection": {
-            "type": "string"
-          },
-          "UsageForTaxCorrection": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "AssetRetirement": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetTransfer": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetRevaluations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetRevaluation"
-            }
-          },
-          "AssetManualDepreciation": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetCapitalization": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetCapitalizationCreditMemo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationAreaParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationAreas_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DepreciationArea"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "DepreciationCalculationBaseEnum": {
-        "type": "string",
-        "enum": [
-          "dcbAcquisitionValue",
-          "dcbNetBookValue"
-        ],
-        "description": "OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name."
-      },
-      "DepreciationLevel": {
-        "type": "object",
-        "properties": {
-          "Level": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DepreciationCalculationBase": {
-            "$ref": "#/components/schemas/DepreciationCalculationBaseEnum"
-          },
-          "NumberOfYears": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Percentage": {
-            "type": "number",
-            "format": "double"
-          },
-          "Amount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationMethodEnum": {
-        "type": "string",
-        "enum": [
-          "dmNoDepreciation",
-          "dmStraightLine",
-          "dmStraightLinePeriodControl",
-          "dmDecliningBalance",
-          "dmMultilevel",
-          "dmImmediateWriteOff",
-          "dmSpecialDepreciation",
-          "dmManualDepreciation",
-          "dmAccelerated"
-        ],
-        "description": "OData EnumType 'DepreciationMethodEnum'. Serialised by the Service Layer as the member name."
-      },
-      "DepreciationRoundingMethodEnum": {
-        "type": "string",
-        "enum": [
-          "drmTruncate",
-          "drmRoundUp",
-          "drmRoundDown"
-        ],
-        "description": "OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name."
-      },
-      "DepreciationType": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "DepreciationMethod": {
-            "$ref": "#/components/schemas/DepreciationMethodEnum"
-          },
-          "MinimumDepreciatedValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "RoundYearEndBookValue": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "IncludeSalvageInDepreciation": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "SalvagePercentage": {
-            "type": "number",
-            "format": "double"
-          },
-          "AcquisitionPeriodControl": {
-            "$ref": "#/components/schemas/AcquisitionPeriodControlEnum"
-          },
-          "SubsequentAcquisitionPeriodControl": {
-            "$ref": "#/components/schemas/SubsequentAcquisitionPeriodControlEnum"
-          },
-          "RetirementPeriodControl": {
-            "$ref": "#/components/schemas/RetirementPeriodControlEnum"
-          },
-          "AcquisitionProRataType": {
-            "$ref": "#/components/schemas/AcquisitionProRataTypeEnum"
-          },
-          "SubsequentAcquisitionProRataType": {
-            "$ref": "#/components/schemas/SubsequentAcquisitionProRataTypeEnum"
-          },
-          "RetirementProRataType": {
-            "$ref": "#/components/schemas/RetirementProRataTypeEnum"
-          },
-          "PercentageOfDepreciationReversedInRetirementYear": {
-            "type": "number",
-            "format": "double"
-          },
-          "ValidFrom": {
             "type": "string",
-            "format": "date-time"
+            "x-ballerina-name": "remarks"
           },
-          "ValidTo": {
+          "SummerizeByDistributionRules": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "summerizeByDistributionRules"
+          },
+          "VATRegNum": {
             "type": "string",
-            "format": "date-time"
+            "x-ballerina-name": "vATRegNum"
           },
-          "StraightLineCalculationMethod": {
-            "$ref": "#/components/schemas/StraightLineCalculationMethodEnum"
+          "BPLName": {
+            "type": "string",
+            "x-ballerina-name": "bPLName"
           },
-          "StraightLinePercentage": {
-            "type": "number",
-            "format": "double"
+          "DepreciationArea2": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DepreciationArea"
+              }
+            ],
+            "x-ballerina-name": "depreciationArea2"
           },
-          "StraightLinePeriodControlDepreciationPeriods": {
-            "$ref": "#/components/schemas/StraightLinePeriodControlDepreciationPeriodsEnum"
-          },
-          "StraightLinePeriodControlFactor": {
-            "type": "number",
-            "format": "double"
-          },
-          "DecliningPercentage": {
-            "type": "number",
-            "format": "double"
-          },
-          "DecliningFactor": {
-            "type": "number",
-            "format": "double"
-          },
-          "DecliningChangeTo": {
-            "type": "string"
-          },
-          "SpecialDepreciationCalculationMethod": {
-            "$ref": "#/components/schemas/SpecialDepreciationCalculationMethodEnum"
-          },
-          "SpecialDepreciationConcessionPeriodYears": {
+          "DocNum": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "docNum"
           },
-          "SpecialDepreciationMaximumPercentage": {
-            "type": "number",
-            "format": "double"
-          },
-          "SpecialDepreciationNormalDepreciation": {
-            "type": "string"
-          },
-          "SpecialDepreciationAlternativeDepreciation": {
-            "type": "string"
-          },
-          "DepreciationTypePool": {
-            "type": "string"
-          },
-          "ManualDepreciationReduceDepreciationBase": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "SpecialDepreciationMaximumAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "SpecialDepreciationMaximumFlag": {
-            "$ref": "#/components/schemas/SpecialDepreciationMaximumFlagEnum"
-          },
-          "CalculationBase": {
-            "$ref": "#/components/schemas/CalculationBaseEnum"
-          },
-          "DepreciationEndAtLastFullYear": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "IncludePreviousDepreciationInCapitalizationPeriod": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "DeltaCoefficient": {
+          "TransId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "transId"
           },
-          "MaximumDepreciableValue": {
-            "type": "number",
-            "format": "double"
+          "DocumentDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "documentDate"
           },
-          "FactorOnlyRelevantToFirstFiscalYear": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
+          "BPLId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "bPLId"
           },
-          "TransferSourcePeriodControl": {
-            "$ref": "#/components/schemas/TransferSourcePeriodControlEnum"
-          },
-          "TransferTargetPeriodControl": {
-            "$ref": "#/components/schemas/TransferTargetPeriodControlEnum"
-          },
-          "TransferSourceProRataType": {
-            "$ref": "#/components/schemas/TransferSourceProRataTypeEnum"
-          },
-          "TransferTargetProRataType": {
-            "$ref": "#/components/schemas/TransferTargetProRataTypeEnum"
-          },
-          "RoundingMethod": {
-            "$ref": "#/components/schemas/DepreciationRoundingMethodEnum"
-          },
-          "DepreciationLevelCollection": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DepreciationLevel"
-            }
-          },
-          "AssetRetirement": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetTransfer": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetManualDepreciation": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "AssetCapitalization": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          },
-          "DepreciationTypePool2": {
-            "$ref": "#/components/schemas/DepreciationTypePool"
-          },
-          "AssetCapitalizationCreditMemo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetDocument"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationTypeParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationTypePool": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "DepreciationTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DepreciationType"
-            }
+          "SummerizeByProjects": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "summerizeByProjects"
           }
         },
         "additionalProperties": false
@@ -5242,286 +5803,16 @@
       "DepreciationTypePoolParams": {
         "type": "object",
         "properties": {
-          "Code": {
-            "type": "string"
-          },
           "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DepreciationTypePools_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "description"
           },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DepreciationTypePool"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "DepreciationTypes_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DepreciationType"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "FAAccountDetermination": {
-        "type": "object",
-        "properties": {
           "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "AssetBalanceSheetAccount": {
-            "type": "string"
-          },
-          "ClearingAccountAcquisition": {
-            "type": "string"
-          },
-          "RevaluationReserveAccount": {
-            "type": "string"
-          },
-          "RevaluationReserveClearing": {
-            "type": "string"
-          },
-          "OrdinaryDepreciation": {
-            "type": "string"
-          },
-          "AccumulatedOrdinaryDepr": {
-            "type": "string"
-          },
-          "UnplannedDepreciation": {
-            "type": "string"
-          },
-          "AccumulatedUnplannedDepr": {
-            "type": "string"
-          },
-          "SpecialDepreciation": {
-            "type": "string"
-          },
-          "AccumulatedSpecialDepr": {
-            "type": "string"
-          },
-          "RevenuefromAssetSalesNet": {
-            "type": "string"
-          },
-          "RetirementwithExpenseNet": {
-            "type": "string"
-          },
-          "RetirementwithRevenueNet": {
-            "type": "string"
-          },
-          "LeavewithExpenseNBVGross": {
-            "type": "string"
-          },
-          "LeavewithRevenueNBVGross": {
-            "type": "string"
-          },
-          "RevenueAccountforRetirement": {
-            "type": "string"
-          },
-          "RevenueClearingAccount": {
-            "type": "string"
-          },
-          "RevaluationAccount": {
-            "type": "string"
-          },
-          "RevaluationLossAcct": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "code"
           }
         },
         "additionalProperties": false
-      },
-      "FAAccountDeterminationParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "FAAccountDeterminations_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FAAccountDetermination"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "FixedAssetEndBalance": {
-        "type": "object",
-        "properties": {
-          "HistoricalAPC": {
-            "type": "number",
-            "format": "double"
-          },
-          "AcquisitionCost": {
-            "type": "number",
-            "format": "double"
-          },
-          "NetBookValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "HistoricalNBV": {
-            "type": "number",
-            "format": "double"
-          },
-          "OrdinaryDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "UnplanedDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "SpecialDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "WriteUp": {
-            "type": "number",
-            "format": "double"
-          },
-          "SalvageValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "Quantity": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "FixedAssetValues": {
-        "type": "object",
-        "properties": {
-          "TransactionType": {
-            "$ref": "#/components/schemas/AssetTransactionTypeEnum"
-          },
-          "AcquisitionCost": {
-            "type": "number",
-            "format": "double"
-          },
-          "Quantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "DepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "NetBookValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "OrdinaryDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "UnplanedDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "SpecialDepreciationValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "WriteUp": {
-            "type": "number",
-            "format": "double"
-          },
-          "Appreciation": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "FixedAssetValuesParams": {
-        "type": "object",
-        "properties": {
-          "ItemCode": {
-            "type": "string"
-          },
-          "FiscalYear": {
-            "type": "string"
-          },
-          "DepreciationArea": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostingOfDepreciationEnum": {
-        "type": "string",
-        "enum": [
-          "podDirectPosting",
-          "podIndirectPosting"
-        ],
-        "description": "OData EnumType 'PostingOfDepreciationEnum'. Serialised by the Service Layer as the member name."
-      },
-      "RetirementMethodEnum": {
-        "type": "string",
-        "enum": [
-          "rmGross",
-          "rmNet"
-        ],
-        "description": "OData EnumType 'RetirementMethodEnum'. Serialised by the Service Layer as the member name."
-      },
-      "RetirementPeriodControlEnum": {
-        "type": "string",
-        "enum": [
-          "rpcProRataTemporis",
-          "rpcHalfYearConvention",
-          "rpcOnlyAfterEndOfUsefulLife"
-        ],
-        "description": "OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name."
-      },
-      "RetirementProRataTypeEnum": {
-        "type": "string",
-        "enum": [
-          "rprtExactlyDailyBase",
-          "rprtLastDayOfPriorPeriod",
-          "rprtLastDayOfCurrentPeriod"
-        ],
-        "description": "OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -5548,89 +5839,354 @@
           }
         }
       },
-      "SpecialDepreciationCalculationMethodEnum": {
+      "RetirementPeriodControlEnum": {
         "type": "string",
+        "description": "OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "spcmAdditional",
-          "spcmAlternative"
-        ],
-        "description": "OData EnumType 'SpecialDepreciationCalculationMethodEnum'. Serialised by the Service Layer as the member name."
+          "rpcProRataTemporis",
+          "rpcHalfYearConvention",
+          "rpcOnlyAfterEndOfUsefulLife"
+        ]
       },
-      "SpecialDepreciationMaximumFlagEnum": {
+      "DepreciationLevel": {
+        "type": "object",
+        "properties": {
+          "DepreciationCalculationBase": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DepreciationCalculationBaseEnum"
+              }
+            ],
+            "x-ballerina-name": "depreciationCalculationBase"
+          },
+          "Percentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "percentage"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "amount"
+          },
+          "NumberOfYears": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "numberOfYears"
+          },
+          "Level": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "level"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FAAccountDeterminationsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FAAccountDetermination"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "DepreciationMethodEnum": {
         "type": "string",
+        "description": "OData EnumType 'DepreciationMethodEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "spmfPercentage",
-          "spmfAmount"
-        ],
-        "description": "OData EnumType 'SpecialDepreciationMaximumFlagEnum'. Serialised by the Service Layer as the member name."
+          "dmNoDepreciation",
+          "dmStraightLine",
+          "dmStraightLinePeriodControl",
+          "dmDecliningBalance",
+          "dmMultilevel",
+          "dmImmediateWriteOff",
+          "dmSpecialDepreciation",
+          "dmManualDepreciation",
+          "dmAccelerated"
+        ]
+      },
+      "AreaTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AreaTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "atPostingtoGL",
+          "atAdditionalArea",
+          "atDerivedArea"
+        ]
       },
       "StraightLineCalculationMethodEnum": {
         "type": "string",
+        "description": "OData EnumType 'StraightLineCalculationMethodEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "slcmAuquisitionValueDividedByTotalUsefulLife",
           "slcmPercentageOfAcquisitionValue",
           "slcmNetBookValueDividedByRemainingLife"
-        ],
-        "description": "OData EnumType 'StraightLineCalculationMethodEnum'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "StraightLinePeriodControlDepreciationPeriodsEnum": {
-        "type": "string",
-        "enum": [
-          "slpcdpStandard",
-          "slpcdpIndividual",
-          "slpcdpIndividualUsage"
-        ],
-        "description": "OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name."
+      "FAAccountDeterminationParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
       },
-      "SubsequentAcquisitionPeriodControlEnum": {
-        "type": "string",
-        "enum": [
-          "sapcProRataTemporis",
-          "sapcHalfYearConvention",
-          "sapcFullYear"
-        ],
-        "description": "OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name."
-      },
-      "SubsequentAcquisitionProRataTypeEnum": {
-        "type": "string",
-        "enum": [
-          "saprtExactlyDailyBase",
-          "saprtFirstDayOfCurrentPeriod",
-          "saprtFirstDayOfNextPeriod"
-        ],
-        "description": "OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "TransferSourcePeriodControlEnum": {
-        "type": "string",
-        "enum": [
-          "tspcProRataTemporis"
-        ],
-        "description": "OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name."
-      },
-      "TransferSourceProRataTypeEnum": {
-        "type": "string",
-        "enum": [
-          "tsprtExactlyDailyBase",
-          "tsprtLastDayOfPriorPeriod",
-          "tsprtLastDayofCurrentPeriod"
-        ],
-        "description": "OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "TransferTargetPeriodControlEnum": {
-        "type": "string",
-        "enum": [
-          "ttpcProRataTemporis"
-        ],
-        "description": "OData EnumType 'TransferTargetPeriodControlEnum'. Serialised by the Service Layer as the member name."
+      "AssetClassParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
       },
       "TransferTargetProRataTypeEnum": {
         "type": "string",
+        "description": "OData EnumType 'TransferTargetProRataTypeEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "ttprtExactlyDailyBase",
           "ttprtFirstDayOfCurrentPeriod",
           "ttprtFirstDayOfNextPeriod"
-        ],
-        "description": "OData EnumType 'TransferTargetProRataTypeEnum'. Serialised by the Service Layer as the member name."
+        ]
+      },
+      "AssetGroup": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FAAccountDetermination": {
+        "type": "object",
+        "properties": {
+          "RevaluationReserveAccount": {
+            "type": "string",
+            "x-ballerina-name": "revaluationReserveAccount"
+          },
+          "LeavewithRevenueNBVGross": {
+            "type": "string",
+            "x-ballerina-name": "leavewithRevenueNBVGross"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "RetirementwithRevenueNet": {
+            "type": "string",
+            "x-ballerina-name": "retirementwithRevenueNet"
+          },
+          "RevenueAccountforRetirement": {
+            "type": "string",
+            "x-ballerina-name": "revenueAccountforRetirement"
+          },
+          "RevaluationAccount": {
+            "type": "string",
+            "x-ballerina-name": "revaluationAccount"
+          },
+          "AssetBalanceSheetAccount": {
+            "type": "string",
+            "x-ballerina-name": "assetBalanceSheetAccount"
+          },
+          "RevenuefromAssetSalesNet": {
+            "type": "string",
+            "x-ballerina-name": "revenuefromAssetSalesNet"
+          },
+          "AccumulatedUnplannedDepr": {
+            "type": "string",
+            "x-ballerina-name": "accumulatedUnplannedDepr"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "AccumulatedOrdinaryDepr": {
+            "type": "string",
+            "x-ballerina-name": "accumulatedOrdinaryDepr"
+          },
+          "SpecialDepreciation": {
+            "type": "string",
+            "x-ballerina-name": "specialDepreciation"
+          },
+          "ClearingAccountAcquisition": {
+            "type": "string",
+            "x-ballerina-name": "clearingAccountAcquisition"
+          },
+          "AccumulatedSpecialDepr": {
+            "type": "string",
+            "x-ballerina-name": "accumulatedSpecialDepr"
+          },
+          "RevaluationReserveClearing": {
+            "type": "string",
+            "x-ballerina-name": "revaluationReserveClearing"
+          },
+          "LeavewithExpenseNBVGross": {
+            "type": "string",
+            "x-ballerina-name": "leavewithExpenseNBVGross"
+          },
+          "UnplannedDepreciation": {
+            "type": "string",
+            "x-ballerina-name": "unplannedDepreciation"
+          },
+          "RevaluationLossAcct": {
+            "type": "string",
+            "x-ballerina-name": "revaluationLossAcct"
+          },
+          "OrdinaryDepreciation": {
+            "type": "string",
+            "x-ballerina-name": "ordinaryDepreciation"
+          },
+          "RevenueClearingAccount": {
+            "type": "string",
+            "x-ballerina-name": "revenueClearingAccount"
+          },
+          "RetirementwithExpenseNet": {
+            "type": "string",
+            "x-ballerina-name": "retirementwithExpenseNet"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Comma-separated navigation properties to expand",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarExpand"
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "OData filter expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarFilter"
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Set to 'allpages' to include the total count (odata.count)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        },
+        "x-ballerina-name": "dollarInlinecount"
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "OData orderby expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarOrderby"
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "prefer"
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "description": "Comma-separated list of properties to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarSelect"
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Number of records to skip (paging)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarSkip"
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Maximum number of records to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarTop"
+      }
+    },
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "description": "Session cookie returned by POST /Login.",
+        "name": "B1SESSION",
+        "in": "cookie",
+        "x-ballerina-name": "b1SESSION"
       }
     }
   }

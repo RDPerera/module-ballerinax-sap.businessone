@@ -33,11 +33,11 @@ public function main() returns error? {
         serviceUrl
     );
 
-    sales:Orders_CollectionResponse orders = check b1->ordersList(queries = {
-        \$filter: "DocumentStatus eq 'bost_Open'",
-        \$select: "DocEntry,DocNum,CardCode,CardName,DocDate,DocDueDate,DocTotal,DocCurrency",
-        \$orderby: "DocDate desc",
-        \$top: 20
+    sales:OrdersCollectionResponse orders = check b1->listOrders(queries = {
+        dollarFilter: "DocumentStatus eq 'bost_Open'",
+        dollarSelect: "DocEntry,DocNum,CardCode,CardName,DocDate,DocDueDate,DocTotal,DocCurrency",
+        dollarOrderby: "DocDate desc",
+        dollarTop: 20
     });
 
     io:println("Open sales orders:");

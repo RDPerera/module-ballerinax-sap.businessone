@@ -17,15 +17,10 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
-# Represents the Headers record for the operation: employeeRolesSetupList
-public type EmployeeRolesSetupListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name
 public type BoMeritalStatuses "mts_Single"|"mts_Married"|"mts_Divorced"|"mts_Widowed"|"mts_NotSpecified";
 
 public type EmployeePreviousEmpoymentInfo record {
@@ -38,74 +33,127 @@ public type EmployeePreviousEmpoymentInfo record {
     string Remarks?;
 };
 
-public type EmployeePosition_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeePosition[] value?;
-    string odata\.nextLink?;
-};
-
-public type EmployeeStatus_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeStatus[] value?;
-    string odata\.nextLink?;
+public type EmployeeImagesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeImage[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type EmployeePosition record {|
-    int:Signed32 PositionID?;
-    string Name?;
-    string Description?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "PositionID"}
+    int:Signed32 positionID?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
+
+# Represents the Headers record for the operation: listEmployeesInfo
+public type ListEmployeesInfoHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getTeams
+public type GetTeamsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type EmployeeIDTypeCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeIDType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listEmploymentCategorys
+public type ListEmploymentCategorysHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type EmploymentCategorysCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmploymentCategory[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type Gender record {|
-    string Code?;
-    string Description?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
 |};
 
-public type EmployeeImages_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeImage[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getEmployeePosition
+public type GetEmployeePositionQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type EmployeeRolesSetupCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeRoleSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type EmployeeTransfer record {|
-    int:Signed32 TransferID?;
-    string TransStartDate?;
-    string TransStartTime?;
-    string TransEndDate?;
-    string TransEndTime?;
-    # OData EnumType 'EmployeeTransferStatusEnum'. Serialised by the Service Layer as the member name.
-    EmployeeTransferStatusEnum Status?;
-    string Comment?;
-    EmployeeTransferDetail[] EmployeeTransferDetails?;
+    @jsondata:Name {value: "TransEndTime"}
+    string transEndTime?;
+    @jsondata:Name {value: "Status"}
+    EmployeeTransferStatusEnum status?;
+    @jsondata:Name {value: "EmployeeTransferDetails"}
+    EmployeeTransferDetail[] employeeTransferDetails?;
+    @jsondata:Name {value: "Comment"}
+    string comment?;
+    @jsondata:Name {value: "TransEndDate"}
+    string transEndDate?;
+    @jsondata:Name {value: "TransStartDate"}
+    string transStartDate?;
+    @jsondata:Name {value: "TransferID"}
+    int:Signed32 transferID?;
+    @jsondata:Name {value: "TransStartTime"}
+    string transStartTime?;
 |};
 
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-# Represents the Queries record for the operation: employeeStatusList
-public type EmployeeStatusListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listEmployeeTransfers
+public type ListEmployeeTransfersHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: gendersList
-public type GendersListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type EmployeeTransfersCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeTransfer[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type EmployeeReviewsInfo record {
@@ -118,27 +166,53 @@ public type EmployeeReviewsInfo record {
     string Remarks?;
 };
 
-public type EmploymentCategoryParams record {|
-    string Code?;
-|};
-
-# Represents the Queries record for the operation: employeePositionList
-public type EmployeePositionListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listTeams
+public type ListTeamsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
+
+# Represents the Queries record for the operation: getEmploymentCategorys
+public type GetEmploymentCategorysQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type TeamsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Team[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type EmploymentCategoryParams record {|
+    @jsondata:Name {value: "Code"}
+    string code?;
+|};
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
 @display {label: "Connection Config"}
@@ -182,36 +256,51 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-# Represents the Queries record for the operation: employeeStatusGet
-public type EmployeeStatusGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: employeeTransfersList
-public type EmployeeTransfersListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listEmployeeRolesSetup
+public type ListEmployeeRolesSetupQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200_5 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmploymentCategoryParams[] value?;
 };
 
 public type inline_response_200_6 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     GendersParams[] value?;
 };
 
 public type EmployeeIDTypeParams record {|
-    string IDType?;
+    @jsondata:Name {value: "IDType"}
+    string iDType?;
 |};
 
 public type inline_response_200_7 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TerminationReasonParams[] value?;
 };
 
@@ -227,22 +316,8 @@ public type EmployeeSavingsPaymentInfo record {
     string BankName?;
     string BankCode?;
     string BankAccount?;
-    # OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name
     ContractSequenceEnum Sequence?;
-};
-
-# Represents the Queries record for the operation: employeeImagesGet
-public type EmployeeImagesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type Genders_CollectionResponse record {
-    string odata\.metadata?;
-    Gender[] value?;
-    string odata\.nextLink?;
 };
 
 public type EmployeeAbsenceInfo record {
@@ -255,15 +330,24 @@ public type EmployeeAbsenceInfo record {
     int:Signed32 ConfirmerNumber?;
 };
 
-# Represents the Queries record for the operation: employeeTransfersGet
-public type EmployeeTransfersGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getEmployeeTransfers
+public type GetEmployeeTransfersQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listEmployeeRolesSetup
+public type ListEmployeeRolesSetupHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name
 public type EmployeeExemptionUnitEnum "eeu_None"|"eeu_Yearly"|"eeu_Monthly"|"eeu_Weekly"|"eeu_Daily";
 
 public type EmployeeBranchAssignmentItem record {
@@ -272,55 +356,134 @@ public type EmployeeBranchAssignmentItem record {
 };
 
 public type EmployeeTransferDetail record {|
-    int:Signed32 TransferID?;
-    int:Signed32 EmployeeID?;
-    string TransferedDate?;
-    string TransferedTime?;
-    # OData EnumType 'EmployeeTransferProcessingStatusEnum'. Serialised by the Service Layer as the member name.
-    EmployeeTransferProcessingStatusEnum Status?;
-    string Comment?;
+    @jsondata:Name {value: "Status"}
+    EmployeeTransferProcessingStatusEnum status?;
+    @jsondata:Name {value: "Comment"}
+    string comment?;
+    @jsondata:Name {value: "TransferedTime"}
+    string transferedTime?;
+    @jsondata:Name {value: "TransferedDate"}
+    string transferedDate?;
+    @jsondata:Name {value: "TransferID"}
+    int:Signed32 transferID?;
+    @jsondata:Name {value: "EmployeeID"}
+    int:Signed32 employeeID?;
 |};
 
-# Represents the Queries record for the operation: employmentCategorysList
-public type EmploymentCategorysListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listTerminationReason
+public type ListTerminationReasonQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TerminationReasonParams record {|
-    int:Signed32 ReasonID?;
-    string Name?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ReasonID"}
+    int:Signed32 reasonID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: employeesInfoList
-public type EmployeesInfoListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getEmployeeImages
+public type GetEmployeeImagesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type EmployeeRolesSetup_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeRoleSetup[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listEmployeeStatus
+public type ListEmployeeStatusQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: terminationReasonList
-public type TerminationReasonListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listEmployeeIDType
+public type ListEmployeeIDTypeQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listEmployeePosition
+public type ListEmployeePositionHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type EmployeeStatusCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeStatus[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listTerminationReason
+public type ListTerminationReasonHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type EmployeeRolesInfo record {
@@ -330,212 +493,204 @@ public type EmployeeRolesInfo record {
 };
 
 public type EmployeeStatus record {|
-    int:Signed32 StatusId?;
-    string Name?;
-    string Description?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: employmentCategorysList
-public type EmploymentCategorysListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listGenders
+public type ListGendersHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: employeePositionGet
-public type EmployeePositionGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listEmployeeIDType
+public type ListEmployeeIDTypeHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: terminationReasonList
-public type TerminationReasonListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getEmployeesInfo
+public type GetEmployeesInfoQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmployeePositionParams[] value?;
 };
 
+# Represents the Queries record for the operation: listEmployeePosition
+public type ListEmployeePositionQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmployeeRoleSetupParams[] value?;
 };
 
-# Represents the Queries record for the operation: employeeRolesSetupGet
-public type EmployeeRolesSetupGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_3 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmployeeStatusParams[] value?;
 };
 
 public type inline_response_200_4 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmployeeTransferParams[] value?;
 };
 
-# OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name.
+public type EmployeesInfoCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeeInfo[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name
 public type ContractSequenceEnum "cs_Monthly"|"cs_Quarterly"|"cs_SemiAnnually"|"cs_Yearly";
 
-# Represents the Queries record for the operation: employeesInfoList
-public type EmployeesInfoListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listEmployeeStatus
+public type ListEmployeeStatusHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 
-# Represents the Queries record for the operation: employeeTransfersList
-public type EmployeeTransfersListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'EmployeeTransferProcessingStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EmployeeTransferProcessingStatusEnum'. Serialised by the Service Layer as the member name
 public type EmployeeTransferProcessingStatusEnum "etps_New"|"etps_Sent"|"etps_Accepted"|"etps_Error";
 
-# Represents the Queries record for the operation: employmentCategorysGet
-public type EmploymentCategorysGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listGenders
+public type ListGendersQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type EmployeeRoleSetup record {|
-    int:Signed32 TypeID?;
-    string Name?;
-    string Description?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "TypeID"}
+    int:Signed32 typeID?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type EmploymentCategory record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name
 public type BoRoleInTeam "borit_Leader"|"borit_Member";
 
-# OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name
 public type BoGenderTypes "gt_Female"|"gt_Male"|"gt_Undefined"|"gt_Masked"|"gt_Invalid";
 
-# Represents the Queries record for the operation: employeeRolesSetupList
-public type EmployeeRolesSetupListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: employeeStatusList
-public type EmployeeStatusListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: gendersList
-public type GendersListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type EmployeeStatusParams record {|
-    int:Signed32 StatusId?;
-    string Name?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Queries record for the operation: gendersGet
-public type GendersGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name
 public type EmployeePaymentMethodEnum "epm_None"|"epm_BankTransfer";
 
 public type EmployeePositionParams record {|
-    int:Signed32 PositionID?;
-    string Name?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "PositionID"}
+    int:Signed32 positionID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Queries record for the operation: teamsGet
-public type TeamsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listEmployeesInfo
+public type ListEmployeesInfoQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type EmployeeEducationInfo record {
@@ -549,46 +704,118 @@ public type EmployeeEducationInfo record {
     string Diploma?;
 };
 
-# OData EnumType 'EmployeeTransferStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EmployeeTransferStatusEnum'. Serialised by the Service Layer as the member name
 public type EmployeeTransferStatusEnum "ets_New"|"ets_Processing"|"ets_Sent"|"ets_Received"|"ets_Accepted"|"ets_Error";
 
-public type TerminationReason_CollectionResponse record {
-    string odata\.metadata?;
+# Represents the Queries record for the operation: listEmploymentCategorys
+public type ListEmploymentCategorysQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type TerminationReasonCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TerminationReason[] value?;
-    string odata\.nextLink?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type EmployeePositionCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    EmployeePosition[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type EmployeeImage record {|
-    int:Signed32 EmployeeNo?;
-    int:Signed32 Picture?;
+    @jsondata:Name {value: "Picture"}
+    int:Signed32 picture?;
+    @jsondata:Name {value: "EmployeeNo"}
+    int:Signed32 employeeNo?;
 |};
 
-public type EmployeeRoleSetupParams record {|
-    int:Signed32 TypeID?;
-    string Name?;
-|};
-
-public type EmployeesInfo_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeInfo[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listEmployeeTransfers
+public type ListEmployeeTransfersQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
+public type EmployeeRoleSetupParams record {|
+    @jsondata:Name {value: "TypeID"}
+    int:Signed32 typeID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
+|};
+
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     EmployeeIDTypeParams[] value?;
 };
 
-# OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getGenders
+public type GetGendersQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name
 public type SPEDContabilQualificationCodeEnum "spedNA"|"spedDiretor"|"spedConselheiroDeAdministracao"|"spedAdministrador"|"spedAdministradorDoGrupo"|"spedAdministradorDeSociedadeFiliada"|"spedAdministradorJudicialPessoaFisica"|"spedAdministradorJudicialPessoaJuridicaProfissionalResponsavel"|"spedAdministradorJudicialGestor"|"spedGestorJudicial"|"spedProcurador"|"spedInventariante"|"spedLiquidante"|"spedInterventor"|"spedEmpresario"|"spedContador"|"spedOutros";
 
 public type EmployeeIDType record {|
-    string IDType?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "IDType"}
+    string iDType?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
 |};
 
 public type EmployeeTransferParams record {|
-    int:Signed32 TransferID?;
+    @jsondata:Name {value: "TransferID"}
+    int:Signed32 transferID?;
 |};
 
 public type Team record {
@@ -598,26 +825,12 @@ public type Team record {
     TeamMember[] TeamMembers?;
 };
 
-# Represents the Headers record for the operation: employeePositionList
-public type EmployeePositionListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: employeesInfoGet
-public type EmployeesInfoGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type EmployeeInfo record {
     int:Signed32 EmployeeID?;
     string LastName?;
     string FirstName?;
     string MiddleName?;
-    # OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name
     BoGenderTypes Gender?;
     string JobTitle?;
     int:Signed32 EmployeeType?;
@@ -643,10 +856,10 @@ public type EmployeeInfo record {
     string StartDate?;
     int:Signed32 StatusCode?;
     decimal Salary?;
-    # OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name
     BoSalaryCostUnits SalaryUnit?;
     decimal EmployeeCosts?;
-    # OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name
     BoSalaryCostUnits EmployeeCostUnit?;
     string TerminationDate?;
     int:Signed32 TreminationReason?;
@@ -663,7 +876,7 @@ public type EmployeeInfo record {
     string HomeState?;
     string DateOfBirth?;
     string CountryOfBirth?;
-    # OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name
     BoMeritalStatuses MartialStatus?;
     int:Signed32 NumOfChildren?;
     string IdNumber?;
@@ -688,11 +901,11 @@ public type EmployeeInfo record {
     string Religion?;
     string PartnerReligion?;
     decimal ExemptionAmount?;
-    # OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name
     EmployeeExemptionUnitEnum ExemptionUnit?;
     string ExemptionCurrency?;
     decimal AdditionalAmount?;
-    # OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name
     EmployeeExemptionUnitEnum AdditionalUnit?;
     string AdditionalCurrency?;
     string TaxOfficeName?;
@@ -706,35 +919,35 @@ public type EmployeeInfo record {
     string PersonGroup?;
     string JobTitleCode?;
     string BankCodeForDATEV?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DeviatingBankAccountOwner?;
     string SpouseFirstName?;
     string SpouseSurname?;
     string ExternalEmployeeNumber?;
     string BirthPlace?;
-    # OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name
     EmployeePaymentMethodEnum PaymentMethod?;
     int:Signed32 STDCode?;
     string CPF?;
     string CRCNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AccountantResponsible?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LegalRepresentative?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DIRFResponsible?;
     string CRCState?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Active?;
     string IDType?;
     int:Signed32 BPLID?;
     string PassportIssueDate?;
     string PassportIssuer?;
-    # OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name
     SPEDContabilQualificationCodeEnum QualificationCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PRWebAccess?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PreviousPRWebAccess?;
     string WorkStreetNumber?;
     string HomeStreetNumber?;
@@ -744,10 +957,10 @@ public type EmployeeInfo record {
     string UpdateDate?;
     string UpdateTime?;
     string EmployeeCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ARetSEFAZ?;
     string GenderEx?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum NaturalPer?;
     EmployeeAbsenceInfo[] EmployeeAbsenceInfoLines?;
     EmployeeEducationInfo[] EmployeeEducationInfoLines?;
@@ -764,135 +977,115 @@ public type EmployeeInfo record {
     Gender Gender2?;
 };
 
-public type EmployeeTransfers_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeTransfer[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listTeams
+public type ListTeamsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: employeeIDTypeGet
-public type EmployeeIDTypeGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getEmployeeStatus
+public type GetEmployeeStatusQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: teamsList
-public type TeamsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getTerminationReason
+public type GetTerminationReasonQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name
 public type BoSalaryCostUnits "scu_Hour"|"scu_Day"|"scu_Week"|"scu_Month"|"scu_Year"|"scu_Semimonthly"|"scu_Biweekly";
+
+public type GendersCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Gender[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type TeamMember record {
     int:Signed32 TeamID?;
     int:Signed32 EmployeeID?;
-    # OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name
     BoRoleInTeam RoleInTeam?;
 };
 
-# Represents the Queries record for the operation: teamsList
-public type TeamsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type Teams_CollectionResponse record {
-    string odata\.metadata?;
-    Team[] value?;
-    string odata\.nextLink?;
-};
-
 public type TerminationReason record {|
-    int:Signed32 ReasonID?;
-    string Name?;
-    string Description?;
-    EmployeeInfo[] EmployeesInfo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ReasonID"}
+    int:Signed32 reasonID?;
+    @jsondata:Name {value: "EmployeesInfo"}
+    EmployeeInfo[] employeesInfo?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-public type EmployeeIDType_CollectionResponse record {
-    string odata\.metadata?;
-    EmployeeIDType[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getEmployeeRolesSetup
+public type GetEmployeeRolesSetupQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: terminationReasonGet
-public type TerminationReasonGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getEmployeeIDType
+public type GetEmployeeIDTypeQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: employeeImagesList
-public type EmployeeImagesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: employeeIDTypeList
-public type EmployeeIDTypeListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type EmploymentCategorys_CollectionResponse record {
-    string odata\.metadata?;
-    EmploymentCategory[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listEmployeeImages
+public type ListEmployeeImagesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type GendersParams record {|
-    string Code?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: employeeIDTypeList
-public type EmployeeIDTypeListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: employeeImagesList
-public type EmployeeImagesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listEmployeeImages
+public type ListEmployeeImagesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };

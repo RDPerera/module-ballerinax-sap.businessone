@@ -17,32 +17,112 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
+# Represents the Queries record for the operation: listAssetCapitalization
+public type ListAssetCapitalizationQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listAssetDepreciationGroups
+public type ListAssetDepreciationGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type FixedAssetEndBalance record {|
-    decimal HistoricalAPC?;
-    decimal AcquisitionCost?;
-    decimal NetBookValue?;
-    decimal HistoricalNBV?;
-    decimal OrdinaryDepreciationValue?;
-    decimal UnplanedDepreciationValue?;
-    decimal SpecialDepreciationValue?;
-    decimal WriteUp?;
-    decimal SalvageValue?;
-    decimal Quantity?;
+    @jsondata:Name {value: "SalvageValue"}
+    decimal salvageValue?;
+    @jsondata:Name {value: "AcquisitionCost"}
+    decimal acquisitionCost?;
+    @jsondata:Name {value: "NetBookValue"}
+    decimal netBookValue?;
+    @jsondata:Name {value: "OrdinaryDepreciationValue"}
+    decimal ordinaryDepreciationValue?;
+    @jsondata:Name {value: "SpecialDepreciationValue"}
+    decimal specialDepreciationValue?;
+    @jsondata:Name {value: "HistoricalAPC"}
+    decimal historicalAPC?;
+    @jsondata:Name {value: "UnplanedDepreciationValue"}
+    decimal unplanedDepreciationValue?;
+    @jsondata:Name {value: "Quantity"}
+    decimal quantity?;
+    @jsondata:Name {value: "HistoricalNBV"}
+    decimal historicalNBV?;
+    @jsondata:Name {value: "WriteUp"}
+    decimal writeUp?;
 |};
 
-# OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetTypeEnum "atAssetTypeGeneral"|"atAssetTypeLowValueAsset";
 
+public type DepreciationTypePoolsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DepreciationTypePool[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type FixedAssetValuesParams record {|
-    string ItemCode?;
-    string FiscalYear?;
-    string DepreciationArea?;
+    @jsondata:Name {value: "ItemCode"}
+    string itemCode?;
+    @jsondata:Name {value: "FiscalYear"}
+    string fiscalYear?;
+    @jsondata:Name {value: "DepreciationArea"}
+    string depreciationArea?;
 |};
 
-# OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name
 public type CalculationBaseEnum "cbYearly"|"cbMonthly";
+
+public type AssetManualDepreciationCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocument[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type AssetDocument record {
     int:Signed32 DocEntry?;
@@ -50,7 +130,7 @@ public type AssetDocument record {
     int:Signed32 Series?;
     string PostingDate?;
     string DocumentDate?;
-    # OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name
     AssetDocumentStatusEnum Status?;
     string Remarks?;
     string Reference?;
@@ -60,24 +140,24 @@ public type AssetDocument record {
     decimal DocumentTotalFC?;
     decimal DocumentTotalSC?;
     string AssetValueDate?;
-    # OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name
     AssetDocumentTypeEnum DocumentType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SummerizeByProjects?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SummerizeByDistributionRules?;
     string ManualDepreciationType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum HandWritten?;
     string CancellationDate?;
     string DepreciationArea?;
     int:Signed32 BPLId?;
     int:Signed32 Origin?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LowValueAssetRetirement?;
-    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name
     ClosingOptionEnum CancellationOption?;
-    # OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name
     AssetOriginalTypeEnum OriginalType?;
     string BaseReference?;
     string BPLName?;
@@ -93,103 +173,136 @@ public type AssetDocument record {
     DepreciationArea DepreciationArea2?;
 };
 
-# Represents the Queries record for the operation: fAAccountDeterminationsList
-public type FAAccountDeterminationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: assetCapitalizationCreditMemoGet
-public type AssetCapitalizationCreditMemoGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-# OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name
 public type ClosingOptionEnum "coByCurrentSystemDate"|"coByOriginalDocumentDate"|"coBySpecifiedDate";
 
-# OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type SubsequentAcquisitionPeriodControlEnum "sapcProRataTemporis"|"sapcHalfYearConvention"|"sapcFullYear";
 
 public type FixedAssetValues record {|
-    # OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name.
-    AssetTransactionTypeEnum TransactionType?;
-    decimal AcquisitionCost?;
-    decimal Quantity?;
-    decimal DepreciationValue?;
-    decimal NetBookValue?;
-    decimal OrdinaryDepreciationValue?;
-    decimal UnplanedDepreciationValue?;
-    decimal SpecialDepreciationValue?;
-    decimal WriteUp?;
-    decimal Appreciation?;
+    @jsondata:Name {value: "TransactionType"}
+    AssetTransactionTypeEnum transactionType?;
+    @jsondata:Name {value: "AcquisitionCost"}
+    decimal acquisitionCost?;
+    @jsondata:Name {value: "NetBookValue"}
+    decimal netBookValue?;
+    @jsondata:Name {value: "Appreciation"}
+    decimal appreciation?;
+    @jsondata:Name {value: "DepreciationValue"}
+    decimal depreciationValue?;
+    @jsondata:Name {value: "OrdinaryDepreciationValue"}
+    decimal ordinaryDepreciationValue?;
+    @jsondata:Name {value: "SpecialDepreciationValue"}
+    decimal specialDepreciationValue?;
+    @jsondata:Name {value: "Quantity"}
+    decimal quantity?;
+    @jsondata:Name {value: "UnplanedDepreciationValue"}
+    decimal unplanedDepreciationValue?;
+    @jsondata:Name {value: "WriteUp"}
+    decimal writeUp?;
 |};
 
-# OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name.
-public type SubsequentAcquisitionProRataTypeEnum "saprtExactlyDailyBase"|"saprtFirstDayOfCurrentPeriod"|"saprtFirstDayOfNextPeriod";
-
-# Represents the Queries record for the operation: assetDepreciationGroupsGet
-public type AssetDepreciationGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAssetRevaluations
+public type ListAssetRevaluationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
+# Represents the Queries record for the operation: getDepreciationTypes
+public type GetDepreciationTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name
+public type SubsequentAcquisitionProRataTypeEnum "saprtExactlyDailyBase"|"saprtFirstDayOfCurrentPeriod"|"saprtFirstDayOfNextPeriod";
+
 public type AssetGroupParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# OData EnumType 'SpecialDepreciationMaximumFlagEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SpecialDepreciationMaximumFlagEnum'. Serialised by the Service Layer as the member name
 public type SpecialDepreciationMaximumFlagEnum "spmfPercentage"|"spmfAmount";
 
-public type AssetRetirement_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDocument[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getAssetManualDepreciation
+public type GetAssetManualDepreciationQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type AssetDepreciationGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDepreciationGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type AssetDocumentParams record {|
-    int:Signed32 DocEntry?;
-    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
-    ClosingOptionEnum CancellationOption?;
-    string CancellationDate?;
+    @jsondata:Name {value: "CancellationOption"}
+    ClosingOptionEnum cancellationOption?;
+    @jsondata:Name {value: "CancellationDate"}
+    string cancellationDate?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
 |};
 
-# Represents the Queries record for the operation: assetRevaluationsList
-public type AssetRevaluationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAssetManualDepreciation
+public type ListAssetManualDepreciationQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -234,404 +347,519 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-# Represents the Headers record for the operation: assetCapitalizationList
-public type AssetCapitalizationListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: assetDepreciationGroupsList
-public type AssetDepreciationGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getAssetTransfer
+public type GetAssetTransferQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type FixedAssetItemsService_GetAssetValuesList_body record {
-    FixedAssetValuesParams FixedAssetValuesParams?;
+    @jsondata:Name {value: "FixedAssetValuesParams"}
+    FixedAssetValuesParams fixedAssetValuesParams?;
 };
 
-# Represents the Headers record for the operation: assetDepreciationGroupsList
-public type AssetDepreciationGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'TransferTargetPeriodControlEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TransferTargetPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type TransferTargetPeriodControlEnum "ttpcProRataTemporis";
 
-public type DepreciationTypes_CollectionResponse record {
-    string odata\.metadata?;
-    DepreciationType[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listAssetClasses
+public type ListAssetClassesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type DepreciationAreasCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DepreciationArea[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type AssetDepreciationGroup record {|
-    string Code?;
-    string Description?;
-    string Group?;
+    @jsondata:Name {value: "Group"}
+    string group?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: depreciationAreasList
-public type DepreciationAreasListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getAssetRevaluations
+public type GetAssetRevaluationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: depreciationTypesList
-public type DepreciationTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAssetCapitalizationCreditMemo
+public type ListAssetCapitalizationCreditMemoQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: assetManualDepreciationList
-public type AssetManualDepreciationListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type AssetRevaluationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetRevaluation[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-public type FAAccountDeterminations_CollectionResponse record {
-    string odata\.metadata?;
-    FAAccountDetermination[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listFAAccountDeterminations
+public type ListFAAccountDeterminationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: assetManualDepreciationGet
-public type AssetManualDepreciationGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listDepreciationAreas
+public type ListDepreciationAreasQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: assetTransferList
-public type AssetTransferListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: depreciationTypesList
-public type DepreciationTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type AssetDepreciationGroups_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDepreciationGroup[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Headers record for the operation: assetCapitalizationCreditMemoList
-public type AssetCapitalizationCreditMemoListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type AssetCapitalizationCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocument[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 
 public type AssetCapitalizationCreditMemoService_Cancel_body record {
-    AssetDocumentParams AssetDocumentParams?;
+    @jsondata:Name {value: "AssetDocumentParams"}
+    AssetDocumentParams assetDocumentParams?;
 };
 
-public type AssetCapitalization_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDocument[] value?;
-    string odata\.nextLink?;
+public type AssetClassesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetClass[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type AssetDepreciationGroupParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: fAAccountDeterminationsList
-public type FAAccountDeterminationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type AssetTransferCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocument[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getAssetGroups
+public type GetAssetGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listAssetGroups
+public type ListAssetGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type AssetManualDepreciationService_Cancel_body record {
-    AssetDocumentParams AssetDocumentParams?;
+    @jsondata:Name {value: "AssetDocumentParams"}
+    AssetDocumentParams assetDocumentParams?;
 };
 
-# OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AssetDocumentStatusEnum'. Serialised by the Service Layer as the member name
 public type AssetDocumentStatusEnum "adsPosted"|"adsDraft"|"adsCancelled";
 
-# OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listAssetCapitalization
+public type ListAssetCapitalizationHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name
 public type TransferSourcePeriodControlEnum "tspcProRataTemporis";
 
-# Represents the Headers record for the operation: assetTransferList
-public type AssetTransferListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type AssetDocumentNewLoc record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    string AssetNumber?;
-    int:Signed32 CurLocation?;
-    int:Signed32 NewLocation?;
-    decimal NBV?;
-    decimal Quantity?;
+    @jsondata:Name {value: "NBV"}
+    decimal nBV?;
+    @jsondata:Name {value: "NewLocation"}
+    int:Signed32 newLocation?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "Quantity"}
+    decimal quantity?;
+    @jsondata:Name {value: "CurLocation"}
+    int:Signed32 curLocation?;
+    @jsondata:Name {value: "AssetNumber"}
+    string assetNumber?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
 |};
 
-# Represents the Headers record for the operation: assetClassesList
-public type AssetClassesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getAssetCapitalizationCreditMemo
+public type GetAssetCapitalizationCreditMemoQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: depreciationAreasGet
-public type DepreciationAreasGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listAssetRevaluations
+public type ListAssetRevaluationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: assetCapitalizationList
-public type AssetCapitalizationListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getAssetCapitalization
+public type GetAssetCapitalizationQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type AssetManualDepreciation_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDocument[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'RetirementMethodEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RetirementMethodEnum'. Serialised by the Service Layer as the member name
 public type RetirementMethodEnum "rmGross"|"rmNet";
 
-public type AssetTransfer_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDocument[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listDepreciationTypes
+public type ListDepreciationTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'PostingOfDepreciationEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'PostingOfDepreciationEnum'. Serialised by the Service Layer as the member name
 public type PostingOfDepreciationEnum "podDirectPosting"|"podIndirectPosting";
 
-# OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetOriginalTypeEnum "aotARInvoice"|"aotAPCreditMemo"|"aotAPInvoice"|"aotOutgoingPayment"|"aotAPCorrectionInvoice"|"aotCapitalization"|"aotFixedAssetsCreditMemo"|"aotAllTransactions"|"aotManualDepreciation"|"aotFixedAssetsTransfer"|"aotRetirement";
 
 public type AssetDocumentAreaJournal record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    string DepreciationArea?;
-    string JournalRemarks?;
-    int:Signed32 TransactionNumber?;
-    string CancellationJournalRemarks?;
-    int:Signed32 CancellationTransactionNumber?;
+    @jsondata:Name {value: "TransactionNumber"}
+    int:Signed32 transactionNumber?;
+    @jsondata:Name {value: "CancellationTransactionNumber"}
+    int:Signed32 cancellationTransactionNumber?;
+    @jsondata:Name {value: "CancellationJournalRemarks"}
+    string cancellationJournalRemarks?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "DepreciationArea"}
+    string depreciationArea?;
+    @jsondata:Name {value: "JournalRemarks"}
+    string journalRemarks?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
 |};
 
 public type DepreciationTypePoolParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: assetGroupsList
-public type AssetGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type RetirementPeriodControlEnum "rpcProRataTemporis"|"rpcHalfYearConvention"|"rpcOnlyAfterEndOfUsefulLife";
 
 public type DepreciationLevel record {|
-    int:Signed32 Level?;
-    # OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name.
-    DepreciationCalculationBaseEnum DepreciationCalculationBase?;
-    int:Signed32 NumberOfYears?;
-    decimal Percentage?;
-    decimal Amount?;
+    @jsondata:Name {value: "DepreciationCalculationBase"}
+    DepreciationCalculationBaseEnum depreciationCalculationBase?;
+    @jsondata:Name {value: "Percentage"}
+    decimal percentage?;
+    @jsondata:Name {value: "Amount"}
+    decimal amount?;
+    @jsondata:Name {value: "NumberOfYears"}
+    int:Signed32 numberOfYears?;
+    @jsondata:Name {value: "Level"}
+    int:Signed32 level?;
 |};
 
-# Represents the Queries record for the operation: depreciationTypesGet
-public type DepreciationTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type AssetCapitalizationService_Cancel_body record {
-    AssetDocumentParams AssetDocumentParams?;
+    @jsondata:Name {value: "AssetDocumentParams"}
+    AssetDocumentParams assetDocumentParams?;
 };
 
-# Represents the Queries record for the operation: depreciationTypePoolsList
-public type DepreciationTypePoolsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAssetRetirement
+public type ListAssetRetirementQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type AssetTransferService_Cancel_body record {
-    AssetDocumentParams AssetDocumentParams?;
+    @jsondata:Name {value: "AssetDocumentParams"}
+    AssetDocumentParams assetDocumentParams?;
 };
 
-# OData EnumType 'AreaTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AreaTypeEnum'. Serialised by the Service Layer as the member name
 public type AreaTypeEnum "atPostingtoGL"|"atAdditionalArea"|"atDerivedArea";
 
+# Represents the Queries record for the operation: listAssetTransfer
+public type ListAssetTransferQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type FAAccountDetermination record {|
-    string Code?;
-    string Description?;
-    string AssetBalanceSheetAccount?;
-    string ClearingAccountAcquisition?;
-    string RevaluationReserveAccount?;
-    string RevaluationReserveClearing?;
-    string OrdinaryDepreciation?;
-    string AccumulatedOrdinaryDepr?;
-    string UnplannedDepreciation?;
-    string AccumulatedUnplannedDepr?;
-    string SpecialDepreciation?;
-    string AccumulatedSpecialDepr?;
-    string RevenuefromAssetSalesNet?;
-    string RetirementwithExpenseNet?;
-    string RetirementwithRevenueNet?;
-    string LeavewithExpenseNBVGross?;
-    string LeavewithRevenueNBVGross?;
-    string RevenueAccountforRetirement?;
-    string RevenueClearingAccount?;
-    string RevaluationAccount?;
-    string RevaluationLossAcct?;
+    @jsondata:Name {value: "RevaluationReserveAccount"}
+    string revaluationReserveAccount?;
+    @jsondata:Name {value: "LeavewithRevenueNBVGross"}
+    string leavewithRevenueNBVGross?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "RetirementwithRevenueNet"}
+    string retirementwithRevenueNet?;
+    @jsondata:Name {value: "RevenueAccountforRetirement"}
+    string revenueAccountforRetirement?;
+    @jsondata:Name {value: "RevaluationAccount"}
+    string revaluationAccount?;
+    @jsondata:Name {value: "AssetBalanceSheetAccount"}
+    string assetBalanceSheetAccount?;
+    @jsondata:Name {value: "RevenuefromAssetSalesNet"}
+    string revenuefromAssetSalesNet?;
+    @jsondata:Name {value: "AccumulatedUnplannedDepr"}
+    string accumulatedUnplannedDepr?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "AccumulatedOrdinaryDepr"}
+    string accumulatedOrdinaryDepr?;
+    @jsondata:Name {value: "SpecialDepreciation"}
+    string specialDepreciation?;
+    @jsondata:Name {value: "ClearingAccountAcquisition"}
+    string clearingAccountAcquisition?;
+    @jsondata:Name {value: "AccumulatedSpecialDepr"}
+    string accumulatedSpecialDepr?;
+    @jsondata:Name {value: "RevaluationReserveClearing"}
+    string revaluationReserveClearing?;
+    @jsondata:Name {value: "LeavewithExpenseNBVGross"}
+    string leavewithExpenseNBVGross?;
+    @jsondata:Name {value: "UnplannedDepreciation"}
+    string unplannedDepreciation?;
+    @jsondata:Name {value: "RevaluationLossAcct"}
+    string revaluationLossAcct?;
+    @jsondata:Name {value: "OrdinaryDepreciation"}
+    string ordinaryDepreciation?;
+    @jsondata:Name {value: "RevenueClearingAccount"}
+    string revenueClearingAccount?;
+    @jsondata:Name {value: "RetirementwithExpenseNet"}
+    string retirementwithExpenseNet?;
 |};
 
-# OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name
 public type DepreciationRoundingMethodEnum "drmTruncate"|"drmRoundUp"|"drmRoundDown";
 
 public type AssetRevaluationLine record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    string AssetNumber?;
-    decimal CurrentNBV?;
-    decimal NewNBV?;
-    string Remarks?;
-    decimal RevaluationPercent?;
-    string DistributionRule?;
-    string DistributionRule2?;
-    string DistributionRule3?;
-    string DistributionRule4?;
-    string DistributionRule5?;
-    string Project?;
+    @jsondata:Name {value: "CurrentNBV"}
+    decimal currentNBV?;
+    @jsondata:Name {value: "DistributionRule"}
+    string distributionRule?;
+    @jsondata:Name {value: "NewNBV"}
+    decimal newNBV?;
+    @jsondata:Name {value: "DistributionRule4"}
+    string distributionRule4?;
+    @jsondata:Name {value: "DistributionRule5"}
+    string distributionRule5?;
+    @jsondata:Name {value: "DistributionRule2"}
+    string distributionRule2?;
+    @jsondata:Name {value: "DistributionRule3"}
+    string distributionRule3?;
+    @jsondata:Name {value: "RevaluationPercent"}
+    decimal revaluationPercent?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "AssetNumber"}
+    string assetNumber?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Project"}
+    string project?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
 |};
 
-# OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type AcquisitionProRataTypeEnum "aprtExactlyDailyBase"|"aprtFirstDayOfCurrentPeriod"|"aprtFirstDayOfNextPeriod";
 
 public type DepreciationTypePool record {|
-    string Code?;
-    string Description?;
-    DepreciationType[] DepreciationTypes?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "DepreciationTypes"}
+    DepreciationType[] depreciationTypes?;
 |};
-
-# Represents the Queries record for the operation: assetTransferGet
-public type AssetTransferGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
 
 public type DepreciationArea record {|
-    string Code?;
-    string Description?;
-    # OData EnumType 'PostingOfDepreciationEnum'. Serialised by the Service Layer as the member name.
-    PostingOfDepreciationEnum PostingOfDepreciation?;
-    # OData EnumType 'RetirementMethodEnum'. Serialised by the Service Layer as the member name.
-    RetirementMethodEnum RetirementMethod?;
-    # OData EnumType 'AreaTypeEnum'. Serialised by the Service Layer as the member name.
-    AreaTypeEnum AreaType?;
-    string DerivedArea?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum MainBookingArea?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum DirectRevenuePosting?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum TaxCreditControl?;
-    int:Signed32 TaxType?;
-    string BPForTaxCorrection?;
-    string ItemForTaxCorrection?;
-    int:Signed32 UsageForTaxCorrection?;
-    AssetDocument[] AssetRetirement?;
-    AssetDocument[] AssetTransfer?;
-    AssetRevaluation[] AssetRevaluations?;
-    AssetDocument[] AssetManualDepreciation?;
-    AssetDocument[] AssetCapitalization?;
-    AssetDocument[] AssetCapitalizationCreditMemo?;
+    @jsondata:Name {value: "UsageForTaxCorrection"}
+    int:Signed32 usageForTaxCorrection?;
+    @jsondata:Name {value: "AssetRevaluations"}
+    AssetRevaluation[] assetRevaluations?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "AssetCapitalization"}
+    AssetDocument[] assetCapitalization?;
+    @jsondata:Name {value: "PostingOfDepreciation"}
+    PostingOfDepreciationEnum postingOfDepreciation?;
+    @jsondata:Name {value: "AssetTransfer"}
+    AssetDocument[] assetTransfer?;
+    @jsondata:Name {value: "TaxCreditControl"}
+    BoYesNoEnum taxCreditControl?;
+    @jsondata:Name {value: "ItemForTaxCorrection"}
+    string itemForTaxCorrection?;
+    @jsondata:Name {value: "AreaType"}
+    AreaTypeEnum areaType?;
+    @jsondata:Name {value: "MainBookingArea"}
+    BoYesNoEnum mainBookingArea?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "DerivedArea"}
+    string derivedArea?;
+    @jsondata:Name {value: "TaxType"}
+    int:Signed32 taxType?;
+    @jsondata:Name {value: "AssetManualDepreciation"}
+    AssetDocument[] assetManualDepreciation?;
+    @jsondata:Name {value: "DirectRevenuePosting"}
+    BoYesNoEnum directRevenuePosting?;
+    @jsondata:Name {value: "RetirementMethod"}
+    RetirementMethodEnum retirementMethod?;
+    @jsondata:Name {value: "AssetRetirement"}
+    AssetDocument[] assetRetirement?;
+    @jsondata:Name {value: "AssetCapitalizationCreditMemo"}
+    AssetDocument[] assetCapitalizationCreditMemo?;
+    @jsondata:Name {value: "BPForTaxCorrection"}
+    string bPForTaxCorrection?;
 |};
 
-# OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type AcquisitionPeriodControlEnum "apcProRataTemporis"|"apcFirstYearConvention"|"apcHalfYear"|"apcFullYear";
 
 public type DepreciationAreaParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type AssetRevaluationParams record {|
-    int:Signed32 DocEntry?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
 |};
 
 public type AssetDocumentLine record {
@@ -646,7 +874,7 @@ public type AssetDocumentLine record {
     string DepreciationArea?;
     string Remarks?;
     string NewAssetNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Partial?;
     decimal APC?;
     string NewAssetClass?;
@@ -659,460 +887,578 @@ public type AssetDocumentLine record {
 };
 
 public type AssetRetirementService_Cancel_body record {
-    AssetDocumentParams AssetDocumentParams?;
+    @jsondata:Name {value: "AssetDocumentParams"}
+    AssetDocumentParams assetDocumentParams?;
 };
 
-# OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listAssetGroups
+public type ListAssetGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'AssetDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetDocumentTypeEnum "adtOrdinaryDepreciation"|"adtUnplannedDepreciation"|"adtSpecialDepreciation"|"adtAppreciation"|"adtAssetTransfer"|"adtSales"|"adtScrapping"|"adtAssetClassTransfer";
 
-# Represents the Queries record for the operation: assetRetirementGet
-public type AssetRetirementGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name
 public type StraightLinePeriodControlDepreciationPeriodsEnum "slpcdpStandard"|"slpcdpIndividual"|"slpcdpIndividualUsage";
 
-# Represents the Queries record for the operation: assetCapitalizationGet
-public type AssetCapitalizationGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: assetClassesList
-public type AssetClassesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type AssetCapitalizationCreditMemoCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocument[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type FixedAssetItemsService_UpdateAssetEndBalance_body record {
-    FixedAssetValuesParams FixedAssetValuesParams?;
-    FixedAssetEndBalance FixedAssetEndBalance?;
+    @jsondata:Name {value: "FixedAssetEndBalance"}
+    FixedAssetEndBalance fixedAssetEndBalance?;
+    @jsondata:Name {value: "FixedAssetValuesParams"}
+    FixedAssetValuesParams fixedAssetValuesParams?;
+};
+
+# Represents the Headers record for the operation: listDepreciationAreas
+public type ListDepreciationAreasHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type inline_response_200_9 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     FixedAssetValues[] value?;
 };
 
-# OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listDepreciationTypePools
+public type ListDepreciationTypePoolsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name
 public type DepreciationCalculationBaseEnum "dcbAcquisitionValue"|"dcbNetBookValue";
 
 public type inline_response_200_5 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DepreciationAreaParams[] value?;
 };
 
-public type AssetGroups_CollectionResponse record {
-    string odata\.metadata?;
-    AssetGroup[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listDepreciationTypePools
+public type ListDepreciationTypePoolsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type inline_response_200_6 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DepreciationTypePoolParams[] value?;
 };
 
-# OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type TransferSourceProRataTypeEnum "tsprtExactlyDailyBase"|"tsprtLastDayOfPriorPeriod"|"tsprtLastDayofCurrentPeriod";
 
-# Represents the Queries record for the operation: assetRetirementList
-public type AssetRetirementListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: depreciationAreasList
-public type DepreciationAreasListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_7 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DepreciationTypeParams[] value?;
 };
 
 public type inline_response_200_8 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     FAAccountDeterminationParams[] value?;
 };
 
-# Represents the Queries record for the operation: assetManualDepreciationList
-public type AssetManualDepreciationListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listAssetCapitalizationCreditMemo
+public type ListAssetCapitalizationCreditMemoHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: assetRetirementList
-public type AssetRetirementListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listAssetClasses
+public type ListAssetClassesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type AssetRevaluations_CollectionResponse record {
-    string odata\.metadata?;
-    AssetRevaluation[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type RetirementProRataTypeEnum "rprtExactlyDailyBase"|"rprtLastDayOfPriorPeriod"|"rprtLastDayOfCurrentPeriod";
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AssetClassParams[] value?;
 };
 
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AssetDepreciationGroupParams[] value?;
 };
 
 public type inline_response_200_3 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AssetGroupParams[] value?;
 };
 
 public type inline_response_200_4 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AssetRevaluationParams[] value?;
 };
 
-# Represents the Queries record for the operation: assetCapitalizationCreditMemoList
-public type AssetCapitalizationCreditMemoListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type AssetClass record {|
-    string Code?;
-    string Description?;
-    # OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name.
-    AssetTypeEnum AssetType?;
-    decimal ValueLimitFrom?;
-    decimal ValueLimitTo?;
-    int:Signed32 BPLID?;
-    int:Signed32 AttributeGroup?;
-    AssetClassLine[] AssetClassCollection?;
+    @jsondata:Name {value: "AssetType"}
+    AssetTypeEnum assetType?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ValueLimitTo"}
+    decimal valueLimitTo?;
+    @jsondata:Name {value: "ValueLimitFrom"}
+    decimal valueLimitFrom?;
+    @jsondata:Name {value: "AttributeGroup"}
+    int:Signed32 attributeGroup?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "AssetClassCollection"}
+    AssetClassLine[] assetClassCollection?;
+    @jsondata:Name {value: "BPLID"}
+    int:Signed32 bPLID?;
 |};
 
-public type AssetClasses_CollectionResponse record {
-    string odata\.metadata?;
-    AssetClass[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listFAAccountDeterminations
+public type ListFAAccountDeterminationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: assetRevaluationsGet
-public type AssetRevaluationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listAssetDepreciationGroups
+public type ListAssetDepreciationGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getAssetClasses
+public type GetAssetClassesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetTransactionTypeEnum "att_BeginningOfYear"|"att_Acquistion"|"att_Retirement"|"att_Transfer"|"att_WriteUp"|"att_OrdinaryDepreciation"|"att_UplannedDepreciation"|"att_SpecialDepreciation"|"att_EndOfYear";
 
 public type DepreciationTypeParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type AssetClassLine record {|
-    string Code?;
-    int:Signed32 LineNumber?;
-    string DepreciationAreaID?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ActiveStatus?;
-    string AccountDetermination?;
-    string DepreciationTypeID?;
-    int:Signed32 UseLife?;
+    @jsondata:Name {value: "DepreciationAreaID"}
+    string depreciationAreaID?;
+    @jsondata:Name {value: "AccountDetermination"}
+    string accountDetermination?;
+    @jsondata:Name {value: "UseLife"}
+    int:Signed32 useLife?;
+    @jsondata:Name {value: "DepreciationTypeID"}
+    string depreciationTypeID?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "ActiveStatus"}
+    BoYesNoEnum activeStatus?;
 |};
 
-# Represents the Queries record for the operation: assetClassesGet
-public type AssetClassesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getDepreciationTypePools
+public type GetDepreciationTypePoolsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'SpecialDepreciationCalculationMethodEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SpecialDepreciationCalculationMethodEnum'. Serialised by the Service Layer as the member name
 public type SpecialDepreciationCalculationMethodEnum "spcmAdditional"|"spcmAlternative";
 
-public type AssetCapitalizationCreditMemo_CollectionResponse record {
-    string odata\.metadata?;
-    AssetDocument[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getAssetDepreciationGroups
+public type GetAssetDepreciationGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type DepreciationTypePools_CollectionResponse record {
-    string odata\.metadata?;
-    DepreciationTypePool[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listAssetManualDepreciation
+public type ListAssetManualDepreciationHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type AssetGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AssetDocumentParams[] value?;
 };
 
-# Represents the Headers record for the operation: assetRevaluationsList
-public type AssetRevaluationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: depreciationTypePoolsGet
-public type DepreciationTypePoolsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type DepreciationType record {|
-    string Code?;
-    string Description?;
-    # OData EnumType 'DepreciationMethodEnum'. Serialised by the Service Layer as the member name.
-    DepreciationMethodEnum DepreciationMethod?;
-    decimal MinimumDepreciatedValue?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum RoundYearEndBookValue?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IncludeSalvageInDepreciation?;
-    decimal SalvagePercentage?;
-    # OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name.
-    AcquisitionPeriodControlEnum AcquisitionPeriodControl?;
-    # OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name.
-    SubsequentAcquisitionPeriodControlEnum SubsequentAcquisitionPeriodControl?;
-    # OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name.
-    RetirementPeriodControlEnum RetirementPeriodControl?;
-    # OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name.
-    AcquisitionProRataTypeEnum AcquisitionProRataType?;
-    # OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name.
-    SubsequentAcquisitionProRataTypeEnum SubsequentAcquisitionProRataType?;
-    # OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name.
-    RetirementProRataTypeEnum RetirementProRataType?;
-    decimal PercentageOfDepreciationReversedInRetirementYear?;
-    string ValidFrom?;
-    string ValidTo?;
-    # OData EnumType 'StraightLineCalculationMethodEnum'. Serialised by the Service Layer as the member name.
-    StraightLineCalculationMethodEnum StraightLineCalculationMethod?;
-    decimal StraightLinePercentage?;
-    # OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name.
-    StraightLinePeriodControlDepreciationPeriodsEnum StraightLinePeriodControlDepreciationPeriods?;
-    decimal StraightLinePeriodControlFactor?;
-    decimal DecliningPercentage?;
-    decimal DecliningFactor?;
-    string DecliningChangeTo?;
-    # OData EnumType 'SpecialDepreciationCalculationMethodEnum'. Serialised by the Service Layer as the member name.
-    SpecialDepreciationCalculationMethodEnum SpecialDepreciationCalculationMethod?;
-    int:Signed32 SpecialDepreciationConcessionPeriodYears?;
-    decimal SpecialDepreciationMaximumPercentage?;
-    string SpecialDepreciationNormalDepreciation?;
-    string SpecialDepreciationAlternativeDepreciation?;
-    string DepreciationTypePool?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ManualDepreciationReduceDepreciationBase?;
-    decimal SpecialDepreciationMaximumAmount?;
-    # OData EnumType 'SpecialDepreciationMaximumFlagEnum'. Serialised by the Service Layer as the member name.
-    SpecialDepreciationMaximumFlagEnum SpecialDepreciationMaximumFlag?;
-    # OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name.
-    CalculationBaseEnum CalculationBase?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum DepreciationEndAtLastFullYear?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IncludePreviousDepreciationInCapitalizationPeriod?;
-    int:Signed32 DeltaCoefficient?;
-    decimal MaximumDepreciableValue?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum FactorOnlyRelevantToFirstFiscalYear?;
-    # OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name.
-    TransferSourcePeriodControlEnum TransferSourcePeriodControl?;
-    # OData EnumType 'TransferTargetPeriodControlEnum'. Serialised by the Service Layer as the member name.
-    TransferTargetPeriodControlEnum TransferTargetPeriodControl?;
-    # OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name.
-    TransferSourceProRataTypeEnum TransferSourceProRataType?;
-    # OData EnumType 'TransferTargetProRataTypeEnum'. Serialised by the Service Layer as the member name.
-    TransferTargetProRataTypeEnum TransferTargetProRataType?;
-    # OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name.
-    DepreciationRoundingMethodEnum RoundingMethod?;
-    DepreciationLevel[] DepreciationLevelCollection?;
-    AssetDocument[] AssetRetirement?;
-    AssetDocument[] AssetTransfer?;
-    AssetDocument[] AssetManualDepreciation?;
-    AssetDocument[] AssetCapitalization?;
-    DepreciationTypePool DepreciationTypePool2?;
-    AssetDocument[] AssetCapitalizationCreditMemo?;
+    @jsondata:Name {value: "DepreciationTypePool"}
+    string depreciationTypePool?;
+    @jsondata:Name {value: "PercentageOfDepreciationReversedInRetirementYear"}
+    decimal percentageOfDepreciationReversedInRetirementYear?;
+    @jsondata:Name {value: "StraightLineCalculationMethod"}
+    StraightLineCalculationMethodEnum straightLineCalculationMethod?;
+    @jsondata:Name {value: "TransferTargetProRataType"}
+    TransferTargetProRataTypeEnum transferTargetProRataType?;
+    @jsondata:Name {value: "IncludePreviousDepreciationInCapitalizationPeriod"}
+    BoYesNoEnum includePreviousDepreciationInCapitalizationPeriod?;
+    @jsondata:Name {value: "ValidFrom"}
+    string validFrom?;
+    @jsondata:Name {value: "SpecialDepreciationMaximumAmount"}
+    decimal specialDepreciationMaximumAmount?;
+    @jsondata:Name {value: "TransferSourcePeriodControl"}
+    TransferSourcePeriodControlEnum transferSourcePeriodControl?;
+    @jsondata:Name {value: "AssetTransfer"}
+    AssetDocument[] assetTransfer?;
+    @jsondata:Name {value: "DepreciationLevelCollection"}
+    DepreciationLevel[] depreciationLevelCollection?;
+    @jsondata:Name {value: "SubsequentAcquisitionPeriodControl"}
+    SubsequentAcquisitionPeriodControlEnum subsequentAcquisitionPeriodControl?;
+    @jsondata:Name {value: "RoundingMethod"}
+    DepreciationRoundingMethodEnum roundingMethod?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "FactorOnlyRelevantToFirstFiscalYear"}
+    BoYesNoEnum factorOnlyRelevantToFirstFiscalYear?;
+    @jsondata:Name {value: "IncludeSalvageInDepreciation"}
+    BoYesNoEnum includeSalvageInDepreciation?;
+    @jsondata:Name {value: "DecliningChangeTo"}
+    string decliningChangeTo?;
+    @jsondata:Name {value: "RetirementPeriodControl"}
+    RetirementPeriodControlEnum retirementPeriodControl?;
+    @jsondata:Name {value: "SpecialDepreciationNormalDepreciation"}
+    string specialDepreciationNormalDepreciation?;
+    @jsondata:Name {value: "TransferTargetPeriodControl"}
+    TransferTargetPeriodControlEnum transferTargetPeriodControl?;
+    @jsondata:Name {value: "DepreciationTypePool2"}
+    DepreciationTypePool depreciationTypePool2?;
+    @jsondata:Name {value: "MinimumDepreciatedValue"}
+    decimal minimumDepreciatedValue?;
+    @jsondata:Name {value: "SpecialDepreciationMaximumFlag"}
+    SpecialDepreciationMaximumFlagEnum specialDepreciationMaximumFlag?;
+    @jsondata:Name {value: "DecliningPercentage"}
+    decimal decliningPercentage?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StraightLinePercentage"}
+    decimal straightLinePercentage?;
+    @jsondata:Name {value: "AssetCapitalization"}
+    AssetDocument[] assetCapitalization?;
+    @jsondata:Name {value: "AcquisitionProRataType"}
+    AcquisitionProRataTypeEnum acquisitionProRataType?;
+    @jsondata:Name {value: "SpecialDepreciationAlternativeDepreciation"}
+    string specialDepreciationAlternativeDepreciation?;
+    @jsondata:Name {value: "DepreciationEndAtLastFullYear"}
+    BoYesNoEnum depreciationEndAtLastFullYear?;
+    @jsondata:Name {value: "SpecialDepreciationMaximumPercentage"}
+    decimal specialDepreciationMaximumPercentage?;
+    @jsondata:Name {value: "RetirementProRataType"}
+    RetirementProRataTypeEnum retirementProRataType?;
+    @jsondata:Name {value: "AssetRetirement"}
+    AssetDocument[] assetRetirement?;
+    @jsondata:Name {value: "SalvagePercentage"}
+    decimal salvagePercentage?;
+    @jsondata:Name {value: "DepreciationMethod"}
+    DepreciationMethodEnum depreciationMethod?;
+    @jsondata:Name {value: "ManualDepreciationReduceDepreciationBase"}
+    BoYesNoEnum manualDepreciationReduceDepreciationBase?;
+    @jsondata:Name {value: "DecliningFactor"}
+    decimal decliningFactor?;
+    @jsondata:Name {value: "TransferSourceProRataType"}
+    TransferSourceProRataTypeEnum transferSourceProRataType?;
+    @jsondata:Name {value: "SpecialDepreciationConcessionPeriodYears"}
+    int:Signed32 specialDepreciationConcessionPeriodYears?;
+    @jsondata:Name {value: "AssetManualDepreciation"}
+    AssetDocument[] assetManualDepreciation?;
+    @jsondata:Name {value: "RoundYearEndBookValue"}
+    BoYesNoEnum roundYearEndBookValue?;
+    @jsondata:Name {value: "SubsequentAcquisitionProRataType"}
+    SubsequentAcquisitionProRataTypeEnum subsequentAcquisitionProRataType?;
+    @jsondata:Name {value: "ValidTo"}
+    string validTo?;
+    @jsondata:Name {value: "CalculationBase"}
+    CalculationBaseEnum calculationBase?;
+    @jsondata:Name {value: "StraightLinePeriodControlFactor"}
+    decimal straightLinePeriodControlFactor?;
+    @jsondata:Name {value: "StraightLinePeriodControlDepreciationPeriods"}
+    StraightLinePeriodControlDepreciationPeriodsEnum straightLinePeriodControlDepreciationPeriods?;
+    @jsondata:Name {value: "DeltaCoefficient"}
+    int:Signed32 deltaCoefficient?;
+    @jsondata:Name {value: "MaximumDepreciableValue"}
+    decimal maximumDepreciableValue?;
+    @jsondata:Name {value: "AssetCapitalizationCreditMemo"}
+    AssetDocument[] assetCapitalizationCreditMemo?;
+    @jsondata:Name {value: "SpecialDepreciationCalculationMethod"}
+    SpecialDepreciationCalculationMethodEnum specialDepreciationCalculationMethod?;
+    @jsondata:Name {value: "AcquisitionPeriodControl"}
+    AcquisitionPeriodControlEnum acquisitionPeriodControl?;
 |};
 
-# Represents the Queries record for the operation: fAAccountDeterminationsGet
-public type FAAccountDeterminationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type AssetRetirementCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocument[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: assetGroupsGet
-public type AssetGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type DepreciationTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DepreciationType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type AssetRevaluation record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 DocNum?;
-    int:Signed32 Series?;
-    string PostingDate?;
-    string AssetValueDate?;
-    string Reference?;
-    string Remarks?;
-    string JournalRemarks?;
-    string DepreciationArea?;
-    int:Signed32 TransId?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum HandWritten?;
-    string PeriodIndicator?;
-    string DocumentDate?;
-    int:Signed32 BPLId?;
-    string BPLName?;
-    string VATRegNum?;
-    decimal RevaluationPercent?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IfrsPosting?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum SummerizeByProjects?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum SummerizeByDistributionRules?;
-    AssetRevaluationLine[] AssetRevaluationLineCollection?;
-    DepreciationArea DepreciationArea2?;
+    @jsondata:Name {value: "HandWritten"}
+    BoYesNoEnum handWritten?;
+    @jsondata:Name {value: "IfrsPosting"}
+    BoYesNoEnum ifrsPosting?;
+    @jsondata:Name {value: "Reference"}
+    string reference?;
+    @jsondata:Name {value: "RevaluationPercent"}
+    decimal revaluationPercent?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "DepreciationArea"}
+    string depreciationArea?;
+    @jsondata:Name {value: "JournalRemarks"}
+    string journalRemarks?;
+    @jsondata:Name {value: "AssetRevaluationLineCollection"}
+    AssetRevaluationLine[] assetRevaluationLineCollection?;
+    @jsondata:Name {value: "AssetValueDate"}
+    string assetValueDate?;
+    @jsondata:Name {value: "PeriodIndicator"}
+    string periodIndicator?;
+    @jsondata:Name {value: "Series"}
+    int:Signed32 series?;
+    @jsondata:Name {value: "PostingDate"}
+    string postingDate?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
+    @jsondata:Name {value: "SummerizeByDistributionRules"}
+    BoYesNoEnum summerizeByDistributionRules?;
+    @jsondata:Name {value: "VATRegNum"}
+    string vATRegNum?;
+    @jsondata:Name {value: "BPLName"}
+    string bPLName?;
+    @jsondata:Name {value: "DepreciationArea2"}
+    DepreciationArea depreciationArea2?;
+    @jsondata:Name {value: "DocNum"}
+    int:Signed32 docNum?;
+    @jsondata:Name {value: "TransId"}
+    int:Signed32 transId?;
+    @jsondata:Name {value: "DocumentDate"}
+    string documentDate?;
+    @jsondata:Name {value: "BPLId"}
+    int:Signed32 bPLId?;
+    @jsondata:Name {value: "SummerizeByProjects"}
+    BoYesNoEnum summerizeByProjects?;
 |};
 
-# OData EnumType 'DepreciationMethodEnum'. Serialised by the Service Layer as the member name.
-public type DepreciationMethodEnum "dmNoDepreciation"|"dmStraightLine"|"dmStraightLinePeriodControl"|"dmDecliningBalance"|"dmMultilevel"|"dmImmediateWriteOff"|"dmSpecialDepreciation"|"dmManualDepreciation"|"dmAccelerated";
-
-# Represents the Queries record for the operation: assetGroupsList
-public type AssetGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listDepreciationTypes
+public type ListDepreciationTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'StraightLineCalculationMethodEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getAssetRetirement
+public type GetAssetRetirementQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listAssetTransfer
+public type ListAssetTransferHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type FAAccountDeterminationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    FAAccountDetermination[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'DepreciationMethodEnum'. Serialised by the Service Layer as the member name
+public type DepreciationMethodEnum "dmNoDepreciation"|"dmStraightLine"|"dmStraightLinePeriodControl"|"dmDecliningBalance"|"dmMultilevel"|"dmImmediateWriteOff"|"dmSpecialDepreciation"|"dmManualDepreciation"|"dmAccelerated";
+
+# OData EnumType 'StraightLineCalculationMethodEnum'. Serialised by the Service Layer as the member name
 public type StraightLineCalculationMethodEnum "slcmAuquisitionValueDividedByTotalUsefulLife"|"slcmPercentageOfAcquisitionValue"|"slcmNetBookValueDividedByRemainingLife";
 
+# Represents the Queries record for the operation: getDepreciationAreas
+public type GetDepreciationAreasQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type FAAccountDeterminationParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type FixedAssetItemsService_GetAssetEndBalance_body record {
-    FixedAssetValuesParams FixedAssetValuesParams?;
+    @jsondata:Name {value: "FixedAssetValuesParams"}
+    FixedAssetValuesParams fixedAssetValuesParams?;
 };
 
 public type AssetClassParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# OData EnumType 'TransferTargetProRataTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TransferTargetProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type TransferTargetProRataTypeEnum "ttprtExactlyDailyBase"|"ttprtFirstDayOfCurrentPeriod"|"ttprtFirstDayOfNextPeriod";
 
-# Represents the Headers record for the operation: depreciationTypePoolsList
-public type DepreciationTypePoolsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getFAAccountDeterminations
+public type GetFAAccountDeterminationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type AssetGroup record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-public type DepreciationAreas_CollectionResponse record {
-    string odata\.metadata?;
-    DepreciationArea[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listAssetRetirement
+public type ListAssetRetirementHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };

@@ -11,12 +11,12 @@
       "description": "SAP Business One Service Layer (OData V3 endpoint).",
       "variables": {
         "server": {
-          "default": "localhost",
-          "description": "Service Layer host."
+          "description": "Service Layer host.",
+          "default": "localhost"
         },
         "port": {
-          "default": "50000",
-          "description": "Service Layer HTTPS port (default 50000)."
+          "description": "Service Layer HTTPS port (default 50000).",
+          "default": "50000"
         }
       }
     }
@@ -32,8 +32,8 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "operationId": "EmployeeIDType_List",
         "summary": "Query the EmployeeIDType collection.",
+        "operationId": "List_EmployeeIDType",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -62,11 +62,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeeIDType_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeeIDTypeCollectionResponse"
                 }
               }
             }
@@ -87,21 +87,21 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "operationId": "EmployeeIDType_Create",
         "summary": "Create a new EmployeeIDType.",
+        "operationId": "Create_EmployeeIDType",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeIDType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -123,19 +123,21 @@
         }
       }
     },
-    "/EmployeeIDType('{IDType}')": {
+    "/EmployeeIDType('{iDType}')": {
       "get": {
         "tags": [
           "EmployeeIDType"
         ],
-        "operationId": "EmployeeIDType_Get",
         "summary": "Get a single EmployeeIDType by key.",
+        "operationId": "Get_EmployeeIDType",
         "parameters": [
           {
-            "name": "IDType",
+            "name": "iDType",
             "in": "path",
+            "description": "Key property 'IDType' (Edm.String)",
             "required": true,
-            "description": "Key property 'IDType' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -149,7 +151,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -180,36 +182,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeeIDType"
         ],
-        "operationId": "EmployeeIDType_Update",
-        "summary": "Partially update a EmployeeIDType (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeIDType.",
+        "operationId": "Delete_EmployeeIDType",
         "parameters": [
           {
-            "name": "IDType",
+            "name": "iDType",
             "in": "path",
+            "description": "Key property 'IDType' (Edm.String)",
             "required": true,
-            "description": "Key property 'IDType' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeIDType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -223,26 +217,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeeIDType"
         ],
-        "operationId": "EmployeeIDType_Delete",
-        "summary": "Delete a EmployeeIDType.",
+        "summary": "Partially update a EmployeeIDType (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeeIDType",
         "parameters": [
           {
-            "name": "IDType",
+            "name": "iDType",
             "in": "path",
+            "description": "Key property 'IDType' (Edm.String)",
             "required": true,
-            "description": "Key property 'IDType' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeIDType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -262,18 +268,19 @@
         "tags": [
           "EmployeeIDTypeService"
         ],
-        "operationId": "EmployeeIDTypeService_GetList",
         "summary": "Service Layer function import 'EmployeeIDTypeService_GetList'.",
+        "operationId": "EmployeeIDTypeService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -304,8 +311,8 @@
         "tags": [
           "EmployeeImages"
         ],
-        "operationId": "EmployeeImages_List",
         "summary": "Query the EmployeeImages collection.",
+        "operationId": "List_EmployeeImages",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -334,11 +341,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeeImages_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeeImagesCollectionResponse"
                 }
               }
             }
@@ -359,21 +366,21 @@
         "tags": [
           "EmployeeImages"
         ],
-        "operationId": "EmployeeImages_Create",
         "summary": "Create a new EmployeeImage.",
+        "operationId": "Create_EmployeeImages",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeImage"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -395,19 +402,21 @@
         }
       }
     },
-    "/EmployeeImages({EmployeeNo})": {
+    "/EmployeeImages({employeeNo})": {
       "get": {
         "tags": [
           "EmployeeImages"
         ],
-        "operationId": "EmployeeImages_Get",
         "summary": "Get a single EmployeeImage by key.",
+        "operationId": "Get_EmployeeImages",
         "parameters": [
           {
-            "name": "EmployeeNo",
+            "name": "employeeNo",
             "in": "path",
+            "description": "Key property 'EmployeeNo' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeNo' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -422,7 +431,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -453,37 +462,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeeImages"
         ],
-        "operationId": "EmployeeImages_Update",
-        "summary": "Partially update a EmployeeImage (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeImage.",
+        "operationId": "Delete_EmployeeImages",
         "parameters": [
           {
-            "name": "EmployeeNo",
+            "name": "employeeNo",
             "in": "path",
+            "description": "Key property 'EmployeeNo' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeNo' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeImage"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -497,27 +498,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeeImages"
         ],
-        "operationId": "EmployeeImages_Delete",
-        "summary": "Delete a EmployeeImage.",
+        "summary": "Partially update a EmployeeImage (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeeImages",
         "parameters": [
           {
-            "name": "EmployeeNo",
+            "name": "employeeNo",
             "in": "path",
+            "description": "Key property 'EmployeeNo' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeNo' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeImage"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -537,8 +550,8 @@
         "tags": [
           "EmployeePosition"
         ],
-        "operationId": "EmployeePosition_List",
         "summary": "Query the EmployeePosition collection.",
+        "operationId": "List_EmployeePosition",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -567,11 +580,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeePosition_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeePositionCollectionResponse"
                 }
               }
             }
@@ -592,21 +605,21 @@
         "tags": [
           "EmployeePosition"
         ],
-        "operationId": "EmployeePosition_Create",
         "summary": "Create a new EmployeePosition.",
+        "operationId": "Create_EmployeePosition",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeePosition"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -628,19 +641,21 @@
         }
       }
     },
-    "/EmployeePosition({PositionID})": {
+    "/EmployeePosition({positionID})": {
       "get": {
         "tags": [
           "EmployeePosition"
         ],
-        "operationId": "EmployeePosition_Get",
         "summary": "Get a single EmployeePosition by key.",
+        "operationId": "Get_EmployeePosition",
         "parameters": [
           {
-            "name": "PositionID",
+            "name": "positionID",
             "in": "path",
+            "description": "Key property 'PositionID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PositionID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -655,7 +670,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -686,37 +701,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeePosition"
         ],
-        "operationId": "EmployeePosition_Update",
-        "summary": "Partially update a EmployeePosition (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeePosition.",
+        "operationId": "Delete_EmployeePosition",
         "parameters": [
           {
-            "name": "PositionID",
+            "name": "positionID",
             "in": "path",
+            "description": "Key property 'PositionID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PositionID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeePosition"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -730,27 +737,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeePosition"
         ],
-        "operationId": "EmployeePosition_Delete",
-        "summary": "Delete a EmployeePosition.",
+        "summary": "Partially update a EmployeePosition (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeePosition",
         "parameters": [
           {
-            "name": "PositionID",
+            "name": "positionID",
             "in": "path",
+            "description": "Key property 'PositionID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PositionID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeePosition"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -770,18 +789,19 @@
         "tags": [
           "EmployeePositionService"
         ],
-        "operationId": "EmployeePositionService_GetList",
         "summary": "Service Layer function import 'EmployeePositionService_GetList'.",
+        "operationId": "EmployeePositionService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -812,8 +832,8 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "operationId": "EmployeeRolesSetup_List",
         "summary": "Query the EmployeeRolesSetup collection.",
+        "operationId": "List_EmployeeRolesSetup",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -842,11 +862,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeeRolesSetup_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeeRolesSetupCollectionResponse"
                 }
               }
             }
@@ -867,21 +887,21 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "operationId": "EmployeeRolesSetup_Create",
         "summary": "Create a new EmployeeRoleSetup.",
+        "operationId": "Create_EmployeeRolesSetup",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeRoleSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -903,19 +923,21 @@
         }
       }
     },
-    "/EmployeeRolesSetup({TypeID})": {
+    "/EmployeeRolesSetup({typeID})": {
       "get": {
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "operationId": "EmployeeRolesSetup_Get",
         "summary": "Get a single EmployeeRoleSetup by key.",
+        "operationId": "Get_EmployeeRolesSetup",
         "parameters": [
           {
-            "name": "TypeID",
+            "name": "typeID",
             "in": "path",
+            "description": "Key property 'TypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -930,7 +952,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -961,37 +983,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "operationId": "EmployeeRolesSetup_Update",
-        "summary": "Partially update a EmployeeRoleSetup (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeRoleSetup.",
+        "operationId": "Delete_EmployeeRolesSetup",
         "parameters": [
           {
-            "name": "TypeID",
+            "name": "typeID",
             "in": "path",
+            "description": "Key property 'TypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeRoleSetup"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1005,27 +1019,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "operationId": "EmployeeRolesSetup_Delete",
-        "summary": "Delete a EmployeeRoleSetup.",
+        "summary": "Partially update a EmployeeRoleSetup (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeeRolesSetup",
         "parameters": [
           {
-            "name": "TypeID",
+            "name": "typeID",
             "in": "path",
+            "description": "Key property 'TypeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TypeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeRoleSetup"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1045,18 +1071,19 @@
         "tags": [
           "EmployeeRolesSetupService"
         ],
-        "operationId": "EmployeeRolesSetupService_GetEmployeeRoleSetupList",
         "summary": "Service Layer function import 'EmployeeRolesSetupService_GetEmployeeRoleSetupList'.",
+        "operationId": "EmployeeRolesSetupService_GetEmployeeRoleSetupList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1087,8 +1114,8 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "operationId": "EmployeeStatus_List",
         "summary": "Query the EmployeeStatus collection.",
+        "operationId": "List_EmployeeStatus",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1117,11 +1144,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeeStatus_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeeStatusCollectionResponse"
                 }
               }
             }
@@ -1142,21 +1169,21 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "operationId": "EmployeeStatus_Create",
         "summary": "Create a new EmployeeStatus.",
+        "operationId": "Create_EmployeeStatus",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeStatus"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1178,19 +1205,21 @@
         }
       }
     },
-    "/EmployeeStatus({StatusId})": {
+    "/EmployeeStatus({statusId})": {
       "get": {
         "tags": [
           "EmployeeStatus"
         ],
-        "operationId": "EmployeeStatus_Get",
         "summary": "Get a single EmployeeStatus by key.",
+        "operationId": "Get_EmployeeStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1205,7 +1234,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1236,37 +1265,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeeStatus"
         ],
-        "operationId": "EmployeeStatus_Update",
-        "summary": "Partially update a EmployeeStatus (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeStatus.",
+        "operationId": "Delete_EmployeeStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeStatus"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1280,27 +1301,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeeStatus"
         ],
-        "operationId": "EmployeeStatus_Delete",
-        "summary": "Delete a EmployeeStatus.",
+        "summary": "Partially update a EmployeeStatus (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeeStatus",
         "parameters": [
           {
-            "name": "StatusId",
+            "name": "statusId",
             "in": "path",
+            "description": "Key property 'StatusId' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'StatusId' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeStatus"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1320,18 +1353,19 @@
         "tags": [
           "EmployeeStatusService"
         ],
-        "operationId": "EmployeeStatusService_GetList",
         "summary": "Service Layer function import 'EmployeeStatusService_GetList'.",
+        "operationId": "EmployeeStatusService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1362,8 +1396,8 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "operationId": "EmployeeTransfers_List",
         "summary": "Query the EmployeeTransfers collection.",
+        "operationId": "List_EmployeeTransfers",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1392,11 +1426,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeeTransfers_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeeTransfersCollectionResponse"
                 }
               }
             }
@@ -1417,21 +1451,21 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "operationId": "EmployeeTransfers_Create",
         "summary": "Create a new EmployeeTransfer.",
+        "operationId": "Create_EmployeeTransfers",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeTransfer"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1453,19 +1487,21 @@
         }
       }
     },
-    "/EmployeeTransfers({TransferID})": {
+    "/EmployeeTransfers({transferID})": {
       "get": {
         "tags": [
           "EmployeeTransfers"
         ],
-        "operationId": "EmployeeTransfers_Get",
         "summary": "Get a single EmployeeTransfer by key.",
+        "operationId": "Get_EmployeeTransfers",
         "parameters": [
           {
-            "name": "TransferID",
+            "name": "transferID",
             "in": "path",
+            "description": "Key property 'TransferID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TransferID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1480,7 +1516,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1511,37 +1547,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeeTransfers"
         ],
-        "operationId": "EmployeeTransfers_Update",
-        "summary": "Partially update a EmployeeTransfer (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeTransfer.",
+        "operationId": "Delete_EmployeeTransfers",
         "parameters": [
           {
-            "name": "TransferID",
+            "name": "transferID",
             "in": "path",
+            "description": "Key property 'TransferID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TransferID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeTransfer"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1555,27 +1583,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeeTransfers"
         ],
-        "operationId": "EmployeeTransfers_Delete",
-        "summary": "Delete a EmployeeTransfer.",
+        "summary": "Partially update a EmployeeTransfer (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeeTransfers",
         "parameters": [
           {
-            "name": "TransferID",
+            "name": "transferID",
             "in": "path",
+            "description": "Key property 'TransferID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TransferID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeTransfer"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1595,18 +1635,19 @@
         "tags": [
           "EmployeeTransfersService"
         ],
-        "operationId": "EmployeeTransfersService_GetEmployeeTransferList",
         "summary": "Service Layer function import 'EmployeeTransfersService_GetEmployeeTransferList'.",
+        "operationId": "EmployeeTransfersService_GetEmployeeTransferList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1637,8 +1678,8 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_List",
         "summary": "Query the EmployeesInfo collection.",
+        "operationId": "List_EmployeesInfo",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1667,11 +1708,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmployeesInfo_CollectionResponse"
+                  "$ref": "#/components/schemas/EmployeesInfoCollectionResponse"
                 }
               }
             }
@@ -1692,21 +1733,21 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Create",
         "summary": "Create a new EmployeeInfo.",
+        "operationId": "Create_EmployeesInfo",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmployeeInfo"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1728,19 +1769,21 @@
         }
       }
     },
-    "/EmployeesInfo({EmployeeID})": {
+    "/EmployeesInfo({employeeID})": {
       "get": {
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Get",
         "summary": "Get a single EmployeeInfo by key.",
+        "operationId": "Get_EmployeesInfo",
         "parameters": [
           {
-            "name": "EmployeeID",
+            "name": "employeeID",
             "in": "path",
+            "description": "Key property 'EmployeeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1755,7 +1798,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1786,37 +1829,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Update",
-        "summary": "Partially update a EmployeeInfo (PATCH/MERGE semantics).",
+        "summary": "Delete a EmployeeInfo.",
+        "operationId": "Delete_EmployeesInfo",
         "parameters": [
           {
-            "name": "EmployeeID",
+            "name": "employeeID",
             "in": "path",
+            "description": "Key property 'EmployeeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeInfo"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1830,27 +1865,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Delete",
-        "summary": "Delete a EmployeeInfo.",
+        "summary": "Partially update a EmployeeInfo (PATCH/MERGE semantics).",
+        "operationId": "Update_EmployeesInfo",
         "parameters": [
           {
-            "name": "EmployeeID",
+            "name": "employeeID",
             "in": "path",
+            "description": "Key property 'EmployeeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInfo"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1865,19 +1912,21 @@
         }
       }
     },
-    "/EmployeesInfo({EmployeeID})/Cancel": {
+    "/EmployeesInfo({employeeID})/Cancel": {
       "post": {
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Cancel",
         "summary": "Bound action 'Cancel' on EmployeesInfo (binding type EmployeeInfo).",
+        "operationId": "EmployeesInfo_Cancel",
         "parameters": [
           {
-            "name": "EmployeeID",
+            "name": "employeeID",
             "in": "path",
+            "description": "Key property 'EmployeeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1886,7 +1935,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1901,19 +1950,21 @@
         }
       }
     },
-    "/EmployeesInfo({EmployeeID})/Close": {
+    "/EmployeesInfo({employeeID})/Close": {
       "post": {
         "tags": [
           "EmployeesInfo"
         ],
-        "operationId": "EmployeesInfo_Close",
         "summary": "Bound action 'Close' on EmployeesInfo (binding type EmployeeInfo).",
+        "operationId": "EmployeesInfo_Close",
         "parameters": [
           {
-            "name": "EmployeeID",
+            "name": "employeeID",
             "in": "path",
+            "description": "Key property 'EmployeeID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'EmployeeID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1922,7 +1973,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1942,18 +1993,19 @@
         "tags": [
           "EmploymentCategoryService"
         ],
-        "operationId": "EmploymentCategoryService_GetEmploymentCategoryList",
         "summary": "Service Layer function import 'EmploymentCategoryService_GetEmploymentCategoryList'.",
+        "operationId": "EmploymentCategoryService_GetEmploymentCategoryList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1984,8 +2036,8 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "operationId": "EmploymentCategorys_List",
         "summary": "Query the EmploymentCategorys collection.",
+        "operationId": "List_EmploymentCategorys",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2014,11 +2066,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmploymentCategorys_CollectionResponse"
+                  "$ref": "#/components/schemas/EmploymentCategorysCollectionResponse"
                 }
               }
             }
@@ -2039,21 +2091,21 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "operationId": "EmploymentCategorys_Create",
         "summary": "Create a new EmploymentCategory.",
+        "operationId": "Create_EmploymentCategorys",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmploymentCategory"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2075,19 +2127,21 @@
         }
       }
     },
-    "/EmploymentCategorys('{Code}')": {
+    "/EmploymentCategorys('{code}')": {
       "get": {
         "tags": [
           "EmploymentCategorys"
         ],
-        "operationId": "EmploymentCategorys_Get",
         "summary": "Get a single EmploymentCategory by key.",
+        "operationId": "Get_EmploymentCategorys",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -2101,7 +2155,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2132,36 +2186,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "EmploymentCategorys"
         ],
-        "operationId": "EmploymentCategorys_Update",
-        "summary": "Partially update a EmploymentCategory (PATCH/MERGE semantics).",
+        "summary": "Delete a EmploymentCategory.",
+        "operationId": "Delete_EmploymentCategorys",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmploymentCategory"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2175,26 +2221,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "EmploymentCategorys"
         ],
-        "operationId": "EmploymentCategorys_Delete",
-        "summary": "Delete a EmploymentCategory.",
+        "summary": "Partially update a EmploymentCategory (PATCH/MERGE semantics).",
+        "operationId": "Update_EmploymentCategorys",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmploymentCategory"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2214,8 +2272,8 @@
         "tags": [
           "Genders"
         ],
-        "operationId": "Genders_List",
         "summary": "Query the Genders collection.",
+        "operationId": "List_Genders",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2244,11 +2302,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Genders_CollectionResponse"
+                  "$ref": "#/components/schemas/GendersCollectionResponse"
                 }
               }
             }
@@ -2269,21 +2327,21 @@
         "tags": [
           "Genders"
         ],
-        "operationId": "Genders_Create",
         "summary": "Create a new Gender.",
+        "operationId": "Create_Genders",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Gender"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2305,19 +2363,21 @@
         }
       }
     },
-    "/Genders('{Code}')": {
+    "/Genders('{code}')": {
       "get": {
         "tags": [
           "Genders"
         ],
-        "operationId": "Genders_Get",
         "summary": "Get a single Gender by key.",
+        "operationId": "Get_Genders",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -2331,7 +2391,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2362,36 +2422,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Genders"
         ],
-        "operationId": "Genders_Update",
-        "summary": "Partially update a Gender (PATCH/MERGE semantics).",
+        "summary": "Delete a Gender.",
+        "operationId": "Delete_Genders",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Gender"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2405,26 +2457,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Genders"
         ],
-        "operationId": "Genders_Delete",
-        "summary": "Delete a Gender.",
+        "summary": "Partially update a Gender (PATCH/MERGE semantics).",
+        "operationId": "Update_Genders",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.String)",
             "required": true,
-            "description": "Key property 'Code' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Gender"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2444,18 +2508,19 @@
         "tags": [
           "GendersService"
         ],
-        "operationId": "GendersService_GetList",
         "summary": "Service Layer function import 'GendersService_GetList'.",
+        "operationId": "GendersService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2486,8 +2551,8 @@
         "tags": [
           "Teams"
         ],
-        "operationId": "Teams_List",
         "summary": "Query the Teams collection.",
+        "operationId": "List_Teams",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2516,11 +2581,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Teams_CollectionResponse"
+                  "$ref": "#/components/schemas/TeamsCollectionResponse"
                 }
               }
             }
@@ -2541,21 +2606,21 @@
         "tags": [
           "Teams"
         ],
-        "operationId": "Teams_Create",
         "summary": "Create a new Team.",
+        "operationId": "Create_Teams",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Team"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2577,19 +2642,21 @@
         }
       }
     },
-    "/Teams({TeamID})": {
+    "/Teams({teamID})": {
       "get": {
         "tags": [
           "Teams"
         ],
-        "operationId": "Teams_Get",
         "summary": "Get a single Team by key.",
+        "operationId": "Get_Teams",
         "parameters": [
           {
-            "name": "TeamID",
+            "name": "teamID",
             "in": "path",
+            "description": "Key property 'TeamID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TeamID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2604,7 +2671,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2635,37 +2702,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Teams"
         ],
-        "operationId": "Teams_Update",
-        "summary": "Partially update a Team (PATCH/MERGE semantics).",
+        "summary": "Delete a Team.",
+        "operationId": "Delete_Teams",
         "parameters": [
           {
-            "name": "TeamID",
+            "name": "teamID",
             "in": "path",
+            "description": "Key property 'TeamID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TeamID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Team"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2679,27 +2738,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Teams"
         ],
-        "operationId": "Teams_Delete",
-        "summary": "Delete a Team.",
+        "summary": "Partially update a Team (PATCH/MERGE semantics).",
+        "operationId": "Update_Teams",
         "parameters": [
           {
-            "name": "TeamID",
+            "name": "teamID",
             "in": "path",
+            "description": "Key property 'TeamID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TeamID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Team"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2719,8 +2790,8 @@
         "tags": [
           "TerminationReason"
         ],
-        "operationId": "TerminationReason_List",
         "summary": "Query the TerminationReason collection.",
+        "operationId": "List_TerminationReason",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2749,11 +2820,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TerminationReason_CollectionResponse"
+                  "$ref": "#/components/schemas/TerminationReasonCollectionResponse"
                 }
               }
             }
@@ -2774,21 +2845,21 @@
         "tags": [
           "TerminationReason"
         ],
-        "operationId": "TerminationReason_Create",
         "summary": "Create a new TerminationReason.",
+        "operationId": "Create_TerminationReason",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TerminationReason"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2810,19 +2881,21 @@
         }
       }
     },
-    "/TerminationReason({ReasonID})": {
+    "/TerminationReason({reasonID})": {
       "get": {
         "tags": [
           "TerminationReason"
         ],
-        "operationId": "TerminationReason_Get",
         "summary": "Get a single TerminationReason by key.",
+        "operationId": "Get_TerminationReason",
         "parameters": [
           {
-            "name": "ReasonID",
+            "name": "reasonID",
             "in": "path",
+            "description": "Key property 'ReasonID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ReasonID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2837,7 +2910,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2868,37 +2941,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "TerminationReason"
         ],
-        "operationId": "TerminationReason_Update",
-        "summary": "Partially update a TerminationReason (PATCH/MERGE semantics).",
+        "summary": "Delete a TerminationReason.",
+        "operationId": "Delete_TerminationReason",
         "parameters": [
           {
-            "name": "ReasonID",
+            "name": "reasonID",
             "in": "path",
+            "description": "Key property 'ReasonID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ReasonID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TerminationReason"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2912,27 +2977,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "TerminationReason"
         ],
-        "operationId": "TerminationReason_Delete",
-        "summary": "Delete a TerminationReason.",
+        "summary": "Partially update a TerminationReason (PATCH/MERGE semantics).",
+        "operationId": "Update_TerminationReason",
         "parameters": [
           {
-            "name": "ReasonID",
+            "name": "reasonID",
             "in": "path",
+            "description": "Key property 'ReasonID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ReasonID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TerminationReason"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2952,18 +3029,19 @@
         "tags": [
           "TerminationReasonService"
         ],
-        "operationId": "TerminationReasonService_GetList",
         "summary": "Service Layer function import 'TerminationReasonService_GetList'.",
+        "operationId": "TerminationReasonService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -2991,155 +3069,362 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "B1Session": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "B1SESSION",
-        "description": "Session cookie returned by POST /Login."
-      }
-    },
-    "parameters": {
-      "Expand": {
-        "name": "$expand",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated navigation properties to expand.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Filter": {
-        "name": "$filter",
-        "in": "query",
-        "required": false,
-        "description": "OData filter expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "InlineCount": {
-        "name": "$inlinecount",
-        "in": "query",
-        "required": false,
-        "description": "Set to 'allpages' to include the total count (odata.count).",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "allpages",
-            "none"
-          ]
-        }
-      },
-      "OrderBy": {
-        "name": "$orderby",
-        "in": "query",
-        "required": false,
-        "description": "OData orderby expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Prefer": {
-        "name": "Prefer",
-        "in": "header",
-        "required": false,
-        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Select": {
-        "name": "$select",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated list of properties to return.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Skip": {
-        "name": "$skip",
-        "in": "query",
-        "required": false,
-        "description": "Number of records to skip (paging).",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "Top": {
-        "name": "$top",
-        "in": "query",
-        "required": false,
-        "description": "Maximum number of records to return.",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "schemas": {
-      "BoGenderTypes": {
-        "type": "string",
-        "enum": [
-          "gt_Female",
-          "gt_Male",
-          "gt_Undefined",
-          "gt_Masked",
-          "gt_Invalid"
-        ],
-        "description": "OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name."
-      },
       "BoMeritalStatuses": {
         "type": "string",
+        "description": "OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name",
         "enum": [
           "mts_Single",
           "mts_Married",
           "mts_Divorced",
           "mts_Widowed",
           "mts_NotSpecified"
-        ],
-        "description": "OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "BoRoleInTeam": {
-        "type": "string",
-        "enum": [
-          "borit_Leader",
-          "borit_Member"
-        ],
-        "description": "OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name."
+      "EmployeePreviousEmpoymentInfo": {
+        "type": "object",
+        "properties": {
+          "EmployeeNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "FromDtae": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ToDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Employer": {
+            "type": "string"
+          },
+          "Position": {
+            "type": "string"
+          },
+          "Remarks": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
       },
-      "BoSalaryCostUnits": {
-        "type": "string",
-        "enum": [
-          "scu_Hour",
-          "scu_Day",
-          "scu_Week",
-          "scu_Month",
-          "scu_Year",
-          "scu_Semimonthly",
-          "scu_Biweekly"
-        ],
-        "description": "OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name."
+      "EmployeeImagesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeImage"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmployeePosition": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "PositionID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "positionID"
+          },
+          "EmployeesInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInfo"
+            },
+            "x-ballerina-name": "employeesInfo"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeIDTypeCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeIDType"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmploymentCategorysCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmploymentCategory"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "Gender": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          },
+          "EmployeesInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInfo"
+            },
+            "x-ballerina-name": "employeesInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeRolesSetupCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeRoleSetup"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmployeeTransfer": {
+        "type": "object",
+        "properties": {
+          "TransEndTime": {
+            "type": "string",
+            "x-ballerina-name": "transEndTime"
+          },
+          "Status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmployeeTransferStatusEnum"
+              }
+            ],
+            "x-ballerina-name": "status"
+          },
+          "EmployeeTransferDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeTransferDetail"
+            },
+            "x-ballerina-name": "employeeTransferDetails"
+          },
+          "Comment": {
+            "type": "string",
+            "x-ballerina-name": "comment"
+          },
+          "TransEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "transEndDate"
+          },
+          "TransStartDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "transStartDate"
+          },
+          "TransferID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "transferID"
+          },
+          "TransStartTime": {
+            "type": "string",
+            "x-ballerina-name": "transStartTime"
+          }
+        },
+        "additionalProperties": false
       },
       "BoYesNoEnum": {
         "type": "string",
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name",
         "enum": [
           "tNO",
           "tYES"
-        ],
-        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
+        ]
       },
-      "ContractSequenceEnum": {
-        "type": "string",
-        "enum": [
-          "cs_Monthly",
-          "cs_Quarterly",
-          "cs_SemiAnnually",
-          "cs_Yearly"
-        ],
-        "description": "OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name."
+      "EmployeeTransfersCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeTransfer"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmployeeReviewsInfo": {
+        "type": "object",
+        "properties": {
+          "EmployeeNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ReviewDescription": {
+            "type": "string"
+          },
+          "Manager": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Grade": {
+            "type": "string"
+          },
+          "Remarks": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "TeamsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmploymentCategoryParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeIDTypeParams": {
+        "type": "object",
+        "properties": {
+          "IDType": {
+            "type": "string",
+            "x-ballerina-name": "iDType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeSavingsPaymentInfo": {
+        "type": "object",
+        "properties": {
+          "EmployeeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ContractName": {
+            "type": "string"
+          },
+          "PaymentNotes": {
+            "type": "string"
+          },
+          "AN": {
+            "type": "number",
+            "format": "double"
+          },
+          "ANcurrency": {
+            "type": "string"
+          },
+          "AG": {
+            "type": "number",
+            "format": "double"
+          },
+          "AGcurrency": {
+            "type": "string"
+          },
+          "BankName": {
+            "type": "string"
+          },
+          "BankCode": {
+            "type": "string"
+          },
+          "BankAccount": {
+            "type": "string"
+          },
+          "Sequence": {
+            "$ref": "#/components/schemas/ContractSequenceEnum"
+          }
+        },
+        "additionalProperties": true
       },
       "EmployeeAbsenceInfo": {
         "type": "object",
@@ -3187,6 +3472,280 @@
         },
         "additionalProperties": true
       },
+      "EmployeeExemptionUnitEnum": {
+        "type": "string",
+        "description": "OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "eeu_None",
+          "eeu_Yearly",
+          "eeu_Monthly",
+          "eeu_Weekly",
+          "eeu_Daily"
+        ]
+      },
+      "EmployeeTransferDetail": {
+        "type": "object",
+        "properties": {
+          "Status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmployeeTransferProcessingStatusEnum"
+              }
+            ],
+            "x-ballerina-name": "status"
+          },
+          "Comment": {
+            "type": "string",
+            "x-ballerina-name": "comment"
+          },
+          "TransferedTime": {
+            "type": "string",
+            "x-ballerina-name": "transferedTime"
+          },
+          "TransferedDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "transferedDate"
+          },
+          "TransferID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "transferID"
+          },
+          "EmployeeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "employeeID"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TerminationReasonParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "ReasonID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "reasonID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeStatusCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeStatus"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmployeeRolesInfo": {
+        "type": "object",
+        "properties": {
+          "EmployeeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RoleID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "EmployeeStatus": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "EmployeesInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInfo"
+            },
+            "x-ballerina-name": "employeesInfo"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeesInfoCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInfo"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ContractSequenceEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ContractSequenceEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cs_Monthly",
+          "cs_Quarterly",
+          "cs_SemiAnnually",
+          "cs_Yearly"
+        ]
+      },
+      "EmployeeTransferProcessingStatusEnum": {
+        "type": "string",
+        "description": "OData EnumType 'EmployeeTransferProcessingStatusEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "etps_New",
+          "etps_Sent",
+          "etps_Accepted",
+          "etps_Error"
+        ]
+      },
+      "BoRoleInTeam": {
+        "type": "string",
+        "description": "OData EnumType 'BoRoleInTeam'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "borit_Leader",
+          "borit_Member"
+        ]
+      },
+      "EmployeeRoleSetup": {
+        "type": "object",
+        "properties": {
+          "TypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "typeID"
+          },
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "EmployeesInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInfo"
+            },
+            "x-ballerina-name": "employeesInfo"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmploymentCategory": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoGenderTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "gt_Female",
+          "gt_Male",
+          "gt_Undefined",
+          "gt_Masked",
+          "gt_Invalid"
+        ]
+      },
+      "EmployeeStatusParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statusId"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeePaymentMethodEnum": {
+        "type": "string",
+        "description": "OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "epm_None",
+          "epm_BankTransfer"
+        ]
+      },
+      "EmployeePositionParams": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
+          "PositionID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "positionID"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
       "EmployeeEducationInfo": {
         "type": "object",
         "properties": {
@@ -3222,88 +3781,159 @@
         },
         "additionalProperties": true
       },
-      "EmployeeExemptionUnitEnum": {
+      "EmployeeTransferStatusEnum": {
         "type": "string",
+        "description": "OData EnumType 'EmployeeTransferStatusEnum'. Serialised by the Service Layer as the member name",
         "enum": [
-          "eeu_None",
-          "eeu_Yearly",
-          "eeu_Monthly",
-          "eeu_Weekly",
-          "eeu_Daily"
-        ],
-        "description": "OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name."
+          "ets_New",
+          "ets_Processing",
+          "ets_Sent",
+          "ets_Received",
+          "ets_Accepted",
+          "ets_Error"
+        ]
       },
-      "EmployeeIDType": {
-        "type": "object",
-        "properties": {
-          "IDType": {
-            "type": "string"
-          },
-          "EmployeesInfo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeIDTypeParams": {
-        "type": "object",
-        "properties": {
-          "IDType": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeIDType_CollectionResponse": {
+      "TerminationReasonCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EmployeeIDType"
+              "$ref": "#/components/schemas/TerminationReason"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "EmployeePositionCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeePosition"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
       "EmployeeImage": {
         "type": "object",
         "properties": {
-          "EmployeeNo": {
-            "type": "integer",
-            "format": "int32"
-          },
           "Picture": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "x-ballerina-name": "picture"
+          },
+          "EmployeeNo": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "employeeNo"
           }
         },
         "additionalProperties": false
       },
-      "EmployeeImages_CollectionResponse": {
+      "EmployeeRoleSetupParams": {
         "type": "object",
         "properties": {
-          "odata.metadata": {
-            "type": "string"
+          "TypeID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "typeID"
           },
-          "value": {
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeIDType": {
+        "type": "object",
+        "properties": {
+          "IDType": {
+            "type": "string",
+            "x-ballerina-name": "iDType"
+          },
+          "EmployeesInfo": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EmployeeImage"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
+              "$ref": "#/components/schemas/EmployeeInfo"
+            },
+            "x-ballerina-name": "employeesInfo"
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeTransferParams": {
+        "type": "object",
+        "properties": {
+          "TransferID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "transferID"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SPEDContabilQualificationCodeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "spedNA",
+          "spedDiretor",
+          "spedConselheiroDeAdministracao",
+          "spedAdministrador",
+          "spedAdministradorDoGrupo",
+          "spedAdministradorDeSociedadeFiliada",
+          "spedAdministradorJudicialPessoaFisica",
+          "spedAdministradorJudicialPessoaJuridicaProfissionalResponsavel",
+          "spedAdministradorJudicialGestor",
+          "spedGestorJudicial",
+          "spedProcurador",
+          "spedInventariante",
+          "spedLiquidante",
+          "spedInterventor",
+          "spedEmpresario",
+          "spedContador",
+          "spedOutros"
+        ]
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "TeamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TeamName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "TeamMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamMember"
+            }
+          }
+        },
+        "additionalProperties": true
       },
       "EmployeeInfo": {
         "type": "object",
@@ -3755,536 +4385,6 @@
         },
         "additionalProperties": true
       },
-      "EmployeePaymentMethodEnum": {
-        "type": "string",
-        "enum": [
-          "epm_None",
-          "epm_BankTransfer"
-        ],
-        "description": "OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name."
-      },
-      "EmployeePosition": {
-        "type": "object",
-        "properties": {
-          "PositionID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "EmployeesInfo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeePositionParams": {
-        "type": "object",
-        "properties": {
-          "PositionID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeePosition_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeePosition"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "EmployeePreviousEmpoymentInfo": {
-        "type": "object",
-        "properties": {
-          "EmployeeNo": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "FromDtae": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ToDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Employer": {
-            "type": "string"
-          },
-          "Position": {
-            "type": "string"
-          },
-          "Remarks": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "EmployeeReviewsInfo": {
-        "type": "object",
-        "properties": {
-          "EmployeeNo": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ReviewDescription": {
-            "type": "string"
-          },
-          "Manager": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Grade": {
-            "type": "string"
-          },
-          "Remarks": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "EmployeeRoleSetup": {
-        "type": "object",
-        "properties": {
-          "TypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "EmployeesInfo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeRoleSetupParams": {
-        "type": "object",
-        "properties": {
-          "TypeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeRolesInfo": {
-        "type": "object",
-        "properties": {
-          "EmployeeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "RoleID": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": true
-      },
-      "EmployeeRolesSetup_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeRoleSetup"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "EmployeeSavingsPaymentInfo": {
-        "type": "object",
-        "properties": {
-          "EmployeeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ContractName": {
-            "type": "string"
-          },
-          "PaymentNotes": {
-            "type": "string"
-          },
-          "AN": {
-            "type": "number",
-            "format": "double"
-          },
-          "ANcurrency": {
-            "type": "string"
-          },
-          "AG": {
-            "type": "number",
-            "format": "double"
-          },
-          "AGcurrency": {
-            "type": "string"
-          },
-          "BankName": {
-            "type": "string"
-          },
-          "BankCode": {
-            "type": "string"
-          },
-          "BankAccount": {
-            "type": "string"
-          },
-          "Sequence": {
-            "$ref": "#/components/schemas/ContractSequenceEnum"
-          }
-        },
-        "additionalProperties": true
-      },
-      "EmployeeStatus": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "EmployeesInfo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeStatusParams": {
-        "type": "object",
-        "properties": {
-          "StatusId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeStatus_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeStatus"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "EmployeeTransfer": {
-        "type": "object",
-        "properties": {
-          "TransferID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TransStartDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "TransStartTime": {
-            "type": "string"
-          },
-          "TransEndDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "TransEndTime": {
-            "type": "string"
-          },
-          "Status": {
-            "$ref": "#/components/schemas/EmployeeTransferStatusEnum"
-          },
-          "Comment": {
-            "type": "string"
-          },
-          "EmployeeTransferDetails": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeTransferDetail"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeTransferDetail": {
-        "type": "object",
-        "properties": {
-          "TransferID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "EmployeeID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TransferedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "TransferedTime": {
-            "type": "string"
-          },
-          "Status": {
-            "$ref": "#/components/schemas/EmployeeTransferProcessingStatusEnum"
-          },
-          "Comment": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeTransferParams": {
-        "type": "object",
-        "properties": {
-          "TransferID": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmployeeTransferProcessingStatusEnum": {
-        "type": "string",
-        "enum": [
-          "etps_New",
-          "etps_Sent",
-          "etps_Accepted",
-          "etps_Error"
-        ],
-        "description": "OData EnumType 'EmployeeTransferProcessingStatusEnum'. Serialised by the Service Layer as the member name."
-      },
-      "EmployeeTransferStatusEnum": {
-        "type": "string",
-        "enum": [
-          "ets_New",
-          "ets_Processing",
-          "ets_Sent",
-          "ets_Received",
-          "ets_Accepted",
-          "ets_Error"
-        ],
-        "description": "OData EnumType 'EmployeeTransferStatusEnum'. Serialised by the Service Layer as the member name."
-      },
-      "EmployeeTransfers_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeTransfer"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "EmployeesInfo_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "EmploymentCategory": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmploymentCategoryParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmploymentCategorys_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmploymentCategory"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "Gender": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "EmployeesInfo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "GendersParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Genders_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Gender"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "SPEDContabilQualificationCodeEnum": {
-        "type": "string",
-        "enum": [
-          "spedNA",
-          "spedDiretor",
-          "spedConselheiroDeAdministracao",
-          "spedAdministrador",
-          "spedAdministradorDoGrupo",
-          "spedAdministradorDeSociedadeFiliada",
-          "spedAdministradorJudicialPessoaFisica",
-          "spedAdministradorJudicialPessoaJuridicaProfissionalResponsavel",
-          "spedAdministradorJudicialGestor",
-          "spedGestorJudicial",
-          "spedProcurador",
-          "spedInventariante",
-          "spedLiquidante",
-          "spedInterventor",
-          "spedEmpresario",
-          "spedContador",
-          "spedOutros"
-        ],
-        "description": "OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name."
-      },
       "ServiceLayerError": {
         "type": "object",
         "properties": {
@@ -4310,27 +4410,37 @@
           }
         }
       },
-      "Team": {
+      "GendersCollectionResponse": {
         "type": "object",
         "properties": {
-          "TeamID": {
-            "type": "integer",
-            "format": "int32"
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
-          "TeamName": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          },
-          "TeamMembers": {
+          "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TeamMember"
+              "$ref": "#/components/schemas/Gender"
             }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
-        },
-        "additionalProperties": true
+        }
+      },
+      "BoSalaryCostUnits": {
+        "type": "string",
+        "description": "OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "scu_Hour",
+          "scu_Day",
+          "scu_Week",
+          "scu_Month",
+          "scu_Year",
+          "scu_Semimonthly",
+          "scu_Biweekly"
+        ]
       },
       "TeamMember": {
         "type": "object",
@@ -4349,77 +4459,154 @@
         },
         "additionalProperties": true
       },
-      "Teams_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Team"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
       "TerminationReason": {
         "type": "object",
         "properties": {
+          "Description": {
+            "type": "string",
+            "x-ballerina-name": "description"
+          },
           "ReasonID": {
             "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
+            "format": "int32",
+            "x-ballerina-name": "reasonID"
           },
           "EmployeesInfo": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/EmployeeInfo"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "TerminationReasonParams": {
-        "type": "object",
-        "properties": {
-          "ReasonID": {
-            "type": "integer",
-            "format": "int32"
+            },
+            "x-ballerina-name": "employeesInfo"
           },
           "Name": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "name"
           }
         },
         "additionalProperties": false
       },
-      "TerminationReason_CollectionResponse": {
+      "GendersParams": {
         "type": "object",
         "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TerminationReason"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
           }
-        }
+        },
+        "additionalProperties": false
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Comma-separated navigation properties to expand",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarExpand"
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "OData filter expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarFilter"
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Set to 'allpages' to include the total count (odata.count)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        },
+        "x-ballerina-name": "dollarInlinecount"
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "OData orderby expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarOrderby"
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "prefer"
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "description": "Comma-separated list of properties to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarSelect"
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Number of records to skip (paging)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarSkip"
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Maximum number of records to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarTop"
+      }
+    },
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "description": "Session cookie returned by POST /Login.",
+        "name": "B1SESSION",
+        "in": "cookie",
+        "x-ballerina-name": "b1SESSION"
       }
     }
   }

@@ -17,74 +17,72 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
-# Represents the Headers record for the operation: queueList
-public type QueueListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listContractTemplates
+public type ListContractTemplatesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: serviceCallStatusGet
-public type ServiceCallStatusGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listServiceCallProblemSubTypes
+public type ListServiceCallProblemSubTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-public type Queue_CollectionResponse record {
-    string odata\.metadata?;
-    Queue[] value?;
-    string odata\.nextLink?;
+public type ServiceContractLine record {
+    int:Signed32 LineNum?;
+    string ManufacturerSerialNum?;
+    string InternalSerialNum?;
+    string ItemCode?;
+    string ItemName?;
+    int:Signed32 ItemGroup?;
+    string StartDate?;
+    string EndDate?;
+    string ItemGroupName?;
+    string TerminationDate?;
 };
 
-public type ServiceCallTypes_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallType[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
-
-# Represents the Queries record for the operation: customerEquipmentCardsList
-public type CustomerEquipmentCardsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
 
 public type CustomerEquipmentCardBusinessPartner record {
     string BPCode?;
 };
 
-# OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name
 public type BoStckTrnDir "bos_TransferToTechnician"|"bos_TransferFromTechnician";
 
-# Represents the Queries record for the operation: knowledgeBaseSolutionsGet
-public type KnowledgeBaseSolutionsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: contractTemplatesList
-public type ContractTemplatesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getServiceCallTypes
+public type GetServiceCallTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -129,75 +127,57 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-# Represents the Headers record for the operation: knowledgeBaseSolutionsList
-public type KnowledgeBaseSolutionsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listServiceCalls
+public type ListServiceCallsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: serviceContractsList
-public type ServiceContractsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ServiceContracts_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceContract[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name
 public type BoContractTypes "ct_Customer"|"ct_ItemGroup"|"ct_SerialNumber";
 
-# Represents the Headers record for the operation: serviceContractsList
-public type ServiceContractsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type KnowledgeBaseSolutionsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    KnowledgeBaseSolution[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name
 public type BoSerialNumberStatus "sns_Active"|"sns_Returned"|"sns_Terminated"|"sns_Loaned"|"sns_InLab";
 
-# Represents the Queries record for the operation: serviceCallOriginsList
-public type ServiceCallOriginsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ServiceCallProblemTypes_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallProblemType[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listServiceCallOrigins
+public type ListServiceCallOriginsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ServiceCallStatusParams record {|
-    int:Signed32 StatusId?;
-    string Name?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type QueueMember record {
@@ -206,34 +186,114 @@ public type QueueMember record {
 };
 
 
-public type ServiceCallSolutionStatus record {|
-    int:Signed32 StatusId?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    KnowledgeBaseSolution[] KnowledgeBaseSolutions?;
-|};
-
-public type ServiceCallProblemSubTypes_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallProblemSubType[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getContractTemplates
+public type GetContractTemplatesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getServiceContracts
+public type GetServiceContractsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type QueueCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Queue[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type ServiceCallSolutionStatus record {|
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "KnowledgeBaseSolutions"}
+    KnowledgeBaseSolution[] knowledgeBaseSolutions?;
+    @jsondata:Name {value: "Name"}
+    string name?;
+|};
+
+# Represents the Queries record for the operation: getServiceCalls
+public type GetServiceCallsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listContractTemplates
+public type ListContractTemplatesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
 public type BoRemindUnits "reu_Days"|"reu_Weeks"|"reu_Month";
 
-# OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listServiceCallProblemSubTypes
+public type ListServiceCallProblemSubTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name
 public type BoSvcCallPriorities "scp_Low"|"scp_Medium"|"scp_High";
 
+public type ServiceCallStatusCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallStatus[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type ServiceCallProblemSubType record {|
-    int:Signed32 ProblemSubTypeID?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    ServiceCall[] ServiceCalls?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ProblemSubTypeID"}
+    int:Signed32 problemSubTypeID?;
+    @jsondata:Name {value: "ServiceCalls"}
+    ServiceCall[] serviceCalls?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type ServiceCallBPAddressComponent record {
@@ -265,81 +325,57 @@ public type ServiceCallBPAddressComponent record {
     string BillToGlobalLocationNumber?;
 };
 
-# Represents the Headers record for the operation: serviceCallOriginsList
-public type ServiceCallOriginsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type ServiceCallOrigin record {|
-    int:Signed32 OriginID?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    ServiceCall[] ServiceCalls?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "OriginID"}
+    int:Signed32 originID?;
+    @jsondata:Name {value: "ServiceCalls"}
+    ServiceCall[] serviceCalls?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Queries record for the operation: customerEquipmentCardsGet
-public type CustomerEquipmentCardsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name
 public type BoSvcContractStatus "scs_Approved"|"scs_Frozen"|"scs_Draft"|"scs_Terminated";
 
-public type ServiceCalls_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCall[] value?;
-    string odata\.nextLink?;
-};
-
-public type ContractTemplates_CollectionResponse record {
-    string odata\.metadata?;
-    ContractTemplate[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getServiceCallSolutionStatus
+public type GetServiceCallSolutionStatusQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ServiceCallProblemType record {|
-    int:Signed32 ProblemTypeID?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    ServiceCall[] ServiceCalls?;
+    @jsondata:Name {value: "ProblemTypeID"}
+    int:Signed32 problemTypeID?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ServiceCalls"}
+    ServiceCall[] serviceCalls?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-public type ServiceCallSolutionStatus_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallSolutionStatus[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: knowledgeBaseSolutionsList
-public type KnowledgeBaseSolutionsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ContractTemplatesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ContractTemplate[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type Queue record {
     string QueueID?;
     string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Inactive?;
     int:Signed32 QueueManager?;
     string QueueEmail?;
@@ -347,191 +383,178 @@ public type Queue record {
     ServiceCall[] ServiceCalls?;
 };
 
-# Represents the Queries record for the operation: contractTemplatesList
-public type ContractTemplatesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listKnowledgeBaseSolutions
+public type ListKnowledgeBaseSolutionsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: serviceCallProblemTypesList
-public type ServiceCallProblemTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type CustomerEquipmentCardsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CustomerEquipmentCard[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: serviceCallsList
-public type ServiceCallsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ServiceCallProblemTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallProblemType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Headers record for the operation: serviceCallStatusList
-public type ServiceCallStatusListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listCustomerEquipmentCards
+public type ListCustomerEquipmentCardsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: serviceCallProblemTypesGet
-public type ServiceCallProblemTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listServiceCallTypes
+public type ListServiceCallTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-public type ServiceCallStatus_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallStatus[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listServiceCallProblemTypes
+public type ListServiceCallProblemTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-public type KnowledgeBaseSolutions_CollectionResponse record {
-    string odata\.metadata?;
-    KnowledgeBaseSolution[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listServiceCallSolutionStatus
+public type ListServiceCallSolutionStatusQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name
 public type BoServiceTypes "bst_Regular"|"bst_Warranty";
 
 public type ServiceCallInventoryExpense record {
     int:Signed32 LineNum?;
-    # OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name
     BoSvcExpPartTypes PartType?;
-    # OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name
     BoSvcEpxDocTypes DocumentType?;
     string DocumentPostingDate?;
     int:Signed32 DocumentNumber?;
-    # OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStckTrnDir'. Serialised by the Service Layer as the member name
     BoStckTrnDir StockTransferDirection?;
     int:Signed32 DocEntry?;
 };
 
-# Represents the Queries record for the operation: serviceCallSolutionStatusList
-public type ServiceCallSolutionStatusListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type ServiceCallTypeParams record {|
-    int:Signed32 CallTypeID?;
-    string Name?;
+    @jsondata:Name {value: "CallTypeID"}
+    int:Signed32 callTypeID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name
 public type BoResolutionUnits "rsu_Days"|"rsu_Hours";
 
-# Represents the Queries record for the operation: contractTemplatesGet
-public type ContractTemplatesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
 public type BoAddressType "bo_ShipTo"|"bo_BillTo";
 
-# OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name
 public type ServiceTypeEnum "srvcSales"|"srvcPurchasing";
+
+# Represents the Headers record for the operation: listServiceCallStatus
+public type ListServiceCallStatusHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
 
 public type ServiceCallActivity record {
     int:Signed32 LineNum?;
     int:Signed32 ActivityCode?;
 };
 
-# Represents the Headers record for the operation: serviceCallProblemSubTypesList
-public type ServiceCallProblemSubTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: serviceCallProblemSubTypesGet
-public type ServiceCallProblemSubTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: serviceCallTypesList
-public type ServiceCallTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: queueGet
-public type QueueGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: serviceCallsList
-public type ServiceCallsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listQueue
+public type ListQueueQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CustomerEquipmentCard record {
@@ -544,7 +567,7 @@ public type CustomerEquipmentCard record {
     string ManufacturerSerialNum?;
     string InternalSerialNum?;
     int:Signed32 RequiredResolutionTime?;
-    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name
     BoResolutionUnits RequiredResolutionUnit?;
     string ItemCode?;
     string ItemDescription?;
@@ -565,7 +588,7 @@ public type CustomerEquipmentCard record {
     string ContractEndDate?;
     int:Signed32 DeliveryCode?;
     int:Signed32 DeliveryNumber?;
-    # OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSerialNumberStatus'. Serialised by the Service Layer as the member name
     BoSerialNumberStatus StatusOfSerialNumber?;
     int:Signed32 ReplaceSN?;
     int:Signed32 DefaultTechnician?;
@@ -574,38 +597,119 @@ public type CustomerEquipmentCard record {
     string BuildingFloorRoom?;
     int:Signed32 AttachmentEntry?;
     string StreetNo?;
-    # OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name
     BoEquipmentBPType ServiceBPType?;
     CustomerEquipmentCardBusinessPartner[] CustomerEquipmentCardBusinessPartners?;
     ServiceContract ServiceContract?;
 };
 
-public type CustomerEquipmentCards_CollectionResponse record {
-    string odata\.metadata?;
-    CustomerEquipmentCard[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getServiceCallProblemTypes
+public type GetServiceCallProblemTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type ServiceCallSolutionStatusCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallSolutionStatus[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type inline_response_200_5 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallTypeParams[] value?;
 };
 
-public type ServiceContract_Line record {
-    int:Signed32 LineNum?;
-    string ManufacturerSerialNum?;
-    string InternalSerialNum?;
-    string ItemCode?;
-    string ItemName?;
-    int:Signed32 ItemGroup?;
-    string StartDate?;
-    string EndDate?;
-    string ItemGroupName?;
-    string TerminationDate?;
+# Represents the Queries record for the operation: listServiceCalls
+public type ListServiceCallsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getServiceCallOrigins
+public type GetServiceCallOriginsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name
 public type BoSvcExpPartTypes "sep_Inventory"|"sep_NonInventory";
+
+# Represents the Headers record for the operation: listQueue
+public type ListQueueHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listServiceCallOrigins
+public type ListServiceCallOriginsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: listServiceContracts
+public type ListServiceContractsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listServiceContracts
+public type ListServiceContractsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
 
 public type ServiceCallScheduling record {
     int:Signed32 LineNum?;
@@ -617,22 +721,22 @@ public type ServiceCallScheduling record {
     string EndTime?;
     decimal Duration?;
     decimal ActualDuration?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations DurationType?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations ActualDurationType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Reminder?;
     decimal ReminderPeriod?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations ReminderType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReminderSent?;
     string ReminderDate?;
     string ReminderTime?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DisplayInCalendar?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsUnscheduled?;
     int:Signed32 Location?;
     string AddressName?;
@@ -651,10 +755,10 @@ public type ServiceCallScheduling record {
     string County?;
     string TaxOffice?;
     string GlobalLocNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsClosed?;
     string Remark?;
-    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
     BoAddressType AddressTypeBS?;
     string SignatureName?;
     string SalesOrders?;
@@ -668,50 +772,89 @@ public type ServiceCallScheduling record {
 };
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallProblemSubTypeParams[] value?;
 };
 
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallProblemTypeParams[] value?;
 };
 
-public type ServiceCallOrigins_CollectionResponse record {
-    string odata\.metadata?;
-    ServiceCallOrigin[] value?;
-    string odata\.nextLink?;
-};
-
 public type inline_response_200_3 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallSolutionStatusParams[] value?;
 };
 
+# Represents the Queries record for the operation: getQueue
+public type GetQueueQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type inline_response_200_4 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallStatusParams[] value?;
 };
 
-# OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name.
+public type ServiceCallTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type ServiceCallProblemSubTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallProblemSubType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'BoSvcEpxDocTypes'. Serialised by the Service Layer as the member name
 public type BoSvcEpxDocTypes "edt_Invoice"|"edt_Delivery"|"edt_Return"|"edt_StockTransfer"|"edt_CreditMemo"|"edt_Order"|"edt_Quotation"|"edt_AP_Invoice"|"edt_AP_CreditMemo"|"edt_GoodsReceipt"|"edt_GoodsReturn"|"edt_PurchaseOrder"|"edt_PurchaseQuotation"|"edt_AR_CorrectionInvoice"|"edt_AP_CorrectionInvoice"|"edt_Return_Request"|"edt_Goods_Return_Request";
 
-# Represents the Queries record for the operation: queueList
-public type QueueListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listServiceCallStatus
+public type ListServiceCallStatusQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type ServiceCallsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCall[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type ServiceCallSolution record {
@@ -719,87 +862,90 @@ public type ServiceCallSolution record {
     int:Signed32 SolutionID?;
 };
 
-# Represents the Headers record for the operation: serviceCallTypesList
-public type ServiceCallTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type ServiceCallOriginsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceCallOrigin[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type ServiceCallType record {|
-    int:Signed32 CallTypeID?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    ServiceCall[] ServiceCalls?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "CallTypeID"}
+    int:Signed32 callTypeID?;
+    @jsondata:Name {value: "ServiceCalls"}
+    ServiceCall[] serviceCalls?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type ServiceCallOriginParams record {|
-    int:Signed32 OriginID?;
-    string Name?;
+    @jsondata:Name {value: "OriginID"}
+    int:Signed32 originID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type ServiceCallProblemSubTypeParams record {|
-    int:Signed32 ProblemSubTypeID?;
-    string Name?;
+    @jsondata:Name {value: "ProblemSubTypeID"}
+    int:Signed32 problemSubTypeID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type ServiceCallStatus record {|
-    int:Signed32 StatusId?;
-    string Name?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    ServiceCall[] ServiceCalls?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "ServiceCalls"}
+    ServiceCall[] serviceCalls?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: customerEquipmentCardsList
-public type CustomerEquipmentCardsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: serviceCallProblemSubTypesList
-public type ServiceCallProblemSubTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: serviceCallTypesGet
-public type ServiceCallTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getCustomerEquipmentCards
+public type GetCustomerEquipmentCardsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ServiceCallOriginParams[] value?;
 };
 
 public type ServiceCallProblemTypeParams record {|
-    int:Signed32 ProblemTypeID?;
-    string Name?;
+    @jsondata:Name {value: "ProblemTypeID"}
+    int:Signed32 problemTypeID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name
 public type BoResponseUnit "boru_Day"|"boru_Hour";
 
-# OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name
 public type BoEquipmentBPType "et_Sales"|"et_Purchasing"|"et_SalesAndPurchasing";
+
+public type ServiceContractsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ServiceContract[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type ServiceCall record {
     int:Signed32 ServiceCallID?;
@@ -818,7 +964,7 @@ public type ServiceCall record {
     string ItemDescription?;
     int:Signed32 ItemGroupCode?;
     int:Signed32 Status?;
-    # OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name
     BoSvcCallPriorities Priority?;
     int:Signed32 CallType?;
     int:Signed32 ProblemType?;
@@ -830,7 +976,7 @@ public type ServiceCall record {
     string CreationTime?;
     int:Signed32 Responder?;
     string UpdatedTime?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BelongsToAQueue?;
     string ResponseByTime?;
     string ResponseByDate?;
@@ -841,14 +987,14 @@ public type ServiceCall record {
     string AssignedDate?;
     string Queue?;
     int:Signed32 ResponseAssignee?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EntitledforService?;
     string ResolutionOnTime?;
     string AssignedTime?;
     string ClosingDate?;
     int:Signed32 Series?;
     int:Signed32 DocNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum HandWritten?;
     string PeriodIndicator?;
     string StartDate?;
@@ -856,28 +1002,28 @@ public type ServiceCall record {
     string EndDueDate?;
     string EndTime?;
     decimal Duration?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations DurationType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Reminder?;
     decimal ReminderPeriod?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations ReminderType?;
     int:Signed32 Location?;
     string AddressName?;
-    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
     BoAddressType AddressType?;
     string Street?;
     string City?;
     string Room?;
     string State?;
     string Country?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DisplayInCalendar?;
     string CustomerRefNo?;
     int:Signed32 ProblemSubType?;
     int:Signed32 AttachmentEntry?;
-    # OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name
     ServiceTypeEnum ServiceBPType?;
     string BPContactPerson?;
     string BPPhone1?;
@@ -908,42 +1054,49 @@ public type ServiceCall record {
     ServiceCallProblemSubType ServiceCallProblemSubType?;
 };
 
+# Represents the Headers record for the operation: listKnowledgeBaseSolutions
+public type ListKnowledgeBaseSolutionsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type ServiceContract record {
     int:Signed32 ContractID?;
     string CustomerCode?;
     string CustomerName?;
     int:Signed32 ContactCode?;
     int:Signed32 Owner?;
-    # OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSvcContractStatus'. Serialised by the Service Layer as the member name
     BoSvcContractStatus Status?;
     string ContractTemplate?;
-    # OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name
     BoContractTypes ContractType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Renewal?;
     int:Signed32 ReminderTime?;
-    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
     BoRemindUnits RemindUnit?;
     int:Signed32 DurationOfCoverage?;
     string StartDate?;
     string EndDate?;
     int:Signed32 ResolutionTime?;
-    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name
     BoResolutionUnits ResolutionUnit?;
     string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum MondayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TuesdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WednesdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ThursdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FridayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SaturdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SundayEnabled?;
     string MondayStart?;
     string MondayEnd?;
@@ -959,111 +1112,101 @@ public type ServiceContract record {
     string SaturdayEnd?;
     string SundayStart?;
     string SundayEnd?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeParts?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeLabor?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeTravel?;
     string TemplateRemarks?;
     string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeHolidays?;
-    # OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name
     BoServiceTypes ServiceType?;
-    # OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name
     BoResponseUnit ResponseUnit?;
     int:Signed32 ResponseTime?;
     string TerminationDate?;
     int:Signed32 AttachmentEntry?;
-    # OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ServiceTypeEnum'. Serialised by the Service Layer as the member name
     ServiceTypeEnum ServiceBPType?;
-    ServiceContract_Line[] ServiceContract_Lines?;
+    ServiceContractLine[] ServiceContract_Lines?;
     CustomerEquipmentCard[] CustomerEquipmentCards?;
     ServiceCall[] ServiceCalls?;
     ContractTemplate ContractTemplate2?;
 };
 
-# Represents the Headers record for the operation: serviceCallSolutionStatusList
-public type ServiceCallSolutionStatusListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listServiceCallSolutionStatus
+public type ListServiceCallSolutionStatusHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: serviceCallsGet
-public type ServiceCallsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getKnowledgeBaseSolutions
+public type GetKnowledgeBaseSolutionsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ServiceCallSolutionStatusParams record {|
-    int:Signed32 StatusId?;
-    string Name?;
+    @jsondata:Name {value: "StatusId"}
+    int:Signed32 statusId?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: serviceCallProblemTypesList
-public type ServiceCallProblemTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listCustomerEquipmentCards
+public type ListCustomerEquipmentCardsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: serviceCallSolutionStatusGet
-public type ServiceCallSolutionStatusGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: serviceCallStatusList
-public type ServiceCallStatusListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getServiceCallStatus
+public type GetServiceCallStatusQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ContractTemplate record {
     string TemplateName?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TemplateIsDeleted?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TemplateIsRenewal?;
     int:Signed32 RemindBeforeRenewal?;
-    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
     BoRemindUnits RemindUnit?;
     int:Signed32 DurationOfCoverage?;
     int:Signed32 ResponseValue?;
-    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoResolutionUnits'. Serialised by the Service Layer as the member name
     BoResolutionUnits ResolutionUnit?;
     string Description?;
-    # OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name
     BoContractTypes ContractType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum MondayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TuesdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WednesdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ThursdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FridayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SaturdayEnabled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SundayEnabled?;
     string MondayStart?;
     string MondayEnd?;
@@ -1079,20 +1222,70 @@ public type ContractTemplate record {
     string SaturdayEnd?;
     string SundayStart?;
     string SundayEnd?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeParts?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeLabor?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeTravel?;
     string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IncludeHolidays?;
-    # OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoResponseUnit'. Serialised by the Service Layer as the member name
     BoResponseUnit ResponseUnit?;
     int:Signed32 ResolutionTime?;
     int:Signed32 AttachmentEntry?;
     ServiceContract[] ServiceContracts?;
+};
+
+# Represents the Queries record for the operation: listServiceCallProblemTypes
+public type ListServiceCallProblemTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listServiceCallTypes
+public type ListServiceCallTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type KnowledgeBaseSolution record {
@@ -1112,21 +1305,15 @@ public type KnowledgeBaseSolution record {
     ServiceCallSolutionStatus ServiceCallSolutionStatus?;
 };
 
-# Represents the Queries record for the operation: serviceCallOriginsGet
-public type ServiceCallOriginsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
 public type BoDurations "du_Seconds"|"du_Minuts"|"du_Hours"|"du_Days";
 
-# Represents the Queries record for the operation: serviceContractsGet
-public type ServiceContractsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getServiceCallProblemSubTypes
+public type GetServiceCallProblemSubTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };

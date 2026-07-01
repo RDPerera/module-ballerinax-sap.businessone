@@ -46,7 +46,7 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    PurchaseOrders_CollectionResponse response = check b1->purchaseOrdersList();
+    PurchaseOrdersCollectionResponse response = check b1->listPurchaseOrders();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
@@ -55,19 +55,19 @@ function testList() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testGetByKey() returns error? {
-    Document entity = check b1->purchaseOrdersGet(1);
+    Document entity = check b1->getPurchaseOrders(1);
     test:assertEquals(entity.DocEntry, 1);
 }
 
 @test:Config {enable: !isLiveServer}
 function testCreate() returns error? {
-    Document created = check b1->purchaseOrdersCreate({CardCode: "V10000"});
+    Document created = check b1->createPurchaseOrders({CardCode: "V10000"});
     test:assertEquals(created.DocEntry, 77);
 }
 
 @test:Config {enable: !isLiveServer}
 function testUpdate() returns error? {
-    check b1->purchaseOrdersUpdate(1, {Comments: "updated"});
+    check b1->updatePurchaseOrders(1, {Comments: "updated"});
 }
 
 @test:AfterSuite

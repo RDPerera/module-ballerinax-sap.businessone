@@ -43,8 +43,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bOEDocumentTypesList(BOEDocumentTypesListHeaders headers = {}, *BOEDocumentTypesListQueries queries) returns BOEDocumentTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBOEDocumentTypes(ListBOEDocumentTypesHeaders headers = {}, *ListBOEDocumentTypesQueries queries) returns BOEDocumentTypesCollectionResponse|error {
         string resourcePath = string `/BOEDocumentTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -55,8 +55,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bOEDocumentTypesCreate(BOEDocumentType payload, map<string|string[]> headers = {}) returns BOEDocumentType|error {
+    # + return - The created entity 
+    remote isolated function createBOEDocumentTypes(BOEDocumentType payload, map<string|string[]> headers = {}) returns BOEDocumentType|error {
         string resourcePath = string `/BOEDocumentTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -66,34 +66,34 @@ public isolated client class Client {
 
     # Get a single BOEDocumentType by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bOEDocumentTypesGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *BOEDocumentTypesGetQueries queries) returns BOEDocumentType|error {
-        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getBOEDocumentTypes(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetBOEDocumentTypesQueries queries) returns BOEDocumentType|error {
+        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BOEDocumentType.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bOEDocumentTypesDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBOEDocumentTypes(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BOEDocumentType (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bOEDocumentTypesUpdate(int:Signed32 DocEntry, BOEDocumentType payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBOEDocumentTypes(int:Signed32 docEntry, BOEDocumentType payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEDocumentTypes(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -103,7 +103,7 @@ public isolated client class Client {
     # Service Layer function import 'BOEDocumentTypesService_GetBOEDocumentTypeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bOEDocumentTypesServiceGetBOEDocumentTypeList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/BOEDocumentTypesService_GetBOEDocumentTypeList`;
         http:Request request = new;
@@ -114,8 +114,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bOEInstructionsList(BOEInstructionsListHeaders headers = {}, *BOEInstructionsListQueries queries) returns BOEInstructions_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBOEInstructions(ListBOEInstructionsHeaders headers = {}, *ListBOEInstructionsQueries queries) returns BOEInstructionsCollectionResponse|error {
         string resourcePath = string `/BOEInstructions`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -126,8 +126,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bOEInstructionsCreate(BOEInstruction payload, map<string|string[]> headers = {}) returns BOEInstruction|error {
+    # + return - The created entity 
+    remote isolated function createBOEInstructions(BOEInstruction payload, map<string|string[]> headers = {}) returns BOEInstruction|error {
         string resourcePath = string `/BOEInstructions`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -137,34 +137,34 @@ public isolated client class Client {
 
     # Get a single BOEInstruction by key.
     #
-    # + InstructionEntry - Key property 'InstructionEntry' (Edm.Int32).
+    # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bOEInstructionsGet(int:Signed32 InstructionEntry, map<string|string[]> headers = {}, *BOEInstructionsGetQueries queries) returns BOEInstruction|error {
-        string resourcePath = string `/BOEInstructions(${getEncodedUri(InstructionEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getBOEInstructions(int:Signed32 instructionEntry, map<string|string[]> headers = {}, *GetBOEInstructionsQueries queries) returns BOEInstruction|error {
+        string resourcePath = string `/BOEInstructions(${getEncodedUri(instructionEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BOEInstruction.
     #
-    # + InstructionEntry - Key property 'InstructionEntry' (Edm.Int32).
+    # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bOEInstructionsDelete(int:Signed32 InstructionEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEInstructions(${getEncodedUri(InstructionEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBOEInstructions(int:Signed32 instructionEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEInstructions(${getEncodedUri(instructionEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BOEInstruction (PATCH/MERGE semantics).
     #
-    # + InstructionEntry - Key property 'InstructionEntry' (Edm.Int32).
+    # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bOEInstructionsUpdate(int:Signed32 InstructionEntry, BOEInstruction payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEInstructions(${getEncodedUri(InstructionEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBOEInstructions(int:Signed32 instructionEntry, BOEInstruction payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEInstructions(${getEncodedUri(instructionEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -174,7 +174,7 @@ public isolated client class Client {
     # Service Layer function import 'BOEInstructionsService_GetBOEInstructionList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bOEInstructionsServiceGetBOEInstructionList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/BOEInstructionsService_GetBOEInstructionList`;
         http:Request request = new;
@@ -185,7 +185,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bOELinesServiceGetBOELine(BOELinesService_GetBOELine_body payload, map<string|string[]> headers = {}) returns BOELine|error {
         string resourcePath = string `/BOELinesService_GetBOELine`;
         http:Request request = new;
@@ -198,8 +198,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bOEPortfoliosList(BOEPortfoliosListHeaders headers = {}, *BOEPortfoliosListQueries queries) returns BOEPortfolios_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBOEPortfolios(ListBOEPortfoliosHeaders headers = {}, *ListBOEPortfoliosQueries queries) returns BOEPortfoliosCollectionResponse|error {
         string resourcePath = string `/BOEPortfolios`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -210,8 +210,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bOEPortfoliosCreate(BOEPortfolio payload, map<string|string[]> headers = {}) returns BOEPortfolio|error {
+    # + return - The created entity 
+    remote isolated function createBOEPortfolios(BOEPortfolio payload, map<string|string[]> headers = {}) returns BOEPortfolio|error {
         string resourcePath = string `/BOEPortfolios`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -221,34 +221,34 @@ public isolated client class Client {
 
     # Get a single BOEPortfolio by key.
     #
-    # + PortfolioEntry - Key property 'PortfolioEntry' (Edm.Int32).
+    # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bOEPortfoliosGet(int:Signed32 PortfolioEntry, map<string|string[]> headers = {}, *BOEPortfoliosGetQueries queries) returns BOEPortfolio|error {
-        string resourcePath = string `/BOEPortfolios(${getEncodedUri(PortfolioEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getBOEPortfolios(int:Signed32 portfolioEntry, map<string|string[]> headers = {}, *GetBOEPortfoliosQueries queries) returns BOEPortfolio|error {
+        string resourcePath = string `/BOEPortfolios(${getEncodedUri(portfolioEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BOEPortfolio.
     #
-    # + PortfolioEntry - Key property 'PortfolioEntry' (Edm.Int32).
+    # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bOEPortfoliosDelete(int:Signed32 PortfolioEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEPortfolios(${getEncodedUri(PortfolioEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBOEPortfolios(int:Signed32 portfolioEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEPortfolios(${getEncodedUri(portfolioEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BOEPortfolio (PATCH/MERGE semantics).
     #
-    # + PortfolioEntry - Key property 'PortfolioEntry' (Edm.Int32).
+    # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bOEPortfoliosUpdate(int:Signed32 PortfolioEntry, BOEPortfolio payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BOEPortfolios(${getEncodedUri(PortfolioEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBOEPortfolios(int:Signed32 portfolioEntry, BOEPortfolio payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BOEPortfolios(${getEncodedUri(portfolioEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -258,7 +258,7 @@ public isolated client class Client {
     # Service Layer function import 'BOEPortfoliosService_GetBOEPortfolioList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bOEPortfoliosServiceGetBOEPortfolioList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/BOEPortfoliosService_GetBOEPortfolioList`;
         http:Request request = new;
@@ -269,8 +269,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bankChargesAllocationCodesList(BankChargesAllocationCodesListHeaders headers = {}, *BankChargesAllocationCodesListQueries queries) returns BankChargesAllocationCodes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBankChargesAllocationCodes(ListBankChargesAllocationCodesHeaders headers = {}, *ListBankChargesAllocationCodesQueries queries) returns BankChargesAllocationCodesCollectionResponse|error {
         string resourcePath = string `/BankChargesAllocationCodes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -281,8 +281,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bankChargesAllocationCodesCreate(BankChargesAllocationCode payload, map<string|string[]> headers = {}) returns BankChargesAllocationCode|error {
+    # + return - The created entity 
+    remote isolated function createBankChargesAllocationCodes(BankChargesAllocationCode payload, map<string|string[]> headers = {}) returns BankChargesAllocationCode|error {
         string resourcePath = string `/BankChargesAllocationCodes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -292,34 +292,34 @@ public isolated client class Client {
 
     # Get a single BankChargesAllocationCode by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bankChargesAllocationCodesGet(string Code, map<string|string[]> headers = {}, *BankChargesAllocationCodesGetQueries queries) returns BankChargesAllocationCode|error {
-        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getBankChargesAllocationCodes(string code, map<string|string[]> headers = {}, *GetBankChargesAllocationCodesQueries queries) returns BankChargesAllocationCode|error {
+        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BankChargesAllocationCode.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bankChargesAllocationCodesDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBankChargesAllocationCodes(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BankChargesAllocationCode (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bankChargesAllocationCodesUpdate(string Code, BankChargesAllocationCode payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBankChargesAllocationCodes(string code, BankChargesAllocationCode payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -328,11 +328,11 @@ public isolated client class Client {
 
     # Bound action 'SetDefaultBankChargesAllocationCode' on BankChargesAllocationCodes (binding type BankChargesAllocationCode).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function bankChargesAllocationCodesSetDefaultBankChargesAllocationCode(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(Code)}')/SetDefaultBankChargesAllocationCode`;
+    # + return - Success. No content returned 
+    remote isolated function bankChargesAllocationCodesSetDefaultBankChargesAllocationCode(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankChargesAllocationCodes('${getEncodedUri(code)}')/SetDefaultBankChargesAllocationCode`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -340,7 +340,7 @@ public isolated client class Client {
     # Service Layer function import 'BankChargesAllocationCodesService_GetBankChargesAllocationCodeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bankChargesAllocationCodesServiceGetBankChargesAllocationCodeList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/BankChargesAllocationCodesService_GetBankChargesAllocationCodeList`;
         http:Request request = new;
@@ -351,8 +351,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bankPagesList(BankPagesListHeaders headers = {}, *BankPagesListQueries queries) returns BankPages_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBankPages(ListBankPagesHeaders headers = {}, *ListBankPagesQueries queries) returns BankPagesCollectionResponse|error {
         string resourcePath = string `/BankPages`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -363,8 +363,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bankPagesCreate(BankPage payload, map<string|string[]> headers = {}) returns BankPage|error {
+    # + return - The created entity 
+    remote isolated function createBankPages(BankPage payload, map<string|string[]> headers = {}) returns BankPage|error {
         string resourcePath = string `/BankPages`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -374,37 +374,37 @@ public isolated client class Client {
 
     # Get a single BankPage by key.
     #
-    # + AccountCode - Composite key part 'AccountCode' (Edm.String).
-    # + Sequence - Composite key part 'Sequence' (Edm.Int32).
+    # + accountCode - Composite key part 'AccountCode' (Edm.String)
+    # + sequence - Composite key part 'Sequence' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bankPagesGet(string AccountCode, int:Signed32 Sequence, map<string|string[]> headers = {}, *BankPagesGetQueries queries) returns BankPage|error {
-        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(AccountCode)}',Sequence=${getEncodedUri(Sequence)})`;
+    # + return - The requested entity 
+    remote isolated function getBankPages(string accountCode, int:Signed32 sequence, map<string|string[]> headers = {}, *GetBankPagesQueries queries) returns BankPage|error {
+        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(accountCode)}',Sequence=${getEncodedUri(sequence)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BankPage.
     #
-    # + AccountCode - Composite key part 'AccountCode' (Edm.String).
-    # + Sequence - Composite key part 'Sequence' (Edm.Int32).
+    # + accountCode - Composite key part 'AccountCode' (Edm.String)
+    # + sequence - Composite key part 'Sequence' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bankPagesDelete(string AccountCode, int:Signed32 Sequence, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(AccountCode)}',Sequence=${getEncodedUri(Sequence)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBankPages(string accountCode, int:Signed32 sequence, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(accountCode)}',Sequence=${getEncodedUri(sequence)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BankPage (PATCH/MERGE semantics).
     #
-    # + AccountCode - Composite key part 'AccountCode' (Edm.String).
-    # + Sequence - Composite key part 'Sequence' (Edm.Int32).
+    # + accountCode - Composite key part 'AccountCode' (Edm.String)
+    # + sequence - Composite key part 'Sequence' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bankPagesUpdate(string AccountCode, int:Signed32 Sequence, BankPage payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(AccountCode)}',Sequence=${getEncodedUri(Sequence)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBankPages(string accountCode, int:Signed32 sequence, BankPage payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankPages(AccountCode='${getEncodedUri(accountCode)}',Sequence=${getEncodedUri(sequence)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -415,8 +415,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function bankStatementsList(BankStatementsListHeaders headers = {}, *BankStatementsListQueries queries) returns BankStatements_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBankStatements(ListBankStatementsHeaders headers = {}, *ListBankStatementsQueries queries) returns BankStatementsCollectionResponse|error {
         string resourcePath = string `/BankStatements`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -427,8 +427,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function bankStatementsCreate(BankStatement payload, map<string|string[]> headers = {}) returns BankStatement|error {
+    # + return - The created entity 
+    remote isolated function createBankStatements(BankStatement payload, map<string|string[]> headers = {}) returns BankStatement|error {
         string resourcePath = string `/BankStatements`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -438,34 +438,34 @@ public isolated client class Client {
 
     # Get a single BankStatement by key.
     #
-    # + InternalNumber - Key property 'InternalNumber' (Edm.Int32).
+    # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function bankStatementsGet(int:Signed32 InternalNumber, map<string|string[]> headers = {}, *BankStatementsGetQueries queries) returns BankStatement|error {
-        string resourcePath = string `/BankStatements(${getEncodedUri(InternalNumber)})`;
+    # + return - The requested entity 
+    remote isolated function getBankStatements(int:Signed32 internalNumber, map<string|string[]> headers = {}, *GetBankStatementsQueries queries) returns BankStatement|error {
+        string resourcePath = string `/BankStatements(${getEncodedUri(internalNumber)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BankStatement.
     #
-    # + InternalNumber - Key property 'InternalNumber' (Edm.Int32).
+    # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function bankStatementsDelete(int:Signed32 InternalNumber, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankStatements(${getEncodedUri(InternalNumber)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBankStatements(int:Signed32 internalNumber, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankStatements(${getEncodedUri(internalNumber)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BankStatement (PATCH/MERGE semantics).
     #
-    # + InternalNumber - Key property 'InternalNumber' (Edm.Int32).
+    # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function bankStatementsUpdate(int:Signed32 InternalNumber, BankStatement payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BankStatements(${getEncodedUri(InternalNumber)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBankStatements(int:Signed32 internalNumber, BankStatement payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BankStatements(${getEncodedUri(internalNumber)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -476,7 +476,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function bankStatementsServiceGetBankStatementList(BankStatementsService_GetBankStatementList_body payload, map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/BankStatementsService_GetBankStatementList`;
         http:Request request = new;
@@ -489,8 +489,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function banksList(BanksListHeaders headers = {}, *BanksListQueries queries) returns Banks_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBanks(ListBanksHeaders headers = {}, *ListBanksQueries queries) returns BanksCollectionResponse|error {
         string resourcePath = string `/Banks`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -501,8 +501,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function banksCreate(Bank payload, map<string|string[]> headers = {}) returns Bank|error {
+    # + return - The created entity 
+    remote isolated function createBanks(Bank payload, map<string|string[]> headers = {}) returns Bank|error {
         string resourcePath = string `/Banks`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -512,34 +512,34 @@ public isolated client class Client {
 
     # Get a single Bank by key.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function banksGet(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}, *BanksGetQueries queries) returns Bank|error {
-        string resourcePath = string `/Banks(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getBanks(int:Signed32 absoluteEntry, map<string|string[]> headers = {}, *GetBanksQueries queries) returns Bank|error {
+        string resourcePath = string `/Banks(${getEncodedUri(absoluteEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Bank.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function banksDelete(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Banks(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBanks(int:Signed32 absoluteEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Banks(${getEncodedUri(absoluteEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Bank (PATCH/MERGE semantics).
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function banksUpdate(int:Signed32 AbsoluteEntry, Bank payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Banks(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBanks(int:Signed32 absoluteEntry, Bank payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Banks(${getEncodedUri(absoluteEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -550,8 +550,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function billOfExchangeTransactionsList(BillOfExchangeTransactionsListHeaders headers = {}, *BillOfExchangeTransactionsListQueries queries) returns BillOfExchangeTransactions_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listBillOfExchangeTransactions(ListBillOfExchangeTransactionsHeaders headers = {}, *ListBillOfExchangeTransactionsQueries queries) returns BillOfExchangeTransactionsCollectionResponse|error {
         string resourcePath = string `/BillOfExchangeTransactions`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -562,8 +562,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function billOfExchangeTransactionsCreate(BillOfExchangeTransaction payload, map<string|string[]> headers = {}) returns BillOfExchangeTransaction|error {
+    # + return - The created entity 
+    remote isolated function createBillOfExchangeTransactions(BillOfExchangeTransaction payload, map<string|string[]> headers = {}) returns BillOfExchangeTransaction|error {
         string resourcePath = string `/BillOfExchangeTransactions`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -573,34 +573,34 @@ public isolated client class Client {
 
     # Get a single BillOfExchangeTransaction by key.
     #
-    # + BOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32).
+    # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function billOfExchangeTransactionsGet(int:Signed32 BOETransactionkey, map<string|string[]> headers = {}, *BillOfExchangeTransactionsGetQueries queries) returns BillOfExchangeTransaction|error {
-        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(BOETransactionkey)})`;
+    # + return - The requested entity 
+    remote isolated function getBillOfExchangeTransactions(int:Signed32 bOETransactionkey, map<string|string[]> headers = {}, *GetBillOfExchangeTransactionsQueries queries) returns BillOfExchangeTransaction|error {
+        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(bOETransactionkey)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a BillOfExchangeTransaction.
     #
-    # + BOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32).
+    # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function billOfExchangeTransactionsDelete(int:Signed32 BOETransactionkey, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(BOETransactionkey)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteBillOfExchangeTransactions(int:Signed32 bOETransactionkey, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(bOETransactionkey)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a BillOfExchangeTransaction (PATCH/MERGE semantics).
     #
-    # + BOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32).
+    # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function billOfExchangeTransactionsUpdate(int:Signed32 BOETransactionkey, BillOfExchangeTransaction payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(BOETransactionkey)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateBillOfExchangeTransactions(int:Signed32 bOETransactionkey, BillOfExchangeTransaction payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/BillOfExchangeTransactions(${getEncodedUri(bOETransactionkey)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -611,8 +611,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function centralBankIndicatorList(CentralBankIndicatorListHeaders headers = {}, *CentralBankIndicatorListQueries queries) returns CentralBankIndicator_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listCentralBankIndicator(ListCentralBankIndicatorHeaders headers = {}, *ListCentralBankIndicatorQueries queries) returns CentralBankIndicatorCollectionResponse|error {
         string resourcePath = string `/CentralBankIndicator`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -623,8 +623,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function centralBankIndicatorCreate(CentralBankIndicator payload, map<string|string[]> headers = {}) returns CentralBankIndicator|error {
+    # + return - The created entity 
+    remote isolated function createCentralBankIndicator(CentralBankIndicator payload, map<string|string[]> headers = {}) returns CentralBankIndicator|error {
         string resourcePath = string `/CentralBankIndicator`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -634,34 +634,34 @@ public isolated client class Client {
 
     # Get a single CentralBankIndicator by key.
     #
-    # + Indicator - Key property 'Indicator' (Edm.String).
+    # + indicator - Key property 'Indicator' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function centralBankIndicatorGet(string Indicator, map<string|string[]> headers = {}, *CentralBankIndicatorGetQueries queries) returns CentralBankIndicator|error {
-        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(Indicator)}')`;
+    # + return - The requested entity 
+    remote isolated function getCentralBankIndicator(string indicator, map<string|string[]> headers = {}, *GetCentralBankIndicatorQueries queries) returns CentralBankIndicator|error {
+        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(indicator)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a CentralBankIndicator.
     #
-    # + Indicator - Key property 'Indicator' (Edm.String).
+    # + indicator - Key property 'Indicator' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function centralBankIndicatorDelete(string Indicator, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(Indicator)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteCentralBankIndicator(string indicator, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(indicator)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a CentralBankIndicator (PATCH/MERGE semantics).
     #
-    # + Indicator - Key property 'Indicator' (Edm.String).
+    # + indicator - Key property 'Indicator' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function centralBankIndicatorUpdate(string Indicator, CentralBankIndicator payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(Indicator)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateCentralBankIndicator(string indicator, CentralBankIndicator payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CentralBankIndicator('${getEncodedUri(indicator)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -671,7 +671,7 @@ public isolated client class Client {
     # Service Layer function import 'CentralBankIndicatorService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function centralBankIndicatorServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/CentralBankIndicatorService_GetList`;
         http:Request request = new;
@@ -682,7 +682,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function checkLinesServiceGetCheckLine(CheckLinesService_GetCheckLine_body payload, map<string|string[]> headers = {}) returns CheckLine|error {
         string resourcePath = string `/CheckLinesService_GetCheckLine`;
         http:Request request = new;
@@ -694,7 +694,7 @@ public isolated client class Client {
     # Service Layer function import 'CheckLinesService_GetValidCheckLineList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function checkLinesServiceGetValidCheckLineList(map<string|string[]> headers = {}) returns inline_response_200_6|error {
         string resourcePath = string `/CheckLinesService_GetValidCheckLineList`;
         http:Request request = new;
@@ -705,8 +705,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function checksforPaymentList(ChecksforPaymentListHeaders headers = {}, *ChecksforPaymentListQueries queries) returns ChecksforPayment_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listChecksforPayment(ListChecksforPaymentHeaders headers = {}, *ListChecksforPaymentQueries queries) returns ChecksforPaymentCollectionResponse|error {
         string resourcePath = string `/ChecksforPayment`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -717,8 +717,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function checksforPaymentCreate(ChecksforPayment payload, map<string|string[]> headers = {}) returns ChecksforPayment|error {
+    # + return - The created entity 
+    remote isolated function createChecksforPayment(ChecksforPayment payload, map<string|string[]> headers = {}) returns ChecksforPayment|error {
         string resourcePath = string `/ChecksforPayment`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -728,34 +728,34 @@ public isolated client class Client {
 
     # Get a single ChecksforPayment by key.
     #
-    # + CheckKey - Key property 'CheckKey' (Edm.Int32).
+    # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function checksforPaymentGet(int:Signed32 CheckKey, map<string|string[]> headers = {}, *ChecksforPaymentGetQueries queries) returns ChecksforPayment|error {
-        string resourcePath = string `/ChecksforPayment(${getEncodedUri(CheckKey)})`;
+    # + return - The requested entity 
+    remote isolated function getChecksforPayment(int:Signed32 checkKey, map<string|string[]> headers = {}, *GetChecksforPaymentQueries queries) returns ChecksforPayment|error {
+        string resourcePath = string `/ChecksforPayment(${getEncodedUri(checkKey)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ChecksforPayment.
     #
-    # + CheckKey - Key property 'CheckKey' (Edm.Int32).
+    # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function checksforPaymentDelete(int:Signed32 CheckKey, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ChecksforPayment(${getEncodedUri(CheckKey)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteChecksforPayment(int:Signed32 checkKey, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ChecksforPayment(${getEncodedUri(checkKey)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ChecksforPayment (PATCH/MERGE semantics).
     #
-    # + CheckKey - Key property 'CheckKey' (Edm.Int32).
+    # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function checksforPaymentUpdate(int:Signed32 CheckKey, ChecksforPayment payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ChecksforPayment(${getEncodedUri(CheckKey)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateChecksforPayment(int:Signed32 checkKey, ChecksforPayment payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ChecksforPayment(${getEncodedUri(checkKey)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -766,8 +766,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function creditCardPaymentsList(CreditCardPaymentsListHeaders headers = {}, *CreditCardPaymentsListQueries queries) returns CreditCardPayments_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listCreditCardPayments(ListCreditCardPaymentsHeaders headers = {}, *ListCreditCardPaymentsQueries queries) returns CreditCardPaymentsCollectionResponse|error {
         string resourcePath = string `/CreditCardPayments`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -778,8 +778,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function creditCardPaymentsCreate(CreditCardPayment payload, map<string|string[]> headers = {}) returns CreditCardPayment|error {
+    # + return - The created entity 
+    remote isolated function createCreditCardPayments(CreditCardPayment payload, map<string|string[]> headers = {}) returns CreditCardPayment|error {
         string resourcePath = string `/CreditCardPayments`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -789,34 +789,34 @@ public isolated client class Client {
 
     # Get a single CreditCardPayment by key.
     #
-    # + DueDateCode - Key property 'DueDateCode' (Edm.String).
+    # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function creditCardPaymentsGet(string DueDateCode, map<string|string[]> headers = {}, *CreditCardPaymentsGetQueries queries) returns CreditCardPayment|error {
-        string resourcePath = string `/CreditCardPayments('${getEncodedUri(DueDateCode)}')`;
+    # + return - The requested entity 
+    remote isolated function getCreditCardPayments(string dueDateCode, map<string|string[]> headers = {}, *GetCreditCardPaymentsQueries queries) returns CreditCardPayment|error {
+        string resourcePath = string `/CreditCardPayments('${getEncodedUri(dueDateCode)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a CreditCardPayment.
     #
-    # + DueDateCode - Key property 'DueDateCode' (Edm.String).
+    # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function creditCardPaymentsDelete(string DueDateCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditCardPayments('${getEncodedUri(DueDateCode)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteCreditCardPayments(string dueDateCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditCardPayments('${getEncodedUri(dueDateCode)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a CreditCardPayment (PATCH/MERGE semantics).
     #
-    # + DueDateCode - Key property 'DueDateCode' (Edm.String).
+    # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function creditCardPaymentsUpdate(string DueDateCode, CreditCardPayment payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditCardPayments('${getEncodedUri(DueDateCode)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateCreditCardPayments(string dueDateCode, CreditCardPayment payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditCardPayments('${getEncodedUri(dueDateCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -827,8 +827,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function creditCardsList(CreditCardsListHeaders headers = {}, *CreditCardsListQueries queries) returns CreditCards_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listCreditCards(ListCreditCardsHeaders headers = {}, *ListCreditCardsQueries queries) returns CreditCardsCollectionResponse|error {
         string resourcePath = string `/CreditCards`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -839,8 +839,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function creditCardsCreate(CreditCard payload, map<string|string[]> headers = {}) returns CreditCard|error {
+    # + return - The created entity 
+    remote isolated function createCreditCards(CreditCard payload, map<string|string[]> headers = {}) returns CreditCard|error {
         string resourcePath = string `/CreditCards`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -850,34 +850,34 @@ public isolated client class Client {
 
     # Get a single CreditCard by key.
     #
-    # + CreditCardCode - Key property 'CreditCardCode' (Edm.Int32).
+    # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function creditCardsGet(int:Signed32 CreditCardCode, map<string|string[]> headers = {}, *CreditCardsGetQueries queries) returns CreditCard|error {
-        string resourcePath = string `/CreditCards(${getEncodedUri(CreditCardCode)})`;
+    # + return - The requested entity 
+    remote isolated function getCreditCards(int:Signed32 creditCardCode, map<string|string[]> headers = {}, *GetCreditCardsQueries queries) returns CreditCard|error {
+        string resourcePath = string `/CreditCards(${getEncodedUri(creditCardCode)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a CreditCard.
     #
-    # + CreditCardCode - Key property 'CreditCardCode' (Edm.Int32).
+    # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function creditCardsDelete(int:Signed32 CreditCardCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditCards(${getEncodedUri(CreditCardCode)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteCreditCards(int:Signed32 creditCardCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditCards(${getEncodedUri(creditCardCode)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a CreditCard (PATCH/MERGE semantics).
     #
-    # + CreditCardCode - Key property 'CreditCardCode' (Edm.Int32).
+    # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function creditCardsUpdate(int:Signed32 CreditCardCode, CreditCard payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditCards(${getEncodedUri(CreditCardCode)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateCreditCards(int:Signed32 creditCardCode, CreditCard payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditCards(${getEncodedUri(creditCardCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -888,7 +888,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function creditLinesServiceGetCreditLine(CreditLinesService_GetCreditLine_body payload, map<string|string[]> headers = {}) returns CreditLine|error {
         string resourcePath = string `/CreditLinesService_GetCreditLine`;
         http:Request request = new;
@@ -900,7 +900,7 @@ public isolated client class Client {
     # Service Layer function import 'CreditLinesService_GetValidCreditLineList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function creditLinesServiceGetValidCreditLineList(map<string|string[]> headers = {}) returns inline_response_200_7|error {
         string resourcePath = string `/CreditLinesService_GetValidCreditLineList`;
         http:Request request = new;
@@ -911,8 +911,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function creditPaymentMethodsList(CreditPaymentMethodsListHeaders headers = {}, *CreditPaymentMethodsListQueries queries) returns CreditPaymentMethods_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listCreditPaymentMethods(ListCreditPaymentMethodsHeaders headers = {}, *ListCreditPaymentMethodsQueries queries) returns CreditPaymentMethodsCollectionResponse|error {
         string resourcePath = string `/CreditPaymentMethods`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -923,8 +923,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function creditPaymentMethodsCreate(CreditPaymentMethod payload, map<string|string[]> headers = {}) returns CreditPaymentMethod|error {
+    # + return - The created entity 
+    remote isolated function createCreditPaymentMethods(CreditPaymentMethod payload, map<string|string[]> headers = {}) returns CreditPaymentMethod|error {
         string resourcePath = string `/CreditPaymentMethods`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -934,34 +934,34 @@ public isolated client class Client {
 
     # Get a single CreditPaymentMethod by key.
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function creditPaymentMethodsGet(int:Signed32 PaymentMethodCode, map<string|string[]> headers = {}, *CreditPaymentMethodsGetQueries queries) returns CreditPaymentMethod|error {
-        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(PaymentMethodCode)})`;
+    # + return - The requested entity 
+    remote isolated function getCreditPaymentMethods(int:Signed32 paymentMethodCode, map<string|string[]> headers = {}, *GetCreditPaymentMethodsQueries queries) returns CreditPaymentMethod|error {
+        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(paymentMethodCode)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a CreditPaymentMethod.
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function creditPaymentMethodsDelete(int:Signed32 PaymentMethodCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(PaymentMethodCode)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteCreditPaymentMethods(int:Signed32 paymentMethodCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(paymentMethodCode)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a CreditPaymentMethod (PATCH/MERGE semantics).
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function creditPaymentMethodsUpdate(int:Signed32 PaymentMethodCode, CreditPaymentMethod payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(PaymentMethodCode)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateCreditPaymentMethods(int:Signed32 paymentMethodCode, CreditPaymentMethod payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CreditPaymentMethods(${getEncodedUri(paymentMethodCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -972,8 +972,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function depositsList(DepositsListHeaders headers = {}, *DepositsListQueries queries) returns Deposits_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listDeposits(ListDepositsHeaders headers = {}, *ListDepositsQueries queries) returns DepositsCollectionResponse|error {
         string resourcePath = string `/Deposits`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -984,8 +984,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function depositsCreate(Deposit payload, map<string|string[]> headers = {}) returns Deposit|error {
+    # + return - The created entity 
+    remote isolated function createDeposits(Deposit payload, map<string|string[]> headers = {}) returns Deposit|error {
         string resourcePath = string `/Deposits`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -995,34 +995,34 @@ public isolated client class Client {
 
     # Get a single Deposit by key.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function depositsGet(int:Signed32 AbsEntry, map<string|string[]> headers = {}, *DepositsGetQueries queries) returns Deposit|error {
-        string resourcePath = string `/Deposits(${getEncodedUri(AbsEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getDeposits(int:Signed32 absEntry, map<string|string[]> headers = {}, *GetDepositsQueries queries) returns Deposit|error {
+        string resourcePath = string `/Deposits(${getEncodedUri(absEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Deposit.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function depositsDelete(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Deposits(${getEncodedUri(AbsEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteDeposits(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Deposits(${getEncodedUri(absEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Deposit (PATCH/MERGE semantics).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function depositsUpdate(int:Signed32 AbsEntry, Deposit payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Deposits(${getEncodedUri(AbsEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateDeposits(int:Signed32 absEntry, Deposit payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Deposits(${getEncodedUri(absEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1031,22 +1031,22 @@ public isolated client class Client {
 
     # Bound action 'CancelDeposit' on Deposits (binding type Deposit).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function depositsCancelDeposit(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Deposits(${getEncodedUri(AbsEntry)})/CancelDeposit`;
+    # + return - Success. No content returned 
+    remote isolated function depositsCancelDeposit(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Deposits(${getEncodedUri(absEntry)})/CancelDeposit`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'CancelDepositbyCurrentSystemDate' on Deposits (binding type Deposit).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function depositsCancelDepositbyCurrentSystemDate(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Deposits(${getEncodedUri(AbsEntry)})/CancelDepositbyCurrentSystemDate`;
+    # + return - Success. No content returned 
+    remote isolated function depositsCancelDepositbyCurrentSystemDate(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Deposits(${getEncodedUri(absEntry)})/CancelDepositbyCurrentSystemDate`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -1055,7 +1055,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function depositsServiceCancelCheckRow(DepositsService_CancelCheckRow_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/DepositsService_CancelCheckRow`;
         http:Request request = new;
@@ -1068,7 +1068,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function depositsServiceCancelCheckRowbyCurrentSystemDate(DepositsService_CancelCheckRowbyCurrentSystemDate_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/DepositsService_CancelCheckRowbyCurrentSystemDate`;
         http:Request request = new;
@@ -1080,7 +1080,7 @@ public isolated client class Client {
     # Service Layer function import 'DepositsService_GetDepositList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function depositsServiceGetDepositList(map<string|string[]> headers = {}) returns inline_response_200_8|error {
         string resourcePath = string `/DepositsService_GetDepositList`;
         http:Request request = new;
@@ -1091,7 +1091,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function externalReconciliationsServiceCancelReconciliation(ExternalReconciliationsService_CancelReconciliation_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalReconciliationsService_CancelReconciliation`;
         http:Request request = new;
@@ -1104,7 +1104,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function externalReconciliationsServiceGetReconciliation(ExternalReconciliationsService_GetReconciliation_body payload, map<string|string[]> headers = {}) returns ExternalReconciliation|error {
         string resourcePath = string `/ExternalReconciliationsService_GetReconciliation`;
         http:Request request = new;
@@ -1117,7 +1117,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function externalReconciliationsServiceGetReconciliationList(ExternalReconciliationsService_GetReconciliationList_body payload, map<string|string[]> headers = {}) returns inline_response_200_9|error {
         string resourcePath = string `/ExternalReconciliationsService_GetReconciliationList`;
         http:Request request = new;
@@ -1130,7 +1130,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function externalReconciliationsServiceReconcile(ExternalReconciliationsService_Reconcile_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ExternalReconciliationsService_Reconcile`;
         http:Request request = new;
@@ -1143,8 +1143,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function factoringIndicatorsList(FactoringIndicatorsListHeaders headers = {}, *FactoringIndicatorsListQueries queries) returns FactoringIndicators_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listFactoringIndicators(ListFactoringIndicatorsHeaders headers = {}, *ListFactoringIndicatorsQueries queries) returns FactoringIndicatorsCollectionResponse|error {
         string resourcePath = string `/FactoringIndicators`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1155,8 +1155,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function factoringIndicatorsCreate(FactoringIndicator payload, map<string|string[]> headers = {}) returns FactoringIndicator|error {
+    # + return - The created entity 
+    remote isolated function createFactoringIndicators(FactoringIndicator payload, map<string|string[]> headers = {}) returns FactoringIndicator|error {
         string resourcePath = string `/FactoringIndicators`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1166,34 +1166,34 @@ public isolated client class Client {
 
     # Get a single FactoringIndicator by key.
     #
-    # + IndicatorCode - Key property 'IndicatorCode' (Edm.String).
+    # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function factoringIndicatorsGet(string IndicatorCode, map<string|string[]> headers = {}, *FactoringIndicatorsGetQueries queries) returns FactoringIndicator|error {
-        string resourcePath = string `/FactoringIndicators('${getEncodedUri(IndicatorCode)}')`;
+    # + return - The requested entity 
+    remote isolated function getFactoringIndicators(string indicatorCode, map<string|string[]> headers = {}, *GetFactoringIndicatorsQueries queries) returns FactoringIndicator|error {
+        string resourcePath = string `/FactoringIndicators('${getEncodedUri(indicatorCode)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a FactoringIndicator.
     #
-    # + IndicatorCode - Key property 'IndicatorCode' (Edm.String).
+    # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function factoringIndicatorsDelete(string IndicatorCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/FactoringIndicators('${getEncodedUri(IndicatorCode)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteFactoringIndicators(string indicatorCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/FactoringIndicators('${getEncodedUri(indicatorCode)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a FactoringIndicator (PATCH/MERGE semantics).
     #
-    # + IndicatorCode - Key property 'IndicatorCode' (Edm.String).
+    # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function factoringIndicatorsUpdate(string IndicatorCode, FactoringIndicator payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/FactoringIndicators('${getEncodedUri(IndicatorCode)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateFactoringIndicators(string indicatorCode, FactoringIndicator payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/FactoringIndicators('${getEncodedUri(indicatorCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1204,8 +1204,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function govPayCodesList(GovPayCodesListHeaders headers = {}, *GovPayCodesListQueries queries) returns GovPayCodes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listGovPayCodes(ListGovPayCodesHeaders headers = {}, *ListGovPayCodesQueries queries) returns GovPayCodesCollectionResponse|error {
         string resourcePath = string `/GovPayCodes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1216,8 +1216,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function govPayCodesCreate(GovPayCode payload, map<string|string[]> headers = {}) returns GovPayCode|error {
+    # + return - The created entity 
+    remote isolated function createGovPayCodes(GovPayCode payload, map<string|string[]> headers = {}) returns GovPayCode|error {
         string resourcePath = string `/GovPayCodes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1227,34 +1227,34 @@ public isolated client class Client {
 
     # Get a single GovPayCode by key.
     #
-    # + AbsId - Key property 'AbsId' (Edm.Int32).
+    # + absId - Key property 'AbsId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function govPayCodesGet(int:Signed32 AbsId, map<string|string[]> headers = {}, *GovPayCodesGetQueries queries) returns GovPayCode|error {
-        string resourcePath = string `/GovPayCodes(${getEncodedUri(AbsId)})`;
+    # + return - The requested entity 
+    remote isolated function getGovPayCodes(int:Signed32 absId, map<string|string[]> headers = {}, *GetGovPayCodesQueries queries) returns GovPayCode|error {
+        string resourcePath = string `/GovPayCodes(${getEncodedUri(absId)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a GovPayCode.
     #
-    # + AbsId - Key property 'AbsId' (Edm.Int32).
+    # + absId - Key property 'AbsId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function govPayCodesDelete(int:Signed32 AbsId, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/GovPayCodes(${getEncodedUri(AbsId)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteGovPayCodes(int:Signed32 absId, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/GovPayCodes(${getEncodedUri(absId)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a GovPayCode (PATCH/MERGE semantics).
     #
-    # + AbsId - Key property 'AbsId' (Edm.Int32).
+    # + absId - Key property 'AbsId' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function govPayCodesUpdate(int:Signed32 AbsId, GovPayCode payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/GovPayCodes(${getEncodedUri(AbsId)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateGovPayCodes(int:Signed32 absId, GovPayCode payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/GovPayCodes(${getEncodedUri(absId)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1264,7 +1264,7 @@ public isolated client class Client {
     # Service Layer function import 'GovPayCodesService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function govPayCodesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_10|error {
         string resourcePath = string `/GovPayCodesService_GetList`;
         http:Request request = new;
@@ -1275,8 +1275,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function houseBankAccountsList(HouseBankAccountsListHeaders headers = {}, *HouseBankAccountsListQueries queries) returns HouseBankAccounts_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listHouseBankAccounts(ListHouseBankAccountsHeaders headers = {}, *ListHouseBankAccountsQueries queries) returns HouseBankAccountsCollectionResponse|error {
         string resourcePath = string `/HouseBankAccounts`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1287,8 +1287,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function houseBankAccountsCreate(HouseBankAccount payload, map<string|string[]> headers = {}) returns HouseBankAccount|error {
+    # + return - The created entity 
+    remote isolated function createHouseBankAccounts(HouseBankAccount payload, map<string|string[]> headers = {}) returns HouseBankAccount|error {
         string resourcePath = string `/HouseBankAccounts`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1298,34 +1298,34 @@ public isolated client class Client {
 
     # Get a single HouseBankAccount by key.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function houseBankAccountsGet(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}, *HouseBankAccountsGetQueries queries) returns HouseBankAccount|error {
-        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getHouseBankAccounts(int:Signed32 absoluteEntry, map<string|string[]> headers = {}, *GetHouseBankAccountsQueries queries) returns HouseBankAccount|error {
+        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(absoluteEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a HouseBankAccount.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function houseBankAccountsDelete(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteHouseBankAccounts(int:Signed32 absoluteEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(absoluteEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a HouseBankAccount (PATCH/MERGE semantics).
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function houseBankAccountsUpdate(int:Signed32 AbsoluteEntry, HouseBankAccount payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateHouseBankAccounts(int:Signed32 absoluteEntry, HouseBankAccount payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/HouseBankAccounts(${getEncodedUri(absoluteEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1336,8 +1336,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function incomingPaymentsList(IncomingPaymentsListHeaders headers = {}, *IncomingPaymentsListQueries queries) returns IncomingPayments_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listIncomingPayments(ListIncomingPaymentsHeaders headers = {}, *ListIncomingPaymentsQueries queries) returns IncomingPaymentsCollectionResponse|error {
         string resourcePath = string `/IncomingPayments`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1348,8 +1348,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function incomingPaymentsCreate(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
+    # + return - The created entity 
+    remote isolated function createIncomingPayments(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
         string resourcePath = string `/IncomingPayments`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1359,34 +1359,34 @@ public isolated client class Client {
 
     # Get a single Payment by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function incomingPaymentsGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *IncomingPaymentsGetQueries queries) returns Payment|error {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getIncomingPayments(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetIncomingPaymentsQueries queries) returns Payment|error {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Payment.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function incomingPaymentsDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteIncomingPayments(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Payment (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function incomingPaymentsUpdate(int:Signed32 DocEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateIncomingPayments(int:Signed32 docEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1395,55 +1395,55 @@ public isolated client class Client {
 
     # Bound action 'Cancel' on IncomingPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function incomingPaymentsCancel(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})/Cancel`;
+    # + return - Success. No content returned 
+    remote isolated function incomingPaymentsCancel(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})/Cancel`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'CancelbyCurrentSystemDate' on IncomingPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function incomingPaymentsCancelbyCurrentSystemDate(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})/CancelbyCurrentSystemDate`;
+    # + return - Success. No content returned 
+    remote isolated function incomingPaymentsCancelbyCurrentSystemDate(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})/CancelbyCurrentSystemDate`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'GetApprovalTemplates' on IncomingPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
-    remote isolated function incomingPaymentsGetApprovalTemplates(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns Payment|error {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})/GetApprovalTemplates`;
+    # + return - Function result 
+    remote isolated function incomingPaymentsGetApprovalTemplates(int:Signed32 docEntry, map<string|string[]> headers = {}) returns Payment|error {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})/GetApprovalTemplates`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'RequestApproveCancellation' on IncomingPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function incomingPaymentsRequestApproveCancellation(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})/RequestApproveCancellation`;
+    # + return - Success. No content returned 
+    remote isolated function incomingPaymentsRequestApproveCancellation(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})/RequestApproveCancellation`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'SaveDraftToDocument' on IncomingPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function incomingPaymentsSaveDraftToDocument(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/IncomingPayments(${getEncodedUri(DocEntry)})/SaveDraftToDocument`;
+    # + return - Success. No content returned 
+    remote isolated function incomingPaymentsSaveDraftToDocument(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/IncomingPayments(${getEncodedUri(docEntry)})/SaveDraftToDocument`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -1451,7 +1451,7 @@ public isolated client class Client {
     # Service Layer function import 'IncomingPaymentsService_HandleApprovalRequest'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function incomingPaymentsServiceHandleApprovalRequest(map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/IncomingPaymentsService_HandleApprovalRequest`;
         http:Request request = new;
@@ -1462,8 +1462,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function internalReconciliationsList(InternalReconciliationsListHeaders headers = {}, *InternalReconciliationsListQueries queries) returns InternalReconciliations_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listInternalReconciliations(ListInternalReconciliationsHeaders headers = {}, *ListInternalReconciliationsQueries queries) returns InternalReconciliationsCollectionResponse|error {
         string resourcePath = string `/InternalReconciliations`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1474,8 +1474,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function internalReconciliationsCreate(InternalReconciliation payload, map<string|string[]> headers = {}) returns InternalReconciliation|error {
+    # + return - The created entity 
+    remote isolated function createInternalReconciliations(InternalReconciliation payload, map<string|string[]> headers = {}) returns InternalReconciliation|error {
         string resourcePath = string `/InternalReconciliations`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1485,34 +1485,34 @@ public isolated client class Client {
 
     # Get a single InternalReconciliation by key.
     #
-    # + ReconNum - Key property 'ReconNum' (Edm.Int32).
+    # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function internalReconciliationsGet(int:Signed32 ReconNum, map<string|string[]> headers = {}, *InternalReconciliationsGetQueries queries) returns InternalReconciliation|error {
-        string resourcePath = string `/InternalReconciliations(${getEncodedUri(ReconNum)})`;
+    # + return - The requested entity 
+    remote isolated function getInternalReconciliations(int:Signed32 reconNum, map<string|string[]> headers = {}, *GetInternalReconciliationsQueries queries) returns InternalReconciliation|error {
+        string resourcePath = string `/InternalReconciliations(${getEncodedUri(reconNum)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a InternalReconciliation.
     #
-    # + ReconNum - Key property 'ReconNum' (Edm.Int32).
+    # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function internalReconciliationsDelete(int:Signed32 ReconNum, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/InternalReconciliations(${getEncodedUri(ReconNum)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteInternalReconciliations(int:Signed32 reconNum, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/InternalReconciliations(${getEncodedUri(reconNum)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a InternalReconciliation (PATCH/MERGE semantics).
     #
-    # + ReconNum - Key property 'ReconNum' (Edm.Int32).
+    # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function internalReconciliationsUpdate(int:Signed32 ReconNum, InternalReconciliation payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/InternalReconciliations(${getEncodedUri(ReconNum)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateInternalReconciliations(int:Signed32 reconNum, InternalReconciliation payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/InternalReconciliations(${getEncodedUri(reconNum)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1521,11 +1521,11 @@ public isolated client class Client {
 
     # Bound action 'Cancel' on InternalReconciliations (binding type InternalReconciliation).
     #
-    # + ReconNum - Key property 'ReconNum' (Edm.Int32).
+    # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function internalReconciliationsCancel(int:Signed32 ReconNum, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/InternalReconciliations(${getEncodedUri(ReconNum)})/Cancel`;
+    # + return - Success. No content returned 
+    remote isolated function internalReconciliationsCancel(int:Signed32 reconNum, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/InternalReconciliations(${getEncodedUri(reconNum)})/Cancel`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -1534,7 +1534,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function internalReconciliationsServiceGetOpenTransactions(InternalReconciliationsService_GetOpenTransactions_body payload, map<string|string[]> headers = {}) returns InternalReconciliationOpenTrans|error {
         string resourcePath = string `/InternalReconciliationsService_GetOpenTransactions`;
         http:Request request = new;
@@ -1547,7 +1547,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function internalReconciliationsServiceRequestApproveCancellation(InternalReconciliationsService_RequestApproveCancellation_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/InternalReconciliationsService_RequestApproveCancellation`;
         http:Request request = new;
@@ -1560,8 +1560,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function paymentBlocksList(PaymentBlocksListHeaders headers = {}, *PaymentBlocksListQueries queries) returns PaymentBlocks_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listPaymentBlocks(ListPaymentBlocksHeaders headers = {}, *ListPaymentBlocksQueries queries) returns PaymentBlocksCollectionResponse|error {
         string resourcePath = string `/PaymentBlocks`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1572,8 +1572,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function paymentBlocksCreate(PaymentBlock payload, map<string|string[]> headers = {}) returns PaymentBlock|error {
+    # + return - The created entity 
+    remote isolated function createPaymentBlocks(PaymentBlock payload, map<string|string[]> headers = {}) returns PaymentBlock|error {
         string resourcePath = string `/PaymentBlocks`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1583,34 +1583,34 @@ public isolated client class Client {
 
     # Get a single PaymentBlock by key.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function paymentBlocksGet(int:Signed32 AbsEntry, map<string|string[]> headers = {}, *PaymentBlocksGetQueries queries) returns PaymentBlock|error {
-        string resourcePath = string `/PaymentBlocks(${getEncodedUri(AbsEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getPaymentBlocks(int:Signed32 absEntry, map<string|string[]> headers = {}, *GetPaymentBlocksQueries queries) returns PaymentBlock|error {
+        string resourcePath = string `/PaymentBlocks(${getEncodedUri(absEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PaymentBlock.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function paymentBlocksDelete(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentBlocks(${getEncodedUri(AbsEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deletePaymentBlocks(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentBlocks(${getEncodedUri(absEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PaymentBlock (PATCH/MERGE semantics).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function paymentBlocksUpdate(int:Signed32 AbsEntry, PaymentBlock payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentBlocks(${getEncodedUri(AbsEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updatePaymentBlocks(int:Signed32 absEntry, PaymentBlock payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentBlocks(${getEncodedUri(absEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1620,7 +1620,7 @@ public isolated client class Client {
     # Service Layer function import 'PaymentBlocksService_GetPaymentBlockList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function paymentBlocksServiceGetPaymentBlockList(map<string|string[]> headers = {}) returns inline_response_200_11|error {
         string resourcePath = string `/PaymentBlocksService_GetPaymentBlockList`;
         http:Request request = new;
@@ -1631,7 +1631,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function paymentCalculationServiceGetPaymentAmount(PaymentCalculationService_GetPaymentAmount_body payload, map<string|string[]> headers = {}) returns inline_response_200_12|error {
         string resourcePath = string `/PaymentCalculationService_GetPaymentAmount`;
         http:Request request = new;
@@ -1644,8 +1644,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function paymentDraftsList(PaymentDraftsListHeaders headers = {}, *PaymentDraftsListQueries queries) returns PaymentDrafts_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listPaymentDrafts(ListPaymentDraftsHeaders headers = {}, *ListPaymentDraftsQueries queries) returns PaymentDraftsCollectionResponse|error {
         string resourcePath = string `/PaymentDrafts`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1656,8 +1656,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function paymentDraftsCreate(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
+    # + return - The created entity 
+    remote isolated function createPaymentDrafts(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
         string resourcePath = string `/PaymentDrafts`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1667,34 +1667,34 @@ public isolated client class Client {
 
     # Get a single Payment by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function paymentDraftsGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *PaymentDraftsGetQueries queries) returns Payment|error {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getPaymentDrafts(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetPaymentDraftsQueries queries) returns Payment|error {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Payment.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function paymentDraftsDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deletePaymentDrafts(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Payment (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function paymentDraftsUpdate(int:Signed32 DocEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updatePaymentDrafts(int:Signed32 docEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1703,55 +1703,55 @@ public isolated client class Client {
 
     # Bound action 'Cancel' on PaymentDrafts (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function paymentDraftsCancel(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})/Cancel`;
+    # + return - Success. No content returned 
+    remote isolated function paymentDraftsCancel(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})/Cancel`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'CancelbyCurrentSystemDate' on PaymentDrafts (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function paymentDraftsCancelbyCurrentSystemDate(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})/CancelbyCurrentSystemDate`;
+    # + return - Success. No content returned 
+    remote isolated function paymentDraftsCancelbyCurrentSystemDate(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})/CancelbyCurrentSystemDate`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'GetApprovalTemplates' on PaymentDrafts (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
-    remote isolated function paymentDraftsGetApprovalTemplates(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns Payment|error {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})/GetApprovalTemplates`;
+    # + return - Function result 
+    remote isolated function paymentDraftsGetApprovalTemplates(int:Signed32 docEntry, map<string|string[]> headers = {}) returns Payment|error {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})/GetApprovalTemplates`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'RequestApproveCancellation' on PaymentDrafts (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function paymentDraftsRequestApproveCancellation(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})/RequestApproveCancellation`;
+    # + return - Success. No content returned 
+    remote isolated function paymentDraftsRequestApproveCancellation(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})/RequestApproveCancellation`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'SaveDraftToDocument' on PaymentDrafts (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function paymentDraftsSaveDraftToDocument(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentDrafts(${getEncodedUri(DocEntry)})/SaveDraftToDocument`;
+    # + return - Success. No content returned 
+    remote isolated function paymentDraftsSaveDraftToDocument(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentDrafts(${getEncodedUri(docEntry)})/SaveDraftToDocument`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -1759,7 +1759,7 @@ public isolated client class Client {
     # Service Layer function import 'PaymentDraftsService_HandleApprovalRequest'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function paymentDraftsServiceHandleApprovalRequest(map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/PaymentDraftsService_HandleApprovalRequest`;
         http:Request request = new;
@@ -1769,7 +1769,7 @@ public isolated client class Client {
     # Service Layer function import 'PaymentReasonCodeService_GetPaymentReasonCodeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function paymentReasonCodeServiceGetPaymentReasonCodeList(map<string|string[]> headers = {}) returns inline_response_200_13|error {
         string resourcePath = string `/PaymentReasonCodeService_GetPaymentReasonCodeList`;
         http:Request request = new;
@@ -1780,8 +1780,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function paymentReasonCodesList(PaymentReasonCodesListHeaders headers = {}, *PaymentReasonCodesListQueries queries) returns PaymentReasonCodes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listPaymentReasonCodes(ListPaymentReasonCodesHeaders headers = {}, *ListPaymentReasonCodesQueries queries) returns PaymentReasonCodesCollectionResponse|error {
         string resourcePath = string `/PaymentReasonCodes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1792,8 +1792,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function paymentReasonCodesCreate(PaymentReasonCode payload, map<string|string[]> headers = {}) returns PaymentReasonCode|error {
+    # + return - The created entity 
+    remote isolated function createPaymentReasonCodes(PaymentReasonCode payload, map<string|string[]> headers = {}) returns PaymentReasonCode|error {
         string resourcePath = string `/PaymentReasonCodes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1803,34 +1803,34 @@ public isolated client class Client {
 
     # Get a single PaymentReasonCode by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function paymentReasonCodesGet(string Code, map<string|string[]> headers = {}, *PaymentReasonCodesGetQueries queries) returns PaymentReasonCode|error {
-        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getPaymentReasonCodes(string code, map<string|string[]> headers = {}, *GetPaymentReasonCodesQueries queries) returns PaymentReasonCode|error {
+        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PaymentReasonCode.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function paymentReasonCodesDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deletePaymentReasonCodes(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PaymentReasonCode (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function paymentReasonCodesUpdate(string Code, PaymentReasonCode payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updatePaymentReasonCodes(string code, PaymentReasonCode payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentReasonCodes('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1841,8 +1841,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function paymentRunExportList(PaymentRunExportListHeaders headers = {}, *PaymentRunExportListQueries queries) returns PaymentRunExport_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listPaymentRunExport(ListPaymentRunExportHeaders headers = {}, *ListPaymentRunExportQueries queries) returns PaymentRunExportCollectionResponse|error {
         string resourcePath = string `/PaymentRunExport`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1853,8 +1853,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function paymentRunExportCreate(PaymentRunExport payload, map<string|string[]> headers = {}) returns PaymentRunExport|error {
+    # + return - The created entity 
+    remote isolated function createPaymentRunExport(PaymentRunExport payload, map<string|string[]> headers = {}) returns PaymentRunExport|error {
         string resourcePath = string `/PaymentRunExport`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1864,34 +1864,34 @@ public isolated client class Client {
 
     # Get a single PaymentRunExport by key.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function paymentRunExportGet(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}, *PaymentRunExportGetQueries queries) returns PaymentRunExport|error {
-        string resourcePath = string `/PaymentRunExport(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getPaymentRunExport(int:Signed32 absoluteEntry, map<string|string[]> headers = {}, *GetPaymentRunExportQueries queries) returns PaymentRunExport|error {
+        string resourcePath = string `/PaymentRunExport(${getEncodedUri(absoluteEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PaymentRunExport.
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function paymentRunExportDelete(int:Signed32 AbsoluteEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentRunExport(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deletePaymentRunExport(int:Signed32 absoluteEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentRunExport(${getEncodedUri(absoluteEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PaymentRunExport (PATCH/MERGE semantics).
     #
-    # + AbsoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32).
+    # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function paymentRunExportUpdate(int:Signed32 AbsoluteEntry, PaymentRunExport payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentRunExport(${getEncodedUri(AbsoluteEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updatePaymentRunExport(int:Signed32 absoluteEntry, PaymentRunExport payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentRunExport(${getEncodedUri(absoluteEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1901,7 +1901,7 @@ public isolated client class Client {
     # Service Layer function import 'PaymentWizardService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function paymentWizardServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_14|error {
         string resourcePath = string `/PaymentWizardService_GetList`;
         http:Request request = new;
@@ -1912,8 +1912,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function paymentWizardsList(PaymentWizardsListHeaders headers = {}, *PaymentWizardsListQueries queries) returns PaymentWizards_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listPaymentWizards(ListPaymentWizardsHeaders headers = {}, *ListPaymentWizardsQueries queries) returns PaymentWizardsCollectionResponse|error {
         string resourcePath = string `/PaymentWizards`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1924,8 +1924,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function paymentWizardsCreate(PaymentWizard payload, map<string|string[]> headers = {}) returns PaymentWizard|error {
+    # + return - The created entity 
+    remote isolated function createPaymentWizards(PaymentWizard payload, map<string|string[]> headers = {}) returns PaymentWizard|error {
         string resourcePath = string `/PaymentWizards`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1935,34 +1935,34 @@ public isolated client class Client {
 
     # Get a single PaymentWizard by key.
     #
-    # + IdNumber - Key property 'IdNumber' (Edm.Int32).
+    # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function paymentWizardsGet(int:Signed32 IdNumber, map<string|string[]> headers = {}, *PaymentWizardsGetQueries queries) returns PaymentWizard|error {
-        string resourcePath = string `/PaymentWizards(${getEncodedUri(IdNumber)})`;
+    # + return - The requested entity 
+    remote isolated function getPaymentWizards(int:Signed32 idNumber, map<string|string[]> headers = {}, *GetPaymentWizardsQueries queries) returns PaymentWizard|error {
+        string resourcePath = string `/PaymentWizards(${getEncodedUri(idNumber)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PaymentWizard.
     #
-    # + IdNumber - Key property 'IdNumber' (Edm.Int32).
+    # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function paymentWizardsDelete(int:Signed32 IdNumber, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentWizards(${getEncodedUri(IdNumber)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deletePaymentWizards(int:Signed32 idNumber, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentWizards(${getEncodedUri(idNumber)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PaymentWizard (PATCH/MERGE semantics).
     #
-    # + IdNumber - Key property 'IdNumber' (Edm.Int32).
+    # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function paymentWizardsUpdate(int:Signed32 IdNumber, PaymentWizard payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/PaymentWizards(${getEncodedUri(IdNumber)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updatePaymentWizards(int:Signed32 idNumber, PaymentWizard payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/PaymentWizards(${getEncodedUri(idNumber)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1973,8 +1973,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function vendorPaymentsList(VendorPaymentsListHeaders headers = {}, *VendorPaymentsListQueries queries) returns VendorPayments_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listVendorPayments(ListVendorPaymentsHeaders headers = {}, *ListVendorPaymentsQueries queries) returns VendorPaymentsCollectionResponse|error {
         string resourcePath = string `/VendorPayments`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -1985,8 +1985,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function vendorPaymentsCreate(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
+    # + return - The created entity 
+    remote isolated function createVendorPayments(Payment payload, map<string|string[]> headers = {}) returns Payment|error {
         string resourcePath = string `/VendorPayments`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -1996,34 +1996,34 @@ public isolated client class Client {
 
     # Get a single Payment by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function vendorPaymentsGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *VendorPaymentsGetQueries queries) returns Payment|error {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getVendorPayments(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetVendorPaymentsQueries queries) returns Payment|error {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Payment.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function vendorPaymentsDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteVendorPayments(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Payment (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function vendorPaymentsUpdate(int:Signed32 DocEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateVendorPayments(int:Signed32 docEntry, Payment payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -2032,55 +2032,55 @@ public isolated client class Client {
 
     # Bound action 'Cancel' on VendorPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function vendorPaymentsCancel(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})/Cancel`;
+    # + return - Success. No content returned 
+    remote isolated function vendorPaymentsCancel(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})/Cancel`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'CancelbyCurrentSystemDate' on VendorPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function vendorPaymentsCancelbyCurrentSystemDate(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})/CancelbyCurrentSystemDate`;
+    # + return - Success. No content returned 
+    remote isolated function vendorPaymentsCancelbyCurrentSystemDate(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})/CancelbyCurrentSystemDate`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'GetApprovalTemplates' on VendorPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
-    remote isolated function vendorPaymentsGetApprovalTemplates(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns Payment|error {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})/GetApprovalTemplates`;
+    # + return - Function result 
+    remote isolated function vendorPaymentsGetApprovalTemplates(int:Signed32 docEntry, map<string|string[]> headers = {}) returns Payment|error {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})/GetApprovalTemplates`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'RequestApproveCancellation' on VendorPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function vendorPaymentsRequestApproveCancellation(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})/RequestApproveCancellation`;
+    # + return - Success. No content returned 
+    remote isolated function vendorPaymentsRequestApproveCancellation(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})/RequestApproveCancellation`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'SaveDraftToDocument' on VendorPayments (binding type Payment).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function vendorPaymentsSaveDraftToDocument(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/VendorPayments(${getEncodedUri(DocEntry)})/SaveDraftToDocument`;
+    # + return - Success. No content returned 
+    remote isolated function vendorPaymentsSaveDraftToDocument(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/VendorPayments(${getEncodedUri(docEntry)})/SaveDraftToDocument`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -2088,7 +2088,7 @@ public isolated client class Client {
     # Service Layer function import 'VendorPaymentsService_HandleApprovalRequest'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function vendorPaymentsServiceHandleApprovalRequest(map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/VendorPaymentsService_HandleApprovalRequest`;
         http:Request request = new;
@@ -2099,8 +2099,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function wizardPaymentMethodsList(WizardPaymentMethodsListHeaders headers = {}, *WizardPaymentMethodsListQueries queries) returns WizardPaymentMethods_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listWizardPaymentMethods(ListWizardPaymentMethodsHeaders headers = {}, *ListWizardPaymentMethodsQueries queries) returns WizardPaymentMethodsCollectionResponse|error {
         string resourcePath = string `/WizardPaymentMethods`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -2111,8 +2111,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function wizardPaymentMethodsCreate(WizardPaymentMethod payload, map<string|string[]> headers = {}) returns WizardPaymentMethod|error {
+    # + return - The created entity 
+    remote isolated function createWizardPaymentMethods(WizardPaymentMethod payload, map<string|string[]> headers = {}) returns WizardPaymentMethod|error {
         string resourcePath = string `/WizardPaymentMethods`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -2122,34 +2122,34 @@ public isolated client class Client {
 
     # Get a single WizardPaymentMethod by key.
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.String).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function wizardPaymentMethodsGet(string PaymentMethodCode, map<string|string[]> headers = {}, *WizardPaymentMethodsGetQueries queries) returns WizardPaymentMethod|error {
-        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(PaymentMethodCode)}')`;
+    # + return - The requested entity 
+    remote isolated function getWizardPaymentMethods(string paymentMethodCode, map<string|string[]> headers = {}, *GetWizardPaymentMethodsQueries queries) returns WizardPaymentMethod|error {
+        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(paymentMethodCode)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a WizardPaymentMethod.
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.String).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function wizardPaymentMethodsDelete(string PaymentMethodCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(PaymentMethodCode)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteWizardPaymentMethods(string paymentMethodCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(paymentMethodCode)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a WizardPaymentMethod (PATCH/MERGE semantics).
     #
-    # + PaymentMethodCode - Key property 'PaymentMethodCode' (Edm.String).
+    # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function wizardPaymentMethodsUpdate(string PaymentMethodCode, WizardPaymentMethod payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(PaymentMethodCode)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateWizardPaymentMethods(string paymentMethodCode, WizardPaymentMethod payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/WizardPaymentMethods('${getEncodedUri(paymentMethodCode)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");

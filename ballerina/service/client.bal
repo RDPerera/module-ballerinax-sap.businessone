@@ -43,8 +43,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function contractTemplatesList(ContractTemplatesListHeaders headers = {}, *ContractTemplatesListQueries queries) returns ContractTemplates_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listContractTemplates(ListContractTemplatesHeaders headers = {}, *ListContractTemplatesQueries queries) returns ContractTemplatesCollectionResponse|error {
         string resourcePath = string `/ContractTemplates`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -55,8 +55,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function contractTemplatesCreate(ContractTemplate payload, map<string|string[]> headers = {}) returns ContractTemplate|error {
+    # + return - The created entity 
+    remote isolated function createContractTemplates(ContractTemplate payload, map<string|string[]> headers = {}) returns ContractTemplate|error {
         string resourcePath = string `/ContractTemplates`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -66,34 +66,34 @@ public isolated client class Client {
 
     # Get a single ContractTemplate by key.
     #
-    # + TemplateName - Key property 'TemplateName' (Edm.String).
+    # + templateName - Key property 'TemplateName' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function contractTemplatesGet(string TemplateName, map<string|string[]> headers = {}, *ContractTemplatesGetQueries queries) returns ContractTemplate|error {
-        string resourcePath = string `/ContractTemplates('${getEncodedUri(TemplateName)}')`;
+    # + return - The requested entity 
+    remote isolated function getContractTemplates(string templateName, map<string|string[]> headers = {}, *GetContractTemplatesQueries queries) returns ContractTemplate|error {
+        string resourcePath = string `/ContractTemplates('${getEncodedUri(templateName)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ContractTemplate.
     #
-    # + TemplateName - Key property 'TemplateName' (Edm.String).
+    # + templateName - Key property 'TemplateName' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function contractTemplatesDelete(string TemplateName, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ContractTemplates('${getEncodedUri(TemplateName)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteContractTemplates(string templateName, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ContractTemplates('${getEncodedUri(templateName)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ContractTemplate (PATCH/MERGE semantics).
     #
-    # + TemplateName - Key property 'TemplateName' (Edm.String).
+    # + templateName - Key property 'TemplateName' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function contractTemplatesUpdate(string TemplateName, ContractTemplate payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ContractTemplates('${getEncodedUri(TemplateName)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateContractTemplates(string templateName, ContractTemplate payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ContractTemplates('${getEncodedUri(templateName)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -104,8 +104,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function customerEquipmentCardsList(CustomerEquipmentCardsListHeaders headers = {}, *CustomerEquipmentCardsListQueries queries) returns CustomerEquipmentCards_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listCustomerEquipmentCards(ListCustomerEquipmentCardsHeaders headers = {}, *ListCustomerEquipmentCardsQueries queries) returns CustomerEquipmentCardsCollectionResponse|error {
         string resourcePath = string `/CustomerEquipmentCards`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -116,8 +116,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function customerEquipmentCardsCreate(CustomerEquipmentCard payload, map<string|string[]> headers = {}) returns CustomerEquipmentCard|error {
+    # + return - The created entity 
+    remote isolated function createCustomerEquipmentCards(CustomerEquipmentCard payload, map<string|string[]> headers = {}) returns CustomerEquipmentCard|error {
         string resourcePath = string `/CustomerEquipmentCards`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -127,34 +127,34 @@ public isolated client class Client {
 
     # Get a single CustomerEquipmentCard by key.
     #
-    # + EquipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32).
+    # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function customerEquipmentCardsGet(int:Signed32 EquipmentCardNum, map<string|string[]> headers = {}, *CustomerEquipmentCardsGetQueries queries) returns CustomerEquipmentCard|error {
-        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(EquipmentCardNum)})`;
+    # + return - The requested entity 
+    remote isolated function getCustomerEquipmentCards(int:Signed32 equipmentCardNum, map<string|string[]> headers = {}, *GetCustomerEquipmentCardsQueries queries) returns CustomerEquipmentCard|error {
+        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(equipmentCardNum)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a CustomerEquipmentCard.
     #
-    # + EquipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32).
+    # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function customerEquipmentCardsDelete(int:Signed32 EquipmentCardNum, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(EquipmentCardNum)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteCustomerEquipmentCards(int:Signed32 equipmentCardNum, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(equipmentCardNum)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).
     #
-    # + EquipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32).
+    # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function customerEquipmentCardsUpdate(int:Signed32 EquipmentCardNum, CustomerEquipmentCard payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(EquipmentCardNum)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateCustomerEquipmentCards(int:Signed32 equipmentCardNum, CustomerEquipmentCard payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/CustomerEquipmentCards(${getEncodedUri(equipmentCardNum)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -165,8 +165,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function knowledgeBaseSolutionsList(KnowledgeBaseSolutionsListHeaders headers = {}, *KnowledgeBaseSolutionsListQueries queries) returns KnowledgeBaseSolutions_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listKnowledgeBaseSolutions(ListKnowledgeBaseSolutionsHeaders headers = {}, *ListKnowledgeBaseSolutionsQueries queries) returns KnowledgeBaseSolutionsCollectionResponse|error {
         string resourcePath = string `/KnowledgeBaseSolutions`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -177,8 +177,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function knowledgeBaseSolutionsCreate(KnowledgeBaseSolution payload, map<string|string[]> headers = {}) returns KnowledgeBaseSolution|error {
+    # + return - The created entity 
+    remote isolated function createKnowledgeBaseSolutions(KnowledgeBaseSolution payload, map<string|string[]> headers = {}) returns KnowledgeBaseSolution|error {
         string resourcePath = string `/KnowledgeBaseSolutions`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -188,34 +188,34 @@ public isolated client class Client {
 
     # Get a single KnowledgeBaseSolution by key.
     #
-    # + SolutionCode - Key property 'SolutionCode' (Edm.Int32).
+    # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function knowledgeBaseSolutionsGet(int:Signed32 SolutionCode, map<string|string[]> headers = {}, *KnowledgeBaseSolutionsGetQueries queries) returns KnowledgeBaseSolution|error {
-        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(SolutionCode)})`;
+    # + return - The requested entity 
+    remote isolated function getKnowledgeBaseSolutions(int:Signed32 solutionCode, map<string|string[]> headers = {}, *GetKnowledgeBaseSolutionsQueries queries) returns KnowledgeBaseSolution|error {
+        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(solutionCode)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a KnowledgeBaseSolution.
     #
-    # + SolutionCode - Key property 'SolutionCode' (Edm.Int32).
+    # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function knowledgeBaseSolutionsDelete(int:Signed32 SolutionCode, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(SolutionCode)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteKnowledgeBaseSolutions(int:Signed32 solutionCode, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(solutionCode)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).
     #
-    # + SolutionCode - Key property 'SolutionCode' (Edm.Int32).
+    # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function knowledgeBaseSolutionsUpdate(int:Signed32 SolutionCode, KnowledgeBaseSolution payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(SolutionCode)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateKnowledgeBaseSolutions(int:Signed32 solutionCode, KnowledgeBaseSolution payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/KnowledgeBaseSolutions(${getEncodedUri(solutionCode)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -226,8 +226,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function queueList(QueueListHeaders headers = {}, *QueueListQueries queries) returns Queue_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listQueue(ListQueueHeaders headers = {}, *ListQueueQueries queries) returns QueueCollectionResponse|error {
         string resourcePath = string `/Queue`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -238,8 +238,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function queueCreate(Queue payload, map<string|string[]> headers = {}) returns Queue|error {
+    # + return - The created entity 
+    remote isolated function createQueue(Queue payload, map<string|string[]> headers = {}) returns Queue|error {
         string resourcePath = string `/Queue`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -249,34 +249,34 @@ public isolated client class Client {
 
     # Get a single Queue by key.
     #
-    # + QueueID - Key property 'QueueID' (Edm.String).
+    # + queueID - Key property 'QueueID' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function queueGet(string QueueID, map<string|string[]> headers = {}, *QueueGetQueries queries) returns Queue|error {
-        string resourcePath = string `/Queue('${getEncodedUri(QueueID)}')`;
+    # + return - The requested entity 
+    remote isolated function getQueue(string queueID, map<string|string[]> headers = {}, *GetQueueQueries queries) returns Queue|error {
+        string resourcePath = string `/Queue('${getEncodedUri(queueID)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Queue.
     #
-    # + QueueID - Key property 'QueueID' (Edm.String).
+    # + queueID - Key property 'QueueID' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function queueDelete(string QueueID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Queue('${getEncodedUri(QueueID)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteQueue(string queueID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Queue('${getEncodedUri(queueID)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Queue (PATCH/MERGE semantics).
     #
-    # + QueueID - Key property 'QueueID' (Edm.String).
+    # + queueID - Key property 'QueueID' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function queueUpdate(string QueueID, Queue payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Queue('${getEncodedUri(QueueID)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateQueue(string queueID, Queue payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Queue('${getEncodedUri(queueID)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -287,8 +287,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallOriginsList(ServiceCallOriginsListHeaders headers = {}, *ServiceCallOriginsListQueries queries) returns ServiceCallOrigins_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallOrigins(ListServiceCallOriginsHeaders headers = {}, *ListServiceCallOriginsQueries queries) returns ServiceCallOriginsCollectionResponse|error {
         string resourcePath = string `/ServiceCallOrigins`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -299,8 +299,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallOriginsCreate(ServiceCallOrigin payload, map<string|string[]> headers = {}) returns ServiceCallOrigin|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallOrigins(ServiceCallOrigin payload, map<string|string[]> headers = {}) returns ServiceCallOrigin|error {
         string resourcePath = string `/ServiceCallOrigins`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -310,34 +310,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallOrigin by key.
     #
-    # + OriginID - Key property 'OriginID' (Edm.Int32).
+    # + originID - Key property 'OriginID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallOriginsGet(int:Signed32 OriginID, map<string|string[]> headers = {}, *ServiceCallOriginsGetQueries queries) returns ServiceCallOrigin|error {
-        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(OriginID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallOrigins(int:Signed32 originID, map<string|string[]> headers = {}, *GetServiceCallOriginsQueries queries) returns ServiceCallOrigin|error {
+        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(originID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallOrigin.
     #
-    # + OriginID - Key property 'OriginID' (Edm.Int32).
+    # + originID - Key property 'OriginID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallOriginsDelete(int:Signed32 OriginID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(OriginID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallOrigins(int:Signed32 originID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(originID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallOrigin (PATCH/MERGE semantics).
     #
-    # + OriginID - Key property 'OriginID' (Edm.Int32).
+    # + originID - Key property 'OriginID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallOriginsUpdate(int:Signed32 OriginID, ServiceCallOrigin payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(OriginID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallOrigins(int:Signed32 originID, ServiceCallOrigin payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallOrigins(${getEncodedUri(originID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -347,7 +347,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallOriginsService_GetServiceCallOriginList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallOriginsServiceGetServiceCallOriginList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/ServiceCallOriginsService_GetServiceCallOriginList`;
         http:Request request = new;
@@ -358,8 +358,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallProblemSubTypesList(ServiceCallProblemSubTypesListHeaders headers = {}, *ServiceCallProblemSubTypesListQueries queries) returns ServiceCallProblemSubTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallProblemSubTypes(ListServiceCallProblemSubTypesHeaders headers = {}, *ListServiceCallProblemSubTypesQueries queries) returns ServiceCallProblemSubTypesCollectionResponse|error {
         string resourcePath = string `/ServiceCallProblemSubTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -370,8 +370,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallProblemSubTypesCreate(ServiceCallProblemSubType payload, map<string|string[]> headers = {}) returns ServiceCallProblemSubType|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallProblemSubTypes(ServiceCallProblemSubType payload, map<string|string[]> headers = {}) returns ServiceCallProblemSubType|error {
         string resourcePath = string `/ServiceCallProblemSubTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -381,34 +381,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallProblemSubType by key.
     #
-    # + ProblemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32).
+    # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallProblemSubTypesGet(int:Signed32 ProblemSubTypeID, map<string|string[]> headers = {}, *ServiceCallProblemSubTypesGetQueries queries) returns ServiceCallProblemSubType|error {
-        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(ProblemSubTypeID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallProblemSubTypes(int:Signed32 problemSubTypeID, map<string|string[]> headers = {}, *GetServiceCallProblemSubTypesQueries queries) returns ServiceCallProblemSubType|error {
+        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(problemSubTypeID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallProblemSubType.
     #
-    # + ProblemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32).
+    # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallProblemSubTypesDelete(int:Signed32 ProblemSubTypeID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(ProblemSubTypeID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallProblemSubTypes(int:Signed32 problemSubTypeID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(problemSubTypeID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).
     #
-    # + ProblemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32).
+    # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallProblemSubTypesUpdate(int:Signed32 ProblemSubTypeID, ServiceCallProblemSubType payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(ProblemSubTypeID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallProblemSubTypes(int:Signed32 problemSubTypeID, ServiceCallProblemSubType payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallProblemSubTypes(${getEncodedUri(problemSubTypeID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -418,7 +418,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallProblemSubTypesServiceGetServiceCallProblemSubTypeList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList`;
         http:Request request = new;
@@ -429,8 +429,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallProblemTypesList(ServiceCallProblemTypesListHeaders headers = {}, *ServiceCallProblemTypesListQueries queries) returns ServiceCallProblemTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallProblemTypes(ListServiceCallProblemTypesHeaders headers = {}, *ListServiceCallProblemTypesQueries queries) returns ServiceCallProblemTypesCollectionResponse|error {
         string resourcePath = string `/ServiceCallProblemTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -441,8 +441,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallProblemTypesCreate(ServiceCallProblemType payload, map<string|string[]> headers = {}) returns ServiceCallProblemType|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallProblemTypes(ServiceCallProblemType payload, map<string|string[]> headers = {}) returns ServiceCallProblemType|error {
         string resourcePath = string `/ServiceCallProblemTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -452,34 +452,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallProblemType by key.
     #
-    # + ProblemTypeID - Key property 'ProblemTypeID' (Edm.Int32).
+    # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallProblemTypesGet(int:Signed32 ProblemTypeID, map<string|string[]> headers = {}, *ServiceCallProblemTypesGetQueries queries) returns ServiceCallProblemType|error {
-        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(ProblemTypeID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallProblemTypes(int:Signed32 problemTypeID, map<string|string[]> headers = {}, *GetServiceCallProblemTypesQueries queries) returns ServiceCallProblemType|error {
+        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(problemTypeID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallProblemType.
     #
-    # + ProblemTypeID - Key property 'ProblemTypeID' (Edm.Int32).
+    # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallProblemTypesDelete(int:Signed32 ProblemTypeID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(ProblemTypeID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallProblemTypes(int:Signed32 problemTypeID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(problemTypeID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallProblemType (PATCH/MERGE semantics).
     #
-    # + ProblemTypeID - Key property 'ProblemTypeID' (Edm.Int32).
+    # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallProblemTypesUpdate(int:Signed32 ProblemTypeID, ServiceCallProblemType payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(ProblemTypeID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallProblemTypes(int:Signed32 problemTypeID, ServiceCallProblemType payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallProblemTypes(${getEncodedUri(problemTypeID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -489,7 +489,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallProblemTypesService_GetServiceCallProblemTypeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallProblemTypesServiceGetServiceCallProblemTypeList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/ServiceCallProblemTypesService_GetServiceCallProblemTypeList`;
         http:Request request = new;
@@ -500,8 +500,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallSolutionStatusList(ServiceCallSolutionStatusListHeaders headers = {}, *ServiceCallSolutionStatusListQueries queries) returns ServiceCallSolutionStatus_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallSolutionStatus(ListServiceCallSolutionStatusHeaders headers = {}, *ListServiceCallSolutionStatusQueries queries) returns ServiceCallSolutionStatusCollectionResponse|error {
         string resourcePath = string `/ServiceCallSolutionStatus`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -512,8 +512,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallSolutionStatusCreate(ServiceCallSolutionStatus payload, map<string|string[]> headers = {}) returns ServiceCallSolutionStatus|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallSolutionStatus(ServiceCallSolutionStatus payload, map<string|string[]> headers = {}) returns ServiceCallSolutionStatus|error {
         string resourcePath = string `/ServiceCallSolutionStatus`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -523,34 +523,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallSolutionStatus by key.
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallSolutionStatusGet(int:Signed32 StatusId, map<string|string[]> headers = {}, *ServiceCallSolutionStatusGetQueries queries) returns ServiceCallSolutionStatus|error {
-        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(StatusId)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallSolutionStatus(int:Signed32 statusId, map<string|string[]> headers = {}, *GetServiceCallSolutionStatusQueries queries) returns ServiceCallSolutionStatus|error {
+        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(statusId)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallSolutionStatus.
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallSolutionStatusDelete(int:Signed32 StatusId, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(StatusId)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallSolutionStatus(int:Signed32 statusId, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(statusId)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallSolutionStatusUpdate(int:Signed32 StatusId, ServiceCallSolutionStatus payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(StatusId)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallSolutionStatus(int:Signed32 statusId, ServiceCallSolutionStatus payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallSolutionStatus(${getEncodedUri(statusId)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -560,7 +560,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallSolutionStatusServiceGetServiceCallSolutionStatusList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList`;
         http:Request request = new;
@@ -571,8 +571,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallStatusList(ServiceCallStatusListHeaders headers = {}, *ServiceCallStatusListQueries queries) returns ServiceCallStatus_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallStatus(ListServiceCallStatusHeaders headers = {}, *ListServiceCallStatusQueries queries) returns ServiceCallStatusCollectionResponse|error {
         string resourcePath = string `/ServiceCallStatus`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -583,8 +583,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallStatusCreate(ServiceCallStatus payload, map<string|string[]> headers = {}) returns ServiceCallStatus|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallStatus(ServiceCallStatus payload, map<string|string[]> headers = {}) returns ServiceCallStatus|error {
         string resourcePath = string `/ServiceCallStatus`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -594,34 +594,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallStatus by key.
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallStatusGet(int:Signed32 StatusId, map<string|string[]> headers = {}, *ServiceCallStatusGetQueries queries) returns ServiceCallStatus|error {
-        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(StatusId)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallStatus(int:Signed32 statusId, map<string|string[]> headers = {}, *GetServiceCallStatusQueries queries) returns ServiceCallStatus|error {
+        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(statusId)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallStatus.
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallStatusDelete(int:Signed32 StatusId, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(StatusId)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallStatus(int:Signed32 statusId, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(statusId)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallStatus (PATCH/MERGE semantics).
     #
-    # + StatusId - Key property 'StatusId' (Edm.Int32).
+    # + statusId - Key property 'StatusId' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallStatusUpdate(int:Signed32 StatusId, ServiceCallStatus payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(StatusId)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallStatus(int:Signed32 statusId, ServiceCallStatus payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallStatus(${getEncodedUri(statusId)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -631,7 +631,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallStatusService_GetServiceCallStatusList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallStatusServiceGetServiceCallStatusList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/ServiceCallStatusService_GetServiceCallStatusList`;
         http:Request request = new;
@@ -642,8 +642,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallTypesList(ServiceCallTypesListHeaders headers = {}, *ServiceCallTypesListQueries queries) returns ServiceCallTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCallTypes(ListServiceCallTypesHeaders headers = {}, *ListServiceCallTypesQueries queries) returns ServiceCallTypesCollectionResponse|error {
         string resourcePath = string `/ServiceCallTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -654,8 +654,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallTypesCreate(ServiceCallType payload, map<string|string[]> headers = {}) returns ServiceCallType|error {
+    # + return - The created entity 
+    remote isolated function createServiceCallTypes(ServiceCallType payload, map<string|string[]> headers = {}) returns ServiceCallType|error {
         string resourcePath = string `/ServiceCallTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -665,34 +665,34 @@ public isolated client class Client {
 
     # Get a single ServiceCallType by key.
     #
-    # + CallTypeID - Key property 'CallTypeID' (Edm.Int32).
+    # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallTypesGet(int:Signed32 CallTypeID, map<string|string[]> headers = {}, *ServiceCallTypesGetQueries queries) returns ServiceCallType|error {
-        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(CallTypeID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCallTypes(int:Signed32 callTypeID, map<string|string[]> headers = {}, *GetServiceCallTypesQueries queries) returns ServiceCallType|error {
+        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(callTypeID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCallType.
     #
-    # + CallTypeID - Key property 'CallTypeID' (Edm.Int32).
+    # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallTypesDelete(int:Signed32 CallTypeID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(CallTypeID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCallTypes(int:Signed32 callTypeID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(callTypeID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCallType (PATCH/MERGE semantics).
     #
-    # + CallTypeID - Key property 'CallTypeID' (Edm.Int32).
+    # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallTypesUpdate(int:Signed32 CallTypeID, ServiceCallType payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(CallTypeID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCallTypes(int:Signed32 callTypeID, ServiceCallType payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCallTypes(${getEncodedUri(callTypeID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -702,7 +702,7 @@ public isolated client class Client {
     # Service Layer function import 'ServiceCallTypesService_GetServiceCallTypeList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function serviceCallTypesServiceGetServiceCallTypeList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/ServiceCallTypesService_GetServiceCallTypeList`;
         http:Request request = new;
@@ -713,8 +713,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceCallsList(ServiceCallsListHeaders headers = {}, *ServiceCallsListQueries queries) returns ServiceCalls_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceCalls(ListServiceCallsHeaders headers = {}, *ListServiceCallsQueries queries) returns ServiceCallsCollectionResponse|error {
         string resourcePath = string `/ServiceCalls`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -725,8 +725,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceCallsCreate(ServiceCall payload, map<string|string[]> headers = {}) returns ServiceCall|error {
+    # + return - The created entity 
+    remote isolated function createServiceCalls(ServiceCall payload, map<string|string[]> headers = {}) returns ServiceCall|error {
         string resourcePath = string `/ServiceCalls`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -736,34 +736,34 @@ public isolated client class Client {
 
     # Get a single ServiceCall by key.
     #
-    # + ServiceCallID - Key property 'ServiceCallID' (Edm.Int32).
+    # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceCallsGet(int:Signed32 ServiceCallID, map<string|string[]> headers = {}, *ServiceCallsGetQueries queries) returns ServiceCall|error {
-        string resourcePath = string `/ServiceCalls(${getEncodedUri(ServiceCallID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceCalls(int:Signed32 serviceCallID, map<string|string[]> headers = {}, *GetServiceCallsQueries queries) returns ServiceCall|error {
+        string resourcePath = string `/ServiceCalls(${getEncodedUri(serviceCallID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceCall.
     #
-    # + ServiceCallID - Key property 'ServiceCallID' (Edm.Int32).
+    # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceCallsDelete(int:Signed32 ServiceCallID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCalls(${getEncodedUri(ServiceCallID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceCalls(int:Signed32 serviceCallID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCalls(${getEncodedUri(serviceCallID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceCall (PATCH/MERGE semantics).
     #
-    # + ServiceCallID - Key property 'ServiceCallID' (Edm.Int32).
+    # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceCallsUpdate(int:Signed32 ServiceCallID, ServiceCall payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCalls(${getEncodedUri(ServiceCallID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceCalls(int:Signed32 serviceCallID, ServiceCall payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCalls(${getEncodedUri(serviceCallID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -772,11 +772,11 @@ public isolated client class Client {
 
     # Bound action 'Close' on ServiceCalls (binding type ServiceCall).
     #
-    # + ServiceCallID - Key property 'ServiceCallID' (Edm.Int32).
+    # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function serviceCallsClose(int:Signed32 ServiceCallID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceCalls(${getEncodedUri(ServiceCallID)})/Close`;
+    # + return - Success. No content returned 
+    remote isolated function serviceCallsClose(int:Signed32 serviceCallID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceCalls(${getEncodedUri(serviceCallID)})/Close`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -785,8 +785,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function serviceContractsList(ServiceContractsListHeaders headers = {}, *ServiceContractsListQueries queries) returns ServiceContracts_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listServiceContracts(ListServiceContractsHeaders headers = {}, *ListServiceContractsQueries queries) returns ServiceContractsCollectionResponse|error {
         string resourcePath = string `/ServiceContracts`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -797,8 +797,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function serviceContractsCreate(ServiceContract payload, map<string|string[]> headers = {}) returns ServiceContract|error {
+    # + return - The created entity 
+    remote isolated function createServiceContracts(ServiceContract payload, map<string|string[]> headers = {}) returns ServiceContract|error {
         string resourcePath = string `/ServiceContracts`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -808,34 +808,34 @@ public isolated client class Client {
 
     # Get a single ServiceContract by key.
     #
-    # + ContractID - Key property 'ContractID' (Edm.Int32).
+    # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function serviceContractsGet(int:Signed32 ContractID, map<string|string[]> headers = {}, *ServiceContractsGetQueries queries) returns ServiceContract|error {
-        string resourcePath = string `/ServiceContracts(${getEncodedUri(ContractID)})`;
+    # + return - The requested entity 
+    remote isolated function getServiceContracts(int:Signed32 contractID, map<string|string[]> headers = {}, *GetServiceContractsQueries queries) returns ServiceContract|error {
+        string resourcePath = string `/ServiceContracts(${getEncodedUri(contractID)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ServiceContract.
     #
-    # + ContractID - Key property 'ContractID' (Edm.Int32).
+    # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function serviceContractsDelete(int:Signed32 ContractID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceContracts(${getEncodedUri(ContractID)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteServiceContracts(int:Signed32 contractID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceContracts(${getEncodedUri(contractID)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ServiceContract (PATCH/MERGE semantics).
     #
-    # + ContractID - Key property 'ContractID' (Edm.Int32).
+    # + contractID - Key property 'ContractID' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function serviceContractsUpdate(int:Signed32 ContractID, ServiceContract payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceContracts(${getEncodedUri(ContractID)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateServiceContracts(int:Signed32 contractID, ServiceContract payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceContracts(${getEncodedUri(contractID)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -844,22 +844,22 @@ public isolated client class Client {
 
     # Bound action 'Cancel' on ServiceContracts (binding type ServiceContract).
     #
-    # + ContractID - Key property 'ContractID' (Edm.Int32).
+    # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function serviceContractsCancel(int:Signed32 ContractID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceContracts(${getEncodedUri(ContractID)})/Cancel`;
+    # + return - Success. No content returned 
+    remote isolated function serviceContractsCancel(int:Signed32 contractID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceContracts(${getEncodedUri(contractID)})/Cancel`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
     # Bound action 'Close' on ServiceContracts (binding type ServiceContract).
     #
-    # + ContractID - Key property 'ContractID' (Edm.Int32).
+    # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function serviceContractsClose(int:Signed32 ContractID, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ServiceContracts(${getEncodedUri(ContractID)})/Close`;
+    # + return - Success. No content returned 
+    remote isolated function serviceContractsClose(int:Signed32 contractID, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ServiceContracts(${getEncodedUri(contractID)})/Close`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }

@@ -38,7 +38,7 @@ public function main() returns error? {
             time:utcToCivil(time:utcNow()).month.toString().padStart(2, "0") + "-" +
             time:utcToCivil(time:utcNow()).day.toString().padStart(2, "0");
 
-    crm:Activity created = check b1->activitiesCreate({
+    crm:Activity created = check b1->createActivities({
         Activity: "cn_Note",
         ActivityDate: today,
         Details: "Logged from the Ballerina sap.businessone.crm connector",
@@ -46,8 +46,8 @@ public function main() returns error? {
     });
     io:println(string `Created activity #${created.ActivityCode ?: 0}`);
 
-    crm:Activity fetched = check b1->activitiesGet(created.ActivityCode ?: 0, queries = {
-        \$select: "ActivityCode,Activity,ActivityDate,Details,Notes"
+    crm:Activity fetched = check b1->getActivities(created.ActivityCode ?: 0, queries = {
+        dollarSelect: "ActivityCode,Activity,ActivityDate,Details,Notes"
     });
     io:println(string `Read back: [${fetched.ActivityDate ?: ""}] ${fetched.Details ?: ""} — ${fetched.Notes ?: ""}`);
     // The Service Layer session expires on its own (default 30 minutes), so an

@@ -11,12 +11,12 @@
       "description": "SAP Business One Service Layer (OData V3 endpoint).",
       "variables": {
         "server": {
-          "default": "localhost",
-          "description": "Service Layer host."
+          "description": "Service Layer host.",
+          "default": "localhost"
         },
         "port": {
-          "default": "50000",
-          "description": "Service Layer HTTPS port (default 50000)."
+          "description": "Service Layer HTTPS port (default 50000).",
+          "default": "50000"
         }
       }
     }
@@ -32,11 +32,31 @@
         "tags": [
           "AddressService"
         ],
-        "operationId": "AddressService_GetAddressFormat",
         "summary": "Service Layer function import 'AddressService_GetAddressFormat'.",
+        "operationId": "AddressService_GetAddressFormat",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AddressFormatParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AddressFormatParams"
+                      }
+                    ],
+                    "x-ballerina-name": "addressFormatParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
@@ -55,21 +75,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AddressFormatParams": {
-                    "$ref": "#/components/schemas/AddressFormatParams"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -78,11 +83,31 @@
         "tags": [
           "AddressService"
         ],
-        "operationId": "AddressService_GetFullAddress",
         "summary": "Service Layer function import 'AddressService_GetFullAddress'.",
+        "operationId": "AddressService_GetFullAddress",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AddressParams": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AddressParams"
+                      }
+                    ],
+                    "x-ballerina-name": "addressParams"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
@@ -101,21 +126,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "AddressParams": {
-                    "$ref": "#/components/schemas/AddressParams"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -124,8 +134,8 @@
         "tags": [
           "BPFiscalRegistryID"
         ],
-        "operationId": "BPFiscalRegistryID_List",
         "summary": "Query the BPFiscalRegistryID collection.",
+        "operationId": "List_BPFiscalRegistryID",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -154,11 +164,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BPFiscalRegistryID_CollectionResponse"
+                  "$ref": "#/components/schemas/BPFiscalRegistryIDCollectionResponse"
                 }
               }
             }
@@ -179,21 +189,21 @@
         "tags": [
           "BPFiscalRegistryID"
         ],
-        "operationId": "BPFiscalRegistryID_Create",
         "summary": "Create a new BPFiscalRegistryID.",
+        "operationId": "Create_BPFiscalRegistryID",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BPFiscalRegistryID"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -215,19 +225,21 @@
         }
       }
     },
-    "/BPFiscalRegistryID({Numerator})": {
+    "/BPFiscalRegistryID({numerator})": {
       "get": {
         "tags": [
           "BPFiscalRegistryID"
         ],
-        "operationId": "BPFiscalRegistryID_Get",
         "summary": "Get a single BPFiscalRegistryID by key.",
+        "operationId": "Get_BPFiscalRegistryID",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -242,7 +254,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -273,37 +285,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BPFiscalRegistryID"
         ],
-        "operationId": "BPFiscalRegistryID_Update",
-        "summary": "Partially update a BPFiscalRegistryID (PATCH/MERGE semantics).",
+        "summary": "Delete a BPFiscalRegistryID.",
+        "operationId": "Delete_BPFiscalRegistryID",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BPFiscalRegistryID"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -317,27 +321,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BPFiscalRegistryID"
         ],
-        "operationId": "BPFiscalRegistryID_Delete",
-        "summary": "Delete a BPFiscalRegistryID.",
+        "summary": "Partially update a BPFiscalRegistryID (PATCH/MERGE semantics).",
+        "operationId": "Update_BPFiscalRegistryID",
         "parameters": [
           {
-            "name": "Numerator",
+            "name": "numerator",
             "in": "path",
+            "description": "Key property 'Numerator' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Numerator' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BPFiscalRegistryID"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -357,11 +373,38 @@
         "tags": [
           "BPOpeningBalanceService"
         ],
-        "operationId": "BPOpeningBalanceService_CreateOpenBalance",
         "summary": "Service Layer function import 'BPOpeningBalanceService_CreateOpenBalance'.",
+        "operationId": "BPOpeningBalanceService_CreateOpenBalance",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "OpenningBalanceAccount": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/OpenningBalanceAccount"
+                      }
+                    ],
+                    "x-ballerina-name": "openningBalanceAccount"
+                  },
+                  "BPCodes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/BPCode"
+                    },
+                    "x-ballerina-name": "bPCodes"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -369,27 +412,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "OpenningBalanceAccount": {
-                    "$ref": "#/components/schemas/OpenningBalanceAccount"
-                  },
-                  "BPCodes": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/BPCode"
-                    }
-                  }
                 }
               }
             }
@@ -402,8 +424,8 @@
         "tags": [
           "BPPriorities"
         ],
-        "operationId": "BPPriorities_List",
         "summary": "Query the BPPriorities collection.",
+        "operationId": "List_BPPriorities",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -432,11 +454,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BPPriorities_CollectionResponse"
+                  "$ref": "#/components/schemas/BPPrioritiesCollectionResponse"
                 }
               }
             }
@@ -457,21 +479,21 @@
         "tags": [
           "BPPriorities"
         ],
-        "operationId": "BPPriorities_Create",
         "summary": "Create a new BPPriority.",
+        "operationId": "Create_BPPriorities",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BPPriority"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -493,19 +515,21 @@
         }
       }
     },
-    "/BPPriorities({Priority})": {
+    "/BPPriorities({priority})": {
       "get": {
         "tags": [
           "BPPriorities"
         ],
-        "operationId": "BPPriorities_Get",
         "summary": "Get a single BPPriority by key.",
+        "operationId": "Get_BPPriorities",
         "parameters": [
           {
-            "name": "Priority",
+            "name": "priority",
             "in": "path",
+            "description": "Key property 'Priority' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Priority' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -520,7 +544,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -551,37 +575,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BPPriorities"
         ],
-        "operationId": "BPPriorities_Update",
-        "summary": "Partially update a BPPriority (PATCH/MERGE semantics).",
+        "summary": "Delete a BPPriority.",
+        "operationId": "Delete_BPPriorities",
         "parameters": [
           {
-            "name": "Priority",
+            "name": "priority",
             "in": "path",
+            "description": "Key property 'Priority' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Priority' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BPPriority"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -595,27 +611,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BPPriorities"
         ],
-        "operationId": "BPPriorities_Delete",
-        "summary": "Delete a BPPriority.",
+        "summary": "Partially update a BPPriority (PATCH/MERGE semantics).",
+        "operationId": "Update_BPPriorities",
         "parameters": [
           {
-            "name": "Priority",
+            "name": "priority",
             "in": "path",
+            "description": "Key property 'Priority' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Priority' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BPPriority"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -635,8 +663,8 @@
         "tags": [
           "BPVatExemptions"
         ],
-        "operationId": "BPVatExemptions_List",
         "summary": "Query the BPVatExemptions collection.",
+        "operationId": "List_BPVatExemptions",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -665,11 +693,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BPVatExemptions_CollectionResponse"
+                  "$ref": "#/components/schemas/BPVatExemptionsCollectionResponse"
                 }
               }
             }
@@ -690,21 +718,21 @@
         "tags": [
           "BPVatExemptions"
         ],
-        "operationId": "BPVatExemptions_Create",
         "summary": "Create a new BPVatExemptions.",
+        "operationId": "Create_BPVatExemptions",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BPVatExemptions"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -726,19 +754,21 @@
         }
       }
     },
-    "/BPVatExemptions({AbsoluteEntry})": {
+    "/BPVatExemptions({absoluteEntry})": {
       "get": {
         "tags": [
           "BPVatExemptions"
         ],
-        "operationId": "BPVatExemptions_Get",
         "summary": "Get a single BPVatExemptions by key.",
+        "operationId": "Get_BPVatExemptions",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -753,7 +783,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -784,37 +814,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BPVatExemptions"
         ],
-        "operationId": "BPVatExemptions_Update",
-        "summary": "Partially update a BPVatExemptions (PATCH/MERGE semantics).",
+        "summary": "Delete a BPVatExemptions.",
+        "operationId": "Delete_BPVatExemptions",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BPVatExemptions"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -828,27 +850,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BPVatExemptions"
         ],
-        "operationId": "BPVatExemptions_Delete",
-        "summary": "Delete a BPVatExemptions.",
+        "summary": "Partially update a BPVatExemptions (PATCH/MERGE semantics).",
+        "operationId": "Update_BPVatExemptions",
         "parameters": [
           {
-            "name": "AbsoluteEntry",
+            "name": "absoluteEntry",
             "in": "path",
+            "description": "Key property 'AbsoluteEntry' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'AbsoluteEntry' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BPVatExemptions"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -868,18 +902,19 @@
         "tags": [
           "BPVatExemptionsService"
         ],
-        "operationId": "BPVatExemptionsService_GetList",
         "summary": "Service Layer function import 'BPVatExemptionsService_GetList'.",
+        "operationId": "BPVatExemptionsService_GetList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -910,8 +945,8 @@
         "tags": [
           "BusinessPartnerGroups"
         ],
-        "operationId": "BusinessPartnerGroups_List",
         "summary": "Query the BusinessPartnerGroups collection.",
+        "operationId": "List_BusinessPartnerGroups",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -940,11 +975,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BusinessPartnerGroups_CollectionResponse"
+                  "$ref": "#/components/schemas/BusinessPartnerGroupsCollectionResponse"
                 }
               }
             }
@@ -965,21 +1000,21 @@
         "tags": [
           "BusinessPartnerGroups"
         ],
-        "operationId": "BusinessPartnerGroups_Create",
         "summary": "Create a new BusinessPartnerGroup.",
+        "operationId": "Create_BusinessPartnerGroups",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BusinessPartnerGroup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1001,19 +1036,21 @@
         }
       }
     },
-    "/BusinessPartnerGroups({Code})": {
+    "/BusinessPartnerGroups({code})": {
       "get": {
         "tags": [
           "BusinessPartnerGroups"
         ],
-        "operationId": "BusinessPartnerGroups_Get",
         "summary": "Get a single BusinessPartnerGroup by key.",
+        "operationId": "Get_BusinessPartnerGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1028,7 +1065,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1059,37 +1096,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BusinessPartnerGroups"
         ],
-        "operationId": "BusinessPartnerGroups_Update",
-        "summary": "Partially update a BusinessPartnerGroup (PATCH/MERGE semantics).",
+        "summary": "Delete a BusinessPartnerGroup.",
+        "operationId": "Delete_BusinessPartnerGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BusinessPartnerGroup"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1103,27 +1132,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BusinessPartnerGroups"
         ],
-        "operationId": "BusinessPartnerGroups_Delete",
-        "summary": "Delete a BusinessPartnerGroup.",
+        "summary": "Partially update a BusinessPartnerGroup (PATCH/MERGE semantics).",
+        "operationId": "Update_BusinessPartnerGroups",
         "parameters": [
           {
-            "name": "Code",
+            "name": "code",
             "in": "path",
+            "description": "Key property 'Code' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'Code' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BusinessPartnerGroup"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1143,8 +1184,8 @@
         "tags": [
           "BusinessPartnerProperties"
         ],
-        "operationId": "BusinessPartnerProperties_List",
         "summary": "Query the BusinessPartnerProperties collection.",
+        "operationId": "List_BusinessPartnerProperties",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1173,11 +1214,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BusinessPartnerProperties_CollectionResponse"
+                  "$ref": "#/components/schemas/BusinessPartnerPropertiesCollectionResponse"
                 }
               }
             }
@@ -1198,21 +1239,21 @@
         "tags": [
           "BusinessPartnerProperties"
         ],
-        "operationId": "BusinessPartnerProperties_Create",
         "summary": "Create a new BusinessPartnerProperty.",
+        "operationId": "Create_BusinessPartnerProperties",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BusinessPartnerProperty"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1234,19 +1275,21 @@
         }
       }
     },
-    "/BusinessPartnerProperties({PropertyCode})": {
+    "/BusinessPartnerProperties({propertyCode})": {
       "get": {
         "tags": [
           "BusinessPartnerProperties"
         ],
-        "operationId": "BusinessPartnerProperties_Get",
         "summary": "Get a single BusinessPartnerProperty by key.",
+        "operationId": "Get_BusinessPartnerProperties",
         "parameters": [
           {
-            "name": "PropertyCode",
+            "name": "propertyCode",
             "in": "path",
+            "description": "Key property 'PropertyCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PropertyCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1261,7 +1304,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1292,37 +1335,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BusinessPartnerProperties"
         ],
-        "operationId": "BusinessPartnerProperties_Update",
-        "summary": "Partially update a BusinessPartnerProperty (PATCH/MERGE semantics).",
+        "summary": "Delete a BusinessPartnerProperty.",
+        "operationId": "Delete_BusinessPartnerProperties",
         "parameters": [
           {
-            "name": "PropertyCode",
+            "name": "propertyCode",
             "in": "path",
+            "description": "Key property 'PropertyCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PropertyCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BusinessPartnerProperty"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1336,27 +1371,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BusinessPartnerProperties"
         ],
-        "operationId": "BusinessPartnerProperties_Delete",
-        "summary": "Delete a BusinessPartnerProperty.",
+        "summary": "Partially update a BusinessPartnerProperty (PATCH/MERGE semantics).",
+        "operationId": "Update_BusinessPartnerProperties",
         "parameters": [
           {
-            "name": "PropertyCode",
+            "name": "propertyCode",
             "in": "path",
+            "description": "Key property 'PropertyCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'PropertyCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BusinessPartnerProperty"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1376,18 +1423,19 @@
         "tags": [
           "BusinessPartnerPropertiesService"
         ],
-        "operationId": "BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList",
         "summary": "Service Layer function import 'BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList'.",
+        "operationId": "BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "odata.metadata": {
-                      "type": "string"
+                      "type": "string",
+                      "x-ballerina-name": "odataMetadata"
                     },
                     "value": {
                       "type": "array",
@@ -1418,8 +1466,8 @@
         "tags": [
           "BusinessPartners"
         ],
-        "operationId": "BusinessPartners_List",
         "summary": "Query the BusinessPartners collection.",
+        "operationId": "List_BusinessPartners",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1448,11 +1496,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BusinessPartners_CollectionResponse"
+                  "$ref": "#/components/schemas/BusinessPartnersCollectionResponse"
                 }
               }
             }
@@ -1473,21 +1521,21 @@
         "tags": [
           "BusinessPartners"
         ],
-        "operationId": "BusinessPartners_Create",
         "summary": "Create a new BusinessPartner.",
+        "operationId": "Create_BusinessPartners",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BusinessPartner"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1509,19 +1557,21 @@
         }
       }
     },
-    "/BusinessPartners('{CardCode}')": {
+    "/BusinessPartners('{cardCode}')": {
       "get": {
         "tags": [
           "BusinessPartners"
         ],
-        "operationId": "BusinessPartners_Get",
         "summary": "Get a single BusinessPartner by key.",
+        "operationId": "Get_BusinessPartners",
         "parameters": [
           {
-            "name": "CardCode",
+            "name": "cardCode",
             "in": "path",
+            "description": "Key property 'CardCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'CardCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
@@ -1535,7 +1585,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1566,36 +1616,28 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "BusinessPartners"
         ],
-        "operationId": "BusinessPartners_Update",
-        "summary": "Partially update a BusinessPartner (PATCH/MERGE semantics).",
+        "summary": "Delete a BusinessPartner.",
+        "operationId": "Delete_BusinessPartners",
         "parameters": [
           {
-            "name": "CardCode",
+            "name": "cardCode",
             "in": "path",
+            "description": "Key property 'CardCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'CardCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BusinessPartner"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1609,26 +1651,38 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "BusinessPartners"
         ],
-        "operationId": "BusinessPartners_Delete",
-        "summary": "Delete a BusinessPartner.",
+        "summary": "Partially update a BusinessPartner (PATCH/MERGE semantics).",
+        "operationId": "Update_BusinessPartners",
         "parameters": [
           {
-            "name": "CardCode",
+            "name": "cardCode",
             "in": "path",
+            "description": "Key property 'CardCode' (Edm.String)",
             "required": true,
-            "description": "Key property 'CardCode' (Edm.String).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BusinessPartner"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1648,11 +1702,38 @@
         "tags": [
           "BusinessPartnersService"
         ],
-        "operationId": "BusinessPartnersService_CreateOpenBalance",
         "summary": "Service Layer function import 'BusinessPartnersService_CreateOpenBalance'.",
+        "operationId": "BusinessPartnersService_CreateOpenBalance",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "OpenningBalanceAccount": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/OpenningBalanceAccount"
+                      }
+                    ],
+                    "x-ballerina-name": "openningBalanceAccount"
+                  },
+                  "BPCodes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/BPCode"
+                    },
+                    "x-ballerina-name": "bPCodes"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1660,27 +1741,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "OpenningBalanceAccount": {
-                    "$ref": "#/components/schemas/OpenningBalanceAccount"
-                  },
-                  "BPCodes": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/BPCode"
-                    }
-                  }
                 }
               }
             }
@@ -1693,11 +1753,11 @@
         "tags": [
           "BusinessPartnersService"
         ],
-        "operationId": "BusinessPartnersService_InitData",
         "summary": "Service Layer function import 'BusinessPartnersService_InitData'.",
+        "operationId": "BusinessPartnersService_InitData",
         "responses": {
           "200": {
-            "description": "Function result.",
+            "description": "Function result",
             "content": {
               "application/json": {
                 "schema": {
@@ -1724,8 +1784,8 @@
         "tags": [
           "Contacts"
         ],
-        "operationId": "Contacts_List",
         "summary": "Query the Contacts collection.",
+        "operationId": "List_Contacts",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1754,11 +1814,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Contacts_CollectionResponse"
+                  "$ref": "#/components/schemas/ContactsCollectionResponse"
                 }
               }
             }
@@ -1779,21 +1839,21 @@
         "tags": [
           "Contacts"
         ],
-        "operationId": "Contacts_Create",
         "summary": "Create a new Contact.",
+        "operationId": "Create_Contacts",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Contact"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1815,19 +1875,21 @@
         }
       }
     },
-    "/Contacts({ContactCode})": {
+    "/Contacts({contactCode})": {
       "get": {
         "tags": [
           "Contacts"
         ],
-        "operationId": "Contacts_Get",
         "summary": "Get a single Contact by key.",
+        "operationId": "Get_Contacts",
         "parameters": [
           {
-            "name": "ContactCode",
+            "name": "contactCode",
             "in": "path",
+            "description": "Key property 'ContactCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContactCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1842,7 +1904,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -1873,37 +1935,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Contacts"
         ],
-        "operationId": "Contacts_Update",
-        "summary": "Partially update a Contact (PATCH/MERGE semantics).",
+        "summary": "Delete a Contact.",
+        "operationId": "Delete_Contacts",
         "parameters": [
           {
-            "name": "ContactCode",
+            "name": "contactCode",
             "in": "path",
+            "description": "Key property 'ContactCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContactCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Contact"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1917,27 +1971,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Contacts"
         ],
-        "operationId": "Contacts_Delete",
-        "summary": "Delete a Contact.",
+        "summary": "Partially update a Contact (PATCH/MERGE semantics).",
+        "operationId": "Update_Contacts",
         "parameters": [
           {
-            "name": "ContactCode",
+            "name": "contactCode",
             "in": "path",
+            "description": "Key property 'ContactCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'ContactCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contact"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -1957,8 +2023,8 @@
         "tags": [
           "Industries"
         ],
-        "operationId": "Industries_List",
         "summary": "Query the Industries collection.",
+        "operationId": "List_Industries",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -1987,11 +2053,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Industries_CollectionResponse"
+                  "$ref": "#/components/schemas/IndustriesCollectionResponse"
                 }
               }
             }
@@ -2012,21 +2078,21 @@
         "tags": [
           "Industries"
         ],
-        "operationId": "Industries_Create",
         "summary": "Create a new Industry.",
+        "operationId": "Create_Industries",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Industry"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2048,19 +2114,21 @@
         }
       }
     },
-    "/Industries({IndustryCode})": {
+    "/Industries({industryCode})": {
       "get": {
         "tags": [
           "Industries"
         ],
-        "operationId": "Industries_Get",
         "summary": "Get a single Industry by key.",
+        "operationId": "Get_Industries",
         "parameters": [
           {
-            "name": "IndustryCode",
+            "name": "industryCode",
             "in": "path",
+            "description": "Key property 'IndustryCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'IndustryCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2075,7 +2143,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2106,37 +2174,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Industries"
         ],
-        "operationId": "Industries_Update",
-        "summary": "Partially update a Industry (PATCH/MERGE semantics).",
+        "summary": "Delete a Industry.",
+        "operationId": "Delete_Industries",
         "parameters": [
           {
-            "name": "IndustryCode",
+            "name": "industryCode",
             "in": "path",
+            "description": "Key property 'IndustryCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'IndustryCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Industry"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2150,27 +2210,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Industries"
         ],
-        "operationId": "Industries_Delete",
-        "summary": "Delete a Industry.",
+        "summary": "Partially update a Industry (PATCH/MERGE semantics).",
+        "operationId": "Update_Industries",
         "parameters": [
           {
-            "name": "IndustryCode",
+            "name": "industryCode",
             "in": "path",
+            "description": "Key property 'IndustryCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'IndustryCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Industry"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2190,8 +2262,8 @@
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_List",
         "summary": "Query the PaymentTermsTypes collection.",
+        "operationId": "List_PaymentTermsTypes",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2220,11 +2292,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaymentTermsTypes_CollectionResponse"
+                  "$ref": "#/components/schemas/PaymentTermsTypesCollectionResponse"
                 }
               }
             }
@@ -2245,21 +2317,21 @@
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_Create",
         "summary": "Create a new PaymentTermsType.",
+        "operationId": "Create_PaymentTermsTypes",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PaymentTermsType"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2281,19 +2353,21 @@
         }
       }
     },
-    "/PaymentTermsTypes({GroupNumber})": {
+    "/PaymentTermsTypes({groupNumber})": {
       "get": {
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_Get",
         "summary": "Get a single PaymentTermsType by key.",
+        "operationId": "Get_PaymentTermsTypes",
         "parameters": [
           {
-            "name": "GroupNumber",
+            "name": "groupNumber",
             "in": "path",
+            "description": "Key property 'GroupNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'GroupNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2308,7 +2382,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2339,37 +2413,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_Update",
-        "summary": "Partially update a PaymentTermsType (PATCH/MERGE semantics).",
+        "summary": "Delete a PaymentTermsType.",
+        "operationId": "Delete_PaymentTermsTypes",
         "parameters": [
           {
-            "name": "GroupNumber",
+            "name": "groupNumber",
             "in": "path",
+            "description": "Key property 'GroupNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'GroupNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PaymentTermsType"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2383,27 +2449,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_Delete",
-        "summary": "Delete a PaymentTermsType.",
+        "summary": "Partially update a PaymentTermsType (PATCH/MERGE semantics).",
+        "operationId": "Update_PaymentTermsTypes",
         "parameters": [
           {
-            "name": "GroupNumber",
+            "name": "groupNumber",
             "in": "path",
+            "description": "Key property 'GroupNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'GroupNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTermsType"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2418,19 +2496,21 @@
         }
       }
     },
-    "/PaymentTermsTypes({GroupNumber})/Close": {
+    "/PaymentTermsTypes({groupNumber})/Close": {
       "post": {
         "tags": [
           "PaymentTermsTypes"
         ],
-        "operationId": "PaymentTermsTypes_Close",
         "summary": "Bound action 'Close' on PaymentTermsTypes (binding type PaymentTermsType).",
+        "operationId": "PaymentTermsTypes_Close",
         "parameters": [
           {
-            "name": "GroupNumber",
+            "name": "groupNumber",
             "in": "path",
+            "description": "Key property 'GroupNumber' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'GroupNumber' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2439,7 +2519,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2459,11 +2539,31 @@
         "tags": [
           "PaymentTermsTypesService"
         ],
-        "operationId": "PaymentTermsTypesService_UpdateWithBPs",
         "summary": "Service Layer function import 'PaymentTermsTypesService_UpdateWithBPs'.",
+        "operationId": "PaymentTermsTypesService_UpdateWithBPs",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PaymentTermsType": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/PaymentTermsType"
+                      }
+                    ],
+                    "x-ballerina-name": "paymentTermsType"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Success. No content returned."
+            "description": "Success. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2471,21 +2571,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ServiceLayerError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "PaymentTermsType": {
-                    "$ref": "#/components/schemas/PaymentTermsType"
-                  }
                 }
               }
             }
@@ -2498,8 +2583,8 @@
         "tags": [
           "Relationships"
         ],
-        "operationId": "Relationships_List",
         "summary": "Query the Relationships collection.",
+        "operationId": "List_Relationships",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2528,11 +2613,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Relationships_CollectionResponse"
+                  "$ref": "#/components/schemas/RelationshipsCollectionResponse"
                 }
               }
             }
@@ -2553,21 +2638,21 @@
         "tags": [
           "Relationships"
         ],
-        "operationId": "Relationships_Create",
         "summary": "Create a new Relationship.",
+        "operationId": "Create_Relationships",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Relationship"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2589,19 +2674,21 @@
         }
       }
     },
-    "/Relationships({RelationshipCode})": {
+    "/Relationships({relationshipCode})": {
       "get": {
         "tags": [
           "Relationships"
         ],
-        "operationId": "Relationships_Get",
         "summary": "Get a single Relationship by key.",
+        "operationId": "Get_Relationships",
         "parameters": [
           {
-            "name": "RelationshipCode",
+            "name": "relationshipCode",
             "in": "path",
+            "description": "Key property 'RelationshipCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'RelationshipCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2616,7 +2703,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2647,37 +2734,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Relationships"
         ],
-        "operationId": "Relationships_Update",
-        "summary": "Partially update a Relationship (PATCH/MERGE semantics).",
+        "summary": "Delete a Relationship.",
+        "operationId": "Delete_Relationships",
         "parameters": [
           {
-            "name": "RelationshipCode",
+            "name": "relationshipCode",
             "in": "path",
+            "description": "Key property 'RelationshipCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'RelationshipCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Relationship"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2691,27 +2770,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Relationships"
         ],
-        "operationId": "Relationships_Delete",
-        "summary": "Delete a Relationship.",
+        "summary": "Partially update a Relationship (PATCH/MERGE semantics).",
+        "operationId": "Update_Relationships",
         "parameters": [
           {
-            "name": "RelationshipCode",
+            "name": "relationshipCode",
             "in": "path",
+            "description": "Key property 'RelationshipCode' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'RelationshipCode' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Relationship"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2731,8 +2822,8 @@
         "tags": [
           "Territories"
         ],
-        "operationId": "Territories_List",
         "summary": "Query the Territories collection.",
+        "operationId": "List_Territories",
         "parameters": [
           {
             "$ref": "#/components/parameters/Select"
@@ -2761,11 +2852,11 @@
         ],
         "responses": {
           "200": {
-            "description": "A page of entities.",
+            "description": "A page of entities",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Territories_CollectionResponse"
+                  "$ref": "#/components/schemas/TerritoriesCollectionResponse"
                 }
               }
             }
@@ -2786,21 +2877,21 @@
         "tags": [
           "Territories"
         ],
-        "operationId": "Territories_Create",
         "summary": "Create a new Territory.",
+        "operationId": "Create_Territories",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Territory"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
-            "description": "The created entity.",
+            "description": "The created entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2822,19 +2913,21 @@
         }
       }
     },
-    "/Territories({TerritoryID})": {
+    "/Territories({territoryID})": {
       "get": {
         "tags": [
           "Territories"
         ],
-        "operationId": "Territories_Get",
         "summary": "Get a single Territory by key.",
+        "operationId": "Get_Territories",
         "parameters": [
           {
-            "name": "TerritoryID",
+            "name": "territoryID",
             "in": "path",
+            "description": "Key property 'TerritoryID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TerritoryID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2849,7 +2942,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested entity.",
+            "description": "The requested entity",
             "content": {
               "application/json": {
                 "schema": {
@@ -2880,37 +2973,29 @@
           }
         }
       },
-      "patch": {
+      "delete": {
         "tags": [
           "Territories"
         ],
-        "operationId": "Territories_Update",
-        "summary": "Partially update a Territory (PATCH/MERGE semantics).",
+        "summary": "Delete a Territory.",
+        "operationId": "Delete_Territories",
         "parameters": [
           {
-            "name": "TerritoryID",
+            "name": "territoryID",
             "in": "path",
+            "description": "Key property 'TerritoryID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TerritoryID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Territory"
-              }
-            }
-          }
-        },
         "responses": {
           "204": {
-            "description": "Updated. No content returned."
+            "description": "Deleted. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2924,27 +3009,39 @@
           }
         }
       },
-      "delete": {
+      "patch": {
         "tags": [
           "Territories"
         ],
-        "operationId": "Territories_Delete",
-        "summary": "Delete a Territory.",
+        "summary": "Partially update a Territory (PATCH/MERGE semantics).",
+        "operationId": "Update_Territories",
         "parameters": [
           {
-            "name": "TerritoryID",
+            "name": "territoryID",
             "in": "path",
+            "description": "Key property 'TerritoryID' (Edm.Int32)",
             "required": true,
-            "description": "Key property 'TerritoryID' (Edm.Int32).",
+            "style": "simple",
+            "explode": false,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Territory"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "204": {
-            "description": "Deleted. No content returned."
+            "description": "Updated. No content returned"
           },
           "default": {
             "description": "Service Layer error.",
@@ -2961,196 +3058,7 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "B1Session": {
-        "type": "apiKey",
-        "in": "cookie",
-        "name": "B1SESSION",
-        "description": "Session cookie returned by POST /Login."
-      }
-    },
-    "parameters": {
-      "Expand": {
-        "name": "$expand",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated navigation properties to expand.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Filter": {
-        "name": "$filter",
-        "in": "query",
-        "required": false,
-        "description": "OData filter expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "InlineCount": {
-        "name": "$inlinecount",
-        "in": "query",
-        "required": false,
-        "description": "Set to 'allpages' to include the total count (odata.count).",
-        "schema": {
-          "type": "string",
-          "enum": [
-            "allpages",
-            "none"
-          ]
-        }
-      },
-      "OrderBy": {
-        "name": "$orderby",
-        "in": "query",
-        "required": false,
-        "description": "OData orderby expression.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Prefer": {
-        "name": "Prefer",
-        "in": "header",
-        "required": false,
-        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Select": {
-        "name": "$select",
-        "in": "query",
-        "required": false,
-        "description": "Comma-separated list of properties to return.",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "Skip": {
-        "name": "$skip",
-        "in": "query",
-        "required": false,
-        "description": "Number of records to skip (paging).",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "Top": {
-        "name": "$top",
-        "in": "query",
-        "required": false,
-        "description": "Maximum number of records to return.",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "schemas": {
-      "AddressFormat": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Format": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AddressFormatParams": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AddressParams": {
-        "type": "object",
-        "properties": {
-          "Country": {
-            "type": "string"
-          },
-          "State": {
-            "type": "string"
-          },
-          "County": {
-            "type": "string"
-          },
-          "ZipCode": {
-            "type": "string"
-          },
-          "City": {
-            "type": "string"
-          },
-          "Building": {
-            "type": "string"
-          },
-          "Block": {
-            "type": "string"
-          },
-          "Street": {
-            "type": "string"
-          },
-          "StreetNo": {
-            "type": "string"
-          },
-          "Address2": {
-            "type": "string"
-          },
-          "Address3": {
-            "type": "string"
-          },
-          "AddressType": {
-            "type": "string"
-          },
-          "GlobalLocationNumber": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "AddressReturnParams": {
-        "type": "object",
-        "properties": {
-          "FullAddress": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssesseeTypeEnum": {
-        "type": "string",
-        "enum": [
-          "atCompany",
-          "atOthers"
-        ],
-        "description": "OData EnumType 'AssesseeTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "AutomaticPostingEnum": {
-        "type": "string",
-        "enum": [
-          "apNo",
-          "apInterestAndFee",
-          "apInterestOnly",
-          "apFeeOnly"
-        ],
-        "description": "OData EnumType 'AutomaticPostingEnum'. Serialised by the Service Layer as the member name."
-      },
       "BPAccountReceivablePayble": {
         "type": "object",
         "properties": {
@@ -3166,94 +3074,65 @@
         },
         "additionalProperties": true
       },
-      "BPAddress": {
+      "BoAddressType": {
+        "type": "string",
+        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bo_ShipTo",
+          "bo_BillTo"
+        ]
+      },
+      "BPIntrastatExtension": {
         "type": "object",
         "properties": {
-          "AddressName": {
-            "type": "string"
+          "IntrastatRelevant": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "intrastatRelevant"
           },
-          "Street": {
-            "type": "string"
-          },
-          "Block": {
-            "type": "string"
-          },
-          "ZipCode": {
-            "type": "string"
-          },
-          "City": {
-            "type": "string"
-          },
-          "County": {
-            "type": "string"
-          },
-          "Country": {
-            "type": "string"
-          },
-          "State": {
-            "type": "string"
-          },
-          "FederalTaxID": {
-            "type": "string"
-          },
-          "TaxCode": {
-            "type": "string"
-          },
-          "BuildingFloorRoom": {
-            "type": "string"
-          },
-          "AddressType": {
-            "$ref": "#/components/schemas/BoAddressType"
-          },
-          "AddressName2": {
-            "type": "string"
-          },
-          "AddressName3": {
-            "type": "string"
-          },
-          "TypeOfAddress": {
-            "type": "string"
-          },
-          "StreetNo": {
-            "type": "string"
-          },
-          "BPCode": {
-            "type": "string"
-          },
-          "RowNum": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "GlobalLocationNumber": {
-            "type": "string"
-          },
-          "Nationality": {
-            "type": "string"
-          },
-          "TaxOffice": {
-            "type": "string"
-          },
-          "GSTIN": {
-            "type": "string"
-          },
-          "GstType": {
-            "$ref": "#/components/schemas/BoGSTRegnTypeEnum"
-          },
-          "CreateDate": {
+          "DomesticOrForeignID": {
             "type": "string",
-            "format": "date-time"
+            "x-ballerina-name": "domesticOrForeignID"
           },
-          "CreateTime": {
-            "type": "string"
+          "CustomsProcedure": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "customsProcedure"
           },
-          "MYFType": {
-            "$ref": "#/components/schemas/BoMYFTypeEnum"
+          "StatisticalProcedure": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "statisticalProcedure"
           },
-          "TaasEnabled": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
+          "NatureOfTransactions": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "natureOfTransactions"
+          },
+          "PortOfEntryOrExit": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "portOfEntryOrExit"
+          },
+          "CardCode": {
+            "type": "string",
+            "x-ballerina-name": "cardCode"
+          },
+          "TransportMode": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "transportMode"
+          },
+          "Incoterms": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "incoterms"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": false
       },
       "BPBankAccount": {
         "type": "object",
@@ -3368,630 +3247,24 @@
         },
         "additionalProperties": true
       },
-      "BPBlockSendingMarketingContent": {
-        "type": "object",
-        "properties": {
-          "CardCode": {
-            "type": "string"
-          },
-          "CommunicationMediaId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Choose": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPBranchAssignmentItem": {
-        "type": "object",
-        "properties": {
-          "BPCode": {
-            "type": "string"
-          },
-          "BPLID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DisabledForBP": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPCode": {
-        "type": "object",
-        "properties": {
-          "Code": {
-            "type": "string"
-          },
-          "DueDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Debit": {
-            "type": "number",
-            "format": "double"
-          },
-          "Credit": {
-            "type": "number",
-            "format": "double"
-          },
-          "SystemDebit": {
-            "type": "number",
-            "format": "double"
-          },
-          "SystemCredit": {
-            "type": "number",
-            "format": "double"
-          },
-          "ForeignDebit": {
-            "type": "number",
-            "format": "double"
-          },
-          "ForeignCredit": {
-            "type": "number",
-            "format": "double"
-          },
-          "ForeignCurrency": {
-            "type": "string"
-          },
-          "BpCtrlAcct": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPCurrencies": {
-        "type": "object",
-        "properties": {
-          "CurrencyCode": {
-            "type": "string"
-          },
-          "Include": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPFiscalRegistryID": {
-        "type": "object",
-        "properties": {
-          "Numerator": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CNAECode": {
-            "type": "string"
-          },
-          "Description": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPFiscalRegistryID_CollectionResponse": {
+      "RelationshipsCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BPFiscalRegistryID"
+              "$ref": "#/components/schemas/Relationship"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
-      },
-      "BPFiscalTaxID": {
-        "type": "object",
-        "properties": {
-          "Address": {
-            "type": "string"
-          },
-          "CNAECode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TaxId0": {
-            "type": "string"
-          },
-          "TaxId1": {
-            "type": "string"
-          },
-          "TaxId2": {
-            "type": "string"
-          },
-          "TaxId3": {
-            "type": "string"
-          },
-          "TaxId4": {
-            "type": "string"
-          },
-          "TaxId5": {
-            "type": "string"
-          },
-          "TaxId6": {
-            "type": "string"
-          },
-          "TaxId7": {
-            "type": "string"
-          },
-          "TaxId8": {
-            "type": "string"
-          },
-          "TaxId9": {
-            "type": "string"
-          },
-          "TaxId10": {
-            "type": "string"
-          },
-          "TaxId11": {
-            "type": "string"
-          },
-          "BPCode": {
-            "type": "string"
-          },
-          "AddrType": {
-            "$ref": "#/components/schemas/BoAddressType"
-          },
-          "TaxId12": {
-            "type": "string"
-          },
-          "TaxId13": {
-            "type": "string"
-          },
-          "AToRetrNFe": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "TaxId14": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPIntrastatExtension": {
-        "type": "object",
-        "properties": {
-          "CardCode": {
-            "type": "string"
-          },
-          "TransportMode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Incoterms": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "NatureOfTransactions": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "StatisticalProcedure": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CustomsProcedure": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PortOfEntryOrExit": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "DomesticOrForeignID": {
-            "type": "string"
-          },
-          "IntrastatRelevant": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPPaymentDate": {
-        "type": "object",
-        "properties": {
-          "PaymentDate": {
-            "type": "string"
-          },
-          "BPCode": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPPaymentMethod": {
-        "type": "object",
-        "properties": {
-          "PaymentMethodCode": {
-            "type": "string"
-          },
-          "RowNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BPCode": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPPriorities_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BPPriority"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "BPPriority": {
-        "type": "object",
-        "properties": {
-          "Priority": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PriorityDescription": {
-            "type": "string"
-          },
-          "BusinessPartners": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BusinessPartner"
-            }
-          }
-        },
-        "additionalProperties": true
-      },
-      "BPVatExemptions": {
-        "type": "object",
-        "properties": {
-          "AbsoluteEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BPCode": {
-            "type": "string"
-          },
-          "Remarks": {
-            "type": "string"
-          },
-          "BPVatExemptionsLines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BPVatExemptionsLine"
-            }
-          },
-          "BusinessPartner": {
-            "$ref": "#/components/schemas/BusinessPartner"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPVatExemptionsLine": {
-        "type": "object",
-        "properties": {
-          "AbsoluteEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LineNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ExemptionDocNum": {
-            "type": "string"
-          },
-          "IssueDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "IssueTime": {
-            "type": "string"
-          },
-          "ExemptionType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ApplyAllItems": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ItemCode": {
-            "type": "string"
-          },
-          "ItemDescription": {
-            "type": "string"
-          },
-          "VATRate": {
-            "type": "number",
-            "format": "double"
-          },
-          "TaxCode": {
-            "type": "string"
-          },
-          "AuthoritiesName": {
-            "type": "string"
-          },
-          "ValidFrom": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "ValidTo": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "VisualOrder": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPVatExemptionsParams": {
-        "type": "object",
-        "properties": {
-          "AbsoluteEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BPCode": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BPVatExemptions_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BPVatExemptions"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "BPWithholdingTax": {
-        "type": "object",
-        "properties": {
-          "WTCode": {
-            "type": "string"
-          },
-          "BPCode": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "BoActivities": {
-        "type": "string",
-        "enum": [
-          "cn_Conversation",
-          "cn_Meeting",
-          "cn_Task",
-          "cn_Other",
-          "cn_Note",
-          "cn_Campaign",
-          "cn_Email"
-        ],
-        "description": "OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name."
-      },
-      "BoAddressType": {
-        "type": "string",
-        "enum": [
-          "bo_ShipTo",
-          "bo_BillTo"
-        ],
-        "description": "OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name."
-      },
-      "BoBaselineDate": {
-        "type": "string",
-        "enum": [
-          "bld_PostingDate",
-          "bld_SystemDate",
-          "bld_TaxDate",
-          "bld_ClosingDate"
-        ],
-        "description": "OData EnumType 'BoBaselineDate'. Serialised by the Service Layer as the member name."
-      },
-      "BoBpAccountTypes": {
-        "type": "string",
-        "enum": [
-          "bpat_General",
-          "bpat_DownPayment",
-          "bpat_AssetsAccount",
-          "bpat_Receivable",
-          "bpat_Payable",
-          "bpat_OnCollection",
-          "bpat_Presentation",
-          "bpat_AssetsPayable",
-          "bpat_Discounted",
-          "bpat_Unpaid",
-          "bpat_OpenDebts",
-          "bpat_Domestic",
-          "bpat_Foreign",
-          "bpat_CashDiscountInterim",
-          "bpat_ExchangeRateInterim"
-        ],
-        "description": "OData EnumType 'BoBpAccountTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoBusinessPartnerGroupTypes": {
-        "type": "string",
-        "enum": [
-          "bbpgt_CustomerGroup",
-          "bbpgt_VendorGroup"
-        ],
-        "description": "OData EnumType 'BoBusinessPartnerGroupTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoCardCompanyTypes": {
-        "type": "string",
-        "enum": [
-          "cCompany",
-          "cPrivate",
-          "cGovernment",
-          "cEmployee",
-          "cSoleTaxableSubject"
-        ],
-        "description": "OData EnumType 'BoCardCompanyTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoCardTypes": {
-        "type": "string",
-        "enum": [
-          "cCustomer",
-          "cSupplier",
-          "cLid"
-        ],
-        "description": "OData EnumType 'BoCardTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoDurations": {
-        "type": "string",
-        "enum": [
-          "du_Seconds",
-          "du_Minuts",
-          "du_Hours",
-          "du_Days"
-        ],
-        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name."
-      },
-      "BoFatherCardTypes": {
-        "type": "string",
-        "enum": [
-          "cPayments_sum",
-          "cDelivery_sum"
-        ],
-        "description": "OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoGSTRegnTypeEnum": {
-        "type": "string",
-        "enum": [
-          "invalid",
-          "gstRegularTDSISD",
-          "gstCasualTaxablePerson",
-          "gstCompositionLevy",
-          "gstGoverDepartPSU",
-          "gstNonResidentTaxablePerson",
-          "gstUNAgencyEmbassy"
-        ],
-        "description": "OData EnumType 'BoGSTRegnTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoGenderTypes": {
-        "type": "string",
-        "enum": [
-          "gt_Female",
-          "gt_Male",
-          "gt_Undefined",
-          "gt_Masked",
-          "gt_Invalid"
-        ],
-        "description": "OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoMYFTypeEnum": {
-        "type": "string",
-        "enum": [
-          "myft_WholesaleSales",
-          "myft_RetailSales",
-          "myft_WholesalePurchases",
-          "myft_OtherExpenseTransactions"
-        ],
-        "description": "OData EnumType 'BoMYFTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoMsgPriorities": {
-        "type": "string",
-        "enum": [
-          "pr_Low",
-          "pr_Normal",
-          "pr_High"
-        ],
-        "description": "OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name."
-      },
-      "BoOpenIncPayment": {
-        "type": "string",
-        "enum": [
-          "oip_No",
-          "oip_Cash",
-          "oip_Checks",
-          "oip_Credit",
-          "oip_BankTransfer"
-        ],
-        "description": "OData EnumType 'BoOpenIncPayment'. Serialised by the Service Layer as the member name."
-      },
-      "BoPayTermDueTypes": {
-        "type": "string",
-        "enum": [
-          "pdt_MonthEnd",
-          "pdt_HalfMonth",
-          "pdt_MonthStart",
-          "pdt_None"
-        ],
-        "description": "OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoPublicDirectoryStatusTypes": {
-        "type": "string",
-        "enum": [
-          "pds_ActivePrivateEntry",
-          "pds_ActivePublicEntry",
-          "pds_InactivePrivateEntry",
-          "pds_InactivePublicEntry",
-          "pds_NotRegistered"
-        ],
-        "description": "OData EnumType 'BoPublicDirectoryStatusTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoTaxRoundingRuleTypes": {
-        "type": "string",
-        "enum": [
-          "trr_RoundDown",
-          "trr_RoundUp",
-          "trr_RoundOff",
-          "trr_CompanyDefault"
-        ],
-        "description": "OData EnumType 'BoTaxRoundingRuleTypes'. Serialised by the Service Layer as the member name."
-      },
-      "BoVatStatus": {
-        "type": "string",
-        "enum": [
-          "vExempted",
-          "vLiable",
-          "vEC"
-        ],
-        "description": "OData EnumType 'BoVatStatus'. Serialised by the Service Layer as the member name."
-      },
-      "BoYesNoEnum": {
-        "type": "string",
-        "enum": [
-          "tNO",
-          "tYES"
-        ],
-        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
-      },
-      "BoYesNoNoneEnum": {
-        "type": "string",
-        "enum": [
-          "boNO",
-          "boYES",
-          "boNONE"
-        ],
-        "description": "OData EnumType 'BoYesNoNoneEnum'. Serialised by the Service Layer as the member name."
       },
       "BusinessPartner": {
         "type": "object",
@@ -5078,6 +4351,546 @@
         },
         "additionalProperties": true
       },
+      "ElectronicDocProtocolCodeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "edpc_Invalid",
+          "edpc_GEN",
+          "edpc_EET",
+          "edpc_CFDI",
+          "edpc_FPA",
+          "edpc_MTD",
+          "edpc_EWB",
+          "edpc_PEPPOL",
+          "edpc_HOI",
+          "edpc_MYF",
+          "edpc_EIS",
+          "edpc_IIS",
+          "edpc_IIS_Annual",
+          "edpc_DIGIPOORT",
+          "edpc_EBooks",
+          "edpc_DOX",
+          "edpc_RTIE",
+          "edpc_EBilling",
+          "edpc_TaxService",
+          "edpc_AFE",
+          "edpc_DocSign",
+          "edpc_KSeF",
+          "edpc_GSTReturn",
+          "edpc_PTDocSign",
+          "edpc_SkatDK",
+          "edpc_EII",
+          "edpc_NFe",
+          "edpc_PTeInvoicing",
+          "edpc_PTeCom",
+          "edpc_VeriFactu",
+          "edpc_BAS",
+          "edpc_PDFwithXML",
+          "edpc_FReINV"
+        ]
+      },
+      "OpenningBalanceAccount": {
+        "type": "object",
+        "properties": {
+          "Details": {
+            "type": "string",
+            "x-ballerina-name": "details"
+          },
+          "OpenBalanceAccount": {
+            "type": "string",
+            "x-ballerina-name": "openBalanceAccount"
+          },
+          "Ref1": {
+            "type": "string",
+            "x-ballerina-name": "ref1"
+          },
+          "Ref2": {
+            "type": "string",
+            "x-ballerina-name": "ref2"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "date"
+          },
+          "BPLID": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "bPLID"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ElectronicDocGenTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "edgt_NotRelevant",
+          "edgt_Generate",
+          "edgt_GenerateLater",
+          "edgt_GenerateOffline"
+        ]
+      },
+      "BoYesNoEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tNO",
+          "tYES"
+        ]
+      },
+      "BPWithholdingTax": {
+        "type": "object",
+        "properties": {
+          "WTCode": {
+            "type": "string"
+          },
+          "BPCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "Industry": {
+        "type": "object",
+        "properties": {
+          "IndustryDescription": {
+            "type": "string"
+          },
+          "IndustryName": {
+            "type": "string"
+          },
+          "IndustryCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "BPAddress": {
+        "type": "object",
+        "properties": {
+          "AddressName": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "FederalTaxID": {
+            "type": "string"
+          },
+          "TaxCode": {
+            "type": "string"
+          },
+          "BuildingFloorRoom": {
+            "type": "string"
+          },
+          "AddressType": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "AddressName2": {
+            "type": "string"
+          },
+          "AddressName3": {
+            "type": "string"
+          },
+          "TypeOfAddress": {
+            "type": "string"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "BPCode": {
+            "type": "string"
+          },
+          "RowNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "GlobalLocationNumber": {
+            "type": "string"
+          },
+          "Nationality": {
+            "type": "string"
+          },
+          "TaxOffice": {
+            "type": "string"
+          },
+          "GSTIN": {
+            "type": "string"
+          },
+          "GstType": {
+            "$ref": "#/components/schemas/BoGSTRegnTypeEnum"
+          },
+          "CreateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CreateTime": {
+            "type": "string"
+          },
+          "MYFType": {
+            "$ref": "#/components/schemas/BoMYFTypeEnum"
+          },
+          "TaasEnabled": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SEPASequenceTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'SEPASequenceTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "sstOOFF",
+          "sstFRST",
+          "sstRCUR",
+          "sstFNAL"
+        ]
+      },
+      "BPFiscalTaxID": {
+        "type": "object",
+        "properties": {
+          "Address": {
+            "type": "string"
+          },
+          "CNAECode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TaxId0": {
+            "type": "string"
+          },
+          "TaxId1": {
+            "type": "string"
+          },
+          "TaxId2": {
+            "type": "string"
+          },
+          "TaxId3": {
+            "type": "string"
+          },
+          "TaxId4": {
+            "type": "string"
+          },
+          "TaxId5": {
+            "type": "string"
+          },
+          "TaxId6": {
+            "type": "string"
+          },
+          "TaxId7": {
+            "type": "string"
+          },
+          "TaxId8": {
+            "type": "string"
+          },
+          "TaxId9": {
+            "type": "string"
+          },
+          "TaxId10": {
+            "type": "string"
+          },
+          "TaxId11": {
+            "type": "string"
+          },
+          "BPCode": {
+            "type": "string"
+          },
+          "AddrType": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "TaxId12": {
+            "type": "string"
+          },
+          "TaxId13": {
+            "type": "string"
+          },
+          "AToRetrNFe": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "TaxId14": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "Territory": {
+        "type": "object",
+        "properties": {
+          "TerritoryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "LocationIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Inactive": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Parent": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "DiscountGroupBaseObjectEnum": {
+        "type": "string",
+        "description": "OData EnumType 'DiscountGroupBaseObjectEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "dgboNone",
+          "dgboItemGroups",
+          "dgboItemProperties",
+          "dgboManufacturer",
+          "dgboItems"
+        ]
+      },
+      "BPPriority": {
+        "type": "object",
+        "properties": {
+          "Priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PriorityDescription": {
+            "type": "string"
+          },
+          "BusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoPayTermDueTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "pdt_MonthEnd",
+          "pdt_HalfMonth",
+          "pdt_MonthStart",
+          "pdt_None"
+        ]
+      },
+      "ResidenceNumberTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rntSpanishFiscalID",
+          "rntVATRegistrationNumber",
+          "rntPassport",
+          "rntFiscalIDIssuedbytheResidenceCountry",
+          "rntCertificateofFiscalResidence",
+          "rntOtherDocument"
+        ]
+      },
+      "PriceModeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "pmNet",
+          "pmGross"
+        ]
+      },
+      "RelatedDocument": {
+        "type": "object",
+        "properties": {
+          "AbsEnry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "absEnry"
+          },
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "absEntry"
+          },
+          "UUID": {
+            "type": "string",
+            "x-ballerina-name": "uUID"
+          },
+          "DocTye": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RelatedDocumentTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "docTye"
+          },
+          "DocType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RelatedDocumentTypeEnum"
+              }
+            ],
+            "x-ballerina-name": "docType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BPBlockSendingMarketingContent": {
+        "type": "object",
+        "properties": {
+          "CommunicationMediaId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "communicationMediaId"
+          },
+          "Choose": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "choose"
+          },
+          "CardCode": {
+            "type": "string",
+            "x-ballerina-name": "cardCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddressParams": {
+        "type": "object",
+        "properties": {
+          "Country": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          },
+          "County": {
+            "type": "string"
+          },
+          "ZipCode": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "Building": {
+            "type": "string"
+          },
+          "Block": {
+            "type": "string"
+          },
+          "Street": {
+            "type": "string"
+          },
+          "StreetNo": {
+            "type": "string"
+          },
+          "Address2": {
+            "type": "string"
+          },
+          "Address3": {
+            "type": "string"
+          },
+          "AddressType": {
+            "type": "string"
+          },
+          "GlobalLocationNumber": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoVatStatus": {
+        "type": "string",
+        "description": "OData EnumType 'BoVatStatus'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "vExempted",
+          "vLiable",
+          "vEC"
+        ]
+      },
+      "BoMsgPriorities": {
+        "type": "string",
+        "description": "OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "pr_Low",
+          "pr_Normal",
+          "pr_High"
+        ]
+      },
+      "ExemptionMaxAmountValidationTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ExemptionMaxAmountValidationTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "emaIndividual",
+          "emaAccumulated"
+        ]
+      },
+      "ShaamGroupEnum": {
+        "type": "string",
+        "description": "OData EnumType 'ShaamGroupEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "sgServicesAndAsset",
+          "sgAgriculturalProducts",
+          "sgInsuranceCommissions",
+          "sgWHTaxInstructions",
+          "sgInterestExchangeRateDiffs",
+          "sgRentalFees"
+        ]
+      },
+      "ContactsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
       "BusinessPartnerGroup": {
         "type": "object",
         "properties": {
@@ -5100,11 +4913,232 @@
         },
         "additionalProperties": true
       },
-      "BusinessPartnerGroups_CollectionResponse": {
+      "AutomaticPostingEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AutomaticPostingEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "apNo",
+          "apInterestAndFee",
+          "apInterestOnly",
+          "apFeeOnly"
+        ]
+      },
+      "BoGSTRegnTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoGSTRegnTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "invalid",
+          "gstRegularTDSISD",
+          "gstCasualTaxablePerson",
+          "gstCompositionLevy",
+          "gstGoverDepartPSU",
+          "gstNonResidentTaxablePerson",
+          "gstUNAgencyEmbassy"
+        ]
+      },
+      "AddressFormatParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "code"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BPPrioritiesCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BPPriority"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BoPublicDirectoryStatusTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoPublicDirectoryStatusTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "pds_ActivePrivateEntry",
+          "pds_ActivePublicEntry",
+          "pds_InactivePrivateEntry",
+          "pds_InactivePublicEntry",
+          "pds_NotRegistered"
+        ]
+      },
+      "ContactEmployee": {
+        "type": "object",
+        "properties": {
+          "CardCode": {
             "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Position": {
+            "type": "string"
+          },
+          "Address": {
+            "type": "string"
+          },
+          "Phone1": {
+            "type": "string"
+          },
+          "Phone2": {
+            "type": "string"
+          },
+          "MobilePhone": {
+            "type": "string"
+          },
+          "Fax": {
+            "type": "string"
+          },
+          "E_Mail": {
+            "type": "string"
+          },
+          "Pager": {
+            "type": "string"
+          },
+          "Remarks1": {
+            "type": "string"
+          },
+          "Remarks2": {
+            "type": "string"
+          },
+          "Password": {
+            "type": "string"
+          },
+          "InternalCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PlaceOfBirth": {
+            "type": "string"
+          },
+          "DateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Gender": {
+            "$ref": "#/components/schemas/BoGenderTypes"
+          },
+          "Profession": {
+            "type": "string"
+          },
+          "Title": {
+            "type": "string"
+          },
+          "CityOfBirth": {
+            "type": "string"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "MiddleName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "EmailGroupCode": {
+            "type": "string"
+          },
+          "BlockSendingMarketingContent": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "CreateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CreateTime": {
+            "type": "string"
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "UpdateTime": {
+            "type": "string"
+          },
+          "ConnectedAddressName": {
+            "type": "string"
+          },
+          "ConnectedAddressType": {
+            "$ref": "#/components/schemas/BoAddressType"
+          },
+          "ForeignCountry": {
+            "type": "string"
+          },
+          "GenderEx": {
+            "type": "string"
+          },
+          "NaturalPer": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ContactEmployeeBlockSendingMarketingContents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactEmployeeBlockSendingMarketingContent"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "OperationCode347Enum": {
+        "type": "string",
+        "description": "OData EnumType 'OperationCode347Enum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "ocGoodsOrServiciesAcquisitions",
+          "ocPublicEntitiesAcquisitions",
+          "ocTravelAgenciesPurchases",
+          "ocSalesOrServicesRevenues",
+          "ocPublicSubsidies",
+          "ocTravelAgenciesSales"
+        ]
+      },
+      "IndustriesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Industry"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "BusinessPartnerGroupsCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -5113,26 +5147,371 @@
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "BusinessPartnerProperties_CollectionResponse": {
+      "BoGenderTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "gt_Female",
+          "gt_Male",
+          "gt_Undefined",
+          "gt_Masked",
+          "gt_Invalid"
+        ]
+      },
+      "AddressReturnParams": {
+        "type": "object",
+        "properties": {
+          "FullAddress": {
+            "type": "string",
+            "x-ballerina-name": "fullAddress"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BPVatExemptionsCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BusinessPartnerProperty"
+              "$ref": "#/components/schemas/BPVatExemptions"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
+      },
+      "EDocGenerationTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "edocGenerate",
+          "edocGenerateLater",
+          "edocNotRelevant",
+          "edocGenerateOffline"
+        ]
+      },
+      "BoCardCompanyTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoCardCompanyTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cCompany",
+          "cPrivate",
+          "cGovernment",
+          "cEmployee",
+          "cSoleTaxableSubject"
+        ]
+      },
+      "TerritoriesCollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
+          }
+        }
+      },
+      "ContactEmployeeBlockSendingMarketingContent": {
+        "type": "object",
+        "properties": {
+          "CommunicationMediaId": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "communicationMediaId"
+          },
+          "Choose": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "choose"
+          },
+          "ContactEmployeeAbsEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "contactEmployeeAbsEntry"
+          },
+          "ContactPersonName": {
+            "type": "string",
+            "x-ballerina-name": "contactPersonName"
+          },
+          "CardCode": {
+            "type": "string",
+            "x-ballerina-name": "cardCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoCardTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoCardTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cCustomer",
+          "cSupplier",
+          "cLid"
+        ]
+      },
+      "BoMYFTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoMYFTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "myft_WholesaleSales",
+          "myft_RetailSales",
+          "myft_WholesalePurchases",
+          "myft_OtherExpenseTransactions"
+        ]
+      },
+      "BoTaxRoundingRuleTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoTaxRoundingRuleTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "trr_RoundDown",
+          "trr_RoundUp",
+          "trr_RoundOff",
+          "trr_CompanyDefault"
+        ]
+      },
+      "BoBusinessPartnerGroupTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoBusinessPartnerGroupTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bbpgt_CustomerGroup",
+          "bbpgt_VendorGroup"
+        ]
+      },
+      "ElectronicProtocol": {
+        "type": "object",
+        "properties": {
+          "ProtocolCode": {
+            "$ref": "#/components/schemas/ElectronicDocProtocolCodeEnum"
+          },
+          "GenerationType": {
+            "$ref": "#/components/schemas/ElectronicDocGenTypeEnum"
+          },
+          "MappingID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TestingMode": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "Confirmation": {
+            "type": "string"
+          },
+          "EDocType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CFDiCancellationReason": {
+            "type": "string"
+          },
+          "CFDiCancellationResponse": {
+            "type": "string"
+          },
+          "RelatedDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RelatedDocument"
+            }
+          },
+          "EBooksRelevant": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "EBooksMARK": {
+            "type": "string"
+          },
+          "EBooksMARKofNegative": {
+            "type": "string"
+          },
+          "EBooksInvoiceType": {
+            "type": "string"
+          },
+          "EBooksInvoiceTypeofNegative": {
+            "type": "string"
+          },
+          "EBillingIRN": {
+            "type": "string"
+          },
+          "EETPKP": {
+            "type": "string"
+          },
+          "EETBKP": {
+            "type": "string"
+          },
+          "SignatureInputMessage": {
+            "type": "string"
+          },
+          "SignatureDigest": {
+            "type": "string"
+          },
+          "FechaTimbrado": {
+            "type": "string"
+          },
+          "SelloSAT": {
+            "type": "string"
+          },
+          "PaymentMethod": {
+            "type": "string"
+          },
+          "RfcProvCertif": {
+            "type": "string"
+          },
+          "NoCertificadoSAT": {
+            "type": "string"
+          },
+          "FPASequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "FPASendDateSDI": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FPAProgressivo": {
+            "type": "string"
+          },
+          "ProtocolDescription": {
+            "type": "string"
+          },
+          "CFDiExport": {
+            "type": "string"
+          },
+          "EBillingAckNo": {
+            "type": "string"
+          },
+          "EBillingAckDt": {
+            "type": "string"
+          },
+          "EBillingSignedInvoice": {
+            "type": "string"
+          },
+          "EBillingSignedQRCode": {
+            "type": "string"
+          },
+          "EBillingResponseStatus": {
+            "type": "string"
+          },
+          "CFDiCancellationReference": {
+            "type": "string"
+          },
+          "EBooksQRCodePath": {
+            "type": "string"
+          },
+          "EBooksQRCodePathofNegative": {
+            "type": "string"
+          },
+          "CartaPorteID": {
+            "type": "string"
+          },
+          "EBooksDispatchDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "EBooksDispatchTime": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BPVatExemptionsLine": {
+        "type": "object",
+        "properties": {
+          "VATRate": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "vATRate"
+          },
+          "ItemCode": {
+            "type": "string",
+            "x-ballerina-name": "itemCode"
+          },
+          "IssueDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "issueDate"
+          },
+          "ItemDescription": {
+            "type": "string",
+            "x-ballerina-name": "itemDescription"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "lineNumber"
+          },
+          "ExemptionDocNum": {
+            "type": "string",
+            "x-ballerina-name": "exemptionDocNum"
+          },
+          "IssueTime": {
+            "type": "string",
+            "x-ballerina-name": "issueTime"
+          },
+          "AbsoluteEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "absoluteEntry"
+          },
+          "TaxCode": {
+            "type": "string",
+            "x-ballerina-name": "taxCode"
+          },
+          "ValidTo": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "validTo"
+          },
+          "ValidFrom": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "validFrom"
+          },
+          "AuthoritiesName": {
+            "type": "string",
+            "x-ballerina-name": "authoritiesName"
+          },
+          "ExemptionType": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "exemptionType"
+          },
+          "ApplyAllItems": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BoYesNoEnum"
+              }
+            ],
+            "x-ballerina-name": "applyAllItems"
+          },
+          "VisualOrder": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "visualOrder"
+          }
+        },
+        "additionalProperties": false
       },
       "BusinessPartnerProperty": {
         "type": "object",
@@ -5147,35 +5526,338 @@
         },
         "additionalProperties": true
       },
-      "BusinessPartnerPropertyParams": {
-        "type": "object",
-        "properties": {
-          "PropertyCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PropertyName": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
+      "TypeOfOperationEnum": {
+        "type": "string",
+        "description": "OData EnumType 'TypeOfOperationEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "tooProfessionalServices",
+          "tooRentingAssets",
+          "tooOthers",
+          "tooDisposalOfGoods",
+          "tooImportOfGoodsAndServices",
+          "tooImportByVirtualTransfer",
+          "tooGlobalOperations"
+        ]
       },
-      "BusinessPartners_CollectionResponse": {
+      "BoActivities": {
+        "type": "string",
+        "description": "OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cn_Conversation",
+          "cn_Meeting",
+          "cn_Task",
+          "cn_Other",
+          "cn_Note",
+          "cn_Campaign",
+          "cn_Email"
+        ]
+      },
+      "RelatedDocumentTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "rdt_Payment",
+          "rdt_Reconciliation"
+        ]
+      },
+      "BPFiscalRegistryIDCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BusinessPartner"
+              "$ref": "#/components/schemas/BPFiscalRegistryID"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
+      },
+      "PaymentTermsType": {
+        "type": "object",
+        "properties": {
+          "GroupNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PaymentTermsGroupName": {
+            "type": "string"
+          },
+          "StartFrom": {
+            "$ref": "#/components/schemas/BoPayTermDueTypes"
+          },
+          "NumberOfAdditionalMonths": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NumberOfAdditionalDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreditLimit": {
+            "type": "number",
+            "format": "double"
+          },
+          "GeneralDiscount": {
+            "type": "number",
+            "format": "double"
+          },
+          "InterestOnArrears": {
+            "type": "number",
+            "format": "double"
+          },
+          "PriceListNo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LoadLimit": {
+            "type": "number",
+            "format": "double"
+          },
+          "OpenReceipt": {
+            "$ref": "#/components/schemas/BoOpenIncPayment"
+          },
+          "DiscountCode": {
+            "type": "string"
+          },
+          "DunningCode": {
+            "type": "string"
+          },
+          "BaselineDate": {
+            "$ref": "#/components/schemas/BoBaselineDate"
+          },
+          "NumberOfInstallments": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NumberOfToleranceDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EndAt": {
+            "$ref": "#/components/schemas/BoPayTermDueTypes"
+          },
+          "BusinessPartners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "BPVatExemptionsParams": {
+        "type": "object",
+        "properties": {
+          "AbsoluteEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "absoluteEntry"
+          },
+          "BPCode": {
+            "type": "string",
+            "x-ballerina-name": "bPCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddressFormat": {
+        "type": "object",
+        "properties": {
+          "Format": {
+            "type": "string",
+            "x-ballerina-name": "format"
+          },
+          "Code": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "code"
+          },
+          "Name": {
+            "type": "string",
+            "x-ballerina-name": "name"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BPVatExemptions": {
+        "type": "object",
+        "properties": {
+          "AbsoluteEntry": {
+            "type": "integer",
+            "format": "int32",
+            "x-ballerina-name": "absoluteEntry"
+          },
+          "Remarks": {
+            "type": "string",
+            "x-ballerina-name": "remarks"
+          },
+          "BusinessPartner": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BusinessPartner"
+              }
+            ],
+            "x-ballerina-name": "businessPartner"
+          },
+          "BPVatExemptionsLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BPVatExemptionsLine"
+            },
+            "x-ballerina-name": "bPVatExemptionsLines"
+          },
+          "BPCode": {
+            "type": "string",
+            "x-ballerina-name": "bPCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoOpenIncPayment": {
+        "type": "string",
+        "description": "OData EnumType 'BoOpenIncPayment'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "oip_No",
+          "oip_Cash",
+          "oip_Checks",
+          "oip_Credit",
+          "oip_BankTransfer"
+        ]
+      },
+      "BoBaselineDate": {
+        "type": "string",
+        "description": "OData EnumType 'BoBaselineDate'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "bld_PostingDate",
+          "bld_SystemDate",
+          "bld_TaxDate",
+          "bld_ClosingDate"
+        ]
+      },
+      "BPPaymentMethod": {
+        "type": "object",
+        "properties": {
+          "PaymentMethodCode": {
+            "type": "string"
+          },
+          "RowNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "BPCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoYesNoNoneEnum": {
+        "type": "string",
+        "description": "OData EnumType 'BoYesNoNoneEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "boNO",
+          "boYES",
+          "boNONE"
+        ]
+      },
+      "EffectivePriceEnum": {
+        "type": "string",
+        "description": "OData EnumType 'EffectivePriceEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "epDefaultPriority",
+          "epLowestPrice",
+          "epHighestPrice"
+        ]
+      },
+      "ServiceLayerError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "message": {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "BPBranchAssignmentItem": {
+        "type": "object",
+        "properties": {
+          "BPCode": {
+            "type": "string"
+          },
+          "BPLID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DisabledForBP": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BPFiscalRegistryID": {
+        "type": "object",
+        "properties": {
+          "Numerator": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CNAECode": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BoFatherCardTypes": {
+        "type": "string",
+        "description": "OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "cPayments_sum",
+          "cDelivery_sum"
+        ]
+      },
+      "DiscountGroupRelationsEnum": {
+        "type": "string",
+        "description": "OData EnumType 'DiscountGroupRelationsEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "dgrLowestDiscount",
+          "dgrHighestDiscount",
+          "dgrAverageDiscount",
+          "dgrDiscountTotals",
+          "dgrMultipliedDiscount"
+        ]
+      },
+      "AssesseeTypeEnum": {
+        "type": "string",
+        "description": "OData EnumType 'AssesseeTypeEnum'. Serialised by the Service Layer as the member name",
+        "enum": [
+          "atCompany",
+          "atOthers"
+        ]
       },
       "Contact": {
         "type": "object",
@@ -5350,573 +6032,12 @@
         },
         "additionalProperties": true
       },
-      "ContactEmployee": {
-        "type": "object",
-        "properties": {
-          "CardCode": {
-            "type": "string"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Position": {
-            "type": "string"
-          },
-          "Address": {
-            "type": "string"
-          },
-          "Phone1": {
-            "type": "string"
-          },
-          "Phone2": {
-            "type": "string"
-          },
-          "MobilePhone": {
-            "type": "string"
-          },
-          "Fax": {
-            "type": "string"
-          },
-          "E_Mail": {
-            "type": "string"
-          },
-          "Pager": {
-            "type": "string"
-          },
-          "Remarks1": {
-            "type": "string"
-          },
-          "Remarks2": {
-            "type": "string"
-          },
-          "Password": {
-            "type": "string"
-          },
-          "InternalCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PlaceOfBirth": {
-            "type": "string"
-          },
-          "DateOfBirth": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Gender": {
-            "$ref": "#/components/schemas/BoGenderTypes"
-          },
-          "Profession": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "CityOfBirth": {
-            "type": "string"
-          },
-          "Active": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "FirstName": {
-            "type": "string"
-          },
-          "MiddleName": {
-            "type": "string"
-          },
-          "LastName": {
-            "type": "string"
-          },
-          "EmailGroupCode": {
-            "type": "string"
-          },
-          "BlockSendingMarketingContent": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "CreateDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "CreateTime": {
-            "type": "string"
-          },
-          "UpdateDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "UpdateTime": {
-            "type": "string"
-          },
-          "ConnectedAddressName": {
-            "type": "string"
-          },
-          "ConnectedAddressType": {
-            "$ref": "#/components/schemas/BoAddressType"
-          },
-          "ForeignCountry": {
-            "type": "string"
-          },
-          "GenderEx": {
-            "type": "string"
-          },
-          "NaturalPer": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "ContactEmployeeBlockSendingMarketingContents": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactEmployeeBlockSendingMarketingContent"
-            }
-          }
-        },
-        "additionalProperties": true
-      },
-      "ContactEmployeeBlockSendingMarketingContent": {
-        "type": "object",
-        "properties": {
-          "ContactEmployeeAbsEntry": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CommunicationMediaId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Choose": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "CardCode": {
-            "type": "string"
-          },
-          "ContactPersonName": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Contacts_CollectionResponse": {
+      "PaymentTermsTypesCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Contact"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "DiscountGroup": {
-        "type": "object",
-        "properties": {
-          "ObjectEntry": {
-            "type": "string"
-          },
-          "DiscountPercentage": {
-            "type": "number",
-            "format": "double"
-          },
-          "BPCode": {
-            "type": "string"
-          },
-          "BaseObjectType": {
-            "$ref": "#/components/schemas/DiscountGroupBaseObjectEnum"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DiscountGroupBaseObjectEnum": {
-        "type": "string",
-        "enum": [
-          "dgboNone",
-          "dgboItemGroups",
-          "dgboItemProperties",
-          "dgboManufacturer",
-          "dgboItems"
-        ],
-        "description": "OData EnumType 'DiscountGroupBaseObjectEnum'. Serialised by the Service Layer as the member name."
-      },
-      "DiscountGroupRelationsEnum": {
-        "type": "string",
-        "enum": [
-          "dgrLowestDiscount",
-          "dgrHighestDiscount",
-          "dgrAverageDiscount",
-          "dgrDiscountTotals",
-          "dgrMultipliedDiscount"
-        ],
-        "description": "OData EnumType 'DiscountGroupRelationsEnum'. Serialised by the Service Layer as the member name."
-      },
-      "EDocGenerationTypeEnum": {
-        "type": "string",
-        "enum": [
-          "edocGenerate",
-          "edocGenerateLater",
-          "edocNotRelevant",
-          "edocGenerateOffline"
-        ],
-        "description": "OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "EffectivePriceEnum": {
-        "type": "string",
-        "enum": [
-          "epDefaultPriority",
-          "epLowestPrice",
-          "epHighestPrice"
-        ],
-        "description": "OData EnumType 'EffectivePriceEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ElectronicDocGenTypeEnum": {
-        "type": "string",
-        "enum": [
-          "edgt_NotRelevant",
-          "edgt_Generate",
-          "edgt_GenerateLater",
-          "edgt_GenerateOffline"
-        ],
-        "description": "OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ElectronicDocProtocolCodeEnum": {
-        "type": "string",
-        "enum": [
-          "edpc_Invalid",
-          "edpc_GEN",
-          "edpc_EET",
-          "edpc_CFDI",
-          "edpc_FPA",
-          "edpc_MTD",
-          "edpc_EWB",
-          "edpc_PEPPOL",
-          "edpc_HOI",
-          "edpc_MYF",
-          "edpc_EIS",
-          "edpc_IIS",
-          "edpc_IIS_Annual",
-          "edpc_DIGIPOORT",
-          "edpc_EBooks",
-          "edpc_DOX",
-          "edpc_RTIE",
-          "edpc_EBilling",
-          "edpc_TaxService",
-          "edpc_AFE",
-          "edpc_DocSign",
-          "edpc_KSeF",
-          "edpc_GSTReturn",
-          "edpc_PTDocSign",
-          "edpc_SkatDK",
-          "edpc_EII",
-          "edpc_NFe",
-          "edpc_PTeInvoicing",
-          "edpc_PTeCom",
-          "edpc_VeriFactu",
-          "edpc_BAS",
-          "edpc_PDFwithXML",
-          "edpc_FReINV"
-        ],
-        "description": "OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ElectronicProtocol": {
-        "type": "object",
-        "properties": {
-          "ProtocolCode": {
-            "$ref": "#/components/schemas/ElectronicDocProtocolCodeEnum"
-          },
-          "GenerationType": {
-            "$ref": "#/components/schemas/ElectronicDocGenTypeEnum"
-          },
-          "MappingID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "TestingMode": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "Confirmation": {
-            "type": "string"
-          },
-          "EDocType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CFDiCancellationReason": {
-            "type": "string"
-          },
-          "CFDiCancellationResponse": {
-            "type": "string"
-          },
-          "RelatedDocuments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RelatedDocument"
-            }
-          },
-          "EBooksRelevant": {
-            "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "EBooksMARK": {
-            "type": "string"
-          },
-          "EBooksMARKofNegative": {
-            "type": "string"
-          },
-          "EBooksInvoiceType": {
-            "type": "string"
-          },
-          "EBooksInvoiceTypeofNegative": {
-            "type": "string"
-          },
-          "EBillingIRN": {
-            "type": "string"
-          },
-          "EETPKP": {
-            "type": "string"
-          },
-          "EETBKP": {
-            "type": "string"
-          },
-          "SignatureInputMessage": {
-            "type": "string"
-          },
-          "SignatureDigest": {
-            "type": "string"
-          },
-          "FechaTimbrado": {
-            "type": "string"
-          },
-          "SelloSAT": {
-            "type": "string"
-          },
-          "PaymentMethod": {
-            "type": "string"
-          },
-          "RfcProvCertif": {
-            "type": "string"
-          },
-          "NoCertificadoSAT": {
-            "type": "string"
-          },
-          "FPASequenceNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "FPASendDateSDI": {
             "type": "string",
-            "format": "date-time"
-          },
-          "FPAProgressivo": {
-            "type": "string"
-          },
-          "ProtocolDescription": {
-            "type": "string"
-          },
-          "CFDiExport": {
-            "type": "string"
-          },
-          "EBillingAckNo": {
-            "type": "string"
-          },
-          "EBillingAckDt": {
-            "type": "string"
-          },
-          "EBillingSignedInvoice": {
-            "type": "string"
-          },
-          "EBillingSignedQRCode": {
-            "type": "string"
-          },
-          "EBillingResponseStatus": {
-            "type": "string"
-          },
-          "CFDiCancellationReference": {
-            "type": "string"
-          },
-          "EBooksQRCodePath": {
-            "type": "string"
-          },
-          "EBooksQRCodePathofNegative": {
-            "type": "string"
-          },
-          "CartaPorteID": {
-            "type": "string"
-          },
-          "EBooksDispatchDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "EBooksDispatchTime": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "ExemptionMaxAmountValidationTypeEnum": {
-        "type": "string",
-        "enum": [
-          "emaIndividual",
-          "emaAccumulated"
-        ],
-        "description": "OData EnumType 'ExemptionMaxAmountValidationTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "Industries_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Industry"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "Industry": {
-        "type": "object",
-        "properties": {
-          "IndustryDescription": {
-            "type": "string"
-          },
-          "IndustryName": {
-            "type": "string"
-          },
-          "IndustryCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BusinessPartners": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BusinessPartner"
-            }
-          }
-        },
-        "additionalProperties": true
-      },
-      "OpenningBalanceAccount": {
-        "type": "object",
-        "properties": {
-          "OpenBalanceAccount": {
-            "type": "string"
-          },
-          "Date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Ref1": {
-            "type": "string"
-          },
-          "Ref2": {
-            "type": "string"
-          },
-          "Details": {
-            "type": "string"
-          },
-          "BPLID": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OperationCode347Enum": {
-        "type": "string",
-        "enum": [
-          "ocGoodsOrServiciesAcquisitions",
-          "ocPublicEntitiesAcquisitions",
-          "ocTravelAgenciesPurchases",
-          "ocSalesOrServicesRevenues",
-          "ocPublicSubsidies",
-          "ocTravelAgenciesSales"
-        ],
-        "description": "OData EnumType 'OperationCode347Enum'. Serialised by the Service Layer as the member name."
-      },
-      "PaymentTermsType": {
-        "type": "object",
-        "properties": {
-          "GroupNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "PaymentTermsGroupName": {
-            "type": "string"
-          },
-          "StartFrom": {
-            "$ref": "#/components/schemas/BoPayTermDueTypes"
-          },
-          "NumberOfAdditionalMonths": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "NumberOfAdditionalDays": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "CreditLimit": {
-            "type": "number",
-            "format": "double"
-          },
-          "GeneralDiscount": {
-            "type": "number",
-            "format": "double"
-          },
-          "InterestOnArrears": {
-            "type": "number",
-            "format": "double"
-          },
-          "PriceListNo": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "LoadLimit": {
-            "type": "number",
-            "format": "double"
-          },
-          "OpenReceipt": {
-            "$ref": "#/components/schemas/BoOpenIncPayment"
-          },
-          "DiscountCode": {
-            "type": "string"
-          },
-          "DunningCode": {
-            "type": "string"
-          },
-          "BaselineDate": {
-            "$ref": "#/components/schemas/BoBaselineDate"
-          },
-          "NumberOfInstallments": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "NumberOfToleranceDays": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "EndAt": {
-            "$ref": "#/components/schemas/BoPayTermDueTypes"
-          },
-          "BusinessPartners": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BusinessPartner"
-            }
-          }
-        },
-        "additionalProperties": true
-      },
-      "PaymentTermsTypes_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
@@ -5925,48 +6046,39 @@
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "PriceModeEnum": {
-        "type": "string",
-        "enum": [
-          "pmNet",
-          "pmGross"
-        ],
-        "description": "OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "RelatedDocument": {
+      "BusinessPartnersCollectionResponse": {
         "type": "object",
         "properties": {
-          "DocType": {
-            "$ref": "#/components/schemas/RelatedDocumentTypeEnum"
+          "odata.metadata": {
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
-          "AbsEntry": {
-            "type": "integer",
-            "format": "int32"
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
           },
-          "UUID": {
-            "type": "string"
-          },
-          "DocTye": {
-            "$ref": "#/components/schemas/RelatedDocumentTypeEnum"
-          },
-          "AbsEnry": {
-            "type": "integer",
-            "format": "int32"
+          "odata.nextLink": {
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "RelatedDocumentTypeEnum": {
+      "BoDurations": {
         "type": "string",
+        "description": "OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name",
         "enum": [
-          "rdt_Payment",
-          "rdt_Reconciliation"
-        ],
-        "description": "OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name."
+          "du_Seconds",
+          "du_Minuts",
+          "du_Hours",
+          "du_Days"
+        ]
       },
       "Relationship": {
         "type": "object",
@@ -5981,141 +6093,277 @@
         },
         "additionalProperties": true
       },
-      "Relationships_CollectionResponse": {
+      "BusinessPartnerPropertiesCollectionResponse": {
         "type": "object",
         "properties": {
           "odata.metadata": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataMetadata"
           },
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Relationship"
+              "$ref": "#/components/schemas/BusinessPartnerProperty"
             }
           },
           "odata.nextLink": {
-            "type": "string"
+            "type": "string",
+            "x-ballerina-name": "odataNextLink"
           }
         }
       },
-      "ResidenceNumberTypeEnum": {
+      "BoBpAccountTypes": {
         "type": "string",
+        "description": "OData EnumType 'BoBpAccountTypes'. Serialised by the Service Layer as the member name",
         "enum": [
-          "rntSpanishFiscalID",
-          "rntVATRegistrationNumber",
-          "rntPassport",
-          "rntFiscalIDIssuedbytheResidenceCountry",
-          "rntCertificateofFiscalResidence",
-          "rntOtherDocument"
-        ],
-        "description": "OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name."
+          "bpat_General",
+          "bpat_DownPayment",
+          "bpat_AssetsAccount",
+          "bpat_Receivable",
+          "bpat_Payable",
+          "bpat_OnCollection",
+          "bpat_Presentation",
+          "bpat_AssetsPayable",
+          "bpat_Discounted",
+          "bpat_Unpaid",
+          "bpat_OpenDebts",
+          "bpat_Domestic",
+          "bpat_Foreign",
+          "bpat_CashDiscountInterim",
+          "bpat_ExchangeRateInterim"
+        ]
       },
-      "SEPASequenceTypeEnum": {
-        "type": "string",
-        "enum": [
-          "sstOOFF",
-          "sstFRST",
-          "sstRCUR",
-          "sstFNAL"
-        ],
-        "description": "OData EnumType 'SEPASequenceTypeEnum'. Serialised by the Service Layer as the member name."
-      },
-      "ServiceLayerError": {
+      "BusinessPartnerPropertyParams": {
         "type": "object",
         "properties": {
-          "error": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "integer",
-                "format": "int32"
-              },
-              "message": {
-                "type": "object",
-                "properties": {
-                  "lang": {
-                    "type": "string"
-                  },
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "ShaamGroupEnum": {
-        "type": "string",
-        "enum": [
-          "sgServicesAndAsset",
-          "sgAgriculturalProducts",
-          "sgInsuranceCommissions",
-          "sgWHTaxInstructions",
-          "sgInterestExchangeRateDiffs",
-          "sgRentalFees"
-        ],
-        "description": "OData EnumType 'ShaamGroupEnum'. Serialised by the Service Layer as the member name."
-      },
-      "Territories_CollectionResponse": {
-        "type": "object",
-        "properties": {
-          "odata.metadata": {
-            "type": "string"
+          "PropertyName": {
+            "type": "string",
+            "x-ballerina-name": "propertyName"
           },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Territory"
-            }
-          },
-          "odata.nextLink": {
-            "type": "string"
-          }
-        }
-      },
-      "Territory": {
-        "type": "object",
-        "properties": {
-          "TerritoryID": {
+          "PropertyCode": {
             "type": "integer",
-            "format": "int32"
-          },
-          "Description": {
+            "format": "int32",
+            "x-ballerina-name": "propertyCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BPCurrencies": {
+        "type": "object",
+        "properties": {
+          "CurrencyCode": {
             "type": "string"
           },
-          "LocationIndex": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Inactive": {
+          "Include": {
             "$ref": "#/components/schemas/BoYesNoEnum"
-          },
-          "Parent": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "BusinessPartners": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BusinessPartner"
-            }
           }
         },
         "additionalProperties": true
       },
-      "TypeOfOperationEnum": {
-        "type": "string",
-        "enum": [
-          "tooProfessionalServices",
-          "tooRentingAssets",
-          "tooOthers",
-          "tooDisposalOfGoods",
-          "tooImportOfGoodsAndServices",
-          "tooImportByVirtualTransfer",
-          "tooGlobalOperations"
-        ],
-        "description": "OData EnumType 'TypeOfOperationEnum'. Serialised by the Service Layer as the member name."
+      "BPPaymentDate": {
+        "type": "object",
+        "properties": {
+          "PaymentDate": {
+            "type": "string"
+          },
+          "BPCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BPCode": {
+        "type": "object",
+        "properties": {
+          "Debit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "debit"
+          },
+          "SystemCredit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "systemCredit"
+          },
+          "Credit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "credit"
+          },
+          "ForeignCredit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "foreignCredit"
+          },
+          "ForeignCurrency": {
+            "type": "string",
+            "x-ballerina-name": "foreignCurrency"
+          },
+          "BpCtrlAcct": {
+            "type": "string",
+            "x-ballerina-name": "bpCtrlAcct"
+          },
+          "SystemDebit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "systemDebit"
+          },
+          "ForeignDebit": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "foreignDebit"
+          },
+          "DueDate": {
+            "type": "string",
+            "format": "date-time",
+            "x-ballerina-name": "dueDate"
+          },
+          "Code": {
+            "type": "string",
+            "x-ballerina-name": "code"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DiscountGroup": {
+        "type": "object",
+        "properties": {
+          "DiscountPercentage": {
+            "type": "number",
+            "format": "double",
+            "x-ballerina-name": "discountPercentage"
+          },
+          "ObjectEntry": {
+            "type": "string",
+            "x-ballerina-name": "objectEntry"
+          },
+          "BPCode": {
+            "type": "string",
+            "x-ballerina-name": "bPCode"
+          },
+          "BaseObjectType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DiscountGroupBaseObjectEnum"
+              }
+            ],
+            "x-ballerina-name": "baseObjectType"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Comma-separated navigation properties to expand",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarExpand"
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "OData filter expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarFilter"
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Set to 'allpages' to include the total count (odata.count)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        },
+        "x-ballerina-name": "dollarInlinecount"
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "OData orderby expression",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarOrderby"
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "prefer"
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "description": "Comma-separated list of properties to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        },
+        "x-ballerina-name": "dollarSelect"
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Number of records to skip (paging)",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarSkip"
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Maximum number of records to return",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "x-ballerina-name": "dollarTop"
+      }
+    },
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "description": "Session cookie returned by POST /Login.",
+        "name": "B1SESSION",
+        "in": "cookie",
+        "x-ballerina-name": "b1SESSION"
       }
     }
   }

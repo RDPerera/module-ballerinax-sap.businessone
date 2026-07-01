@@ -17,258 +17,392 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
-public type DeductionTaxSubGroups_CollectionResponse record {
-    string odata\.metadata?;
-    DeductionTaxSubGroup[] value?;
-    string odata\.nextLink?;
+public type NatureOfAssesseesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    NatureOfAssessee[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type DimensionsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Dimension[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type CashDiscountParams record {|
-    string Code?;
-    string Name?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type TransactionCodeParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# OData EnumType 'SPEDContabilAccountPurposeCode'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SPEDContabilAccountPurposeCode'. Serialised by the Service Layer as the member name
 public type SPEDContabilAccountPurposeCode "spedContasDeAtivo"|"spedContasDePassivo"|"spedPatrimonioLiquido"|"spedContasDeResultado"|"spedContasDeCompensacao"|"spedOutras";
 
 public type AccountCategory record {|
-    int:Signed32 CategoryCode?;
-    string CategoryName?;
-    # OData EnumType 'AccountCategorySourceEnum'. Serialised by the Service Layer as the member name.
-    AccountCategorySourceEnum CategorySource?;
-    ChartOfAccount[] ChartOfAccounts?;
+    @jsondata:Name {value: "CategoryCode"}
+    int:Signed32 categoryCode?;
+    @jsondata:Name {value: "ChartOfAccounts"}
+    ChartOfAccount[] chartOfAccounts?;
+    @jsondata:Name {value: "CategoryName"}
+    string categoryName?;
+    @jsondata:Name {value: "CategorySource"}
+    AccountCategorySourceEnum categorySource?;
 |};
 
-# OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocGenTypeEnum "edgt_NotRelevant"|"edgt_Generate"|"edgt_GenerateLater"|"edgt_GenerateOffline";
 
-# Represents the Headers record for the operation: deductionTaxHierarchiesList
-public type DeductionTaxHierarchiesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getDeductionTaxHierarchies
+public type GetDeductionTaxHierarchiesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listTaxWebSites
+public type ListTaxWebSitesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: listTaxWebSites
+public type ListTaxWebSitesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type AccountsService_CreateOpenBalance_body record {
-    OpenningBalanceAccount OpenningBalanceAccount?;
-    GLAccount[] GLAccounts?;
+    @jsondata:Name {value: "OpenningBalanceAccount"}
+    OpenningBalanceAccount openningBalanceAccount?;
+    @jsondata:Name {value: "GLAccounts"}
+    GLAccount[] gLAccounts?;
+};
+
+# Represents the Queries record for the operation: listAccrualTypes
+public type ListAccrualTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listCashFlowLineItems
+public type ListCashFlowLineItemsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type RclRecurringTransaction record {|
-    int:Signed32 TransactionID?;
-    int:Signed32 TemplateID?;
-    int:Signed32 Instance?;
-    string PlannedDate?;
-    # OData EnumType 'RclRecurringTransactionStatusEnum'. Serialised by the Service Layer as the member name.
-    RclRecurringTransactionStatusEnum Status?;
-    string DocType?;
-    int:Signed32 DocEntry?;
+    @jsondata:Name {value: "Status"}
+    RclRecurringTransactionStatusEnum status?;
+    @jsondata:Name {value: "Instance"}
+    int:Signed32 instance?;
+    @jsondata:Name {value: "PlannedDate"}
+    string plannedDate?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "TemplateID"}
+    int:Signed32 templateID?;
+    @jsondata:Name {value: "DocType"}
+    string docType?;
+    @jsondata:Name {value: "TransactionID"}
+    int:Signed32 transactionID?;
 |};
 
 public type DeductionTaxSubGroup record {|
-    string GroupCode?;
-    string GroupName?;
-    DeductionTaxGroup[] DeductionTaxGroups?;
+    @jsondata:Name {value: "GroupName"}
+    string groupName?;
+    @jsondata:Name {value: "GroupCode"}
+    string groupCode?;
+    @jsondata:Name {value: "DeductionTaxGroups"}
+    DeductionTaxGroup[] deductionTaxGroups?;
 |};
 
-# Represents the Queries record for the operation: taxInvoiceReportList
-public type TaxInvoiceReportListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listDistributionRules
+public type ListDistributionRulesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: cashFlowLineItemsList
-public type CashFlowLineItemsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAccountCategory
+public type ListAccountCategoryQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: deductionTaxSubGroupsGet
-public type DeductionTaxSubGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listPostingTemplates
+public type ListPostingTemplatesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: listDistributionRules
+public type ListDistributionRulesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ClosingDateProcedure record {
     int:Signed32 ClosingDateNum?;
     string ClosingDateCode?;
-    # OData EnumType 'BoClosingDateProcedureBaseDateEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoClosingDateProcedureBaseDateEnum'. Serialised by the Service Layer as the member name
     BoClosingDateProcedureBaseDateEnum BaselineDate?;
-    # OData EnumType 'BoClosingDateProcedureDueMonthEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoClosingDateProcedureDueMonthEnum'. Serialised by the Service Layer as the member name
     BoClosingDateProcedureDueMonthEnum DueMonth?;
     int:Signed32 ExtraMonth?;
     int:Signed32 ExtraDay?;
 };
 
-public type SalesTaxCodes_Line record {
-    int:Signed32 STATaxOnTaxType?;
-    string STATaxonTaxCode?;
-    string STCCode?;
-    int:Signed32 STAType?;
-    string STACode?;
-    int:Signed32 RowNumber?;
-    decimal EffectiveRate?;
-    int:Signed32 FormulaId?;
-    string CSTCodeIn?;
-    string CSTSuffix?;
+# Represents the Queries record for the operation: listPostingTemplates
+public type ListPostingTemplatesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoSubPeriodTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listAccountCategory
+public type ListAccountCategoryHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type DeductionTaxHierarchiesLine record {
+    int:Signed32 RowNumber?;
+    decimal DeductionPercent?;
+    decimal MaximumTotal?;
+};
+
+# OData EnumType 'BoSubPeriodTypeEnum'. Serialised by the Service Layer as the member name
 public type BoSubPeriodTypeEnum "spt_Year"|"spt_Quarters"|"spt_Months"|"spt_Days";
 
-public type TaxCodeDeterminations_CollectionResponse record {
-    string odata\.metadata?;
-    TaxCodeDetermination[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getChartOfAccounts
+public type GetChartOfAccountsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoClosingDateProcedureDueMonthEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoClosingDateProcedureDueMonthEnum'. Serialised by the Service Layer as the member name
 public type BoClosingDateProcedureDueMonthEnum "bocpddm_HalfMonth"|"bocpddm_MonthEnd"|"bocpddm_MonthStart"|"bocpddm_None";
 
-# Represents the Queries record for the operation: dimensionsList
-public type DimensionsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: chartOfAccountsList
-public type ChartOfAccountsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: specificWTHAmountsServiceList
-public type SpecificWTHAmountsServiceListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type VatGroups_CollectionResponse record {
-    string odata\.metadata?;
-    VatGroup[] value?;
-    string odata\.nextLink?;
-};
-
 public type RecurringPostingsLine record {|
-    string RcrCode?;
-    int:Signed32 LineNumber?;
-    string ControlAccount?;
-    string AccountCode?;
-    string AccountName?;
-    decimal Debit?;
-    decimal Credit?;
-    string Currency?;
-    string TaxGroup?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum VatLine?;
-    string DistributionRule?;
-    # OData EnumType 'BoTaxPostingAccountTypeEnum'. Serialised by the Service Layer as the member name.
-    BoTaxPostingAccountTypeEnum TaxPostingAccount?;
-    string TaxCode?;
-    string CostingCode1?;
-    string CostingCode2?;
-    string CostingCode3?;
-    string CostingCode4?;
-    string CostingCode5?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum WTaxLiable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum WTaxLine?;
-    string ProjectCode?;
-    string CostElementCode?;
+    @jsondata:Name {value: "DistributionRule"}
+    string distributionRule?;
+    @jsondata:Name {value: "Debit"}
+    decimal debit?;
+    @jsondata:Name {value: "TaxPostingAccount"}
+    BoTaxPostingAccountTypeEnum taxPostingAccount?;
+    @jsondata:Name {value: "CostElementCode"}
+    string costElementCode?;
+    @jsondata:Name {value: "WTaxLiable"}
+    BoYesNoEnum wTaxLiable?;
+    @jsondata:Name {value: "CostingCode2"}
+    string costingCode2?;
+    @jsondata:Name {value: "CostingCode3"}
+    string costingCode3?;
+    @jsondata:Name {value: "CostingCode4"}
+    string costingCode4?;
+    @jsondata:Name {value: "CostingCode5"}
+    string costingCode5?;
+    @jsondata:Name {value: "ControlAccount"}
+    string controlAccount?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Credit"}
+    decimal credit?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "TaxGroup"}
+    string taxGroup?;
+    @jsondata:Name {value: "Currency"}
+    string currency?;
+    @jsondata:Name {value: "CostingCode1"}
+    string costingCode1?;
+    @jsondata:Name {value: "AccountCode"}
+    string accountCode?;
+    @jsondata:Name {value: "VatLine"}
+    BoYesNoEnum vatLine?;
+    @jsondata:Name {value: "ProjectCode"}
+    string projectCode?;
+    @jsondata:Name {value: "RcrCode"}
+    string rcrCode?;
+    @jsondata:Name {value: "WTaxLine"}
+    BoYesNoEnum wTaxLine?;
+    @jsondata:Name {value: "AccountName"}
+    string accountName?;
 |};
 
 public type JournalEntryDocumentType record {|
-    string JournalEntryType?;
-    string DocTypeDescription?;
-    string ShortName?;
-    JournalEntry[] JournalEntries?;
+    @jsondata:Name {value: "DocTypeDescription"}
+    string docTypeDescription?;
+    @jsondata:Name {value: "JournalEntries"}
+    JournalEntry[] journalEntries?;
+    @jsondata:Name {value: "ShortName"}
+    string shortName?;
+    @jsondata:Name {value: "JournalEntryType"}
+    string journalEntryType?;
 |};
 
-# Represents the Queries record for the operation: taxCodeDeterminationsList
-public type TaxCodeDeterminationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getWTaxTypeCodes
+public type GetWTaxTypeCodesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type RecurringTransactionTemplatesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    RecurringTransactionTemplate[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type DeductionTaxHierarchiesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DeductionTaxHierarchy[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type Budget record {
@@ -301,32 +435,76 @@ public type Budget record {
     BudgetScenario BudgetScenario2?;
 };
 
-# Represents the Queries record for the operation: specificWTHAmountsServiceGet
-public type SpecificWTHAmountsServiceGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listDimensions
+public type ListDimensionsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: wTaxTypeCodesGet
-public type WTaxTypeCodesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type SalesTaxAuthoritiesTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesTaxAuthoritiesType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-public type CashFlowLineItems_CollectionResponse record {
-    string odata\.metadata?;
-    CashFlowLineItem[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listDeterminationCriterias
+public type ListDeterminationCriteriasQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type TaxExemptReasonsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxExemptReason[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type SpecificWTHAmounts record {
     string PaymentReasonCode?;
     string CardCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CUSplit?;
     decimal FullWtaxTaxationInAdvance?;
     decimal WTaxAmountOnHold?;
@@ -344,17 +522,17 @@ public type SpecificWTHAmounts record {
     string DeliveryIdentificationNo?;
     string SingleCertificationNo?;
     int:Signed32 EarningYear?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Advanced?;
     string WTaxTypeCode?;
     string SocialSecurityFiscalC?;
     string SocialSecurityInstitut?;
     string CompanyCode?;
-    # OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name
     BoOSWACategoryEnum Category?;
     decimal EmployeeSocialSecurity?;
     decimal EmployerSocialSecurity?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum OtherContributions?;
     decimal ValueOfOtherContribut?;
     decimal OtherAmountsDue?;
@@ -394,52 +572,70 @@ public type SpecificWTHAmounts record {
     WTaxTypeCode WTaxTypeCode2?;
 };
 
-# Represents the Headers record for the operation: costElementsList
-public type CostElementsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'AssesseeTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AssesseeTypeEnum'. Serialised by the Service Layer as the member name
 public type AssesseeTypeEnum "atCompany"|"atOthers";
 
-# Represents the Queries record for the operation: journalEntryDocumentTypesList
-public type JournalEntryDocumentTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getNatureOfAssessees
+public type GetNatureOfAssesseesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type AccountSegmentationCategories_CollectionResponse record {
-    string odata\.metadata?;
-    AccountSegmentationCategory[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Headers record for the operation: recurringPostingsList
-public type RecurringPostingsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'ECDPostingTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ECDPostingTypeEnum'. Serialised by the Service Layer as the member name
 public type ECDPostingTypeEnum "ecdNormal"|"ecdStatement";
 
-# Represents the Headers record for the operation: postingTemplatesList
-public type PostingTemplatesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listJournalEntries
+public type ListJournalEntriesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listSalesTaxAuthoritiesTypes
+public type ListSalesTaxAuthoritiesTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DeductionTaxHierarchy record {
@@ -452,25 +648,19 @@ public type DeductionTaxHierarchy record {
     decimal DeductionPercent?;
     decimal MaximumTotal?;
     string LastUpdated?;
-    DeductionTaxHierarchies_Line[] DeductionTaxHierarchies_Lines?;
+    DeductionTaxHierarchiesLine[] DeductionTaxHierarchies_Lines?;
 };
 
 public type TaxCodeDeterminationTCDDefaultWT record {|
-    int:Signed32 AbsId?;
-    string WTCode?;
-    # OData EnumType 'TaxCodeDeterminationTCDDefaultWTTypeEnum'. Serialised by the Service Layer as the member name.
-    TaxCodeDeterminationTCDDefaultWTTypeEnum Type?;
+    @jsondata:Name {value: "Type"}
+    TaxCodeDeterminationTCDDefaultWTTypeEnum 'type?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
+    @jsondata:Name {value: "WTCode"}
+    string wTCode?;
 |};
 
-# Represents the Queries record for the operation: journalEntryDocumentTypesGet
-public type JournalEntryDocumentTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'RoundingTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RoundingTypeEnum'. Serialised by the Service Layer as the member name
 public type RoundingTypeEnum "rt_TruncatedAU"|"rt_CommercialValues"|"rt_NoRounding";
 
 public type BudgetDistribution record {
@@ -492,79 +682,110 @@ public type BudgetDistribution record {
     Budget[] Budgets?;
 };
 
-public type GLAccountAdvancedRules_CollectionResponse record {
-    string odata\.metadata?;
-    GLAccountAdvancedRule[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Headers record for the operation: determinationCriteriasList
-public type DeterminationCriteriasListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getSalesTaxCodes
+public type GetSalesTaxCodesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type SalesTaxCode record {
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ValidForAR?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ValidForAP?;
     int:Signed32 UserSignature?;
     decimal Rate?;
     string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Freight?;
     string Code?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsItemLevel?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Inactive?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FADebit?;
     int:Signed32 TypeFormulaCombId?;
     string CFOPIn?;
     string CFOPOut?;
-    SalesTaxCodes_Line[] SalesTaxCodes_Lines?;
+    SalesTaxCodesLine[] SalesTaxCodes_Lines?;
+};
+
+public type BudgetsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Budget[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type DeterminationCriteriaParams record {|
-    int:Signed32 DmcId?;
+    @jsondata:Name {value: "DmcId"}
+    int:Signed32 dmcId?;
 |};
 
-# OData EnumType 'SAFTTaxCodeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SAFTTaxCodeEnum'. Serialised by the Service Layer as the member name
 public type SAFTTaxCodeEnum "safttc_ReducedTax"|"safttc_MiddleTax"|"safttc_NormalTax"|"safttc_Exempt"|"safttt_Others"|"safttc_NonSystem";
 
-# OData EnumType 'RclRecurringExecutionHandlingEnum'. Serialised by the Service Layer as the member name.
-public type RclRecurringExecutionHandlingEnum "rehStopOnError"|"rehSkipTransaction";
-
-public type TaxCodeDeterminationsTCD_CollectionResponse record {
-    string odata\.metadata?;
-    TaxCodeDeterminationTCD[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getCashDiscounts
+public type GetCashDiscountsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type DeductibleTaxes_CollectionResponse record {
-    string odata\.metadata?;
-    DeductibleTax[] value?;
-    string odata\.nextLink?;
+# OData EnumType 'RclRecurringExecutionHandlingEnum'. Serialised by the Service Layer as the member name
+public type RclRecurringExecutionHandlingEnum "rehStopOnError"|"rehSkipTransaction";
+
+# Represents the Headers record for the operation: listFinancialYears
+public type ListFinancialYearsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listTaxCodeDeterminations
+public type ListTaxCodeDeterminationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listGLAccountAdvancedRules
+public type ListGLAccountAdvancedRulesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type CostElementsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CostElement[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getDeterminationCriterias
+public type GetDeterminationCriteriasQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type JournalEntriesService_Close_body record {
-    JournalEntry JournalEntry?;
-};
-
-# Represents the Headers record for the operation: profitCentersList
-public type ProfitCentersListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: salesTaxAuthoritiesTypesGet
-public type SalesTaxAuthoritiesTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "JournalEntry"}
+    JournalEntry journalEntry?;
 };
 
 public type CostCenterType record {
@@ -574,128 +795,161 @@ public type CostCenterType record {
 };
 
 public type DeductibleTax record {|
-    string Code?;
-    string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Inactive?;
-    # OData EnumType 'BoVatCategoryEnum'. Serialised by the Service Layer as the member name.
-    BoVatCategoryEnum Category?;
-    decimal DeductibleTaxRate?;
+    @jsondata:Name {value: "Category"}
+    BoVatCategoryEnum category?;
+    @jsondata:Name {value: "Inactive"}
+    BoYesNoEnum inactive?;
+    @jsondata:Name {value: "DeductibleTaxRate"}
+    decimal deductibleTaxRate?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: vatGroupsList
-public type VatGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Headers record for the operation: natureOfAssesseesList
-public type NatureOfAssesseesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listAccrualTypes
+public type ListAccrualTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type TaxCodeDeterminationTCD record {|
-    int:Signed32 AbsId?;
-    # OData EnumType 'TaxCodeDeterminationTCDTypeEnum'. Serialised by the Service Layer as the member name.
-    TaxCodeDeterminationTCDTypeEnum TcdType?;
-    string DftArCode?;
-    string DftApCode?;
-    TaxCodeDeterminationTCDDefaultWT[] TaxCodeDeterminationTCDDefaultWTs?;
-    TaxCodeDeterminationTCDByUsage[] TaxCodeDeterminationTCDByUsages?;
-    TaxCodeDeterminationTCDKeyField[] TaxCodeDeterminationTCDKeyFields?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDDefaultWTs"}
+    TaxCodeDeterminationTCDDefaultWT[] taxCodeDeterminationTCDDefaultWTs?;
+    @jsondata:Name {value: "DftApCode"}
+    string dftApCode?;
+    @jsondata:Name {value: "DftArCode"}
+    string dftArCode?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDByUsages"}
+    TaxCodeDeterminationTCDByUsage[] taxCodeDeterminationTCDByUsages?;
+    @jsondata:Name {value: "TcdType"}
+    TaxCodeDeterminationTCDTypeEnum tcdType?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDKeyFields"}
+    TaxCodeDeterminationTCDKeyField[] taxCodeDeterminationTCDKeyFields?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
 |};
 
-# OData EnumType 'RoundingSysEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RoundingSysEnum'. Serialised by the Service Layer as the member name
 public type RoundingSysEnum "rsNoRounding"|"rsRoundToFiveHundredth"|"rsRoundToOne"|"rsRoundToTen"|"rsRoundToTenHundredth";
 
-# Represents the Headers record for the operation: taxInvoiceReportList
-public type TaxInvoiceReportListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listVatGroups
+public type ListVatGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getAccountCategory
+public type GetAccountCategoryQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type PostingTemplatesParams record {|
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: taxReplStateSubsList
-public type TaxReplStateSubsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listDeductionTaxSubGroups
+public type ListDeductionTaxSubGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: cashFlowLineItemsGet
-public type CashFlowLineItemsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listVatGroups
+public type ListVatGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: currenciesGet
-public type CurrenciesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type TaxWebSites_CollectionResponse record {
-    string odata\.metadata?;
-    TaxWebSite[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: taxInvoiceReportGet
-public type TaxInvoiceReportGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: budgetDistributionsGet
-public type BudgetDistributionsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listChartOfAccounts
+public type ListChartOfAccountsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type PostingTemplates record {|
-    string Code?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum StampTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum AutomaticVAT?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ManageWTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum DeferredTax?;
-    PostingTemplatesLine[] PostingTemplatesLineCollection?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "StampTax"}
+    BoYesNoEnum stampTax?;
+    @jsondata:Name {value: "AutomaticVAT"}
+    BoYesNoEnum automaticVAT?;
+    @jsondata:Name {value: "ManageWTax"}
+    BoYesNoEnum manageWTax?;
+    @jsondata:Name {value: "PostingTemplatesLineCollection"}
+    PostingTemplatesLine[] postingTemplatesLineCollection?;
+    @jsondata:Name {value: "DeferredTax"}
+    BoYesNoEnum deferredTax?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type WithholdingTaxCode record {
     string WTCode?;
     string WTName?;
-    # OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name
     WithholdingTaxCodeCategoryEnum Category?;
-    # OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name
     WithholdingTaxCodeBaseTypeEnum BaseType?;
     decimal BaseAmount?;
     string OfficialCode?;
     string Account?;
-    # OData EnumType 'WithholdingTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WithholdingTypeEnum'. Serialised by the Service Layer as the member name
     WithholdingTypeEnum WithholdingType?;
-    # OData EnumType 'RoundingTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RoundingTypeEnum'. Serialised by the Service Layer as the member name
     RoundingTypeEnum RoundingType?;
     int:Signed32 Section?;
     decimal Threshold?;
     decimal Surcharge?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Concessional?;
     int:Signed32 Assessee?;
     string APTDSAccount?;
@@ -725,9 +979,9 @@ public type WithholdingTaxCode record {
     string APCessInterimAccount?;
     string APHSCInterimAccount?;
     int:Signed32 Location?;
-    # OData EnumType 'ReturnTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ReturnTypeEnum'. Serialised by the Service Layer as the member name
     ReturnTypeEnum ReturnType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Inactive?;
     int:Signed32 CSTCodeIncomingID?;
     int:Signed32 CSTCodeOutgoingID?;
@@ -736,161 +990,163 @@ public type WithholdingTaxCode record {
     decimal Rate?;
     string EffectiveFrom?;
     decimal MinimumTaxableAmount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsProgressiveTax?;
     string Currency?;
-    # OData EnumType 'TdsTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'TdsTypeEnum'. Serialised by the Service Layer as the member name
     TdsTypeEnum TdsType?;
     decimal TransactonThreshold?;
     int:Signed32 EBooksWTaxCategory?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum NonDeductThreshold?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseInAPDPR?;
-    WithholdingTaxCodes_Line[] WithholdingTaxCodes_Lines?;
+    WithholdingTaxCodesLine[] WithholdingTaxCodes_Lines?;
     ChartOfAccount ChartOfAccount?;
     NatureOfAssessee NatureOfAssessee?;
     Currency Currency2?;
 };
 
-public type ProfitCenters_CollectionResponse record {
-    string odata\.metadata?;
-    ProfitCenter[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listGLAccountAdvancedRules
+public type ListGLAccountAdvancedRulesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type SpecificWTHAmountsService_CollectionResponse record {
-    string odata\.metadata?;
-    SpecificWTHAmounts[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listTaxCodeDeterminations
+public type ListTaxCodeDeterminationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'TaxCodeDeterminationTCDDefaultWTTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TaxCodeDeterminationTCDDefaultWTTypeEnum'. Serialised by the Service Layer as the member name
 public type TaxCodeDeterminationTCDDefaultWTTypeEnum "tcddwttDefaultSales"|"tcddwttDefaultPurchase"|"tcddwttLine";
 
-# OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 
-# Represents the Queries record for the operation: profitCentersList
-public type ProfitCentersListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: budgetDistributionsList
-public type BudgetDistributionsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'RecurringTransactionTemplateRemindEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RecurringTransactionTemplateRemindEnum'. Serialised by the Service Layer as the member name
 public type RecurringTransactionTemplateRemindEnum "rttr_Y"|"rttr_OnSunday"|"rttr_OnMonday"|"rttr_OnTuesday"|"rttr_OnWednesday"|"rttr_OnThursday"|"rttr_OnFriday"|"rttr_OnSaturday"|"rttr_Every1"|"rttr_Every2"|"rttr_Every3"|"rttr_Every4"|"rttr_Every5"|"rttr_Every6"|"rttr_Every7"|"rttr_Every8"|"rttr_Every9"|"rttr_Every10"|"rttr_Every11"|"rttr_Every12"|"rttr_Every13"|"rttr_Every14"|"rttr_Every15"|"rttr_Every16"|"rttr_Every17"|"rttr_Every18"|"rttr_Every19"|"rttr_Every20"|"rttr_Every21"|"rttr_Every22"|"rttr_Every23"|"rttr_Every24"|"rttr_Every25"|"rttr_Every26"|"rttr_Every27"|"rttr_Every28"|"rttr_Every29"|"rttr_Every30"|"rttr_Every31"|"rttr_Every45"|"rttr_Every60"|"rttr_On1"|"rttr_On2"|"rttr_On3"|"rttr_On4"|"rttr_On5"|"rttr_On6"|"rttr_On7"|"rttr_On8"|"rttr_On9"|"rttr_On10"|"rttr_On11"|"rttr_On12"|"rttr_On13"|"rttr_On14"|"rttr_On15"|"rttr_On16"|"rttr_On17"|"rttr_On18"|"rttr_On19"|"rttr_On20"|"rttr_On21"|"rttr_On22"|"rttr_On23"|"rttr_On24"|"rttr_On25"|"rttr_On26"|"rttr_On27"|"rttr_On28"|"rttr_On29"|"rttr_On30"|"rttr_On31";
 
-# OData EnumType 'BoSubFrequencyTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSubFrequencyTypeEnum'. Serialised by the Service Layer as the member name
 public type BoSubFrequencyTypeEnum "sftEmpty"|"sftDailyEvery1"|"sftDailyEvery2"|"sftDailyEvery3"|"sftDailyEvery4"|"sftDailyEvery5"|"sftDailyEvery6"|"sftDailyEvery7"|"sftDailyEvery8"|"sftDailyEvery9"|"sftDailyEvery10"|"sftDailyEvery15"|"sftDailyEvery30"|"sftDailyEvery45"|"sftDailyEvery60"|"sftWeeklyOnSunday"|"sftWeeklyOnMonday"|"sftWeeklyOnTuesday"|"sftWeeklyOnWednesday"|"sftWeeklyOnThursday"|"sftWeeklyOnFriday"|"sftWeeklyOnSaturday"|"sftMonthlyOn1"|"sftMonthlyOn2"|"sftMonthlyOn3"|"sftMonthlyOn4"|"sftMonthlyOn5"|"sftMonthlyOn6"|"sftMonthlyOn7"|"sftMonthlyOn8"|"sftMonthlyOn9"|"sftMonthlyOn10"|"sftMonthlyOn11"|"sftMonthlyOn12"|"sftMonthlyOn13"|"sftMonthlyOn14"|"sftMonthlyOn15"|"sftMonthlyOn16"|"sftMonthlyOn17"|"sftMonthlyOn18"|"sftMonthlyOn19"|"sftMonthlyOn20"|"sftMonthlyOn21"|"sftMonthlyOn22"|"sftMonthlyOn23"|"sftMonthlyOn24"|"sftMonthlyOn25"|"sftMonthlyOn26"|"sftMonthlyOn27"|"sftMonthlyOn28"|"sftMonthlyOn29"|"sftMonthlyOn30"|"sftMonthlyOn31";
 
-# OData EnumType 'AccountSegmentationTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AccountSegmentationTypeEnum'. Serialised by the Service Layer as the member name
 public type AccountSegmentationTypeEnum "ast_Alphanumeric"|"ast_Numeric";
 
-# OData EnumType 'VatGroupsTaxRegionEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getTaxReplStateSubs
+public type GetTaxReplStateSubsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getCashFlowLineItems
+public type GetCashFlowLineItemsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'VatGroupsTaxRegionEnum'. Serialised by the Service Layer as the member name
 public type VatGroupsTaxRegionEnum "vgtrPT"|"vgtrPT_AC"|"vgtrPT_MA";
 
 public type DeterminationCriteria record {|
-    int:Signed32 DmcId?;
-    string DeterminationCriteria?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
-    int:Signed32 Priority?;
+    @jsondata:Name {value: "DmcId"}
+    int:Signed32 dmcId?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "Priority"}
+    int:Signed32 priority?;
+    @jsondata:Name {value: "DeterminationCriteria"}
+    string determinationCriteria?;
 |};
 
-# Represents the Queries record for the operation: gLAccountAdvancedRulesList
-public type GLAccountAdvancedRulesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listRecurringTransactionTemplates
+public type ListRecurringTransactionTemplatesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: recurringPostingsList
-public type RecurringPostingsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getForms1099
+public type GetForms1099Queries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type ProfitCentersCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ProfitCenter[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type SalesTaxAuthoritiesType record {
     int:Signed32 UserSignature?;
     string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum VAT?;
     int:Signed32 Numerator?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxCreditControl?;
     int:Signed32 NfTaxId?;
     int:Signed32 TaxParamSetId?;
     SalesTaxAuthority[] SalesTaxAuthorities?;
 };
 
-public type RecurringTransactionTemplates_CollectionResponse record {
-    string odata\.metadata?;
-    RecurringTransactionTemplate[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: costCenterTypesList
-public type CostCenterTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type DeductionTaxGroup record {
     int:Signed32 GroupKey?;
-    # OData EnumType 'BoDeductionTaxGroupCodeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDeductionTaxGroupCodeEnum'. Serialised by the Service Layer as the member name
     BoDeductionTaxGroupCodeEnum GroupCode?;
     string GroupName?;
     decimal MaxRedin?;
@@ -898,195 +1154,239 @@ public type DeductionTaxGroup record {
     DeductionTaxSubGroup DeductionTaxSubGroup?;
 };
 
-# OData EnumType 'BoDeductionTaxGroupCodeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDeductionTaxGroupCodeEnum'. Serialised by the Service Layer as the member name
 public type BoDeductionTaxGroupCodeEnum "dtgcInterestReceivers"|"dtgcEmployeeReceivingCommission"|"dtgcWritersPrice"|"dtgcPaidServices"|"dtgcPaymentsToForeignCitizens"|"dtgcPaymentsForCitizensInForeignCountries"|"dtgcInvalidPaymentFromCompensationFund"|"dtgcRepaymentToEmployerFromCompensationFund"|"dtgcRentalPayments"|"dtgcPaymentsFromStudyFund"|"dtgcDividendPayments";
 
-# Represents the Queries record for the operation: salesTaxAuthoritiesGet
-public type SalesTaxAuthoritiesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ChartOfAccounts_CollectionResponse record {
-    string odata\.metadata?;
-    ChartOfAccount[] value?;
-    string odata\.nextLink?;
-};
-
 public type TaxExemptReason record {|
-    string Code?;
-    string Description?;
-    VatGroup[] VatGroups?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "VatGroups"}
+    VatGroup[] vatGroups?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type TaxWebSite record {|
-    int:Signed32 AbsEntry?;
-    string WebSiteName?;
-    string WebSiteURL?;
-    string Description?;
-    TaxInvoiceReport[] TaxInvoiceReport?;
+    @jsondata:Name {value: "TaxInvoiceReport"}
+    TaxInvoiceReport[] taxInvoiceReport?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "WebSiteURL"}
+    string webSiteURL?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "WebSiteName"}
+    string webSiteName?;
 |};
 
-# Represents the Queries record for the operation: recurringTransactionTemplatesList
-public type RecurringTransactionTemplatesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listDeductionTaxGroups
+public type ListDeductionTaxGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: salesTaxAuthoritiesList
-public type SalesTaxAuthoritiesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: distributionRulesGet
-public type DistributionRulesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'WTDDetailType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'WTDDetailType'. Serialised by the Service Layer as the member name
 public type WTDDetailType "Allowed"|"SpecialRate"|"Exemption";
 
-# Represents the Queries record for the operation: deductionTaxGroupsGet
-public type DeductionTaxGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: taxCodeDeterminationsTCDList
-public type TaxCodeDeterminationsTCDListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getSalesTaxAuthoritiesTypes
+public type GetSalesTaxAuthoritiesTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type FinancialYear record {|
-    int:Signed32 AbsEntry?;
-    string Code?;
-    string Description?;
-    string StartDate?;
-    string EndDate?;
-    string AssessYear?;
-    # OData EnumType 'TCSAccumulationBaseEnum'. Serialised by the Service Layer as the member name.
-    TCSAccumulationBaseEnum TCSAccumulationBase?;
+    @jsondata:Name {value: "StartDate"}
+    string startDate?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "AssessYear"}
+    string assessYear?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "EndDate"}
+    string endDate?;
+    @jsondata:Name {value: "TCSAccumulationBase"}
+    TCSAccumulationBaseEnum tCSAccumulationBase?;
 |};
 
-public type CostCenterTypes_CollectionResponse record {
-    string odata\.metadata?;
-    CostCenterType[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listSalesTaxCodes
+public type ListSalesTaxCodesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: transactionCodesList
-public type TransactionCodesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type SalesTaxCodesLine record {
+    int:Signed32 STATaxOnTaxType?;
+    string STATaxonTaxCode?;
+    string STCCode?;
+    int:Signed32 STAType?;
+    string STACode?;
+    int:Signed32 RowNumber?;
+    decimal EffectiveRate?;
+    int:Signed32 FormulaId?;
+    string CSTCodeIn?;
+    string CSTSuffix?;
 };
 
 public type RecurringTransactionTemplate record {|
-    int:Signed32 AbsoluteEntry?;
-    string TemplateCode?;
-    string TemplateDescription?;
-    # OData EnumType 'DocumentObjectTypeEnum'. Serialised by the Service Layer as the member name.
-    DocumentObjectTypeEnum DocumentObjectType?;
-    int:Signed32 DraftEntry?;
-    # OData EnumType 'RecurringTransactionTemplateFrequencyEnum'. Serialised by the Service Layer as the member name.
-    RecurringTransactionTemplateFrequencyEnum Frequency?;
-    # OData EnumType 'RecurringTransactionTemplateRemindEnum'. Serialised by the Service Layer as the member name.
-    RecurringTransactionTemplateRemindEnum Remind?;
-    string StartDate?;
-    string EndDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum PriceUpdate?;
-    string CardCode?;
+    @jsondata:Name {value: "TemplateCode"}
+    string templateCode?;
+    @jsondata:Name {value: "StartDate"}
+    string startDate?;
+    @jsondata:Name {value: "DocumentObjectType"}
+    DocumentObjectTypeEnum documentObjectType?;
+    @jsondata:Name {value: "AbsoluteEntry"}
+    int:Signed32 absoluteEntry?;
+    @jsondata:Name {value: "Frequency"}
+    RecurringTransactionTemplateFrequencyEnum frequency?;
+    @jsondata:Name {value: "CardCode"}
+    string cardCode?;
+    @jsondata:Name {value: "DraftEntry"}
+    int:Signed32 draftEntry?;
+    @jsondata:Name {value: "Remind"}
+    RecurringTransactionTemplateRemindEnum remind?;
+    @jsondata:Name {value: "TemplateDescription"}
+    string templateDescription?;
+    @jsondata:Name {value: "EndDate"}
+    string endDate?;
+    @jsondata:Name {value: "PriceUpdate"}
+    BoYesNoEnum priceUpdate?;
 |};
 
-# OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name.
-public type WithholdingTaxCodeBaseTypeEnum "wtcbt_Gross"|"wtcbt_Net"|"wtcbt_VAT"|"wtcbt_Gross_VAT"|"wtcbt_UoM";
-
-# OData EnumType 'PaymentMeansTypeEnum'. Serialised by the Service Layer as the member name.
-public type PaymentMeansTypeEnum "pmtNotAssigned"|"pmtChecks"|"pmtBankTransfer"|"pmtCash"|"pmtCreditCard";
-
-public type WithholdingTaxCodes_Line record {
-    string Effectivefrom?;
-    decimal Rate?;
-    decimal TDSRate?;
-    decimal SurchargeRate?;
-    decimal CessRate?;
-    decimal HSCRate?;
-    decimal IGSTRate?;
-    decimal CGSTRate?;
-    decimal SGSTRate?;
-    decimal UTGSTRate?;
-    decimal CessGSTRate?;
-    int:Signed32 LineNum?;
-    int:Signed32 UoMEntry?;
-    string UoMCode?;
-    decimal FixedAmount?;
-    string Currency?;
-    decimal ITRNonCompliantRate?;
-    decimal PANNonCompliantRate?;
-    ProgressiveTax_Line[] ProgressiveTax_Lines?;
-    WithholdingTaxCodes_ValueRange_Line[] WithholdingTaxCodes_ValueRange_Lines?;
+# Represents the Queries record for the operation: listDeductionTaxSubGroups
+public type ListDeductionTaxSubGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: accrualTypesGet
-public type AccrualTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listDeductionTaxGroups
+public type ListDeductionTaxGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name
+public type WithholdingTaxCodeBaseTypeEnum "wtcbt_Gross"|"wtcbt_Net"|"wtcbt_VAT"|"wtcbt_Gross_VAT"|"wtcbt_UoM";
+
+# Represents the Headers record for the operation: listTaxCodeDeterminationsTCD
+public type ListTaxCodeDeterminationsTCDHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'PaymentMeansTypeEnum'. Serialised by the Service Layer as the member name
+public type PaymentMeansTypeEnum "pmtNotAssigned"|"pmtChecks"|"pmtBankTransfer"|"pmtCash"|"pmtCreditCard";
+
+# Represents the Queries record for the operation: listBudgetDistributions
+public type ListBudgetDistributionsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getClosingDateProcedure
+public type GetClosingDateProcedureQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type RecurringPostingsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    RecurringPostings[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type AccountCategoryCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AccountCategory[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type TaxCodeDeterminationTCDKeyFieldValuePeriod record {|
-    int:Signed32 AbsId?;
-    string EfctFrom?;
-    string EfctTo?;
-    string TaxCode?;
-    TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage[] TaxCodeDeterminationTCDKeyFieldValuePeriodByUsages?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "EfctTo"}
+    string efctTo?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDKeyFieldValuePeriodByUsages"}
+    TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage[] taxCodeDeterminationTCDKeyFieldValuePeriodByUsages?;
+    @jsondata:Name {value: "EfctFrom"}
+    string efctFrom?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
 |};
-
-# Represents the Headers record for the operation: recurringTransactionTemplatesList
-public type RecurringTransactionTemplatesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: budgetScenariosList
-public type BudgetScenariosListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
 
 public type JournalEntry record {
     string ReferenceDate?;
@@ -1098,33 +1398,33 @@ public type JournalEntry record {
     string TaxDate?;
     int:Signed32 JdtNum?;
     string Indicator?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseAutoStorno?;
     string StornoDate?;
     string VatDate?;
     int:Signed32 Series?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum StampTax?;
     string DueDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AutoVAT?;
     int:Signed32 Number?;
     int:Signed32 FolioNumber?;
     string FolioPrefixString?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReportEU?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Report347?;
-    # OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name
     PrintStatusEnum Printed?;
     int:Signed32 LocationCode?;
-    # OData EnumType 'TransTypesEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'TransTypesEnum'. Serialised by the Service Layer as the member name
     TransTypesEnum OriginalJournal?;
     int:Signed32 Original?;
     string BaseReference?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BlockDunningLetter?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AutomaticWT?;
     decimal WTSum?;
     decimal WTSumSC?;
@@ -1133,37 +1433,37 @@ public type JournalEntry record {
     string SignatureDigest?;
     string CertificationNumber?;
     int:Signed32 PrivateKeyVersion?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Corisptivi?;
     string Reference3?;
     string DocumentType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DeferredTax?;
     int:Signed32 BlanketAgreementNumber?;
-    # OData EnumType 'OperationCodeTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'OperationCodeTypeEnum'. Serialised by the Service Layer as the member name
     OperationCodeTypeEnum OperationCode?;
-    # OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name
     ResidenceNumberTypeEnum ResidenceNumberType?;
-    # OData EnumType 'ECDPostingTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ECDPostingTypeEnum'. Serialised by the Service Layer as the member name
     ECDPostingTypeEnum ECDPostingType?;
     int:Signed32 ExposedTransNumber?;
     string PointOfIssueCode?;
-    # OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name
     FolioLetterEnum Letter?;
     int:Signed32 FolioNumberFrom?;
     int:Signed32 FolioNumberTo?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsCostCenterTransfer?;
     string ReportingSectionControlStatementVAT?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ExcludeFromTaxReportControlStatementVAT?;
     string SAPPassport?;
     int:Signed32 Cig?;
     int:Signed32 Cup?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AdjustTransaction?;
     int:Signed32 AttachmentEntry?;
-    # OData EnumType 'SAFTTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'SAFTTransactionTypeEnum'. Serialised by the Service Layer as the member name
     SAFTTransactionTypeEnum SAFTTransactionType?;
     string AllocationNumberIL?;
     string SAFTTransactionTypeEx?;
@@ -1174,28 +1474,60 @@ public type JournalEntry record {
     JournalEntryDocumentType JournalEntryDocumentType?;
 };
 
-# Represents the Queries record for the operation: determinationCriteriasList
-public type DeterminationCriteriasListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listFinancialYears
+public type ListFinancialYearsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoBusinessPartnerTypes'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listRecurringTransactionTemplates
+public type ListRecurringTransactionTemplatesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoBusinessPartnerTypes'. Serialised by the Service Layer as the member name
 public type BoBusinessPartnerTypes "garAll"|"garCompany"|"garPrivate"|"garGovernment";
 
-# OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name
 public type FolioLetterEnum "fLetterA"|"fLetterB"|"fLetterC"|"fLetterE"|"fLetterM"|"fLetterR"|"fLetterT"|"fLetterX"|"fLetterEMPTY";
 
 public type BudgetLine record {
@@ -1222,43 +1554,57 @@ public type BudgetLine record {
     decimal FutureIncomeDeb?;
 };
 
-# Represents the Queries record for the operation: natureOfAssesseesList
-public type NatureOfAssesseesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listSalesTaxCodes
+public type ListSalesTaxCodesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type WitholdingTaxDefinition_CollectionResponse record {
-    string odata\.metadata?;
-    WTDCode[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listWTaxTypeCodes
+public type ListWTaxTypeCodesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: costCenterTypesList
-public type CostCenterTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type JournalEntries_CollectionResponse record {
-    string odata\.metadata?;
-    JournalEntry[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'BoFrequencyTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoFrequencyTypeEnum'. Serialised by the Service Layer as the member name
 public type BoFrequencyTypeEnum "ftDaily"|"ftWeekly"|"ftMonthly"|"ftQuarterly"|"ftSemiannually"|"ftAnnually"|"ftOneTime"|"ftTemplate"|"ftNotExecuted";
 
 public type AccrualType record {
@@ -1270,263 +1616,359 @@ public type AccrualType record {
     ChartOfAccount ChartOfAccount?;
 };
 
-# Represents the Headers record for the operation: accountCategoryList
-public type AccountCategoryListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type PostingTemplatesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PostingTemplates[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type VatGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    VatGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type WithholdingTaxCodesValueRangeLine record {
+    decimal ValueFrom?;
+    decimal WTaxToBeDeductible?;
+    decimal Rate?;
+};
+
+public type DeductionTaxGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DeductionTaxGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getAccrualTypes
+public type GetAccrualTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getDistributionRules
+public type GetDistributionRulesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getSalesTaxAuthorities
+public type GetSalesTaxAuthoritiesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getBudgets
+public type GetBudgetsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TaxCodeDeterminationTCDByUsage record {|
-    int:Signed32 AbsId?;
-    int:Signed32 UsageCode?;
-    string TaxCode?;
-    string ExpTaxCode?;
-    # OData EnumType 'TaxCodeDeterminationTCDByUsageTypeEnum'. Serialised by the Service Layer as the member name.
-    TaxCodeDeterminationTCDByUsageTypeEnum Type?;
-    string PurTaxCode?;
+    @jsondata:Name {value: "UsageCode"}
+    int:Signed32 usageCode?;
+    @jsondata:Name {value: "Type"}
+    TaxCodeDeterminationTCDByUsageTypeEnum 'type?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "ExpTaxCode"}
+    string expTaxCode?;
+    @jsondata:Name {value: "PurTaxCode"}
+    string purTaxCode?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
 |};
 
-public type WTaxTypeCodes_CollectionResponse record {
-    string odata\.metadata?;
-    WTaxTypeCode[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listCostCenterTypes
+public type ListCostCenterTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TaxCodeDeterminationTCDParams record {|
-    int:Signed32 AbsId?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
 |};
 
-# Represents the Queries record for the operation: taxExemptReasonsGet
-public type TaxExemptReasonsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"edpc_CFDI"|"edpc_FPA"|"edpc_MTD"|"edpc_EWB"|"edpc_PEPPOL"|"edpc_HOI"|"edpc_MYF"|"edpc_EIS"|"edpc_IIS"|"edpc_IIS_Annual"|"edpc_DIGIPOORT"|"edpc_EBooks"|"edpc_DOX"|"edpc_RTIE"|"edpc_EBilling"|"edpc_TaxService"|"edpc_AFE"|"edpc_DocSign"|"edpc_KSeF"|"edpc_GSTReturn"|"edpc_PTDocSign"|"edpc_SkatDK"|"edpc_EII"|"edpc_NFe"|"edpc_PTeInvoicing"|"edpc_PTeCom"|"edpc_VeriFactu"|"edpc_BAS"|"edpc_PDFwithXML"|"edpc_FReINV";
 
-# OData EnumType 'BoTCDDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listBudgetDistributions
+public type ListBudgetDistributionsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'BoTCDDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTCDDocumentTypeEnum "tcddtItem"|"tcddtService"|"tcddtItemAndService";
 
-public type WithholdingTaxCodes_CollectionResponse record {
-    string odata\.metadata?;
-    WithholdingTaxCode[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listDeductibleTaxes
+public type ListDeductibleTaxesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: budgetDistributionsList
-public type BudgetDistributionsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listClosingDateProcedure
+public type ListClosingDateProcedureHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: taxCodeDeterminationsList
-public type TaxCodeDeterminationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: natureOfAssesseesGet
-public type NatureOfAssesseesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: dimensionsList
-public type DimensionsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listCurrencies
+public type ListCurrenciesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type inline_response_200_9 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DimensionParams[] value?;
 };
 
-# OData EnumType 'TdsTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TdsTypeEnum'. Serialised by the Service Layer as the member name
 public type TdsTypeEnum "wtETds"|"wtGstTds"|"wtGstTcs"|"wtTcs";
 
 public type inline_response_200_5 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CostElementParams[] value?;
 };
 
-# Represents the Headers record for the operation: deductibleTaxesList
-public type DeductibleTaxesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type inline_response_200_6 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DeductibleTaxParams[] value?;
 };
 
 public type inline_response_200_7 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DeductionTaxSubGroupParams[] value?;
 };
 
 public type inline_response_200_8 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DeterminationCriteriaParams[] value?;
 };
 
-# Represents the Queries record for the operation: forms1099List
-public type Forms1099ListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: transactionCodesList
-public type TransactionCodesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'ReturnTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ReturnTypeEnum'. Serialised by the Service Layer as the member name
 public type ReturnTypeEnum "rt26Q"|"rt27Q"|"rt27EQ";
 
-public type NatureOfAssessees_CollectionResponse record {
-    string odata\.metadata?;
-    NatureOfAssessee[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listTaxCodeDeterminationsTCD
+public type ListTaxCodeDeterminationsTCDQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: budgetScenariosList
-public type BudgetScenariosListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: accountSegmentationsGet
-public type AccountSegmentationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getCurrencies
+public type GetCurrenciesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AccrualTypeParams[] value?;
 };
 
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CashDiscountParams[] value?;
 };
 
-public type TaxExemptReasons_CollectionResponse record {
-    string odata\.metadata?;
-    TaxExemptReason[] value?;
-    string odata\.nextLink?;
-};
-
 public type TaxWebSiteParams record {|
-    int:Signed32 AbsEntry?;
-    string WebSiteName?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "WebSiteName"}
+    string webSiteName?;
 |};
 
 public type inline_response_200_3 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CashFlowLineItemParams[] value?;
 };
 
 public type inline_response_200_4 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CostCenterTypeParams[] value?;
 };
 
 public type CashFlowLineItemParams record {|
-    int:Signed32 LineItemID?;
-    string LineItemName?;
+    @jsondata:Name {value: "LineItemID"}
+    int:Signed32 lineItemID?;
+    @jsondata:Name {value: "LineItemName"}
+    string lineItemName?;
 |};
 
 public type inline_response_200_11 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     FinancialYearParams[] value?;
 };
 
 public type inline_response_200_10 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DistributionRuleParams[] value?;
 };
 
 public type inline_response_200_13 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     JournalEntryDocumentTypeParams[] value?;
 };
 
-public type TaxInvoiceReport_CollectionResponse record {
-    string odata\.metadata?;
-    TaxInvoiceReport[] value?;
-    string odata\.nextLink?;
-};
-
 public type inline_response_200_12 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     GLAccountAdvancedRuleParams[] value?;
 };
 
-public type SalesTaxAuthorities_CollectionResponse record {
-    string odata\.metadata?;
-    SalesTaxAuthority[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getSpecificWTHAmountsService
+public type GetSpecificWTHAmountsServiceQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type inline_response_200_19 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     RecurringTransactionTemplateParams[] value?;
 };
 
+public type AccountSegmentationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AccountSegmentation[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getRecurringPostings
+public type GetRecurringPostingsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type inline_response_200_18 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     RclRecurringTransaction[] value?;
 };
 
+# Represents the Queries record for the operation: getPostingTemplates
+public type GetPostingTemplatesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type inline_response_200_15 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     PostingTemplatesParams[] value?;
 };
 
@@ -1538,52 +1980,125 @@ public type WTDItem record {
 };
 
 public type inline_response_200_14 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     NatureOfAssesseeParams[] value?;
 };
 
 public type inline_response_200_17 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     RecurringPostingsParams[] value?;
 };
 
 public type inline_response_200_16 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ProfitCenterParams[] value?;
 };
 
-# Represents the Queries record for the operation: withholdingTaxCodesGet
-public type WithholdingTaxCodesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listCurrencies
+public type ListCurrenciesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TaxCodeDeterminationTCDKeyField record {|
-    int:Signed32 AbsId?;
-    string Descr?;
-    int:Signed32 Priority?;
-    int:Signed32 KeyFld_1?;
-    string UDFTable_1?;
-    string UDFAlias_1?;
-    int:Signed32 KeyFld_2?;
-    string UDFTable_2?;
-    string UDFAlias_2?;
-    int:Signed32 KeyFld_3?;
-    string UDFTable_3?;
-    string UDFAlias_3?;
-    int:Signed32 KeyFld_4?;
-    string UDFTable_4?;
-    string UDFAlias_4?;
-    string LegalText?;
-    int:Signed32 KeyFld_5?;
-    string UDFTable_5?;
-    string UDFAlias_5?;
-    TaxCodeDeterminationTCDKeyFieldValue[] TaxCodeDeterminationTCDKeyFieldValues?;
+    @jsondata:Name {value: "UDFTable_3"}
+    string uDFTable3?;
+    @jsondata:Name {value: "KeyFld_4"}
+    int:Signed32 keyFld4?;
+    @jsondata:Name {value: "UDFTable_2"}
+    string uDFTable2?;
+    @jsondata:Name {value: "KeyFld_5"}
+    int:Signed32 keyFld5?;
+    @jsondata:Name {value: "UDFTable_1"}
+    string uDFTable1?;
+    @jsondata:Name {value: "KeyFld_1"}
+    int:Signed32 keyFld1?;
+    @jsondata:Name {value: "Priority"}
+    int:Signed32 priority?;
+    @jsondata:Name {value: "KeyFld_2"}
+    int:Signed32 keyFld2?;
+    @jsondata:Name {value: "UDFTable_5"}
+    string uDFTable5?;
+    @jsondata:Name {value: "KeyFld_3"}
+    int:Signed32 keyFld3?;
+    @jsondata:Name {value: "UDFTable_4"}
+    string uDFTable4?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDKeyFieldValues"}
+    TaxCodeDeterminationTCDKeyFieldValue[] taxCodeDeterminationTCDKeyFieldValues?;
+    @jsondata:Name {value: "Descr"}
+    string descr?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
+    @jsondata:Name {value: "LegalText"}
+    string legalText?;
+    @jsondata:Name {value: "UDFAlias_1"}
+    string uDFAlias1?;
+    @jsondata:Name {value: "UDFAlias_2"}
+    string uDFAlias2?;
+    @jsondata:Name {value: "UDFAlias_3"}
+    string uDFAlias3?;
+    @jsondata:Name {value: "UDFAlias_4"}
+    string uDFAlias4?;
+    @jsondata:Name {value: "UDFAlias_5"}
+    string uDFAlias5?;
 |};
 
-# OData EnumType 'GetGLAccountByEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listBudgets
+public type ListBudgetsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type SalesTaxAuthoritiesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesTaxAuthority[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'GetGLAccountByEnum'. Serialised by the Service Layer as the member name
 public type GetGLAccountByEnum "gglab_General"|"gglab_Warehouse"|"gglab_ItemGroup";
 
 public type DistributionRule record {
@@ -1592,9 +2107,9 @@ public type DistributionRule record {
     decimal TotalFactor?;
     string Direct?;
     int:Signed32 InWhichDimension?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Active?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsFixedAmount?;
     DistributionRuleLine[] DistributionRuleLines?;
     Dimension Dimension?;
@@ -1605,7 +2120,7 @@ public type DistributionRule record {
 public type SpecificWTHAmountsParams record {
     string PaymentReasonCode?;
     string CardCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CUSplit?;
     decimal FullWtaxTaxationInAdvance?;
     decimal WTaxAmountOnHold?;
@@ -1623,17 +2138,17 @@ public type SpecificWTHAmountsParams record {
     string DeliveryIdentificationNo?;
     string SingleCertificationNo?;
     int:Signed32 EarningYear?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Advanced?;
     string WTaxTypeCode?;
     string SocialSecurityFiscalC?;
     string SocialSecurityInstitut?;
     string CompanyCode?;
-    # OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name
     BoOSWACategoryEnum Category?;
     decimal EmployeeSocialSecurity?;
     decimal EmployerSocialSecurity?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum OtherContributions?;
     decimal ValueOfOtherContribut?;
     decimal OtherAmountsDue?;
@@ -1677,57 +2192,33 @@ public type TaxDefinition record {
     decimal Rate?;
 };
 
-# Represents the Headers record for the operation: journalEntryDocumentTypesList
-public type JournalEntryDocumentTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type RecurringPostingsDocumentReference record {|
-    string RcrCode?;
-    int:Signed32 LineNumber?;
-    int:Signed32 ReferencedDocEntry?;
-    int:Signed32 ReferencedDocNumber?;
-    string ExternalReferencedDocNumber?;
-    # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name.
-    ReferencedObjectTypeEnum ReferencedObjectType?;
-    string IssueDate?;
-    string Remark?;
+    @jsondata:Name {value: "ReferencedDocEntry"}
+    int:Signed32 referencedDocEntry?;
+    @jsondata:Name {value: "ReferencedObjectType"}
+    ReferencedObjectTypeEnum referencedObjectType?;
+    @jsondata:Name {value: "ExternalReferencedDocNumber"}
+    string externalReferencedDocNumber?;
+    @jsondata:Name {value: "IssueDate"}
+    string issueDate?;
+    @jsondata:Name {value: "RcrCode"}
+    string rcrCode?;
+    @jsondata:Name {value: "ReferencedDocNumber"}
+    int:Signed32 referencedDocNumber?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Remark"}
+    string remark?;
 |};
 
-# Represents the Queries record for the operation: recurringTransactionTemplatesGet
-public type RecurringTransactionTemplatesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listWTaxTypeCodes
+public type ListWTaxTypeCodesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: accountCategoryList
-public type AccountCategoryListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type ProgressiveTax_Line record {
-    decimal TaxRate?;
-    decimal MinAmount?;
-    decimal MaxAmount?;
-};
-
-# OData EnumType 'AccountCategorySourceEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AccountCategorySourceEnum'. Serialised by the Service Layer as the member name
 public type AccountCategorySourceEnum "acsBalanceSheet"|"acsProfitAndLoss"|"acsTrialBalance";
 
 public type AccountSegmentationCategory record {
@@ -1738,78 +2229,127 @@ public type AccountSegmentationCategory record {
     AccountSegmentation AccountSegmentation?;
 };
 
-# Represents the Queries record for the operation: accountSegmentationsList
-public type AccountSegmentationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getJournalEntryDocumentTypes
+public type GetJournalEntryDocumentTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: specificWTHAmountsServiceList
-public type SpecificWTHAmountsServiceListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type VatGroupsLine record {
+    string Effectivefrom?;
+    decimal Rate?;
+    decimal EqualizationTax?;
+    int:Signed32 DatevCode?;
 };
 
-# OData EnumType 'BoVatCategoryEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoVatCategoryEnum'. Serialised by the Service Layer as the member name
 public type BoVatCategoryEnum "bovcInputTax"|"bovcOutputTax";
 
-# Represents the Headers record for the operation: chartOfAccountsList
-public type ChartOfAccountsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'TaxInvoiceReportLineTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TaxInvoiceReportLineTypeEnum'. Serialised by the Service Layer as the member name
 public type TaxInvoiceReportLineTypeEnum "LineOfBusinessPlace"|"LineOfBusinessPartner"|"LineOfDocument"|"LineOfItem";
 
+public type CostCenterTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CostCenterType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type NatureOfAssessee record {|
-    int:Signed32 AbsEntry?;
-    string Code?;
-    string Description?;
-    # OData EnumType 'AssesseeTypeEnum'. Serialised by the Service Layer as the member name.
-    AssesseeTypeEnum AssesseeType?;
-    WithholdingTaxCode[] WithholdingTaxCodes?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "WithholdingTaxCodes"}
+    WithholdingTaxCode[] withholdingTaxCodes?;
+    @jsondata:Name {value: "AssesseeType"}
+    AssesseeTypeEnum assesseeType?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Queries record for the operation: accountSegmentationCategoriesGet
-public type AccountSegmentationCategoriesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type DeterminationCriteriasCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DeterminationCriteria[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getFinancialYears
+public type GetFinancialYearsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DeductibleTaxParams record {|
-    string Code?;
-    string Name?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type RclRecurringExecutionParams record {|
-    # OData EnumType 'RclRecurringExecutionHandlingEnum'. Serialised by the Service Layer as the member name.
-    RclRecurringExecutionHandlingEnum OnError?;
+    @jsondata:Name {value: "OnError"}
+    RclRecurringExecutionHandlingEnum onError?;
 |};
 
 public type CashFlowLineItem record {|
-    int:Signed32 LineItemID?;
-    string LineItemName?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ActiveLineItem?;
-    int:Signed32 ParentArticle?;
-    int:Signed32 Level?;
-    int:Signed32 Drawer?;
+    @jsondata:Name {value: "ParentArticle"}
+    int:Signed32 parentArticle?;
+    @jsondata:Name {value: "Level"}
+    int:Signed32 level?;
+    @jsondata:Name {value: "LineItemID"}
+    int:Signed32 lineItemID?;
+    @jsondata:Name {value: "Drawer"}
+    int:Signed32 drawer?;
+    @jsondata:Name {value: "LineItemName"}
+    string lineItemName?;
+    @jsondata:Name {value: "ActiveLineItem"}
+    BoYesNoEnum activeLineItem?;
 |};
+
+# Represents the Queries record for the operation: getDeductionTaxSubGroups
+public type GetDeductionTaxSubGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listTransactionCodes
+public type ListTransactionCodesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type BudgetScenariosCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    BudgetScenario[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type JournalEntriesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    JournalEntry[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type BudgetScenario record {
     string Name?;
@@ -1817,7 +2357,7 @@ public type BudgetScenario record {
     string StartofFiscalYear?;
     int:Signed32 BasicBudget?;
     int:Signed32 Numerator?;
-    # OData EnumType 'BoRoundingMethod'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoRoundingMethod'. Serialised by the Service Layer as the member name
     BoRoundingMethod RoundingMethod?;
     string Project?;
     string DistributionRule?;
@@ -1829,86 +2369,143 @@ public type BudgetScenario record {
     DistributionRule DistributionRule6?;
 };
 
-# OData EnumType 'DocumentObjectTypeEnum'. Serialised by the Service Layer as the member name.
-public type DocumentObjectTypeEnum "dc_ArInvoice"|"dc_Delivery"|"dc_GoodsReturn"|"dc_InventoryTransfer";
-
-# Represents the Queries record for the operation: deductionTaxGroupsList
-public type DeductionTaxGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listTransactionCodes
+public type ListTransactionCodesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type TaxInvoiceReportLine record {|
-    int:Signed32 DocumentType?;
-    int:Signed32 DocumentEntry?;
-    # OData EnumType 'TaxInvoiceReportLineTypeEnum'. Serialised by the Service Layer as the member name.
-    TaxInvoiceReportLineTypeEnum LineType?;
-    decimal BaseAmount?;
-    decimal TaxAmount?;
-    decimal ItemQuantity?;
-    string ItemNo?;
-    string ItemDescription?;
-    string TaxCode?;
-    string DocumentDate?;
-    decimal ItemPrice?;
-    int:Signed32 LineNumber?;
+public type WithholdingTaxCodesLine record {
+    string Effectivefrom?;
+    decimal Rate?;
+    decimal TDSRate?;
+    decimal SurchargeRate?;
+    decimal CessRate?;
+    decimal HSCRate?;
+    decimal IGSTRate?;
+    decimal CGSTRate?;
+    decimal SGSTRate?;
+    decimal UTGSTRate?;
+    decimal CessGSTRate?;
+    int:Signed32 LineNum?;
+    int:Signed32 UoMEntry?;
+    string UoMCode?;
+    decimal FixedAmount?;
     string Currency?;
-    int:Signed32 BusinessPlace?;
-    string TaxInvoiceReportNumber?;
-    string BPCode?;
-    string BPName?;
-    string Legacy?;
+    decimal ITRNonCompliantRate?;
+    decimal PANNonCompliantRate?;
+    ProgressiveTaxLine[] ProgressiveTax_Lines?;
+    WithholdingTaxCodesValueRangeLine[] WithholdingTaxCodes_ValueRange_Lines?;
+};
+
+# OData EnumType 'DocumentObjectTypeEnum'. Serialised by the Service Layer as the member name
+public type DocumentObjectTypeEnum "dc_ArInvoice"|"dc_Delivery"|"dc_GoodsReturn"|"dc_InventoryTransfer";
+
+public type TaxInvoiceReportLine record {|
+    @jsondata:Name {value: "TaxInvoiceReportNumber"}
+    string taxInvoiceReportNumber?;
+    @jsondata:Name {value: "Legacy"}
+    string legacy?;
+    @jsondata:Name {value: "ItemPrice"}
+    decimal itemPrice?;
+    @jsondata:Name {value: "DocumentType"}
+    int:Signed32 documentType?;
+    @jsondata:Name {value: "ItemDescription"}
+    string itemDescription?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "BaseAmount"}
+    decimal baseAmount?;
+    @jsondata:Name {value: "BusinessPlace"}
+    int:Signed32 businessPlace?;
+    @jsondata:Name {value: "TaxAmount"}
+    decimal taxAmount?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "BPName"}
+    string bPName?;
+    @jsondata:Name {value: "ItemQuantity"}
+    decimal itemQuantity?;
+    @jsondata:Name {value: "ItemNo"}
+    string itemNo?;
+    @jsondata:Name {value: "Currency"}
+    string currency?;
+    @jsondata:Name {value: "DocumentEntry"}
+    int:Signed32 documentEntry?;
+    @jsondata:Name {value: "BPCode"}
+    string bPCode?;
+    @jsondata:Name {value: "LineType"}
+    TaxInvoiceReportLineTypeEnum lineType?;
+    @jsondata:Name {value: "DocumentDate"}
+    string documentDate?;
 |};
+
+# Represents the Queries record for the operation: getAccountSegmentationCategories
+public type GetAccountSegmentationCategoriesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
 
 public type VatGroup record {
     string Code?;
     string Name?;
-    # OData EnumType 'BoVatCategoryEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoVatCategoryEnum'. Serialised by the Service Layer as the member name
     BoVatCategoryEnum Category?;
     string TaxAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EU?;
     string TriangularDeal?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AcquisitionReverse?;
     decimal NonDeduct?;
     string AcquisitionTax?;
     string GoodsShipment?;
     string NonDeductAcc?;
     string DeferredTaxAcc?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Correction?;
     string VatCorrection?;
     string EqualizationTaxAccount?;
     string ServiceSupply?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Inactive?;
-    # OData EnumType 'TaxTypeBlackListEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'TaxTypeBlackListEnum'. Serialised by the Service Layer as the member name
     TaxTypeBlackListEnum TaxTypeBlackList?;
-    # OData EnumType 'Report349CodeListEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'Report349CodeListEnum'. Serialised by the Service Layer as the member name
     Report349CodeListEnum Report349Code?;
     string VATInRevenueAccount?;
     string DownPaymentTaxOffsetAccount?;
     string CashDiscountAccount?;
     string VATDeductibleAccount?;
-    # OData EnumType 'VatGroupsTaxRegionEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'VatGroupsTaxRegionEnum'. Serialised by the Service Layer as the member name
     VatGroupsTaxRegionEnum TaxRegion?;
     string AcquisitionReverseCorrespondingTaxCode?;
     int:Signed32 EBooksVatCategory?;
     string TaxExemptionReason?;
-    # OData EnumType 'SAFTTaxCodeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'SAFTTaxCodeEnum'. Serialised by the Service Layer as the member name
     SAFTTaxCodeEnum SAFTTaxCode?;
     int:Signed32 EBooksVatExemptionCause?;
     int:Signed32 EBooksVatExpClassType?;
@@ -1916,57 +2513,22 @@ public type VatGroup record {
     string SAFTTaxCodeEx?;
     string GroupDescription?;
     int:Signed32 VATType?;
-    VatGroups_Line[] VatGroups_Lines?;
+    VatGroupsLine[] VatGroups_Lines?;
     ChartOfAccount ChartOfAccount?;
     TaxExemptReason TaxExemptReason?;
     GLAccountAdvancedRule[] GLAccountAdvancedRules?;
 };
 
-# Represents the Headers record for the operation: distributionRulesList
-public type DistributionRulesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Headers record for the operation: financialYearsList
-public type FinancialYearsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: withholdingTaxCodesList
-public type WithholdingTaxCodesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'RclRecurringTransactionStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RclRecurringTransactionStatusEnum'. Serialised by the Service Layer as the member name
 public type RclRecurringTransactionStatusEnum "rtsNotExecuted"|"rtsExecuted"|"rtsRemoved";
 
-# Represents the Queries record for the operation: postingTemplatesGet
-public type PostingTemplatesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type RecurringPostingsParams record {|
-    string Code?;
-    int:Signed32 Instance?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Instance"}
+    int:Signed32 instance?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type Currency record {
@@ -1981,11 +2543,11 @@ public type Currency record {
     string PluralHundredthName?;
     string PluralEnglishName?;
     string PluralEnglishHundredthName?;
-    # OData EnumType 'CurrenciesDecimalsEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CurrenciesDecimalsEnum'. Serialised by the Service Layer as the member name
     CurrenciesDecimalsEnum Decimals?;
-    # OData EnumType 'RoundingSysEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RoundingSysEnum'. Serialised by the Service Layer as the member name
     RoundingSysEnum Rounding?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RoundingInPayment?;
     decimal MaxIncomingAmtDiff?;
     decimal MaxOutgoingAmtDiff?;
@@ -1995,60 +2557,61 @@ public type Currency record {
     ChartOfAccount[] ChartOfAccounts?;
 };
 
-# Represents the Queries record for the operation: wTaxTypeCodesList
-public type WTaxTypeCodesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type TransactionCode record {|
-    string Code?;
-    string Description?;
-    JournalEntry[] JournalEntries?;
-    ChartOfAccount[] ChartOfAccounts?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "JournalEntries"}
+    JournalEntry[] journalEntries?;
+    @jsondata:Name {value: "ChartOfAccounts"}
+    ChartOfAccount[] chartOfAccounts?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type AccountSegmentation record {
     int:Signed32 Numerator?;
     string Name?;
     int:Signed32 Size?;
-    # OData EnumType 'AccountSegmentationTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'AccountSegmentationTypeEnum'. Serialised by the Service Layer as the member name
     AccountSegmentationTypeEnum Type?;
     AccountSegmentationsCategory[] AccountSegmentationsCategories?;
     AccountSegmentationCategory[] AccountSegmentationCategories?;
 };
 
-# OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name.
+public type TaxInvoiceReportCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxInvoiceReport[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name
 public type PrintStatusEnum "psNo"|"psYes"|"psAmended";
 
-# Represents the Queries record for the operation: salesTaxAuthoritiesTypesList
-public type SalesTaxAuthoritiesTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listJournalEntryDocumentTypes
+public type ListJournalEntryDocumentTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -2093,174 +2656,156 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-public type CostElementParams record {|
-    string Code?;
-    string Description?;
-|};
-
-# Represents the Queries record for the operation: accrualTypesList
-public type AccrualTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listBudgets
+public type ListBudgetsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
+public type CostElementParams record {|
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+|};
+
 public type inline_response_200_22 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TaxCodeDeterminationTCDParams[] value?;
 };
 
 public type inline_response_200_21 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TaxCodeDeterminationParams[] value?;
 };
 
 public type inline_response_200_24 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TaxWebSiteParams[] value?;
 };
 
 public type inline_response_200_23 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TaxExemptReasonParams[] value?;
 };
 
-# Represents the Queries record for the operation: taxCodeDeterminationsTCDGet
-public type TaxCodeDeterminationsTCDGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_20 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     SpecificWTHAmountsParams[] value?;
 };
 
-# OData EnumType 'SAFTTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'SAFTTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type SAFTTransactionTypeEnum "safttt_Default"|"safttt_Normal"|"safttt_AdjustmentsofTheTaxPeriod"|"safttt_MeasurementofResults"|"safttt_Adjustment"|"safttt_DoNotExport"|"safttt_NonSystem";
 
+# Represents the Headers record for the operation: listWitholdingTaxDefinition
+public type ListWitholdingTaxDefinitionHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getDeductibleTaxes
+public type GetDeductibleTaxesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type inline_response_200_26 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     WTaxTypeCodeParams[] value?;
 };
 
-public type CashDiscounts_CollectionResponse record {
-    string odata\.metadata?;
-    CashDiscount[] value?;
-    string odata\.nextLink?;
-};
-
 public type inline_response_200_25 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TransactionCodeParams[] value?;
 };
 
-# Represents the Headers record for the operation: salesTaxCodesList
-public type SalesTaxCodesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type RecurringPostings_CollectionResponse record {
-    string odata\.metadata?;
-    RecurringPostings[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: salesTaxCodesList
-public type SalesTaxCodesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: distributionRulesList
-public type DistributionRulesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type AccrualTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AccrualType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type RecurringTransactionTemplateParams record {|
-    int:Signed32 AbsoluteEntry?;
+    @jsondata:Name {value: "AbsoluteEntry"}
+    int:Signed32 absoluteEntry?;
 |};
 
-public type BudgetScenarios_CollectionResponse record {
-    string odata\.metadata?;
-    BudgetScenario[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listAccountSegmentationCategories
+public type ListAccountSegmentationCategoriesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: currenciesList
-public type CurrenciesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listBudgetScenarios
+public type ListBudgetScenariosHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'BoRoundingMethod'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getTaxCodeDeterminations
+public type GetTaxCodeDeterminationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoRoundingMethod'. Serialised by the Service Layer as the member name
 public type BoRoundingMethod "borm_FixedEnding"|"borm_FixedInterval"|"borm_NoRounding"|"borm_RoundToFullAmount"|"borm_RoundToFullDecAmount"|"borm_RoundToFullTensAmount";
 
-# Represents the Queries record for the operation: dimensionsGet
-public type DimensionsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type AccountSegmentationCategoriesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AccountSegmentationCategory[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: journalEntriesGet
-public type JournalEntriesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getTaxInvoiceReport
+public type GetTaxInvoiceReportQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type Forms1099 record {
@@ -2269,21 +2814,34 @@ public type Forms1099 record {
     Boxes1099Item[] Boxes1099?;
 };
 
-public type DeductionTaxGroups_CollectionResponse record {
-    string odata\.metadata?;
-    DeductionTaxGroup[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listSpecificWTHAmountsService
+public type ListSpecificWTHAmountsServiceHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: deductionTaxGroupsList
-public type DeductionTaxGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getBudgetScenarios
+public type GetBudgetScenariosQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type ProgressiveTaxLine record {
+    decimal TaxRate?;
+    decimal MinAmount?;
+    decimal MaxAmount?;
 };
 
 public type ProfitCenterParams record {|
-    string CenterCode?;
-    string CenterName?;
+    @jsondata:Name {value: "CenterName"}
+    string centerName?;
+    @jsondata:Name {value: "CenterCode"}
+    string centerCode?;
 |};
 
 public type WTDFreight record {
@@ -2293,104 +2851,176 @@ public type WTDFreight record {
     string EffectiveDateTo?;
 };
 
-public type SalesTaxCodes_CollectionResponse record {
-    string odata\.metadata?;
-    SalesTaxCode[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listClosingDateProcedure
+public type ListClosingDateProcedureQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type Currencies_CollectionResponse record {
-    string odata\.metadata?;
-    Currency[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listDeductibleTaxes
+public type ListDeductibleTaxesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listJournalEntryDocumentTypes
+public type ListJournalEntryDocumentTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ReferencedObjectTypeEnum "rot_ExternalDocument"|"rot_SalesQuotation"|"rot_SalesOrder"|"rot_DeliveryNotes"|"rot_ReturnRequest"|"rot_Return"|"rot_DownPaymentIncoming"|"rot_SalesInvoice"|"rot_SalesCreditNote"|"rot_CorrectionSalesInvoice"|"rot_SalesTaxInvoice"|"rot_PurchaseQuotation"|"rot_PurchaseOrder"|"rot_GoodsReceiptPO"|"rot_GoodsReturnRequest"|"rot_GoodsReturn"|"rot_DownPaymentOutgoing"|"rot_PurchaseInvoice"|"rot_PurchaseCreditNote"|"rot_CorrectionPurchaseInvoice"|"rot_PurchaseTaxInvoice"|"rot_LandedCosts"|"rot_IncomingPayments"|"rot_JournalEntry"|"rot_ProductionOrder"|"rot_InternalReconciliation"|"rot_OriginalInvoice"|"rot_OriginalARDownPayment"|"rot_PurchaseRequest"|"rot_GoodsReceipt"|"rot_GoodsIssue"|"rot_InventoryTransferRequest"|"rot_InventoryTransfer"|"rot_ChecksforPayment"|"rot_MaterialRevaluation"|"rot_InventoryCounting"|"rot_InventoryPosting"|"rot_OutgoingPayments";
 
-# Represents the Queries record for the operation: salesTaxCodesGet
-public type SalesTaxCodesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoOSWACategoryEnum'. Serialised by the Service Layer as the member name
 public type BoOSWACategoryEnum "boswaMCAPrimaria"|"boswaPDLScelta"|"boswaMSEsterno"|"boswaMDMDSATDeterminato"|"boswaMDETATDeterminato"|"boswaMDCATDeterminato"|"boswaIPDOOccasionali";
 
-public type VatGroups_Line record {
-    string Effectivefrom?;
-    decimal Rate?;
-    decimal EqualizationTax?;
-    int:Signed32 DatevCode?;
+public type TaxReplStateSubsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxReplStateSubData[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Headers record for the operation: accountSegmentationsList
-public type AccountSegmentationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getTransactionCodes
+public type GetTransactionCodesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type Dimensions_CollectionResponse record {
-    string odata\.metadata?;
-    Dimension[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listWithholdingTaxCodes
+public type ListWithholdingTaxCodesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listProfitCenters
+public type ListProfitCentersQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type JournalVouchersService_Add_body record {
-    JournalEntry[] JournalVoucher?;
+    @jsondata:Name {value: "JournalVoucher"}
+    JournalEntry[] journalVoucher?;
 };
 
-# OData EnumType 'TCSAccumulationBaseEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TCSAccumulationBaseEnum'. Serialised by the Service Layer as the member name
 public type TCSAccumulationBaseEnum "tcsAccumulationOnInvoice"|"tcsAccumulationOnPayment";
 
-# Represents the Queries record for the operation: deductibleTaxesGet
-public type DeductibleTaxesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listTaxInvoiceReport
+public type ListTaxInvoiceReportQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'CurrenciesDecimalsEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'CurrenciesDecimalsEnum'. Serialised by the Service Layer as the member name
 public type CurrenciesDecimalsEnum "cd1Digit"|"cd2Digits"|"cd3Digits"|"cd4Digits"|"cd5Digits"|"cd6Digits"|"cdDefault"|"cdWithoutDecimals";
 
 public type DiscountLine record {|
-    string DiscountCode?;
-    int:Signed32 LineId?;
-    int:Signed32 NumOfDays?;
-    decimal Discount?;
-    int:Signed32 Day?;
-    int:Signed32 Month?;
+    @jsondata:Name {value: "Month"}
+    int:Signed32 month?;
+    @jsondata:Name {value: "NumOfDays"}
+    int:Signed32 numOfDays?;
+    @jsondata:Name {value: "Discount"}
+    decimal discount?;
+    @jsondata:Name {value: "LineId"}
+    int:Signed32 lineId?;
+    @jsondata:Name {value: "DiscountCode"}
+    string discountCode?;
+    @jsondata:Name {value: "Day"}
+    int:Signed32 day?;
 |};
 
 public type DimensionParams record {|
-    int:Signed32 DimensionCode?;
-    string DimensionName?;
+    @jsondata:Name {value: "DimensionCode"}
+    int:Signed32 dimensionCode?;
+    @jsondata:Name {value: "DimensionName"}
+    string dimensionName?;
 |};
-
-public type DistributionRules_CollectionResponse record {
-    string odata\.metadata?;
-    DistributionRule[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: budgetsGet
-public type BudgetsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: deductionTaxHierarchiesGet
-public type DeductionTaxHierarchiesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
 
 public type WithholdingTaxData record {
     string WTCode?;
@@ -2415,213 +3045,269 @@ public type WithholdingTaxData record {
     int:Signed32 BaseDocLine?;
     int:Signed32 BaseDocType?;
     int:Signed32 BaseDocumentReference?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus Status?;
     int:Signed32 TargetAbsEntry?;
     int:Signed32 TargetDocumentType?;
 };
 
-# OData EnumType 'BoTaxPostingAccountTypeEnum'. Serialised by the Service Layer as the member name.
+public type CashFlowLineItemsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CashFlowLineItem[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'BoTaxPostingAccountTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTaxPostingAccountTypeEnum "tpatEmpty"|"tpatSalesTaxAccount"|"tpatPurchasingTaxAccount";
 
-# Represents the Queries record for the operation: costCenterTypesGet
-public type CostCenterTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getProfitCenters
+public type GetProfitCentersQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getWitholdingTaxDefinition
+public type GetWitholdingTaxDefinitionQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getCostElements
+public type GetCostElementsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type OpenningBalanceAccount record {|
-    string OpenBalanceAccount?;
-    string Date?;
-    string Ref1?;
-    string Ref2?;
-    string Details?;
-    int:Signed32 BPLID?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "OpenBalanceAccount"}
+    string openBalanceAccount?;
+    @jsondata:Name {value: "Ref1"}
+    string ref1?;
+    @jsondata:Name {value: "Ref2"}
+    string ref2?;
+    @jsondata:Name {value: "Date"}
+    string date?;
+    @jsondata:Name {value: "BPLID"}
+    int:Signed32 bPLID?;
 |};
 
-# OData EnumType 'TaxCodeDeterminationTCDTypeEnum'. Serialised by the Service Layer as the member name.
+public type JournalEntryDocumentTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    JournalEntryDocumentType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'TaxCodeDeterminationTCDTypeEnum'. Serialised by the Service Layer as the member name
 public type TaxCodeDeterminationTCDTypeEnum "tcdtMaterialItem"|"tcdtServiceItem"|"tcdtServiceDocument"|"tcdtWithholdingTax";
 
-public type TransactionCodes_CollectionResponse record {
-    string odata\.metadata?;
-    TransactionCode[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listSpecificWTHAmountsService
+public type ListSpecificWTHAmountsServiceQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: forms1099Get
-public type Forms1099GetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type TaxCodeDeterminationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxCodeDetermination[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: taxWebSitesGet
-public type TaxWebSitesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type BudgetDistributionsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    BudgetDistribution[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listWithholdingTaxCodes
+public type ListWithholdingTaxCodesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type JournalEntryDocumentTypeParams record {|
-    string JournalEntryType?;
-    string DocTypeDescription?;
-    string ShortName?;
+    @jsondata:Name {value: "DocTypeDescription"}
+    string docTypeDescription?;
+    @jsondata:Name {value: "ShortName"}
+    string shortName?;
+    @jsondata:Name {value: "JournalEntryType"}
+    string journalEntryType?;
 |};
 
-# Represents the Queries record for the operation: vatGroupsGet
-public type VatGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getBudgetDistributions
+public type GetBudgetDistributionsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: deductibleTaxesList
-public type DeductibleTaxesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: transactionCodesGet
-public type TransactionCodesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'Report349CodeListEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'Report349CodeListEnum'. Serialised by the Service Layer as the member name
 public type Report349CodeListEnum "r349cA"|"r349cE"|"r349cEmpty"|"r349cH"|"r349cI"|"r349cM"|"r349cS"|"r349cT";
 
-# Represents the Headers record for the operation: accrualTypesList
-public type AccrualTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Headers record for the operation: cashDiscountsList
-public type CashDiscountsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type DeductionTaxSubGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DeductionTaxSubGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type CashDiscount record {|
-    string Code?;
-    string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ByDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Freight?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Tax?;
-    DiscountLine[] DiscountLines?;
+    @jsondata:Name {value: "Tax"}
+    BoYesNoEnum tax?;
+    @jsondata:Name {value: "ByDate"}
+    BoYesNoEnum byDate?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "DiscountLines"}
+    DiscountLine[] discountLines?;
+    @jsondata:Name {value: "Freight"}
+    BoYesNoEnum freight?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
-
-# Represents the Headers record for the operation: taxExemptReasonsList
-public type TaxExemptReasonsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
 
 public type RelatedDocument record {|
-    # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    RelatedDocumentTypeEnum DocType?;
-    int:Signed32 AbsEntry?;
-    string UUID?;
-    # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    RelatedDocumentTypeEnum DocTye?;
-    int:Signed32 AbsEnry?;
+    @jsondata:Name {value: "AbsEnry"}
+    int:Signed32 absEnry?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "UUID"}
+    string uUID?;
+    @jsondata:Name {value: "DocTye"}
+    RelatedDocumentTypeEnum docTye?;
+    @jsondata:Name {value: "DocType"}
+    RelatedDocumentTypeEnum docType?;
 |};
 
-# OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name
 public type BoTCDConditionEnum "tcdcNone"|"tcdcFederalTaxID"|"tcdcShipToAddress"|"tcdcShipToStreePOBox"|"tcdcShipToCity"|"tcdcShipToZipCode"|"tcdcShipToCounty"|"tcdcShipToState"|"tcdcShipToCountry"|"tcdcItem"|"tcdcItemGroup"|"tcdcBusinessPartner"|"tcdcCustomerGroup"|"tcdcVendorGroup"|"tcdcWarehouse"|"tcdcGLAccount"|"tcdcCustomerEquTax"|"tcdcTaxStatus"|"tcdcFreight"|"tcdcUDF"|"tcdcBranchNumber"|"tcdcTypeOfBusiness";
 
-# OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
 public type BoStatus "bost_Open"|"bost_Close"|"bost_Paid"|"bost_Delivered";
 
-# Represents the Queries record for the operation: taxExemptReasonsList
-public type TaxExemptReasonsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getJournalEntries
+public type GetJournalEntriesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type AccountCategory_CollectionResponse record {
-    string odata\.metadata?;
-    AccountCategory[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listRecurringPostings
+public type ListRecurringPostingsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: forms1099List
-public type Forms1099ListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name
 public type WithholdingTaxCodeCategoryEnum "wtcc_Invoice"|"wtcc_Payment";
 
-# Represents the Queries record for the operation: financialYearsGet
-public type FinancialYearsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listWitholdingTaxDefinition
+public type ListWitholdingTaxDefinitionQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'OperationCodeTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'OperationCodeTypeEnum'. Serialised by the Service Layer as the member name
 public type OperationCodeTypeEnum "octSummaryInvoicesEntry"|"octSummaryReceiptsEntry"|"octInvoicewithSeveralVATRates"|"octCorrectionInvoice"|"octDueVATPendingInvoiceIssuance"|"octExpensesIncurredbyTravelAgentforCustomers"|"octSpecialRegulationforVATGroup"|"octSpecialRegulationforGoldInvestment"|"octReverseChargeProcedure"|"octUnsummarizedReceipts"|"octIdentificationofErrorTransactions"|"octTransactionswithEntrepreneursIssuingReceiptsforAgriculturalCompensation"|"octServiceInvoicingbyTravelAgenciesonBehalfofThirdParties"|"octBusinessOfficeRental"|"octSubsidies"|"octIncomingPaymentsforIndustrialandIntellectualPropertyRights"|"octInsuranceTransactions"|"octPurchasesfromTravelAgencies"|"octTransactionsSubjecttoProductionServiceandImportTaxesinCeutaandMelilla";
 
-# Represents the Queries record for the operation: cashDiscountsList
-public type CashDiscountsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listBudgetScenarios
+public type ListBudgetScenariosQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CashFlowAssignment record {
     int:Signed32 CashFlowAssignmentsID?;
     int:Signed32 CashFlowLineItemID?;
     decimal Credit?;
-    # OData EnumType 'PaymentMeansTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PaymentMeansTypeEnum'. Serialised by the Service Layer as the member name
     PaymentMeansTypeEnum PaymentMeans?;
     string CheckNumber?;
     decimal AmountLC?;
@@ -2630,130 +3316,122 @@ public type CashFlowAssignment record {
     int:Signed32 JDTId?;
 };
 
-# OData EnumType 'RecurringTransactionTemplateFrequencyEnum'. Serialised by the Service Layer as the member name.
+public type WithholdingTaxCodesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WithholdingTaxCode[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'RecurringTransactionTemplateFrequencyEnum'. Serialised by the Service Layer as the member name
 public type RecurringTransactionTemplateFrequencyEnum "rttf_Daily"|"rttf_Weekly"|"rttf_Every2Weeks"|"rttf_Monthly"|"rttf_Every2Months"|"rttf_Quarterly"|"rttf_Semiannually"|"rttf_Annually"|"rttf_OneTime";
 
-# Represents the Queries record for the operation: financialYearsList
-public type FinancialYearsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listForms1099
+public type ListForms1099Queries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type JournalEntryDocumentTypes_CollectionResponse record {
-    string odata\.metadata?;
-    JournalEntryDocumentType[] value?;
-    string odata\.nextLink?;
-};
-
-public type AccrualTypes_CollectionResponse record {
-    string odata\.metadata?;
-    AccrualType[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Headers record for the operation: withholdingTaxCodesList
-public type WithholdingTaxCodesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'BoBusinessAreaEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoBusinessAreaEnum'. Serialised by the Service Layer as the member name
 public type BoBusinessAreaEnum "baSales"|"baPurchase"|"baSalesAndPurchase";
 
-# Represents the Headers record for the operation: wTaxTypeCodesList
-public type WTaxTypeCodesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: taxCodeDeterminationsTCDList
-public type TaxCodeDeterminationsTCDListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: salesTaxAuthoritiesTypesList
-public type SalesTaxAuthoritiesTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: salesTaxAuthoritiesList
-public type SalesTaxAuthoritiesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: taxCodeDeterminationsGet
-public type TaxCodeDeterminationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type CostElement record {|
-    string Code?;
-    string Description?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
-    ChartOfAccount[] ChartOfAccounts?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "ChartOfAccounts"}
+    ChartOfAccount[] chartOfAccounts?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
+
+# Represents the Queries record for the operation: listCashDiscounts
+public type ListCashDiscountsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type WTaxTypeCodesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WTaxTypeCode[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type TaxWebSitesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxWebSite[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listCostCenterTypes
+public type ListCostCenterTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
 
 public type WTDCode record {
     int:Signed32 AbsEntry?;
     string WTaxCode?;
     string WTaxName?;
     int:Signed32 FormulaID?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Inactive?;
     string OfficialCode?;
-    # OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WithholdingTaxCodeCategoryEnum'. Serialised by the Service Layer as the member name
     WithholdingTaxCodeCategoryEnum Category?;
-    # OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WithholdingTaxCodeBaseTypeEnum'. Serialised by the Service Layer as the member name
     WithholdingTaxCodeBaseTypeEnum BaseType?;
     int:Signed32 Type?;
     decimal MinAmount?;
     decimal BaseAmountPrct?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SlidingScaleProgressiveTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CalculateInAutomaticCM?;
     WTDEffectiveDate[] WTDEffectiveDateCollection?;
     WTDBP[] WTDBPCollection?;
@@ -2761,12 +3439,21 @@ public type WTDCode record {
     WTDFreight[] WTDFreightCollection?;
 };
 
+# Represents the Headers record for the operation: listProfitCenters
+public type ListProfitCentersHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type TaxReplStateSubData record {|
-    string State?;
-    string IEST?;
+    @jsondata:Name {value: "State"}
+    string state?;
+    @jsondata:Name {value: "IEST"}
+    string iEST?;
 |};
 
-# OData EnumType 'TaxInvoiceReportNTSApprovedEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TaxInvoiceReportNTSApprovedEnum'. Serialised by the Service Layer as the member name
 public type TaxInvoiceReportNTSApprovedEnum "NotApproved"|"Approved";
 
 public type SalesTaxAuthority record {
@@ -2784,21 +3471,21 @@ public type SalesTaxAuthority record {
     decimal MinTaxableAmount?;
     decimal MaxTaxableAmount?;
     decimal FlatTaxAmount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InclInPrice?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Exempt?;
     string APExpAccount?;
     string ARExpAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InclInGrossRevenue?;
     int:Signed32 TextCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InclInFirstInstallment?;
     decimal ReverseChargePercent?;
     string SalesTaxRCMAccount?;
     string SalesTaxRCMClrAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum VATExemption?;
     decimal VATExemptionBasePercent?;
     decimal VATExemptionPercent?;
@@ -2807,18 +3494,11 @@ public type SalesTaxAuthority record {
     SalesTaxAuthoritiesType SalesTaxAuthoritiesType?;
 };
 
-public type DeterminationCriterias_CollectionResponse record {
-    string odata\.metadata?;
-    DeterminationCriteria[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: recurringPostingsGet
-public type RecurringPostingsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listTaxInvoiceReport
+public type ListTaxInvoiceReportHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type AccountSegmentationsCategory record {
@@ -2828,91 +3508,125 @@ public type AccountSegmentationsCategory record {
     string ShortName?;
 };
 
-# Represents the Queries record for the operation: accountSegmentationCategoriesList
-public type AccountSegmentationCategoriesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type RecurringTransactionService_ExecuteRecurringTransactions_body record {
-    RclRecurringTransactionParams[] RclRecurringTransactionParamsCollection?;
-    RclRecurringExecutionParams RclRecurringExecutionParams?;
+    @jsondata:Name {value: "RclRecurringExecutionParams"}
+    RclRecurringExecutionParams rclRecurringExecutionParams?;
+    @jsondata:Name {value: "RclRecurringTransactionParamsCollection"}
+    RclRecurringTransactionParams[] rclRecurringTransactionParamsCollection?;
 };
 
 public type TaxCodeDeterminationParams record {|
-    int:Signed32 DocEntry?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
 |};
 
-# Represents the Headers record for the operation: journalEntriesList
-public type JournalEntriesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listSalesTaxAuthorities
+public type ListSalesTaxAuthoritiesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+public type CashDiscountsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CashDiscount[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listForms1099
+public type ListForms1099Headers record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listTaxReplStateSubs
+public type ListTaxReplStateSubsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-# Represents the Queries record for the operation: witholdingTaxDefinitionList
-public type WitholdingTaxDefinitionListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type GLAccountAdvancedRulesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    GLAccountAdvancedRule[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-public type CostElements_CollectionResponse record {
-    string odata\.metadata?;
-    CostElement[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getTaxExemptReasons
+public type GetTaxExemptReasonsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name.
+public type SpecificWTHAmountsServiceCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SpecificWTHAmounts[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listCostElements
+public type ListCostElementsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'ResidenceNumberTypeEnum'. Serialised by the Service Layer as the member name
 public type ResidenceNumberTypeEnum "rntSpanishFiscalID"|"rntVATRegistrationNumber"|"rntPassport"|"rntFiscalIDIssuedbytheResidenceCountry"|"rntCertificateofFiscalResidence"|"rntOtherDocument";
 
-# Represents the Queries record for the operation: taxReplStateSubsList
-public type TaxReplStateSubsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type TaxCodeDeterminationsTCDCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TaxCodeDeterminationTCD[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: listNatureOfAssessees
+public type ListNatureOfAssesseesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 
 public type DistributionRuleParams record {|
-    string FactorCode?;
-    string FactorDescription?;
+    @jsondata:Name {value: "FactorCode"}
+    string factorCode?;
+    @jsondata:Name {value: "FactorDescription"}
+    string factorDescription?;
 |};
 
 public type Boxes1099Item record {
@@ -2922,66 +3636,55 @@ public type Boxes1099Item record {
     decimal Minimum1099Amount?;
 };
 
-# Represents the Headers record for the operation: accountSegmentationCategoriesList
-public type AccountSegmentationCategoriesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: determinationCriteriasGet
-public type DeterminationCriteriasGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type CostCenterTypeParams record {|
-    string CostCenterTypeCode?;
+    @jsondata:Name {value: "CostCenterTypeCode"}
+    string costCenterTypeCode?;
 |};
 
-# Represents the Queries record for the operation: cashDiscountsGet
-public type CashDiscountsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listSalesTaxAuthorities
+public type ListSalesTaxAuthoritiesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TaxExemptReasonParams record {|
-    string Code?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Queries record for the operation: chartOfAccountsGet
-public type ChartOfAccountsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: closingDateProcedureGet
-public type ClosingDateProcedureGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type ElectronicProtocol record {
-    # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
-    # OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocGenTypeEnum GenerationType?;
     int:Signed32 MappingID?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TestingMode?;
     string Confirmation?;
     int:Signed32 EDocType?;
     string CFDiCancellationReason?;
     string CFDiCancellationResponse?;
     RelatedDocument[] RelatedDocuments?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EBooksRelevant?;
     string EBooksMARK?;
     string EBooksMARKofNegative?;
@@ -3015,44 +3718,73 @@ public type ElectronicProtocol record {
     string EBooksDispatchTime?;
 };
 
+# Represents the Queries record for the operation: listCostElements
+public type ListCostElementsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type TaxCodeDeterminationTCDKeyFieldValueDefaultWT record {|
-    int:Signed32 AbsId?;
-    string WTCode?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
+    @jsondata:Name {value: "WTCode"}
+    string wTCode?;
 |};
 
-# Represents the Headers record for the operation: witholdingTaxDefinitionList
-public type WitholdingTaxDefinitionListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: profitCentersGet
-public type ProfitCentersGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type TaxInvoiceReport record {|
-    # OData EnumType 'TaxInvoiceReportNTSApprovedEnum'. Serialised by the Service Layer as the member name.
-    TaxInvoiceReportNTSApprovedEnum NTSApproval?;
-    int:Signed32 ETaxWebSite?;
-    string ETaxNo?;
-    string NTSApprovalNo?;
-    string OriginalNTSApprovalNo?;
-    string Remarks?;
-    string TaxInvoiceReportNumber?;
-    string Date?;
-    int:Signed32 BusinessPlace?;
-    string BPCode?;
-    string BPName?;
-    decimal BaseAmount?;
-    decimal TaxAmount?;
-    string Canceled?;
-    int:Signed32 ReportType?;
-    TaxInvoiceReportLine[] TaxInvoiceReportLineCollection?;
-    TaxWebSite TaxWebSite?;
+    @jsondata:Name {value: "TaxInvoiceReportNumber"}
+    string taxInvoiceReportNumber?;
+    @jsondata:Name {value: "NTSApprovalNo"}
+    string nTSApprovalNo?;
+    @jsondata:Name {value: "NTSApproval"}
+    TaxInvoiceReportNTSApprovedEnum nTSApproval?;
+    @jsondata:Name {value: "TaxWebSite"}
+    TaxWebSite taxWebSite?;
+    @jsondata:Name {value: "ETaxWebSite"}
+    int:Signed32 eTaxWebSite?;
+    @jsondata:Name {value: "ETaxNo"}
+    string eTaxNo?;
+    @jsondata:Name {value: "Date"}
+    string date?;
+    @jsondata:Name {value: "TaxInvoiceReportLineCollection"}
+    TaxInvoiceReportLine[] taxInvoiceReportLineCollection?;
+    @jsondata:Name {value: "BusinessPlace"}
+    int:Signed32 businessPlace?;
+    @jsondata:Name {value: "BaseAmount"}
+    decimal baseAmount?;
+    @jsondata:Name {value: "TaxAmount"}
+    decimal taxAmount?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
+    @jsondata:Name {value: "BPName"}
+    string bPName?;
+    @jsondata:Name {value: "OriginalNTSApprovalNo"}
+    string originalNTSApprovalNo?;
+    @jsondata:Name {value: "Canceled"}
+    string canceled?;
+    @jsondata:Name {value: "BPCode"}
+    string bPCode?;
+    @jsondata:Name {value: "ReportType"}
+    int:Signed32 reportType?;
 |};
 
 public type WTDBP record {
@@ -3062,152 +3794,227 @@ public type WTDBP record {
     string EffectiveDateFrom?;
     string EffectiveDateTo?;
     decimal Rate?;
-    # OData EnumType 'WTDDetailType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'WTDDetailType'. Serialised by the Service Layer as the member name
     WTDDetailType DetailType?;
 };
 
 public type DeductionTaxSubGroupParams record {|
-    string GroupCode?;
-    string GroupName?;
+    @jsondata:Name {value: "GroupName"}
+    string groupName?;
+    @jsondata:Name {value: "GroupCode"}
+    string groupCode?;
 |};
 
-# OData EnumType 'BoAccountTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAccountTypes'. Serialised by the Service Layer as the member name
 public type BoAccountTypes "at_Revenues"|"at_Expenses"|"at_Other";
 
-# Represents the Queries record for the operation: budgetsList
-public type BudgetsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type GLAccount record {|
-    string Code?;
-    string DueDate?;
-    decimal Debit?;
-    decimal Credit?;
-    decimal SystemDebit?;
-    decimal SystemCredit?;
-    decimal ForeignDebit?;
-    decimal ForeignCredit?;
-    string ForeignCurrency?;
+    @jsondata:Name {value: "Debit"}
+    decimal debit?;
+    @jsondata:Name {value: "SystemCredit"}
+    decimal systemCredit?;
+    @jsondata:Name {value: "Credit"}
+    decimal credit?;
+    @jsondata:Name {value: "ForeignCredit"}
+    decimal foreignCredit?;
+    @jsondata:Name {value: "ForeignCurrency"}
+    string foreignCurrency?;
+    @jsondata:Name {value: "SystemDebit"}
+    decimal systemDebit?;
+    @jsondata:Name {value: "ForeignDebit"}
+    decimal foreignDebit?;
+    @jsondata:Name {value: "DueDate"}
+    string dueDate?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-# Represents the Headers record for the operation: gLAccountAdvancedRulesList
-public type GLAccountAdvancedRulesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: witholdingTaxDefinitionGet
-public type WitholdingTaxDefinitionGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ClosingDateProcedureCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ClosingDateProcedure[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type Dimension record {
     int:Signed32 DimensionCode?;
     string DimensionName?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsActive?;
     string DimensionDescription?;
     DistributionRule[] DistributionRules?;
     ProfitCenter[] ProfitCenters?;
 };
 
-# OData EnumType 'TransTypesEnum'. Serialised by the Service Layer as the member name.
-public type TransTypesEnum "ttAllTransactions"|"ttOpeningBalance"|"ttClosingBalance"|"ttARInvoice"|"ttARCredItnote"|"ttDelivery"|"ttReturn"|"ttAPInvoice"|"ttAPCreditNote"|"ttPurchaseDeliveryNote"|"ttPurchaseReturn"|"ttReceipt"|"ttDeposit"|"ttJournalEntry"|"ttVendorPayment"|"ttChequesForPayment"|"ttStockList"|"ttGeneralReceiptToStock"|"ttGeneralReleaseFromStock"|"ttTransferBetweenWarehouses"|"ttWorkInstructions"|"ttLandedCosts"|"ttDeferredDeposit"|"ttCorrectionInvoice"|"ttInventoryValuation"|"ttAPCorrectionInvoice"|"ttAPCorrectionInvoiceReversal"|"ttARCorrectionInvoice"|"ttARCorrectionInvoiceReversal"|"ttBoETransaction"|"ttProductionOrder"|"ttDownPayment"|"ttPurchaseDownPayment"|"ttInternalReconciliation"|"ttInventoryPosting"|"ttInventoryOpeningBalance";
-
-public type TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage record {|
-    int:Signed32 AbsId?;
-    int:Signed32 UsageCode?;
-    string TaxCode?;
-    string ExpTaxCode?;
-    string PurTaxCode?;
-|};
-
-# Represents the Queries record for the operation: accountCategoryGet
-public type AccountCategoryGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listTaxExemptReasons
+public type ListTaxExemptReasonsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
+# Represents the Queries record for the operation: getVatGroups
+public type GetVatGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'TransTypesEnum'. Serialised by the Service Layer as the member name
+public type TransTypesEnum "ttAllTransactions"|"ttOpeningBalance"|"ttClosingBalance"|"ttARInvoice"|"ttARCredItnote"|"ttDelivery"|"ttReturn"|"ttAPInvoice"|"ttAPCreditNote"|"ttPurchaseDeliveryNote"|"ttPurchaseReturn"|"ttReceipt"|"ttDeposit"|"ttJournalEntry"|"ttVendorPayment"|"ttChequesForPayment"|"ttStockList"|"ttGeneralReceiptToStock"|"ttGeneralReleaseFromStock"|"ttTransferBetweenWarehouses"|"ttWorkInstructions"|"ttLandedCosts"|"ttDeferredDeposit"|"ttCorrectionInvoice"|"ttInventoryValuation"|"ttAPCorrectionInvoice"|"ttAPCorrectionInvoiceReversal"|"ttARCorrectionInvoice"|"ttARCorrectionInvoiceReversal"|"ttBoETransaction"|"ttProductionOrder"|"ttDownPayment"|"ttPurchaseDownPayment"|"ttInternalReconciliation"|"ttInventoryPosting"|"ttInventoryOpeningBalance";
+
+public type TransactionCodesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TransactionCode[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage record {|
+    @jsondata:Name {value: "UsageCode"}
+    int:Signed32 usageCode?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "ExpTaxCode"}
+    string expTaxCode?;
+    @jsondata:Name {value: "PurTaxCode"}
+    string purTaxCode?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
+|};
+
 public type WTaxTypeCodeParams record {|
-    int:Signed32 Code?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
 |};
 
 public type RclRecurringTransactionParams record {|
-    int:Signed32 TransactionID?;
-    string PlannedDate?;
+    @jsondata:Name {value: "PlannedDate"}
+    string plannedDate?;
+    @jsondata:Name {value: "TransactionID"}
+    int:Signed32 transactionID?;
 |};
 
-# Represents the Queries record for the operation: taxReplStateSubsGet
-public type TaxReplStateSubsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoClosingDateProcedureBaseDateEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoClosingDateProcedureBaseDateEnum'. Serialised by the Service Layer as the member name
 public type BoClosingDateProcedureBaseDateEnum "bocpdbld_BaseSystemDate"|"bocpdbld_PostingDate";
 
+# Represents the Queries record for the operation: getRecurringTransactionTemplates
+public type GetRecurringTransactionTemplatesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type DeductibleTaxesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DeductibleTax[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type TaxCodeDeterminationTCDKeyFieldValue record {|
-    int:Signed32 AbsId?;
-    int:Signed32 DispOrder?;
-    string KeyFld_1_V?;
-    string KeyFld_2_V?;
-    string KeyFld_3_V?;
-    string KeyFld_4_V?;
-    string KeyFld_5_V?;
-    TaxCodeDeterminationTCDKeyFieldValuePeriod[] TaxCodeDeterminationTCDKeyFieldValuePeriods?;
-    TaxCodeDeterminationTCDKeyFieldValueDefaultWT[] TaxCodeDeterminationTCDKeyFieldValueDefaultWTs?;
+    @jsondata:Name {value: "KeyFld_5_V"}
+    string keyFld5V?;
+    @jsondata:Name {value: "KeyFld_3_V"}
+    string keyFld3V?;
+    @jsondata:Name {value: "KeyFld_4_V"}
+    string keyFld4V?;
+    @jsondata:Name {value: "KeyFld_1_V"}
+    string keyFld1V?;
+    @jsondata:Name {value: "KeyFld_2_V"}
+    string keyFld2V?;
+    @jsondata:Name {value: "DispOrder"}
+    int:Signed32 dispOrder?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDKeyFieldValueDefaultWTs"}
+    TaxCodeDeterminationTCDKeyFieldValueDefaultWT[] taxCodeDeterminationTCDKeyFieldValueDefaultWTs?;
+    @jsondata:Name {value: "AbsId"}
+    int:Signed32 absId?;
+    @jsondata:Name {value: "TaxCodeDeterminationTCDKeyFieldValuePeriods"}
+    TaxCodeDeterminationTCDKeyFieldValuePeriod[] taxCodeDeterminationTCDKeyFieldValuePeriods?;
 |};
 
-public type TaxReplStateSubs_CollectionResponse record {
-    string odata\.metadata?;
-    TaxReplStateSubData[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getGLAccountAdvancedRules
+public type GetGLAccountAdvancedRulesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type GLAccountAdvancedRuleParams record {|
-    int:Signed32 AbsoluteEntry?;
-    string Period?;
-    string Code?;
-    string ItemCode?;
-    int:Signed32 ItemGroup?;
-    string Warehouse?;
-    int:Signed32 BPGroup?;
-    string FederalTaxID?;
-    string ShipToCountry?;
-    string ShipToState?;
+    @jsondata:Name {value: "FederalTaxID"}
+    string federalTaxID?;
+    @jsondata:Name {value: "ItemCode"}
+    string itemCode?;
+    @jsondata:Name {value: "Warehouse"}
+    string warehouse?;
+    @jsondata:Name {value: "ItemGroup"}
+    int:Signed32 itemGroup?;
+    @jsondata:Name {value: "AbsoluteEntry"}
+    int:Signed32 absoluteEntry?;
+    @jsondata:Name {value: "ShipToCountry"}
+    string shipToCountry?;
+    @jsondata:Name {value: "ShipToState"}
+    string shipToState?;
+    @jsondata:Name {value: "Period"}
+    string period?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "BPGroup"}
+    int:Signed32 bPGroup?;
 |};
-
-public type Forms1099_CollectionResponse record {
-    string odata\.metadata?;
-    Forms1099[] value?;
-    string odata\.nextLink?;
-};
 
 public type AccountCategoryParams record {|
-    int:Signed32 CategoryCode?;
-    string CategoryName?;
+    @jsondata:Name {value: "CategoryCode"}
+    int:Signed32 categoryCode?;
+    @jsondata:Name {value: "CategoryName"}
+    string categoryName?;
 |};
+
+public type DistributionRulesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DistributionRule[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type ChartOfAccountsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ChartOfAccount[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type WTDEffectiveDate record {
     int:Signed32 LineNumber?;
@@ -3216,130 +4023,139 @@ public type WTDEffectiveDate record {
     WTDValueRange[] WTDValueRangeCollection?;
 };
 
-# Represents the Queries record for the operation: closingDateProcedureList
-public type ClosingDateProcedureListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listChartOfAccounts
+public type ListChartOfAccountsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: deductionTaxSubGroupsList
-public type DeductionTaxSubGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getDeductionTaxGroups
+public type GetDeductionTaxGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'TaxCodeDeterminationTCDByUsageTypeEnum'. Serialised by the Service Layer as the member name.
+public type SalesTaxCodesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesTaxCode[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listCashDiscounts
+public type ListCashDiscountsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getWithholdingTaxCodes
+public type GetWithholdingTaxCodesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listAccountSegmentations
+public type ListAccountSegmentationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'TaxCodeDeterminationTCDByUsageTypeEnum'. Serialised by the Service Layer as the member name
 public type TaxCodeDeterminationTCDByUsageTypeEnum "tcdbutDefaultSales"|"tcdbutDefaultPurchase"|"tcdbutLine";
 
-public type DeductionTaxHierarchies_Line record {
-    int:Signed32 RowNumber?;
-    decimal DeductionPercent?;
-    decimal MaximumTotal?;
+# Represents the Headers record for the operation: listDeductionTaxHierarchies
+public type ListDeductionTaxHierarchiesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: taxWebSitesList
-public type TaxWebSitesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: vatGroupsList
-public type VatGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: taxWebSitesList
-public type TaxWebSitesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listRecurringPostings
+public type ListRecurringPostingsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ChartOfAccount record {
     string Code?;
     string Name?;
     decimal Balance?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CashAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BudgetAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ActiveAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PrimaryAccount?;
     int:Signed32 AccountLevel?;
     string DataExportCode?;
     string FatherAccountKey?;
     string ExternalCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RateConversion?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxLiableAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxExemptAccount?;
     int:Signed32 ExternalReconNo?;
     int:Signed32 InternalReconNo?;
-    # OData EnumType 'BoAccountTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAccountTypes'. Serialised by the Service Layer as the member name
     BoAccountTypes AccountType?;
     string AcctCurrency?;
     decimal Balance_syscurr?;
     decimal Balance_FrgnCurr?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Protected?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReconciledAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LiableForAdvances?;
     string ForeignName?;
     string Details?;
     string ProjectCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RevaluationCoordinated?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LockManualTransaction?;
     string FormatCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AllowChangeVatGroup?;
     string DefaultVatGroup?;
     int:Signed32 Category?;
     string TransactionCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LoadingType?;
     string LoadingFactorCode?;
     string LoadingFactorCode2?;
@@ -3348,50 +4164,50 @@ public type ChartOfAccount record {
     string LoadingFactorCode5?;
     string PlanningLevel?;
     string DatevAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DatevAutoAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DatevFirstDataEntry?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AllowMultipleLinking?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ProjectRelevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributionRuleRelevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributionRule2Relevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributionRule3Relevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributionRule4Relevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributionRule5Relevant?;
     int:Signed32 BPLID?;
     string BPLName?;
     string VATRegNum?;
-    # OData EnumType 'SPEDContabilAccountPurposeCode'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'SPEDContabilAccountPurposeCode'. Serialised by the Service Layer as the member name
     SPEDContabilAccountPurposeCode AccountPurposeCode?;
     string ReferentialAccountCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ValidFor?;
     string ValidFrom?;
     string ValidTo?;
     string ValidRemarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FrozenFor?;
     string FrozenFrom?;
     string FrozenTo?;
     string FrozenRemarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BlockManualPosting?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CashFlowRelevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PCN874ReportRelevant?;
     string PrimaryClosingAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CostAccountingOnly?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CostElementRelevant?;
     string CostElementCode?;
     string StandardAccountCode?;
@@ -3401,7 +4217,7 @@ public type ChartOfAccount record {
     int:Signed32 ExpenseClassificationCategory?;
     int:Signed32 ExpenseClassificationType?;
     string OfficialAccountCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ExchangeRateDifference?;
     AccrualType[] AccrualTypes?;
     VatGroup[] VatGroups?;
@@ -3415,227 +4231,251 @@ public type ChartOfAccount record {
     SalesTaxAuthority[] SalesTaxAuthorities?;
 };
 
-public type Budgets_CollectionResponse record {
-    string odata\.metadata?;
-    Budget[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: costElementsGet
-public type CostElementsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listCashFlowLineItems
+public type ListCashFlowLineItemsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type NatureOfAssesseeParams record {|
-    int:Signed32 AbsEntry?;
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
-public type BudgetDistributions_CollectionResponse record {
-    string odata\.metadata?;
-    BudgetDistribution[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listNatureOfAssessees
+public type ListNatureOfAssesseesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: currenciesList
-public type CurrenciesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getTaxWebSites
+public type GetTaxWebSitesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: budgetScenariosGet
-public type BudgetScenariosGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: cashFlowLineItemsList
-public type CashFlowLineItemsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'WithholdingTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'WithholdingTypeEnum'. Serialised by the Service Layer as the member name
 public type WithholdingTypeEnum "wt_VatWithholding"|"wt_IncomeTaxWithholding";
 
 public type RecurringTransactionService_GetRecurringTransaction_body record {
-    RclRecurringTransactionParams RclRecurringTransactionParams?;
+    @jsondata:Name {value: "RclRecurringTransactionParams"}
+    RclRecurringTransactionParams rclRecurringTransactionParams?;
 };
 
-# Represents the Queries record for the operation: journalEntriesList
-public type JournalEntriesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listAccountSegmentationCategories
+public type ListAccountSegmentationCategoriesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-public type PostingTemplates_CollectionResponse record {
-    string odata\.metadata?;
-    PostingTemplates[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listDeductionTaxHierarchies
+public type ListDeductionTaxHierarchiesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type RecurringPostings record {|
-    string Code?;
-    string Description?;
-    int:Signed32 Instance?;
-    string Reference1?;
-    string Reference2?;
-    string Reference3?;
-    string TransactionCode?;
-    string Remarks?;
-    # OData EnumType 'BoFrequencyTypeEnum'. Serialised by the Service Layer as the member name.
-    BoFrequencyTypeEnum Frequency?;
-    # OData EnumType 'BoSubFrequencyTypeEnum'. Serialised by the Service Layer as the member name.
-    BoSubFrequencyTypeEnum SubFrequency?;
-    string NextExecution?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum StampTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum AutomaticVAT?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ManageWTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum DeferredTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ValidUntil?;
-    string ValidUntilDate?;
-    RecurringPostingsLine[] RecurringPostingsLineCollection?;
-    RecurringPostingsDocumentReference[] RecurringPostingsDocumentReferenceCollection?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Instance"}
+    int:Signed32 instance?;
+    @jsondata:Name {value: "StampTax"}
+    BoYesNoEnum stampTax?;
+    @jsondata:Name {value: "AutomaticVAT"}
+    BoYesNoEnum automaticVAT?;
+    @jsondata:Name {value: "ManageWTax"}
+    BoYesNoEnum manageWTax?;
+    @jsondata:Name {value: "DeferredTax"}
+    BoYesNoEnum deferredTax?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "NextExecution"}
+    string nextExecution?;
+    @jsondata:Name {value: "ValidUntil"}
+    BoYesNoEnum validUntil?;
+    @jsondata:Name {value: "ValidUntilDate"}
+    string validUntilDate?;
+    @jsondata:Name {value: "RecurringPostingsLineCollection"}
+    RecurringPostingsLine[] recurringPostingsLineCollection?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
+    @jsondata:Name {value: "Reference3"}
+    string reference3?;
+    @jsondata:Name {value: "Reference1"}
+    string reference1?;
+    @jsondata:Name {value: "TransactionCode"}
+    string transactionCode?;
+    @jsondata:Name {value: "Reference2"}
+    string reference2?;
+    @jsondata:Name {value: "Frequency"}
+    BoFrequencyTypeEnum frequency?;
+    @jsondata:Name {value: "SubFrequency"}
+    BoSubFrequencyTypeEnum subFrequency?;
+    @jsondata:Name {value: "RecurringPostingsDocumentReferenceCollection"}
+    RecurringPostingsDocumentReference[] recurringPostingsDocumentReferenceCollection?;
 |};
 
-public type ClosingDateProcedure_CollectionResponse record {
-    string odata\.metadata?;
-    ClosingDateProcedure[] value?;
-    string odata\.nextLink?;
-};
-
-public type SalesTaxAuthoritiesTypes_CollectionResponse record {
-    string odata\.metadata?;
-    SalesTaxAuthoritiesType[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listTaxReplStateSubs
+public type ListTaxReplStateSubsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DistributionRuleLine record {|
-    string CenterCode?;
-    decimal TotalInCenter?;
-    string EffectiveFrom?;
-    string EffectiveTo?;
+    @jsondata:Name {value: "EffectiveFrom"}
+    string effectiveFrom?;
+    @jsondata:Name {value: "TotalInCenter"}
+    decimal totalInCenter?;
+    @jsondata:Name {value: "CenterCode"}
+    string centerCode?;
+    @jsondata:Name {value: "EffectiveTo"}
+    string effectiveTo?;
 |};
-
-public type AccountSegmentations_CollectionResponse record {
-    string odata\.metadata?;
-    AccountSegmentation[] value?;
-    string odata\.nextLink?;
-};
 
 public type TaxCodeDetermination record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    # OData EnumType 'BoTCDDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    BoTCDDocumentTypeEnum DocumentType?;
-    # OData EnumType 'BoBusinessAreaEnum'. Serialised by the Service Layer as the member name.
-    BoBusinessAreaEnum BusinessArea?;
-    # OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
-    BoTCDConditionEnum Condition1?;
-    string UDFTable1?;
-    int:Signed32 NumberValue1?;
-    string StringValue1?;
-    decimal MoneyValue1?;
-    # OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
-    BoTCDConditionEnum Condition2?;
-    string UDFTable2?;
-    int:Signed32 NumberValue2?;
-    string StringValue2?;
-    decimal MoneyValue2?;
-    # OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
-    BoTCDConditionEnum Condition3?;
-    string UDFTable3?;
-    int:Signed32 NumberValue3?;
-    string StringValue3?;
-    decimal MoneyValue3?;
-    # OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
-    BoTCDConditionEnum Condition4?;
-    string UDFTable4?;
-    int:Signed32 NumberValue4?;
-    string StringValue4?;
-    decimal MoneyValue4?;
-    # OData EnumType 'BoTCDConditionEnum'. Serialised by the Service Layer as the member name.
-    BoTCDConditionEnum Condition5?;
-    string UDFTable5?;
-    int:Signed32 NumberValue5?;
-    string StringValue5?;
-    decimal MoneyValue5?;
-    string Description?;
-    string TaxCode?;
-    string FreightRowTax?;
-    string FreightHeaderTax?;
-    string UDFAlias1?;
-    string UDFAlias2?;
-    string UDFAlias3?;
-    string UDFAlias4?;
-    string UDFAlias5?;
+    @jsondata:Name {value: "Condition1"}
+    BoTCDConditionEnum condition1?;
+    @jsondata:Name {value: "Condition2"}
+    BoTCDConditionEnum condition2?;
+    @jsondata:Name {value: "FreightHeaderTax"}
+    string freightHeaderTax?;
+    @jsondata:Name {value: "UDFTable2"}
+    string uDFTable2?;
+    @jsondata:Name {value: "UDFTable1"}
+    string uDFTable1?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "UDFTable4"}
+    string uDFTable4?;
+    @jsondata:Name {value: "UDFTable3"}
+    string uDFTable3?;
+    @jsondata:Name {value: "UDFTable5"}
+    string uDFTable5?;
+    @jsondata:Name {value: "Condition5"}
+    BoTCDConditionEnum condition5?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Condition3"}
+    BoTCDConditionEnum condition3?;
+    @jsondata:Name {value: "Condition4"}
+    BoTCDConditionEnum condition4?;
+    @jsondata:Name {value: "UDFAlias4"}
+    string uDFAlias4?;
+    @jsondata:Name {value: "UDFAlias3"}
+    string uDFAlias3?;
+    @jsondata:Name {value: "UDFAlias2"}
+    string uDFAlias2?;
+    @jsondata:Name {value: "UDFAlias1"}
+    string uDFAlias1?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "FreightRowTax"}
+    string freightRowTax?;
+    @jsondata:Name {value: "UDFAlias5"}
+    string uDFAlias5?;
+    @jsondata:Name {value: "StringValue5"}
+    string stringValue5?;
+    @jsondata:Name {value: "MoneyValue5"}
+    decimal moneyValue5?;
+    @jsondata:Name {value: "StringValue4"}
+    string stringValue4?;
+    @jsondata:Name {value: "StringValue1"}
+    string stringValue1?;
+    @jsondata:Name {value: "MoneyValue1"}
+    decimal moneyValue1?;
+    @jsondata:Name {value: "MoneyValue2"}
+    decimal moneyValue2?;
+    @jsondata:Name {value: "StringValue3"}
+    string stringValue3?;
+    @jsondata:Name {value: "MoneyValue3"}
+    decimal moneyValue3?;
+    @jsondata:Name {value: "StringValue2"}
+    string stringValue2?;
+    @jsondata:Name {value: "MoneyValue4"}
+    decimal moneyValue4?;
+    @jsondata:Name {value: "BusinessArea"}
+    BoBusinessAreaEnum businessArea?;
+    @jsondata:Name {value: "NumberValue5"}
+    int:Signed32 numberValue5?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "DocumentType"}
+    BoTCDDocumentTypeEnum documentType?;
+    @jsondata:Name {value: "NumberValue4"}
+    int:Signed32 numberValue4?;
+    @jsondata:Name {value: "NumberValue1"}
+    int:Signed32 numberValue1?;
+    @jsondata:Name {value: "NumberValue3"}
+    int:Signed32 numberValue3?;
+    @jsondata:Name {value: "NumberValue2"}
+    int:Signed32 numberValue2?;
 |};
 
-public type FinancialYears_CollectionResponse record {
-    string odata\.metadata?;
-    FinancialYear[] value?;
-    string odata\.nextLink?;
-};
-
 public type FinancialYearParams record {|
-    int:Signed32 AbsEntry?;
-    string Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     AccountCategoryParams[] value?;
 };
 
-# Represents the Headers record for the operation: closingDateProcedureList
-public type ClosingDateProcedureListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: deductionTaxHierarchiesList
-public type DeductionTaxHierarchiesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'TaxTypeBlackListEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TaxTypeBlackListEnum'. Serialised by the Service Layer as the member name
 public type TaxTypeBlackListEnum "ttblExcluded"|"ttblExempt"|"ttblNonSubject"|"ttblNotTaxable"|"ttblTaxable";
 
 public type WTDValueRange record {
@@ -3646,28 +4486,29 @@ public type WTDValueRange record {
     decimal Rate?;
 };
 
-public type DeductionTaxHierarchies_CollectionResponse record {
-    string odata\.metadata?;
-    DeductionTaxHierarchy[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: deductionTaxSubGroupsList
-public type DeductionTaxSubGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listAccountSegmentations
+public type ListAccountSegmentationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type BudgetCostAccountingLine record {
@@ -3680,14 +4521,9 @@ public type BudgetCostAccountingLine record {
 };
 
 public type AccrualTypeParams record {|
-    string Code?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
-
-# Represents the Headers record for the operation: budgetsList
-public type BudgetsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
 
 public type ProfitCenter record {
     string CenterCode?;
@@ -3697,171 +4533,313 @@ public type ProfitCenter record {
     string CostCenterType?;
     string EffectiveFrom?;
     string EffectiveTo?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Active?;
     int:Signed32 CenterOwner?;
     Dimension Dimension?;
     CostCenterType CostCenterType2?;
 };
 
-public type WithholdingTaxCodes_ValueRange_Line record {
-    decimal ValueFrom?;
-    decimal WTaxToBeDeductible?;
-    decimal Rate?;
+# Represents the Queries record for the operation: getDimensions
+public type GetDimensionsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type CurrenciesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Currency[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listDeterminationCriterias
+public type ListDeterminationCriteriasHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listDimensions
+public type ListDimensionsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listTaxExemptReasons
+public type ListTaxExemptReasonsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type GLAccountAdvancedRule record {|
-    int:Signed32 AbsoluteEntry?;
-    string Period?;
-    string BeginningofFinancialYear?;
-    int:Signed32 FinancialYear?;
-    string PeriodName?;
-    # OData EnumType 'BoSubPeriodTypeEnum'. Serialised by the Service Layer as the member name.
-    BoSubPeriodTypeEnum SubPeriodType?;
-    int:Signed32 NumberOfPeriods?;
-    string FromPostingDate?;
-    string ToPostingDate?;
-    string FromDueDate?;
-    string ToDueDate?;
-    string FromDocumentDate?;
-    string ToDocumentDate?;
-    string ItemCode?;
-    int:Signed32 ItemGroup?;
-    string Warehouse?;
-    int:Signed32 BPGroup?;
-    string FederalTaxID?;
-    string ShipToCountry?;
-    string ShipToState?;
-    string Description?;
-    string Code?;
-    # OData EnumType 'GetGLAccountByEnum'. Serialised by the Service Layer as the member name.
-    GetGLAccountByEnum GetGLAccountBy?;
-    string FromDate?;
-    string ToDate?;
-    string ExpensesAccount?;
-    string RevenuesAccount?;
-    string ExemptIncomeAcc?;
-    string InventoryAccount?;
-    string CostAccount?;
-    string TransferAccount?;
-    string VarienceAccount?;
-    string PriceDifferenceAcc?;
-    string NegativeInventoryAdjustmentAccount?;
-    string DecreasingAccount?;
-    string IncreasingAccount?;
-    string ReturningAccount?;
-    string EURevenuesAccount?;
-    string EUExpensesAccount?;
-    string ForeignRevenueAcc?;
-    string ForeignExpensAcc?;
-    string PurchaseAcct?;
-    string PAReturnAcct?;
-    string PurchaseOffsetAcct?;
-    string ExchangeRateDifferencesAcct?;
-    string GoodsClearingAcct?;
-    string GLDecreaseAcct?;
-    string GLIncreaseAcct?;
-    string WipAccount?;
-    string WipVarianceAccount?;
-    string WipOffsetProfitAndLossAccount?;
-    string InventoryOffsetProfitAndLossAccount?;
-    string StockInflationAdjustAccount?;
-    string StockInflationOffsetAccount?;
-    string CostInflationAccount?;
-    string CostInflationOffsetAccount?;
-    string ExpenseClearingAct?;
-    string ExpenseOffsettingAccount?;
-    string StockInTransitAccount?;
-    string ShippedGoodsAccount?;
-    string VATInRevenueAccount?;
-    string SalesCreditAcc?;
-    string PurchaseCreditAcc?;
-    string ExemptedCredits?;
-    string SalesCreditForeignAcc?;
-    string ForeignPurchaseCreditAcc?;
-    string SalesCreditEUAcc?;
-    string EUPurchaseCreditAcc?;
-    string PurchaseBalanceAccount?;
-    string WHIncomingCenvatAccount?;
-    string WHOutgoingCenvatAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
-    # OData EnumType 'BoBusinessPartnerTypes'. Serialised by the Service Layer as the member name.
-    BoBusinessPartnerTypes BusinessPartnerType?;
-    string VATGroup?;
-    string BPCode?;
-    int:Signed32 Usage?;
-    string UDF1?;
-    string UDF2?;
-    string UDF3?;
-    string UDF4?;
-    string UDF5?;
-    ChartOfAccount ChartOfAccount?;
-    VatGroup VatGroup?;
+    @jsondata:Name {value: "ForeignExpensAcc"}
+    string foreignExpensAcc?;
+    @jsondata:Name {value: "DecreasingAccount"}
+    string decreasingAccount?;
+    @jsondata:Name {value: "PurchaseAcct"}
+    string purchaseAcct?;
+    @jsondata:Name {value: "ReturningAccount"}
+    string returningAccount?;
+    @jsondata:Name {value: "CostAccount"}
+    string costAccount?;
+    @jsondata:Name {value: "EURevenuesAccount"}
+    string eURevenuesAccount?;
+    @jsondata:Name {value: "PurchaseCreditAcc"}
+    string purchaseCreditAcc?;
+    @jsondata:Name {value: "PurchaseBalanceAccount"}
+    string purchaseBalanceAccount?;
+    @jsondata:Name {value: "VatGroup"}
+    VatGroup vatGroup?;
+    @jsondata:Name {value: "ExchangeRateDifferencesAcct"}
+    string exchangeRateDifferencesAcct?;
+    @jsondata:Name {value: "ExpensesAccount"}
+    string expensesAccount?;
+    @jsondata:Name {value: "StockInflationOffsetAccount"}
+    string stockInflationOffsetAccount?;
+    @jsondata:Name {value: "EUPurchaseCreditAcc"}
+    string eUPurchaseCreditAcc?;
+    @jsondata:Name {value: "FederalTaxID"}
+    string federalTaxID?;
+    @jsondata:Name {value: "BusinessPartnerType"}
+    BoBusinessPartnerTypes businessPartnerType?;
+    @jsondata:Name {value: "FinancialYear"}
+    int:Signed32 financialYear?;
+    @jsondata:Name {value: "ShipToState"}
+    string shipToState?;
+    @jsondata:Name {value: "NumberOfPeriods"}
+    int:Signed32 numberOfPeriods?;
+    @jsondata:Name {value: "WipAccount"}
+    string wipAccount?;
+    @jsondata:Name {value: "StockInTransitAccount"}
+    string stockInTransitAccount?;
+    @jsondata:Name {value: "SalesCreditEUAcc"}
+    string salesCreditEUAcc?;
+    @jsondata:Name {value: "ExemptedCredits"}
+    string exemptedCredits?;
+    @jsondata:Name {value: "PAReturnAcct"}
+    string pAReturnAcct?;
+    @jsondata:Name {value: "StockInflationAdjustAccount"}
+    string stockInflationAdjustAccount?;
+    @jsondata:Name {value: "Period"}
+    string period?;
+    @jsondata:Name {value: "SubPeriodType"}
+    BoSubPeriodTypeEnum subPeriodType?;
+    @jsondata:Name {value: "ExpenseClearingAct"}
+    string expenseClearingAct?;
+    @jsondata:Name {value: "ExpenseOffsettingAccount"}
+    string expenseOffsettingAccount?;
+    @jsondata:Name {value: "IncreasingAccount"}
+    string increasingAccount?;
+    @jsondata:Name {value: "ShippedGoodsAccount"}
+    string shippedGoodsAccount?;
+    @jsondata:Name {value: "TransferAccount"}
+    string transferAccount?;
+    @jsondata:Name {value: "BPGroup"}
+    int:Signed32 bPGroup?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "ToDocumentDate"}
+    string toDocumentDate?;
+    @jsondata:Name {value: "ChartOfAccount"}
+    ChartOfAccount chartOfAccount?;
+    @jsondata:Name {value: "ToDueDate"}
+    string toDueDate?;
+    @jsondata:Name {value: "PriceDifferenceAcc"}
+    string priceDifferenceAcc?;
+    @jsondata:Name {value: "NegativeInventoryAdjustmentAccount"}
+    string negativeInventoryAdjustmentAccount?;
+    @jsondata:Name {value: "WHOutgoingCenvatAccount"}
+    string wHOutgoingCenvatAccount?;
+    @jsondata:Name {value: "FromDate"}
+    string fromDate?;
+    @jsondata:Name {value: "PeriodName"}
+    string periodName?;
+    @jsondata:Name {value: "ItemCode"}
+    string itemCode?;
+    @jsondata:Name {value: "Warehouse"}
+    string warehouse?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "ForeignRevenueAcc"}
+    string foreignRevenueAcc?;
+    @jsondata:Name {value: "WipVarianceAccount"}
+    string wipVarianceAccount?;
+    @jsondata:Name {value: "WHIncomingCenvatAccount"}
+    string wHIncomingCenvatAccount?;
+    @jsondata:Name {value: "GLIncreaseAcct"}
+    string gLIncreaseAcct?;
+    @jsondata:Name {value: "FromDocumentDate"}
+    string fromDocumentDate?;
+    @jsondata:Name {value: "AbsoluteEntry"}
+    int:Signed32 absoluteEntry?;
+    @jsondata:Name {value: "UDF5"}
+    string uDF5?;
+    @jsondata:Name {value: "UDF4"}
+    string uDF4?;
+    @jsondata:Name {value: "UDF3"}
+    string uDF3?;
+    @jsondata:Name {value: "WipOffsetProfitAndLossAccount"}
+    string wipOffsetProfitAndLossAccount?;
+    @jsondata:Name {value: "UDF2"}
+    string uDF2?;
+    @jsondata:Name {value: "FromPostingDate"}
+    string fromPostingDate?;
+    @jsondata:Name {value: "UDF1"}
+    string uDF1?;
+    @jsondata:Name {value: "FromDueDate"}
+    string fromDueDate?;
+    @jsondata:Name {value: "InventoryAccount"}
+    string inventoryAccount?;
+    @jsondata:Name {value: "ForeignPurchaseCreditAcc"}
+    string foreignPurchaseCreditAcc?;
+    @jsondata:Name {value: "SalesCreditAcc"}
+    string salesCreditAcc?;
+    @jsondata:Name {value: "Usage"}
+    int:Signed32 usage?;
+    @jsondata:Name {value: "ShipToCountry"}
+    string shipToCountry?;
+    @jsondata:Name {value: "GLDecreaseAcct"}
+    string gLDecreaseAcct?;
+    @jsondata:Name {value: "VATInRevenueAccount"}
+    string vATInRevenueAccount?;
+    @jsondata:Name {value: "GoodsClearingAcct"}
+    string goodsClearingAcct?;
+    @jsondata:Name {value: "SalesCreditForeignAcc"}
+    string salesCreditForeignAcc?;
+    @jsondata:Name {value: "BeginningofFinancialYear"}
+    string beginningofFinancialYear?;
+    @jsondata:Name {value: "InventoryOffsetProfitAndLossAccount"}
+    string inventoryOffsetProfitAndLossAccount?;
+    @jsondata:Name {value: "ExemptIncomeAcc"}
+    string exemptIncomeAcc?;
+    @jsondata:Name {value: "EUExpensesAccount"}
+    string eUExpensesAccount?;
+    @jsondata:Name {value: "ItemGroup"}
+    int:Signed32 itemGroup?;
+    @jsondata:Name {value: "GetGLAccountBy"}
+    GetGLAccountByEnum getGLAccountBy?;
+    @jsondata:Name {value: "VarienceAccount"}
+    string varienceAccount?;
+    @jsondata:Name {value: "VATGroup"}
+    string vATGroup?;
+    @jsondata:Name {value: "ToDate"}
+    string toDate?;
+    @jsondata:Name {value: "RevenuesAccount"}
+    string revenuesAccount?;
+    @jsondata:Name {value: "PurchaseOffsetAcct"}
+    string purchaseOffsetAcct?;
+    @jsondata:Name {value: "CostInflationAccount"}
+    string costInflationAccount?;
+    @jsondata:Name {value: "BPCode"}
+    string bPCode?;
+    @jsondata:Name {value: "ToPostingDate"}
+    string toPostingDate?;
+    @jsondata:Name {value: "CostInflationOffsetAccount"}
+    string costInflationOffsetAccount?;
 |};
 
-# Represents the Queries record for the operation: gLAccountAdvancedRulesGet
-public type GLAccountAdvancedRulesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getCostCenterTypes
+public type GetCostCenterTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type WTaxTypeCode record {|
-    int:Signed32 Code?;
-    string Description?;
-    SpecificWTHAmounts[] SpecificWTHAmountsService?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
+    @jsondata:Name {value: "SpecificWTHAmountsService"}
+    SpecificWTHAmounts[] specificWTHAmountsService?;
 |};
+
+public type WitholdingTaxDefinitionCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WTDCode[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listSalesTaxAuthoritiesTypes
+public type ListSalesTaxAuthoritiesTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
 
 public type PostingTemplatesLine record {|
-    string TrtCode?;
-    int:Signed32 LineNumber?;
-    string ControlAccount?;
-    string AccountCode?;
-    string AccountName?;
-    decimal Debit?;
-    decimal Credit?;
-    string TaxGroup?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum VatLine?;
-    # OData EnumType 'BoTaxPostingAccountTypeEnum'. Serialised by the Service Layer as the member name.
-    BoTaxPostingAccountTypeEnum TaxPostingAccount?;
-    string TaxCode?;
-    string DistributionRule?;
-    string CostingCode1?;
-    string CostingCode2?;
-    string CostingCode3?;
-    string CostingCode4?;
-    string CostingCode5?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum WTaxLiable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum WTaxLine?;
-    string ProjectCode?;
-    string CostElementCode?;
+    @jsondata:Name {value: "DistributionRule"}
+    string distributionRule?;
+    @jsondata:Name {value: "Debit"}
+    decimal debit?;
+    @jsondata:Name {value: "TaxPostingAccount"}
+    BoTaxPostingAccountTypeEnum taxPostingAccount?;
+    @jsondata:Name {value: "CostElementCode"}
+    string costElementCode?;
+    @jsondata:Name {value: "WTaxLiable"}
+    BoYesNoEnum wTaxLiable?;
+    @jsondata:Name {value: "CostingCode2"}
+    string costingCode2?;
+    @jsondata:Name {value: "CostingCode3"}
+    string costingCode3?;
+    @jsondata:Name {value: "CostingCode4"}
+    string costingCode4?;
+    @jsondata:Name {value: "CostingCode5"}
+    string costingCode5?;
+    @jsondata:Name {value: "ControlAccount"}
+    string controlAccount?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Credit"}
+    decimal credit?;
+    @jsondata:Name {value: "TaxCode"}
+    string taxCode?;
+    @jsondata:Name {value: "TrtCode"}
+    string trtCode?;
+    @jsondata:Name {value: "TaxGroup"}
+    string taxGroup?;
+    @jsondata:Name {value: "CostingCode1"}
+    string costingCode1?;
+    @jsondata:Name {value: "AccountCode"}
+    string accountCode?;
+    @jsondata:Name {value: "VatLine"}
+    BoYesNoEnum vatLine?;
+    @jsondata:Name {value: "ProjectCode"}
+    string projectCode?;
+    @jsondata:Name {value: "WTaxLine"}
+    BoYesNoEnum wTaxLine?;
+    @jsondata:Name {value: "AccountName"}
+    string accountName?;
 |};
 
-# Represents the Queries record for the operation: costElementsList
-public type CostElementsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getTaxCodeDeterminationsTCD
+public type GetTaxCodeDeterminationsTCDQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type RecurringTransactionService_DeleteRecurringTransactions_body record {
-    RclRecurringTransactionParams[] RclRecurringTransactionParamsCollection?;
+    @jsondata:Name {value: "RclRecurringTransactionParamsCollection"}
+    RclRecurringTransactionParams[] rclRecurringTransactionParamsCollection?;
 };
 
 public type JournalEntryLine record {
@@ -3888,7 +4866,7 @@ public type JournalEntryLine record {
     decimal DebitSys?;
     decimal CreditSys?;
     string VatDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum VatLine?;
     decimal SystemBaseAmount?;
     decimal VatAmount?;
@@ -3900,7 +4878,7 @@ public type JournalEntryLine record {
     string CostingCode3?;
     string CostingCode4?;
     string TaxCode?;
-    # OData EnumType 'BoTaxPostAccEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoTaxPostAccEnum'. Serialised by the Service Layer as the member name
     BoTaxPostAccEnum TaxPostAccount?;
     string CostingCode5?;
     int:Signed32 LocationCode?;
@@ -3909,18 +4887,18 @@ public type JournalEntryLine record {
     decimal SystemEqualizationTaxAmount?;
     decimal TotalTax?;
     decimal SystemTotalTax?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WTLiable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WTRow?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PaymentBlock?;
     int:Signed32 BlockReason?;
     string FederalTaxID?;
     int:Signed32 BPLID?;
     string BPLName?;
     string VATRegNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PaymentOrdered?;
     int:Signed32 ExposedTransNumber?;
     int:Signed32 DocumentArray?;
@@ -3939,23 +4917,38 @@ public type JournalEntryLine record {
     CashFlowAssignment[] CashFlowAssignments?;
 };
 
-# OData EnumType 'BoTaxPostAccEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listJournalEntries
+public type ListJournalEntriesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'BoTaxPostAccEnum'. Serialised by the Service Layer as the member name
 public type BoTaxPostAccEnum "tpa_Default"|"tpa_SalesTaxAccount"|"tpa_PurchaseTaxAccount";
 
-# Represents the Queries record for the operation: postingTemplatesList
-public type PostingTemplatesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type FinancialYearsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    FinancialYear[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getAccountSegmentations
+public type GetAccountSegmentationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type Forms1099CollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Forms1099[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };

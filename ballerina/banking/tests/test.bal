@@ -46,7 +46,7 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    IncomingPayments_CollectionResponse response = check b1->incomingPaymentsList();
+    IncomingPaymentsCollectionResponse response = check b1->listIncomingPayments();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
@@ -55,19 +55,19 @@ function testList() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testGetByKey() returns error? {
-    Payment entity = check b1->incomingPaymentsGet(1);
+    Payment entity = check b1->getIncomingPayments(1);
     test:assertEquals(entity.DocEntry, 1);
 }
 
 @test:Config {enable: !isLiveServer}
 function testCreate() returns error? {
-    Payment created = check b1->incomingPaymentsCreate({CardCode: "C20000"});
+    Payment created = check b1->createIncomingPayments({CardCode: "C20000"});
     test:assertEquals(created.DocEntry, 88);
 }
 
 @test:Config {enable: !isLiveServer}
 function testUpdate() returns error? {
-    check b1->incomingPaymentsUpdate(1, {Remarks: "updated"});
+    check b1->updateIncomingPayments(1, {Remarks: "updated"});
 }
 
 @test:AfterSuite

@@ -43,8 +43,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function expenseTypesList(ExpenseTypesListHeaders headers = {}, *ExpenseTypesListQueries queries) returns ExpenseTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listExpenseTypes(ListExpenseTypesHeaders headers = {}, *ListExpenseTypesQueries queries) returns ExpenseTypesCollectionResponse|error {
         string resourcePath = string `/ExpenseTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -55,8 +55,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function expenseTypesCreate(ExpenseTypeData payload, map<string|string[]> headers = {}) returns ExpenseTypeData|error {
+    # + return - The created entity 
+    remote isolated function createExpenseTypes(ExpenseTypeData payload, map<string|string[]> headers = {}) returns ExpenseTypeData|error {
         string resourcePath = string `/ExpenseTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -66,34 +66,34 @@ public isolated client class Client {
 
     # Get a single ExpenseTypeData by key.
     #
-    # + ExpenseType - Key property 'ExpenseType' (Edm.String).
+    # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function expenseTypesGet(string ExpenseType, map<string|string[]> headers = {}, *ExpenseTypesGetQueries queries) returns ExpenseTypeData|error {
-        string resourcePath = string `/ExpenseTypes('${getEncodedUri(ExpenseType)}')`;
+    # + return - The requested entity 
+    remote isolated function getExpenseTypes(string expenseType, map<string|string[]> headers = {}, *GetExpenseTypesQueries queries) returns ExpenseTypeData|error {
+        string resourcePath = string `/ExpenseTypes('${getEncodedUri(expenseType)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a ExpenseTypeData.
     #
-    # + ExpenseType - Key property 'ExpenseType' (Edm.String).
+    # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function expenseTypesDelete(string ExpenseType, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ExpenseTypes('${getEncodedUri(ExpenseType)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteExpenseTypes(string expenseType, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ExpenseTypes('${getEncodedUri(expenseType)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a ExpenseTypeData (PATCH/MERGE semantics).
     #
-    # + ExpenseType - Key property 'ExpenseType' (Edm.String).
+    # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function expenseTypesUpdate(string ExpenseType, ExpenseTypeData payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ExpenseTypes('${getEncodedUri(ExpenseType)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateExpenseTypes(string expenseType, ExpenseTypeData payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ExpenseTypes('${getEncodedUri(expenseType)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -104,7 +104,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddActivities(ProjectManagementConfigurationService_AddActivities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddActivities`;
         http:Request request = new;
@@ -117,7 +117,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddAreas(ProjectManagementConfigurationService_AddAreas_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddAreas`;
         http:Request request = new;
@@ -130,7 +130,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddPriorities(ProjectManagementConfigurationService_AddPriorities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddPriorities`;
         http:Request request = new;
@@ -143,7 +143,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddStageTypes(ProjectManagementConfigurationService_AddStageTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddStageTypes`;
         http:Request request = new;
@@ -156,7 +156,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddSubprojectTypes(ProjectManagementConfigurationService_AddSubprojectTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddSubprojectTypes`;
         http:Request request = new;
@@ -169,7 +169,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceAddTasks(ProjectManagementConfigurationService_AddTasks_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_AddTasks`;
         http:Request request = new;
@@ -182,7 +182,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeleteActivities(ProjectManagementConfigurationService_DeleteActivities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeleteActivities`;
         http:Request request = new;
@@ -195,7 +195,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeleteAreas(ProjectManagementConfigurationService_DeleteAreas_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeleteAreas`;
         http:Request request = new;
@@ -208,7 +208,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeletePriorities(ProjectManagementConfigurationService_DeletePriorities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeletePriorities`;
         http:Request request = new;
@@ -221,7 +221,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeleteStageTypes(ProjectManagementConfigurationService_DeleteStageTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeleteStageTypes`;
         http:Request request = new;
@@ -234,7 +234,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeleteSubprojectTypes(ProjectManagementConfigurationService_DeleteSubprojectTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeleteSubprojectTypes`;
         http:Request request = new;
@@ -247,7 +247,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceDeleteTasks(ProjectManagementConfigurationService_DeleteTasks_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_DeleteTasks`;
         http:Request request = new;
@@ -259,7 +259,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetActivities'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetActivities(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetActivities`;
         http:Request request = new;
@@ -269,7 +269,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetAreas'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetAreas(map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetAreas`;
         http:Request request = new;
@@ -279,7 +279,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetPriorities'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetPriorities(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetPriorities`;
         http:Request request = new;
@@ -289,7 +289,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetStageTypes'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetStageTypes(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetStageTypes`;
         http:Request request = new;
@@ -299,7 +299,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetSubprojectTypes'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetSubprojectTypes(map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetSubprojectTypes`;
         http:Request request = new;
@@ -309,7 +309,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectManagementConfigurationService_GetTasks'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementConfigurationServiceGetTasks(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/ProjectManagementConfigurationService_GetTasks`;
         http:Request request = new;
@@ -320,7 +320,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdateActivities(ProjectManagementConfigurationService_UpdateActivities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdateActivities`;
         http:Request request = new;
@@ -333,7 +333,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdateAreas(ProjectManagementConfigurationService_UpdateAreas_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdateAreas`;
         http:Request request = new;
@@ -346,7 +346,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdatePriorities(ProjectManagementConfigurationService_UpdatePriorities_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdatePriorities`;
         http:Request request = new;
@@ -359,7 +359,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdateStageTypes(ProjectManagementConfigurationService_UpdateStageTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdateStageTypes`;
         http:Request request = new;
@@ -372,7 +372,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdateSubprojectTypes(ProjectManagementConfigurationService_UpdateSubprojectTypes_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdateSubprojectTypes`;
         http:Request request = new;
@@ -385,7 +385,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementConfigurationServiceUpdateTasks(ProjectManagementConfigurationService_UpdateTasks_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementConfigurationService_UpdateTasks`;
         http:Request request = new;
@@ -398,8 +398,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
-    remote isolated function projectManagementServiceAddSubproject(ProjectManagementService_AddSubproject_body payload, map<string|string[]> headers = {}) returns PM_SubprojectDocumentParams|error {
+    # + return - Function result 
+    remote isolated function projectManagementServiceAddSubproject(ProjectManagementService_AddSubproject_body payload, map<string|string[]> headers = {}) returns PMSubprojectDocumentParams|error {
         string resourcePath = string `/ProjectManagementService_AddSubproject`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -411,7 +411,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementServiceDeleteSubproject(ProjectManagementService_DeleteSubproject_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementService_DeleteSubproject`;
         http:Request request = new;
@@ -424,8 +424,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
-    remote isolated function projectManagementServiceGetSubproject(ProjectManagementService_GetSubproject_body payload, map<string|string[]> headers = {}) returns PM_SubprojectDocumentData|error {
+    # + return - Function result 
+    remote isolated function projectManagementServiceGetSubproject(ProjectManagementService_GetSubproject_body payload, map<string|string[]> headers = {}) returns PMSubprojectDocumentData|error {
         string resourcePath = string `/ProjectManagementService_GetSubproject`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -437,7 +437,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectManagementServiceGetSubprojectsList(ProjectManagementService_GetSubprojectsList_body payload, map<string|string[]> headers = {}) returns inline_response_200_6|error {
         string resourcePath = string `/ProjectManagementService_GetSubprojectsList`;
         http:Request request = new;
@@ -450,7 +450,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function projectManagementServiceUpdateSubproject(ProjectManagementService_UpdateSubproject_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/ProjectManagementService_UpdateSubproject`;
         http:Request request = new;
@@ -463,8 +463,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function projectManagementTimeSheetList(ProjectManagementTimeSheetListHeaders headers = {}, *ProjectManagementTimeSheetListQueries queries) returns ProjectManagementTimeSheet_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listProjectManagementTimeSheet(ListProjectManagementTimeSheetHeaders headers = {}, *ListProjectManagementTimeSheetQueries queries) returns ProjectManagementTimeSheetCollectionResponse|error {
         string resourcePath = string `/ProjectManagementTimeSheet`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -475,8 +475,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function projectManagementTimeSheetCreate(PM_TimeSheetData payload, map<string|string[]> headers = {}) returns PM_TimeSheetData|error {
+    # + return - The created entity 
+    remote isolated function createProjectManagementTimeSheet(PMTimeSheetData payload, map<string|string[]> headers = {}) returns PMTimeSheetData|error {
         string resourcePath = string `/ProjectManagementTimeSheet`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -486,34 +486,34 @@ public isolated client class Client {
 
     # Get a single PM_TimeSheetData by key.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function projectManagementTimeSheetGet(int:Signed32 AbsEntry, map<string|string[]> headers = {}, *ProjectManagementTimeSheetGetQueries queries) returns PM_TimeSheetData|error {
-        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(AbsEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getProjectManagementTimeSheet(int:Signed32 absEntry, map<string|string[]> headers = {}, *GetProjectManagementTimeSheetQueries queries) returns PMTimeSheetData|error {
+        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(absEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PM_TimeSheetData.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function projectManagementTimeSheetDelete(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(AbsEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteProjectManagementTimeSheet(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(absEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PM_TimeSheetData (PATCH/MERGE semantics).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function projectManagementTimeSheetUpdate(int:Signed32 AbsEntry, PM_TimeSheetData payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(AbsEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateProjectManagementTimeSheet(int:Signed32 absEntry, PMTimeSheetData payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ProjectManagementTimeSheet(${getEncodedUri(absEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -524,8 +524,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function projectManagementsList(ProjectManagementsListHeaders headers = {}, *ProjectManagementsListQueries queries) returns ProjectManagements_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listProjectManagements(ListProjectManagementsHeaders headers = {}, *ListProjectManagementsQueries queries) returns ProjectManagementsCollectionResponse|error {
         string resourcePath = string `/ProjectManagements`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -536,8 +536,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function projectManagementsCreate(PM_ProjectDocumentData payload, map<string|string[]> headers = {}) returns PM_ProjectDocumentData|error {
+    # + return - The created entity 
+    remote isolated function createProjectManagements(PMProjectDocumentData payload, map<string|string[]> headers = {}) returns PMProjectDocumentData|error {
         string resourcePath = string `/ProjectManagements`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -547,34 +547,34 @@ public isolated client class Client {
 
     # Get a single PM_ProjectDocumentData by key.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function projectManagementsGet(int:Signed32 AbsEntry, map<string|string[]> headers = {}, *ProjectManagementsGetQueries queries) returns PM_ProjectDocumentData|error {
-        string resourcePath = string `/ProjectManagements(${getEncodedUri(AbsEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getProjectManagements(int:Signed32 absEntry, map<string|string[]> headers = {}, *GetProjectManagementsQueries queries) returns PMProjectDocumentData|error {
+        string resourcePath = string `/ProjectManagements(${getEncodedUri(absEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a PM_ProjectDocumentData.
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function projectManagementsDelete(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ProjectManagements(${getEncodedUri(AbsEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteProjectManagements(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ProjectManagements(${getEncodedUri(absEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function projectManagementsUpdate(int:Signed32 AbsEntry, PM_ProjectDocumentData payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ProjectManagements(${getEncodedUri(AbsEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateProjectManagements(int:Signed32 absEntry, PMProjectDocumentData payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ProjectManagements(${getEncodedUri(absEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -583,11 +583,11 @@ public isolated client class Client {
 
     # Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData).
     #
-    # + AbsEntry - Key property 'AbsEntry' (Edm.Int32).
+    # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
-    remote isolated function projectManagementsCancelProject(int:Signed32 AbsEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/ProjectManagements(${getEncodedUri(AbsEntry)})/CancelProject`;
+    # + return - Success. No content returned 
+    remote isolated function projectManagementsCancelProject(int:Signed32 absEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/ProjectManagements(${getEncodedUri(absEntry)})/CancelProject`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
@@ -596,8 +596,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function projectsList(ProjectsListHeaders headers = {}, *ProjectsListQueries queries) returns Projects_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listProjects(ListProjectsHeaders headers = {}, *ListProjectsQueries queries) returns ProjectsCollectionResponse|error {
         string resourcePath = string `/Projects`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -608,8 +608,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function projectsCreate(Project payload, map<string|string[]> headers = {}) returns Project|error {
+    # + return - The created entity 
+    remote isolated function createProjects(Project payload, map<string|string[]> headers = {}) returns Project|error {
         string resourcePath = string `/Projects`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -619,34 +619,34 @@ public isolated client class Client {
 
     # Get a single Project by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function projectsGet(string Code, map<string|string[]> headers = {}, *ProjectsGetQueries queries) returns Project|error {
-        string resourcePath = string `/Projects('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getProjects(string code, map<string|string[]> headers = {}, *GetProjectsQueries queries) returns Project|error {
+        string resourcePath = string `/Projects('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a Project.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function projectsDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Projects('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteProjects(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Projects('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a Project (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function projectsUpdate(string Code, Project payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/Projects('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateProjects(string code, Project payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/Projects('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -656,7 +656,7 @@ public isolated client class Client {
     # Service Layer function import 'ProjectsService_GetProjectList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function projectsServiceGetProjectList(map<string|string[]> headers = {}) returns inline_response_200_7|error {
         string resourcePath = string `/ProjectsService_GetProjectList`;
         http:Request request = new;

@@ -46,7 +46,7 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    Items_CollectionResponse response = check b1->itemsList();
+    ItemsCollectionResponse response = check b1->listItems();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
@@ -55,19 +55,19 @@ function testList() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testGetByKey() returns error? {
-    Item entity = check b1->itemsGet("I00001");
+    Item entity = check b1->getItems("I00001");
     test:assertEquals(entity.ItemCode, "I00001");
 }
 
 @test:Config {enable: !isLiveServer}
 function testCreate() returns error? {
-    Item created = check b1->itemsCreate({ItemCode: "N0001", ItemName: "New Item"});
+    Item created = check b1->createItems({ItemCode: "N0001", ItemName: "New Item"});
     test:assertEquals(created.ItemCode, "N0001");
 }
 
 @test:Config {enable: !isLiveServer}
 function testUpdate() returns error? {
-    check b1->itemsUpdate("I00001", {ItemName: "Updated"});
+    check b1->updateItems("I00001", {ItemName: "Updated"});
 }
 
 @test:AfterSuite

@@ -45,10 +45,10 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testOrdersList() returns error? {
-    Orders_CollectionResponse orders = check b1->ordersList(queries = {
-        \$filter: "DocumentStatus eq 'bost_Open'",
-        \$select: "DocEntry,DocNum,CardCode,CardName,DocTotal",
-        \$top: 5
+    OrdersCollectionResponse orders = check b1->listOrders(queries = {
+        dollarFilter: "DocumentStatus eq 'bost_Open'",
+        dollarSelect: "DocEntry,DocNum,CardCode,CardName,DocTotal",
+        dollarTop: 5
     });
     test:assertTrue((orders.value ?: []).length() > 0, "expected at least one open order");
     if !isLiveServer {
@@ -61,7 +61,7 @@ function testOrdersGetByKey() returns error? {
     if isLiveServer {
         return; // key 1 is only guaranteed on the mock
     }
-    Document doc = check b1->ordersGet(1);
+    Document doc = check b1->getOrders(1);
     test:assertEquals(doc.CardCode, "C20000");
     test:assertEquals((doc.DocumentLines ?: []).length(), 1);
     test:assertEquals((doc.DocumentLines ?: [])[0].ItemCode, "A00001");
@@ -69,7 +69,7 @@ function testOrdersGetByKey() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testOrdersCreate() returns error? {
-    Document created = check b1->ordersCreate({
+    Document created = check b1->createOrders({
         CardCode: "C20000",
         DocDueDate: "2026-07-01",
         DocumentLines: [
@@ -87,7 +87,7 @@ function testOrdersCloseAction() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testOrdersUpdate() returns error? {
-    check b1->ordersUpdate(1, {Comments: "updated from test"});
+    check b1->updateOrders(1, {Comments: "updated from test"});
 }
 
 @test:AfterSuite

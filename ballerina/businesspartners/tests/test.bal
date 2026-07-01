@@ -46,7 +46,7 @@ function initializeClient() returns error? {
 
 @test:Config {}
 function testList() returns error? {
-    BusinessPartners_CollectionResponse response = check b1->businessPartnersList();
+    BusinessPartnersCollectionResponse response = check b1->listBusinessPartners();
     test:assertTrue(response.value !is (), "expected a collection response");
     if !isLiveServer {
         test:assertEquals((response.value ?: []).length(), 1);
@@ -55,19 +55,19 @@ function testList() returns error? {
 
 @test:Config {enable: !isLiveServer}
 function testGetByKey() returns error? {
-    BusinessPartner entity = check b1->businessPartnersGet("C20000");
+    BusinessPartner entity = check b1->getBusinessPartners("C20000");
     test:assertEquals(entity.CardCode, "C20000");
 }
 
 @test:Config {enable: !isLiveServer}
 function testCreate() returns error? {
-    BusinessPartner created = check b1->businessPartnersCreate({CardCode: "N9", CardName: "New BP"});
+    BusinessPartner created = check b1->createBusinessPartners({CardCode: "N9", CardName: "New BP"});
     test:assertEquals(created.CardCode, "N9");
 }
 
 @test:Config {enable: !isLiveServer}
 function testUpdate() returns error? {
-    check b1->businessPartnersUpdate("C20000", {CardName: "Updated"});
+    check b1->updateBusinessPartners("C20000", {CardName: "Updated"});
 }
 
 @test:AfterSuite

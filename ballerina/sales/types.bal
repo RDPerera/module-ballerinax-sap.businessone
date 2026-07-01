@@ -17,49 +17,94 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
-public type ReturnRequest_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type BlanketAgreementsDocument record {|
-    int:Signed32 AgreementRowNumber?;
-    # OData EnumType 'BlanketAgreementDocTypeEnum'. Serialised by the Service Layer as the member name.
-    BlanketAgreementDocTypeEnum DocumentType?;
-    int:Signed32 DocumentNo?;
-    int:Signed32 DocumentRowNumber?;
-    string DocumentDate?;
-    string ItemNo?;
-    string ItemDescription?;
-    decimal UnitPrice?;
-    decimal Quantity?;
-    decimal Discount?;
-    string UoM?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
-    BoStatus RowStatus?;
-    string UoMCode?;
-    decimal UnitsOfMeasurement?;
-    # OData EnumType 'BADocumentStatus'. Serialised by the Service Layer as the member name.
-    BADocumentStatus DocStatus?;
+    @jsondata:Name {value: "DocStatus"}
+    BADocumentStatus docStatus?;
+    @jsondata:Name {value: "DocumentNo"}
+    int:Signed32 documentNo?;
+    @jsondata:Name {value: "Discount"}
+    decimal discount?;
+    @jsondata:Name {value: "DocumentType"}
+    BlanketAgreementDocTypeEnum documentType?;
+    @jsondata:Name {value: "Quantity"}
+    decimal quantity?;
+    @jsondata:Name {value: "RowStatus"}
+    BoStatus rowStatus?;
+    @jsondata:Name {value: "ItemDescription"}
+    string itemDescription?;
+    @jsondata:Name {value: "UnitPrice"}
+    decimal unitPrice?;
+    @jsondata:Name {value: "UoM"}
+    string uoM?;
+    @jsondata:Name {value: "UnitsOfMeasurement"}
+    decimal unitsOfMeasurement?;
+    @jsondata:Name {value: "ItemNo"}
+    string itemNo?;
+    @jsondata:Name {value: "UoMCode"}
+    string uoMCode?;
+    @jsondata:Name {value: "DocumentRowNumber"}
+    int:Signed32 documentRowNumber?;
+    @jsondata:Name {value: "DocumentDate"}
+    string documentDate?;
+    @jsondata:Name {value: "AgreementRowNumber"}
+    int:Signed32 agreementRowNumber?;
 |};
 
-public type Invoices_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listSalesTaxInvoices
+public type ListSalesTaxInvoicesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
+
+public type BlanketAgreementsDetailsLine record {
+    int:Signed32 AgreementNo?;
+    int:Signed32 AgreementRowNumber?;
+    int:Signed32 AgreementEffectiveRowNumber?;
+    # OData EnumType 'BlanketAgreementDatePeriodsEnum'. Serialised by the Service Layer as the member name
+    BlanketAgreementDatePeriodsEnum Frequency?;
+    string From?;
+    string To?;
+    string ReleaseInformation?;
+    decimal Quantity?;
+    string Warehouse?;
+    string FreeText?;
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
+    BoYesNoEnum ConsumeSalesForecast?;
+    decimal PlannedAmountLC?;
+    decimal PlannedAmountFC?;
+};
+
+public type ReturnRequestCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type DocumentApprovalRequest record {|
+    @jsondata:Name {value: "ActiveForUpdate"}
+    BoYesNoEnum activeForUpdate?;
+    @jsondata:Name {value: "ApprovalTemplatesID"}
+    int:Signed32 approvalTemplatesID?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
+    @jsondata:Name {value: "ApprovalTemplatesName"}
+    string approvalTemplatesName?;
+|};
 
 public type Document record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
-    # OData EnumType 'BoDocumentTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocumentTypes'. Serialised by the Service Layer as the member name
     BoDocumentTypes DocType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum HandWritten?;
-    # OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name
     PrintStatusEnum Printed?;
     string DocDate?;
     string DocDueDate?;
@@ -79,19 +124,19 @@ public type Document record {
     string DocTime?;
     int:Signed32 SalesPersonCode?;
     int:Signed32 TransportationCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Confirmed?;
     int:Signed32 ImportFileNum?;
-    # OData EnumType 'BoDocSummaryTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocSummaryTypes'. Serialised by the Service Layer as the member name
     BoDocSummaryTypes SummeryType?;
     int:Signed32 ContactPersonCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ShowSCN?;
     int:Signed32 Series?;
     string TaxDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PartialSupply?;
-    # OData EnumType 'BoObjectTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoObjectTypes'. Serialised by the Service Layer as the member name
     BoObjectTypes DocObjectCode?;
     string ShipToCode?;
     string Indicator?;
@@ -106,50 +151,50 @@ public type Document record {
     decimal VatSum?;
     decimal VatSumSys?;
     decimal VatSumFc?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum NetProcedure?;
     decimal DocTotalFc?;
     decimal DocTotalSys?;
     int:Signed32 Form1099?;
     string Box1099?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RevisionPo?;
     string RequriedDate?;
     string CancelDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BlockDunning?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Submitted?;
     int:Signed32 Segment?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PickStatus?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Pick?;
     string PaymentMethod?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PaymentBlock?;
     int:Signed32 PaymentBlockEntry?;
     string CentralBankIndicator?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum MaximumCashDiscount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Reserve?;
     string Project?;
     string ExemptionValidityDateFrom?;
     string ExemptionValidityDateTo?;
-    # OData EnumType 'BoDocWhsUpdateTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocWhsUpdateTypes'. Serialised by the Service Layer as the member name
     BoDocWhsUpdateTypes WareHouseUpdateType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Rounding?;
     string ExternalCorrectedDocNum?;
     int:Signed32 InternalCorrectedDocNum?;
     int:Signed32 NextCorrectingDocument?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DeferredTax?;
     string TaxExemptionLetterNum?;
     decimal WTApplied?;
     decimal WTAppliedFC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BillOfExchangeReserved?;
     string AgentCode?;
     decimal WTAppliedSC?;
@@ -157,9 +202,9 @@ public type Document record {
     decimal TotalEqualizationTaxFC?;
     decimal TotalEqualizationTaxSC?;
     int:Signed32 NumberOfInstallments?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ApplyTaxOnFirstInstallment?;
-    # OData EnumType 'BoTaxOnInstallmentsTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoTaxOnInstallmentsTypeEnum'. Serialised by the Service Layer as the member name
     BoTaxOnInstallmentsTypeEnum TaxOnInstallments?;
     decimal WTNonSubjectAmount?;
     decimal WTNonSubjectAmountSC?;
@@ -177,19 +222,19 @@ public type Document record {
     int:Signed32 DocumentsOwner?;
     string FolioPrefixString?;
     int:Signed32 FolioNumber?;
-    # OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name
     BoDocumentSubType DocumentSubType?;
     string BPChannelCode?;
     int:Signed32 BPChannelContact?;
     string Address2?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus DocumentStatus?;
     string PeriodIndicator?;
     string PayToCode?;
     string ManualNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseShpdGoodsAct?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsPayToBank?;
     string PayToBankCountry?;
     string PayToBankCode?;
@@ -197,7 +242,7 @@ public type Document record {
     string PayToBankBranch?;
     int:Signed32 BPL_IDAssignedToInvoice?;
     decimal DownPayment?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReserveInvoice?;
     int:Signed32 LanguageCode?;
     string TrackingNumber?;
@@ -208,12 +253,12 @@ public type Document record {
     string SeriesString?;
     string SubSeriesString?;
     string SequenceModel?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseCorrectionVATGroup?;
     decimal TotalDiscount?;
     decimal DownPaymentAmount?;
     decimal DownPaymentPercentage?;
-    # OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name
     DownPaymentTypeEnum DownPaymentType?;
     decimal DownPaymentAmountSC?;
     decimal DownPaymentAmountFC?;
@@ -224,65 +269,65 @@ public type Document record {
     decimal RoundingDiffAmount?;
     decimal RoundingDiffAmountFC?;
     decimal RoundingDiffAmountSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Cancelled?;
     string SignatureInputMessage?;
     string SignatureDigest?;
     string CertificationNumber?;
     int:Signed32 PrivateKeyVersion?;
     string ControlAccount?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InsuranceOperation347?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ArchiveNonremovableSalesQuotation?;
     int:Signed32 GTSChecker?;
     int:Signed32 GTSPayee?;
     int:Signed32 ExtraMonth?;
     int:Signed32 ExtraDays?;
     int:Signed32 CashDiscountDateOffset?;
-    # OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name
     BoPayTermDueTypes StartFrom?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum NTSApproved?;
     int:Signed32 ETaxWebSite?;
     string ETaxNumber?;
     string NTSApprovedNumber?;
-    # OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name
     EDocGenerationTypeEnum EDocGenerationType?;
     int:Signed32 EDocSeries?;
     string EDocNum?;
     int:Signed32 EDocExportFormat?;
-    # OData EnumType 'EDocStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EDocStatusEnum'. Serialised by the Service Layer as the member name
     EDocStatusEnum EDocStatus?;
     string EDocErrorCode?;
     string EDocErrorMessage?;
-    # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
     BoSoStatus DownPaymentStatus?;
     int:Signed32 GroupSeries?;
     int:Signed32 GroupNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum GroupHandWritten?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReopenOriginalDocument?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReopenManuallyClosedOrCanceledDocument?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CreateOnlineQuotation?;
     string POSEquipmentNumber?;
     string POSManufacturerSerialNumber?;
     int:Signed32 POSCashierNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ApplyCurrentVATRatesForDownPaymentsToDraw?;
-    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name
     ClosingOptionEnum ClosingOption?;
     string SpecifiedClosingDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum OpenForLandedCosts?;
-    # OData EnumType 'DocumentAuthorizationStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'DocumentAuthorizationStatusEnum'. Serialised by the Service Layer as the member name
     DocumentAuthorizationStatusEnum AuthorizationStatus?;
     decimal TotalDiscountFC?;
     decimal TotalDiscountSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RelevantToGTS?;
     string BPLName?;
     string VATRegNum?;
@@ -291,9 +336,9 @@ public type Document record {
     int:Signed32 Releaser?;
     int:Signed32 Receiver?;
     int:Signed32 BlanketAgreementNumber?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsAlteration?;
-    # OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name
     CancelStatusEnum CancelStatus?;
     int:Signed32 DraftKey?;
     string AssetValueDate?;
@@ -302,13 +347,13 @@ public type Document record {
     int:Signed32 RequesterBranch?;
     int:Signed32 RequesterDepartment?;
     string RequesterEmail?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SendNotification?;
     int:Signed32 ReqType?;
     string ReqCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InvoicePayment?;
-    # OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name
     DocumentDeliveryTypeEnum DocumentDelivery?;
     string AuthorizationCode?;
     string StartDeliveryDate?;
@@ -317,24 +362,24 @@ public type Document record {
     string EndDeliveryTime?;
     string VehiclePlate?;
     string ATDocumentType?;
-    # OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name
     ElecCommStatusEnum ElecCommStatus?;
     string ElecCommMessage?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReuseDocumentNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReuseNotaFiscalNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PrintSEPADirect?;
     string FiscalDocNum?;
     int:Signed32 POSDailySummaryNo?;
     int:Signed32 POSReceiptNo?;
     string PointOfIssueCode?;
-    # OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name
     FolioLetterEnum Letter?;
     int:Signed32 FolioNumberFrom?;
     int:Signed32 FolioNumberTo?;
-    # OData EnumType 'BoInterimDocTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoInterimDocTypes'. Serialised by the Service Layer as the member name
     BoInterimDocTypes InterimType?;
     int:Signed32 RelatedType?;
     int:Signed32 RelatedEntry?;
@@ -342,20 +387,20 @@ public type Document record {
     string DocumentTaxID?;
     string DateOfReportingControlStatementVAT?;
     string ReportingSectionControlStatementVAT?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ExcludeFromTaxReportControlStatementVAT?;
     int:Signed32 POS_CashRegister?;
     string UpdateTime?;
     string CreateQRCodeFrom?;
-    # OData EnumType 'PriceModeDocumentEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PriceModeDocumentEnum'. Serialised by the Service Layer as the member name
     PriceModeDocumentEnum PriceMode?;
     int:Signed32 PriceListNum?;
     string DownPaymentTrasactionID?;
     string OriginalRefNo?;
     string OriginalRefDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Revision?;
-    # OData EnumType 'GSTTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'GSTTransactionTypeEnum'. Serialised by the Service Layer as the member name
     GSTTransactionTypeEnum GSTTransactionType?;
     string OriginalCreditOrDebitNo?;
     string OriginalCreditOrDebitDate?;
@@ -364,24 +409,24 @@ public type Document record {
     string TaxInvoiceNo?;
     string TaxInvoiceDate?;
     string ShipFrom?;
-    # OData EnumType 'CommissionTradeTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CommissionTradeTypeEnum'. Serialised by the Service Layer as the member name
     CommissionTradeTypeEnum CommissionTrade?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CommissionTradeReturn?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseBillToAddrToDetermineTax?;
     int:Signed32 IssuingReason?;
     int:Signed32 Cig?;
     int:Signed32 Cup?;
-    # OData EnumType 'EDocTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EDocTypeEnum'. Serialised by the Service Layer as the member name
     EDocTypeEnum EDocType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FCEAsPaymentMeans?;
     decimal PaidToDate?;
     decimal PaidToDateFC?;
     decimal PaidToDateSys?;
     string FatherCard?;
-    # OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name
     BoFatherCardTypes FatherType?;
     string ShipState?;
     string ShipPlace?;
@@ -392,17 +437,17 @@ public type Document record {
     string DANFELgTxt?;
     int:Signed32 DataVersion?;
     int:Signed32 LastPageFolioNumber?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus InventoryStatus?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PlasticPackagingTaxRelevant?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum NotRelevantForMonthlyInvoice?;
-    # OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name
     BoPayTermDueTypes EndAt?;
     string ShipToCodeForReturn?;
     string AddressForReturn?;
-    Document_ApprovalRequest[] Document_ApprovalRequests?;
+    DocumentApprovalRequest[] Document_ApprovalRequests?;
     DocumentLine[] DocumentLines?;
     EWayBillDetails EWayBillDetails?;
     EDeliveryInfo EDeliveryInfo?;
@@ -419,15 +464,15 @@ public type Document record {
     AddressExtension AddressExtension?;
     DocumentReference[] DocumentReferences?;
     DocumentAdditionalIntrastatExpense[] DocumentAdditionalIntrastatExpenses?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DutyStatus?;
     int:Signed32 BaseType?;
     int:Signed32 BaseEntry?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IndFinal?;
     string AllocationNumberIL?;
     string DigitalPayToAddress?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DigitalPayments?;
     string SirenNumber?;
     string SiretNumber?;
@@ -438,86 +483,100 @@ public type Document record {
     POSDailySummary POSDailySummary?;
 };
 
-public type DunningLetters_CollectionResponse record {
-    string odata\.metadata?;
-    DunningLetter[] value?;
-    string odata\.nextLink?;
-};
-
 public type CorrectionInvoiceService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Headers record for the operation: salesPersonsList
-public type SalesPersonsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocGenTypeEnum "edgt_NotRelevant"|"edgt_Generate"|"edgt_GenerateLater"|"edgt_GenerateOffline";
 
-# OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name
 public type ClosingOptionEnum "coByCurrentSystemDate"|"coByOriginalDocumentDate"|"coBySpecifiedDate";
 
-# Represents the Headers record for the operation: commissionGroupsList
-public type CommissionGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listDunningTerms
+public type ListDunningTermsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DocumentDistributedExpense record {|
 |};
 
 public type CorrectionInvoiceReversalService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type EDeliveryInfo record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 MoveType?;
-    string VehicleNo?;
+    @jsondata:Name {value: "VehicleNo"}
+    string vehicleNo?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "MoveType"}
+    int:Signed32 moveType?;
 |};
 
-# OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name
 public type PrintStatusEnum "psNo"|"psYes"|"psAmended";
 
-# Represents the Queries record for the operation: commissionGroupsGet
-public type CommissionGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type DocumentReference record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    int:Signed32 RefDocEntr?;
-    int:Signed32 RefDocNum?;
-    string ExtDocNum?;
-    # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name.
-    ReferencedObjectTypeEnum RefObjType?;
-    string AccessKey?;
-    string IssueDate?;
-    string IssuerCNPJ?;
-    string IssuerCode?;
-    string Model?;
-    string Series?;
-    int:Signed32 Number?;
-    string RefAccKey?;
-    decimal RefAmount?;
-    string SubSeries?;
-    string Remark?;
-    # OData EnumType 'LinkReferenceTypeEnum'. Serialised by the Service Layer as the member name.
-    LinkReferenceTypeEnum LinkRefTyp?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "IssueDate"}
+    string issueDate?;
+    @jsondata:Name {value: "IssuerCode"}
+    string issuerCode?;
+    @jsondata:Name {value: "ExtDocNum"}
+    string extDocNum?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "RefDocEntr"}
+    int:Signed32 refDocEntr?;
+    @jsondata:Name {value: "Remark"}
+    string remark?;
+    @jsondata:Name {value: "RefDocNum"}
+    int:Signed32 refDocNum?;
+    @jsondata:Name {value: "IssuerCNPJ"}
+    string issuerCNPJ?;
+    @jsondata:Name {value: "Series"}
+    string series?;
+    @jsondata:Name {value: "Number"}
+    int:Signed32 number?;
+    @jsondata:Name {value: "SubSeries"}
+    string subSeries?;
+    @jsondata:Name {value: "LinkRefTyp"}
+    LinkReferenceTypeEnum linkRefTyp?;
+    @jsondata:Name {value: "RefAmount"}
+    decimal refAmount?;
+    @jsondata:Name {value: "Model"}
+    string model?;
+    @jsondata:Name {value: "AccessKey"}
+    string accessKey?;
+    @jsondata:Name {value: "RefAccKey"}
+    string refAccKey?;
+    @jsondata:Name {value: "RefObjType"}
+    ReferencedObjectTypeEnum refObjType?;
 |};
-
-public type DownPayments_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
 @display {label: "Connection Config"}
@@ -561,46 +620,67 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-# OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name.
-public type CancelStatusEnum "csYes"|"csNo"|"csCancellation";
-
-public type CreditNotesService_ApproveAndUpdate_body record {
-    Document Document?;
+public type CorrectionInvoiceCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: invoicesList
-public type InvoicesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type OrdersCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name
+public type CancelStatusEnum "csYes"|"csNo"|"csCancellation";
+
+public type CreditNotesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type CreditNotesService_ApproveAndUpdate_body record {
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DunningTermLine record {|
-    int:Signed32 LevelNum?;
-    # OData EnumType 'DunningLetterTypeEnum'. Serialised by the Service Layer as the member name.
-    DunningLetterTypeEnum LetterFormat?;
-    string Effectiveafter?;
-    decimal LetterFee?;
-    string LetterFeeCurrency?;
-    decimal MininumBalance?;
-    string MininumBalanceCurrency?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum CalculateInterest?;
+    @jsondata:Name {value: "LetterFee"}
+    decimal letterFee?;
+    @jsondata:Name {value: "MininumBalance"}
+    decimal mininumBalance?;
+    @jsondata:Name {value: "Effectiveafter"}
+    string effectiveafter?;
+    @jsondata:Name {value: "LetterFeeCurrency"}
+    string letterFeeCurrency?;
+    @jsondata:Name {value: "CalculateInterest"}
+    BoYesNoEnum calculateInterest?;
+    @jsondata:Name {value: "LevelNum"}
+    int:Signed32 levelNum?;
+    @jsondata:Name {value: "LetterFormat"}
+    DunningLetterTypeEnum letterFormat?;
+    @jsondata:Name {value: "MininumBalanceCurrency"}
+    string mininumBalanceCurrency?;
 |};
 
-# OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name
 public type BoAdEpnsDistribMethods "aedm_None"|"aedm_Quantity"|"aedm_Volume"|"aedm_Weight"|"aedm_Equally"|"aedm_RowTotal";
+
+public type CorrectionInvoiceReversalCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type LineFreightEBooksDetail record {
     int:Signed32 IncomeClassificationType?;
@@ -620,7 +700,17 @@ public type LineFreightEBooksDetail record {
     int:Signed32 VATExemptionCause?;
 };
 
-# OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getReturns
+public type GetReturnsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name
 public type BoCorInvItemStatus "ciis_Was"|"ciis_ShouldBe";
 
 public type BatchNumber record {
@@ -640,17 +730,26 @@ public type BatchNumber record {
     int:Signed32 SystemSerialNumber?;
 };
 
-# OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name
 public type BoPayTermDueTypes "pdt_MonthEnd"|"pdt_HalfMonth"|"pdt_MonthStart"|"pdt_None";
 
-# OData EnumType 'DocumentPriceSourceEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'DocumentPriceSourceEnum'. Serialised by the Service Layer as the member name
 public type DocumentPriceSourceEnum "dpsSpecialPricesForBusinessPartner"|"dpsManual"|"dpsActivePriceListDiscountGroups"|"dpsActivePriceList"|"dpsInactivePriceList"|"dpsBlanketAgreement"|"dpsPeriodAndVolumeDiscounts"|"dpsPeriodAndVolumeDiscountsDiscountGroups"|"dpsInactivePriceListDiscountGroups"|"dpsNewSpecialPricesForBusinessPartner"|"dpsNewActivePriceListDiscountGroups"|"dpsNewActivePriceList"|"dpsNewInactivePriceList"|"dpsNewBlanketAgreement"|"dpsNewPeriodAndVolumeDiscounts"|"dpsNewPeriodAndVolumeDiscountsDiscountGroups"|"dpsNewInactivePriceListDiscountGroups";
 
-public type OrdersService_ExportEWayBill_body record {
-    Document Document?;
+public type DeliveryNotesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# OData EnumType 'BlanketAgreementMethodEnum'. Serialised by the Service Layer as the member name.
+public type OrdersService_ExportEWayBill_body record {
+    @jsondata:Name {value: "Document"}
+    Document document?;
+};
+
+# OData EnumType 'BlanketAgreementMethodEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementMethodEnum "amItem"|"amMonetary";
 
 public type DunningLetter record {
@@ -660,23 +759,32 @@ public type DunningLetter record {
     string Effectiveafter?;
     string MinimumBalanceCurrency?;
     decimal Feeperletter?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CalcInterest?;
     decimal MinimumBalance?;
 };
 
-# OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name
 public type BoDocumentSubType "bod_None"|"bod_InvoiceExempt"|"bod_DebitMemo"|"bod_Bill"|"bod_ExemptBill"|"bod_PurchaseDebitMemo"|"bod_ExportInvoice"|"bod_GSTTaxInvoice"|"bod_GSTDebitMemo"|"bod_RefundVoucher";
 
 public type QuotationsService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'BoDocSpecialLineType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocSpecialLineType'. Serialised by the Service Layer as the member name
 public type BoDocSpecialLineType "dslt_Text"|"dslt_Subtotal";
 
-# OData EnumType 'PriceModeDocumentEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'PriceModeDocumentEnum'. Serialised by the Service Layer as the member name
 public type PriceModeDocumentEnum "pmdNet"|"pmdGross"|"pmdNetAndGross";
+
+public type InvoicesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type DocumentLine record {
     int:Signed32 LineNum?;
@@ -694,10 +802,10 @@ public type DocumentLine record {
     string WarehouseCode?;
     int:Signed32 SalesPersonCode?;
     decimal CommisionPercent?;
-    # OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name
     BoItemTreeTypes TreeType?;
     string AccountCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum UseBaseUnits?;
     string SupplierCatNum?;
     string CostingCode?;
@@ -731,32 +839,32 @@ public type DocumentLine record {
     int:Signed32 Width2Unit?;
     string Address?;
     string TaxCode?;
-    # OData EnumType 'BoTaxTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoTaxTypes'. Serialised by the Service Layer as the member name
     BoTaxTypes TaxType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxLiable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PickStatus?;
     decimal PickQuantity?;
     int:Signed32 PickListIdNumber?;
     string OriginalItem?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum BackOrder?;
     string FreeText?;
     int:Signed32 ShippingMethod?;
     int:Signed32 POTargetNum?;
     string POTargetEntry?;
     int:Signed32 POTargetRowNum?;
-    # OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name
     BoCorInvItemStatus CorrectionInvoiceItem?;
     decimal CorrInvAmountToStock?;
     decimal CorrInvAmountToDiffAcct?;
     decimal AppliedTax?;
     decimal AppliedTaxFC?;
     decimal AppliedTaxSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WTLiable?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DeferredTax?;
     decimal EqualizationTaxPercent?;
     decimal TotalEqualizationTax?;
@@ -770,16 +878,16 @@ public type DocumentLine record {
     decimal LineTotal?;
     decimal TaxPercentagePerRow?;
     decimal TaxTotal?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ConsumerSalesForecast?;
     decimal ExciseAmount?;
     decimal TaxPerUnit?;
     decimal TotalInclTax?;
     string CountryOrg?;
     string SWW?;
-    # OData EnumType 'BoTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoTransactionTypeEnum'. Serialised by the Service Layer as the member name
     BoTransactionTypeEnum TransactionType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DistributeExpense?;
     decimal RowTotalFC?;
     decimal RowTotalSC?;
@@ -791,7 +899,7 @@ public type DocumentLine record {
     decimal StockDistributesumSystem?;
     decimal StockDistributesum?;
     decimal StockInmPrice?;
-    # OData EnumType 'BoDocumentLinePickStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocumentLinePickStatus'. Serialised by the Service Layer as the member name
     BoDocumentLinePickStatus PickStatusEx?;
     decimal TaxBeforeDPM?;
     decimal TaxBeforeDPMFC?;
@@ -799,16 +907,16 @@ public type DocumentLine record {
     string CFOPCode?;
     string CSTCode?;
     int:Signed32 Usage?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxOnly?;
     int:Signed32 VisualOrder?;
     decimal BaseOpenQuantity?;
     decimal UnitPrice?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus LineStatus?;
     decimal PackageQuantity?;
     string Text?;
-    # OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name
     BoDocLineType LineType?;
     string COGSCostingCode?;
     string COGSAccountCode?;
@@ -838,7 +946,7 @@ public type DocumentLine record {
     string CSTforPIS?;
     string CSTforCOFINS?;
     string CreditOriginCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WithoutInventoryMovement?;
     int:Signed32 AgreementNo?;
     int:Signed32 AgreementRowNumber?;
@@ -848,27 +956,27 @@ public type DocumentLine record {
     decimal Surpluses?;
     decimal DefectAndBreakup?;
     decimal Shortages?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ConsiderQuantity?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PartialRetirement?;
     decimal RetirementQuantity?;
     decimal RetirementAPC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ThirdParty?;
     string PoNum?;
     int:Signed32 PoItmNum?;
     string ExpenseType?;
     string ReceiptNumber?;
-    # OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name
     BoExpenseOperationTypeEnum ExpenseOperationType?;
     string FederalTaxID?;
     decimal GrossProfit?;
     decimal GrossProfitFC?;
     decimal GrossProfitSC?;
-    # OData EnumType 'DocumentPriceSourceEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'DocumentPriceSourceEnum'. Serialised by the Service Layer as the member name
     DocumentPriceSourceEnum PriceSource?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EnableReturnCost?;
     decimal ReturnCost?;
     string LineVendor?;
@@ -889,11 +997,11 @@ public type DocumentLine record {
     int:Signed32 DestinationRegionForImport?;
     string OriginCountryForExport?;
     int:Signed32 OriginRegionForExport?;
-    # OData EnumType 'BoDocItemType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDocItemType'. Serialised by the Service Layer as the member name
     BoDocItemType ItemType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ChangeInventoryQuantityIndependently?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum FreeOfChargeBP?;
     int:Signed32 SACEntry?;
     int:Signed32 HSNEntry?;
@@ -903,13 +1011,13 @@ public type DocumentLine record {
     decimal GrossTotalSC?;
     int:Signed32 NCMCode?;
     string NVECode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IndEscala?;
     decimal CtrSealQty?;
     string CNJPMan?;
     int:Signed32 CESTCode?;
     string UFFiscalBenefitCode?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum ReverseCharge?;
     string ShipToCode?;
     string ShipToDescription?;
@@ -937,7 +1045,7 @@ public type DocumentLine record {
     string CSTforCBS?;
     string CSTforIS?;
     int:Signed32 UnencumberedReason?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CUSplit?;
     int:Signed32 ListNum?;
     string RecognizedTaxCode?;
@@ -955,116 +1063,141 @@ public type DocumentLine record {
     ImportProcess[] ImportProcesses?;
 };
 
+# Represents the Queries record for the operation: listReturns
+public type ListReturnsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type ExportProcess record {|
-    int:Signed32 LineNumber?;
-    int:Signed32 ExportationDocumentTypeCode?;
-    int:Signed32 ExportationDeclarationNumber?;
-    string ExportationDeclarationDate?;
-    int:Signed32 ExportationNatureCode?;
-    int:Signed32 ExportationRegistryNumber?;
-    string ExportationRegistryDate?;
-    string LadingBillNumber?;
-    string LadingBillDate?;
-    string MerchandiseLeftCustomsDate?;
-    int:Signed32 LadingBillTypeCode?;
-    string DrawbackSuspensionRegime?;
-    string NatureOfExport?;
-    decimal QuantityOfExportedItems?;
-    int:Signed32 AdditionalItemSequentialNumber?;
+    @jsondata:Name {value: "LadingBillTypeCode"}
+    int:Signed32 ladingBillTypeCode?;
+    @jsondata:Name {value: "QuantityOfExportedItems"}
+    decimal quantityOfExportedItems?;
+    @jsondata:Name {value: "ExportationNatureCode"}
+    int:Signed32 exportationNatureCode?;
+    @jsondata:Name {value: "LadingBillDate"}
+    string ladingBillDate?;
+    @jsondata:Name {value: "NatureOfExport"}
+    string natureOfExport?;
+    @jsondata:Name {value: "LadingBillNumber"}
+    string ladingBillNumber?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "ExportationRegistryNumber"}
+    int:Signed32 exportationRegistryNumber?;
+    @jsondata:Name {value: "AdditionalItemSequentialNumber"}
+    int:Signed32 additionalItemSequentialNumber?;
+    @jsondata:Name {value: "ExportationDeclarationDate"}
+    string exportationDeclarationDate?;
+    @jsondata:Name {value: "DrawbackSuspensionRegime"}
+    string drawbackSuspensionRegime?;
+    @jsondata:Name {value: "MerchandiseLeftCustomsDate"}
+    string merchandiseLeftCustomsDate?;
+    @jsondata:Name {value: "ExportationDocumentTypeCode"}
+    int:Signed32 exportationDocumentTypeCode?;
+    @jsondata:Name {value: "ExportationRegistryDate"}
+    string exportationRegistryDate?;
+    @jsondata:Name {value: "ExportationDeclarationNumber"}
+    int:Signed32 exportationDeclarationNumber?;
 |};
 
-# OData EnumType 'BoTaxTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoTaxTypes'. Serialised by the Service Layer as the member name
 public type BoTaxTypes "tt_Yes"|"tt_No"|"tt_UseTax"|"tt_OffsetTax";
 
-# OData EnumType 'BoDocSummaryTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocSummaryTypes'. Serialised by the Service Layer as the member name
 public type BoDocSummaryTypes "dNoSummary"|"dByItems"|"dByDocuments";
 
-# OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
 public type BoRemindUnits "reu_Days"|"reu_Weeks"|"reu_Month";
 
 public type DocumentCloseParams record {|
-    int:Signed32 DocEntry?;
-    # OData EnumType 'ClosingOptionEnum'. Serialised by the Service Layer as the member name.
-    ClosingOptionEnum ClosingOption?;
-    string SpecifiedClosingDate?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "SpecifiedClosingDate"}
+    string specifiedClosingDate?;
+    @jsondata:Name {value: "ClosingOption"}
+    ClosingOptionEnum closingOption?;
 |};
 
+public type POSDailySummaryCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    POSDailySummary[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type DownPaymentsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type QuotationsService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
-# Represents the Queries record for the operation: salesPersonsList
-public type SalesPersonsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type CommissionGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CommissionGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-public type BlanketAgreements_DetailsLine record {
-    int:Signed32 AgreementNo?;
-    int:Signed32 AgreementRowNumber?;
-    int:Signed32 AgreementEffectiveRowNumber?;
-    # OData EnumType 'BlanketAgreementDatePeriodsEnum'. Serialised by the Service Layer as the member name.
-    BlanketAgreementDatePeriodsEnum Frequency?;
-    string From?;
-    string To?;
-    string ReleaseInformation?;
-    decimal Quantity?;
-    string Warehouse?;
-    string FreeText?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ConsumeSalesForecast?;
-    decimal PlannedAmountLC?;
-    decimal PlannedAmountFC?;
+# Represents the Queries record for the operation: getSalesPersons
+public type GetSalesPersonsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: deliveryNotesList
-public type DeliveryNotesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'DocumentAuthorizationStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'DocumentAuthorizationStatusEnum'. Serialised by the Service Layer as the member name
 public type DocumentAuthorizationStatusEnum "dasWithout"|"dasPending"|"dasApproved"|"dasRejected"|"dasGenerated"|"dasGeneratedbyAuthorizer"|"dasCancelled";
 
-# OData EnumType 'BoDocumentLinePickStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocumentLinePickStatus'. Serialised by the Service Layer as the member name
 public type BoDocumentLinePickStatus "dlps_Picked"|"dlps_NotPicked"|"dlps_ReleasedForPicking"|"dlps_PartiallyPicked";
 
-# OData EnumType 'GSTTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'GSTTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type GSTTransactionTypeEnum "gsttrantyp_BillOfSupply"|"gsttrantyp_GSTTaxInvoice"|"gsttrantyp_GSTDebitMemo";
 
-# OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
 public type BoSoStatus "so_Open"|"so_Closed";
 
 public type DraftsService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type CreditNotesService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
 public type DocumentAdditionalIntrastatExpense record {
@@ -1075,7 +1208,7 @@ public type DocumentAdditionalIntrastatExpense record {
     decimal PaidToDate?;
     decimal PaidToDateFC?;
     decimal PaidToDateSys?;
-    # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name
     BoAdEpnsDistribMethods DistributionMethod?;
     int:Signed32 BaseDocEntry?;
     int:Signed32 BaseDocLine?;
@@ -1084,55 +1217,35 @@ public type DocumentAdditionalIntrastatExpense record {
     int:Signed32 LineNum?;
 };
 
-# OData EnumType 'EDocTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EDocTypeEnum'. Serialised by the Service Layer as the member name
 public type EDocTypeEnum "edocFE"|"edocFCE";
 
-# OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ReferencedObjectTypeEnum "rot_ExternalDocument"|"rot_SalesQuotation"|"rot_SalesOrder"|"rot_DeliveryNotes"|"rot_ReturnRequest"|"rot_Return"|"rot_DownPaymentIncoming"|"rot_SalesInvoice"|"rot_SalesCreditNote"|"rot_CorrectionSalesInvoice"|"rot_SalesTaxInvoice"|"rot_PurchaseQuotation"|"rot_PurchaseOrder"|"rot_GoodsReceiptPO"|"rot_GoodsReturnRequest"|"rot_GoodsReturn"|"rot_DownPaymentOutgoing"|"rot_PurchaseInvoice"|"rot_PurchaseCreditNote"|"rot_CorrectionPurchaseInvoice"|"rot_PurchaseTaxInvoice"|"rot_LandedCosts"|"rot_IncomingPayments"|"rot_JournalEntry"|"rot_ProductionOrder"|"rot_InternalReconciliation"|"rot_OriginalInvoice"|"rot_OriginalARDownPayment"|"rot_PurchaseRequest"|"rot_GoodsReceipt"|"rot_GoodsIssue"|"rot_InventoryTransferRequest"|"rot_InventoryTransfer"|"rot_ChecksforPayment"|"rot_MaterialRevaluation"|"rot_InventoryCounting"|"rot_InventoryPosting"|"rot_OutgoingPayments";
 
-# Represents the Queries record for the operation: dunningTermsList
-public type DunningTermsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: invoicesList
-public type InvoicesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listCorrectionInvoice
+public type ListCorrectionInvoiceHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type OrdersService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
-};
-
-public type Drafts_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
 public type BlanketAgreementParams record {|
-    int:Signed32 AgreementNo?;
+    @jsondata:Name {value: "AgreementNo"}
+    int:Signed32 agreementNo?;
 |};
 
-# OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name
 public type BoDocLineType "dlt_Regular"|"dlt_Alternative"|"dlt_Resource";
 
 public type ReturnRequestService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type LineExpenseTaxJurisdiction record {
@@ -1151,77 +1264,101 @@ public type LineExpenseTaxJurisdiction record {
     decimal ExternalCalcTaxAmountSC?;
 };
 
+# Represents the Headers record for the operation: listDunningTerms
+public type ListDunningTermsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type CreditNotesService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DunningTerm record {|
-    string Code?;
-    string Name?;
-    # OData EnumType 'GroupingMethodEnum'. Serialised by the Service Layer as the member name.
-    GroupingMethodEnum GroupingMethod?;
-    int:Signed32 DaysInYear?;
-    int:Signed32 DaysInMonth?;
-    # OData EnumType 'CalculateInterestMethodEnum'. Serialised by the Service Layer as the member name.
-    CalculateInterestMethodEnum CalculateInterestMethod?;
-    # OData EnumType 'ExchangeRateSelectEnum'. Serialised by the Service Layer as the member name.
-    ExchangeRateSelectEnum ExchangeRateSelect?;
-    decimal YearlyInterestRate?;
-    decimal LetterFee?;
-    string LetterFeeCurrency?;
-    decimal MinimumBalance?;
-    string MinimumBalanceCurrency?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IncludeInterest?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ApplyHighestLetterTemplate?;
-    # OData EnumType 'AutomaticPostingEnum'. Serialised by the Service Layer as the member name.
-    AutomaticPostingEnum AutomaticPosting?;
-    string InterestAccount?;
-    string FeeAccount?;
-    # OData EnumType 'BaseDateSelectEnum'. Serialised by the Service Layer as the member name.
-    BaseDateSelectEnum BaseDateSelect?;
-    DunningTermLine[] DunningTermLines?;
+    @jsondata:Name {value: "ExchangeRateSelect"}
+    ExchangeRateSelectEnum exchangeRateSelect?;
+    @jsondata:Name {value: "DunningTermLines"}
+    DunningTermLine[] dunningTermLines?;
+    @jsondata:Name {value: "CalculateInterestMethod"}
+    CalculateInterestMethodEnum calculateInterestMethod?;
+    @jsondata:Name {value: "DaysInMonth"}
+    int:Signed32 daysInMonth?;
+    @jsondata:Name {value: "AutomaticPosting"}
+    AutomaticPostingEnum automaticPosting?;
+    @jsondata:Name {value: "LetterFeeCurrency"}
+    string letterFeeCurrency?;
+    @jsondata:Name {value: "MinimumBalance"}
+    decimal minimumBalance?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "GroupingMethod"}
+    GroupingMethodEnum groupingMethod?;
+    @jsondata:Name {value: "DaysInYear"}
+    int:Signed32 daysInYear?;
+    @jsondata:Name {value: "Name"}
+    string name?;
+    @jsondata:Name {value: "LetterFee"}
+    decimal letterFee?;
+    @jsondata:Name {value: "FeeAccount"}
+    string feeAccount?;
+    @jsondata:Name {value: "InterestAccount"}
+    string interestAccount?;
+    @jsondata:Name {value: "ApplyHighestLetterTemplate"}
+    BoYesNoEnum applyHighestLetterTemplate?;
+    @jsondata:Name {value: "BaseDateSelect"}
+    BaseDateSelectEnum baseDateSelect?;
+    @jsondata:Name {value: "IncludeInterest"}
+    BoYesNoEnum includeInterest?;
+    @jsondata:Name {value: "YearlyInterestRate"}
+    decimal yearlyInterestRate?;
+    @jsondata:Name {value: "MinimumBalanceCurrency"}
+    string minimumBalanceCurrency?;
 |};
 
-public type Quotations_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type GeneratedAsset record {|
-    int:Signed32 DocEntry?;
-    int:Signed32 LineNumber?;
-    int:Signed32 VisualOrder?;
-    string AssetCode?;
-    # OData EnumType 'GeneratedAssetStatusEnum'. Serialised by the Service Layer as the member name.
-    GeneratedAssetStatusEnum Status?;
-    string Remarks?;
-    string SerialNumber?;
+    @jsondata:Name {value: "Status"}
+    GeneratedAssetStatusEnum status?;
     decimal amount?;
+    @jsondata:Name {value: "SerialNumber"}
+    string serialNumber?;
+    @jsondata:Name {value: "Remarks"}
+    string remarks?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "AssetCode"}
+    string assetCode?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "VisualOrder"}
+    int:Signed32 visualOrder?;
     decimal amountSC?;
 |};
 
-# OData EnumType 'BoTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listQuotations
+public type ListQuotationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getDeliveryNotes
+public type GetDeliveryNotesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTransactionTypeEnum "botrntComplete"|"botrntReject";
 
-# Represents the Headers record for the operation: correctionInvoiceList
-public type CorrectionInvoiceListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type DownPaymentsService_ApproveAndUpdate_body record {
-    Document Document?;
-};
-
-# Represents the Queries record for the operation: deliveryNotesGet
-public type DeliveryNotesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type WithholdingTaxData record {
@@ -1247,43 +1384,61 @@ public type WithholdingTaxData record {
     int:Signed32 BaseDocLine?;
     int:Signed32 BaseDocType?;
     int:Signed32 BaseDocumentReference?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus Status?;
     int:Signed32 TargetAbsEntry?;
     int:Signed32 TargetDocumentType?;
 };
 
-# OData EnumType 'EDocStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EDocStatusEnum'. Serialised by the Service Layer as the member name
 public type EDocStatusEnum "edoc_New"|"edoc_Pending"|"edoc_Sent"|"edoc_Error"|"edoc_Ok";
 
 public type DeliveryNotesService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
-# Represents the Queries record for the operation: downPaymentsList
-public type DownPaymentsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type DraftsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type OrdersService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
+};
+
+# Represents the Queries record for the operation: listDunningLetters
+public type ListDunningLettersQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type OrdersService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type SalesTaxInvoiceDocumentReference record {
@@ -1292,79 +1447,102 @@ public type SalesTaxInvoiceDocumentReference record {
     int:Signed32 ReferencedDocEntry?;
     int:Signed32 ReferencedDocNumber?;
     string ExternalReferencedDocNumber?;
-    # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name
     ReferencedObjectTypeEnum ReferencedObjectType?;
     string IssueDate?;
     string Remark?;
     string CardCode?;
 };
 
-# OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name
 public type BoExpenseOperationTypeEnum "bo_ExpOpType_ProfessionalServices"|"bo_ExpOpType_RentingAssets"|"bo_ExpOpType_Others"|"bo_ExpOpType_None"|"bo_ExpOpType_DisposalOfGoods"|"bo_ExpOpType_ImportOfGoodsAndServices"|"bo_ExpOpType_ImportByVirtualTransfer"|"bo_ExpOpType_GlobalOperations";
 
-# Represents the Headers record for the operation: creditNotesList
-public type CreditNotesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type QuotationsService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type SalesTaxInvoiceOperationCode record {
     int:Signed32 OpCode?;
 };
 
-# OData EnumType 'BoCurrencySources'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoCurrencySources'. Serialised by the Service Layer as the member name
 public type BoCurrencySources "bocs_LocalCurrency"|"bocs_SystemCurrency"|"bocs_BPCurrency";
 
-# OData EnumType 'BlanketAgreementStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BlanketAgreementStatusEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementStatusEnum "asApproved"|"asOnHold"|"asDraft"|"asTerminated"|"asCancelled";
 
+# Represents the Headers record for the operation: listCorrectionInvoiceReversal
+public type ListCorrectionInvoiceReversalHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type OrdersService_Preview_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Headers record for the operation: dunningTermsList
-public type DunningTermsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type Orders_CollectionResponse record {
-    string odata\.metadata?;
+public type ReturnsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     Document[] value?;
-    string odata\.nextLink?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type CorrectionInvoiceReversalService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Headers record for the operation: dunningLettersList
-public type DunningLettersListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listCorrectionInvoiceReversal
+public type ListCorrectionInvoiceReversalQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type RelatedDocument record {|
-    # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    RelatedDocumentTypeEnum DocType?;
-    int:Signed32 AbsEntry?;
-    string UUID?;
-    # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
-    RelatedDocumentTypeEnum DocTye?;
-    int:Signed32 AbsEnry?;
+    @jsondata:Name {value: "AbsEnry"}
+    int:Signed32 absEnry?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "UUID"}
+    string uUID?;
+    @jsondata:Name {value: "DocTye"}
+    RelatedDocumentTypeEnum docTye?;
+    @jsondata:Name {value: "DocType"}
+    RelatedDocumentTypeEnum docType?;
 |};
 
-# OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
 public type BoStatus "bost_Open"|"bost_Close"|"bost_Paid"|"bost_Delivered";
 
-public type SalesTaxInvoices_CollectionResponse record {
-    string odata\.metadata?;
-    SalesTaxInvoice[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listOrders
+public type ListOrdersHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type SalesTaxInvoiceLinkedDownPayment record {
@@ -1390,14 +1568,6 @@ public type SalesTaxInvoiceLinkedDownPayment record {
     decimal GrossAmountToDrawSC?;
     string DocCurrency?;
 };
-
-public type Document_ApprovalRequest record {|
-    int:Signed32 ApprovalTemplatesID?;
-    string Remarks?;
-    string ApprovalTemplatesName?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ActiveForUpdate?;
-|};
 
 public type AddressExtension record {
     string ShipToStreet?;
@@ -1474,12 +1644,46 @@ public type AddressExtension record {
     string ShipToAddress3ForReturn?;
 };
 
-# Represents the Queries record for the operation: salesTaxInvoicesGet
-public type SalesTaxInvoicesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listOrders
+public type ListOrdersQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getSalesTaxInvoices
+public type GetSalesTaxInvoicesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listReturns
+public type ListReturnsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type SerialNumber record {
@@ -1501,88 +1705,165 @@ public type SerialNumber record {
     string ItemCode?;
 };
 
-# Represents the Headers record for the operation: salesTaxInvoicesList
-public type SalesTaxInvoicesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'LinkReferenceTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'LinkReferenceTypeEnum'. Serialised by the Service Layer as the member name
 public type LinkReferenceTypeEnum "lrt_00"|"lrt_01"|"lrt_02"|"lrt_03"|"lrt_04"|"lrt_05"|"lrt_06"|"lrt_07"|"lrt_08"|"lrt_MX_08"|"lrt_MX_09";
 
 public type DraftsService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
+};
+
+# Represents the Queries record for the operation: getDrafts
+public type GetDraftsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listInvoices
+public type ListInvoicesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TaxExtension record {|
-    string TaxId0?;
-    string TaxId1?;
-    string TaxId2?;
-    string TaxId3?;
-    string TaxId4?;
-    string TaxId5?;
-    string TaxId6?;
-    string TaxId7?;
-    string TaxId8?;
-    string TaxId9?;
-    string State?;
-    string County?;
-    string Incoterms?;
-    string Vehicle?;
-    string VehicleState?;
-    string NFRef?;
-    string Carrier?;
-    int:Signed32 PackQuantity?;
-    string PackDescription?;
-    string Brand?;
-    int:Signed32 ShipUnitNo?;
-    decimal NetWeight?;
-    decimal GrossWeight?;
-    string StreetS?;
-    string BlockS?;
-    string BuildingS?;
-    string CityS?;
-    string ZipCodeS?;
-    string CountyS?;
-    string StateS?;
-    string CountryS?;
-    string StreetB?;
-    string BlockB?;
-    string BuildingB?;
-    string CityB?;
-    string ZipCodeB?;
-    string CountyB?;
-    string StateB?;
-    string CountryB?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ImportOrExport?;
-    int:Signed32 MainUsage?;
-    string GlobalLocationNumberS?;
-    string GlobalLocationNumberB?;
-    string TaxId12?;
-    string TaxId13?;
-    string BillOfEntryNo?;
-    string BillOfEntryDate?;
-    string OriginalBillOfEntryNo?;
-    string OriginalBillOfEntryDate?;
-    # OData EnumType 'ImportOrExportTypeEnum'. Serialised by the Service Layer as the member name.
-    ImportOrExportTypeEnum ImportOrExportType?;
-    string PortCode?;
-    int:Signed32 DocEntry?;
-    decimal BoEValue?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum ClaimRefund?;
-    int:Signed32 DifferentialOfTaxRate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsIGSTAccount?;
-    string TaxId14?;
+    @jsondata:Name {value: "BuildingS"}
+    string buildingS?;
+    @jsondata:Name {value: "TaxId3"}
+    string taxId3?;
+    @jsondata:Name {value: "TaxId2"}
+    string taxId2?;
+    @jsondata:Name {value: "TaxId5"}
+    string taxId5?;
+    @jsondata:Name {value: "TaxId4"}
+    string taxId4?;
+    @jsondata:Name {value: "PackQuantity"}
+    int:Signed32 packQuantity?;
+    @jsondata:Name {value: "TaxId1"}
+    string taxId1?;
+    @jsondata:Name {value: "TaxId0"}
+    string taxId0?;
+    @jsondata:Name {value: "Vehicle"}
+    string vehicle?;
+    @jsondata:Name {value: "PortCode"}
+    string portCode?;
+    @jsondata:Name {value: "TaxId7"}
+    string taxId7?;
+    @jsondata:Name {value: "BuildingB"}
+    string buildingB?;
+    @jsondata:Name {value: "TaxId6"}
+    string taxId6?;
+    @jsondata:Name {value: "TaxId9"}
+    string taxId9?;
+    @jsondata:Name {value: "TaxId8"}
+    string taxId8?;
+    @jsondata:Name {value: "Carrier"}
+    string carrier?;
+    @jsondata:Name {value: "ShipUnitNo"}
+    int:Signed32 shipUnitNo?;
+    @jsondata:Name {value: "StreetS"}
+    string streetS?;
+    @jsondata:Name {value: "DifferentialOfTaxRate"}
+    int:Signed32 differentialOfTaxRate?;
+    @jsondata:Name {value: "ZipCodeS"}
+    string zipCodeS?;
+    @jsondata:Name {value: "CountryB"}
+    string countryB?;
+    @jsondata:Name {value: "GrossWeight"}
+    decimal grossWeight?;
+    @jsondata:Name {value: "GlobalLocationNumberB"}
+    string globalLocationNumberB?;
+    @jsondata:Name {value: "PackDescription"}
+    string packDescription?;
+    @jsondata:Name {value: "MainUsage"}
+    int:Signed32 mainUsage?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "Brand"}
+    string brand?;
+    @jsondata:Name {value: "StateS"}
+    string stateS?;
+    @jsondata:Name {value: "CountryS"}
+    string countryS?;
+    @jsondata:Name {value: "BlockB"}
+    string blockB?;
+    @jsondata:Name {value: "State"}
+    string state?;
+    @jsondata:Name {value: "GlobalLocationNumberS"}
+    string globalLocationNumberS?;
+    @jsondata:Name {value: "ImportOrExportType"}
+    ImportOrExportTypeEnum importOrExportType?;
+    @jsondata:Name {value: "VehicleState"}
+    string vehicleState?;
+    @jsondata:Name {value: "BlockS"}
+    string blockS?;
+    @jsondata:Name {value: "StateB"}
+    string stateB?;
+    @jsondata:Name {value: "CityS"}
+    string cityS?;
+    @jsondata:Name {value: "County"}
+    string county?;
+    @jsondata:Name {value: "BoEValue"}
+    decimal boEValue?;
+    @jsondata:Name {value: "NFRef"}
+    string nFRef?;
+    @jsondata:Name {value: "CountyB"}
+    string countyB?;
+    @jsondata:Name {value: "BillOfEntryNo"}
+    string billOfEntryNo?;
+    @jsondata:Name {value: "CountyS"}
+    string countyS?;
+    @jsondata:Name {value: "TaxId14"}
+    string taxId14?;
+    @jsondata:Name {value: "TaxId13"}
+    string taxId13?;
+    @jsondata:Name {value: "ClaimRefund"}
+    BoYesNoEnum claimRefund?;
+    @jsondata:Name {value: "TaxId12"}
+    string taxId12?;
+    @jsondata:Name {value: "NetWeight"}
+    decimal netWeight?;
+    @jsondata:Name {value: "OriginalBillOfEntryDate"}
+    string originalBillOfEntryDate?;
+    @jsondata:Name {value: "BillOfEntryDate"}
+    string billOfEntryDate?;
+    @jsondata:Name {value: "ZipCodeB"}
+    string zipCodeB?;
+    @jsondata:Name {value: "ImportOrExport"}
+    BoYesNoEnum importOrExport?;
+    @jsondata:Name {value: "OriginalBillOfEntryNo"}
+    string originalBillOfEntryNo?;
+    @jsondata:Name {value: "StreetB"}
+    string streetB?;
+    @jsondata:Name {value: "CityB"}
+    string cityB?;
+    @jsondata:Name {value: "IsIGSTAccount"}
+    BoYesNoEnum isIGSTAccount?;
+    @jsondata:Name {value: "Incoterms"}
+    string incoterms?;
 |};
-
-# Represents the Headers record for the operation: draftsList
-public type DraftsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
 
 public type CommissionGroup record {
     int:Signed32 CommissionGroupCode?;
@@ -1591,32 +1872,20 @@ public type CommissionGroup record {
     SalesPerson[] SalesPersons?;
 };
 
-# OData EnumType 'BlanketAgreementTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BlanketAgreementTypeEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementTypeEnum "atGeneral"|"atSpecific";
 
-# Represents the Queries record for the operation: invoicesGet
-public type InvoicesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type InvoicesService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'BADocumentStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BADocumentStatus'. Serialised by the Service Layer as the member name
 public type BADocumentStatus "bads_Open"|"bads_Closed"|"bads_Cancelled";
 
-public type Returns_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type ReturnsService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DocumentAdditionalExpense record {
@@ -1628,9 +1897,9 @@ public type DocumentAdditionalExpense record {
     decimal PaidToDateFC?;
     decimal PaidToDateSys?;
     string Remarks?;
-    # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name
     BoAdEpnsDistribMethods DistributionMethod?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxLiable?;
     string VatGroup?;
     decimal TaxPercent?;
@@ -1640,10 +1909,10 @@ public type DocumentAdditionalExpense record {
     decimal DeductibleTaxSum?;
     decimal DeductibleTaxSumFC?;
     decimal DeductibleTaxSumSys?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AquisitionTax?;
     string TaxCode?;
-    # OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name
     BoAdEpnsTaxTypes TaxType?;
     decimal TaxPaid?;
     decimal TaxPaidFC?;
@@ -1660,15 +1929,15 @@ public type DocumentAdditionalExpense record {
     int:Signed32 BaseDocType?;
     int:Signed32 BaseDocumentReference?;
     int:Signed32 LineNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum LastPurchasePrice?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus Status?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Stock?;
     int:Signed32 TargetAbsEntry?;
     int:Signed32 TargetType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WTLiable?;
     string DistributionRule?;
     string Project?;
@@ -1683,153 +1952,179 @@ public type DocumentAdditionalExpense record {
     decimal ExternalCalcTaxAmount?;
     decimal ExternalCalcTaxAmountFC?;
     decimal ExternalCalcTaxAmountSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CUSplit?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DocFreight?;
     DocExpenseTaxJurisdiction[] DocExpenseTaxJurisdictions?;
     DocFreightEBooksDetail[] DocFreightEBooksDetails?;
 };
 
-# OData EnumType 'BaseDateSelectEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BaseDateSelectEnum'. Serialised by the Service Layer as the member name
 public type BaseDateSelectEnum "bdsFromDueDate"|"bdsFromLastDunningRun";
 
+public type SalesTaxInvoicesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesTaxInvoice[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
 public type CorrectionInvoiceService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type ReturnsService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DeliveryNotesService_Cancel2_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DraftsService_ExportEWayBill_body record {
-    Document Document?;
-};
-
-# Represents the Queries record for the operation: commissionGroupsList
-public type CommissionGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type DunningTerms_CollectionResponse record {
-    string odata\.metadata?;
-    DunningTerm[] value?;
-    string odata\.nextLink?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type InvoicesService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
-# Represents the Queries record for the operation: correctionInvoiceReversalGet
-public type CorrectionInvoiceReversalGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name
 public type BoAdEpnsTaxTypes "aext_NormalTax"|"aext_NoTax"|"aext_UseTax";
 
-# OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 
-public type DeliveryNotes_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type OrdersService_ApproveAndUpdate_body record {
-    Document Document?;
-};
-
-# Represents the Queries record for the operation: salesPersonsGet
-public type SalesPersonsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type POSDailySummary record {|
-    int:Signed32 AbsEntry?;
-    string Date?;
-    string EquipmentNo?;
-    int:Signed32 CounterPosition?;
-    int:Signed32 ResetCounterPosition?;
-    int:Signed32 OperationCounter?;
-    decimal Total?;
-    decimal GrossSales?;
-    decimal PISTotal?;
-    decimal COFINSTotal?;
-    POSTotalizer[] POSTotalizerCollection?;
-    Document[] PurchaseQuotations?;
-    Document[] CorrectionInvoiceReversal?;
-    Document[] CorrectionInvoice?;
-    Document[] PurchaseDeliveryNotes?;
-    Document[] CorrectionPurchaseInvoice?;
-    Document[] InventoryGenEntries?;
-    Document[] Orders?;
-    Document[] InventoryGenExits?;
-    Document[] Drafts?;
-    Document[] ReturnRequest?;
-    Document[] DeliveryNotes?;
-    Document[] PurchaseInvoices?;
-    Document[] SelfInvoices?;
-    Document[] Invoices?;
-    Document[] CreditNotes?;
-    Document[] PurchaseCreditNotes?;
-    Document[] DownPayments?;
-    Document[] PurchaseDownPayments?;
-    Document[] PurchaseReturns?;
-    Document[] PurchaseOrders?;
-    Document[] SelfCreditMemos?;
-    Document[] Quotations?;
-    Document[] Returns?;
-    Document[] GoodsReturnRequest?;
-    Document[] CorrectionPurchaseInvoiceReversal?;
-    Document[] PurchaseRequests?;
+    @jsondata:Name {value: "POSTotalizerCollection"}
+    POSTotalizer[] pOSTotalizerCollection?;
+    @jsondata:Name {value: "CorrectionInvoice"}
+    Document[] correctionInvoice?;
+    @jsondata:Name {value: "Orders"}
+    Document[] orders?;
+    @jsondata:Name {value: "PurchaseRequests"}
+    Document[] purchaseRequests?;
+    @jsondata:Name {value: "InventoryGenExits"}
+    Document[] inventoryGenExits?;
+    @jsondata:Name {value: "PurchaseQuotations"}
+    Document[] purchaseQuotations?;
+    @jsondata:Name {value: "PurchaseDeliveryNotes"}
+    Document[] purchaseDeliveryNotes?;
+    @jsondata:Name {value: "Invoices"}
+    Document[] invoices?;
+    @jsondata:Name {value: "PurchaseDownPayments"}
+    Document[] purchaseDownPayments?;
+    @jsondata:Name {value: "AbsEntry"}
+    int:Signed32 absEntry?;
+    @jsondata:Name {value: "CreditNotes"}
+    Document[] creditNotes?;
+    @jsondata:Name {value: "PurchaseInvoices"}
+    Document[] purchaseInvoices?;
+    @jsondata:Name {value: "PISTotal"}
+    decimal pISTotal?;
+    @jsondata:Name {value: "Returns"}
+    Document[] 'returns?;
+    @jsondata:Name {value: "ResetCounterPosition"}
+    int:Signed32 resetCounterPosition?;
+    @jsondata:Name {value: "CorrectionPurchaseInvoice"}
+    Document[] correctionPurchaseInvoice?;
+    @jsondata:Name {value: "Quotations"}
+    Document[] quotations?;
+    @jsondata:Name {value: "PurchaseCreditNotes"}
+    Document[] purchaseCreditNotes?;
+    @jsondata:Name {value: "GoodsReturnRequest"}
+    Document[] goodsReturnRequest?;
+    @jsondata:Name {value: "OperationCounter"}
+    int:Signed32 operationCounter?;
+    @jsondata:Name {value: "ReturnRequest"}
+    Document[] returnRequest?;
+    @jsondata:Name {value: "InventoryGenEntries"}
+    Document[] inventoryGenEntries?;
+    @jsondata:Name {value: "PurchaseReturns"}
+    Document[] purchaseReturns?;
+    @jsondata:Name {value: "EquipmentNo"}
+    string equipmentNo?;
+    @jsondata:Name {value: "PurchaseOrders"}
+    Document[] purchaseOrders?;
+    @jsondata:Name {value: "DownPayments"}
+    Document[] downPayments?;
+    @jsondata:Name {value: "CorrectionInvoiceReversal"}
+    Document[] correctionInvoiceReversal?;
+    @jsondata:Name {value: "CounterPosition"}
+    int:Signed32 counterPosition?;
+    @jsondata:Name {value: "GrossSales"}
+    decimal grossSales?;
+    @jsondata:Name {value: "DeliveryNotes"}
+    Document[] deliveryNotes?;
+    @jsondata:Name {value: "SelfInvoices"}
+    Document[] selfInvoices?;
+    @jsondata:Name {value: "Date"}
+    string date?;
+    @jsondata:Name {value: "Drafts"}
+    Document[] drafts?;
+    @jsondata:Name {value: "SelfCreditMemos"}
+    Document[] selfCreditMemos?;
+    @jsondata:Name {value: "Total"}
+    decimal total?;
+    @jsondata:Name {value: "CorrectionPurchaseInvoiceReversal"}
+    Document[] correctionPurchaseInvoiceReversal?;
+    @jsondata:Name {value: "COFINSTotal"}
+    decimal cOFINSTotal?;
 |};
 
-# Represents the Headers record for the operation: ordersList
-public type OrdersListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listCreditNotes
+public type ListCreditNotesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CorrectionInvoiceReversalService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type InvoicesService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type SalesTaxInvoice record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
-    # OData EnumType 'BoTaxInvoiceTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoTaxInvoiceTypes'. Serialised by the Service Layer as the member name
     BoTaxInvoiceTypes DocType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Printed?;
     string DocDate?;
     string CardCode?;
@@ -1844,7 +2139,7 @@ public type SalesTaxInvoice record {
     string ShipToCode?;
     string Address?;
     string Address2?;
-    # OData EnumType 'BoCurrencySources'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoCurrencySources'. Serialised by the Service Layer as the member name
     BoCurrencySources CurrencySource?;
     string DocCurrency?;
     string CustomerOrVendorRefNo?;
@@ -1861,34 +2156,81 @@ public type SalesTaxInvoice record {
     SalesTaxInvoiceLinkedDownPayment[] SalesTaxInvoiceLinkedDownPayments?;
 };
 
-# OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoFatherCardTypes'. Serialised by the Service Layer as the member name
 public type BoFatherCardTypes "cPayments_sum"|"cDelivery_sum";
 
+# Represents the Queries record for the operation: listReturnRequest
+public type ListReturnRequestQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type DocumentSpecialLine record {|
-    int:Signed32 LineNum?;
-    int:Signed32 AfterLineNumber?;
-    int:Signed32 OrderNumber?;
-    # OData EnumType 'BoDocSpecialLineType'. Serialised by the Service Layer as the member name.
-    BoDocSpecialLineType LineType?;
-    decimal Subtotal?;
-    string LineText?;
-    decimal SubtotalFC?;
-    decimal SubtotalSC?;
-    decimal TaxAmount?;
-    decimal TaxAmountFC?;
-    decimal TaxAmountSC?;
-    decimal Freight1?;
-    decimal Freight1FC?;
-    decimal Freight1SC?;
-    decimal Freight2?;
-    decimal Freight2FC?;
-    decimal Freight2SC?;
-    decimal Freight3?;
-    decimal Freight3FC?;
-    decimal Freight3SC?;
-    decimal GrossTotal?;
-    decimal GrossTotalFC?;
-    decimal GrossTotalSC?;
+    @jsondata:Name {value: "SubtotalSC"}
+    decimal subtotalSC?;
+    @jsondata:Name {value: "GrossTotalFC"}
+    decimal grossTotalFC?;
+    @jsondata:Name {value: "Freight1"}
+    decimal freight1?;
+    @jsondata:Name {value: "Freight2"}
+    decimal freight2?;
+    @jsondata:Name {value: "Freight3SC"}
+    decimal freight3SC?;
+    @jsondata:Name {value: "TaxAmountSC"}
+    decimal taxAmountSC?;
+    @jsondata:Name {value: "Subtotal"}
+    decimal subtotal?;
+    @jsondata:Name {value: "Freight3FC"}
+    decimal freight3FC?;
+    @jsondata:Name {value: "Freight2FC"}
+    decimal freight2FC?;
+    @jsondata:Name {value: "OrderNumber"}
+    int:Signed32 orderNumber?;
+    @jsondata:Name {value: "AfterLineNumber"}
+    int:Signed32 afterLineNumber?;
+    @jsondata:Name {value: "Freight1FC"}
+    decimal freight1FC?;
+    @jsondata:Name {value: "GrossTotalSC"}
+    decimal grossTotalSC?;
+    @jsondata:Name {value: "LineNum"}
+    int:Signed32 lineNum?;
+    @jsondata:Name {value: "LineText"}
+    string lineText?;
+    @jsondata:Name {value: "TaxAmount"}
+    decimal taxAmount?;
+    @jsondata:Name {value: "TaxAmountFC"}
+    decimal taxAmountFC?;
+    @jsondata:Name {value: "SubtotalFC"}
+    decimal subtotalFC?;
+    @jsondata:Name {value: "GrossTotal"}
+    decimal grossTotal?;
+    @jsondata:Name {value: "Freight2SC"}
+    decimal freight2SC?;
+    @jsondata:Name {value: "Freight3"}
+    decimal freight3?;
+    @jsondata:Name {value: "Freight1SC"}
+    decimal freight1SC?;
+    @jsondata:Name {value: "LineType"}
+    BoDocSpecialLineType lineType?;
 |};
 
 public type CCDNumber record {
@@ -1904,59 +2246,81 @@ public type CCDNumber record {
 };
 
 public type DownPaymentToDrawDetails record {|
-    int:Signed32 DocInternalID?;
-    int:Signed32 RowNum?;
-    int:Signed32 SeqNum?;
-    int:Signed32 DocEntry?;
-    string VatGroupCode?;
-    decimal VatPercent?;
-    decimal AmountToDraw?;
-    decimal AmountToDrawFC?;
-    decimal AmountToDrawSC?;
-    decimal Tax?;
-    decimal TaxFC?;
-    decimal TaxSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsGrossLine?;
-    decimal GrossAmountToDraw?;
-    decimal GrossAmountToDrawFC?;
-    decimal GrossAmountToDrawSC?;
-    # OData EnumType 'LineTypeEnum'. Serialised by the Service Layer as the member name.
-    LineTypeEnum LineType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum TaxAdjust?;
+    @jsondata:Name {value: "SeqNum"}
+    int:Signed32 seqNum?;
+    @jsondata:Name {value: "VatGroupCode"}
+    string vatGroupCode?;
+    @jsondata:Name {value: "TaxFC"}
+    decimal taxFC?;
+    @jsondata:Name {value: "GrossAmountToDraw"}
+    decimal grossAmountToDraw?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "GrossAmountToDrawSC"}
+    decimal grossAmountToDrawSC?;
+    @jsondata:Name {value: "Tax"}
+    decimal tax?;
+    @jsondata:Name {value: "TaxAdjust"}
+    BoYesNoEnum taxAdjust?;
+    @jsondata:Name {value: "RowNum"}
+    int:Signed32 rowNum?;
+    @jsondata:Name {value: "AmountToDrawSC"}
+    decimal amountToDrawSC?;
+    @jsondata:Name {value: "DocInternalID"}
+    int:Signed32 docInternalID?;
+    @jsondata:Name {value: "IsGrossLine"}
+    BoYesNoEnum isGrossLine?;
+    @jsondata:Name {value: "AmountToDraw"}
+    decimal amountToDraw?;
+    @jsondata:Name {value: "TaxSC"}
+    decimal taxSC?;
+    @jsondata:Name {value: "GrossAmountToDrawFC"}
+    decimal grossAmountToDrawFC?;
+    @jsondata:Name {value: "LineType"}
+    LineTypeEnum lineType?;
+    @jsondata:Name {value: "VatPercent"}
+    decimal vatPercent?;
+    @jsondata:Name {value: "AmountToDrawFC"}
+    decimal amountToDrawFC?;
 |};
 
-public type DownPaymentsService_GetApprovalTemplates_body record {
-    Document Document?;
+# Represents the Headers record for the operation: listDunningLetters
+public type ListDunningLettersHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'BlanketAgreementBPTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getReturnRequest
+public type GetReturnRequestQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type DownPaymentsService_GetApprovalTemplates_body record {
+    @jsondata:Name {value: "Document"}
+    Document document?;
+};
+
+# OData EnumType 'BlanketAgreementBPTypeEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementBPTypeEnum "atCustomer"|"atVendor";
 
-# OData EnumType 'BoInterimDocTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoInterimDocTypes'. Serialised by the Service Layer as the member name
 public type BoInterimDocTypes "boidt_None"|"boidt_ExchangeRate"|"boidt_CashDiscount";
 
-# OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name.
-public type DownPaymentTypeEnum "dptRequest"|"dptInvoice";
-
-# Represents the Queries record for the operation: quotationsList
-public type QuotationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listDrafts
+public type ListDraftsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
+
+# OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name
+public type DownPaymentTypeEnum "dptRequest"|"dptInvoice";
 
 public type WithholdingTaxLine record {
     string WTCode?;
@@ -1981,7 +2345,7 @@ public type WithholdingTaxLine record {
     int:Signed32 BaseDocLine?;
     int:Signed32 BaseDocType?;
     int:Signed32 BaseDocumentReference?;
-    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
     BoStatus Status?;
     int:Signed32 TargetAbsEntry?;
     int:Signed32 TargetDocumentType?;
@@ -1990,22 +2354,11 @@ public type WithholdingTaxLine record {
     int:Signed32 Doc1LineNum?;
 };
 
-# Represents the Queries record for the operation: correctionInvoiceList
-public type CorrectionInvoiceListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listDeliveryNotes
+public type ListDeliveryNotesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type SalesPerson record {
@@ -2014,10 +2367,10 @@ public type SalesPerson record {
     string Remarks?;
     decimal CommissionForSalesEmployee?;
     int:Signed32 CommissionGroup?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Locked?;
     int:Signed32 EmployeeID?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Active?;
     string Telephone?;
     string Mobile?;
@@ -2052,46 +2405,51 @@ public type SalesPerson record {
     Document[] PurchaseRequests?;
 };
 
-public type SalesPersons_CollectionResponse record {
-    string odata\.metadata?;
-    SalesPerson[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listCommissionGroups
+public type ListCommissionGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type CorrectionInvoice_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'BoDocWhsUpdateTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocWhsUpdateTypes'. Serialised by the Service Layer as the member name
 public type BoDocWhsUpdateTypes "dwh_No"|"dwh_OrdersFromVendors"|"dwh_CustomerOrders"|"dwh_Consignment"|"dwh_Stock";
 
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-# OData EnumType 'EWBSupplyTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EWBSupplyTypeEnum'. Serialised by the Service Layer as the member name
 public type EWBSupplyTypeEnum "ewb_st_Inward"|"ewb_st_Outward";
 
-# Represents the Queries record for the operation: pOSDailySummaryList
-public type POSDailySummaryListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getPOSDailySummary
+public type GetPOSDailySummaryQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'LineTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'LineTypeEnum'. Serialised by the Service Layer as the member name
 public type LineTypeEnum "ltDocument"|"ltRounding"|"ltVat";
 
 public type DocumentPackageItem record {
@@ -2104,10 +2462,11 @@ public type DocumentPackageItem record {
 };
 
 public type CorrectionInvoiceReversalService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'BlanketAgreementDocTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BlanketAgreementDocTypeEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementDocTypeEnum "ARInvoice"|"ARCreditMemo"|"Delivery"|"Return"|"SalesOrder"|"APInvoice"|"APCreditMemo"|"GoodsReceiptPO"|"GoodsReturn"|"PurchaseOrder"|"SalesQuotation"|"APCorrectionInvoice"|"APCorrectionInvoiceReversal"|"ARCorrectionInvoice"|"ARCorrectionInvoiceReversal"|"ARDownPayment"|"APDownPayment"|"PurchaseQuotation";
 
 public type DocumentLineAdditionalExpense record {
@@ -2120,7 +2479,7 @@ public type DocumentLineAdditionalExpense record {
     decimal PaidToDate?;
     decimal PaidToDateFC?;
     decimal PaidToDateSys?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxLiable?;
     string VatGroup?;
     decimal TaxPercent?;
@@ -2130,10 +2489,10 @@ public type DocumentLineAdditionalExpense record {
     decimal DeductibleTaxSum?;
     decimal DeductibleTaxSumFC?;
     decimal DeductibleTaxSumSys?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AquisitionTax?;
     string TaxCode?;
-    # OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAdEpnsTaxTypes'. Serialised by the Service Layer as the member name
     BoAdEpnsTaxTypes TaxType?;
     decimal TaxPaid?;
     decimal TaxPaidFC?;
@@ -2145,7 +2504,7 @@ public type DocumentLineAdditionalExpense record {
     decimal TaxTotalSum?;
     decimal TaxTotalSumFC?;
     decimal TaxTotalSumSys?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum WTLiable?;
     int:Signed32 BaseGroup?;
     string DistributionRule?;
@@ -2158,16 +2517,17 @@ public type DocumentLineAdditionalExpense record {
     decimal ExternalCalcTaxAmount?;
     decimal ExternalCalcTaxAmountFC?;
     decimal ExternalCalcTaxAmountSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CUSplit?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DocFreight?;
     LineExpenseTaxJurisdiction[] LineExpenseTaxJurisdictions?;
     LineFreightEBooksDetail[] LineFreightEBooksDetails?;
 };
 
 public type ReturnsService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
 public type SalesTaxInvoiceLine record {
@@ -2176,14 +2536,26 @@ public type SalesTaxInvoiceLine record {
 };
 
 public type InvoicesService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
+};
+
+# Represents the Queries record for the operation: getDownPayments
+public type GetDownPaymentsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DraftsService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'ImportOrExportTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ImportOrExportTypeEnum'. Serialised by the Service Layer as the member name
 public type ImportOrExportTypeEnum "et_IpmortsOrExports"|"et_SEZ_Developer"|"et_SEZ_Unit"|"et_Deemed_ImportsOrExports";
 
 public type WithholdingTaxDataWTX record {
@@ -2221,179 +2593,233 @@ public type WithholdingTaxDataWTX record {
     decimal AccumWTaxAmount?;
 };
 
-public type BlanketAgreements_ItemsLine record {
-    int:Signed32 AgreementNo?;
-    int:Signed32 AgreementRowNumber?;
-    string ItemNo?;
-    string ItemDescription?;
-    int:Signed32 ItemGroup?;
-    decimal PlannedQuantity?;
-    decimal UnitPrice?;
-    string PriceCurrency?;
-    decimal CumulativeQuantity?;
-    decimal CumulativeAmountLC?;
-    decimal CumulativeAmountFC?;
-    string FreeText?;
-    string InventoryUoM?;
-    decimal PortionOfReturns?;
-    string EndOfWarranty?;
-    decimal PlannedAmountLC?;
-    decimal PlannedAmountFC?;
-    decimal LineDiscount?;
-    int:Signed32 UoMEntry?;
-    string UoMCode?;
-    decimal UnitsOfMeasurement?;
-    decimal UndeliveredCumulativeQuantity?;
-    decimal UndeliveredCumulativeAmountLC?;
-    decimal UndeliveredCumulativeAmountFC?;
-    int:Signed32 ShippingType?;
-    string Project?;
-    string TaxCode?;
-    decimal TAXRate?;
-    decimal PlannedVATAmountLC?;
-    decimal PlannedVATAmountFC?;
-    decimal CumulativeVATAmountLC?;
-    decimal CumulativeVATAmountFC?;
-    BlanketAgreements_DetailsLine[] BlanketAgreements_DetailsLines?;
+public type QuotationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Document[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type DunningLettersCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DunningLetter[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Headers record for the operation: listInvoices
+public type ListInvoicesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listCommissionGroups
+public type ListCommissionGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: getCreditNotes
+public type GetCreditNotesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DeliveryNotesService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Queries record for the operation: salesTaxInvoicesList
-public type SalesTaxInvoicesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listSalesPersons
+public type ListSalesPersonsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type BlanketAgreementsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    BlanketAgreement[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 
-# Represents the Queries record for the operation: dunningLettersList
-public type DunningLettersListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getCommissionGroups
+public type GetCommissionGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BlanketAgreementDatePeriodsEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BlanketAgreementDatePeriodsEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementDatePeriodsEnum "Daily"|"Weekly"|"Monthly"|"Quarterly"|"Semiannually"|"Annually"|"OneTime";
 
-# OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name
 public type EDocGenerationTypeEnum "edocGenerate"|"edocGenerateLater"|"edocNotRelevant"|"edocGenerateOffline";
 
-public type CorrectionInvoiceReversal_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type InvoicesService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listDeliveryNotes
+public type ListDeliveryNotesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name
 public type FolioLetterEnum "fLetterA"|"fLetterB"|"fLetterC"|"fLetterE"|"fLetterM"|"fLetterR"|"fLetterT"|"fLetterX"|"fLetterEMPTY";
 
 public type DocLinePickList record {|
-    int:Signed32 PickListEntry?;
-    int:Signed32 PickListLineNum?;
-    int:Signed32 PickListBatchAndBinLineNum?;
+    @jsondata:Name {value: "PickListLineNum"}
+    int:Signed32 pickListLineNum?;
+    @jsondata:Name {value: "PickListBatchAndBinLineNum"}
+    int:Signed32 pickListBatchAndBinLineNum?;
+    @jsondata:Name {value: "PickListEntry"}
+    int:Signed32 pickListEntry?;
 |};
 
-# Represents the Headers record for the operation: downPaymentsList
-public type DownPaymentsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: dunningTermsGet
-public type DunningTermsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name
 public type DocumentDeliveryTypeEnum "ddtNoneSeleted"|"ddtCreateOnlineDocument"|"ddtPostToAribaNetwork";
 
 public type EWayBillDetails record {|
-    int:Signed32 DocEntry?;
-    # OData EnumType 'EWBSupplyTypeEnum'. Serialised by the Service Layer as the member name.
-    EWBSupplyTypeEnum SupplyType?;
-    int:Signed32 SubType?;
-    string DocumentType?;
-    int:Signed32 TransportationMode?;
-    decimal Distance?;
-    string TransporterDocNo?;
-    string TransporterDocDate?;
-    string VehicleType?;
-    string VehicleNo?;
-    string EWayBillNo?;
-    string EWayBillDate?;
-    string BillFromName?;
-    string BillFromGSTIN?;
-    string BillFromStateGSTCode?;
-    string DispatchFromAddress1?;
-    string DispatchFromAddress2?;
-    string DispatchFromZipCode?;
-    string DispatchFromStateGSTCode?;
-    string BillToName?;
-    string BillToGSTIN?;
-    string BillToStateGSTCode?;
-    string ShipToAddress1?;
-    string ShipToAddress2?;
-    string ShipToZipCode?;
-    string ShipToStateGSTCode?;
-    int:Signed32 MainHSNEntry?;
-    string DispatchFromPlace?;
-    string ShipToPlace?;
-    string TransporterID?;
-    string TransporterName?;
-    string EWayBillExpirationDate?;
-    int:Signed32 TransporterEntry?;
-    int:Signed32 TransporterLineNumber?;
-    # OData EnumType 'EWBTransactionTypeEnum'. Serialised by the Service Layer as the member name.
-    EWBTransactionTypeEnum TransactionType?;
+    @jsondata:Name {value: "BillFromName"}
+    string billFromName?;
+    @jsondata:Name {value: "ShipToStateGSTCode"}
+    string shipToStateGSTCode?;
+    @jsondata:Name {value: "TransactionType"}
+    EWBTransactionTypeEnum transactionType?;
+    @jsondata:Name {value: "VehicleNo"}
+    string vehicleNo?;
+    @jsondata:Name {value: "EWayBillExpirationDate"}
+    string eWayBillExpirationDate?;
+    @jsondata:Name {value: "DispatchFromAddress1"}
+    string dispatchFromAddress1?;
+    @jsondata:Name {value: "TransporterName"}
+    string transporterName?;
+    @jsondata:Name {value: "BillFromGSTIN"}
+    string billFromGSTIN?;
+    @jsondata:Name {value: "DispatchFromAddress2"}
+    string dispatchFromAddress2?;
+    @jsondata:Name {value: "DispatchFromZipCode"}
+    string dispatchFromZipCode?;
+    @jsondata:Name {value: "TransporterID"}
+    string transporterID?;
+    @jsondata:Name {value: "BillToName"}
+    string billToName?;
+    @jsondata:Name {value: "SupplyType"}
+    EWBSupplyTypeEnum supplyType?;
+    @jsondata:Name {value: "MainHSNEntry"}
+    int:Signed32 mainHSNEntry?;
+    @jsondata:Name {value: "ShipToAddress2"}
+    string shipToAddress2?;
+    @jsondata:Name {value: "ShipToAddress1"}
+    string shipToAddress1?;
+    @jsondata:Name {value: "Distance"}
+    decimal distance?;
+    @jsondata:Name {value: "DispatchFromPlace"}
+    string dispatchFromPlace?;
+    @jsondata:Name {value: "SubType"}
+    int:Signed32 subType?;
+    @jsondata:Name {value: "ShipToZipCode"}
+    string shipToZipCode?;
+    @jsondata:Name {value: "TransportationMode"}
+    int:Signed32 transportationMode?;
+    @jsondata:Name {value: "TransporterDocDate"}
+    string transporterDocDate?;
+    @jsondata:Name {value: "VehicleType"}
+    string vehicleType?;
+    @jsondata:Name {value: "TransporterEntry"}
+    int:Signed32 transporterEntry?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "DocumentType"}
+    string documentType?;
+    @jsondata:Name {value: "BillFromStateGSTCode"}
+    string billFromStateGSTCode?;
+    @jsondata:Name {value: "DispatchFromStateGSTCode"}
+    string dispatchFromStateGSTCode?;
+    @jsondata:Name {value: "TransporterDocNo"}
+    string transporterDocNo?;
+    @jsondata:Name {value: "ShipToPlace"}
+    string shipToPlace?;
+    @jsondata:Name {value: "BillToGSTIN"}
+    string billToGSTIN?;
+    @jsondata:Name {value: "TransporterLineNumber"}
+    int:Signed32 transporterLineNumber?;
+    @jsondata:Name {value: "EWayBillNo"}
+    string eWayBillNo?;
+    @jsondata:Name {value: "BillToStateGSTCode"}
+    string billToStateGSTCode?;
+    @jsondata:Name {value: "EWayBillDate"}
+    string eWayBillDate?;
 |};
 
 public type ElectronicProtocol record {
-    # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
-    # OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ElectronicDocGenTypeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocGenTypeEnum GenerationType?;
     int:Signed32 MappingID?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TestingMode?;
     string Confirmation?;
     int:Signed32 EDocType?;
     string CFDiCancellationReason?;
     string CFDiCancellationResponse?;
     RelatedDocument[] RelatedDocuments?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EBooksRelevant?;
     string EBooksMARK?;
     string EBooksMARKofNegative?;
@@ -2427,166 +2853,137 @@ public type ElectronicProtocol record {
     string EBooksDispatchTime?;
 };
 
-# Represents the Queries record for the operation: creditNotesList
-public type CreditNotesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: pOSDailySummaryList
-public type POSDailySummaryListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type CreditNotesService_RequestApproveCancellation_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Queries record for the operation: correctionInvoiceReversalList
-public type CorrectionInvoiceReversalListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type SalesPersonsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesPerson[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type InvoicesService_Cancel2_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Queries record for the operation: returnRequestList
-public type ReturnRequestListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listReturnRequest
+public type ListReturnRequestHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'CommissionTradeTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listDrafts
+public type ListDraftsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'CommissionTradeTypeEnum'. Serialised by the Service Layer as the member name
 public type CommissionTradeTypeEnum "ct_Empty"|"ct_SalesAgent"|"ct_PurchaseAgent"|"ct_Consignor";
 
-# Represents the Queries record for the operation: returnsGet
-public type ReturnsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Headers record for the operation: listCreditNotes
+public type ListCreditNotesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: ordersList
-public type OrdersListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getOrders
+public type GetOrdersQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoTaxOnInstallmentsTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getBlanketAgreements
+public type GetBlanketAgreementsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoTaxOnInstallmentsTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTaxOnInstallmentsTypeEnum "toiProportionally"|"toiTaxInFirst"|"toiTaxInFirstOnly";
 
 public type CorrectionInvoiceService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DeliveryNotesService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'GroupingMethodEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'GroupingMethodEnum'. Serialised by the Service Layer as the member name
 public type GroupingMethodEnum "gmPerInvoice"|"gmPerDunningLevel"|"gmPerBP";
 
+# Represents the Headers record for the operation: listPOSDailySummary
+public type ListPOSDailySummaryHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type ReturnRequestService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
+};
+
+# Represents the Headers record for the operation: listDownPayments
+public type ListDownPaymentsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type DownPaymentsService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Queries record for the operation: draftsGet
-public type DraftsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type BlanketAgreements_CollectionResponse record {
-    string odata\.metadata?;
-    BlanketAgreement[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Headers record for the operation: quotationsList
-public type QuotationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-public type CommissionGroups_CollectionResponse record {
-    string odata\.metadata?;
-    CommissionGroup[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'BoDocItemType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDocItemType'. Serialised by the Service Layer as the member name
 public type BoDocItemType "dit_Item"|"dit_Resource";
 
-# Represents the Headers record for the operation: returnsList
-public type ReturnsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type QuotationsService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type ReturnsService_Cancel2_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DocExpenseTaxJurisdiction record {
@@ -2605,108 +3002,106 @@ public type DocExpenseTaxJurisdiction record {
     decimal ExternalCalcTaxAmountSC?;
 };
 
-# OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"edpc_CFDI"|"edpc_FPA"|"edpc_MTD"|"edpc_EWB"|"edpc_PEPPOL"|"edpc_HOI"|"edpc_MYF"|"edpc_EIS"|"edpc_IIS"|"edpc_IIS_Annual"|"edpc_DIGIPOORT"|"edpc_EBooks"|"edpc_DOX"|"edpc_RTIE"|"edpc_EBilling"|"edpc_TaxService"|"edpc_AFE"|"edpc_DocSign"|"edpc_KSeF"|"edpc_GSTReturn"|"edpc_PTDocSign"|"edpc_SkatDK"|"edpc_EII"|"edpc_NFe"|"edpc_PTeInvoicing"|"edpc_PTeCom"|"edpc_VeriFactu"|"edpc_BAS"|"edpc_PDFwithXML"|"edpc_FReINV";
 
-# Represents the Headers record for the operation: deliveryNotesList
-public type DeliveryNotesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
 public type CorrectionInvoiceService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Headers record for the operation: blanketAgreementsList
-public type BlanketAgreementsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: creditNotesGet
-public type CreditNotesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listBlanketAgreements
+public type ListBlanketAgreementsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ReturnRequestService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name
 public type ElecCommStatusEnum "ecsApproved"|"ecsPendingApproval"|"ecsRejected";
 
 public type DownPaymentToDraw record {|
-    int:Signed32 DocEntry?;
-    string PostingDate?;
-    string DueDate?;
-    string Name?;
-    string Details?;
-    decimal AmountToDraw?;
-    # OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name.
-    DownPaymentTypeEnum DownPaymentType?;
-    decimal AmountToDrawFC?;
-    decimal AmountToDrawSC?;
-    int:Signed32 DocInternalID?;
-    int:Signed32 RowNum?;
-    int:Signed32 DocNumber?;
-    decimal Tax?;
-    decimal TaxFC?;
-    decimal TaxSC?;
-    decimal GrossAmountToDraw?;
-    decimal GrossAmountToDrawFC?;
-    decimal GrossAmountToDrawSC?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsGrossLine?;
-    DownPaymentToDrawDetails[] DownPaymentsToDrawDetails?;
+    @jsondata:Name {value: "TaxFC"}
+    decimal taxFC?;
+    @jsondata:Name {value: "GrossAmountToDraw"}
+    decimal grossAmountToDraw?;
+    @jsondata:Name {value: "DocEntry"}
+    int:Signed32 docEntry?;
+    @jsondata:Name {value: "GrossAmountToDrawSC"}
+    decimal grossAmountToDrawSC?;
+    @jsondata:Name {value: "Tax"}
+    decimal tax?;
+    @jsondata:Name {value: "AmountToDrawSC"}
+    decimal amountToDrawSC?;
+    @jsondata:Name {value: "RowNum"}
+    int:Signed32 rowNum?;
+    @jsondata:Name {value: "Name"}
+    string name?;
+    @jsondata:Name {value: "DocInternalID"}
+    int:Signed32 docInternalID?;
+    @jsondata:Name {value: "IsGrossLine"}
+    BoYesNoEnum isGrossLine?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "PostingDate"}
+    string postingDate?;
+    @jsondata:Name {value: "AmountToDraw"}
+    decimal amountToDraw?;
+    @jsondata:Name {value: "TaxSC"}
+    decimal taxSC?;
+    @jsondata:Name {value: "DownPaymentType"}
+    DownPaymentTypeEnum downPaymentType?;
+    @jsondata:Name {value: "DocNumber"}
+    int:Signed32 docNumber?;
+    @jsondata:Name {value: "GrossAmountToDrawFC"}
+    decimal grossAmountToDrawFC?;
+    @jsondata:Name {value: "DownPaymentsToDrawDetails"}
+    DownPaymentToDrawDetails[] downPaymentsToDrawDetails?;
+    @jsondata:Name {value: "DueDate"}
+    string dueDate?;
+    @jsondata:Name {value: "AmountToDrawFC"}
+    decimal amountToDrawFC?;
 |};
 
-# Represents the Queries record for the operation: quotationsGet
-public type QuotationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type CreditNotes_CollectionResponse record {
-    string odata\.metadata?;
-    Document[] value?;
-    string odata\.nextLink?;
-};
-
 public type CreditNotesService_Cancel2_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# OData EnumType 'EWBTransactionTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EWBTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type EWBTransactionTypeEnum "ewb_tt_Regular"|"ewb_tt_BillToShipTo"|"ewb_tt_BillFromDispathFrom"|"ewb_tt_CombinationOfBillAndShip";
 
 public type DraftsService_ApproveAndAdd_body record {
-    Document Document?;
-};
-
-# Represents the Queries record for the operation: ordersGet
-public type OrdersGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: blanketAgreementsGet
-public type BlanketAgreementsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type CreditNotesService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type EBooksDetail record {
@@ -2732,66 +3127,73 @@ public type EBooksDetail record {
 };
 
 public type DeliveryNotesService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
-# Represents the Queries record for the operation: draftsList
-public type DraftsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getCorrectionInvoiceReversal
+public type GetCorrectionInvoiceReversalQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name
 public type PriceModeEnum "pmNet"|"pmGross";
 
-# Represents the Queries record for the operation: dunningLettersGet
-public type DunningLettersGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getDunningLetters
+public type GetDunningLettersQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'DunningLetterTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'DunningLetterTypeEnum'. Serialised by the Service Layer as the member name
 public type DunningLetterTypeEnum "dltDunningLetter1"|"dltDunningLetter2"|"dltDunningLetter3"|"dltDunningLetter4"|"dltDunningLetter5"|"dltDunningLetter6"|"dltDunningLetter7"|"dltDunningLetter8"|"dltDunningLetter9"|"dltDunningLetter10"|"dltDunningALL";
 
-# Represents the Queries record for the operation: correctionInvoiceGet
-public type CorrectionInvoiceGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getDunningTerms
+public type GetDunningTermsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoObjectTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoObjectTypes'. Serialised by the Service Layer as the member name
 public type BoObjectTypes "oChartOfAccounts"|"oBusinessPartners"|"oBanks"|"oItems"|"oVatGroups"|"oPriceLists"|"oSpecialPrices"|"oItemProperties"|"oBusinessPartnerGroups"|"oUsers"|"oInvoices"|"oCreditNotes"|"oDeliveryNotes"|"oReturns"|"oOrders"|"oPurchaseInvoices"|"oPurchaseCreditNotes"|"oPurchaseDeliveryNotes"|"oPurchaseReturns"|"oPurchaseOrders"|"oQuotations"|"oIncomingPayments"|"oJournalVouchers"|"oJournalEntries"|"oStockTakings"|"oContacts"|"oCreditCards"|"oCurrencyCodes"|"oPaymentTermsTypes"|"oBankPages"|"oManufacturers"|"oVendorPayments"|"oLandedCostsCodes"|"oShippingTypes"|"oLengthMeasures"|"oWeightMeasures"|"oItemGroups"|"oSalesPersons"|"oCustomsGroups"|"oChecksforPayment"|"oInventoryGenEntry"|"oInventoryGenExit"|"oWarehouses"|"oCommissionGroups"|"oProductTrees"|"oStockTransfer"|"oWorkOrders"|"oCreditPaymentMethods"|"oCreditCardPayments"|"oAlternateCatNum"|"oBudget"|"oBudgetDistribution"|"oMessages"|"oBudgetScenarios"|"oUserDefaultGroups"|"oSalesOpportunities"|"oSalesStages"|"oActivityTypes"|"oActivityLocations"|"oDrafts"|"oDeductionTaxHierarchies"|"oDeductionTaxGroups"|"oAdditionalExpenses"|"oSalesTaxAuthorities"|"oSalesTaxAuthoritiesTypes"|"oSalesTaxCodes"|"oQueryCategories"|"oFactoringIndicators"|"oPaymentsDrafts"|"oAccountSegmentations"|"oAccountSegmentationCategories"|"oWarehouseLocations"|"oForms1099"|"oInventoryCycles"|"oWizardPaymentMethods"|"oBPPriorities"|"oDunningLetters"|"oUserFields"|"oUserTables"|"oPickLists"|"oPaymentRunExport"|"oUserQueries"|"oMaterialRevaluation"|"oCorrectionPurchaseInvoice"|"oCorrectionPurchaseInvoiceReversal"|"oCorrectionInvoice"|"oCorrectionInvoiceReversal"|"oContractTemplates"|"oEmployeesInfo"|"oCustomerEquipmentCards"|"oWithholdingTaxCodes"|"oBillOfExchangeTransactions"|"oKnowledgeBaseSolutions"|"oServiceContracts"|"oServiceCalls"|"oUserKeys"|"oQueue"|"oSalesForecast"|"oTerritories"|"oIndustries"|"oProductionOrders"|"oDownPayments"|"oPurchaseDownPayments"|"oPackagesTypes"|"oUserObjectsMD"|"oTeams"|"oRelationships"|"oUserPermissionTree"|"oActivityStatus"|"oChooseFromList"|"oFormattedSearches"|"oAttachments2"|"oUserLanguages"|"oMultiLanguageTranslations"|"oDynamicSystemStrings"|"oHouseBankAccounts"|"oBusinessPlaces"|"oLocalEra"|"oNotaFiscalCFOP"|"oNotaFiscalCST"|"oNotaFiscalUsage"|"oClosingDateProcedure"|"oBPFiscalRegistryID"|"oSalesTaxInvoice"|"oPurchaseTaxInvoice"|"oPurchaseQuotations"|"oStockTransferDraft"|"oInventoryTransferRequest"|"oPurchaseRequest"|"oReturnRequest"|"oGoodsReturnRequest"|"oSelfInvoice"|"oSelfCreditMemo";
 
-# OData EnumType 'GeneratedAssetStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'GeneratedAssetStatusEnum'. Serialised by the Service Layer as the member name
 public type GeneratedAssetStatusEnum "gasOpen"|"gasClosed";
 
 public type DocumentLinesBinAllocation record {
     int:Signed32 BinAbsEntry?;
     decimal Quantity?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AllowNegativeQuantity?;
     int:Signed32 SerialAndBatchNumbersBaseLine?;
     int:Signed32 BaseLineNumber?;
 };
 
-# OData EnumType 'AutomaticPostingEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'AutomaticPostingEnum'. Serialised by the Service Layer as the member name
 public type AutomaticPostingEnum "apNo"|"apInterestAndFee"|"apInterestOnly"|"apFeeOnly";
+
+# Represents the Queries record for the operation: getQuotations
+public type GetQuotationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
 
 public type BlanketAgreement record {
     int:Signed32 AgreementNo?;
@@ -2802,22 +3204,22 @@ public type BlanketAgreement record {
     string EndDate?;
     string TerminateDate?;
     string Description?;
-    # OData EnumType 'BlanketAgreementTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BlanketAgreementTypeEnum'. Serialised by the Service Layer as the member name
     BlanketAgreementTypeEnum AgreementType?;
-    # OData EnumType 'BlanketAgreementStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BlanketAgreementStatusEnum'. Serialised by the Service Layer as the member name
     BlanketAgreementStatusEnum Status?;
     int:Signed32 Owner?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IgnorePricesInAgreement?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Renewal?;
-    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
     BoRemindUnits RemindUnit?;
     int:Signed32 RemindTime?;
     string Remarks?;
     int:Signed32 AttachmentEntry?;
     decimal SettlementProbability?;
-    # OData EnumType 'BlanketAgreementMethodEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BlanketAgreementMethodEnum'. Serialised by the Service Layer as the member name
     BlanketAgreementMethodEnum AgreementMethod?;
     int:Signed32 PaymentTerms?;
     int:Signed32 PriceList?;
@@ -2825,7 +3227,7 @@ public type BlanketAgreement record {
     int:Signed32 AmendmentTo?;
     int:Signed32 Series?;
     int:Signed32 DocNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum HandWritten?;
     string PeriodIndicator?;
     string PaymentMethod?;
@@ -2833,22 +3235,24 @@ public type BlanketAgreement record {
     int:Signed32 ShippingType?;
     string NumAtCard?;
     string Project?;
-    # OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'PriceModeEnum'. Serialised by the Service Layer as the member name
     PriceModeEnum PriceMode?;
     string BPCurrency?;
-    # OData EnumType 'BlanketAgreementBPTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BlanketAgreementBPTypeEnum'. Serialised by the Service Layer as the member name
     BlanketAgreementBPTypeEnum BPType?;
     string SAPPassport?;
-    BlanketAgreements_ItemsLine[] BlanketAgreements_ItemsLines?;
+    BlanketAgreementsItemsLine[] BlanketAgreements_ItemsLines?;
 };
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     BlanketAgreementParams[] value?;
 };
 
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     DunningTermParams[] value?;
 };
 
@@ -2860,142 +3264,186 @@ public type DocumentPackage record {
     DocumentPackageItem[] DocumentPackageItems?;
 };
 
-public type ReturnRequestService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+# Represents the Headers record for the operation: listSalesPersons
+public type ListSalesPersonsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: pOSDailySummaryGet
-public type POSDailySummaryGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ReturnRequestService_CloseByDate_body record {
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
 public type DownPaymentsService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
-};
-
-public type POSDailySummary_CollectionResponse record {
-    string odata\.metadata?;
-    POSDailySummary[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: blanketAgreementsList
-public type BlanketAgreementsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
 public type ImportProcess record {|
-    int:Signed32 LineNumber?;
-    string ImportationDocumentTypeCode?;
-    string ImportationDocumentNumber?;
-    string DateOfRegistry_DI_DSI_DA?;
-    string CustomsClearanceDate?;
-    string DrawbackRegimeConcessionAccountNumber?;
-    string AdditionalNumber?;
-    decimal AdditionalItemDiscountValue?;
-    string DrawbackSuspensionRegime?;
-    string TypeOfImport?;
-    decimal AdditionalFreightToNavyAuthority?;
-    int:Signed32 AdditionalItemSequentialNumber?;
+    @jsondata:Name {value: "DateOfRegistry_DI_DSI_DA"}
+    string dateOfRegistryDIDSIDA?;
+    @jsondata:Name {value: "ImportationDocumentNumber"}
+    string importationDocumentNumber?;
+    @jsondata:Name {value: "CustomsClearanceDate"}
+    string customsClearanceDate?;
+    @jsondata:Name {value: "AdditionalItemSequentialNumber"}
+    int:Signed32 additionalItemSequentialNumber?;
+    @jsondata:Name {value: "DrawbackSuspensionRegime"}
+    string drawbackSuspensionRegime?;
+    @jsondata:Name {value: "TypeOfImport"}
+    string typeOfImport?;
+    @jsondata:Name {value: "AdditionalFreightToNavyAuthority"}
+    decimal additionalFreightToNavyAuthority?;
+    @jsondata:Name {value: "DrawbackRegimeConcessionAccountNumber"}
+    string drawbackRegimeConcessionAccountNumber?;
+    @jsondata:Name {value: "ImportationDocumentTypeCode"}
+    string importationDocumentTypeCode?;
+    @jsondata:Name {value: "AdditionalNumber"}
+    string additionalNumber?;
+    @jsondata:Name {value: "AdditionalItemDiscountValue"}
+    decimal additionalItemDiscountValue?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
 |};
 
-# OData EnumType 'CalculateInterestMethodEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listBlanketAgreements
+public type ListBlanketAgreementsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'CalculateInterestMethodEnum'. Serialised by the Service Layer as the member name
 public type CalculateInterestMethodEnum "cimOnRemainingAmount"|"cimOnOriginalSum";
 
-# Represents the Queries record for the operation: returnsList
-public type ReturnsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type DunningTermsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DunningTerm[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: listSalesTaxInvoices
+public type ListSalesTaxInvoicesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getCorrectionInvoice
+public type GetCorrectionInvoiceQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CorrectionInvoiceReversalService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
 };
 
-# Represents the Queries record for the operation: downPaymentsGet
-public type DownPaymentsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type BlanketAgreementsItemsLine record {
+    int:Signed32 AgreementNo?;
+    int:Signed32 AgreementRowNumber?;
+    string ItemNo?;
+    string ItemDescription?;
+    int:Signed32 ItemGroup?;
+    decimal PlannedQuantity?;
+    decimal UnitPrice?;
+    string PriceCurrency?;
+    decimal CumulativeQuantity?;
+    decimal CumulativeAmountLC?;
+    decimal CumulativeAmountFC?;
+    string FreeText?;
+    string InventoryUoM?;
+    decimal PortionOfReturns?;
+    string EndOfWarranty?;
+    decimal PlannedAmountLC?;
+    decimal PlannedAmountFC?;
+    decimal LineDiscount?;
+    int:Signed32 UoMEntry?;
+    string UoMCode?;
+    decimal UnitsOfMeasurement?;
+    decimal UndeliveredCumulativeQuantity?;
+    decimal UndeliveredCumulativeAmountLC?;
+    decimal UndeliveredCumulativeAmountFC?;
+    int:Signed32 ShippingType?;
+    string Project?;
+    string TaxCode?;
+    decimal TAXRate?;
+    decimal PlannedVATAmountLC?;
+    decimal PlannedVATAmountFC?;
+    decimal CumulativeVATAmountLC?;
+    decimal CumulativeVATAmountFC?;
+    BlanketAgreementsDetailsLine[] BlanketAgreements_DetailsLines?;
 };
 
-# OData EnumType 'ExchangeRateSelectEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ExchangeRateSelectEnum'. Serialised by the Service Layer as the member name
 public type ExchangeRateSelectEnum "ierFromInovice"|"ierCurrentRate";
 
 public type CreditNotesService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type ReturnRequestService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DraftsService_SaveDraftToDocument_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type DownPaymentsService_ApproveAndAdd_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type InvoicesService_RequestApproveCancellation_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type ReturnsService_ExportEWayBill_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     BlanketAgreementsDocument[] value?;
 };
 
 public type ReturnsService_ApproveAndAdd_body record {
-    Document Document?;
-};
-
-# Represents the Queries record for the operation: returnRequestGet
-public type ReturnRequestGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: returnRequestList
-public type ReturnRequestListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type LineTaxJurisdiction record {
@@ -3013,18 +3461,18 @@ public type LineTaxJurisdiction record {
     decimal ExternalCalcTaxAmountFC?;
     decimal ExternalCalcTaxAmountSC?;
     decimal BaseSum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxInPrice?;
     decimal NonDeductiblePercent?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TaxOnReserveInvoice?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Exempt?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Unencumbered?;
 };
 
-# OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name
 public type BoItemTreeTypes "iNotATree"|"iAssemblyTree"|"iSalesTree"|"iProductionTree"|"iTemplateTree"|"iIngredient";
 
 public type DocFreightEBooksDetail record {
@@ -3046,17 +3494,38 @@ public type DocFreightEBooksDetail record {
 };
 
 public type DunningTermParams record {|
-    string Code?;
-    string Name?;
+    @jsondata:Name {value: "Code"}
+    string code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: correctionInvoiceReversalList
-public type CorrectionInvoiceReversalListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listCorrectionInvoice
+public type ListCorrectionInvoiceQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoTaxInvoiceTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoTaxInvoiceTypes'. Serialised by the Service Layer as the member name
 public type BoTaxInvoiceTypes "botit_AlterationCorrectionInvoice"|"botit_AlterationInvoice"|"botit_CorrectionInvoice"|"botit_Invoice"|"botit_JournalEntry"|"botit_Payment";
 
 public type DocumentInstallment record {
@@ -3067,31 +3536,124 @@ public type DocumentInstallment record {
     int:Signed32 DunningLevel?;
     decimal TotalFC?;
     int:Signed32 InstallmentId?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PaymentOrdered?;
     decimal PaidToDate?;
     decimal PaidToDateFC?;
 };
 
-# OData EnumType 'BoDocumentTypes'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listDownPayments
+public type ListDownPaymentsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getInvoices
+public type GetInvoicesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoDocumentTypes'. Serialised by the Service Layer as the member name
 public type BoDocumentTypes "dDocument_Items"|"dDocument_Service";
 
+# Represents the Queries record for the operation: listQuotations
+public type ListQuotationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type POSTotalizer record {|
-    int:Signed32 LineNum?;
-    string Code?;
-    int:Signed32 Number?;
-    decimal Total?;
-    string Description?;
+    @jsondata:Name {value: "LineNum"}
+    int:Signed32 lineNum?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Number"}
+    int:Signed32 number?;
+    @jsondata:Name {value: "Total"}
+    decimal total?;
+    @jsondata:Name {value: "Code"}
+    string code?;
 |};
 
 public type QuotationsService_GetApprovalTemplates_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };
 
 public type CorrectionInvoiceService_CloseByDate_body record {
-    DocumentCloseParams DocumentCloseParams?;
+    @jsondata:Name {value: "DocumentCloseParams"}
+    DocumentCloseParams documentCloseParams?;
+};
+
+# Represents the Queries record for the operation: listPOSDailySummary
+public type ListPOSDailySummaryQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type DeliveryNotesService_ApproveAndUpdate_body record {
-    Document Document?;
+    @jsondata:Name {value: "Document"}
+    Document document?;
 };

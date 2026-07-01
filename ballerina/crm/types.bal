@@ -17,17 +17,32 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/data.jsondata;
 import ballerina/http;
 
-public type TargetGroups_CollectionResponse record {
-    string odata\.metadata?;
-    TargetGroup[] value?;
-    string odata\.nextLink?;
+public type CampaignResponseTypeCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    CampaignResponseType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: getActivityStatuses
+public type GetActivityStatusesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CampaignParams record {|
-    int:Signed32 CampaignNumber?;
-    string CampaignName?;
+    @jsondata:Name {value: "CampaignNumber"}
+    int:Signed32 campaignNumber?;
+    @jsondata:Name {value: "CampaignName"}
+    string campaignName?;
 |};
 
 public type Activity record {
@@ -37,7 +52,7 @@ public type Activity record {
     string ActivityDate?;
     string ActivityTime?;
     string StartDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Closed?;
     string CloseDate?;
     string Phone?;
@@ -46,80 +61,80 @@ public type Activity record {
     string DocType?;
     string DocNum?;
     string DocEntry?;
-    # OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name
     BoMsgPriorities Priority?;
     string Details?;
-    # OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name
     BoActivities Activity?;
     int:Signed32 ActivityType?;
     int:Signed32 Location?;
     string StartTime?;
     string EndTime?;
     decimal Duration?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations DurationType?;
     int:Signed32 SalesEmployee?;
     int:Signed32 ContactPersonCode?;
     int:Signed32 HandledBy?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Reminder?;
     decimal ReminderPeriod?;
-    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
     BoDurations ReminderType?;
     string City?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PersonalFlag?;
     string Street?;
     int:Signed32 ParentObjectId?;
     string ParentObjectType?;
     string Room?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum InactiveFlag?;
     string State?;
     int:Signed32 PreviousActivity?;
     string Country?;
     int:Signed32 Status?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum TentativeFlag?;
     string EndDueDate?;
     string DocTypeEx?;
     int:Signed32 AttachmentEntry?;
-    # OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name
     RecurrencePatternEnum RecurrencePattern?;
-    # OData EnumType 'EndTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'EndTypeEnum'. Serialised by the Service Layer as the member name
     EndTypeEnum EndType?;
     string SeriesStartDate?;
     string SeriesEndDate?;
     int:Signed32 MaxOccurrence?;
     int:Signed32 Interval?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Sunday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Monday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Tuesday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Wednesday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Thursday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Friday?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Saturday?;
-    # OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name
     RepeatOptionEnum RepeatOption?;
     int:Signed32 BelongedSeriesNum?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsRemoved?;
     string AddressName?;
-    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
     BoAddressType AddressType?;
     int:Signed32 HandledByEmployee?;
-    # OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name
     RecurrenceSequenceEnum RecurrenceSequenceSpecifier?;
     int:Signed32 RecurrenceDayInMonth?;
     int:Signed32 RecurrenceMonth?;
-    # OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name
     RecurrenceDayOfWeekEnum RecurrenceDayOfWeek?;
     int:Signed32 SalesOpportunityId?;
     int:Signed32 SalesOpportunityLine?;
@@ -128,7 +143,7 @@ public type Activity record {
     int:Signed32 DataVersion?;
     int:Signed32 UserSignature?;
     int:Signed32 UserSignature2?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EmailedFlag?;
     CheckInParams[] CheckInListParams?;
     ActivityMultipleRecipient[] ActivityMultipleRecipients?;
@@ -139,110 +154,106 @@ public type Activity record {
     ActivityRecipientList ActivityRecipientList?;
 };
 
-# OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listSalesOpportunityInterestsSetup
+public type ListSalesOpportunityInterestsSetupQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name
 public type CampaignTypeEnum "ctEmail"|"ctMail"|"ctFax"|"ctPhoneCall"|"ctMeeting"|"ctSMS"|"ctWeb"|"ctOthers";
 
 public type ActivitySubjectParams record {|
-    int:Signed32 Code?;
-    string Description?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
 |};
 
-# Represents the Queries record for the operation: activityTypesList
-public type ActivityTypesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
-public type ActivityStatuses_CollectionResponse record {
-    string odata\.metadata?;
-    ActivityStatus[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'TargetGroupsDetailStatusEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TargetGroupsDetailStatusEnum'. Serialised by the Service Layer as the member name
 public type TargetGroupsDetailStatusEnum "tdsActive"|"tdsInactive";
 
-# Represents the Queries record for the operation: activitiesList
-public type ActivitiesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getSalesOpportunitySourcesSetup
+public type GetSalesOpportunitySourcesSetupQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: activityStatusesList
-public type ActivityStatusesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listPartnersSetups
+public type ListPartnersSetupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: partnersSetupsList
-public type PartnersSetupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getSalesOpportunities
+public type GetSalesOpportunitiesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: activityLocationsGet
-public type ActivityLocationsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: getActivityLocations
+public type GetActivityLocationsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name
 public type ActivityRecipientObjTypeEnum "arotUser"|"arotEmployee"|"arotRecipientList";
 
-# OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name
 public type CampaignAssignToEnum "catUser"|"catEmployee";
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -288,16 +299,45 @@ public type ConnectionConfig record {|
 |};
 
 public type SalesOpportunityCompetitorSetupParams record {|
-    int:Signed32 SequenceNo?;
-    string Name?;
-    # OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name.
-    ThreatLevelEnum ThreatLevel?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "ThreatLevel"}
+    ThreatLevelEnum threatLevel?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-public type Activities_CollectionResponse record {
-    string odata\.metadata?;
-    Activity[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listSalesOpportunityCompetitorsSetup
+public type ListSalesOpportunityCompetitorsSetupQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type SalesOpportunityReasonsSetupCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesOpportunityReasonSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type CampaignBusinessPartner record {
@@ -316,7 +356,7 @@ public type CampaignBusinessPartner record {
     string ContactMobile?;
     string ContactFax?;
     string ContactAddress?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Response?;
     int:Signed32 RelatedSalesOpportunity?;
     string Street?;
@@ -327,9 +367,9 @@ public type CampaignBusinessPartner record {
     string State?;
     string Country?;
     string Building?;
-    # OData EnumType 'LinkedDocTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'LinkedDocTypeEnum'. Serialised by the Service Layer as the member name
     LinkedDocTypeEnum DocType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsShowLinkedDoc?;
     int:Signed32 DocNumber?;
     int:Signed32 DocEntry?;
@@ -342,114 +382,82 @@ public type CampaignBusinessPartner record {
     string AddressName3?;
     string FederalTaxID?;
     string StreetNo?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum CreateActivity?;
-    # OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name
     CampaignAssignToEnum AssignTo?;
     int:Signed32 AssignName?;
     string ResponseType?;
 };
 
-public type Campaigns_CollectionResponse record {
-    string odata\.metadata?;
-    Campaign[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getTargetGroups
+public type GetTargetGroupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: activityStatusesGet
-public type ActivityStatusesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name
 public type BoMsgPriorities "pr_Low"|"pr_Normal"|"pr_High";
 
-# OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listSalesOpportunityCompetitorsSetup
+public type ListSalesOpportunityCompetitorsSetupHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+public type ActivityLocationsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ActivityLocation[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name
 public type BoSoOsStatus "sos_Open"|"sos_Missed"|"sos_Sold";
 
 public type SalesOpportunityCompetitorSetup record {|
-    int:Signed32 SequenceNo?;
-    string Name?;
-    # OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name.
-    ThreatLevelEnum ThreatLevel?;
-    string Details?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "ThreatLevel"}
+    ThreatLevelEnum threatLevel?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type SalesOpportunitySourceSetupParams record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
 |};
 
-# OData EnumType 'RecipientTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RecipientTypeEnum'. Serialised by the Service Layer as the member name
 public type RecipientTypeEnum "rtUser"|"rtEmployee";
 
 public type CampaignResponseTypeParams record {|
-    string ResponseType?;
-    string ResponseTypeDescription?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
+    @jsondata:Name {value: "ResponseTypeDescription"}
+    string responseTypeDescription?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "ResponseType"}
+    string responseType?;
 |};
 
 public type ActivityMultipleRecipient record {
     int:Signed32 LineNumer?;
-    # OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name
     ActivityRecipientObjTypeEnum RecipientType?;
     string RecipientCode?;
 };
 
-public type SalesOpportunityReasonsSetup_CollectionResponse record {
-    string odata\.metadata?;
-    SalesOpportunityReasonSetup[] value?;
-    string odata\.nextLink?;
-};
-
-
-# Represents the Queries record for the operation: activitySubjectsGet
-public type ActivitySubjectsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: salesOpportunityInterestsSetupList
-public type SalesOpportunityInterestsSetupListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: salesOpportunitySourcesSetupList
-public type SalesOpportunitySourcesSetupListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
 
 public type ActivityStatus record {
     string StatusDescription?;
@@ -458,202 +466,322 @@ public type ActivityStatus record {
     Activity[] Activities?;
 };
 
-# Represents the Queries record for the operation: campaignsGet
-public type CampaignsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'EndTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'EndTypeEnum'. Serialised by the Service Layer as the member name
 public type EndTypeEnum "etNoEndDate"|"etByCounter"|"etByDate";
 
+# Represents the Headers record for the operation: listPartnersSetups
+public type ListPartnersSetupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type SalesOpportunityReasonSetupParams record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
 |};
 
 public type ActivitiesService_GetSingleInstanceFromSeries_body record {
-    ActivityInstanceParams ActivityInstanceParams?;
-};
-
-# Represents the Headers record for the operation: partnersSetupsList
-public type PartnersSetupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+    @jsondata:Name {value: "ActivityInstanceParams"}
+    ActivityInstanceParams activityInstanceParams?;
 };
 
 public type ActivitiesService_DeleteSingleInstanceFromSeries_body record {
-    ActivityInstanceParams ActivityInstanceParams?;
+    @jsondata:Name {value: "ActivityInstanceParams"}
+    ActivityInstanceParams activityInstanceParams?;
 };
 
 public type PartnersSetup record {|
-    int:Signed32 PartnerID?;
-    string Name?;
-    int:Signed32 DefaultRelationship?;
-    string RelatedBP?;
-    string Details?;
+    @jsondata:Name {value: "DefaultRelationship"}
+    int:Signed32 defaultRelationship?;
+    @jsondata:Name {value: "RelatedBP"}
+    string relatedBP?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "PartnerID"}
+    int:Signed32 partnerID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# Represents the Headers record for the operation: activityStatusesList
-public type ActivityStatusesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listActivities
+public type ListActivitiesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Headers record for the operation: activityTypesList
-public type ActivityTypesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type ActivitySubjectsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ActivitySubject[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Headers record for the operation: activitiesList
-public type ActivitiesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
 public type BoSoStatus "so_Open"|"so_Closed";
 
+# Represents the Queries record for the operation: listActivityLocations
+public type ListActivityLocationsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
 public type ActivityRecipientListParams record {|
-    int:Signed32 Code?;
-    string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsMultiple?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "IsMultiple"}
+    BoYesNoEnum isMultiple?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type SalesOpportunityInterestSetupParams record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
 |};
+
+public type ActivitiesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Activity[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
 
 public type SalesOpportunityReasonSetup record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
-    int:Signed32 Sort?;
-    SalesOpportunities[] SalesOpportunities?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "SalesOpportunities"}
+    SalesOpportunities[] salesOpportunities?;
+    @jsondata:Name {value: "Sort"}
+    int:Signed32 sort?;
 |};
 
-# OData EnumType 'LinkedDocTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'LinkedDocTypeEnum'. Serialised by the Service Layer as the member name
 public type LinkedDocTypeEnum "ldtEmptyLink"|"ldtSalesOpportunitiesLink"|"ldtSalesQuotationsLink"|"ldtSalesOrdersLink"|"ldtDeliveriesLink"|"ldtARInvoicesLink";
 
-public type SalesStages_CollectionResponse record {
-    string odata\.metadata?;
-    SalesStage[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getSalesOpportunityInterestsSetup
+public type GetSalesOpportunityInterestsSetupQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# Represents the Queries record for the operation: activitySubjectsList
-public type ActivitySubjectsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type SalesOpportunitiesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesOpportunities[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Headers record for the operation: salesOpportunityCompetitorsSetupList
-public type SalesOpportunityCompetitorsSetupListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listActivityStatuses
+public type ListActivityStatusesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: salesOpportunityReasonsSetupList
-public type SalesOpportunityReasonsSetupListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type SalesOpportunityCompetitorsSetupCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesOpportunityCompetitorSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type ActivitySubject record {|
-    int:Signed32 Code?;
-    string Description?;
-    int:Signed32 ActivityType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
-    ActivityType ActivityType2?;
-    Activity[] Activities?;
+    @jsondata:Name {value: "Activities"}
+    Activity[] activities?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "ActivityType"}
+    int:Signed32 activityType?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
+    @jsondata:Name {value: "ActivityType2"}
+    ActivityType activityType2?;
 |};
 
 public type ActivityRecipient record {|
-    int:Signed32 LineNumber?;
-    # OData EnumType 'RecipientTypeEnum'. Serialised by the Service Layer as the member name.
-    RecipientTypeEnum RecipientType?;
-    string RecipientCode?;
+    @jsondata:Name {value: "RecipientType"}
+    RecipientTypeEnum recipientType?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "RecipientCode"}
+    string recipientCode?;
 |};
-
-# Represents the Queries record for the operation: salesOpportunityInterestsSetupGet
-public type SalesOpportunityInterestsSetupGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: activityRecipientListsList
-public type ActivityRecipientListsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Headers record for the operation: salesOpportunitiesList
-public type SalesOpportunitiesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
 
 public type CampaignItem record {
     int:Signed32 CampaignNumber?;
     int:Signed32 CampaignLineNumber?;
     string ItemCode?;
     string ItemName?;
-    # OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name
     CampaignItemTypeEnum ItemType?;
     string ItemGroup?;
 };
 
-public type SalesOpportunityCompetitorsSetup_CollectionResponse record {
-    string odata\.metadata?;
-    SalesOpportunityCompetitorSetup[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listTargetGroups
+public type ListTargetGroupsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# OData EnumType 'OpportunityTypeEnum'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listSalesOpportunityReasonsSetup
+public type ListSalesOpportunityReasonsSetupHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Queries record for the operation: listSalesStages
+public type ListSalesStagesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type SalesOpportunitySourcesSetupCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesOpportunitySourceSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# Represents the Queries record for the operation: listSalesOpportunitySourcesSetup
+public type ListSalesOpportunitySourcesSetupQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listCampaignResponseType
+public type ListCampaignResponseTypeQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'OpportunityTypeEnum'. Serialised by the Service Layer as the member name
 public type OpportunityTypeEnum "boOpSales"|"boOpPurchasing";
 
-# Represents the Queries record for the operation: activityRecipientListsGet
-public type ActivityRecipientListsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: targetGroupsList
-public type TargetGroupsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
 public type BoAddressType "bo_ShipTo"|"bo_BillTo";
 
-public type ActivityLocations_CollectionResponse record {
-    string odata\.metadata?;
-    ActivityLocation[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listActivityRecipientLists
+public type ListActivityRecipientListsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type SalesOpportunitiesPartner record {
@@ -664,22 +792,29 @@ public type SalesOpportunitiesPartner record {
     int:Signed32 SequenceNo?;
 };
 
-# Represents the Queries record for the operation: targetGroupsList
-public type TargetGroupsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listSalesOpportunities
+public type ListSalesOpportunitiesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type CampaignPartner record {
@@ -692,108 +827,128 @@ public type CampaignPartner record {
 };
 
 public type ActivityParams record {|
-    int:Signed32 ActivityCode?;
-    string CardCode?;
-    string Notes?;
-    string StartDate?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Closed?;
-    string DocType?;
-    string DocNum?;
-    string DocEntry?;
-    # OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name.
-    BoMsgPriorities Priority?;
-    string Details?;
-    # OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name.
-    BoActivities Activity?;
-    string StartTime?;
-    string EndTime?;
-    int:Signed32 HandledBy?;
-    string City?;
-    string Street?;
-    string Room?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum InactiveFlag?;
-    string State?;
-    string Country?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum TentativeFlag?;
-    string EndDueDate?;
-    int:Signed32 SalesOpportunityId?;
-    int:Signed32 SalesOpportunityLine?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum EmailedFlag?;
+    @jsondata:Name {value: "EndTime"}
+    string endTime?;
+    @jsondata:Name {value: "Activity"}
+    BoActivities activity?;
+    @jsondata:Name {value: "TentativeFlag"}
+    BoYesNoEnum tentativeFlag?;
+    @jsondata:Name {value: "StartDate"}
+    string startDate?;
+    @jsondata:Name {value: "SalesOpportunityLine"}
+    int:Signed32 salesOpportunityLine?;
+    @jsondata:Name {value: "HandledBy"}
+    int:Signed32 handledBy?;
+    @jsondata:Name {value: "Street"}
+    string street?;
+    @jsondata:Name {value: "DocNum"}
+    string docNum?;
+    @jsondata:Name {value: "Room"}
+    string room?;
+    @jsondata:Name {value: "Notes"}
+    string notes?;
+    @jsondata:Name {value: "DocType"}
+    string docType?;
+    @jsondata:Name {value: "EndDueDate"}
+    string endDueDate?;
+    @jsondata:Name {value: "SalesOpportunityId"}
+    int:Signed32 salesOpportunityId?;
+    @jsondata:Name {value: "ActivityCode"}
+    int:Signed32 activityCode?;
+    @jsondata:Name {value: "Priority"}
+    BoMsgPriorities priority?;
+    @jsondata:Name {value: "StartTime"}
+    string startTime?;
+    @jsondata:Name {value: "EmailedFlag"}
+    BoYesNoEnum emailedFlag?;
+    @jsondata:Name {value: "CardCode"}
+    string cardCode?;
+    @jsondata:Name {value: "DocEntry"}
+    string docEntry?;
+    @jsondata:Name {value: "City"}
+    string city?;
+    @jsondata:Name {value: "InactiveFlag"}
+    BoYesNoEnum inactiveFlag?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "Closed"}
+    BoYesNoEnum closed?;
+    @jsondata:Name {value: "State"}
+    string state?;
+    @jsondata:Name {value: "Country"}
+    string country?;
 |};
 
-public type SalesOpportunitySourcesSetup_CollectionResponse record {
-    string odata\.metadata?;
-    SalesOpportunitySourceSetup[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getCampaigns
+public type GetCampaignsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-public type ActivityRecipientLists_CollectionResponse record {
-    string odata\.metadata?;
-    ActivityRecipientList[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listActivityLocations
+public type ListActivityLocationsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Headers record for the operation: salesOpportunitySourcesSetupList
-public type SalesOpportunitySourcesSetupListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listActivitySubjects
+public type ListActivitySubjectsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-public type ActivitySubjects_CollectionResponse record {
-    string odata\.metadata?;
-    ActivitySubject[] value?;
-    string odata\.nextLink?;
-};
-
-# Represents the Queries record for the operation: salesOpportunitySourcesSetupGet
-public type SalesOpportunitySourcesSetupGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: salesStagesList
-public type SalesStagesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Headers record for the operation: campaignsList
-public type CampaignsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: getActivityRecipientLists
+public type GetActivityRecipientListsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type TargetGroup record {|
-    string TargetGroupCode?;
-    string TargetGroupName?;
-    # OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name.
-    TargetGroupTypeEnum TargetGroupType?;
-    TargetGroupsDetail[] TargetGroupsDetails?;
-    Campaign[] Campaigns?;
+    @jsondata:Name {value: "TargetGroupType"}
+    TargetGroupTypeEnum targetGroupType?;
+    @jsondata:Name {value: "TargetGroupsDetails"}
+    TargetGroupsDetail[] targetGroupsDetails?;
+    @jsondata:Name {value: "TargetGroupCode"}
+    string targetGroupCode?;
+    @jsondata:Name {value: "Campaigns"}
+    Campaign[] campaigns?;
+    @jsondata:Name {value: "TargetGroupName"}
+    string targetGroupName?;
 |};
 
-# Represents the Headers record for the operation: campaignResponseTypeList
-public type CampaignResponseTypeListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Queries record for the operation: listCampaigns
+public type ListCampaignsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ActivityLocation record {
@@ -802,118 +957,95 @@ public type ActivityLocation record {
     Activity[] Activities?;
 };
 
-public type CampaignResponseType_CollectionResponse record {
-    string odata\.metadata?;
-    CampaignResponseType[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: getCampaignResponseType
+public type GetCampaignResponseTypeQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Headers record for the operation: listActivities
+public type ListActivitiesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type ActivityInstancesListParams record {|
-    string StartDate?;
-    int:Signed32 InstanceCount?;
+    @jsondata:Name {value: "StartDate"}
+    string startDate?;
+    @jsondata:Name {value: "InstanceCount"}
+    int:Signed32 instanceCount?;
 |};
 
 public type PartnersSetupParams record {|
-    int:Signed32 PartnerID?;
-    string Name?;
-    int:Signed32 DefaultRelationship?;
-    string RelatedBP?;
-    string Details?;
+    @jsondata:Name {value: "DefaultRelationship"}
+    int:Signed32 defaultRelationship?;
+    @jsondata:Name {value: "RelatedBP"}
+    string relatedBP?;
+    @jsondata:Name {value: "Details"}
+    string details?;
+    @jsondata:Name {value: "PartnerID"}
+    int:Signed32 partnerID?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
-# OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getActivityTypes
+public type GetActivityTypesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name
 public type RecurrenceSequenceEnum "rsFirst"|"rsSecond"|"rsThird"|"rsFourth"|"rsLast";
 
-# Represents the Queries record for the operation: salesOpportunityCompetitorsSetupGet
-public type SalesOpportunityCompetitorsSetupGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# Represents the Queries record for the operation: salesOpportunityReasonsSetupGet
-public type SalesOpportunityReasonsSetupGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_9 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     SalesOpportunityReasonSetupParams[] value?;
 };
 
-# OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name
 public type ThreatLevelEnum "tlLow"|"tlMedium"|"tlHigh";
 
-# Represents the Headers record for the operation: salesOpportunityInterestsSetupList
-public type SalesOpportunityInterestsSetupListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# Represents the Queries record for the operation: campaignsList
-public type CampaignsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_5 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CampaignParams[] value?;
 };
 
-# Represents the Queries record for the operation: targetGroupsGet
-public type TargetGroupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
 public type inline_response_200_6 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     PartnersSetupParams[] value?;
 };
 
 public type SalesOpportunitiesInterest record {
     int:Signed32 RowNo?;
     int:Signed32 SequenceNo?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum PrimaryInterest?;
     int:Signed32 InterestId?;
 };
 
 public type inline_response_200_7 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     SalesOpportunityCompetitorSetupParams[] value?;
 };
 
 public type inline_response_200_8 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     SalesOpportunityInterestSetupParams[] value?;
-};
-
-# Represents the Queries record for the operation: activitiesGet
-public type ActivitiesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
 };
 
 public type SalesOpportunitiesCompetitionItem record {
@@ -922,52 +1054,87 @@ public type SalesOpportunitiesCompetitionItem record {
     string Details?;
     int:Signed32 SequenceNo?;
     string WonOrLost?;
-    # OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name
     ThreatLevelEnum ThreatLevel?;
 };
 
-# OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name.
+public type SalesStagesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesStage[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type ActivityRecipientListsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ActivityRecipientList[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+# OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name
 public type RepeatOptionEnum "roByDate"|"roByWeekDay";
 
-# Represents the Queries record for the operation: activityLocationsList
-public type ActivityLocationsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listActivityTypes
+public type ListActivityTypesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getActivities
+public type GetActivitiesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type ActivityInstanceParams record {|
-    int:Signed32 ActivityCode?;
-    string InstanceDate?;
+    @jsondata:Name {value: "ActivityCode"}
+    int:Signed32 activityCode?;
+    @jsondata:Name {value: "InstanceDate"}
+    string instanceDate?;
 |};
 
 public type Campaign record {
     int:Signed32 CampaignNumber?;
     string CampaignName?;
-    # OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name
     CampaignTypeEnum CampaignType?;
     string TargetGroup?;
     int:Signed32 Owner?;
-    # OData EnumType 'CampaignStatusEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'CampaignStatusEnum'. Serialised by the Service Layer as the member name
     CampaignStatusEnum Status?;
     string StartDate?;
     string FinishDate?;
     string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum GeneratedByWizard?;
     int:Signed32 AttachementsEntry?;
-    # OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name
     TargetGroupTypeEnum TargetGroupType?;
     CampaignBusinessPartner[] CampaignBusinessPartners?;
     CampaignItem[] CampaignItems?;
@@ -976,59 +1143,63 @@ public type Campaign record {
 };
 
 public type ActivitiesService_GetTopNActivityInstances_body record {
-    ActivityInstancesListParams ActivityInstancesListParams?;
-};
-
-# Represents the Queries record for the operation: activityTypesGet
-public type ActivityTypesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+    @jsondata:Name {value: "ActivityInstancesListParams"}
+    ActivityInstancesListParams activityInstancesListParams?;
 };
 
 public type inline_response_200_1 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ActivityInstanceParams[] value?;
 };
 
 public type ActivitySubjectService_GetListByTypeCode_body record {
-    ActivitySubject ActivitySubject?;
+    @jsondata:Name {value: "ActivitySubject"}
+    ActivitySubject activitySubject?;
 };
 
 public type inline_response_200_2 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ActivityRecipientListParams[] value?;
 };
 
-# Represents the Headers record for the operation: activityLocationsList
-public type ActivityLocationsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+public type SalesOpportunityInterestsSetupCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    SalesOpportunityInterestSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
 public type inline_response_200_3 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ActivitySubjectParams[] value?;
 };
 
 public type ActivityRecipientList record {|
-    int:Signed32 Code?;
-    string Name?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum Active?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsMultiple?;
-    ActivityRecipient[] ActivityRecipientCollection?;
-    Activity[] Activities?;
+    @jsondata:Name {value: "Activities"}
+    Activity[] activities?;
+    @jsondata:Name {value: "Active"}
+    BoYesNoEnum active?;
+    @jsondata:Name {value: "IsMultiple"}
+    BoYesNoEnum isMultiple?;
+    @jsondata:Name {value: "Code"}
+    int:Signed32 code?;
+    @jsondata:Name {value: "ActivityRecipientCollection"}
+    ActivityRecipient[] activityRecipientCollection?;
+    @jsondata:Name {value: "Name"}
+    string name?;
 |};
 
 public type inline_response_200_4 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     CampaignResponseTypeParams[] value?;
 };
 
-# OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name
 public type BoAPARDocumentTypes "bodt_Invoice"|"bodt_CreditNote"|"bodt_DeliveryNote"|"bodt_Return"|"bodt_Order"|"bodt_PurchaseInvoice"|"bodt_PurchaseCreditNote"|"bodt_PurchaseDeliveryNote"|"bodt_PurchaseReturn"|"bodt_PurchaseOrder"|"bodt_Quotation"|"bodt_CorrectionAPInvoice"|"bodt_CorrectionARInvoice"|"bodt_Zero"|"bodt_MinusOne"|"bodt_PurchaseQutation";
 
 public type SalesOpportunitiesLine record {
@@ -1041,16 +1212,16 @@ public type SalesOpportunitiesLine record {
     decimal MaxLocalTotal?;
     decimal MaxSystemTotal?;
     string Remarks?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Contact?;
-    # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
     BoSoStatus Status?;
     decimal WeightedAmountLocal?;
     decimal WeightedAmountSystem?;
     int:Signed32 DocumentNumber?;
-    # OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name
     BoAPARDocumentTypes DocumentType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum DocumentCheckbox?;
     int:Signed32 ContactPerson?;
     string BPChanelName?;
@@ -1060,13 +1231,36 @@ public type SalesOpportunitiesLine record {
     int:Signed32 BPChannelContact?;
 };
 
+# Represents the Headers record for the operation: listActivityTypes
+public type ListActivityTypesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# Represents the Headers record for the operation: listCampaignResponseType
+public type ListCampaignResponseTypeHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type inline_response_200_11 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     TargetGroupParams[] value?;
 };
 
+# Represents the Headers record for the operation: listSalesOpportunities
+public type ListSalesOpportunitiesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
 public type inline_response_200_10 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     SalesOpportunitySourceSetupParams[] value?;
 };
 
@@ -1090,7 +1284,7 @@ public type SalesOpportunities record {
     decimal GrossProfitTotalLocal?;
     decimal GrossProfitTotalSystem?;
     string Remarks?;
-    # OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name
     BoSoOsStatus Status?;
     int:Signed32 ReasonForClosing?;
     decimal TotalAmountLocal?;
@@ -1115,10 +1309,10 @@ public type SalesOpportunities record {
     string ClosingDate?;
     int:Signed32 BPChannelContact?;
     string BPChanelCode?;
-    # OData EnumType 'BoSoClosedInTypes'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoSoClosedInTypes'. Serialised by the Service Layer as the member name
     BoSoClosedInTypes ClosingType?;
     int:Signed32 AttachmentEntry?;
-    # OData EnumType 'OpportunityTypeEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'OpportunityTypeEnum'. Serialised by the Service Layer as the member name
     OpportunityTypeEnum OpportunityType?;
     string UpdateDate?;
     string UpdateTime?;
@@ -1133,134 +1327,223 @@ public type SalesOpportunities record {
     SalesStage SalesStage?;
 };
 
-# OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name
 public type RecurrencePatternEnum "rpNone"|"rpDaily"|"rpWeekly"|"rpMonthly"|"rpAnnually";
 
 public type TargetGroupsDetail record {|
-    string TargetGroupCode?;
-    string BusinessPartnerCode?;
-    string BusinessPartnerName?;
-    string GroupCode?;
-    string Industry?;
-    # OData EnumType 'TargetGroupsDetailStatusEnum'. Serialised by the Service Layer as the member name.
-    TargetGroupsDetailStatusEnum ActiveStatus?;
-    string ContactPerson?;
-    string Title?;
-    string Position?;
-    string E_Mail?;
-    string Telephone?;
-    string MobilePhone?;
-    string Fax?;
-    string Address?;
-    string Street?;
-    string Block?;
-    string City?;
-    string ZipCode?;
-    string County?;
-    string State?;
-    string Country?;
-    string Building?;
+    @jsondata:Name {value: "Building"}
+    string building?;
+    @jsondata:Name {value: "Telephone"}
+    string telephone?;
+    @jsondata:Name {value: "Address"}
+    string address?;
+    @jsondata:Name {value: "Position"}
+    string position?;
+    @jsondata:Name {value: "ZipCode"}
+    string zipCode?;
+    @jsondata:Name {value: "GroupCode"}
+    string groupCode?;
+    @jsondata:Name {value: "Title"}
+    string title?;
+    @jsondata:Name {value: "City"}
+    string city?;
+    @jsondata:Name {value: "E_Mail"}
+    string eMail?;
+    @jsondata:Name {value: "County"}
+    string county?;
+    @jsondata:Name {value: "ContactPerson"}
+    string contactPerson?;
+    @jsondata:Name {value: "MobilePhone"}
+    string mobilePhone?;
+    @jsondata:Name {value: "ActiveStatus"}
+    TargetGroupsDetailStatusEnum activeStatus?;
+    @jsondata:Name {value: "Industry"}
+    string industry?;
+    @jsondata:Name {value: "State"}
+    string state?;
+    @jsondata:Name {value: "TargetGroupCode"}
+    string targetGroupCode?;
+    @jsondata:Name {value: "Street"}
+    string street?;
+    @jsondata:Name {value: "Block"}
+    string block?;
+    @jsondata:Name {value: "Country"}
+    string country?;
+    @jsondata:Name {value: "Fax"}
+    string fax?;
+    @jsondata:Name {value: "BusinessPartnerCode"}
+    string businessPartnerCode?;
+    @jsondata:Name {value: "BusinessPartnerName"}
+    string businessPartnerName?;
 |};
 
-# Represents the Headers record for the operation: salesStagesList
-public type SalesStagesListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
+# Represents the Headers record for the operation: listSalesOpportunityInterestsSetup
+public type ListSalesOpportunityInterestsSetupHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: salesStagesGet
-public type SalesStagesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-public type PartnersSetups_CollectionResponse record {
-    string odata\.metadata?;
-    PartnersSetup[] value?;
-    string odata\.nextLink?;
-};
-
-# OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name
 public type CampaignItemTypeEnum "citItems"|"citLabel"|"citTravel";
 
-public type ActivityTypes_CollectionResponse record {
-    string odata\.metadata?;
-    ActivityType[] value?;
-    string odata\.nextLink?;
-};
-
 public type TargetGroupParams record {|
-    string TargetGroupCode?;
-    string TargetGroupName?;
+    @jsondata:Name {value: "TargetGroupCode"}
+    string targetGroupCode?;
+    @jsondata:Name {value: "TargetGroupName"}
+    string targetGroupName?;
 |};
 
 public type CampaignResponseType record {|
-    string ResponseTypeDescription?;
-    string ResponseType?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
-    BoYesNoEnum IsActive?;
+    @jsondata:Name {value: "ResponseTypeDescription"}
+    string responseTypeDescription?;
+    @jsondata:Name {value: "IsActive"}
+    BoYesNoEnum isActive?;
+    @jsondata:Name {value: "ResponseType"}
+    string responseType?;
 |};
 
 public type ActivitiesService_GetListByAttendUser_body record {
-    Activity Activity?;
+    @jsondata:Name {value: "Activity"}
+    Activity activity?;
 };
 
-# Represents the Queries record for the operation: campaignResponseTypeList
-public type CampaignResponseTypeListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listActivitySubjects
+public type ListActivitySubjectsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
-# OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name.
+# Represents the Headers record for the operation: listCampaigns
+public type ListCampaignsHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
+};
+
+# OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name
 public type BoActivities "cn_Conversation"|"cn_Meeting"|"cn_Task"|"cn_Other"|"cn_Note"|"cn_Campaign"|"cn_Email";
 
 public type inline_response_200 record {
-    string odata\.metadata?;
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
     ActivityParams[] value?;
 };
 
-# Represents the Queries record for the operation: partnersSetupsGet
-public type PartnersSetupsGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ActivityStatusesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ActivityStatus[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: getSalesOpportunityCompetitorsSetup
+public type GetSalesOpportunityCompetitorsSetupQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name
 public type RecurrenceDayOfWeekEnum "rdowDay"|"rdowWeekDay"|"rdowWeekendDay"|"rdowSun"|"rdowMon"|"rdowTue"|"rdowWed"|"rdowThu"|"rdowFri"|"rdowSat";
 
-# OData EnumType 'CampaignStatusEnum'. Serialised by the Service Layer as the member name.
-public type CampaignStatusEnum "csOpen"|"csFinished"|"csCanceled";
-
-# Represents the Queries record for the operation: campaignResponseTypeGet
-public type CampaignResponseTypeGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type ActivityTypesCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    ActivityType[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: salesOpportunitiesGet
-public type SalesOpportunitiesGetQueries record {
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# OData EnumType 'CampaignStatusEnum'. Serialised by the Service Layer as the member name
+public type CampaignStatusEnum "csOpen"|"csFinished"|"csCanceled";
+
+# Represents the Queries record for the operation: getPartnersSetups
+public type GetPartnersSetupsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getSalesOpportunityReasonsSetup
+public type GetSalesOpportunityReasonsSetupQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getActivitySubjects
+public type GetActivitySubjectsQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: getSalesStages
+public type GetSalesStagesQueries record {
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# Represents the Queries record for the operation: listActivityStatuses
+public type ListActivityStatusesQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type SalesStage record {
@@ -1268,11 +1551,11 @@ public type SalesStage record {
     string Name?;
     int:Signed32 Stageno?;
     decimal ClosingPercentage?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Cancelled?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsSales?;
-    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name.
+    # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsPurchasing?;
     SalesOpportunities[] SalesOpportunities?;
 };
@@ -1284,51 +1567,43 @@ public type ActivityType record {
     Activity[] Activities?;
 };
 
-public type SalesOpportunityInterestSetup record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
-    int:Signed32 Sort?;
-    SalesOpportunities[] SalesOpportunities?;
-|};
-
-# Represents the Queries record for the operation: activityRecipientListsList
-public type ActivityRecipientListsListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type CampaignsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    Campaign[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };
 
-# Represents the Queries record for the operation: salesOpportunityReasonsSetupList
-public type SalesOpportunityReasonsSetupListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+public type PartnersSetupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    PartnersSetup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
+};
+
+public type SalesOpportunityInterestSetup record {|
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "SalesOpportunities"}
+    SalesOpportunities[] salesOpportunities?;
+    @jsondata:Name {value: "Sort"}
+    int:Signed32 sort?;
+|};
+
+# Represents the Headers record for the operation: listSalesStages
+public type ListSalesStagesHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
 public type ActivitiesService_UpdateSingleInstanceInSeries_body record {
-    Activity Activity?;
+    @jsondata:Name {value: "Activity"}
+    Activity activity?;
 };
 
 public type SalesOpportunitiesReason record {
@@ -1337,86 +1612,137 @@ public type SalesOpportunitiesReason record {
     int:Signed32 Reason?;
 };
 
-# Represents the Queries record for the operation: salesOpportunitiesList
-public type SalesOpportunitiesListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
-};
-
-# OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name.
+# OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
 public type BoDurations "du_Seconds"|"du_Minuts"|"du_Hours"|"du_Days";
 
 public type CheckInParams record {|
-    int:Signed32 LineNumber?;
-    string Date?;
-    string Time?;
-    string Location?;
-    string Latitude?;
-    string Longitude?;
-    int:Signed32 HandledBy?;
-    int:Signed32 HandledByEmployee?;
-    string RecipientType?;
-    string RecipientName?;
-    string EmailAddress?;
+    @jsondata:Name {value: "HandledBy"}
+    int:Signed32 handledBy?;
+    @jsondata:Name {value: "RecipientName"}
+    string recipientName?;
+    @jsondata:Name {value: "Time"}
+    string time?;
+    @jsondata:Name {value: "Latitude"}
+    string latitude?;
+    @jsondata:Name {value: "HandledByEmployee"}
+    int:Signed32 handledByEmployee?;
+    @jsondata:Name {value: "RecipientType"}
+    string recipientType?;
+    @jsondata:Name {value: "Longitude"}
+    string longitude?;
+    @jsondata:Name {value: "LineNumber"}
+    int:Signed32 lineNumber?;
+    @jsondata:Name {value: "Date"}
+    string date?;
+    @jsondata:Name {value: "EmailAddress"}
+    string emailAddress?;
+    @jsondata:Name {value: "Location"}
+    string location?;
 |};
 
-public type SalesOpportunityInterestsSetup_CollectionResponse record {
-    string odata\.metadata?;
-    SalesOpportunityInterestSetup[] value?;
-    string odata\.nextLink?;
+# Represents the Queries record for the operation: listTargetGroups
+public type ListTargetGroupsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
 };
 
 public type SalesOpportunitySourceSetup record {|
-    int:Signed32 SequenceNo?;
-    string Description?;
-    int:Signed32 Sort?;
-    SalesOpportunities[] SalesOpportunities?;
+    @jsondata:Name {value: "SequenceNo"}
+    int:Signed32 sequenceNo?;
+    @jsondata:Name {value: "Description"}
+    string description?;
+    @jsondata:Name {value: "SalesOpportunities"}
+    SalesOpportunities[] salesOpportunities?;
+    @jsondata:Name {value: "Sort"}
+    int:Signed32 sort?;
 |};
 
-# OData EnumType 'BoSoClosedInTypes'. Serialised by the Service Layer as the member name.
+# Represents the Queries record for the operation: listSalesOpportunityReasonsSetup
+public type ListSalesOpportunityReasonsSetupQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+# OData EnumType 'BoSoClosedInTypes'. Serialised by the Service Layer as the member name
 public type BoSoClosedInTypes "sos_Months"|"sos_Weeks"|"sos_Days";
 
-# Represents the Headers record for the operation: activitySubjectsList
-public type ActivitySubjectsListHeaders record {
-    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.
-    string Prefer?;
-};
-
-# OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name.
+# OData EnumType 'TargetGroupTypeEnum'. Serialised by the Service Layer as the member name
 public type TargetGroupTypeEnum "tgtCustomer"|"tgtVendor";
 
-public type SalesOpportunities_CollectionResponse record {
-    string odata\.metadata?;
-    SalesOpportunities[] value?;
-    string odata\.nextLink?;
+# Represents the Headers record for the operation: listSalesOpportunitySourcesSetup
+public type ListSalesOpportunitySourcesSetupHeaders record {
+    # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
+    @http:Header {name: "Prefer"}
+    string prefer?;
 };
 
-# Represents the Queries record for the operation: salesOpportunityCompetitorsSetupList
-public type SalesOpportunityCompetitorsSetupListQueries record {
-    # Number of records to skip (paging).
-    int:Signed32 \$skip?;
-    # Maximum number of records to return.
-    int:Signed32 \$top?;
-    # OData filter expression.
-    string \$filter?;
-    # OData orderby expression.
-    string \$orderby?;
-    # Comma-separated navigation properties to expand.
-    string \$expand?;
-    # Set to 'allpages' to include the total count (odata.count).
-    "allpages"|"none" \$inlinecount?;
-    # Comma-separated list of properties to return.
-    string \$select?;
+# Represents the Queries record for the operation: listActivityRecipientLists
+public type ListActivityRecipientListsQueries record {
+    # Number of records to skip (paging)
+    @http:Query {name: "$skip"}
+    int:Signed32 dollarSkip?;
+    # Maximum number of records to return
+    @http:Query {name: "$top"}
+    int:Signed32 dollarTop?;
+    # OData filter expression
+    @http:Query {name: "$filter"}
+    string dollarFilter?;
+    # OData orderby expression
+    @http:Query {name: "$orderby"}
+    string dollarOrderby?;
+    # Comma-separated navigation properties to expand
+    @http:Query {name: "$expand"}
+    string dollarExpand?;
+    # Set to 'allpages' to include the total count (odata.count)
+    @http:Query {name: "$inlinecount"}
+    "allpages"|"none" dollarInlinecount?;
+    # Comma-separated list of properties to return
+    @http:Query {name: "$select"}
+    string dollarSelect?;
+};
+
+public type TargetGroupsCollectionResponse record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TargetGroup[] value?;
+    @jsondata:Name {value: "odata.nextLink"}
+    string odataNextLink?;
 };

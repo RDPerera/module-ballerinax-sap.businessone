@@ -43,8 +43,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetCapitalizationList(AssetCapitalizationListHeaders headers = {}, *AssetCapitalizationListQueries queries) returns AssetCapitalization_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetCapitalization(ListAssetCapitalizationHeaders headers = {}, *ListAssetCapitalizationQueries queries) returns AssetCapitalizationCollectionResponse|error {
         string resourcePath = string `/AssetCapitalization`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -55,8 +55,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetCapitalizationCreate(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
+    # + return - The created entity 
+    remote isolated function createAssetCapitalization(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
         string resourcePath = string `/AssetCapitalization`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -66,34 +66,34 @@ public isolated client class Client {
 
     # Get a single AssetDocument by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetCapitalizationGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetCapitalizationGetQueries queries) returns AssetDocument|error {
-        string resourcePath = string `/AssetCapitalization(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetCapitalization(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetCapitalizationQueries queries) returns AssetDocument|error {
+        string resourcePath = string `/AssetCapitalization(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDocument.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetCapitalizationDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetCapitalization(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetCapitalization(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetCapitalization(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDocument (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetCapitalizationUpdate(int:Signed32 DocEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetCapitalization(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetCapitalization(int:Signed32 docEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetCapitalization(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -104,8 +104,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetCapitalizationCreditMemoList(AssetCapitalizationCreditMemoListHeaders headers = {}, *AssetCapitalizationCreditMemoListQueries queries) returns AssetCapitalizationCreditMemo_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetCapitalizationCreditMemo(ListAssetCapitalizationCreditMemoHeaders headers = {}, *ListAssetCapitalizationCreditMemoQueries queries) returns AssetCapitalizationCreditMemoCollectionResponse|error {
         string resourcePath = string `/AssetCapitalizationCreditMemo`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -116,8 +116,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetCapitalizationCreditMemoCreate(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
+    # + return - The created entity 
+    remote isolated function createAssetCapitalizationCreditMemo(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
         string resourcePath = string `/AssetCapitalizationCreditMemo`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -127,34 +127,34 @@ public isolated client class Client {
 
     # Get a single AssetDocument by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetCapitalizationCreditMemoGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetCapitalizationCreditMemoGetQueries queries) returns AssetDocument|error {
-        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetCapitalizationCreditMemo(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetCapitalizationCreditMemoQueries queries) returns AssetDocument|error {
+        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDocument.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetCapitalizationCreditMemoDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetCapitalizationCreditMemo(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDocument (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetCapitalizationCreditMemoUpdate(int:Signed32 DocEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetCapitalizationCreditMemo(int:Signed32 docEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetCapitalizationCreditMemo(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -165,7 +165,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function assetCapitalizationCreditMemoServiceCancel(AssetCapitalizationCreditMemoService_Cancel_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/AssetCapitalizationCreditMemoService_Cancel`;
         http:Request request = new;
@@ -177,7 +177,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetCapitalizationCreditMemoService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetCapitalizationCreditMemoServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/AssetCapitalizationCreditMemoService_GetList`;
         http:Request request = new;
@@ -188,7 +188,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function assetCapitalizationServiceCancel(AssetCapitalizationService_Cancel_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/AssetCapitalizationService_Cancel`;
         http:Request request = new;
@@ -200,7 +200,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetCapitalizationService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetCapitalizationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/AssetCapitalizationService_GetList`;
         http:Request request = new;
@@ -211,8 +211,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetClassesList(AssetClassesListHeaders headers = {}, *AssetClassesListQueries queries) returns AssetClasses_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetClasses(ListAssetClassesHeaders headers = {}, *ListAssetClassesQueries queries) returns AssetClassesCollectionResponse|error {
         string resourcePath = string `/AssetClasses`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -223,8 +223,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetClassesCreate(AssetClass payload, map<string|string[]> headers = {}) returns AssetClass|error {
+    # + return - The created entity 
+    remote isolated function createAssetClasses(AssetClass payload, map<string|string[]> headers = {}) returns AssetClass|error {
         string resourcePath = string `/AssetClasses`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -234,34 +234,34 @@ public isolated client class Client {
 
     # Get a single AssetClass by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetClassesGet(string Code, map<string|string[]> headers = {}, *AssetClassesGetQueries queries) returns AssetClass|error {
-        string resourcePath = string `/AssetClasses('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getAssetClasses(string code, map<string|string[]> headers = {}, *GetAssetClassesQueries queries) returns AssetClass|error {
+        string resourcePath = string `/AssetClasses('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetClass.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetClassesDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetClasses('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetClasses(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetClasses('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetClass (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetClassesUpdate(string Code, AssetClass payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetClasses('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetClasses(string code, AssetClass payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetClasses('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -271,7 +271,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetClassesService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetClassesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/AssetClassesService_GetList`;
         http:Request request = new;
@@ -282,8 +282,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetDepreciationGroupsList(AssetDepreciationGroupsListHeaders headers = {}, *AssetDepreciationGroupsListQueries queries) returns AssetDepreciationGroups_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetDepreciationGroups(ListAssetDepreciationGroupsHeaders headers = {}, *ListAssetDepreciationGroupsQueries queries) returns AssetDepreciationGroupsCollectionResponse|error {
         string resourcePath = string `/AssetDepreciationGroups`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -294,8 +294,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetDepreciationGroupsCreate(AssetDepreciationGroup payload, map<string|string[]> headers = {}) returns AssetDepreciationGroup|error {
+    # + return - The created entity 
+    remote isolated function createAssetDepreciationGroups(AssetDepreciationGroup payload, map<string|string[]> headers = {}) returns AssetDepreciationGroup|error {
         string resourcePath = string `/AssetDepreciationGroups`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -305,34 +305,34 @@ public isolated client class Client {
 
     # Get a single AssetDepreciationGroup by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetDepreciationGroupsGet(string Code, map<string|string[]> headers = {}, *AssetDepreciationGroupsGetQueries queries) returns AssetDepreciationGroup|error {
-        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getAssetDepreciationGroups(string code, map<string|string[]> headers = {}, *GetAssetDepreciationGroupsQueries queries) returns AssetDepreciationGroup|error {
+        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDepreciationGroup.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetDepreciationGroupsDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetDepreciationGroups(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDepreciationGroup (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetDepreciationGroupsUpdate(string Code, AssetDepreciationGroup payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetDepreciationGroups(string code, AssetDepreciationGroup payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetDepreciationGroups('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -342,7 +342,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetDepreciationGroupsService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetDepreciationGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/AssetDepreciationGroupsService_GetList`;
         http:Request request = new;
@@ -353,8 +353,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetGroupsList(AssetGroupsListHeaders headers = {}, *AssetGroupsListQueries queries) returns AssetGroups_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetGroups(ListAssetGroupsHeaders headers = {}, *ListAssetGroupsQueries queries) returns AssetGroupsCollectionResponse|error {
         string resourcePath = string `/AssetGroups`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -365,8 +365,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetGroupsCreate(AssetGroup payload, map<string|string[]> headers = {}) returns AssetGroup|error {
+    # + return - The created entity 
+    remote isolated function createAssetGroups(AssetGroup payload, map<string|string[]> headers = {}) returns AssetGroup|error {
         string resourcePath = string `/AssetGroups`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -376,34 +376,34 @@ public isolated client class Client {
 
     # Get a single AssetGroup by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetGroupsGet(string Code, map<string|string[]> headers = {}, *AssetGroupsGetQueries queries) returns AssetGroup|error {
-        string resourcePath = string `/AssetGroups('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getAssetGroups(string code, map<string|string[]> headers = {}, *GetAssetGroupsQueries queries) returns AssetGroup|error {
+        string resourcePath = string `/AssetGroups('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetGroup.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetGroupsDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetGroups('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetGroups(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetGroups('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetGroup (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetGroupsUpdate(string Code, AssetGroup payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetGroups('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetGroups(string code, AssetGroup payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetGroups('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -413,7 +413,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetGroupsService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/AssetGroupsService_GetList`;
         http:Request request = new;
@@ -424,8 +424,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetManualDepreciationList(AssetManualDepreciationListHeaders headers = {}, *AssetManualDepreciationListQueries queries) returns AssetManualDepreciation_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetManualDepreciation(ListAssetManualDepreciationHeaders headers = {}, *ListAssetManualDepreciationQueries queries) returns AssetManualDepreciationCollectionResponse|error {
         string resourcePath = string `/AssetManualDepreciation`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -436,8 +436,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetManualDepreciationCreate(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
+    # + return - The created entity 
+    remote isolated function createAssetManualDepreciation(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
         string resourcePath = string `/AssetManualDepreciation`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -447,34 +447,34 @@ public isolated client class Client {
 
     # Get a single AssetDocument by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetManualDepreciationGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetManualDepreciationGetQueries queries) returns AssetDocument|error {
-        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetManualDepreciation(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetManualDepreciationQueries queries) returns AssetDocument|error {
+        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDocument.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetManualDepreciationDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetManualDepreciation(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDocument (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetManualDepreciationUpdate(int:Signed32 DocEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetManualDepreciation(int:Signed32 docEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetManualDepreciation(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -485,7 +485,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function assetManualDepreciationServiceCancel(AssetManualDepreciationService_Cancel_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/AssetManualDepreciationService_Cancel`;
         http:Request request = new;
@@ -497,7 +497,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetManualDepreciationService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetManualDepreciationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/AssetManualDepreciationService_GetList`;
         http:Request request = new;
@@ -508,8 +508,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetRetirementList(AssetRetirementListHeaders headers = {}, *AssetRetirementListQueries queries) returns AssetRetirement_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetRetirement(ListAssetRetirementHeaders headers = {}, *ListAssetRetirementQueries queries) returns AssetRetirementCollectionResponse|error {
         string resourcePath = string `/AssetRetirement`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -520,8 +520,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetRetirementCreate(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
+    # + return - The created entity 
+    remote isolated function createAssetRetirement(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
         string resourcePath = string `/AssetRetirement`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -531,34 +531,34 @@ public isolated client class Client {
 
     # Get a single AssetDocument by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetRetirementGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetRetirementGetQueries queries) returns AssetDocument|error {
-        string resourcePath = string `/AssetRetirement(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetRetirement(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetRetirementQueries queries) returns AssetDocument|error {
+        string resourcePath = string `/AssetRetirement(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDocument.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetRetirementDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetRetirement(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetRetirement(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetRetirement(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDocument (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetRetirementUpdate(int:Signed32 DocEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetRetirement(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetRetirement(int:Signed32 docEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetRetirement(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -569,7 +569,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function assetRetirementServiceCancel(AssetRetirementService_Cancel_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/AssetRetirementService_Cancel`;
         http:Request request = new;
@@ -581,7 +581,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetRetirementService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetRetirementServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/AssetRetirementService_GetList`;
         http:Request request = new;
@@ -591,7 +591,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetRevaluationService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetRevaluationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/AssetRevaluationService_GetList`;
         http:Request request = new;
@@ -602,8 +602,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetRevaluationsList(AssetRevaluationsListHeaders headers = {}, *AssetRevaluationsListQueries queries) returns AssetRevaluations_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetRevaluations(ListAssetRevaluationsHeaders headers = {}, *ListAssetRevaluationsQueries queries) returns AssetRevaluationsCollectionResponse|error {
         string resourcePath = string `/AssetRevaluations`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -614,8 +614,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetRevaluationsCreate(AssetRevaluation payload, map<string|string[]> headers = {}) returns AssetRevaluation|error {
+    # + return - The created entity 
+    remote isolated function createAssetRevaluations(AssetRevaluation payload, map<string|string[]> headers = {}) returns AssetRevaluation|error {
         string resourcePath = string `/AssetRevaluations`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -625,34 +625,34 @@ public isolated client class Client {
 
     # Get a single AssetRevaluation by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetRevaluationsGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetRevaluationsGetQueries queries) returns AssetRevaluation|error {
-        string resourcePath = string `/AssetRevaluations(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetRevaluations(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetRevaluationsQueries queries) returns AssetRevaluation|error {
+        string resourcePath = string `/AssetRevaluations(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetRevaluation.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetRevaluationsDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetRevaluations(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetRevaluations(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetRevaluations(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetRevaluation (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetRevaluationsUpdate(int:Signed32 DocEntry, AssetRevaluation payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetRevaluations(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetRevaluations(int:Signed32 docEntry, AssetRevaluation payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetRevaluations(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -663,8 +663,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function assetTransferList(AssetTransferListHeaders headers = {}, *AssetTransferListQueries queries) returns AssetTransfer_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listAssetTransfer(ListAssetTransferHeaders headers = {}, *ListAssetTransferQueries queries) returns AssetTransferCollectionResponse|error {
         string resourcePath = string `/AssetTransfer`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -675,8 +675,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function assetTransferCreate(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
+    # + return - The created entity 
+    remote isolated function createAssetTransfer(AssetDocument payload, map<string|string[]> headers = {}) returns AssetDocument|error {
         string resourcePath = string `/AssetTransfer`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -686,34 +686,34 @@ public isolated client class Client {
 
     # Get a single AssetDocument by key.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function assetTransferGet(int:Signed32 DocEntry, map<string|string[]> headers = {}, *AssetTransferGetQueries queries) returns AssetDocument|error {
-        string resourcePath = string `/AssetTransfer(${getEncodedUri(DocEntry)})`;
+    # + return - The requested entity 
+    remote isolated function getAssetTransfer(int:Signed32 docEntry, map<string|string[]> headers = {}, *GetAssetTransferQueries queries) returns AssetDocument|error {
+        string resourcePath = string `/AssetTransfer(${getEncodedUri(docEntry)})`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a AssetDocument.
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function assetTransferDelete(int:Signed32 DocEntry, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetTransfer(${getEncodedUri(DocEntry)})`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteAssetTransfer(int:Signed32 docEntry, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetTransfer(${getEncodedUri(docEntry)})`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a AssetDocument (PATCH/MERGE semantics).
     #
-    # + DocEntry - Key property 'DocEntry' (Edm.Int32).
+    # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function assetTransferUpdate(int:Signed32 DocEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/AssetTransfer(${getEncodedUri(DocEntry)})`;
+    # + return - Updated. No content returned 
+    remote isolated function updateAssetTransfer(int:Signed32 docEntry, AssetDocument payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/AssetTransfer(${getEncodedUri(docEntry)})`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -724,7 +724,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function assetTransferServiceCancel(AssetTransferService_Cancel_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/AssetTransferService_Cancel`;
         http:Request request = new;
@@ -736,7 +736,7 @@ public isolated client class Client {
     # Service Layer function import 'AssetTransferService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function assetTransferServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
         string resourcePath = string `/AssetTransferService_GetList`;
         http:Request request = new;
@@ -747,8 +747,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function depreciationAreasList(DepreciationAreasListHeaders headers = {}, *DepreciationAreasListQueries queries) returns DepreciationAreas_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listDepreciationAreas(ListDepreciationAreasHeaders headers = {}, *ListDepreciationAreasQueries queries) returns DepreciationAreasCollectionResponse|error {
         string resourcePath = string `/DepreciationAreas`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -759,8 +759,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function depreciationAreasCreate(DepreciationArea payload, map<string|string[]> headers = {}) returns DepreciationArea|error {
+    # + return - The created entity 
+    remote isolated function createDepreciationAreas(DepreciationArea payload, map<string|string[]> headers = {}) returns DepreciationArea|error {
         string resourcePath = string `/DepreciationAreas`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -770,34 +770,34 @@ public isolated client class Client {
 
     # Get a single DepreciationArea by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function depreciationAreasGet(string Code, map<string|string[]> headers = {}, *DepreciationAreasGetQueries queries) returns DepreciationArea|error {
-        string resourcePath = string `/DepreciationAreas('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getDepreciationAreas(string code, map<string|string[]> headers = {}, *GetDepreciationAreasQueries queries) returns DepreciationArea|error {
+        string resourcePath = string `/DepreciationAreas('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a DepreciationArea.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function depreciationAreasDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationAreas('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteDepreciationAreas(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationAreas('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a DepreciationArea (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function depreciationAreasUpdate(string Code, DepreciationArea payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationAreas('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateDepreciationAreas(string code, DepreciationArea payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationAreas('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -807,7 +807,7 @@ public isolated client class Client {
     # Service Layer function import 'DepreciationAreasService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function depreciationAreasServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/DepreciationAreasService_GetList`;
         http:Request request = new;
@@ -818,8 +818,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function depreciationTypePoolsList(DepreciationTypePoolsListHeaders headers = {}, *DepreciationTypePoolsListQueries queries) returns DepreciationTypePools_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listDepreciationTypePools(ListDepreciationTypePoolsHeaders headers = {}, *ListDepreciationTypePoolsQueries queries) returns DepreciationTypePoolsCollectionResponse|error {
         string resourcePath = string `/DepreciationTypePools`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -830,8 +830,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function depreciationTypePoolsCreate(DepreciationTypePool payload, map<string|string[]> headers = {}) returns DepreciationTypePool|error {
+    # + return - The created entity 
+    remote isolated function createDepreciationTypePools(DepreciationTypePool payload, map<string|string[]> headers = {}) returns DepreciationTypePool|error {
         string resourcePath = string `/DepreciationTypePools`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -841,34 +841,34 @@ public isolated client class Client {
 
     # Get a single DepreciationTypePool by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function depreciationTypePoolsGet(string Code, map<string|string[]> headers = {}, *DepreciationTypePoolsGetQueries queries) returns DepreciationTypePool|error {
-        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getDepreciationTypePools(string code, map<string|string[]> headers = {}, *GetDepreciationTypePoolsQueries queries) returns DepreciationTypePool|error {
+        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a DepreciationTypePool.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function depreciationTypePoolsDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteDepreciationTypePools(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a DepreciationTypePool (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function depreciationTypePoolsUpdate(string Code, DepreciationTypePool payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateDepreciationTypePools(string code, DepreciationTypePool payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationTypePools('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -878,7 +878,7 @@ public isolated client class Client {
     # Service Layer function import 'DepreciationTypePoolsService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function depreciationTypePoolsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_6|error {
         string resourcePath = string `/DepreciationTypePoolsService_GetList`;
         http:Request request = new;
@@ -889,8 +889,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function depreciationTypesList(DepreciationTypesListHeaders headers = {}, *DepreciationTypesListQueries queries) returns DepreciationTypes_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listDepreciationTypes(ListDepreciationTypesHeaders headers = {}, *ListDepreciationTypesQueries queries) returns DepreciationTypesCollectionResponse|error {
         string resourcePath = string `/DepreciationTypes`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -901,8 +901,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function depreciationTypesCreate(DepreciationType payload, map<string|string[]> headers = {}) returns DepreciationType|error {
+    # + return - The created entity 
+    remote isolated function createDepreciationTypes(DepreciationType payload, map<string|string[]> headers = {}) returns DepreciationType|error {
         string resourcePath = string `/DepreciationTypes`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -912,34 +912,34 @@ public isolated client class Client {
 
     # Get a single DepreciationType by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function depreciationTypesGet(string Code, map<string|string[]> headers = {}, *DepreciationTypesGetQueries queries) returns DepreciationType|error {
-        string resourcePath = string `/DepreciationTypes('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getDepreciationTypes(string code, map<string|string[]> headers = {}, *GetDepreciationTypesQueries queries) returns DepreciationType|error {
+        string resourcePath = string `/DepreciationTypes('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a DepreciationType.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function depreciationTypesDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationTypes('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteDepreciationTypes(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationTypes('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a DepreciationType (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function depreciationTypesUpdate(string Code, DepreciationType payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/DepreciationTypes('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateDepreciationTypes(string code, DepreciationType payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/DepreciationTypes('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -949,7 +949,7 @@ public isolated client class Client {
     # Service Layer function import 'DepreciationTypesService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function depreciationTypesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_7|error {
         string resourcePath = string `/DepreciationTypesService_GetList`;
         http:Request request = new;
@@ -960,8 +960,8 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of entities. 
-    remote isolated function fAAccountDeterminationsList(FAAccountDeterminationsListHeaders headers = {}, *FAAccountDeterminationsListQueries queries) returns FAAccountDeterminations_CollectionResponse|error {
+    # + return - A page of entities 
+    remote isolated function listFAAccountDeterminations(ListFAAccountDeterminationsHeaders headers = {}, *ListFAAccountDeterminationsQueries queries) returns FAAccountDeterminationsCollectionResponse|error {
         string resourcePath = string `/FAAccountDeterminations`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         map<string|string[]> httpHeaders = http:getHeaderMap(headers);
@@ -972,8 +972,8 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - The created entity. 
-    remote isolated function fAAccountDeterminationsCreate(FAAccountDetermination payload, map<string|string[]> headers = {}) returns FAAccountDetermination|error {
+    # + return - The created entity 
+    remote isolated function createFAAccountDeterminations(FAAccountDetermination payload, map<string|string[]> headers = {}) returns FAAccountDetermination|error {
         string resourcePath = string `/FAAccountDeterminations`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -983,34 +983,34 @@ public isolated client class Client {
 
     # Get a single FAAccountDetermination by key.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - The requested entity. 
-    remote isolated function fAAccountDeterminationsGet(string Code, map<string|string[]> headers = {}, *FAAccountDeterminationsGetQueries queries) returns FAAccountDetermination|error {
-        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(Code)}')`;
+    # + return - The requested entity 
+    remote isolated function getFAAccountDeterminations(string code, map<string|string[]> headers = {}, *GetFAAccountDeterminationsQueries queries) returns FAAccountDetermination|error {
+        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(code)}')`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
         return self.clientEp->get(resourcePath, headers);
     }
 
     # Delete a FAAccountDetermination.
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
-    # + return - Deleted. No content returned. 
-    remote isolated function fAAccountDeterminationsDelete(string Code, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(Code)}')`;
+    # + return - Deleted. No content returned 
+    remote isolated function deleteFAAccountDeterminations(string code, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(code)}')`;
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
     # Partially update a FAAccountDetermination (PATCH/MERGE semantics).
     #
-    # + Code - Key property 'Code' (Edm.String).
+    # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Updated. No content returned. 
-    remote isolated function fAAccountDeterminationsUpdate(string Code, FAAccountDetermination payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(Code)}')`;
+    # + return - Updated. No content returned 
+    remote isolated function updateFAAccountDeterminations(string code, FAAccountDetermination payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/FAAccountDeterminations('${getEncodedUri(code)}')`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
         request.setPayload(jsonBody, "application/json");
@@ -1020,7 +1020,7 @@ public isolated client class Client {
     # Service Layer function import 'FAAccountDeterminationsService_GetList'.
     #
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function fAAccountDeterminationsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_8|error {
         string resourcePath = string `/FAAccountDeterminationsService_GetList`;
         http:Request request = new;
@@ -1031,7 +1031,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function fixedAssetItemsServiceGetAssetEndBalance(FixedAssetItemsService_GetAssetEndBalance_body payload, map<string|string[]> headers = {}) returns FixedAssetEndBalance|error {
         string resourcePath = string `/FixedAssetItemsService_GetAssetEndBalance`;
         http:Request request = new;
@@ -1044,7 +1044,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Function result. 
+    # + return - Function result 
     remote isolated function fixedAssetItemsServiceGetAssetValuesList(FixedAssetItemsService_GetAssetValuesList_body payload, map<string|string[]> headers = {}) returns inline_response_200_9|error {
         string resourcePath = string `/FixedAssetItemsService_GetAssetValuesList`;
         http:Request request = new;
@@ -1057,7 +1057,7 @@ public isolated client class Client {
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
-    # + return - Success. No content returned. 
+    # + return - Success. No content returned 
     remote isolated function fixedAssetItemsServiceUpdateAssetEndBalance(FixedAssetItemsService_UpdateAssetEndBalance_body payload, map<string|string[]> headers = {}) returns error? {
         string resourcePath = string `/FixedAssetItemsService_UpdateAssetEndBalance`;
         http:Request request = new;

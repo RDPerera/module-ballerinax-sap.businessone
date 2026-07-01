@@ -33,19 +33,19 @@ public function main() returns error? {
         serviceUrl
     );
 
-    inventory:Warehouses_CollectionResponse warehouses = check b1->warehousesList(queries = {
-        \$select: "WarehouseCode,WarehouseName",
-        \$top: 50
+    inventory:WarehousesCollectionResponse warehouses = check b1->listWarehouses(queries = {
+        dollarSelect: "WarehouseCode,WarehouseName",
+        dollarTop: 50
     });
     io:println("Warehouses:");
     foreach inventory:Warehouse wh in warehouses.value ?: [] {
         io:println(string `  ${wh.WarehouseCode ?: ""} — ${wh.WarehouseName ?: ""}`);
     }
 
-    inventory:Items_CollectionResponse items = check b1->itemsList(queries = {
-        \$select: "ItemCode,ItemName,QuantityOnStock,QuantityOrderedFromVendors",
-        \$orderby: "QuantityOnStock desc",
-        \$top: 20
+    inventory:ItemsCollectionResponse items = check b1->listItems(queries = {
+        dollarSelect: "ItemCode,ItemName,QuantityOnStock,QuantityOrderedFromVendors",
+        dollarOrderby: "QuantityOnStock desc",
+        dollarTop: 20
     });
     io:println("\nTop items by quantity on stock:");
     foreach inventory:Item item in items.value ?: [] {
