@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2026, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -71,20 +71,33 @@ release {
 build.dependsOn ':businessone-native:build'
 test.dependsOn ':businessone-native:build'
 
-// Push the packed wrapper to the local Ballerina repository so that the
-// connector packages in this repo can resolve it before it is published to
-// Ballerina Central (their Ballerina.toml pins `repository = "local"`).
+// Make the packed wrapper resolvable by the connector packages in this repo
+// before it is published to Ballerina Central. The connectors no longer pin
+// `repository = "local"`, so the wrapper is mirrored into the local Ballerina
+// Central cache and resolved from there like any Central dependency.
 task pushToLocalRepo {
     dependsOn build
     doLast {
+        def home = System.getProperty('user.home')
         def bala = "build/bal_build_target/bala/ballerinax-sap.businessone-java21-${moduleVersion}.bala"
-        project.delete("${System.getProperty('user.home')}/.ballerina/repositories/local/bala/ballerinax/sap.businessone/${moduleVersion}")
+        project.delete("${home}/.ballerina/repositories/local/bala/ballerinax/sap.businessone/${moduleVersion}")
         project.exec {
             workingDir project.projectDir
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                 commandLine 'cmd', '/c', "bal.bat push --repository=local ${bala} && exit %%ERRORLEVEL%%"
             } else {
                 commandLine 'sh', '-c', "bal push --repository=local ${bala}"
+            }
+        }
+        // Mirror into the local Ballerina Central cache so connectors resolve
+        // the wrapper as if it were pulled from Central.
+        def src = file("${home}/.ballerina/repositories/local/bala/ballerinax/sap.businessone")
+        def dst = file("${home}/.ballerina/repositories/central.ballerina.io/bala/ballerinax/sap.businessone")
+        project.delete(dst)
+        if (src.exists()) {
+            project.copy {
+                from src
+                into dst
             }
         }
     }
