@@ -1,0 +1,14 @@
+[package]
+org = "ballerinax"
+name = "sap.businessone.inventory"
+version = "1.0.0"
+distribution = "2201.13.0"
+authors = ["Ballerina"]
+keywords = ["Name/SAP Business One Inventory", "Area/ERP & Business Operations", "Vendor/SAP", "Cost/Paid", "Type/Connector", "SAP Business One", "Inventory", "ERP"]
+repository = "https://github.com/ballerina-platform/module-ballerinax-sap.businessone"
+icon = "../icon.png"
+license = ["Apache-2.0"]
+
+[build-options]
+observabilityIncluded = true
+

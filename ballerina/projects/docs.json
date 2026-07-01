@@ -1,0 +1,11 @@
+{
+  "description": "The SAP Business One Project Management connector provides APIs for the project management objects of SAP Business One: projects, project management entities, and time sheets, exposed through the [SAP Business One Service Layer](https://help.sap.com/docs/SAP_BUSINESS_ONE_ONE_BRANCH) (OData).",
+  "key-features": [
+    "Manage financial project codes and project management projects",
+    "Track project stages, phases, and tasks",
+    "Record project time sheets"
+  ],
+  "import-statement": "import ballerinax/sap.businessone.projects;",
+  "client-init": "projects:Client b1Client = check new (",
+  "api-invocation": "projects:ProjectManagements_CollectionResponse response = check b1Client->projectManagementsList();"
+}

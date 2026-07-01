@@ -1,0 +1,6 @@
+# Copy this file to Config.toml and fill in your Service Layer credentials.
+# Config.toml is gitignored — NEVER commit real credentials.
+serviceUrl = "https://<host>:50000/b1s/v1"
+companyDb = "<COMPANY_DB>"
+username = "<USER>"
+password = "<PASSWORD>"

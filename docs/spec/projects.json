@@ -1,0 +1,4043 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SAP Business One Service Layer - Project Management",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://{server}:{port}/b1s/v1",
+      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "variables": {
+        "server": {
+          "default": "localhost",
+          "description": "Service Layer host."
+        },
+        "port": {
+          "default": "50000",
+          "description": "Service Layer HTTPS port (default 50000)."
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "B1Session": []
+    }
+  ],
+  "paths": {
+    "/ExpenseTypes": {
+      "get": {
+        "tags": [
+          "ExpenseTypes"
+        ],
+        "operationId": "ExpenseTypes_List",
+        "summary": "Query the ExpenseTypes collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseTypes_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ExpenseTypes"
+        ],
+        "operationId": "ExpenseTypes_Create",
+        "summary": "Create a new ExpenseTypeData.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseTypeData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseTypeData"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ExpenseTypes('{ExpenseType}')": {
+      "get": {
+        "tags": [
+          "ExpenseTypes"
+        ],
+        "operationId": "ExpenseTypes_Get",
+        "summary": "Get a single ExpenseTypeData by key.",
+        "parameters": [
+          {
+            "name": "ExpenseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ExpenseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseTypeData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ExpenseTypes"
+        ],
+        "operationId": "ExpenseTypes_Update",
+        "summary": "Partially update a ExpenseTypeData (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "ExpenseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ExpenseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseTypeData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ExpenseTypes"
+        ],
+        "operationId": "ExpenseTypes_Delete",
+        "summary": "Delete a ExpenseTypeData.",
+        "parameters": [
+          {
+            "name": "ExpenseType",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'ExpenseType' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddActivities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddActivities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddActivities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_ActivityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_ActivityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddAreas": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddAreas",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddAreas'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_AreaCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_AreaData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddPriorities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddPriorities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddPriorities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_PriorityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_PriorityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddStageTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddStageTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddStageTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_StageTypeCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_StageTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddSubprojectTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddSubprojectTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddSubprojectTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_SubprojectTypesCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_SubprojectTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_AddTasks": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_AddTasks",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddTasks'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_TaskCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_TaskData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeleteActivities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeleteActivities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteActivities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_ActivityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_ActivityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeleteAreas": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeleteAreas",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteAreas'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_AreaCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_AreaData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeletePriorities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeletePriorities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeletePriorities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_PriorityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_PriorityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeleteStageTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeleteStageTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteStageTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_StageTypeCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_StageTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeleteSubprojectTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeleteSubprojectTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteSubprojectTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_SubprojectTypesCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_SubprojectTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_DeleteTasks": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_DeleteTasks",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteTasks'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_TaskCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_TaskData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetActivities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetActivities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetActivities'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_ActivityData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetAreas": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetAreas",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetAreas'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_AreaData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetPriorities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetPriorities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetPriorities'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_PriorityData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetStageTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetStageTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetStageTypes'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_StageTypeData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetSubprojectTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetSubprojectTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetSubprojectTypes'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_SubprojectTypeData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_GetTasks": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_GetTasks",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetTasks'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PMC_TaskData"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdateActivities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdateActivities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateActivities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_ActivityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_ActivityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdateAreas": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdateAreas",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateAreas'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_AreaCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_AreaData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdatePriorities": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdatePriorities",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdatePriorities'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_PriorityCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_PriorityData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdateStageTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdateStageTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateStageTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_StageTypeCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_StageTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdateSubprojectTypes": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdateSubprojectTypes",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateSubprojectTypes'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_SubprojectTypesCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_SubprojectTypeData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementConfigurationService_UpdateTasks": {
+      "post": {
+        "tags": [
+          "ProjectManagementConfigurationService"
+        ],
+        "operationId": "ProjectManagementConfigurationService_UpdateTasks",
+        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateTasks'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PMC_TaskCollection": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PMC_TaskData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementService_AddSubproject": {
+      "post": {
+        "tags": [
+          "ProjectManagementService"
+        ],
+        "operationId": "ProjectManagementService_AddSubproject",
+        "summary": "Service Layer function import 'ProjectManagementService_AddSubproject'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_SubprojectDocumentParams"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PM_SubprojectDocumentData": {
+                    "$ref": "#/components/schemas/PM_SubprojectDocumentData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementService_DeleteSubproject": {
+      "post": {
+        "tags": [
+          "ProjectManagementService"
+        ],
+        "operationId": "ProjectManagementService_DeleteSubproject",
+        "summary": "Service Layer function import 'ProjectManagementService_DeleteSubproject'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PM_SubprojectDocumentParams": {
+                    "$ref": "#/components/schemas/PM_SubprojectDocumentParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementService_GetSubproject": {
+      "post": {
+        "tags": [
+          "ProjectManagementService"
+        ],
+        "operationId": "ProjectManagementService_GetSubproject",
+        "summary": "Service Layer function import 'ProjectManagementService_GetSubproject'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_SubprojectDocumentData"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PM_SubprojectDocumentParams": {
+                    "$ref": "#/components/schemas/PM_SubprojectDocumentParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementService_GetSubprojectsList": {
+      "post": {
+        "tags": [
+          "ProjectManagementService"
+        ],
+        "operationId": "ProjectManagementService_GetSubprojectsList",
+        "summary": "Service Layer function import 'ProjectManagementService_GetSubprojectsList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PM_SubprojectDocumentParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PM_SubprojectParams": {
+                    "$ref": "#/components/schemas/PM_SubprojectParams"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementService_UpdateSubproject": {
+      "post": {
+        "tags": [
+          "ProjectManagementService"
+        ],
+        "operationId": "ProjectManagementService_UpdateSubproject",
+        "summary": "Service Layer function import 'ProjectManagementService_UpdateSubproject'.",
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PM_SubprojectDocumentData": {
+                    "$ref": "#/components/schemas/PM_SubprojectDocumentData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementTimeSheet": {
+      "get": {
+        "tags": [
+          "ProjectManagementTimeSheet"
+        ],
+        "operationId": "ProjectManagementTimeSheet_List",
+        "summary": "Query the ProjectManagementTimeSheet collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectManagementTimeSheet_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ProjectManagementTimeSheet"
+        ],
+        "operationId": "ProjectManagementTimeSheet_Create",
+        "summary": "Create a new PM_TimeSheetData.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PM_TimeSheetData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_TimeSheetData"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagementTimeSheet({AbsEntry})": {
+      "get": {
+        "tags": [
+          "ProjectManagementTimeSheet"
+        ],
+        "operationId": "ProjectManagementTimeSheet_Get",
+        "summary": "Get a single PM_TimeSheetData by key.",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_TimeSheetData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ProjectManagementTimeSheet"
+        ],
+        "operationId": "ProjectManagementTimeSheet_Update",
+        "summary": "Partially update a PM_TimeSheetData (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PM_TimeSheetData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProjectManagementTimeSheet"
+        ],
+        "operationId": "ProjectManagementTimeSheet_Delete",
+        "summary": "Delete a PM_TimeSheetData.",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagements": {
+      "get": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_List",
+        "summary": "Query the ProjectManagements collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectManagements_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_Create",
+        "summary": "Create a new PM_ProjectDocumentData.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PM_ProjectDocumentData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_ProjectDocumentData"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagements({AbsEntry})": {
+      "get": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_Get",
+        "summary": "Get a single PM_ProjectDocumentData by key.",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PM_ProjectDocumentData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_Update",
+        "summary": "Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PM_ProjectDocumentData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_Delete",
+        "summary": "Delete a PM_ProjectDocumentData.",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectManagements({AbsEntry})/CancelProject": {
+      "post": {
+        "tags": [
+          "ProjectManagements"
+        ],
+        "operationId": "ProjectManagements_CancelProject",
+        "summary": "Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData).",
+        "parameters": [
+          {
+            "name": "AbsEntry",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'AbsEntry' (Edm.Int32).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Projects": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "Projects_List",
+        "summary": "Query the Projects collection.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/OrderBy"
+          },
+          {
+            "$ref": "#/components/parameters/Top"
+          },
+          {
+            "$ref": "#/components/parameters/Skip"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/InlineCount"
+          },
+          {
+            "$ref": "#/components/parameters/Prefer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of entities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Projects_CollectionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "Projects_Create",
+        "summary": "Create a new Project.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Project"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Project"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Projects('{Code}')": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "Projects_Get",
+        "summary": "Get a single Project by key.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/Select"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested entity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Project"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Entity not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "Projects_Update",
+        "summary": "Partially update a Project (PATCH/MERGE semantics).",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Project"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "Projects_Delete",
+        "summary": "Delete a Project.",
+        "parameters": [
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "description": "Key property 'Code' (Edm.String).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted. No content returned."
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ProjectsService_GetProjectList": {
+      "post": {
+        "tags": [
+          "ProjectsService"
+        ],
+        "operationId": "ProjectsService_GetProjectList",
+        "summary": "Service Layer function import 'ProjectsService_GetProjectList'.",
+        "responses": {
+          "200": {
+            "description": "Function result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.metadata": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ProjectParams"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Service Layer error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceLayerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "B1Session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "B1SESSION",
+        "description": "Session cookie returned by POST /Login."
+      }
+    },
+    "parameters": {
+      "Expand": {
+        "name": "$expand",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated navigation properties to expand.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Filter": {
+        "name": "$filter",
+        "in": "query",
+        "required": false,
+        "description": "OData filter expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "InlineCount": {
+        "name": "$inlinecount",
+        "in": "query",
+        "required": false,
+        "description": "Set to 'allpages' to include the total count (odata.count).",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      },
+      "OrderBy": {
+        "name": "$orderby",
+        "in": "query",
+        "required": false,
+        "description": "OData orderby expression.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Prefer": {
+        "name": "Prefer",
+        "in": "header",
+        "required": false,
+        "description": "Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Select": {
+        "name": "$select",
+        "in": "query",
+        "required": false,
+        "description": "Comma-separated list of properties to return.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Skip": {
+        "name": "$skip",
+        "in": "query",
+        "required": false,
+        "description": "Number of records to skip (paging).",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "Top": {
+        "name": "$top",
+        "in": "query",
+        "required": false,
+        "description": "Maximum number of records to return.",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "schemas": {
+      "AmountCatTypeEnum": {
+        "type": "string",
+        "enum": [
+          "act_Open",
+          "act_Invoiced"
+        ],
+        "description": "OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "BoYesNoEnum": {
+        "type": "string",
+        "enum": [
+          "tNO",
+          "tYES"
+        ],
+        "description": "OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name."
+      },
+      "ExpenseTypeData": {
+        "type": "object",
+        "properties": {
+          "ExpenseType": {
+            "type": "string"
+          },
+          "ExpenseName": {
+            "type": "string"
+          },
+          "ExpenseAccount": {
+            "type": "string"
+          },
+          "PaidByCompany": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "VatGroup": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExpenseTypes_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExpenseTypeData"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "LineStatusTypeEnum": {
+        "type": "string",
+        "enum": [
+          "lst_Open",
+          "lst_Closed"
+        ],
+        "description": "OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "PMC_ActivityData": {
+        "type": "object",
+        "properties": {
+          "ActivityID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ActivityType": {
+            "type": "string"
+          },
+          "LaborItem": {
+            "type": "string"
+          },
+          "IsChargeable": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "IsAbsence": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMC_AreaData": {
+        "type": "object",
+        "properties": {
+          "AreaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AreaName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMC_PriorityData": {
+        "type": "object",
+        "properties": {
+          "PriorityID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PriorityName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMC_StageTypeData": {
+        "type": "object",
+        "properties": {
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageName": {
+            "type": "string"
+          },
+          "StageDescription": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMC_SubprojectTypeData": {
+        "type": "object",
+        "properties": {
+          "SubprojectTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectTypeName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMC_TaskData": {
+        "type": "object",
+        "properties": {
+          "TaskID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TaskName": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMCategorizeTypeEnum": {
+        "type": "string",
+        "enum": [
+          "pm_cat_Ignore",
+          "pm_cat_OpenAmountAP",
+          "pm_cat_OpenAmountAR",
+          "pm_cat_InvoicedAP",
+          "pm_cat_InvoicedAR"
+        ],
+        "description": "OData EnumType 'PMCategorizeTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "PMDocumentTypeEnum": {
+        "type": "string",
+        "enum": [
+          "pmdt_DocumentDraft",
+          "pmdt_ManualJournalEntry",
+          "pmdt_SalesQuotation",
+          "pmdt_SalesOrder",
+          "pmdt_Delivery",
+          "pmdt_Return",
+          "pmdt_ReturnRequest",
+          "pmdt_ARDownPaymentRequest",
+          "pmdt_ARDownPaymentInvoice",
+          "pmdt_ARInvoice",
+          "pmdt_ARCreditMemo",
+          "pmdt_ARReserveInvoice",
+          "pmdt_PurchaseQuotation",
+          "pmdt_PurchaseOrder",
+          "pmdt_PurchaseRequest",
+          "pmdt_GoodsReceiptPO",
+          "pmdt_GoodsReturn",
+          "pmdt_GoodsReturnRequest",
+          "pmdt_APDownPaymentRequest",
+          "pmdt_APDownPaymentInvoice",
+          "pmdt_APInvoice",
+          "pmdt_APCreditMemo",
+          "pmdt_APReserveInvoice",
+          "pmdt_ServiceCall",
+          "pmdt_GoodsReceipt",
+          "pmdt_GoodsIssue",
+          "pmdt_ARCorrectionInvoice",
+          "pmdt_ARCorrectionInvoiceReversal",
+          "pmdt_APCorrectionInvoice",
+          "pmdt_APCorrectionInvoiceReversal"
+        ],
+        "description": "OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "PMOperationTypeEnum": {
+        "type": "string",
+        "enum": [
+          "pm_op_Ignore",
+          "pm_op_Add",
+          "pm_op_Subtract"
+        ],
+        "description": "OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "PMS_ActivityData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ActivityID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PMS_DocAttachement": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SourcePath": {
+            "type": "string"
+          },
+          "FileName": {
+            "type": "string"
+          },
+          "FileExtension": {
+            "type": "string"
+          },
+          "AttachementDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMS_DocumentData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocType": {
+            "$ref": "#/components/schemas/PMDocumentTypeEnum"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Total": {
+            "type": "number",
+            "format": "double"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/LineStatusTypeEnum"
+          },
+          "AmountCategory": {
+            "$ref": "#/components/schemas/AmountCatTypeEnum"
+          },
+          "Categorize": {
+            "$ref": "#/components/schemas/PMCategorizeTypeEnum"
+          },
+          "Operation": {
+            "$ref": "#/components/schemas/PMOperationTypeEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PMS_OpenIssueData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Area": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "Closed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SolutionID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Responsible": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EnteredBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EnteredDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Effort": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PMS_StageAttachement": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SourcePath": {
+            "type": "string"
+          },
+          "FileName": {
+            "type": "string"
+          },
+          "FileExtension": {
+            "type": "string"
+          },
+          "AttachementDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMS_StageData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CloseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Task": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ExpectedCosts": {
+            "type": "number",
+            "format": "double"
+          },
+          "InvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "OpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "InvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "OpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "PercentualCompletness": {
+            "type": "number",
+            "format": "double"
+          },
+          "IsFinished": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "StageOwner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage3": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage4": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageDependency1Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency2Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency3Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency4Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "DependsOnStageID1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID3": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID4": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UniqueID": {
+            "type": "string"
+          },
+          "FinishedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PMS_SummaryData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumOpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumInvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVariancePurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "VariancePerceptionPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumSubprojectBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumOpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumInvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalVariancePurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumVariancePerceptionPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "PotentialSubprojectAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumOpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumInvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVarianceSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "VariancePerceptionSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumPotentialSubprojectAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumOpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumInvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalVarianceSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumVariancePerceptionSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualItemComponentCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualResourceComponentCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualAdditionalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualProductCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualByProductCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVariance": {
+            "type": "number",
+            "format": "double"
+          },
+          "DueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ActualClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Overdue": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PMS_WorkOrderData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_ActivityData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ActivityID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_DocAttachement": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SourcePath": {
+            "type": "string"
+          },
+          "FileName": {
+            "type": "string"
+          },
+          "FileExtension": {
+            "type": "string"
+          },
+          "AttachementDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PM_DocumentData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocType": {
+            "$ref": "#/components/schemas/PMDocumentTypeEnum"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Total": {
+            "type": "number",
+            "format": "double"
+          },
+          "LineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Status": {
+            "$ref": "#/components/schemas/LineStatusTypeEnum"
+          },
+          "AmountCategory": {
+            "$ref": "#/components/schemas/AmountCatTypeEnum"
+          },
+          "Categorize": {
+            "$ref": "#/components/schemas/PMCategorizeTypeEnum"
+          },
+          "Operation": {
+            "$ref": "#/components/schemas/PMOperationTypeEnum"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_OpenIssueData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Area": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Remarks": {
+            "type": "string"
+          },
+          "Closed": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "SolutionID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Responsible": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EnteredBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EnteredDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Effort": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_ProjectDocumentData": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProjectName": {
+            "type": "string"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FinishedPercent": {
+            "type": "number",
+            "format": "double"
+          },
+          "DocNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Series": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProjectType": {
+            "$ref": "#/components/schemas/ProjectTypeEnum"
+          },
+          "BusinessPartner": {
+            "type": "string"
+          },
+          "BusinessPartnerName": {
+            "type": "string"
+          },
+          "ContactPerson": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Territory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SalesEmployee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AllowSubprojects": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ProjectStatus": {
+            "$ref": "#/components/schemas/ProjectStatusTypeEnum"
+          },
+          "DueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FinancialProject": {
+            "type": "string"
+          },
+          "RiskLevel": {
+            "$ref": "#/components/schemas/RiskLevelTypeEnum"
+          },
+          "Industry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Reason": {
+            "type": "string"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PM_StagesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_StageData"
+            }
+          },
+          "PM_OpenIssuesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_OpenIssueData"
+            }
+          },
+          "PM_DocumentsCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_DocumentData"
+            }
+          },
+          "PM_ActivitiesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_ActivityData"
+            }
+          },
+          "PM_WorkOrdersCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_WorkOrderData"
+            }
+          },
+          "PM_SummaryData": {
+            "$ref": "#/components/schemas/PM_SummaryData"
+          },
+          "PM_DocAttachements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_DocAttachement"
+            }
+          },
+          "PM_StageAttachements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_StageAttachement"
+            }
+          },
+          "Project": {
+            "$ref": "#/components/schemas/Project"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_StageAttachement": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SourcePath": {
+            "type": "string"
+          },
+          "FileName": {
+            "type": "string"
+          },
+          "FileExtension": {
+            "type": "string"
+          },
+          "AttachementDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PM_StageData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CloseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Task": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ExpectedCosts": {
+            "type": "number",
+            "format": "double"
+          },
+          "InvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "OpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "InvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "OpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "PercentualCompletness": {
+            "type": "number",
+            "format": "double"
+          },
+          "IsFinished": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "StageOwner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage3": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStage4": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageDependency1Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency2Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency3Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "StageDependency4Type": {
+            "$ref": "#/components/schemas/StageDepTypeEnum"
+          },
+          "DependsOnStageID1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID3": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DependsOnStageID4": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UniqueID": {
+            "type": "string"
+          },
+          "FinishedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_SubprojectDocumentData": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Owner": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectName": {
+            "type": "string"
+          },
+          "StartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FinishedPercent": {
+            "type": "number",
+            "format": "double"
+          },
+          "ParentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectContribution": {
+            "type": "number",
+            "format": "double"
+          },
+          "SubprojectStatus": {
+            "$ref": "#/components/schemas/SubprojectStatusTypeEnum"
+          },
+          "SubprojectEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ActualCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "PlannedCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "SubprojectDepth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "PMS_StagesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_StageData"
+            }
+          },
+          "PMS_OpenIssuesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_OpenIssueData"
+            }
+          },
+          "PMS_DocumentsCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_DocumentData"
+            }
+          },
+          "PMS_ActivitiesCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_ActivityData"
+            }
+          },
+          "PMS_WorkOrdersCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_WorkOrderData"
+            }
+          },
+          "PMS_SummaryData": {
+            "$ref": "#/components/schemas/PMS_SummaryData"
+          },
+          "PMS_DocAttachements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_DocAttachement"
+            }
+          },
+          "PMS_StageAttachements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PMS_StageAttachement"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_SubprojectDocumentParams": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PM_SubprojectParams": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsSubproject": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PM_SummaryData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumOpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumInvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVariancePurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "VariancePerceptionPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumSubprojectBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumOpenAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumInvoicedAmountPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalVariancePurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumVariancePerceptionPurchase": {
+            "type": "number",
+            "format": "double"
+          },
+          "PotentialSubprojectAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumOpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "SumInvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVarianceSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "VariancePerceptionSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumPotentialSubprojectAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumOpenAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumInvoicedAmountSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumTotalVarianceSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "AccumVariancePerceptionSales": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualItemComponentCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualResourceComponentCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualAdditionalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualProductCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "ActualByProductCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "TotalVariance": {
+            "type": "number",
+            "format": "double"
+          },
+          "DueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ActualClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Overdue": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PM_TimeSheetData": {
+        "type": "object",
+        "properties": {
+          "AbsEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TimeSheetType": {
+            "$ref": "#/components/schemas/TimeSheetTypeEnum"
+          },
+          "UserID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "Department": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "OwnerCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DateFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "DateTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "SAPPassport": {
+            "type": "string"
+          },
+          "AttachmentEntry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UserCode": {
+            "type": "string"
+          },
+          "PM_TimeSheetLineDataCollection": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_TimeSheetLineData"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_TimeSheetLineData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ActivityType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LaborItem": {
+            "type": "string"
+          },
+          "StartTime": {
+            "type": "string"
+          },
+          "EndTime": {
+            "type": "string"
+          },
+          "Workorder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ServiceCall": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CostCenter": {
+            "type": "string"
+          },
+          "FinancialProject": {
+            "type": "string"
+          },
+          "Location": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "GPSData": {
+            "type": "string"
+          },
+          "Branch": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Break": {
+            "type": "string"
+          },
+          "NonBillableTime": {
+            "type": "string"
+          },
+          "EffectiveTime": {
+            "type": "string"
+          },
+          "BillableTime": {
+            "type": "string"
+          },
+          "FullDay": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ProjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SubprojectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PM_WorkOrderData": {
+        "type": "object",
+        "properties": {
+          "LineID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "DocEntry": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": true
+      },
+      "Project": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "ValidFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ValidTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Active": {
+            "$ref": "#/components/schemas/BoYesNoEnum"
+          },
+          "ProjectManagements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_ProjectDocumentData"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ProjectManagementTimeSheet_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_TimeSheetData"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectManagements_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PM_ProjectDocumentData"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectParams": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProjectStatusTypeEnum": {
+        "type": "string",
+        "enum": [
+          "pst_Started",
+          "pst_Paused",
+          "pst_Stopped",
+          "pst_Finished",
+          "pst_Canceled"
+        ],
+        "description": "OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "ProjectTypeEnum": {
+        "type": "string",
+        "enum": [
+          "pt_External",
+          "pt_Internal"
+        ],
+        "description": "OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "Projects_CollectionResponse": {
+        "type": "object",
+        "properties": {
+          "odata.metadata": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Project"
+            }
+          },
+          "odata.nextLink": {
+            "type": "string"
+          }
+        }
+      },
+      "RiskLevelTypeEnum": {
+        "type": "string",
+        "enum": [
+          "rlt_Low",
+          "rlt_Medium",
+          "rlt_High"
+        ],
+        "description": "OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "ServiceLayerError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "message": {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "StageDepTypeEnum": {
+        "type": "string",
+        "enum": [
+          "sdt_Project",
+          "sdt_Subproject"
+        ],
+        "description": "OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "SubprojectStatusTypeEnum": {
+        "type": "string",
+        "enum": [
+          "sst_Open",
+          "sst_Closed"
+        ],
+        "description": "OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name."
+      },
+      "TimeSheetTypeEnum": {
+        "type": "string",
+        "enum": [
+          "tsh_Employee",
+          "tsh_User",
+          "tsh_Other"
+        ],
+        "description": "OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name."
+      }
+    }
+  }
+}
