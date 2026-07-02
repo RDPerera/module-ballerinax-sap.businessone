@@ -52,6 +52,7 @@ public type ListServiceCallProblemSubTypesHeaders record {
     string prefer?;
 };
 
+# The `ServiceContract_Line` complex type of the SAP Business One Service Layer.
 public type ServiceContractLine record {
     int:Signed32 LineNum?;
     string ManufacturerSerialNum?;
@@ -68,6 +69,7 @@ public type ServiceContractLine record {
 # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
+# The `CustomerEquipmentCardBusinessPartner` complex type of the SAP Business One Service Layer.
 public type CustomerEquipmentCardBusinessPartner record {
     string BPCode?;
 };
@@ -137,6 +139,7 @@ public type ListServiceCallsHeaders record {
 # OData EnumType 'BoContractTypes'. Serialised by the Service Layer as the member name
 public type BoContractTypes "ct_Customer"|"ct_ItemGroup"|"ct_SerialNumber";
 
+# A paged collection of `KnowledgeBaseSolutions` entities returned by the SAP Business One Service Layer.
 public type KnowledgeBaseSolutionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -173,6 +176,7 @@ public type ListServiceCallOriginsQueries record {
     string dollarSelect?;
 };
 
+# The `ServiceCallStatusParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallStatusParams record {|
     @jsondata:Name {value: "StatusId"}
     int:Signed32 statusId?;
@@ -180,6 +184,7 @@ public type ServiceCallStatusParams record {|
     string name?;
 |};
 
+# The `QueueMember` complex type of the SAP Business One Service Layer.
 public type QueueMember record {
     string QueueID?;
     int:Signed32 MemberUserID?;
@@ -206,6 +211,7 @@ public type GetServiceContractsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `Queue` entities returned by the SAP Business One Service Layer.
 public type QueueCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -214,6 +220,7 @@ public type QueueCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ServiceCallSolutionStatus` entity of the SAP Business One Service Layer.
 public type ServiceCallSolutionStatus record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -275,6 +282,7 @@ public type ListServiceCallProblemSubTypesQueries record {
 # OData EnumType 'BoSvcCallPriorities'. Serialised by the Service Layer as the member name
 public type BoSvcCallPriorities "scp_Low"|"scp_Medium"|"scp_High";
 
+# A paged collection of `ServiceCallStatus` entities returned by the SAP Business One Service Layer.
 public type ServiceCallStatusCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -283,6 +291,7 @@ public type ServiceCallStatusCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ServiceCallProblemSubType` entity of the SAP Business One Service Layer.
 public type ServiceCallProblemSubType record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -296,6 +305,7 @@ public type ServiceCallProblemSubType record {|
     string name?;
 |};
 
+# The `ServiceCallBPAddressComponent` complex type of the SAP Business One Service Layer.
 public type ServiceCallBPAddressComponent record {
     string ShipToStreet?;
     string ShipToStreetNo?;
@@ -325,6 +335,7 @@ public type ServiceCallBPAddressComponent record {
     string BillToGlobalLocationNumber?;
 };
 
+# The `ServiceCallOrigin` entity of the SAP Business One Service Layer.
 public type ServiceCallOrigin record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -351,6 +362,7 @@ public type GetServiceCallSolutionStatusQueries record {
     string dollarSelect?;
 };
 
+# The `ServiceCallProblemType` entity of the SAP Business One Service Layer.
 public type ServiceCallProblemType record {|
     @jsondata:Name {value: "ProblemTypeID"}
     int:Signed32 problemTypeID?;
@@ -364,6 +376,7 @@ public type ServiceCallProblemType record {|
     string name?;
 |};
 
+# A paged collection of `ContractTemplates` entities returned by the SAP Business One Service Layer.
 public type ContractTemplatesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -372,6 +385,7 @@ public type ContractTemplatesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `Queue` entity of the SAP Business One Service Layer.
 public type Queue record {
     string QueueID?;
     string Description?;
@@ -408,6 +422,7 @@ public type ListKnowledgeBaseSolutionsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `CustomerEquipmentCards` entities returned by the SAP Business One Service Layer.
 public type CustomerEquipmentCardsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -416,6 +431,7 @@ public type CustomerEquipmentCardsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `ServiceCallProblemTypes` entities returned by the SAP Business One Service Layer.
 public type ServiceCallProblemTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -491,6 +507,7 @@ public type ListServiceCallSolutionStatusQueries record {
 # OData EnumType 'BoServiceTypes'. Serialised by the Service Layer as the member name
 public type BoServiceTypes "bst_Regular"|"bst_Warranty";
 
+# The `ServiceCallInventoryExpense` complex type of the SAP Business One Service Layer.
 public type ServiceCallInventoryExpense record {
     int:Signed32 LineNum?;
     # OData EnumType 'BoSvcExpPartTypes'. Serialised by the Service Layer as the member name
@@ -504,6 +521,7 @@ public type ServiceCallInventoryExpense record {
     int:Signed32 DocEntry?;
 };
 
+# The `ServiceCallTypeParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallTypeParams record {|
     @jsondata:Name {value: "CallTypeID"}
     int:Signed32 callTypeID?;
@@ -527,6 +545,7 @@ public type ListServiceCallStatusHeaders record {
     string prefer?;
 };
 
+# The `ServiceCallActivity` complex type of the SAP Business One Service Layer.
 public type ServiceCallActivity record {
     int:Signed32 LineNum?;
     int:Signed32 ActivityCode?;
@@ -557,6 +576,7 @@ public type ListQueueQueries record {
     string dollarSelect?;
 };
 
+# The `CustomerEquipmentCard` entity of the SAP Business One Service Layer.
 public type CustomerEquipmentCard record {
     int:Signed32 EquipmentCardNum?;
     string CustomerCode?;
@@ -600,6 +620,7 @@ public type CustomerEquipmentCard record {
     # OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name
     BoEquipmentBPType ServiceBPType?;
     CustomerEquipmentCardBusinessPartner[] CustomerEquipmentCardBusinessPartners?;
+    # The `ServiceContract` entity of the SAP Business One Service Layer.
     ServiceContract ServiceContract?;
 };
 
@@ -613,6 +634,7 @@ public type GetServiceCallProblemTypesQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `ServiceCallSolutionStatus` entities returned by the SAP Business One Service Layer.
 public type ServiceCallSolutionStatusCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -621,6 +643,7 @@ public type ServiceCallSolutionStatusCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `ServiceCallTypesService_GetServiceCallTypeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -711,6 +734,7 @@ public type ListServiceContractsHeaders record {
     string prefer?;
 };
 
+# The `ServiceCallScheduling` complex type of the SAP Business One Service Layer.
 public type ServiceCallScheduling record {
     int:Signed32 LineNum?;
     int:Signed32 Technician?;
@@ -771,18 +795,21 @@ public type ServiceCallScheduling record {
     string CheckOutTime?;
 };
 
+# Represents the response payload for the `ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ServiceCallProblemSubTypeParams[] value?;
 };
 
+# Represents the response payload for the `ServiceCallProblemTypesService_GetServiceCallProblemTypeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ServiceCallProblemTypeParams[] value?;
 };
 
+# Represents the response payload for the `ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList` operation of the SAP Business One Service Layer.
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -799,12 +826,14 @@ public type GetQueueQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ServiceCallStatusService_GetServiceCallStatusList` operation of the SAP Business One Service Layer.
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ServiceCallStatusParams[] value?;
 };
 
+# A paged collection of `ServiceCallTypes` entities returned by the SAP Business One Service Layer.
 public type ServiceCallTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -813,6 +842,7 @@ public type ServiceCallTypesCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `ServiceCallProblemSubTypes` entities returned by the SAP Business One Service Layer.
 public type ServiceCallProblemSubTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -849,6 +879,7 @@ public type ListServiceCallStatusQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `ServiceCalls` entities returned by the SAP Business One Service Layer.
 public type ServiceCallsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -857,11 +888,13 @@ public type ServiceCallsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ServiceCallSolution` complex type of the SAP Business One Service Layer.
 public type ServiceCallSolution record {
     int:Signed32 LineNum?;
     int:Signed32 SolutionID?;
 };
 
+# A paged collection of `ServiceCallOrigins` entities returned by the SAP Business One Service Layer.
 public type ServiceCallOriginsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -870,6 +903,7 @@ public type ServiceCallOriginsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ServiceCallType` entity of the SAP Business One Service Layer.
 public type ServiceCallType record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -883,6 +917,7 @@ public type ServiceCallType record {|
     string name?;
 |};
 
+# The `ServiceCallOriginParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallOriginParams record {|
     @jsondata:Name {value: "OriginID"}
     int:Signed32 originID?;
@@ -890,6 +925,7 @@ public type ServiceCallOriginParams record {|
     string name?;
 |};
 
+# The `ServiceCallProblemSubTypeParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallProblemSubTypeParams record {|
     @jsondata:Name {value: "ProblemSubTypeID"}
     int:Signed32 problemSubTypeID?;
@@ -897,6 +933,7 @@ public type ServiceCallProblemSubTypeParams record {|
     string name?;
 |};
 
+# The `ServiceCallStatus` entity of the SAP Business One Service Layer.
 public type ServiceCallStatus record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -920,12 +957,14 @@ public type GetCustomerEquipmentCardsQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ServiceCallOriginsService_GetServiceCallOriginList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ServiceCallOriginParams[] value?;
 };
 
+# The `ServiceCallProblemTypeParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallProblemTypeParams record {|
     @jsondata:Name {value: "ProblemTypeID"}
     int:Signed32 problemTypeID?;
@@ -939,6 +978,7 @@ public type BoResponseUnit "boru_Day"|"boru_Hour";
 # OData EnumType 'BoEquipmentBPType'. Serialised by the Service Layer as the member name
 public type BoEquipmentBPType "et_Sales"|"et_Purchasing"|"et_SalesAndPurchasing";
 
+# A paged collection of `ServiceContracts` entities returned by the SAP Business One Service Layer.
 public type ServiceContractsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -947,6 +987,7 @@ public type ServiceContractsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ServiceCall` entity of the SAP Business One Service Layer.
 public type ServiceCall record {
     int:Signed32 ServiceCallID?;
     string Subject?;
@@ -1045,12 +1086,19 @@ public type ServiceCall record {
     ServiceCallSolution[] ServiceCallSolutions?;
     ServiceCallScheduling[] ServiceCallSchedulings?;
     ServiceCallBPAddressComponent[] ServiceCallBPAddressComponents?;
+    # The `ServiceContract` entity of the SAP Business One Service Layer.
     ServiceContract ServiceContract?;
+    # The `ServiceCallOrigin` entity of the SAP Business One Service Layer.
     ServiceCallOrigin ServiceCallOrigin?;
+    # The `ServiceCallStatus` entity of the SAP Business One Service Layer.
     ServiceCallStatus ServiceCallStatus?;
+    # The `ServiceCallType` entity of the SAP Business One Service Layer.
     ServiceCallType ServiceCallType?;
+    # The `ServiceCallProblemType` entity of the SAP Business One Service Layer.
     ServiceCallProblemType ServiceCallProblemType?;
+    # The `Queue` entity of the SAP Business One Service Layer.
     Queue Queue2?;
+    # The `ServiceCallProblemSubType` entity of the SAP Business One Service Layer.
     ServiceCallProblemSubType ServiceCallProblemSubType?;
 };
 
@@ -1061,6 +1109,7 @@ public type ListKnowledgeBaseSolutionsHeaders record {
     string prefer?;
 };
 
+# The `ServiceContract` entity of the SAP Business One Service Layer.
 public type ServiceContract record {
     int:Signed32 ContractID?;
     string CustomerCode?;
@@ -1134,6 +1183,7 @@ public type ServiceContract record {
     ServiceContractLine[] ServiceContract_Lines?;
     CustomerEquipmentCard[] CustomerEquipmentCards?;
     ServiceCall[] ServiceCalls?;
+    # The `ContractTemplate` entity of the SAP Business One Service Layer.
     ContractTemplate ContractTemplate2?;
 };
 
@@ -1154,6 +1204,7 @@ public type GetKnowledgeBaseSolutionsQueries record {
     string dollarSelect?;
 };
 
+# The `ServiceCallSolutionStatusParams` complex type of the SAP Business One Service Layer.
 public type ServiceCallSolutionStatusParams record {|
     @jsondata:Name {value: "StatusId"}
     int:Signed32 statusId?;
@@ -1178,6 +1229,7 @@ public type GetServiceCallStatusQueries record {
     string dollarSelect?;
 };
 
+# The `ContractTemplate` entity of the SAP Business One Service Layer.
 public type ContractTemplate record {
     string TemplateName?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
@@ -1288,6 +1340,7 @@ public type ListServiceCallTypesQueries record {
     string dollarSelect?;
 };
 
+# The `KnowledgeBaseSolution` entity of the SAP Business One Service Layer.
 public type KnowledgeBaseSolution record {
     string ItemCode?;
     int:Signed32 Status?;
@@ -1302,6 +1355,7 @@ public type KnowledgeBaseSolution record {
     string Description?;
     int:Signed32 SolutionCode?;
     int:Signed32 AttachmentEntry?;
+    # The `ServiceCallSolutionStatus` entity of the SAP Business One Service Layer.
     ServiceCallSolutionStatus ServiceCallSolutionStatus?;
 };
 

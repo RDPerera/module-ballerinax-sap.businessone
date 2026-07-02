@@ -201,7 +201,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetCapitalizationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
+    remote isolated function assetCapitalizationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/AssetCapitalizationService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -272,7 +272,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetClassesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
+    remote isolated function assetClassesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/AssetClassesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -343,7 +343,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetDepreciationGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
+    remote isolated function assetDepreciationGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/AssetDepreciationGroupsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -414,7 +414,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
+    remote isolated function assetGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/AssetGroupsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -498,7 +498,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetManualDepreciationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
+    remote isolated function assetManualDepreciationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/AssetManualDepreciationService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -582,7 +582,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetRetirementServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
+    remote isolated function assetRetirementServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_6|error {
         string resourcePath = string `/AssetRetirementService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -592,7 +592,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetRevaluationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
+    remote isolated function assetRevaluationServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_7|error {
         string resourcePath = string `/AssetRevaluationService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -737,7 +737,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function assetTransferServiceGetList(map<string|string[]> headers = {}) returns inline_response_200|error {
+    remote isolated function assetTransferServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_8|error {
         string resourcePath = string `/AssetTransferService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -808,7 +808,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function depreciationAreasServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
+    remote isolated function depreciationAreasServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_9|error {
         string resourcePath = string `/DepreciationAreasService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -879,7 +879,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function depreciationTypePoolsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_6|error {
+    remote isolated function depreciationTypePoolsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_10|error {
         string resourcePath = string `/DepreciationTypePoolsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -950,7 +950,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function depreciationTypesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_7|error {
+    remote isolated function depreciationTypesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_11|error {
         string resourcePath = string `/DepreciationTypesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -1021,7 +1021,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function fAAccountDeterminationsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_8|error {
+    remote isolated function fAAccountDeterminationsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_12|error {
         string resourcePath = string `/FAAccountDeterminationsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -1045,7 +1045,7 @@ public isolated client class Client {
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function fixedAssetItemsServiceGetAssetValuesList(FixedAssetItemsService_GetAssetValuesList_body payload, map<string|string[]> headers = {}) returns inline_response_200_9|error {
+    remote isolated function fixedAssetItemsServiceGetAssetValuesList(FixedAssetItemsService_GetAssetValuesList_body payload, map<string|string[]> headers = {}) returns inline_response_200_13|error {
         string resourcePath = string `/FixedAssetItemsService_GetAssetValuesList`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);

@@ -1241,7 +1241,8 @@
                         "$ref": "#/components/schemas/ServiceCallOriginParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallOriginsService_GetServiceCallOriginList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1523,7 +1524,8 @@
                         "$ref": "#/components/schemas/ServiceCallProblemSubTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1805,7 +1807,8 @@
                         "$ref": "#/components/schemas/ServiceCallProblemTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallProblemTypesService_GetServiceCallProblemTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2087,7 +2090,8 @@
                         "$ref": "#/components/schemas/ServiceCallSolutionStatusParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2369,7 +2373,8 @@
                         "$ref": "#/components/schemas/ServiceCallStatusParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallStatusService_GetServiceCallStatusList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2651,7 +2656,8 @@
                         "$ref": "#/components/schemas/ServiceCallTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceCallTypesService_GetServiceCallTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3319,7 +3325,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceContract_Line` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallActivity": {
         "type": "object",
@@ -3333,7 +3340,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCallActivity` complex type of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -3358,7 +3366,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CustomerEquipmentCardBusinessPartner` complex type of the SAP Business One Service Layer."
       },
       "CustomerEquipmentCard": {
         "type": "object",
@@ -3503,7 +3512,8 @@
             "$ref": "#/components/schemas/ServiceContract"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CustomerEquipmentCard` entity of the SAP Business One Service Layer."
       },
       "ServiceCallSolutionStatusCollectionResponse": {
         "type": "object",
@@ -3522,7 +3532,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallSolutionStatus` entities returned by the SAP Business One Service Layer."
       },
       "BoContractTypes": {
         "type": "string",
@@ -3550,7 +3561,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `KnowledgeBaseSolutions` entities returned by the SAP Business One Service Layer."
       },
       "BoSerialNumberStatus": {
         "type": "string",
@@ -3731,7 +3743,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCallScheduling` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallStatusParams": {
         "type": "object",
@@ -3746,7 +3759,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallStatusParams` complex type of the SAP Business One Service Layer."
       },
       "QueueMember": {
         "type": "object",
@@ -3759,7 +3773,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `QueueMember` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallTypesCollectionResponse": {
         "type": "object",
@@ -3778,7 +3793,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallTypes` entities returned by the SAP Business One Service Layer."
       },
       "ServiceCallProblemSubTypesCollectionResponse": {
         "type": "object",
@@ -3797,7 +3813,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallProblemSubTypes` entities returned by the SAP Business One Service Layer."
       },
       "BoSvcEpxDocTypes": {
         "type": "string",
@@ -3839,7 +3856,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Queue` entities returned by the SAP Business One Service Layer."
       },
       "ServiceCallSolutionStatus": {
         "type": "object",
@@ -3873,7 +3891,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallSolutionStatus` entity of the SAP Business One Service Layer."
       },
       "ServiceCallsCollectionResponse": {
         "type": "object",
@@ -3892,7 +3911,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCalls` entities returned by the SAP Business One Service Layer."
       },
       "BoRemindUnits": {
         "type": "string",
@@ -3915,7 +3935,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCallSolution` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallOriginsCollectionResponse": {
         "type": "object",
@@ -3934,7 +3955,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallOrigins` entities returned by the SAP Business One Service Layer."
       },
       "BoSvcCallPriorities": {
         "type": "string",
@@ -3962,7 +3984,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallStatus` entities returned by the SAP Business One Service Layer."
       },
       "ServiceCallOriginParams": {
         "type": "object",
@@ -3977,7 +4000,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallOriginParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallType": {
         "type": "object",
@@ -4011,7 +4035,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallType` entity of the SAP Business One Service Layer."
       },
       "ServiceCallProblemSubType": {
         "type": "object",
@@ -4045,7 +4070,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallProblemSubType` entity of the SAP Business One Service Layer."
       },
       "ServiceCallProblemSubTypeParams": {
         "type": "object",
@@ -4060,7 +4086,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallProblemSubTypeParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallBPAddressComponent": {
         "type": "object",
@@ -4144,7 +4171,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCallBPAddressComponent` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallOrigin": {
         "type": "object",
@@ -4178,7 +4206,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallOrigin` entity of the SAP Business One Service Layer."
       },
       "ServiceCallStatus": {
         "type": "object",
@@ -4212,7 +4241,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallStatus` entity of the SAP Business One Service Layer."
       },
       "BoSvcContractStatus": {
         "type": "string",
@@ -4256,7 +4286,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallProblemType` entity of the SAP Business One Service Layer."
       },
       "ContractTemplatesCollectionResponse": {
         "type": "object",
@@ -4275,7 +4306,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ContractTemplates` entities returned by the SAP Business One Service Layer."
       },
       "Queue": {
         "type": "object",
@@ -4309,7 +4341,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Queue` entity of the SAP Business One Service Layer."
       },
       "ServiceCallProblemTypeParams": {
         "type": "object",
@@ -4324,7 +4357,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallProblemTypeParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceContractsCollectionResponse": {
         "type": "object",
@@ -4343,7 +4377,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceContracts` entities returned by the SAP Business One Service Layer."
       },
       "BoEquipmentBPType": {
         "type": "string",
@@ -4694,7 +4729,8 @@
             "$ref": "#/components/schemas/ServiceCallProblemSubType"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCall` entity of the SAP Business One Service Layer."
       },
       "CustomerEquipmentCardsCollectionResponse": {
         "type": "object",
@@ -4713,7 +4749,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CustomerEquipmentCards` entities returned by the SAP Business One Service Layer."
       },
       "ServiceCallProblemTypesCollectionResponse": {
         "type": "object",
@@ -4732,7 +4769,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceCallProblemTypes` entities returned by the SAP Business One Service Layer."
       },
       "ServiceContract": {
         "type": "object",
@@ -4920,7 +4958,8 @@
             "$ref": "#/components/schemas/ContractTemplate"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceContract` entity of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4945,7 +4984,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "ServiceCallSolutionStatusParams": {
         "type": "object",
@@ -4960,7 +5000,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallSolutionStatusParams` complex type of the SAP Business One Service Layer."
       },
       "ContractTemplate": {
         "type": "object",
@@ -5094,7 +5135,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ContractTemplate` entity of the SAP Business One Service Layer."
       },
       "KnowledgeBaseSolution": {
         "type": "object",
@@ -5150,7 +5192,8 @@
             "$ref": "#/components/schemas/ServiceCallSolutionStatus"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `KnowledgeBaseSolution` entity of the SAP Business One Service Layer."
       },
       "BoDurations": {
         "type": "string",
@@ -5199,7 +5242,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ServiceCallInventoryExpense` complex type of the SAP Business One Service Layer."
       },
       "ServiceCallTypeParams": {
         "type": "object",
@@ -5214,7 +5258,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceCallTypeParams` complex type of the SAP Business One Service Layer."
       },
       "BoResolutionUnits": {
         "type": "string",

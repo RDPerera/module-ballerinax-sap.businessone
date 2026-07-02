@@ -287,7 +287,8 @@
                     ],
                     "x-ballerina-name": "activityInstanceParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitiesService_DeleteSingleInstanceFromSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -335,7 +336,8 @@
                         "$ref": "#/components/schemas/ActivityParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivitiesService_GetActivityList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -374,7 +376,8 @@
                     ],
                     "x-ballerina-name": "activity"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -398,7 +401,8 @@
                         "$ref": "#/components/schemas/ActivityParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -437,7 +441,8 @@
                     ],
                     "x-ballerina-name": "activityInstanceParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitiesService_GetSingleInstanceFromSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -488,7 +493,8 @@
                     ],
                     "x-ballerina-name": "activityInstancesListParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -512,7 +518,8 @@
                         "$ref": "#/components/schemas/ActivityInstanceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -582,7 +589,8 @@
                     ],
                     "x-ballerina-name": "activity"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitiesService_UpdateSingleInstanceInSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1115,7 +1123,8 @@
                         "$ref": "#/components/schemas/ActivityRecipientListParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivityRecipientListsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1397,7 +1406,8 @@
                         "$ref": "#/components/schemas/ActivitySubjectParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivitySubjectService_GetActivitySubjectList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1436,7 +1446,8 @@
                     ],
                     "x-ballerina-name": "activitySubject"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1460,7 +1471,8 @@
                         "$ref": "#/components/schemas/ActivitySubjectParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2217,7 +2229,8 @@
                         "$ref": "#/components/schemas/CampaignResponseTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CampaignResponseTypeService_GetResponseTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2537,7 +2550,8 @@
                         "$ref": "#/components/schemas/CampaignParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CampaignsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2819,7 +2833,8 @@
                         "$ref": "#/components/schemas/PartnersSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `PartnersSetupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3378,7 +3393,8 @@
                         "$ref": "#/components/schemas/SalesOpportunityCompetitorSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3660,7 +3676,8 @@
                         "$ref": "#/components/schemas/SalesOpportunityInterestSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3942,7 +3959,8 @@
                         "$ref": "#/components/schemas/SalesOpportunityReasonSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4224,7 +4242,8 @@
                         "$ref": "#/components/schemas/SalesOpportunitySourceSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4742,7 +4761,8 @@
                         "$ref": "#/components/schemas/TargetGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TargetGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4794,7 +4814,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunitiesPartner` complex type of the SAP Business One Service Layer."
       },
       "CampaignResponseTypeCollectionResponse": {
         "type": "object",
@@ -4813,7 +4834,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CampaignResponseType` entities returned by the SAP Business One Service Layer."
       },
       "CampaignPartner": {
         "type": "object",
@@ -4841,7 +4863,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CampaignPartner` complex type of the SAP Business One Service Layer."
       },
       "ActivityParams": {
         "type": "object",
@@ -4977,7 +5000,8 @@
             "x-ballerina-name": "country"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityParams` complex type of the SAP Business One Service Layer."
       },
       "CampaignParams": {
         "type": "object",
@@ -4992,7 +5016,8 @@
             "x-ballerina-name": "campaignName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CampaignParams` complex type of the SAP Business One Service Layer."
       },
       "Activity": {
         "type": "object",
@@ -5281,7 +5306,8 @@
             "$ref": "#/components/schemas/ActivityRecipientList"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Activity` entity of the SAP Business One Service Layer."
       },
       "CampaignTypeEnum": {
         "type": "string",
@@ -5310,7 +5336,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivitySubjectParams` complex type of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -5362,7 +5389,8 @@
             "x-ballerina-name": "targetGroupName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TargetGroup` entity of the SAP Business One Service Layer."
       },
       "ActivityLocation": {
         "type": "object",
@@ -5381,7 +5409,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ActivityLocation` entity of the SAP Business One Service Layer."
       },
       "ActivityRecipientObjTypeEnum": {
         "type": "string",
@@ -5414,7 +5443,8 @@
             "x-ballerina-name": "instanceCount"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityInstancesListParams` complex type of the SAP Business One Service Layer."
       },
       "PartnersSetupParams": {
         "type": "object",
@@ -5442,7 +5472,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PartnersSetupParams` complex type of the SAP Business One Service Layer."
       },
       "RecurrenceSequenceEnum": {
         "type": "string",
@@ -5476,7 +5507,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityCompetitorSetupParams` complex type of the SAP Business One Service Layer."
       },
       "ThreatLevelEnum": {
         "type": "string",
@@ -5504,7 +5536,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesOpportunityReasonsSetup` entities returned by the SAP Business One Service Layer."
       },
       "SalesOpportunitiesInterest": {
         "type": "object",
@@ -5525,7 +5558,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunitiesInterest` complex type of the SAP Business One Service Layer."
       },
       "CampaignBusinessPartner": {
         "type": "object",
@@ -5663,7 +5697,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CampaignBusinessPartner` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunitiesCompetitionItem": {
         "type": "object",
@@ -5690,7 +5725,8 @@
             "$ref": "#/components/schemas/ThreatLevelEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunitiesCompetitionItem` complex type of the SAP Business One Service Layer."
       },
       "SalesStagesCollectionResponse": {
         "type": "object",
@@ -5709,7 +5745,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesStages` entities returned by the SAP Business One Service Layer."
       },
       "ActivityRecipientListsCollectionResponse": {
         "type": "object",
@@ -5728,7 +5765,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ActivityRecipientLists` entities returned by the SAP Business One Service Layer."
       },
       "BoMsgPriorities": {
         "type": "string",
@@ -5764,7 +5802,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ActivityLocations` entities returned by the SAP Business One Service Layer."
       },
       "BoSoOsStatus": {
         "type": "string",
@@ -5800,7 +5839,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityCompetitorSetup` entity of the SAP Business One Service Layer."
       },
       "SalesOpportunitySourceSetupParams": {
         "type": "object",
@@ -5815,7 +5855,8 @@
             "x-ballerina-name": "description"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunitySourceSetupParams` complex type of the SAP Business One Service Layer."
       },
       "RecipientTypeEnum": {
         "type": "string",
@@ -5839,7 +5880,8 @@
             "x-ballerina-name": "instanceDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityInstanceParams` complex type of the SAP Business One Service Layer."
       },
       "Campaign": {
         "type": "object",
@@ -5907,7 +5949,8 @@
             "$ref": "#/components/schemas/TargetGroup"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Campaign` entity of the SAP Business One Service Layer."
       },
       "CampaignResponseTypeParams": {
         "type": "object",
@@ -5929,7 +5972,8 @@
             "x-ballerina-name": "responseType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CampaignResponseTypeParams` complex type of the SAP Business One Service Layer."
       },
       "ActivityMultipleRecipient": {
         "type": "object",
@@ -5945,7 +5989,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ActivityMultipleRecipient` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunityInterestsSetupCollectionResponse": {
         "type": "object",
@@ -5964,7 +6009,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesOpportunityInterestsSetup` entities returned by the SAP Business One Service Layer."
       },
       "ActivityRecipientList": {
         "type": "object",
@@ -6009,7 +6055,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityRecipientList` entity of the SAP Business One Service Layer."
       },
       "BoAPARDocumentTypes": {
         "type": "string",
@@ -6118,7 +6165,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunitiesLine` complex type of the SAP Business One Service Layer."
       },
       "ActivityStatus": {
         "type": "object",
@@ -6140,7 +6188,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ActivityStatus` entity of the SAP Business One Service Layer."
       },
       "SalesOpportunities": {
         "type": "object",
@@ -6366,7 +6415,8 @@
             "$ref": "#/components/schemas/SalesStage"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunities` entity of the SAP Business One Service Layer."
       },
       "RecurrencePatternEnum": {
         "type": "string",
@@ -6484,7 +6534,8 @@
             "x-ballerina-name": "businessPartnerName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TargetGroupsDetail` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunityReasonSetupParams": {
         "type": "object",
@@ -6499,7 +6550,8 @@
             "x-ballerina-name": "description"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityReasonSetupParams` complex type of the SAP Business One Service Layer."
       },
       "CampaignItemTypeEnum": {
         "type": "string",
@@ -6536,7 +6588,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PartnersSetup` entity of the SAP Business One Service Layer."
       },
       "TargetGroupParams": {
         "type": "object",
@@ -6550,7 +6603,8 @@
             "x-ballerina-name": "targetGroupName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TargetGroupParams` complex type of the SAP Business One Service Layer."
       },
       "CampaignResponseType": {
         "type": "object",
@@ -6572,7 +6626,8 @@
             "x-ballerina-name": "responseType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CampaignResponseType` entity of the SAP Business One Service Layer."
       },
       "ActivitySubjectsCollectionResponse": {
         "type": "object",
@@ -6591,7 +6646,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ActivitySubjects` entities returned by the SAP Business One Service Layer."
       },
       "BoSoStatus": {
         "type": "string",
@@ -6630,7 +6686,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityRecipientListParams` complex type of the SAP Business One Service Layer."
       },
       "BoActivities": {
         "type": "string",
@@ -6658,7 +6715,8 @@
             "x-ballerina-name": "description"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityInterestSetupParams` complex type of the SAP Business One Service Layer."
       },
       "ActivityStatusesCollectionResponse": {
         "type": "object",
@@ -6677,7 +6735,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ActivityStatuses` entities returned by the SAP Business One Service Layer."
       },
       "ActivitiesCollectionResponse": {
         "type": "object",
@@ -6696,7 +6755,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Activities` entities returned by the SAP Business One Service Layer."
       },
       "RecurrenceDayOfWeekEnum": {
         "type": "string",
@@ -6739,7 +6799,8 @@
             "x-ballerina-name": "sort"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer."
       },
       "ActivityTypesCollectionResponse": {
         "type": "object",
@@ -6758,7 +6819,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ActivityTypes` entities returned by the SAP Business One Service Layer."
       },
       "CampaignStatusEnum": {
         "type": "string",
@@ -6815,7 +6877,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesStage` entity of the SAP Business One Service Layer."
       },
       "SalesOpportunitiesCollectionResponse": {
         "type": "object",
@@ -6834,7 +6897,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesOpportunities` entities returned by the SAP Business One Service Layer."
       },
       "ActivityType": {
         "type": "object",
@@ -6859,7 +6923,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ActivityType` entity of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -6884,7 +6949,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "CampaignsCollectionResponse": {
         "type": "object",
@@ -6903,7 +6969,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Campaigns` entities returned by the SAP Business One Service Layer."
       },
       "PartnersSetupsCollectionResponse": {
         "type": "object",
@@ -6922,7 +6989,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PartnersSetups` entities returned by the SAP Business One Service Layer."
       },
       "SalesOpportunityCompetitorsSetupCollectionResponse": {
         "type": "object",
@@ -6941,7 +7009,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesOpportunityCompetitorsSetup` entities returned by the SAP Business One Service Layer."
       },
       "SalesOpportunityInterestSetup": {
         "type": "object",
@@ -6968,7 +7037,8 @@
             "x-ballerina-name": "sort"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer."
       },
       "ActivitySubject": {
         "type": "object",
@@ -7011,7 +7081,8 @@
             "x-ballerina-name": "activityType2"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivitySubject` entity of the SAP Business One Service Layer."
       },
       "ActivityRecipient": {
         "type": "object",
@@ -7034,7 +7105,8 @@
             "x-ballerina-name": "recipientCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ActivityRecipient` complex type of the SAP Business One Service Layer."
       },
       "CampaignItem": {
         "type": "object",
@@ -7060,7 +7132,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CampaignItem` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunitiesReason": {
         "type": "object",
@@ -7078,7 +7151,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesOpportunitiesReason` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunitySourcesSetupCollectionResponse": {
         "type": "object",
@@ -7097,7 +7171,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesOpportunitySourcesSetup` entities returned by the SAP Business One Service Layer."
       },
       "BoDurations": {
         "type": "string",
@@ -7161,7 +7236,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CheckInParams` complex type of the SAP Business One Service Layer."
       },
       "SalesOpportunitySourceSetup": {
         "type": "object",
@@ -7188,7 +7264,8 @@
             "x-ballerina-name": "sort"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer."
       },
       "BoSoClosedInTypes": {
         "type": "string",
@@ -7232,7 +7309,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TargetGroups` entities returned by the SAP Business One Service Layer."
       }
     },
     "parameters": {

@@ -291,7 +291,8 @@
                         "$ref": "#/components/schemas/AccountCategoryParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AccountCategoryService_GetCategoryList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -848,7 +849,8 @@
                     },
                     "x-ballerina-name": "gLAccounts"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AccountsService_CreateOpenBalance` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1132,7 +1134,8 @@
                         "$ref": "#/components/schemas/AccrualTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AccrualTypesService_GetAccrualTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2128,7 +2131,8 @@
                         "$ref": "#/components/schemas/CashDiscountParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CashDiscountsService_GetCashDiscountList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2410,7 +2414,8 @@
                         "$ref": "#/components/schemas/CashFlowLineItemParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CashFlowLineItemsService_GetCashFlowLineItemList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3164,7 +3169,8 @@
                         "$ref": "#/components/schemas/CostCenterTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CostCenterTypesService_GetCostCenterTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3207,7 +3213,8 @@
                         "$ref": "#/components/schemas/CostElementParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CostElementService_GetCostElementList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3722,7 +3729,8 @@
                         "$ref": "#/components/schemas/DeductibleTaxParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DeductibleTaxService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4715,7 +4723,8 @@
                         "$ref": "#/components/schemas/DeductionTaxSubGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4997,7 +5006,8 @@
                         "$ref": "#/components/schemas/DeterminationCriteriaParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DeterminationCriteriasService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5279,7 +5289,8 @@
                         "$ref": "#/components/schemas/DimensionParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DimensionsService_GetDimensionList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5558,7 +5569,8 @@
                         "$ref": "#/components/schemas/DistributionRuleParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DistributionRulesService_GetDistributionRuleList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5840,7 +5852,8 @@
                         "$ref": "#/components/schemas/FinancialYearParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `FinancialYearsService_GetFinancialYearList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6361,7 +6374,8 @@
                         "$ref": "#/components/schemas/GLAccountAdvancedRuleParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `GLAccountAdvancedRulesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6677,7 +6691,8 @@
                     ],
                     "x-ballerina-name": "journalEntry"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `JournalEntriesService_Close` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6725,7 +6740,8 @@
                         "$ref": "#/components/schemas/JournalEntryDocumentTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `JournalEntryDocumentTypeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6999,7 +7015,8 @@
                     },
                     "x-ballerina-name": "journalVoucher"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `JournalVouchersService_Add` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7286,7 +7303,8 @@
                         "$ref": "#/components/schemas/NatureOfAssesseeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `NatureOfAssesseesService_GetNatureOfAssesseeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7565,7 +7583,8 @@
                         "$ref": "#/components/schemas/PostingTemplatesParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `PostingTemplatesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7844,7 +7863,8 @@
                         "$ref": "#/components/schemas/ProfitCenterParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProfitCentersService_GetProfitCenterList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8159,7 +8179,8 @@
                         "$ref": "#/components/schemas/RecurringPostingsParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RecurringPostingsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8197,7 +8218,8 @@
                     },
                     "x-ballerina-name": "rclRecurringTransactionParamsCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `RecurringTransactionService_DeleteRecurringTransactions` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8248,7 +8270,8 @@
                     },
                     "x-ballerina-name": "rclRecurringTransactionParamsCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `RecurringTransactionService_ExecuteRecurringTransactions` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8272,7 +8295,8 @@
                         "$ref": "#/components/schemas/RclRecurringTransaction"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RecurringTransactionService_ExecuteRecurringTransactions` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8315,7 +8339,8 @@
                         "$ref": "#/components/schemas/RclRecurringTransaction"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RecurringTransactionService_GetAvailableRecurringTransactions` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8354,7 +8379,8 @@
                     ],
                     "x-ballerina-name": "rclRecurringTransactionParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `RecurringTransactionService_GetRecurringTransaction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8648,7 +8674,8 @@
                         "$ref": "#/components/schemas/RecurringTransactionTemplateParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RecurringTransactionTemplatesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9740,7 +9767,8 @@
                         "$ref": "#/components/schemas/SpecificWTHAmountsParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SpecificWTHAmountsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10022,7 +10050,8 @@
                         "$ref": "#/components/schemas/TaxCodeDeterminationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TaxCodeDeterminationsService_GetTaxCodeDeterminationList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10304,7 +10333,8 @@
                         "$ref": "#/components/schemas/TaxCodeDeterminationTCDParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10347,7 +10377,8 @@
                         "$ref": "#/components/schemas/TaxExemptReasonParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TaxExemptReasonService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11443,7 +11474,8 @@
                         "$ref": "#/components/schemas/TaxWebSiteParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TaxWebSitesService_GetTaxWebSiteList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11722,7 +11754,8 @@
                         "$ref": "#/components/schemas/TransactionCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TransactionCodesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12001,7 +12034,8 @@
                         "$ref": "#/components/schemas/WTaxTypeCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WTaxTypeCodeService_GetWTaxTypeCodeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12789,7 +12823,8 @@
             "$ref": "#/components/schemas/DistributionRule"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BudgetScenario` entity of the SAP Business One Service Layer."
       },
       "NatureOfAssesseesCollectionResponse": {
         "type": "object",
@@ -12808,7 +12843,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NatureOfAssessees` entities returned by the SAP Business One Service Layer."
       },
       "DocumentObjectTypeEnum": {
         "type": "string",
@@ -12906,7 +12942,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxCodes_Line` complex type of the SAP Business One Service Layer."
       },
       "TaxInvoiceReportLine": {
         "type": "object",
@@ -12997,7 +13034,8 @@
             "x-ballerina-name": "documentDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxInvoiceReportLine` complex type of the SAP Business One Service Layer."
       },
       "DimensionsCollectionResponse": {
         "type": "object",
@@ -13016,7 +13054,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Dimensions` entities returned by the SAP Business One Service Layer."
       },
       "CashDiscountParams": {
         "type": "object",
@@ -13030,7 +13069,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CashDiscountParams` complex type of the SAP Business One Service Layer."
       },
       "TransactionCodeParams": {
         "type": "object",
@@ -13044,7 +13084,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TransactionCodeParams` complex type of the SAP Business One Service Layer."
       },
       "VatGroup": {
         "type": "object",
@@ -13176,7 +13217,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `VatGroup` entity of the SAP Business One Service Layer."
       },
       "AccountCategory": {
         "type": "object",
@@ -13206,7 +13248,8 @@
             "x-ballerina-name": "categorySource"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AccountCategory` entity of the SAP Business One Service Layer."
       },
       "SPEDContabilAccountPurposeCode": {
         "type": "string",
@@ -13256,7 +13299,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringPostingsParams` complex type of the SAP Business One Service Layer."
       },
       "Currency": {
         "type": "object",
@@ -13332,7 +13376,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Currency` entity of the SAP Business One Service Layer."
       },
       "TransactionCode": {
         "type": "object",
@@ -13360,7 +13405,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TransactionCode` entity of the SAP Business One Service Layer."
       },
       "AccountSegmentation": {
         "type": "object",
@@ -13392,7 +13438,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AccountSegmentation` entity of the SAP Business One Service Layer."
       },
       "TaxInvoiceReportCollectionResponse": {
         "type": "object",
@@ -13411,7 +13458,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxInvoiceReport` entities returned by the SAP Business One Service Layer."
       },
       "PrintStatusEnum": {
         "type": "string",
@@ -13434,7 +13482,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CostElementParams` complex type of the SAP Business One Service Layer."
       },
       "SAFTTransactionTypeEnum": {
         "type": "string",
@@ -13490,7 +13539,8 @@
             "x-ballerina-name": "transactionID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RclRecurringTransaction` complex type of the SAP Business One Service Layer."
       },
       "DeductionTaxSubGroup": {
         "type": "object",
@@ -13511,7 +13561,8 @@
             "x-ballerina-name": "deductionTaxGroups"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeductionTaxSubGroup` entity of the SAP Business One Service Layer."
       },
       "AccrualTypesCollectionResponse": {
         "type": "object",
@@ -13530,7 +13581,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AccrualTypes` entities returned by the SAP Business One Service Layer."
       },
       "ClosingDateProcedure": {
         "type": "object",
@@ -13557,7 +13609,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ClosingDateProcedure` entity of the SAP Business One Service Layer."
       },
       "RecurringTransactionTemplateParams": {
         "type": "object",
@@ -13568,7 +13621,8 @@
             "x-ballerina-name": "absoluteEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringTransactionTemplateParams` complex type of the SAP Business One Service Layer."
       },
       "BoRoundingMethod": {
         "type": "string",
@@ -13599,7 +13653,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AccountSegmentationCategories` entities returned by the SAP Business One Service Layer."
       },
       "DeductionTaxHierarchiesLine": {
         "type": "object",
@@ -13617,7 +13672,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DeductionTaxHierarchies_Line` complex type of the SAP Business One Service Layer."
       },
       "BoSubPeriodTypeEnum": {
         "type": "string",
@@ -13646,7 +13702,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Forms1099` entity of the SAP Business One Service Layer."
       },
       "ProgressiveTaxLine": {
         "type": "object",
@@ -13664,7 +13721,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProgressiveTax_Line` complex type of the SAP Business One Service Layer."
       },
       "BoClosingDateProcedureDueMonthEnum": {
         "type": "string",
@@ -13688,7 +13746,8 @@
             "x-ballerina-name": "centerCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ProfitCenterParams` complex type of the SAP Business One Service Layer."
       },
       "WTDFreight": {
         "type": "object",
@@ -13709,7 +13768,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDFreight` complex type of the SAP Business One Service Layer."
       },
       "RecurringPostingsLine": {
         "type": "object",
@@ -13822,7 +13882,8 @@
             "x-ballerina-name": "accountName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringPostingsLine` complex type of the SAP Business One Service Layer."
       },
       "JournalEntryDocumentType": {
         "type": "object",
@@ -13847,7 +13908,8 @@
             "x-ballerina-name": "journalEntryType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `JournalEntryDocumentType` entity of the SAP Business One Service Layer."
       },
       "RecurringTransactionTemplatesCollectionResponse": {
         "type": "object",
@@ -13866,7 +13928,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `RecurringTransactionTemplates` entities returned by the SAP Business One Service Layer."
       },
       "DeductionTaxHierarchiesCollectionResponse": {
         "type": "object",
@@ -13885,7 +13948,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DeductionTaxHierarchies` entities returned by the SAP Business One Service Layer."
       },
       "Budget": {
         "type": "object",
@@ -13999,7 +14063,8 @@
             "$ref": "#/components/schemas/BudgetScenario"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Budget` entity of the SAP Business One Service Layer."
       },
       "ReferencedObjectTypeEnum": {
         "type": "string",
@@ -14062,7 +14127,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesTaxAuthoritiesTypes` entities returned by the SAP Business One Service Layer."
       },
       "BoOSWACategoryEnum": {
         "type": "string",
@@ -14094,7 +14160,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxReplStateSubs` entities returned by the SAP Business One Service Layer."
       },
       "TaxExemptReasonsCollectionResponse": {
         "type": "object",
@@ -14113,7 +14180,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxExemptReasons` entities returned by the SAP Business One Service Layer."
       },
       "SpecificWTHAmounts": {
         "type": "object",
@@ -14356,7 +14424,8 @@
             "$ref": "#/components/schemas/WTaxTypeCode"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SpecificWTHAmounts` entity of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -14381,7 +14450,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "AssesseeTypeEnum": {
         "type": "string",
@@ -14442,7 +14512,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DeductionTaxHierarchy` entity of the SAP Business One Service Layer."
       },
       "TCSAccumulationBaseEnum": {
         "type": "string",
@@ -14473,7 +14544,8 @@
             "x-ballerina-name": "wTCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDDefaultWT` complex type of the SAP Business One Service Layer."
       },
       "CurrenciesDecimalsEnum": {
         "type": "string",
@@ -14522,7 +14594,8 @@
             "x-ballerina-name": "day"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DiscountLine` complex type of the SAP Business One Service Layer."
       },
       "RoundingTypeEnum": {
         "type": "string",
@@ -14602,7 +14675,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BudgetDistribution` entity of the SAP Business One Service Layer."
       },
       "DimensionParams": {
         "type": "object",
@@ -14617,7 +14691,8 @@
             "x-ballerina-name": "dimensionName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DimensionParams` complex type of the SAP Business One Service Layer."
       },
       "CashFlowLineItemsCollectionResponse": {
         "type": "object",
@@ -14636,7 +14711,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CashFlowLineItems` entities returned by the SAP Business One Service Layer."
       },
       "WithholdingTaxData": {
         "type": "object",
@@ -14734,7 +14810,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer."
       },
       "SalesTaxCode": {
         "type": "object",
@@ -14788,7 +14865,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesTaxCode` entity of the SAP Business One Service Layer."
       },
       "BoTaxPostingAccountTypeEnum": {
         "type": "string",
@@ -14816,7 +14894,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Budgets` entities returned by the SAP Business One Service Layer."
       },
       "DeterminationCriteriaParams": {
         "type": "object",
@@ -14827,7 +14906,8 @@
             "x-ballerina-name": "dmcId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeterminationCriteriaParams` complex type of the SAP Business One Service Layer."
       },
       "RclRecurringExecutionHandlingEnum": {
         "type": "string",
@@ -14879,7 +14959,8 @@
             "x-ballerina-name": "bPLID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OpenningBalanceAccount` complex type of the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDTypeEnum": {
         "type": "string",
@@ -14908,7 +14989,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `JournalEntryDocumentTypes` entities returned by the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationsCollectionResponse": {
         "type": "object",
@@ -14927,7 +15009,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxCodeDeterminations` entities returned by the SAP Business One Service Layer."
       },
       "BudgetDistributionsCollectionResponse": {
         "type": "object",
@@ -14946,7 +15029,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BudgetDistributions` entities returned by the SAP Business One Service Layer."
       },
       "CostElementsCollectionResponse": {
         "type": "object",
@@ -14965,7 +15049,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CostElements` entities returned by the SAP Business One Service Layer."
       },
       "JournalEntryDocumentTypeParams": {
         "type": "object",
@@ -14983,7 +15068,8 @@
             "x-ballerina-name": "journalEntryType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `JournalEntryDocumentTypeParams` complex type of the SAP Business One Service Layer."
       },
       "Report349CodeListEnum": {
         "type": "string",
@@ -15015,7 +15101,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CostCenterType` entity of the SAP Business One Service Layer."
       },
       "DeductibleTax": {
         "type": "object",
@@ -15050,7 +15137,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeductibleTax` entity of the SAP Business One Service Layer."
       },
       "DeductionTaxSubGroupsCollectionResponse": {
         "type": "object",
@@ -15069,7 +15157,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DeductionTaxSubGroups` entities returned by the SAP Business One Service Layer."
       },
       "CashDiscount": {
         "type": "object",
@@ -15114,7 +15203,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CashDiscount` entity of the SAP Business One Service Layer."
       },
       "BoTCDConditionEnum": {
         "type": "string",
@@ -15178,7 +15268,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
       },
       "BoStatus": {
         "type": "string",
@@ -15236,7 +15327,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCD` entity of the SAP Business One Service Layer."
       },
       "RoundingSysEnum": {
         "type": "string",
@@ -15261,7 +15353,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PostingTemplatesParams` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTaxCodeCategoryEnum": {
         "type": "string",
@@ -15334,7 +15427,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CashFlowAssignment` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTaxCodesCollectionResponse": {
         "type": "object",
@@ -15353,7 +15447,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WithholdingTaxCodes` entities returned by the SAP Business One Service Layer."
       },
       "RecurringTransactionTemplateFrequencyEnum": {
         "type": "string",
@@ -15421,7 +15516,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PostingTemplates` entity of the SAP Business One Service Layer."
       },
       "WithholdingTaxCode": {
         "type": "object",
@@ -15627,7 +15723,8 @@
             "$ref": "#/components/schemas/Currency"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxCode` entity of the SAP Business One Service Layer."
       },
       "BoBusinessAreaEnum": {
         "type": "string",
@@ -15682,7 +15779,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CostElement` entity of the SAP Business One Service Layer."
       },
       "RecurringTransactionTemplateRemindEnum": {
         "type": "string",
@@ -15779,7 +15877,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WTaxTypeCodes` entities returned by the SAP Business One Service Layer."
       },
       "BoSubFrequencyTypeEnum": {
         "type": "string",
@@ -15865,7 +15964,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxWebSites` entities returned by the SAP Business One Service Layer."
       },
       "WTDCode": {
         "type": "object",
@@ -15939,7 +16039,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDCode` entity of the SAP Business One Service Layer."
       },
       "VatGroupsTaxRegionEnum": {
         "type": "string",
@@ -15976,7 +16077,8 @@
             "x-ballerina-name": "determinationCriteria"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeterminationCriteria` entity of the SAP Business One Service Layer."
       },
       "TaxReplStateSubData": {
         "type": "object",
@@ -15990,7 +16092,8 @@
             "x-ballerina-name": "iEST"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReplStateSubData` entity of the SAP Business One Service Layer."
       },
       "TaxInvoiceReportNTSApprovedEnum": {
         "type": "string",
@@ -16108,7 +16211,8 @@
             "$ref": "#/components/schemas/SalesTaxAuthoritiesType"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesTaxAuthority` entity of the SAP Business One Service Layer."
       },
       "ProfitCentersCollectionResponse": {
         "type": "object",
@@ -16127,7 +16231,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ProfitCenters` entities returned by the SAP Business One Service Layer."
       },
       "AccountSegmentationsCategory": {
         "type": "object",
@@ -16146,7 +16251,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AccountSegmentationsCategory` complex type of the SAP Business One Service Layer."
       },
       "SalesTaxAuthoritiesType": {
         "type": "object",
@@ -16183,7 +16289,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesTaxAuthoritiesType` entity of the SAP Business One Service Layer."
       },
       "DeductionTaxGroup": {
         "type": "object",
@@ -16209,7 +16316,8 @@
             "$ref": "#/components/schemas/DeductionTaxSubGroup"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DeductionTaxGroup` entity of the SAP Business One Service Layer."
       },
       "BoDeductionTaxGroupCodeEnum": {
         "type": "string",
@@ -16237,7 +16345,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationParams` complex type of the SAP Business One Service Layer."
       },
       "TaxExemptReason": {
         "type": "object",
@@ -16258,7 +16367,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxExemptReason` entity of the SAP Business One Service Layer."
       },
       "TaxWebSite": {
         "type": "object",
@@ -16288,7 +16398,8 @@
             "x-ballerina-name": "webSiteName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxWebSite` entity of the SAP Business One Service Layer."
       },
       "CashDiscountsCollectionResponse": {
         "type": "object",
@@ -16307,7 +16418,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CashDiscounts` entities returned by the SAP Business One Service Layer."
       },
       "WTDDetailType": {
         "type": "string",
@@ -16343,7 +16455,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `GLAccountAdvancedRules` entities returned by the SAP Business One Service Layer."
       },
       "FinancialYear": {
         "type": "object",
@@ -16384,7 +16497,8 @@
             "x-ballerina-name": "tCSAccumulationBase"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FinancialYear` entity of the SAP Business One Service Layer."
       },
       "SpecificWTHAmountsServiceCollectionResponse": {
         "type": "object",
@@ -16403,7 +16517,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SpecificWTHAmountsService` entities returned by the SAP Business One Service Layer."
       },
       "ResidenceNumberTypeEnum": {
         "type": "string",
@@ -16456,7 +16571,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesTaxCodes_Line` complex type of the SAP Business One Service Layer."
       },
       "RecurringTransactionTemplate": {
         "type": "object",
@@ -16526,7 +16642,8 @@
             "x-ballerina-name": "priceUpdate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringTransactionTemplate` entity of the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationsTCDCollectionResponse": {
         "type": "object",
@@ -16545,7 +16662,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TaxCodeDeterminationsTCD` entities returned by the SAP Business One Service Layer."
       },
       "WithholdingTaxCodeBaseTypeEnum": {
         "type": "string",
@@ -16586,7 +16704,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `RecurringPostings` entities returned by the SAP Business One Service Layer."
       },
       "AccountCategoryCollectionResponse": {
         "type": "object",
@@ -16605,7 +16724,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AccountCategory` entities returned by the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDKeyFieldValuePeriod": {
         "type": "object",
@@ -16637,7 +16757,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDKeyFieldValuePeriod` complex type of the SAP Business One Service Layer."
       },
       "DistributionRuleParams": {
         "type": "object",
@@ -16651,7 +16772,8 @@
             "x-ballerina-name": "factorDescription"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DistributionRuleParams` complex type of the SAP Business One Service Layer."
       },
       "Boxes1099Item": {
         "type": "object",
@@ -16671,7 +16793,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Boxes1099Item` complex type of the SAP Business One Service Layer."
       },
       "CostCenterTypeParams": {
         "type": "object",
@@ -16681,7 +16804,8 @@
             "x-ballerina-name": "costCenterTypeCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CostCenterTypeParams` complex type of the SAP Business One Service Layer."
       },
       "JournalEntry": {
         "type": "object",
@@ -16910,7 +17034,8 @@
             "$ref": "#/components/schemas/JournalEntryDocumentType"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `JournalEntry` entity of the SAP Business One Service Layer."
       },
       "BoBusinessPartnerTypes": {
         "type": "string",
@@ -16945,7 +17070,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxExemptReasonParams` complex type of the SAP Business One Service Layer."
       },
       "BudgetLine": {
         "type": "object",
@@ -17033,7 +17159,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BudgetLine` complex type of the SAP Business One Service Layer."
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -17167,7 +17294,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDKeyFieldValueDefaultWT": {
         "type": "object",
@@ -17182,7 +17310,8 @@
             "x-ballerina-name": "wTCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDKeyFieldValueDefaultWT` complex type of the SAP Business One Service Layer."
       },
       "TaxInvoiceReport": {
         "type": "object",
@@ -17273,7 +17402,8 @@
             "x-ballerina-name": "reportType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxInvoiceReport` entity of the SAP Business One Service Layer."
       },
       "WTDBP": {
         "type": "object",
@@ -17303,7 +17433,8 @@
             "$ref": "#/components/schemas/WTDDetailType"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDBP` complex type of the SAP Business One Service Layer."
       },
       "DeductionTaxSubGroupParams": {
         "type": "object",
@@ -17317,7 +17448,8 @@
             "x-ballerina-name": "groupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeductionTaxSubGroupParams` complex type of the SAP Business One Service Layer."
       },
       "BoFrequencyTypeEnum": {
         "type": "string",
@@ -17356,7 +17488,8 @@
             "$ref": "#/components/schemas/ChartOfAccount"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AccrualType` entity of the SAP Business One Service Layer."
       },
       "BoAccountTypes": {
         "type": "string",
@@ -17414,7 +17547,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GLAccount` complex type of the SAP Business One Service Layer."
       },
       "ClosingDateProcedureCollectionResponse": {
         "type": "object",
@@ -17433,7 +17567,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ClosingDateProcedure` entities returned by the SAP Business One Service Layer."
       },
       "Dimension": {
         "type": "object",
@@ -17464,7 +17599,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Dimension` entity of the SAP Business One Service Layer."
       },
       "PostingTemplatesCollectionResponse": {
         "type": "object",
@@ -17483,7 +17619,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PostingTemplates` entities returned by the SAP Business One Service Layer."
       },
       "VatGroupsCollectionResponse": {
         "type": "object",
@@ -17502,7 +17639,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `VatGroups` entities returned by the SAP Business One Service Layer."
       },
       "TransTypesEnum": {
         "type": "string",
@@ -17562,7 +17700,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxCodes_ValueRange_Line` complex type of the SAP Business One Service Layer."
       },
       "TransactionCodesCollectionResponse": {
         "type": "object",
@@ -17581,7 +17720,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TransactionCodes` entities returned by the SAP Business One Service Layer."
       },
       "DeductionTaxGroupsCollectionResponse": {
         "type": "object",
@@ -17600,7 +17740,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DeductionTaxGroups` entities returned by the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage": {
         "type": "object",
@@ -17628,7 +17769,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDKeyFieldValuePeriodByUsage` complex type of the SAP Business One Service Layer."
       },
       "WTaxTypeCodeParams": {
         "type": "object",
@@ -17639,7 +17781,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WTaxTypeCodeParams` complex type of the SAP Business One Service Layer."
       },
       "RclRecurringTransactionParams": {
         "type": "object",
@@ -17655,7 +17798,8 @@
             "x-ballerina-name": "transactionID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RclRecurringTransactionParams` complex type of the SAP Business One Service Layer."
       },
       "BoClosingDateProcedureBaseDateEnum": {
         "type": "string",
@@ -17699,7 +17843,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDByUsage` complex type of the SAP Business One Service Layer."
       },
       "DeductibleTaxesCollectionResponse": {
         "type": "object",
@@ -17718,7 +17863,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DeductibleTaxes` entities returned by the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDKeyFieldValue": {
         "type": "object",
@@ -17768,7 +17914,8 @@
             "x-ballerina-name": "taxCodeDeterminationTCDKeyFieldValuePeriods"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDKeyFieldValue` complex type of the SAP Business One Service Layer."
       },
       "GLAccountAdvancedRuleParams": {
         "type": "object",
@@ -17817,7 +17964,8 @@
             "x-ballerina-name": "bPGroup"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GLAccountAdvancedRuleParams` complex type of the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDParams": {
         "type": "object",
@@ -17828,7 +17976,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDParams` complex type of the SAP Business One Service Layer."
       },
       "DistributionRulesCollectionResponse": {
         "type": "object",
@@ -17847,7 +17996,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DistributionRules` entities returned by the SAP Business One Service Layer."
       },
       "AccountCategoryParams": {
         "type": "object",
@@ -17862,7 +18012,8 @@
             "x-ballerina-name": "categoryName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AccountCategoryParams` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -17920,7 +18071,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ChartOfAccounts` entities returned by the SAP Business One Service Layer."
       },
       "WTDEffectiveDate": {
         "type": "object",
@@ -17944,7 +18096,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDEffectiveDate` complex type of the SAP Business One Service Layer."
       },
       "SalesTaxCodesCollectionResponse": {
         "type": "object",
@@ -17963,7 +18116,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesTaxCodes` entities returned by the SAP Business One Service Layer."
       },
       "BoTCDDocumentTypeEnum": {
         "type": "string",
@@ -18301,7 +18455,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ChartOfAccount` entity of the SAP Business One Service Layer."
       },
       "NatureOfAssesseeParams": {
         "type": "object",
@@ -18320,7 +18475,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NatureOfAssesseeParams` complex type of the SAP Business One Service Layer."
       },
       "TaxWebSiteParams": {
         "type": "object",
@@ -18335,7 +18491,8 @@
             "x-ballerina-name": "webSiteName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxWebSiteParams` complex type of the SAP Business One Service Layer."
       },
       "CashFlowLineItemParams": {
         "type": "object",
@@ -18350,7 +18507,8 @@
             "x-ballerina-name": "lineItemName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CashFlowLineItemParams` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTypeEnum": {
         "type": "string",
@@ -18477,7 +18635,8 @@
             "x-ballerina-name": "recurringPostingsDocumentReferenceCollection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringPostings` entity of the SAP Business One Service Layer."
       },
       "AccountSegmentationsCollectionResponse": {
         "type": "object",
@@ -18496,7 +18655,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AccountSegmentations` entities returned by the SAP Business One Service Layer."
       },
       "WTDItem": {
         "type": "object",
@@ -18516,7 +18676,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDItem` complex type of the SAP Business One Service Layer."
       },
       "DistributionRuleLine": {
         "type": "object",
@@ -18541,7 +18702,8 @@
             "x-ballerina-name": "effectiveTo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DistributionRuleLine` complex type of the SAP Business One Service Layer."
       },
       "TaxCodeDetermination": {
         "type": "object",
@@ -18739,7 +18901,8 @@
             "x-ballerina-name": "numberValue2"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDetermination` entity of the SAP Business One Service Layer."
       },
       "FinancialYearParams": {
         "type": "object",
@@ -18758,7 +18921,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FinancialYearParams` complex type of the SAP Business One Service Layer."
       },
       "TaxCodeDeterminationTCDKeyField": {
         "type": "object",
@@ -18854,7 +19018,8 @@
             "x-ballerina-name": "uDFAlias5"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxCodeDeterminationTCDKeyField` complex type of the SAP Business One Service Layer."
       },
       "SalesTaxAuthoritiesCollectionResponse": {
         "type": "object",
@@ -18873,7 +19038,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesTaxAuthorities` entities returned by the SAP Business One Service Layer."
       },
       "TaxTypeBlackListEnum": {
         "type": "string",
@@ -18910,7 +19076,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WTDValueRange` complex type of the SAP Business One Service Layer."
       },
       "AccrualTypeParams": {
         "type": "object",
@@ -18920,7 +19087,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AccrualTypeParams` complex type of the SAP Business One Service Layer."
       },
       "BudgetCostAccountingLine": {
         "type": "object",
@@ -18949,7 +19117,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BudgetCostAccountingLine` complex type of the SAP Business One Service Layer."
       },
       "DistributionRule": {
         "type": "object",
@@ -18999,7 +19168,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DistributionRule` entity of the SAP Business One Service Layer."
       },
       "GetGLAccountByEnum": {
         "type": "string",
@@ -19248,7 +19418,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SpecificWTHAmountsParams` complex type of the SAP Business One Service Layer."
       },
       "TaxDefinition": {
         "type": "object",
@@ -19262,7 +19433,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `TaxDefinition` complex type of the SAP Business One Service Layer."
       },
       "RecurringPostingsDocumentReference": {
         "type": "object",
@@ -19308,7 +19480,8 @@
             "x-ballerina-name": "remark"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RecurringPostingsDocumentReference` complex type of the SAP Business One Service Layer."
       },
       "ProfitCenter": {
         "type": "object",
@@ -19351,7 +19524,8 @@
             "$ref": "#/components/schemas/CostCenterType"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProfitCenter` entity of the SAP Business One Service Layer."
       },
       "CurrenciesCollectionResponse": {
         "type": "object",
@@ -19370,7 +19544,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Currencies` entities returned by the SAP Business One Service Layer."
       },
       "AccountCategorySourceEnum": {
         "type": "string",
@@ -19401,7 +19576,8 @@
             "$ref": "#/components/schemas/AccountSegmentation"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AccountSegmentationCategory` entity of the SAP Business One Service Layer."
       },
       "GLAccountAdvancedRule": {
         "type": "object",
@@ -19778,7 +19954,8 @@
             "x-ballerina-name": "costInflationOffsetAccount"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GLAccountAdvancedRule` entity of the SAP Business One Service Layer."
       },
       "VatGroupsLine": {
         "type": "object",
@@ -19800,7 +19977,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `VatGroups_Line` complex type of the SAP Business One Service Layer."
       },
       "WitholdingTaxDefinitionCollectionResponse": {
         "type": "object",
@@ -19819,7 +19997,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WitholdingTaxDefinition` entities returned by the SAP Business One Service Layer."
       },
       "BoVatCategoryEnum": {
         "type": "string",
@@ -19849,7 +20028,8 @@
             "x-ballerina-name": "specificWTHAmountsService"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WTaxTypeCode` entity of the SAP Business One Service Layer."
       },
       "TaxInvoiceReportLineTypeEnum": {
         "type": "string",
@@ -19878,7 +20058,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CostCenterTypes` entities returned by the SAP Business One Service Layer."
       },
       "PostingTemplatesLine": {
         "type": "object",
@@ -19987,7 +20168,8 @@
             "x-ballerina-name": "accountName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PostingTemplatesLine` complex type of the SAP Business One Service Layer."
       },
       "DeterminationCriteriasCollectionResponse": {
         "type": "object",
@@ -20006,7 +20188,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DeterminationCriterias` entities returned by the SAP Business One Service Layer."
       },
       "NatureOfAssessee": {
         "type": "object",
@@ -20040,7 +20223,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NatureOfAssessee` entity of the SAP Business One Service Layer."
       },
       "DeductibleTaxParams": {
         "type": "object",
@@ -20054,7 +20238,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DeductibleTaxParams` complex type of the SAP Business One Service Layer."
       },
       "JournalEntryLine": {
         "type": "object",
@@ -20298,7 +20483,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `JournalEntryLine` complex type of the SAP Business One Service Layer."
       },
       "RclRecurringExecutionParams": {
         "type": "object",
@@ -20312,7 +20498,8 @@
             "x-ballerina-name": "onError"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RclRecurringExecutionParams` complex type of the SAP Business One Service Layer."
       },
       "CashFlowLineItem": {
         "type": "object",
@@ -20350,7 +20537,8 @@
             "x-ballerina-name": "activeLineItem"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CashFlowLineItem` entity of the SAP Business One Service Layer."
       },
       "BoTaxPostAccEnum": {
         "type": "string",
@@ -20378,7 +20566,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `FinancialYears` entities returned by the SAP Business One Service Layer."
       },
       "BudgetScenariosCollectionResponse": {
         "type": "object",
@@ -20397,7 +20586,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BudgetScenarios` entities returned by the SAP Business One Service Layer."
       },
       "JournalEntriesCollectionResponse": {
         "type": "object",
@@ -20416,7 +20606,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `JournalEntries` entities returned by the SAP Business One Service Layer."
       },
       "Forms1099CollectionResponse": {
         "type": "object",
@@ -20435,7 +20626,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Forms1099` entities returned by the SAP Business One Service Layer."
       }
     },
     "parameters": {

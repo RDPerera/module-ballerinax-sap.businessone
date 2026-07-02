@@ -283,7 +283,8 @@
                     },
                     "x-ballerina-name": "pMCActivityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddActivities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -326,7 +327,8 @@
                     },
                     "x-ballerina-name": "pMCAreaCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddAreas` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -369,7 +371,8 @@
                     },
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddPriorities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -412,7 +415,8 @@
                     },
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddStageTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -455,7 +459,8 @@
                     },
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddSubprojectTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -498,7 +503,8 @@
                     },
                     "x-ballerina-name": "pMCTaskCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddTasks` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -541,7 +547,8 @@
                     },
                     "x-ballerina-name": "pMCActivityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteActivities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -584,7 +591,8 @@
                     },
                     "x-ballerina-name": "pMCAreaCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteAreas` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -627,7 +635,8 @@
                     },
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeletePriorities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -670,7 +679,8 @@
                     },
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteStageTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -713,7 +723,8 @@
                     },
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteSubprojectTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -756,7 +767,8 @@
                     },
                     "x-ballerina-name": "pMCTaskCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteTasks` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -804,7 +816,8 @@
                         "$ref": "#/components/schemas/PMCActivityData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetActivities` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -847,7 +860,8 @@
                         "$ref": "#/components/schemas/PMCAreaData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetAreas` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -890,7 +904,8 @@
                         "$ref": "#/components/schemas/PMCPriorityData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetPriorities` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -933,7 +948,8 @@
                         "$ref": "#/components/schemas/PMCStageTypeData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetStageTypes` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -976,7 +992,8 @@
                         "$ref": "#/components/schemas/PMCSubprojectTypeData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetSubprojectTypes` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1019,7 +1036,8 @@
                         "$ref": "#/components/schemas/PMCTaskData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetTasks` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1057,7 +1075,8 @@
                     },
                     "x-ballerina-name": "pMCActivityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateActivities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1100,7 +1119,8 @@
                     },
                     "x-ballerina-name": "pMCAreaCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateAreas` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1143,7 +1163,8 @@
                     },
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdatePriorities` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1186,7 +1207,8 @@
                     },
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateStageTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1229,7 +1251,8 @@
                     },
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateSubprojectTypes` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1272,7 +1295,8 @@
                     },
                     "x-ballerina-name": "pMCTaskCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateTasks` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1316,7 +1340,8 @@
                     ],
                     "x-ballerina-name": "pMSubprojectDocumentData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementService_AddSubproject` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1367,7 +1392,8 @@
                     ],
                     "x-ballerina-name": "pMSubprojectDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementService_DeleteSubproject` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1411,7 +1437,8 @@
                     ],
                     "x-ballerina-name": "pMSubprojectDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementService_GetSubproject` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1462,7 +1489,8 @@
                     ],
                     "x-ballerina-name": "pMSubprojectParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1486,7 +1514,8 @@
                         "$ref": "#/components/schemas/PMSubprojectDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1525,7 +1554,8 @@
                     ],
                     "x-ballerina-name": "pMSubprojectDocumentData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ProjectManagementService_UpdateSubproject` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2325,7 +2355,8 @@
                         "$ref": "#/components/schemas/ProjectParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ProjectsService_GetProjectList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2537,7 +2568,8 @@
             "x-ballerina-name": "subprojectBudget"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMS_SummaryData` complex type of the SAP Business One Service Layer."
       },
       "PMSubprojectParams": {
         "type": "object",
@@ -2556,7 +2588,8 @@
             "x-ballerina-name": "isSubproject"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PM_SubprojectParams` complex type of the SAP Business One Service Layer."
       },
       "AmountCatTypeEnum": {
         "type": "string",
@@ -2697,7 +2730,8 @@
             "$ref": "#/components/schemas/Project"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_ProjectDocumentData` entity of the SAP Business One Service Layer."
       },
       "PMTimeSheetData": {
         "type": "object",
@@ -2756,7 +2790,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_TimeSheetData` entity of the SAP Business One Service Layer."
       },
       "ProjectParams": {
         "type": "object",
@@ -2770,7 +2805,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ProjectParams` complex type of the SAP Business One Service Layer."
       },
       "ProjectStatusTypeEnum": {
         "type": "string",
@@ -2800,7 +2836,8 @@
             "x-ballerina-name": "stageID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_StageTypeData` complex type of the SAP Business One Service Layer."
       },
       "PMCTaskData": {
         "type": "object",
@@ -2815,7 +2852,8 @@
             "x-ballerina-name": "taskName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_TaskData` complex type of the SAP Business One Service Layer."
       },
       "PMSDocumentData": {
         "type": "object",
@@ -2860,7 +2898,8 @@
             "$ref": "#/components/schemas/PMOperationTypeEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PMS_DocumentData` complex type of the SAP Business One Service Layer."
       },
       "PMCategorizeTypeEnum": {
         "type": "string",
@@ -2921,7 +2960,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PM_DocAttachement` complex type of the SAP Business One Service Layer."
       },
       "ExpenseTypeData": {
         "type": "object",
@@ -2951,7 +2991,8 @@
             "x-ballerina-name": "paidByCompany"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExpenseTypeData` entity of the SAP Business One Service Layer."
       },
       "PMTimeSheetLineData": {
         "type": "object",
@@ -3030,7 +3071,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_TimeSheetLineData` complex type of the SAP Business One Service Layer."
       },
       "PMSWorkOrderData": {
         "type": "object",
@@ -3052,7 +3094,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PMS_WorkOrderData` complex type of the SAP Business One Service Layer."
       },
       "PMOpenIssueData": {
         "type": "object",
@@ -3100,7 +3143,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_OpenIssueData` complex type of the SAP Business One Service Layer."
       },
       "PMDocumentTypeEnum": {
         "type": "string",
@@ -3312,7 +3356,8 @@
             "x-ballerina-name": "subprojectBudget"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PM_SummaryData` complex type of the SAP Business One Service Layer."
       },
       "PMCPriorityData": {
         "type": "object",
@@ -3327,7 +3372,8 @@
             "x-ballerina-name": "priorityID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_PriorityData` complex type of the SAP Business One Service Layer."
       },
       "ProjectsCollectionResponse": {
         "type": "object",
@@ -3346,7 +3392,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Projects` entities returned by the SAP Business One Service Layer."
       },
       "PMCSubprojectTypeData": {
         "type": "object",
@@ -3361,7 +3408,8 @@
             "x-ballerina-name": "subprojectTypeName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_SubprojectTypeData` complex type of the SAP Business One Service Layer."
       },
       "PMSubprojectDocumentParams": {
         "type": "object",
@@ -3372,7 +3420,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PM_SubprojectDocumentParams` complex type of the SAP Business One Service Layer."
       },
       "ExpenseTypesCollectionResponse": {
         "type": "object",
@@ -3391,7 +3440,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ExpenseTypes` entities returned by the SAP Business One Service Layer."
       },
       "LineStatusTypeEnum": {
         "type": "string",
@@ -3418,7 +3468,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ProjectManagements` entities returned by the SAP Business One Service Layer."
       },
       "PMCAreaData": {
         "type": "object",
@@ -3433,7 +3484,8 @@
             "x-ballerina-name": "areaID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_AreaData` complex type of the SAP Business One Service Layer."
       },
       "PMActivityData": {
         "type": "object",
@@ -3451,7 +3503,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_ActivityData` complex type of the SAP Business One Service Layer."
       },
       "PMSStageAttachement": {
         "type": "object",
@@ -3484,7 +3537,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMS_StageAttachement` complex type of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -3509,7 +3563,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "PMSDocAttachement": {
         "type": "object",
@@ -3542,7 +3597,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMS_DocAttachement` complex type of the SAP Business One Service Layer."
       },
       "PMSubprojectDocumentData": {
         "type": "object",
@@ -3655,7 +3711,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_SubprojectDocumentData` complex type of the SAP Business One Service Layer."
       },
       "PMDocumentData": {
         "type": "object",
@@ -3700,7 +3757,8 @@
             "$ref": "#/components/schemas/PMOperationTypeEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_DocumentData` complex type of the SAP Business One Service Layer."
       },
       "ProjectTypeEnum": {
         "type": "string",
@@ -3741,7 +3799,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PM_StageAttachement` complex type of the SAP Business One Service Layer."
       },
       "Project": {
         "type": "object",
@@ -3770,7 +3829,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Project` entity of the SAP Business One Service Layer."
       },
       "TimeSheetTypeEnum": {
         "type": "string",
@@ -3797,7 +3857,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PMS_ActivityData` complex type of the SAP Business One Service Layer."
       },
       "PMCActivityData": {
         "type": "object",
@@ -3832,7 +3893,8 @@
             "x-ballerina-name": "isAbsence"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PMC_ActivityData` complex type of the SAP Business One Service Layer."
       },
       "ProjectManagementTimeSheetCollectionResponse": {
         "type": "object",
@@ -3851,7 +3913,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ProjectManagementTimeSheet` entities returned by the SAP Business One Service Layer."
       },
       "PMSStageData": {
         "type": "object",
@@ -3970,7 +4033,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PMS_StageData` complex type of the SAP Business One Service Layer."
       },
       "StageDepTypeEnum": {
         "type": "string",
@@ -4026,7 +4090,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PMS_OpenIssueData` complex type of the SAP Business One Service Layer."
       },
       "PMWorkOrderData": {
         "type": "object",
@@ -4048,7 +4113,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_WorkOrderData` complex type of the SAP Business One Service Layer."
       },
       "PMStageData": {
         "type": "object",
@@ -4167,7 +4233,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PM_StageData` complex type of the SAP Business One Service Layer."
       }
     },
     "parameters": {

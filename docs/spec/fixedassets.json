@@ -526,7 +526,8 @@
                     ],
                     "x-ballerina-name": "assetDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AssetCapitalizationCreditMemoService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -574,7 +575,8 @@
                         "$ref": "#/components/schemas/AssetDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetCapitalizationCreditMemoService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -613,7 +615,8 @@
                     ],
                     "x-ballerina-name": "assetDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AssetCapitalizationService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -661,7 +664,8 @@
                         "$ref": "#/components/schemas/AssetDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetCapitalizationService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -940,7 +944,8 @@
                         "$ref": "#/components/schemas/AssetClassParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetClassesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1219,7 +1224,8 @@
                         "$ref": "#/components/schemas/AssetDepreciationGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetDepreciationGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1498,7 +1504,8 @@
                         "$ref": "#/components/schemas/AssetGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1776,7 +1783,8 @@
                     ],
                     "x-ballerina-name": "assetDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AssetManualDepreciationService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1824,7 +1832,8 @@
                         "$ref": "#/components/schemas/AssetDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetManualDepreciationService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2102,7 +2111,8 @@
                     ],
                     "x-ballerina-name": "assetDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AssetRetirementService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2150,7 +2160,8 @@
                         "$ref": "#/components/schemas/AssetDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetRetirementService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2193,7 +2204,8 @@
                         "$ref": "#/components/schemas/AssetRevaluationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetRevaluationService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2710,7 +2722,8 @@
                     ],
                     "x-ballerina-name": "assetDocumentParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AssetTransferService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2758,7 +2771,8 @@
                         "$ref": "#/components/schemas/AssetDocumentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AssetTransferService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3037,7 +3051,8 @@
                         "$ref": "#/components/schemas/DepreciationAreaParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DepreciationAreasService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3316,7 +3331,8 @@
                         "$ref": "#/components/schemas/DepreciationTypePoolParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DepreciationTypePoolsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3595,7 +3611,8 @@
                         "$ref": "#/components/schemas/DepreciationTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DepreciationTypesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3874,7 +3891,8 @@
                         "$ref": "#/components/schemas/FAAccountDeterminationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `FAAccountDeterminationsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3913,7 +3931,8 @@
                     ],
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetEndBalance` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3964,7 +3983,8 @@
                     ],
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3988,7 +4008,8 @@
                         "$ref": "#/components/schemas/FixedAssetValues"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4035,7 +4056,8 @@
                     ],
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `FixedAssetItemsService_UpdateAssetEndBalance` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4131,7 +4153,8 @@
             "x-ballerina-name": "remarks"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetRevaluationLine` complex type of the SAP Business One Service Layer."
       },
       "AcquisitionProRataTypeEnum": {
         "type": "string",
@@ -4196,7 +4219,8 @@
             "x-ballerina-name": "writeUp"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FixedAssetEndBalance` complex type of the SAP Business One Service Layer."
       },
       "AssetTypeEnum": {
         "type": "string",
@@ -4225,7 +4249,8 @@
             "x-ballerina-name": "depreciationTypes"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationTypePool` entity of the SAP Business One Service Layer."
       },
       "FixedAssetValuesParams": {
         "type": "object",
@@ -4243,7 +4268,8 @@
             "x-ballerina-name": "depreciationArea"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FixedAssetValuesParams` complex type of the SAP Business One Service Layer."
       },
       "DepreciationTypePoolsCollectionResponse": {
         "type": "object",
@@ -4262,7 +4288,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DepreciationTypePools` entities returned by the SAP Business One Service Layer."
       },
       "CalculationBaseEnum": {
         "type": "string",
@@ -4396,7 +4423,8 @@
             "x-ballerina-name": "bPForTaxCorrection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationArea` entity of the SAP Business One Service Layer."
       },
       "AssetManualDepreciationCollectionResponse": {
         "type": "object",
@@ -4415,7 +4443,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetManualDepreciation` entities returned by the SAP Business One Service Layer."
       },
       "AssetDocument": {
         "type": "object",
@@ -4559,7 +4588,8 @@
             "$ref": "#/components/schemas/DepreciationArea"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AssetDocument` entity of the SAP Business One Service Layer."
       },
       "AcquisitionPeriodControlEnum": {
         "type": "string",
@@ -4583,7 +4613,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationAreaParams` complex type of the SAP Business One Service Layer."
       },
       "AssetRevaluationParams": {
         "type": "object",
@@ -4594,7 +4625,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetRevaluationParams` complex type of the SAP Business One Service Layer."
       },
       "AssetDocumentLine": {
         "type": "object",
@@ -4667,7 +4699,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AssetDocumentLine` complex type of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -4752,7 +4785,8 @@
             "x-ballerina-name": "writeUp"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FixedAssetValues` complex type of the SAP Business One Service Layer."
       },
       "AssetDocumentTypeEnum": {
         "type": "string",
@@ -4798,7 +4832,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetGroupParams` complex type of the SAP Business One Service Layer."
       },
       "AssetCapitalizationCreditMemoCollectionResponse": {
         "type": "object",
@@ -4817,7 +4852,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetCapitalizationCreditMemo` entities returned by the SAP Business One Service Layer."
       },
       "SpecialDepreciationMaximumFlagEnum": {
         "type": "string",
@@ -4844,7 +4880,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetDepreciationGroups` entities returned by the SAP Business One Service Layer."
       },
       "AssetDocumentParams": {
         "type": "object",
@@ -4868,7 +4905,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetDocumentParams` complex type of the SAP Business One Service Layer."
       },
       "DepreciationCalculationBaseEnum": {
         "type": "string",
@@ -4911,7 +4949,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DepreciationAreas` entities returned by the SAP Business One Service Layer."
       },
       "AssetDepreciationGroup": {
         "type": "object",
@@ -4929,7 +4968,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetDepreciationGroup` entity of the SAP Business One Service Layer."
       },
       "RetirementProRataTypeEnum": {
         "type": "string",
@@ -4957,7 +4997,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetRevaluations` entities returned by the SAP Business One Service Layer."
       },
       "AssetClass": {
         "type": "object",
@@ -5006,7 +5047,8 @@
             "x-ballerina-name": "bPLID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetClass` entity of the SAP Business One Service Layer."
       },
       "AssetCapitalizationCollectionResponse": {
         "type": "object",
@@ -5025,7 +5067,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetCapitalization` entities returned by the SAP Business One Service Layer."
       },
       "AssetClassesCollectionResponse": {
         "type": "object",
@@ -5044,7 +5087,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetClasses` entities returned by the SAP Business One Service Layer."
       },
       "AssetDepreciationGroupParams": {
         "type": "object",
@@ -5058,7 +5102,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetDepreciationGroupParams` complex type of the SAP Business One Service Layer."
       },
       "AssetTransactionTypeEnum": {
         "type": "string",
@@ -5087,7 +5132,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationTypeParams` complex type of the SAP Business One Service Layer."
       },
       "AssetTransferCollectionResponse": {
         "type": "object",
@@ -5106,7 +5152,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetTransfer` entities returned by the SAP Business One Service Layer."
       },
       "AssetClassLine": {
         "type": "object",
@@ -5146,7 +5193,8 @@
             "x-ballerina-name": "activeStatus"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetClassLine` complex type of the SAP Business One Service Layer."
       },
       "AssetDocumentStatusEnum": {
         "type": "string",
@@ -5210,7 +5258,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetDocumentNewLoc` complex type of the SAP Business One Service Layer."
       },
       "AssetGroupsCollectionResponse": {
         "type": "object",
@@ -5229,7 +5278,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetGroups` entities returned by the SAP Business One Service Layer."
       },
       "DepreciationType": {
         "type": "object",
@@ -5563,7 +5613,8 @@
             "x-ballerina-name": "acquisitionPeriodControl"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationType` entity of the SAP Business One Service Layer."
       },
       "AssetRetirementCollectionResponse": {
         "type": "object",
@@ -5582,7 +5633,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AssetRetirement` entities returned by the SAP Business One Service Layer."
       },
       "RetirementMethodEnum": {
         "type": "string",
@@ -5609,7 +5661,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DepreciationTypes` entities returned by the SAP Business One Service Layer."
       },
       "PostingOfDepreciationEnum": {
         "type": "string",
@@ -5655,7 +5708,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetDocumentAreaJournal` complex type of the SAP Business One Service Layer."
       },
       "AssetOriginalTypeEnum": {
         "type": "string",
@@ -5798,7 +5852,8 @@
             "x-ballerina-name": "summerizeByProjects"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetRevaluation` entity of the SAP Business One Service Layer."
       },
       "DepreciationTypePoolParams": {
         "type": "object",
@@ -5812,7 +5867,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationTypePoolParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -5837,7 +5893,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "RetirementPeriodControlEnum": {
         "type": "string",
@@ -5880,7 +5937,8 @@
             "x-ballerina-name": "level"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepreciationLevel` complex type of the SAP Business One Service Layer."
       },
       "FAAccountDeterminationsCollectionResponse": {
         "type": "object",
@@ -5899,7 +5957,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `FAAccountDeterminations` entities returned by the SAP Business One Service Layer."
       },
       "DepreciationMethodEnum": {
         "type": "string",
@@ -5946,7 +6005,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FAAccountDeterminationParams` complex type of the SAP Business One Service Layer."
       },
       "AssetClassParams": {
         "type": "object",
@@ -5960,7 +6020,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetClassParams` complex type of the SAP Business One Service Layer."
       },
       "TransferTargetProRataTypeEnum": {
         "type": "string",
@@ -5983,7 +6044,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AssetGroup` entity of the SAP Business One Service Layer."
       },
       "FAAccountDetermination": {
         "type": "object",
@@ -6073,7 +6135,8 @@
             "x-ballerina-name": "retirementwithExpenseNet"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FAAccountDetermination` entity of the SAP Business One Service Layer."
       }
     },
     "parameters": {

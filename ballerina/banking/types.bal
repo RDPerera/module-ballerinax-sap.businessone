@@ -20,6 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
+# The `ChecksforPaymentPrintStatus` complex type of the SAP Business One Service Layer.
 public type ChecksforPaymentPrintStatus record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNumber?;
@@ -35,6 +36,7 @@ public type ListPaymentBlocksHeaders record {
     string prefer?;
 };
 
+# The `BankPage` entity of the SAP Business One Service Layer.
 public type BankPage record {
     string AccountCode?;
     int:Signed32 Sequence?;
@@ -97,6 +99,7 @@ public type GetDepositsQueries record {
     string dollarSelect?;
 };
 
+# The `CreditPaymentMethod` entity of the SAP Business One Service Layer.
 public type CreditPaymentMethod record {
     int:Signed32 PaymentMethodCode?;
     string Name?;
@@ -107,10 +110,13 @@ public type CreditPaymentMethod record {
     decimal MaxQtyWithoutApproval?;
     # OData EnumType 'InstallmentPaymentsPossiblityEnum'. Serialised by the Service Layer as the member name
     InstallmentPaymentsPossiblityEnum InstallmentPaymentsPossible?;
+    # The `CreditCard` entity of the SAP Business One Service Layer.
     CreditCard CreditCard?;
+    # The `CreditCardPayment` entity of the SAP Business One Service Layer.
     CreditCardPayment CreditCardPayment?;
 };
 
+# The `BankChargesAllocationCode` entity of the SAP Business One Service Layer.
 public type BankChargesAllocationCode record {|
     @jsondata:Name {value: "PaymentRunExport"}
     PaymentRunExport[] paymentRunExport?;
@@ -162,6 +168,7 @@ public type ListFactoringIndicatorsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `WizardPaymentMethods` entities returned by the SAP Business One Service Layer.
 public type WizardPaymentMethodsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -170,6 +177,7 @@ public type WizardPaymentMethodsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `PaymentInvoiceEntry` complex type of the SAP Business One Service Layer.
 public type PaymentInvoiceEntry record {|
     @jsondata:Name {value: "InstallmentId"}
     int:Signed32 installmentId?;
@@ -192,6 +200,7 @@ public type GetCreditCardsQueries record {
 # OData EnumType 'BankStatementDocTypeEnum'. Serialised by the Service Layer as the member name
 public type BankStatementDocTypeEnum "bsdtReceipts"|"bsdtPaymentToVendor"|"bsdtInvoices"|"bsdtPurchases"|"bsdtDownPaymentIncoming"|"bsdtDownPaymentOutgoing"|"bsdtRevertInvoices"|"bsdtRevertPurchases"|"bsdtJournalEntry";
 
+# The `BillOfExchange` complex type of the SAP Business One Service Layer.
 public type BillOfExchange record {
     int:Signed32 BillOfExchangeNo?;
     string BillOfExchangeDueDate?;
@@ -258,6 +267,7 @@ public type ListCreditCardPaymentsQueries record {
     string dollarSelect?;
 };
 
+# The `PaymentRunExport_Line` complex type of the SAP Business One Service Layer.
 public type PaymentRunExportLine record {
     int:Signed32 RowNumber?;
     string DateOfPaymentRun?;
@@ -292,6 +302,7 @@ public type PaymentRunExportLine record {
     string FreeText3?;
 };
 
+# A paged collection of `BankPages` entities returned by the SAP Business One Service Layer.
 public type BankPagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -345,6 +356,7 @@ public type ConnectionConfig record {|
 # OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name
 public type CancelStatusEnum "csYes"|"csNo"|"csCancellation";
 
+# The `GovPayCodeParams` complex type of the SAP Business One Service Layer.
 public type GovPayCodeParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -355,6 +367,7 @@ public type GovPayCodeParams record {|
 # OData EnumType 'PrintOnEnum'. Serialised by the Service Layer as the member name
 public type PrintOnEnum "poBlankPaper"|"poDefault"|"poOverflowBlankPaper"|"poOverflowCheckStock";
 
+# A paged collection of `FactoringIndicators` entities returned by the SAP Business One Service Layer.
 public type FactoringIndicatorsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -363,6 +376,7 @@ public type FactoringIndicatorsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `PaymentBlocks` entities returned by the SAP Business One Service Layer.
 public type PaymentBlocksCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -371,6 +385,7 @@ public type PaymentBlocksCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `InternalReconciliation` entity of the SAP Business One Service Layer.
 public type InternalReconciliation record {|
     @jsondata:Name {value: "CancelAbs"}
     int:Signed32 cancelAbs?;
@@ -397,6 +412,7 @@ public type ListPaymentRunExportHeaders record {
     string prefer?;
 };
 
+# The `CentralBankIndicator` entity of the SAP Business One Service Layer.
 public type CentralBankIndicator record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -490,11 +506,13 @@ public type GetIncomingPaymentsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `DepositsService_CancelCheckRow` operation of the SAP Business One Service Layer.
 public type DepositsService_CancelCheckRow_body record {
     @jsondata:Name {value: "CancelCheckRowParams"}
     CancelCheckRowParams cancelCheckRowParams?;
 };
 
+# The `WithholdingTaxCertificatesData` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxCertificatesData record {
     string POICodeRef?;
     string POICode?;
@@ -516,6 +534,7 @@ public type WithholdingTaxCertificatesData record {
 # OData EnumType 'BoOpexStatus'. Serialised by the Service Layer as the member name
 public type BoOpexStatus "bos_Open"|"bos_Close";
 
+# The `BOEInstruction` entity of the SAP Business One Service Layer.
 public type BOEInstruction record {|
     @jsondata:Name {value: "IsCancelInstruction"}
     BoYesNoEnum isCancelInstruction?;
@@ -527,6 +546,7 @@ public type BOEInstruction record {|
     string instructionCode?;
 |};
 
+# The `BOEPortfolioParams` complex type of the SAP Business One Service Layer.
 public type BOEPortfolioParams record {|
     @jsondata:Name {value: "PortfolioID"}
     string portfolioID?;
@@ -542,6 +562,7 @@ public type CardOrAccountEnum "coaCard"|"coaAccount";
 # OData EnumType 'BoBOTFromStatus'. Serialised by the Service Layer as the member name
 public type BoBOTFromStatus "btfs_Sent"|"btfs_Generated"|"btfs_Deposited"|"btfs_Paid";
 
+# A paged collection of `HouseBankAccounts` entities returned by the SAP Business One Service Layer.
 public type HouseBankAccountsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -550,6 +571,7 @@ public type HouseBankAccountsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `PaymentDocumentReferences` complex type of the SAP Business One Service Layer.
 public type PaymentDocumentReferences record {|
     @jsondata:Name {value: "ReferencedDocEntry"}
     int:Signed32 referencedDocEntry?;
@@ -569,6 +591,7 @@ public type PaymentDocumentReferences record {|
     string remark?;
 |};
 
+# Represents the request payload for the `BOELinesService_GetBOELine` operation of the SAP Business One Service Layer.
 public type BOELinesService_GetBOELine_body record {
     @jsondata:Name {value: "BOELineParams"}
     BOELineParams bOELineParams?;
@@ -577,16 +600,19 @@ public type BOELinesService_GetBOELine_body record {
 # OData EnumType 'BankStatementStatusEnum'. Serialised by the Service Layer as the member name
 public type BankStatementStatusEnum "bssExecuted"|"bssDraft"|"bssOld";
 
+# Represents the request payload for the `ExternalReconciliationsService_GetReconciliation` operation of the SAP Business One Service Layer.
 public type ExternalReconciliationsService_GetReconciliation_body record {
     @jsondata:Name {value: "ExternalReconciliationParams"}
     ExternalReconciliationParams externalReconciliationParams?;
 };
 
+# Represents the request payload for the `InternalReconciliationsService_RequestApproveCancellation` operation of the SAP Business One Service Layer.
 public type InternalReconciliationsService_RequestApproveCancellation_body record {
     @jsondata:Name {value: "InternalReconciliation"}
     InternalReconciliation internalReconciliation?;
 };
 
+# The `BillOfExchangeTransBankPage` complex type of the SAP Business One Service Layer.
 public type BillOfExchangeTransBankPage record {
     string AccountCode?;
     int:Signed32 Sequence?;
@@ -599,6 +625,7 @@ public type ListBOEPortfoliosHeaders record {
     string prefer?;
 };
 
+# The `Bank` entity of the SAP Business One Service Layer.
 public type Bank record {
     string BankCode?;
     string BankName?;
@@ -617,6 +644,7 @@ public type Bank record {
     HouseBankAccount[] HouseBankAccounts?;
 };
 
+# The `BankStatement` entity of the SAP Business One Service Layer.
 public type BankStatement record {|
     @jsondata:Name {value: "BankAccountKey"}
     int:Signed32 bankAccountKey?;
@@ -675,6 +703,7 @@ public type ListPaymentBlocksQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `CreditCards` entities returned by the SAP Business One Service Layer.
 public type CreditCardsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -708,6 +737,7 @@ public type ListBillOfExchangeTransactionsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `ChecksforPayment` entities returned by the SAP Business One Service Layer.
 public type ChecksforPaymentCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -803,6 +833,7 @@ public type ListBankPagesQueries record {
 # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ReferencedObjectTypeEnum "rot_ExternalDocument"|"rot_SalesQuotation"|"rot_SalesOrder"|"rot_DeliveryNotes"|"rot_ReturnRequest"|"rot_Return"|"rot_DownPaymentIncoming"|"rot_SalesInvoice"|"rot_SalesCreditNote"|"rot_CorrectionSalesInvoice"|"rot_SalesTaxInvoice"|"rot_PurchaseQuotation"|"rot_PurchaseOrder"|"rot_GoodsReceiptPO"|"rot_GoodsReturnRequest"|"rot_GoodsReturn"|"rot_DownPaymentOutgoing"|"rot_PurchaseInvoice"|"rot_PurchaseCreditNote"|"rot_CorrectionPurchaseInvoice"|"rot_PurchaseTaxInvoice"|"rot_LandedCosts"|"rot_IncomingPayments"|"rot_JournalEntry"|"rot_ProductionOrder"|"rot_InternalReconciliation"|"rot_OriginalInvoice"|"rot_OriginalARDownPayment"|"rot_PurchaseRequest"|"rot_GoodsReceipt"|"rot_GoodsIssue"|"rot_InventoryTransferRequest"|"rot_InventoryTransfer"|"rot_ChecksforPayment"|"rot_MaterialRevaluation"|"rot_InventoryCounting"|"rot_InventoryPosting"|"rot_OutgoingPayments";
 
+# The `PaymentCheck` complex type of the SAP Business One Service Layer.
 public type PaymentCheck record {
     int:Signed32 LineNum?;
     string DueDate?;
@@ -832,6 +863,7 @@ public type PaymentCheck record {
 # OData EnumType 'BoDepositTypeEnum'. Serialised by the Service Layer as the member name
 public type BoDepositTypeEnum "dtChecks"|"dtCredit"|"dtCash"|"dtBOE";
 
+# The `PaymentCreditCard` complex type of the SAP Business One Service Layer.
 public type PaymentCreditCard record {
     int:Signed32 LineNum?;
     int:Signed32 CreditCard?;
@@ -857,6 +889,7 @@ public type PaymentCreditCard record {
     BoYesNoEnum SplitPayments?;
 };
 
+# A paged collection of `GovPayCodes` entities returned by the SAP Business One Service Layer.
 public type GovPayCodesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -865,6 +898,7 @@ public type GovPayCodesCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `PaymentWizards` entities returned by the SAP Business One Service Layer.
 public type PaymentWizardsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -901,6 +935,7 @@ public type ListWizardPaymentMethodsQueries record {
 # OData EnumType 'CreditOrDebitEnum'. Serialised by the Service Layer as the member name
 public type CreditOrDebitEnum "codCredit"|"codDebit";
 
+# A paged collection of `BOEPortfolios` entities returned by the SAP Business One Service Layer.
 public type BOEPortfoliosCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -909,6 +944,7 @@ public type BOEPortfoliosCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer.
 public type ExternalReconciliationsService_GetReconciliationList_body record {
     @jsondata:Name {value: "ExternalReconciliationFilterParams"}
     ExternalReconciliationFilterParams externalReconciliationFilterParams?;
@@ -917,6 +953,7 @@ public type ExternalReconciliationsService_GetReconciliationList_body record {
 # OData EnumType 'BoCpCardAcct'. Serialised by the Service Layer as the member name
 public type BoCpCardAcct "cfp_Card"|"cfp_Account";
 
+# The `GovPayCode` entity of the SAP Business One Service Layer.
 public type GovPayCode record {|
     @jsondata:Name {value: "GovPayCodeAuthorities"}
     GovPayCodeAuthority[] govPayCodeAuthorities?;
@@ -932,6 +969,7 @@ public type GovPayCode record {|
     int:Signed32 absId?;
 |};
 
+# The `FactoringIndicator` entity of the SAP Business One Service Layer.
 public type FactoringIndicator record {
     string IndicatorCode?;
     string IndicatorName?;
@@ -943,6 +981,7 @@ public type BoORCTPaymentTypeEnum "bopt_None"|"bopt_Electronic"|"bopt_Post"|"bop
 # OData EnumType 'BankStatementRowSourceEnum'. Serialised by the Service Layer as the member name
 public type BankStatementRowSourceEnum "bsImported"|"bsImportedAndAmended"|"bsManuallyEntered";
 
+# A paged collection of `CentralBankIndicator` entities returned by the SAP Business One Service Layer.
 public type CentralBankIndicatorCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -976,6 +1015,7 @@ public type ListBankChargesAllocationCodesQueries record {
     string dollarSelect?;
 };
 
+# The `InternalReconciliationBP` complex type of the SAP Business One Service Layer.
 public type InternalReconciliationBP record {|
     @jsondata:Name {value: "BPCode"}
     string bPCode?;
@@ -1046,6 +1086,7 @@ public type GetGovPayCodesQueries record {
     string dollarSelect?;
 };
 
+# The `ChecksforPaymentDocumentReference` complex type of the SAP Business One Service Layer.
 public type ChecksforPaymentDocumentReference record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNumber?;
@@ -1058,6 +1099,7 @@ public type ChecksforPaymentDocumentReference record {
     string Remark?;
 };
 
+# The `BOELineParams` complex type of the SAP Business One Service Layer.
 public type BOELineParams record {|
     @jsondata:Name {value: "BOEKey"}
     int:Signed32 bOEKey?;
@@ -1073,6 +1115,7 @@ public type GetBankStatementsQueries record {
     string dollarSelect?;
 };
 
+# The `WizardPaymentMethod` entity of the SAP Business One Service Layer.
 public type WizardPaymentMethod record {
     string PaymentMethodCode?;
     string Description?;
@@ -1146,9 +1189,11 @@ public type WizardPaymentMethod record {
     string MovementCode?;
     string DirectDebit?;
     CurrencyRestriction[] CurrencyRestrictions?;
+    # The `HouseBankAccount` entity of the SAP Business One Service Layer.
     HouseBankAccount HouseBankAccount?;
 };
 
+# The `ExternalReconciliationParams` complex type of the SAP Business One Service Layer.
 public type ExternalReconciliationParams record {|
     @jsondata:Name {value: "AccountCode"}
     string accountCode?;
@@ -1156,6 +1201,7 @@ public type ExternalReconciliationParams record {|
     int:Signed32 reconciliationNo?;
 |};
 
+# A paged collection of `BOEDocumentTypes` entities returned by the SAP Business One Service Layer.
 public type BOEDocumentTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1189,6 +1235,7 @@ public type ListPaymentRunExportQueries record {
     string dollarSelect?;
 };
 
+# The `CheckLineParams` complex type of the SAP Business One Service Layer.
 public type CheckLineParams record {|
     @jsondata:Name {value: "CheckKey"}
     int:Signed32 checkKey?;
@@ -1229,6 +1276,7 @@ public type GetBOEDocumentTypesQueries record {
     string dollarSelect?;
 };
 
+# The `RelatedDocument` complex type of the SAP Business One Service Layer.
 public type RelatedDocument record {|
     @jsondata:Name {value: "AbsEnry"}
     int:Signed32 absEnry?;
@@ -1255,6 +1303,7 @@ public type GetPaymentReasonCodesQueries record {
 # OData EnumType 'InstallmentPaymentsPossiblityEnum'. Serialised by the Service Layer as the member name
 public type InstallmentPaymentsPossiblityEnum "ippCr"|"ippNo"|"ippRd"|"ippYes";
 
+# A paged collection of `CreditCardPayments` entities returned by the SAP Business One Service Layer.
 public type CreditCardPaymentsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1263,6 +1312,7 @@ public type CreditCardPaymentsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `BankChargesAllocationCodeParams` complex type of the SAP Business One Service Layer.
 public type BankChargesAllocationCodeParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -1270,6 +1320,7 @@ public type BankChargesAllocationCodeParams record {|
     string code?;
 |};
 
+# The `ReconciliationJournalEntryLine` complex type of the SAP Business One Service Layer.
 public type ReconciliationJournalEntryLine record {|
     @jsondata:Name {value: "TransactionNumber"}
     int:Signed32 transactionNumber?;
@@ -1293,6 +1344,7 @@ public type ReconciliationJournalEntryLine record {|
     int:Signed32 lineNumber?;
 |};
 
+# The `BillOfExchangeTransactionLine` complex type of the SAP Business One Service Layer.
 public type BillOfExchangeTransactionLine record {
     int:Signed32 BillOfExchangeNo?;
     # OData EnumType 'BoBOETypes'. Serialised by the Service Layer as the member name
@@ -1307,6 +1359,7 @@ public type ListCreditCardsHeaders record {
     string prefer?;
 };
 
+# The `CashFlowAssignment` complex type of the SAP Business One Service Layer.
 public type CashFlowAssignment record {
     int:Signed32 CashFlowAssignmentsID?;
     int:Signed32 CashFlowLineItemID?;
@@ -1358,6 +1411,7 @@ public type GetBanksQueries record {
     string dollarSelect?;
 };
 
+# The `DocsInWTGroups` complex type of the SAP Business One Service Layer.
 public type DocsInWTGroups record {
     int:Signed32 DocEntry?;
     string DocObjType?;
@@ -1376,6 +1430,7 @@ public type ListPaymentReasonCodesHeaders record {
     string prefer?;
 };
 
+# The `ChecksforPayment` entity of the SAP Business One Service Layer.
 public type ChecksforPayment record {
     int:Signed32 CheckKey?;
     int:Signed32 CheckNumber?;
@@ -1440,6 +1495,7 @@ public type GetFactoringIndicatorsQueries record {
 # OData EnumType 'CreateMethodEnum'. Serialised by the Service Layer as the member name
 public type CreateMethodEnum "cmManual"|"cmAutomatic";
 
+# A paged collection of `InternalReconciliations` entities returned by the SAP Business One Service Layer.
 public type InternalReconciliationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1464,6 +1520,7 @@ public type PaymentMethodEnum "pm_Check"|"pm_BankTransfer"|"pm_BillOfExchange"|"
 # OData EnumType 'BoRcptCredTypes'. Serialised by the Service Layer as the member name
 public type BoRcptCredTypes "cr_Regular"|"cr_Telephone"|"cr_InternetTransaction";
 
+# The `Payments_ApprovalRequest` complex type of the SAP Business One Service Layer.
 public type PaymentsApprovalRequest record {|
     @jsondata:Name {value: "ActiveForUpdate"}
     BoYesNoEnum activeForUpdate?;
@@ -1475,6 +1532,7 @@ public type PaymentsApprovalRequest record {|
     string approvalTemplatesName?;
 |};
 
+# The `PaymentBlock` entity of the SAP Business One Service Layer.
 public type PaymentBlock record {|
     @jsondata:Name {value: "PaymentBlockCode"}
     string paymentBlockCode?;
@@ -1510,6 +1568,7 @@ public type ListBanksQueries record {
 # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 
+# The `ExternalReconciliationFilterParams` complex type of the SAP Business One Service Layer.
 public type ExternalReconciliationFilterParams record {|
     @jsondata:Name {value: "ReconciliationNoTo"}
     int:Signed32 reconciliationNoTo?;
@@ -1527,6 +1586,7 @@ public type ExternalReconciliationFilterParams record {|
     string accountCodeFrom?;
 |};
 
+# The `ReconciliationBankStatementLine` complex type of the SAP Business One Service Layer.
 public type ReconciliationBankStatementLine record {|
     @jsondata:Name {value: "Details"}
     string details?;
@@ -1549,6 +1609,7 @@ public type ListBankPagesHeaders record {
     string prefer?;
 };
 
+# The `PaymentAmountParams` complex type of the SAP Business One Service Layer.
 public type PaymentAmountParams record {|
     @jsondata:Name {value: "CashDiscountAmount"}
     decimal cashDiscountAmount?;
@@ -1597,6 +1658,7 @@ public type ListGovPayCodesQueries record {
     string dollarSelect?;
 };
 
+# The `HouseBankAccount` entity of the SAP Business One Service Layer.
 public type HouseBankAccount record {
     string BankCode?;
     string AccNo?;
@@ -1667,9 +1729,11 @@ public type HouseBankAccount record {
     BoYesNoEnum ECheck?;
     WizardPaymentMethod[] WizardPaymentMethods?;
     BankStatement[] BankStatements?;
+    # The `Bank` entity of the SAP Business One Service Layer.
     Bank Bank?;
 };
 
+# The `ChecksforPaymentLine` complex type of the SAP Business One Service Layer.
 public type ChecksforPaymentLine record {
     int:Signed32 RowNumber?;
     string RowDetails?;
@@ -1681,6 +1745,7 @@ public type ChecksforPaymentLine record {
     decimal LineTotal?;
 };
 
+# A paged collection of `BOEInstructions` entities returned by the SAP Business One Service Layer.
 public type BOEInstructionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1689,6 +1754,7 @@ public type BOEInstructionsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `BOEPortfolio` entity of the SAP Business One Service Layer.
 public type BOEPortfolio record {|
     @jsondata:Name {value: "PortfolioNum"}
     string portfolioNum?;
@@ -1702,6 +1768,7 @@ public type BOEPortfolio record {|
     string portfolioCode?;
 |};
 
+# The `CreditCard` entity of the SAP Business One Service Layer.
 public type CreditCard record {
     int:Signed32 CreditCardCode?;
     string CreditCardName?;
@@ -1712,6 +1779,7 @@ public type CreditCard record {
     CreditPaymentMethod[] CreditPaymentMethods?;
 };
 
+# A paged collection of `PaymentDrafts` entities returned by the SAP Business One Service Layer.
 public type PaymentDraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1733,6 +1801,7 @@ public type GetCreditPaymentMethodsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BankChargesAllocationCodes` entities returned by the SAP Business One Service Layer.
 public type BankChargesAllocationCodesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1741,6 +1810,7 @@ public type BankChargesAllocationCodesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `CreditLineParams` complex type of the SAP Business One Service Layer.
 public type CreditLineParams record {|
     @jsondata:Name {value: "AbsId"}
     int:Signed32 absId?;
@@ -1769,6 +1839,7 @@ public type GetPaymentBlocksQueries record {
     string dollarSelect?;
 };
 
+# The `InternalReconciliationOpenTransParams` complex type of the SAP Business One Service Layer.
 public type InternalReconciliationOpenTransParams record {|
     @jsondata:Name {value: "InternalReconciliationBPs"}
     InternalReconciliationBP[] internalReconciliationBPs?;
@@ -1786,6 +1857,7 @@ public type InternalReconciliationOpenTransParams record {|
     string reconDate?;
 |};
 
+# The `PaymentBPCode` complex type of the SAP Business One Service Layer.
 public type PaymentBPCode record {|
     @jsondata:Name {value: "BPCode"}
     string bPCode?;
@@ -1793,6 +1865,7 @@ public type PaymentBPCode record {|
     string date?;
 |};
 
+# Represents the request payload for the `CreditLinesService_GetCreditLine` operation of the SAP Business One Service Layer.
 public type CreditLinesService_GetCreditLine_body record {
     @jsondata:Name {value: "CreditLineParams"}
     CreditLineParams creditLineParams?;
@@ -1812,6 +1885,7 @@ public type ListHouseBankAccountsHeaders record {
     string prefer?;
 };
 
+# The `BankStatementsFilter` complex type of the SAP Business One Service Layer.
 public type BankStatementsFilter record {|
     @jsondata:Name {value: "Account"}
     string account?;
@@ -1866,6 +1940,7 @@ public type ListHouseBankAccountsQueries record {
     string dollarSelect?;
 };
 
+# The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxDataWTX record {
     decimal WTAmountSys?;
     decimal WTAmountFC?;
@@ -1926,6 +2001,7 @@ public type ListChecksforPaymentQueries record {
     string dollarSelect?;
 };
 
+# The `PaymentBlockParams` complex type of the SAP Business One Service Layer.
 public type PaymentBlockParams record {|
     @jsondata:Name {value: "PaymentBlockCode"}
     string paymentBlockCode?;
@@ -1936,6 +2012,7 @@ public type PaymentBlockParams record {|
 # OData EnumType 'PaymentMeansTypeEnum'. Serialised by the Service Layer as the member name
 public type PaymentMeansTypeEnum "pmtNotAssigned"|"pmtChecks"|"pmtBankTransfer"|"pmtCash"|"pmtCreditCard";
 
+# A paged collection of `BankStatements` entities returned by the SAP Business One Service Layer.
 public type BankStatementsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1944,6 +2021,7 @@ public type BankStatementsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `BOEInstructionParams` complex type of the SAP Business One Service Layer.
 public type BOEInstructionParams record {|
     @jsondata:Name {value: "InstructionEntry"}
     int:Signed32 instructionEntry?;
@@ -1951,6 +2029,7 @@ public type BOEInstructionParams record {|
     string instructionCode?;
 |};
 
+# The `BankStatementRow` complex type of the SAP Business One Service Layer.
 public type BankStatementRow record {
     int:Signed32 ExternalBankStatementNo?;
     string AccountNumber?;
@@ -2011,11 +2090,13 @@ public type BankStatementRow record {
 };
 
 
+# Represents the request payload for the `ExternalReconciliationsService_Reconcile` operation of the SAP Business One Service Layer.
 public type ExternalReconciliationsService_Reconcile_body record {
     @jsondata:Name {value: "ExternalReconciliation"}
     ExternalReconciliation externalReconciliation?;
 };
 
+# A paged collection of `VendorPayments` entities returned by the SAP Business One Service Layer.
 public type VendorPaymentsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2024,6 +2105,7 @@ public type VendorPaymentsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ExternalReconciliation` complex type of the SAP Business One Service Layer.
 public type ExternalReconciliation record {|
     @jsondata:Name {value: "CreationDate"}
     string creationDate?;
@@ -2047,6 +2129,7 @@ public type ExternalReconciliation record {|
     ReconciliationBankStatementLine[] reconciliationBankStatementLines?;
 |};
 
+# The `InternalReconciliationOpenTrans` complex type of the SAP Business One Service Layer.
 public type InternalReconciliationOpenTrans record {|
     @jsondata:Name {value: "InternalReconciliationOpenTransRows"}
     InternalReconciliationOpenTransRow[] internalReconciliationOpenTransRows?;
@@ -2060,6 +2143,7 @@ public type InternalReconciliationOpenTrans record {|
     int:Signed32 bPLId?;
 |};
 
+# Represents the request payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer.
 public type PaymentCalculationService_GetPaymentAmount_body record {
     @jsondata:Name {value: "PaymentInvoiceEntries"}
     PaymentInvoiceEntry[] paymentInvoiceEntries?;
@@ -2067,11 +2151,13 @@ public type PaymentCalculationService_GetPaymentAmount_body record {
     PaymentBPCode paymentBPCode?;
 };
 
+# The `PaymentReasonCodeParams` complex type of the SAP Business One Service Layer.
 public type PaymentReasonCodeParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
 |};
 
+# The `BankStatementParams` complex type of the SAP Business One Service Layer.
 public type BankStatementParams record {|
     @jsondata:Name {value: "BankAccountKey"}
     int:Signed32 bankAccountKey?;
@@ -2097,6 +2183,7 @@ public type BankStatementParams record {|
     decimal startingBalanceL?;
 |};
 
+# A paged collection of `IncomingPayments` entities returned by the SAP Business One Service Layer.
 public type IncomingPaymentsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2115,6 +2202,7 @@ public type ListInternalReconciliationsHeaders record {
 # OData EnumType 'BoBOTToStatus'. Serialised by the Service Layer as the member name
 public type BoBOTToStatus "btts_Canceled"|"btts_Generated"|"btts_Deposit"|"btts_Paid"|"btts_Failed"|"btts_Closed";
 
+# The `InternalReconciliationOpenTransRow` complex type of the SAP Business One Service Layer.
 public type InternalReconciliationOpenTransRow record {|
     @jsondata:Name {value: "CashDiscount"}
     decimal cashDiscount?;
@@ -2136,6 +2224,7 @@ public type InternalReconciliationOpenTransRow record {|
     decimal reconcileAmount?;
 |};
 
+# The `PaymentWizardParams` complex type of the SAP Business One Service Layer.
 public type PaymentWizardParams record {|
     @jsondata:Name {value: "IdNumber"}
     int:Signed32 idNumber?;
@@ -2143,6 +2232,7 @@ public type PaymentWizardParams record {|
     string wizardName?;
 |};
 
+# The `ElectronicProtocol` complex type of the SAP Business One Service Layer.
 public type ElectronicProtocol record {
     # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
@@ -2200,11 +2290,13 @@ public type GetWizardPaymentMethodsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ExternalReconciliationsService_CancelReconciliation` operation of the SAP Business One Service Layer.
 public type ExternalReconciliationsService_CancelReconciliation_body record {
     @jsondata:Name {value: "ExternalReconciliationParams"}
     ExternalReconciliationParams externalReconciliationParams?;
 };
 
+# The `CurrencyRestriction` complex type of the SAP Business One Service Layer.
 public type CurrencyRestriction record {
     string PaymentMethodCode?;
     string CurrencyCode?;
@@ -2213,6 +2305,7 @@ public type CurrencyRestriction record {
     BoYesNoEnum Choose?;
 };
 
+# A paged collection of `Banks` entities returned by the SAP Business One Service Layer.
 public type BanksCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2284,16 +2377,19 @@ public type ListCentralBankIndicatorQueries record {
 # OData EnumType 'PostingMethodEnum'. Serialised by the Service Layer as the member name
 public type PostingMethodEnum "pmGLAccountBankAccount"|"pmBussinessPartnerBankAccount"|"pmInterimAccountBankAccount"|"pmExternalReconciliation"|"pmIgnore";
 
+# The `CentralBankIndicatorParams` complex type of the SAP Business One Service Layer.
 public type CentralBankIndicatorParams record {|
     @jsondata:Name {value: "Indicator"}
     string indicator?;
 |};
 
+# Represents the request payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer.
 public type BankStatementsService_GetBankStatementList_body record {
     @jsondata:Name {value: "BankStatementsFilter"}
     BankStatementsFilter bankStatementsFilter?;
 };
 
+# A paged collection of `Deposits` entities returned by the SAP Business One Service Layer.
 public type DepositsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2302,6 +2398,7 @@ public type DepositsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `PaymentRunExport` entities returned by the SAP Business One Service Layer.
 public type PaymentRunExportCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2313,6 +2410,7 @@ public type PaymentRunExportCollectionResponse record {
 # OData EnumType 'BoBpsDocTypes'. Serialised by the Service Layer as the member name
 public type BoBpsDocTypes "bpdt_PaymentReference"|"bpdt_ISR"|"bpdt_DocNum";
 
+# The `BillOfExchangeTransDeposit` complex type of the SAP Business One Service Layer.
 public type BillOfExchangeTransDeposit record {
     string DepositNorm?;
     # OData EnumType 'BoDepositPostingTypes'. Serialised by the Service Layer as the member name
@@ -2326,6 +2424,7 @@ public type BillOfExchangeTransDeposit record {
 # OData EnumType 'BoDepositAccountTypeEnum'. Serialised by the Service Layer as the member name
 public type BoDepositAccountTypeEnum "datBankAccount"|"datBusinessPartner";
 
+# The `CreditLine` complex type of the SAP Business One Service Layer.
 public type CreditLine record {|
     @jsondata:Name {value: "CreditCurrency"}
     string creditCurrency?;
@@ -2356,6 +2455,7 @@ public type CreditLine record {|
 # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"edpc_CFDI"|"edpc_FPA"|"edpc_MTD"|"edpc_EWB"|"edpc_PEPPOL"|"edpc_HOI"|"edpc_MYF"|"edpc_EIS"|"edpc_IIS"|"edpc_IIS_Annual"|"edpc_DIGIPOORT"|"edpc_EBooks"|"edpc_DOX"|"edpc_RTIE"|"edpc_EBilling"|"edpc_TaxService"|"edpc_AFE"|"edpc_DocSign"|"edpc_KSeF"|"edpc_GSTReturn"|"edpc_PTDocSign"|"edpc_SkatDK"|"edpc_EII"|"edpc_NFe"|"edpc_PTeInvoicing"|"edpc_PTeCom"|"edpc_VeriFactu"|"edpc_BAS"|"edpc_PDFwithXML"|"edpc_FReINV";
 
+# A paged collection of `CreditPaymentMethods` entities returned by the SAP Business One Service Layer.
 public type CreditPaymentMethodsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2380,6 +2480,7 @@ public type GetPaymentRunExportQueries record {
     string dollarSelect?;
 };
 
+# The `PaymentRunExport` entity of the SAP Business One Service Layer.
 public type PaymentRunExport record {
     int:Signed32 AbsoluteEntry?;
     string RunDate?;
@@ -2486,7 +2587,9 @@ public type PaymentRunExport record {
     # OData EnumType 'PaymentRunExportRowTypeEnum'. Serialised by the Service Layer as the member name
     PaymentRunExportRowTypeEnum RowType?;
     PaymentRunExportLine[] PaymentRunExport_Lines?;
+    # The `PaymentWizard` entity of the SAP Business One Service Layer.
     PaymentWizard PaymentWizard?;
+    # The `BankChargesAllocationCode` entity of the SAP Business One Service Layer.
     BankChargesAllocationCode BankChargesAllocationCode?;
 };
 
@@ -2499,6 +2602,7 @@ public type ReconSelectDateTypeEnum "rsdtPostDate"|"rsdtDueDate"|"rsdtDocDate";
 # OData EnumType 'BoPaymentMeansEnum'. Serialised by the Service Layer as the member name
 public type BoPaymentMeansEnum "bopmCheck"|"bopmBankTransfer"|"bopmBillOfExchange";
 
+# The `CancelCheckRowParams` complex type of the SAP Business One Service Layer.
 public type CancelCheckRowParams record {|
     @jsondata:Name {value: "CheckID"}
     int:Signed32 checkID?;
@@ -2506,12 +2610,14 @@ public type CancelCheckRowParams record {|
     int:Signed32 depositID?;
 |};
 
+# Represents the response payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer.
 public type inline_response_200_9 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ExternalReconciliationParams[] value?;
 };
 
+# The `Deposit` entity of the SAP Business One Service Layer.
 public type Deposit record {
     int:Signed32 DepositNumber?;
     int:Signed32 AbsEntry?;
@@ -2567,6 +2673,7 @@ public type Deposit record {
     BOELine[] BOELines?;
 };
 
+# Represents the request payload for the `InternalReconciliationsService_GetOpenTransactions` operation of the SAP Business One Service Layer.
 public type InternalReconciliationsService_GetOpenTransactions_body record {
     @jsondata:Name {value: "InternalReconciliationOpenTransParams"}
     InternalReconciliationOpenTransParams internalReconciliationOpenTransParams?;
@@ -2579,6 +2686,7 @@ public type ListIncomingPaymentsHeaders record {
     string prefer?;
 };
 
+# The `PaymentInvoice` complex type of the SAP Business One Service Layer.
 public type PaymentInvoice record {
     int:Signed32 LineNum?;
     int:Signed32 DocEntry?;
@@ -2632,18 +2740,21 @@ public type ListPaymentDraftsQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `CentralBankIndicatorService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CentralBankIndicatorParams[] value?;
 };
 
+# Represents the response payload for the `CheckLinesService_GetValidCheckLineList` operation of the SAP Business One Service Layer.
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CheckLineParams[] value?;
 };
 
+# The `WTGroups` complex type of the SAP Business One Service Layer.
 public type WTGroups record {
     int:Signed32 WTAbsEntry?;
     decimal Percent?;
@@ -2655,12 +2766,14 @@ public type WTGroups record {
     DocsInWTGroups[] DocsInWTGroupsCollection?;
 };
 
+# Represents the response payload for the `CreditLinesService_GetValidCreditLineList` operation of the SAP Business One Service Layer.
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CreditLineParams[] value?;
 };
 
+# The `PaymentAccount` complex type of the SAP Business One Service Layer.
 public type PaymentAccount record {
     int:Signed32 LineNum?;
     string AccountCode?;
@@ -2681,12 +2794,14 @@ public type PaymentAccount record {
     decimal EqualizationVatAmount?;
 };
 
+# Represents the response payload for the `DepositsService_GetDepositList` operation of the SAP Business One Service Layer.
 public type inline_response_200_8 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     DepositParams[] value?;
 };
 
+# The `MultiplePayment` complex type of the SAP Business One Service Layer.
 public type MultiplePayment record {|
     @jsondata:Name {value: "IsDebit"}
     BoYesNoEnum isDebit?;
@@ -2709,6 +2824,7 @@ public type ListChecksforPaymentHeaders record {
     string prefer?;
 };
 
+# The `CreditCardPayment` entity of the SAP Business One Service Layer.
 public type CreditCardPayment record {
     string DueDateCode?;
     string DueDateName?;
@@ -2760,11 +2876,13 @@ public type ListInternalReconciliationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CheckLinesService_GetCheckLine` operation of the SAP Business One Service Layer.
 public type CheckLinesService_GetCheckLine_body record {
     @jsondata:Name {value: "CheckLineParams"}
     CheckLineParams checkLineParams?;
 };
 
+# The `Payment` entity of the SAP Business One Service Layer.
 public type Payment record {
     int:Signed32 DocNum?;
     # OData EnumType 'BoRcptTypes'. Serialised by the Service Layer as the member name
@@ -2891,6 +3009,7 @@ public type Payment record {
     PaymentCreditCard[] PaymentCreditCards?;
     PaymentAccount[] PaymentAccounts?;
     PaymentDocumentReferences[] PaymentDocumentReferencesCollection?;
+    # The `BillOfExchange` complex type of the SAP Business One Service Layer.
     BillOfExchange BillOfExchange?;
     WithholdingTaxCertificatesData[] WithholdingTaxCertificatesCollection?;
     ElectronicProtocol[] ElectronicProtocols?;
@@ -2909,6 +3028,7 @@ public type ListBOEDocumentTypesHeaders record {
 # OData EnumType 'PaymentsAuthorizationStatusEnum'. Serialised by the Service Layer as the member name
 public type PaymentsAuthorizationStatusEnum "pasWithout"|"pasPending"|"pasApproved"|"pasRejected"|"pasGenerated"|"pasGeneratedbyAuthorizer"|"pasCancelled";
 
+# The `BOELine` complex type of the SAP Business One Service Layer.
 public type BOELine record {|
     @jsondata:Name {value: "Bank"}
     string bank?;
@@ -2962,24 +3082,28 @@ public type ListVendorPaymentsHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `BOEInstructionsService_GetBOEInstructionList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BOEInstructionParams[] value?;
 };
 
+# Represents the response payload for the `BOEPortfoliosService_GetBOEPortfolioList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BOEPortfolioParams[] value?;
 };
 
+# Represents the response payload for the `BankChargesAllocationCodesService_GetBankChargesAllocationCodeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BankChargesAllocationCodeParams[] value?;
 };
 
+# Represents the response payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer.
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3014,12 +3138,14 @@ public type ListCreditCardsQueries record {
 # OData EnumType 'BoBoeStatus'. Serialised by the Service Layer as the member name
 public type BoBoeStatus "boes_Created"|"boes_Sent"|"boes_Deposited"|"boes_Paid"|"boes_Cancelled"|"boes_Closed"|"boes_Failed";
 
+# Represents the response payload for the `PaymentBlocksService_GetPaymentBlockList` operation of the SAP Business One Service Layer.
 public type inline_response_200_11 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PaymentBlockParams[] value?;
 };
 
+# Represents the response payload for the `GovPayCodesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_10 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3029,12 +3155,14 @@ public type inline_response_200_10 record {
 # OData EnumType 'BoDepositCheckEnum'. Serialised by the Service Layer as the member name
 public type BoDepositCheckEnum "dtNo"|"dcAsCash"|"dtAsPostdated";
 
+# Represents the response payload for the `PaymentReasonCodeService_GetPaymentReasonCodeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_13 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PaymentReasonCodeParams[] value?;
 };
 
+# Represents the response payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer.
 public type inline_response_200_12 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3044,6 +3172,7 @@ public type inline_response_200_12 record {
 # OData EnumType 'BoRcptTypes'. Serialised by the Service Layer as the member name
 public type BoRcptTypes "rCustomer"|"rAccount"|"rSupplier";
 
+# The `BOEDocumentTypeParams` complex type of the SAP Business One Service Layer.
 public type BOEDocumentTypeParams record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -3051,6 +3180,7 @@ public type BOEDocumentTypeParams record {|
     string docType?;
 |};
 
+# The `CheckLine` complex type of the SAP Business One Service Layer.
 public type CheckLine record {|
     @jsondata:Name {value: "CheckKey"}
     int:Signed32 checkKey?;
@@ -3084,6 +3214,7 @@ public type CheckLine record {|
     decimal checkAmount?;
 |};
 
+# Represents the response payload for the `PaymentWizardService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_14 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3141,6 +3272,7 @@ public type GetBOEInstructionsQueries record {
     string dollarSelect?;
 };
 
+# The `PaymentReasonCode` entity of the SAP Business One Service Layer.
 public type PaymentReasonCode record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -3156,6 +3288,7 @@ public type GetPaymentDraftsQueries record {
     string dollarSelect?;
 };
 
+# The `PaymentWizard` entity of the SAP Business One Service Layer.
 public type PaymentWizard record {|
     @jsondata:Name {value: "PaymentRunExport"}
     PaymentRunExport[] paymentRunExport?;
@@ -3177,12 +3310,14 @@ public type PaymentWizard record {|
     PaymentMethodEnum bankTransferPaymentMethod?;
 |};
 
+# Represents the response payload for the `BOEDocumentTypesService_GetBOEDocumentTypeList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BOEDocumentTypeParams[] value?;
 };
 
+# The `BillOfExchangeTransaction` entity of the SAP Business One Service Layer.
 public type BillOfExchangeTransaction record {
     # OData EnumType 'BoBOTFromStatus'. Serialised by the Service Layer as the member name
     BoBOTFromStatus StatusFrom?;
@@ -3201,6 +3336,7 @@ public type BillOfExchangeTransaction record {
     BillOfExchangeTransBankPage[] BillOfExchangeTransBankPages?;
 };
 
+# The `BOEDocumentType` entity of the SAP Business One Service Layer.
 public type BOEDocumentType record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -3210,6 +3346,7 @@ public type BOEDocumentType record {|
     string docDescription?;
 |};
 
+# The `DepositParams` complex type of the SAP Business One Service Layer.
 public type DepositParams record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
@@ -3243,6 +3380,7 @@ public type ListPaymentWizardsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `DepositsService_CancelCheckRowbyCurrentSystemDate` operation of the SAP Business One Service Layer.
 public type DepositsService_CancelCheckRowbyCurrentSystemDate_body record {
     @jsondata:Name {value: "CancelCheckRowParams"}
     CancelCheckRowParams cancelCheckRowParams?;
@@ -3268,6 +3406,7 @@ public type GetInternalReconciliationsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BillOfExchangeTransactions` entities returned by the SAP Business One Service Layer.
 public type BillOfExchangeTransactionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3279,6 +3418,7 @@ public type BillOfExchangeTransactionsCollectionResponse record {
 # OData EnumType 'BoRcptInvTypes'. Serialised by the Service Layer as the member name
 public type BoRcptInvTypes "it_AllTransactions"|"it_OpeningBalance"|"it_ClosingBalance"|"it_Invoice"|"it_CredItnote"|"it_TaxInvoice"|"it_Return"|"it_PurchaseInvoice"|"it_PurchaseCreditNote"|"it_PurchaseDeliveryNote"|"it_PurchaseReturn"|"it_Receipt"|"it_Deposit"|"it_JournalEntry"|"it_PaymentAdvice"|"it_ChequesForPayment"|"it_StockReconciliations"|"it_GeneralReceiptToStock"|"it_GeneralReleaseFromStock"|"it_TransferBetweenWarehouses"|"it_WorkInstructions"|"it_DeferredDeposit"|"it_CorrectionInvoice"|"it_APCorrectionInvoice"|"it_ARCorrectionInvoice"|"it_DownPayment"|"it_PurchaseDownPayment";
 
+# The `GovPayCodeAuthority` complex type of the SAP Business One Service Layer.
 public type GovPayCodeAuthority record {|
     @jsondata:Name {value: "State"}
     string state?;
@@ -3290,6 +3430,7 @@ public type GovPayCodeAuthority record {|
     int:Signed32 absId?;
 |};
 
+# The `InternalReconciliationRow` complex type of the SAP Business One Service Layer.
 public type InternalReconciliationRow record {|
     @jsondata:Name {value: "CashDiscount"}
     decimal cashDiscount?;
@@ -3311,6 +3452,7 @@ public type InternalReconciliationRow record {|
     decimal reconcileAmount?;
 |};
 
+# A paged collection of `PaymentReasonCodes` entities returned by the SAP Business One Service Layer.
 public type PaymentReasonCodesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;

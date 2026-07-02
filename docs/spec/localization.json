@@ -52,7 +52,8 @@
                         "$ref": "#/components/schemas/BEMReplicationPeriodParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BEMReplicationPeriodService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -573,7 +574,8 @@
                         "$ref": "#/components/schemas/BrazilBeverageIndexerParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BrazilBeverageIndexersService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -855,7 +857,8 @@
                         "$ref": "#/components/schemas/BrazilFuelIndexerParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BrazilFuelIndexersService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1151,7 +1154,8 @@
                         "$ref": "#/components/schemas/BrazilMultiIndexerParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BrazilMultiIndexers_GetIndexerTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1447,7 +1451,8 @@
                         "$ref": "#/components/schemas/BrazilNumericIndexerParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BrazilNumericIndexers_GetIndexerTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1743,7 +1748,8 @@
                         "$ref": "#/components/schemas/BrazilStringIndexerParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BrazilStringIndexers_GetIndexerTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2025,7 +2031,8 @@
                         "$ref": "#/components/schemas/CIGCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CIGCodeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2307,7 +2314,8 @@
                         "$ref": "#/components/schemas/CUPCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CUPCodeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2828,7 +2836,8 @@
                         "$ref": "#/components/schemas/CertificateSeriesParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CertificateSeriesService_GetCertificateSeriesList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3346,7 +3355,8 @@
                         "$ref": "#/components/schemas/DNFCodeSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DNFCodeSetupService_GetDNFCodeSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4120,7 +4130,8 @@
                         "$ref": "#/components/schemas/EBooksParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EBooks_GetByDocKey` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4208,7 +4219,8 @@
                         "$ref": "#/components/schemas/EWBTransporterParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EWBTransporterService_GetEWBTransporterList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4486,7 +4498,8 @@
                     ],
                     "x-ballerina-name": "aFEFceAPCheckECM2EntryParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_AFE_FceAP_CheckECM2Entry` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4510,7 +4523,8 @@
                         "$ref": "#/components/schemas/AFEFceAPCheckECM2Entry"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionService_AFE_FceAP_CheckECM2Entry` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4615,7 +4629,8 @@
                         "$ref": "#/components/schemas/AFEFceARGetDocuments"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionService_AFE_FceAR_GetDocuments` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4654,7 +4669,8 @@
                     ],
                     "x-ballerina-name": "aFEFceID"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_AFE_FceAction_GetByFceID` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4678,7 +4694,8 @@
                         "$ref": "#/components/schemas/AFEFceActionGetByFceID"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionService_AFE_FceAction_GetByFceID` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4717,7 +4734,8 @@
                     ],
                     "x-ballerina-name": "eCMCodeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_AFE_FceAction_GetPaymentData` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4741,7 +4759,8 @@
                         "$ref": "#/components/schemas/AFEFceActionGetPaymentData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionService_AFE_FceAction_GetPaymentData` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4780,7 +4799,8 @@
                     ],
                     "x-ballerina-name": "aFERenumberFolioParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_AFE_RenumberFolioNumbers` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4828,7 +4848,8 @@
                         "$ref": "#/components/schemas/AFEUpdFceAPARGetDocuments"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionService_AFE_UpdFceAPAR_GetDocuments` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4867,7 +4888,8 @@
                     ],
                     "x-ballerina-name": "eCMCodeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_ConfirmSuccessOfCommunication` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4911,7 +4933,8 @@
                     ],
                     "x-ballerina-name": "eCMCodeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_GetAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4962,7 +4985,8 @@
                     ],
                     "x-ballerina-name": "eCMCodeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_ReportErrorAndContinue` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5006,7 +5030,8 @@
                     ],
                     "x-ballerina-name": "eCMCodeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_ReportErrorAndStop` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5050,7 +5075,8 @@
                     ],
                     "x-ballerina-name": "eCMActionStatusData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionService_UpdateAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5094,7 +5120,8 @@
                     ],
                     "x-ballerina-name": "ecmAction"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_AddEcmAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5145,7 +5172,8 @@
                     ],
                     "x-ballerina-name": "ecmActionLog"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_AddEcmActionLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5196,7 +5224,8 @@
                     ],
                     "x-ballerina-name": "ecmAction"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_DeleteEcmAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5240,7 +5269,8 @@
                     ],
                     "x-ballerina-name": "ecmActionParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_GetEcmAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5291,7 +5321,8 @@
                     ],
                     "x-ballerina-name": "ecmActionDocParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_GetEcmActionByDoc` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5342,7 +5373,8 @@
                     ],
                     "x-ballerina-name": "ecmActionLogParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_GetEcmActionLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5393,7 +5425,8 @@
                     ],
                     "x-ballerina-name": "ecmAction"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_GetEcmActionLogList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5417,7 +5450,8 @@
                         "$ref": "#/components/schemas/EcmActionLog"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicCommunicationActionsService_GetEcmActionLogList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5456,7 +5490,8 @@
                     ],
                     "x-ballerina-name": "ecmAction"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicCommunicationActionsService_UpdateEcmAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5500,7 +5535,8 @@
                     ],
                     "x-ballerina-name": "emergencyNumber"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_AddEmergencyNumber` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5544,7 +5580,8 @@
                     ],
                     "x-ballerina-name": "eDFImportEntry"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_AddImportEntry` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5588,7 +5625,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryAddLogInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_AddLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5632,7 +5670,8 @@
                     ],
                     "x-ballerina-name": "eDFEntry"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_CreateEntry` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5676,7 +5715,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryLogInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_ExportEntryLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5720,7 +5760,8 @@
                     ],
                     "x-ballerina-name": "eDFDocMappingInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetDocMappingList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5744,7 +5785,8 @@
                         "$ref": "#/components/schemas/EDFDocMapping"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicDocumentService_GetDocMappingList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5787,7 +5829,8 @@
                         "$ref": "#/components/schemas/EmergencyNumber"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicDocumentService_GetEmergencyNumbers` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5826,7 +5869,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetEntry` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5877,7 +5921,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryListInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetEntryList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5901,7 +5946,8 @@
                         "$ref": "#/components/schemas/EDFEntry"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicDocumentService_GetEntryList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5940,7 +5986,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryLogInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetLastLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5991,7 +6038,8 @@
                     ],
                     "x-ballerina-name": "eDFEntryLogInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetLogs` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6015,7 +6063,8 @@
                         "$ref": "#/components/schemas/EDFEntryLog"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicDocumentService_GetLogs` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6054,7 +6103,8 @@
                     ],
                     "x-ballerina-name": "eDFMappingInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetMappingByHash` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6105,7 +6155,8 @@
                     ],
                     "x-ballerina-name": "eDFProtocolParameterInputParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_GetProtocolParameter` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6160,7 +6211,8 @@
                         "$ref": "#/components/schemas/EDFProtocol"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicDocumentService_GetProtocols` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6199,7 +6251,8 @@
                     ],
                     "x-ballerina-name": "eDFEntry"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_UpdateEntry` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6243,7 +6296,8 @@
                     ],
                     "x-ballerina-name": "eDFProtocolWithParameters"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_UpdateExtendedProperties` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6287,7 +6341,8 @@
                     ],
                     "x-ballerina-name": "eDFProtocolParameter"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ElectronicDocumentService_UpdateProtocolParameter` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6810,7 +6865,8 @@
                         "$ref": "#/components/schemas/ElectronicFileFormatParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ElectronicFileFormatsService_GetElectronicFileFormatList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6849,7 +6905,8 @@
                     ],
                     "x-ballerina-name": "exportDeterminationsParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ExportDeterminationService_GetDeterminations` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6873,7 +6930,8 @@
                         "$ref": "#/components/schemas/ExportDetermination"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ExportDeterminationService_GetDeterminations` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7391,7 +7449,8 @@
                         "$ref": "#/components/schemas/FiscalPrinterParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `FiscalPrinterService_GetFiscalPrinterList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7430,7 +7489,8 @@
                     ],
                     "x-ballerina-name": "gTIParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GTIsService_Import` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7454,7 +7514,8 @@
                         "$ref": "#/components/schemas/GTIParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `GTIsService_Import` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7774,7 +7835,8 @@
                         "$ref": "#/components/schemas/ISDCreditMemoParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ISDCreditMemosService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8052,7 +8114,8 @@
                     ],
                     "x-ballerina-name": "iSDParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ISDDocumentsService_Cancel` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8100,7 +8163,8 @@
                         "$ref": "#/components/schemas/ISDParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ISDDocumentsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8420,7 +8484,8 @@
                         "$ref": "#/components/schemas/ISDInvoiceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ISDInvoicesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8740,7 +8805,8 @@
                         "$ref": "#/components/schemas/ISDRecipientCreditMemoParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ISDRecipientCreditMemosService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9060,7 +9126,8 @@
                         "$ref": "#/components/schemas/ISDRecipientInvoiceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ISDRecipientInvoicesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9103,7 +9170,8 @@
                         "$ref": "#/components/schemas/IdentificationCode"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `IdentificationCodeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9381,7 +9449,8 @@
                     ],
                     "x-ballerina-name": "importDeterminationsParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ImportDeterminationService_GetDeterminations` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -9405,7 +9474,8 @@
                         "$ref": "#/components/schemas/ImportDetermination"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ImportDeterminationService_GetDeterminations` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9926,7 +9996,8 @@
                         "$ref": "#/components/schemas/IndiaHsnParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `IndiaHsnService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10208,7 +10279,8 @@
                         "$ref": "#/components/schemas/IndiaSacCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `IndiaSacCodeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10490,7 +10562,8 @@
                         "$ref": "#/components/schemas/IntrastatConfigurationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `IntrastatConfigurationService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11247,7 +11320,8 @@
                         "$ref": "#/components/schemas/MaterialGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MaterialGroupsService_GetMaterialGroupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11529,7 +11603,8 @@
                         "$ref": "#/components/schemas/NCMCodeSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `NCMCodesSetupService_GetNCMCodeSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11808,7 +11883,8 @@
                         "$ref": "#/components/schemas/NFModelParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `NFModelsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12090,7 +12166,8 @@
                         "$ref": "#/components/schemas/NFTaxCategoryParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `NFTaxCategoriesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -13089,7 +13166,8 @@
                         "$ref": "#/components/schemas/OccurenceCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `OccurrenceCodesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -13371,7 +13449,8 @@
                         "$ref": "#/components/schemas/RetornoCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RetornoCodesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -13410,7 +13489,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfCreditMemoService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13454,7 +13534,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfCreditMemoService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13498,7 +13579,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfCreditMemoService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13542,7 +13624,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfCreditMemoService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13586,7 +13669,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfCreditMemoService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14090,7 +14174,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfInvoiceService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14134,7 +14219,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfInvoiceService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14178,7 +14264,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfInvoiceService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14222,7 +14309,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfInvoiceService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14266,7 +14354,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SelfInvoiceService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15013,7 +15102,8 @@
                         "$ref": "#/components/schemas/ServiceGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceGroupsService_GetServiceGroupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -15056,7 +15146,8 @@
                         "$ref": "#/components/schemas/ServiceTaxPostingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ServiceTaxPostingService_GetTaxableDeliveries` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -15095,7 +15186,8 @@
                     ],
                     "x-ballerina-name": "serviceTaxPostingParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ServiceTaxPostingService_PostServiceTax` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15434,7 +15526,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDRecipientInvoiceLine` complex type of the SAP Business One Service Layer."
       },
       "ElectronicFileFormatsCollectionResponse": {
         "type": "object",
@@ -15453,7 +15546,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ElectronicFileFormats` entities returned by the SAP Business One Service Layer."
       },
       "DocumentApprovalRequest": {
         "type": "object",
@@ -15480,7 +15574,8 @@
             "x-ballerina-name": "approvalTemplatesName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer."
       },
       "IntrastatConfigurationEnum": {
         "type": "string",
@@ -16591,7 +16686,8 @@
             "$ref": "#/components/schemas/CUPCode"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Document` entity of the SAP Business One Service Layer."
       },
       "EBooksLine": {
         "type": "object",
@@ -16672,7 +16768,8 @@
             "x-ballerina-name": "expenseClassificationCategory"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EBooksLine` complex type of the SAP Business One Service Layer."
       },
       "NotaFiscalUsage": {
         "type": "object",
@@ -16709,7 +16806,8 @@
             "$ref": "#/components/schemas/NotaFiscalCFOP"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `NotaFiscalUsage` entity of the SAP Business One Service Layer."
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -16747,12 +16845,14 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SelfCreditMemos` entities returned by the SAP Business One Service Layer."
       },
       "DocumentDistributedExpense": {
         "type": "object",
         "properties": {},
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer."
       },
       "EDeliveryInfo": {
         "type": "object",
@@ -16772,7 +16872,8 @@
             "x-ballerina-name": "moveType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDeliveryInfo` complex type of the SAP Business One Service Layer."
       },
       "LegalDataCollectionResponse": {
         "type": "object",
@@ -16791,7 +16892,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `LegalData` entities returned by the SAP Business One Service Layer."
       },
       "PrintStatusEnum": {
         "type": "string",
@@ -16819,7 +16921,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ElectronicDocuments` entities returned by the SAP Business One Service Layer."
       },
       "DocumentReference": {
         "type": "object",
@@ -16912,7 +17015,8 @@
             "x-ballerina-name": "refObjType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentReference` complex type of the SAP Business One Service Layer."
       },
       "ImportDetermination": {
         "type": "object",
@@ -16956,7 +17060,8 @@
             "$ref": "#/components/schemas/ElectronicFileFormat"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ImportDetermination` entity of the SAP Business One Service Layer."
       },
       "CancelStatusEnum": {
         "type": "string",
@@ -17048,7 +17153,8 @@
             "x-ballerina-name": "paramName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFProtocolParameter` complex type of the SAP Business One Service Layer."
       },
       "BoAdEpnsDistribMethods": {
         "type": "string",
@@ -17100,7 +17206,8 @@
             "x-ballerina-name": "brazilNumericIndexer"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilBeverageIndexer` entity of the SAP Business One Service Layer."
       },
       "LineFreightEBooksDetail": {
         "type": "object",
@@ -17166,7 +17273,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "BatchNumber": {
         "type": "object",
@@ -17222,7 +17330,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
       },
       "BoCorInvItemStatus": {
         "type": "string",
@@ -17276,7 +17385,8 @@
             "x-ballerina-name": "fileFormat"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RetornoCode` entity of the SAP Business One Service Layer."
       },
       "NCMCodesSetupCollectionResponse": {
         "type": "object",
@@ -17295,7 +17405,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NCMCodesSetup` entities returned by the SAP Business One Service Layer."
       },
       "BoPayTermDueTypes": {
         "type": "string",
@@ -17347,7 +17458,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFDocMapping` complex type of the SAP Business One Service Layer."
       },
       "ISDCreditMemo": {
         "type": "object",
@@ -17472,7 +17584,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDCreditMemo` entity of the SAP Business One Service Layer."
       },
       "BoDocumentSubType": {
         "type": "string",
@@ -17507,7 +17620,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DefaultElementsforCR` entities returned by the SAP Business One Service Layer."
       },
       "BoDocSpecialLineType": {
         "type": "string",
@@ -17642,7 +17756,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDRecipientCreditMemo` entity of the SAP Business One Service Layer."
       },
       "DocumentLine": {
         "type": "object",
@@ -18561,7 +18676,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLine` complex type of the SAP Business One Service Layer."
       },
       "ExportProcess": {
         "type": "object",
@@ -18639,7 +18755,8 @@
             "x-ballerina-name": "exportationDeclarationNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExportProcess` complex type of the SAP Business One Service Layer."
       },
       "ISDParams": {
         "type": "object",
@@ -18655,7 +18772,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ISDParams` complex type of the SAP Business One Service Layer."
       },
       "BoTaxTypes": {
         "type": "string",
@@ -18704,7 +18822,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OccurenceCodeParams` complex type of the SAP Business One Service Layer."
       },
       "OccurrenceCodesCollectionResponse": {
         "type": "object",
@@ -18723,7 +18842,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `OccurrenceCodes` entities returned by the SAP Business One Service Layer."
       },
       "BoDocSummaryTypes": {
         "type": "string",
@@ -18756,7 +18876,8 @@
             "x-ballerina-name": "closingOption"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentCloseParams` complex type of the SAP Business One Service Layer."
       },
       "CIGCodeParams": {
         "type": "object",
@@ -18767,7 +18888,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CIGCodeParams` complex type of the SAP Business One Service Layer."
       },
       "EDFEntryInputParams": {
         "type": "object",
@@ -18785,7 +18907,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFEntryInputParams` complex type of the SAP Business One Service Layer."
       },
       "DocumentAuthorizationStatusEnum": {
         "type": "string",
@@ -18841,7 +18964,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ISDCreditMemoParams` complex type of the SAP Business One Service Layer."
       },
       "NFModel": {
         "type": "object",
@@ -19052,7 +19176,8 @@
             "x-ballerina-name": "nFMName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NFModel` entity of the SAP Business One Service Layer."
       },
       "DocumentAdditionalIntrastatExpense": {
         "type": "object",
@@ -19109,7 +19234,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer."
       },
       "EcmActionParams": {
         "type": "object",
@@ -19120,7 +19246,8 @@
             "x-ballerina-name": "actionID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EcmActionParams` complex type of the SAP Business One Service Layer."
       },
       "EDocTypeEnum": {
         "type": "string",
@@ -19191,7 +19318,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BrazilStringIndexers` entities returned by the SAP Business One Service Layer."
       },
       "TransportationDocumentCollectionResponse": {
         "type": "object",
@@ -19210,7 +19338,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TransportationDocument` entities returned by the SAP Business One Service Layer."
       },
       "IdentificationCode": {
         "type": "object",
@@ -19245,7 +19374,8 @@
             "x-ballerina-name": "schemaDesc"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IdentificationCode` entity of the SAP Business One Service Layer."
       },
       "ServiceTaxPostingParams": {
         "type": "object",
@@ -19256,7 +19386,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceTaxPostingParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -19281,7 +19412,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "BoDocLineType": {
         "type": "string",
@@ -19332,7 +19464,8 @@
             "x-ballerina-name": "manufacturerSerialN"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FiscalPrinter` entity of the SAP Business One Service Layer."
       },
       "ISDDocumentTypeEnum": {
         "type": "string",
@@ -19399,7 +19532,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "BEMReplicationPeriodParams": {
         "type": "object",
@@ -19410,7 +19544,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BEMReplicationPeriodParams` complex type of the SAP Business One Service Layer."
       },
       "EDFEntryListInputParams": {
         "type": "object",
@@ -19491,7 +19626,8 @@
             "x-ballerina-name": "ascending"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFEntryListInputParams` complex type of the SAP Business One Service Layer."
       },
       "GeneratedAsset": {
         "type": "object",
@@ -19540,7 +19676,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GeneratedAsset` complex type of the SAP Business One Service Layer."
       },
       "ISDInvoice": {
         "type": "object",
@@ -19665,7 +19802,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDInvoice` entity of the SAP Business One Service Layer."
       },
       "EWBTransportersCollectionResponse": {
         "type": "object",
@@ -19684,7 +19822,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EWBTransporters` entities returned by the SAP Business One Service Layer."
       },
       "BoTransactionTypeEnum": {
         "type": "string",
@@ -19806,7 +19945,8 @@
             "x-ballerina-name": "documentDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFImportEntry` complex type of the SAP Business One Service Layer."
       },
       "PWPExtendedProperties": {
         "type": "object",
@@ -19820,7 +19960,8 @@
             "x-ballerina-name": "isEncrypted"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PWPExtendedProperties` complex type of the SAP Business One Service Layer."
       },
       "DNFCodeSetup": {
         "type": "object",
@@ -19857,7 +19998,8 @@
             "x-ballerina-name": "nCMCodeSetup"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DNFCodeSetup` entity of the SAP Business One Service Layer."
       },
       "CUPCodesCollectionResponse": {
         "type": "object",
@@ -19876,7 +20018,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CUPCodes` entities returned by the SAP Business One Service Layer."
       },
       "ElectronicFileFormatParams": {
         "type": "object",
@@ -19891,7 +20034,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ElectronicFileFormatParams` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTaxData": {
         "type": "object",
@@ -19989,7 +20133,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer."
       },
       "BrazilMultiIndexersCollectionResponse": {
         "type": "object",
@@ -20008,7 +20153,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BrazilMultiIndexers` entities returned by the SAP Business One Service Layer."
       },
       "EDocStatusEnum": {
         "type": "string",
@@ -20044,7 +20190,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `NotaFiscalCFOP` entity of the SAP Business One Service Layer."
       },
       "CIGCodesCollectionResponse": {
         "type": "object",
@@ -20063,7 +20210,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CIGCodes` entities returned by the SAP Business One Service Layer."
       },
       "DNFCodeSetupParams": {
         "type": "object",
@@ -20083,7 +20231,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DNFCodeSetupParams` complex type of the SAP Business One Service Layer."
       },
       "BoExpenseOperationTypeEnum": {
         "type": "string",
@@ -20128,7 +20277,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IndiaHsn` entity of the SAP Business One Service Layer."
       },
       "LegalDataLineTypeEnum": {
         "type": "string",
@@ -20156,7 +20306,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NotaFiscalCFOP` entities returned by the SAP Business One Service Layer."
       },
       "SelfInvoicesCollectionResponse": {
         "type": "object",
@@ -20175,7 +20326,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SelfInvoices` entities returned by the SAP Business One Service Layer."
       },
       "ElectronicDocumentEntryLogTypeEnum": {
         "type": "string",
@@ -20210,7 +20362,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BrazilFuelIndexers` entities returned by the SAP Business One Service Layer."
       },
       "DatevRunsCollectionResponse": {
         "type": "object",
@@ -20229,7 +20382,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DatevRuns` entities returned by the SAP Business One Service Layer."
       },
       "ISDCreditMemoLine": {
         "type": "object",
@@ -20276,7 +20430,8 @@
             "$ref": "#/components/schemas/ISDITCTypeEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDCreditMemoLine` complex type of the SAP Business One Service Layer."
       },
       "IntrastatConfigurationCollectionResponse": {
         "type": "object",
@@ -20295,7 +20450,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `IntrastatConfiguration` entities returned by the SAP Business One Service Layer."
       },
       "RelatedDocument": {
         "type": "object",
@@ -20331,7 +20487,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
       },
       "BrazilNumericIndexerParams": {
         "type": "object",
@@ -20342,7 +20499,8 @@
             "x-ballerina-name": "iD"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilNumericIndexerParams` complex type of the SAP Business One Service Layer."
       },
       "BoStatus": {
         "type": "string",
@@ -20387,7 +20545,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilNumericIndexer` entity of the SAP Business One Service Layer."
       },
       "EcmActionDocParams": {
         "type": "object",
@@ -20406,7 +20565,8 @@
             "x-ballerina-name": "protocol"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EcmActionDocParams` complex type of the SAP Business One Service Layer."
       },
       "TransportationDocumentData": {
         "type": "object",
@@ -20516,7 +20676,8 @@
             "x-ballerina-name": "postDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TransportationDocumentData` entity of the SAP Business One Service Layer."
       },
       "BrazilMultiIndexerTypes": {
         "type": "string",
@@ -20543,7 +20704,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EBooks` entities returned by the SAP Business One Service Layer."
       },
       "AddressExtension": {
         "type": "object",
@@ -20768,7 +20930,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AddressExtension` complex type of the SAP Business One Service Layer."
       },
       "NotaFiscalCSTCollectionResponse": {
         "type": "object",
@@ -20787,7 +20950,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NotaFiscalCST` entities returned by the SAP Business One Service Layer."
       },
       "EDFMappingInputParams": {
         "type": "object",
@@ -20797,7 +20961,8 @@
             "x-ballerina-name": "hash"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFMappingInputParams` complex type of the SAP Business One Service Layer."
       },
       "LocalEraCollectionResponse": {
         "type": "object",
@@ -20816,7 +20981,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `LocalEra` entities returned by the SAP Business One Service Layer."
       },
       "SerialNumber": {
         "type": "object",
@@ -20880,7 +21046,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
       },
       "MaterialGroup": {
         "type": "object",
@@ -20899,7 +21066,8 @@
             "x-ballerina-name": "materialGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialGroup` entity of the SAP Business One Service Layer."
       },
       "LinkReferenceTypeEnum": {
         "type": "string",
@@ -20999,7 +21167,8 @@
             "x-ballerina-name": "dateTo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IntrastatConfiguration` entity of the SAP Business One Service Layer."
       },
       "BrazilFuelIndexerParams": {
         "type": "object",
@@ -21023,7 +21192,8 @@
             "x-ballerina-name": "fuelGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilFuelIndexerParams` complex type of the SAP Business One Service Layer."
       },
       "TaxExtension": {
         "type": "object",
@@ -21283,7 +21453,8 @@
             "x-ballerina-name": "incoterms"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxExtension` complex type of the SAP Business One Service Layer."
       },
       "EBooksParams": {
         "type": "object",
@@ -21303,7 +21474,8 @@
             "x-ballerina-name": "mARK"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EBooksParams` complex type of the SAP Business One Service Layer."
       },
       "NFTaxCategory": {
         "type": "object",
@@ -21346,7 +21518,8 @@
             "x-ballerina-name": "cESTrel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NFTaxCategory` entity of the SAP Business One Service Layer."
       },
       "DocumentAdditionalExpense": {
         "type": "object",
@@ -21573,7 +21746,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "MaterialGroupParams": {
         "type": "object",
@@ -21588,7 +21762,8 @@
             "x-ballerina-name": "materialGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialGroupParams` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocumentEntryCancellationStatusEnum": {
         "type": "string",
@@ -21653,7 +21828,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TransportationDocumentLineData` complex type of the SAP Business One Service Layer."
       },
       "BEMPeriodicTypeEnum": {
         "type": "string",
@@ -21711,7 +21887,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFProtocolWithParameters` complex type of the SAP Business One Service Layer."
       },
       "RelatedDocumentTypeEnum": {
         "type": "string",
@@ -21748,7 +21925,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BEMReplicationPeriods` entities returned by the SAP Business One Service Layer."
       },
       "NFModelsCollectionResponse": {
         "type": "object",
@@ -21767,7 +21945,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NFModels` entities returned by the SAP Business One Service Layer."
       },
       "BrazilNumericIndexerTypes": {
         "type": "string",
@@ -21826,7 +22005,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DistributedLine` complex type of the SAP Business One Service Layer."
       },
       "ISDRecipientCreditMemoParams": {
         "type": "object",
@@ -21842,7 +22022,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ISDRecipientCreditMemoParams` complex type of the SAP Business One Service Layer."
       },
       "NotaFiscalUsageCollectionResponse": {
         "type": "object",
@@ -21861,7 +22042,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NotaFiscalUsage` entities returned by the SAP Business One Service Layer."
       },
       "BoFatherCardTypes": {
         "type": "string",
@@ -21906,7 +22088,8 @@
             "x-ballerina-name": "seriesLines"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CertificateSeries` entity of the SAP Business One Service Layer."
       },
       "DocumentSpecialLine": {
         "type": "object",
@@ -22029,7 +22212,8 @@
             "x-ballerina-name": "lineType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentSpecialLine` complex type of the SAP Business One Service Layer."
       },
       "CCDNumber": {
         "type": "object",
@@ -22069,7 +22253,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CCDNumber` complex type of the SAP Business One Service Layer."
       },
       "DownPaymentToDrawDetails": {
         "type": "object",
@@ -22173,7 +22358,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer."
       },
       "EBooks": {
         "type": "object",
@@ -22270,7 +22456,8 @@
             "x-ballerina-name": "issuerVATID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EBooks` entity of the SAP Business One Service Layer."
       },
       "EDFEntryLog": {
         "type": "object",
@@ -22314,7 +22501,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EDFEntryLog` complex type of the SAP Business One Service Layer."
       },
       "IndiaSacCode": {
         "type": "object",
@@ -22333,7 +22521,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IndiaSacCode` entity of the SAP Business One Service Layer."
       },
       "ImportDeterminationsCollectionResponse": {
         "type": "object",
@@ -22352,7 +22541,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ImportDeterminations` entities returned by the SAP Business One Service Layer."
       },
       "BrazilBeverageIndexerParams": {
         "type": "object",
@@ -22363,7 +22553,8 @@
             "x-ballerina-name": "beverageID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilBeverageIndexerParams` complex type of the SAP Business One Service Layer."
       },
       "CIGCode": {
         "type": "object",
@@ -22560,7 +22751,8 @@
             "x-ballerina-name": "correctionPurchaseInvoiceReversal"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CIGCode` entity of the SAP Business One Service Layer."
       },
       "AFEUpdFceAPARGetDocuments": {
         "type": "object",
@@ -22624,7 +22816,8 @@
             "x-ballerina-name": "actStatus"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEUpdFceAPARGetDocuments` complex type of the SAP Business One Service Layer."
       },
       "BoInterimDocTypes": {
         "type": "string",
@@ -22652,7 +22845,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ISDRecipientCreditMemos` entities returned by the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeStrEnum": {
         "type": "string",
@@ -22710,7 +22904,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ISDRecipientInvoices` entities returned by the SAP Business One Service Layer."
       },
       "BrazilStringIndexerTypes": {
         "type": "string",
@@ -22744,7 +22939,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFDocMappingInputParams` complex type of the SAP Business One Service Layer."
       },
       "DownPaymentTypeEnum": {
         "type": "string",
@@ -22949,7 +23145,8 @@
             "x-ballerina-name": "correctionPurchaseInvoiceReversal"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CUPCode` entity of the SAP Business One Service Layer."
       },
       "WithholdingTaxLine": {
         "type": "object",
@@ -23057,7 +23254,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxLine` complex type of the SAP Business One Service Layer."
       },
       "AFEFceActionGetPaymentData": {
         "type": "object",
@@ -23093,7 +23291,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceActionGetPaymentData` complex type of the SAP Business One Service Layer."
       },
       "ServiceGroup": {
         "type": "object",
@@ -23112,7 +23311,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceGroup` entity of the SAP Business One Service Layer."
       },
       "BoDocWhsUpdateTypes": {
         "type": "string",
@@ -23152,7 +23352,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `FiscalPrinter` entities returned by the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -23200,7 +23401,8 @@
             "x-ballerina-name": "actStatus"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ECMActionStatusData` complex type of the SAP Business One Service Layer."
       },
       "AFEFceARGetDocuments": {
         "type": "object",
@@ -23245,7 +23447,8 @@
             "x-ballerina-name": "pTICode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceARGetDocuments` complex type of the SAP Business One Service Layer."
       },
       "LineTypeEnum": {
         "type": "string",
@@ -23282,7 +23485,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackageItem` complex type of the SAP Business One Service Layer."
       },
       "RetornoCodesCollectionResponse": {
         "type": "object",
@@ -23301,7 +23505,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `RetornoCodes` entities returned by the SAP Business One Service Layer."
       },
       "BrazilMultiIndexerParams": {
         "type": "object",
@@ -23312,7 +23517,8 @@
             "x-ballerina-name": "iD"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilMultiIndexerParams` complex type of the SAP Business One Service Layer."
       },
       "CustomsDeclaration": {
         "type": "object",
@@ -23348,7 +23554,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CustomsDeclaration` entity of the SAP Business One Service Layer."
       },
       "DocumentLineAdditionalExpense": {
         "type": "object",
@@ -23532,7 +23739,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "OccurenceCode": {
         "type": "object",
@@ -23571,7 +23779,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OccurenceCode` entity of the SAP Business One Service Layer."
       },
       "IndiaSacCodeParams": {
         "type": "object",
@@ -23586,7 +23795,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IndiaSacCodeParams` complex type of the SAP Business One Service Layer."
       },
       "IndiaHsnParams": {
         "type": "object",
@@ -23601,7 +23811,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IndiaHsnParams` complex type of the SAP Business One Service Layer."
       },
       "CertificateSeriesCollectionResponse": {
         "type": "object",
@@ -23620,7 +23831,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CertificateSeries` entities returned by the SAP Business One Service Layer."
       },
       "ElectronicDocumentEntryStatusEnum": {
         "type": "string",
@@ -23689,7 +23901,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LocalEra` entity of the SAP Business One Service Layer."
       },
       "BrazilStringIndexerParams": {
         "type": "object",
@@ -23700,7 +23913,8 @@
             "x-ballerina-name": "iD"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilStringIndexerParams` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocumentBlobContentTypeEnum": {
         "type": "string",
@@ -23867,7 +24081,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer."
       },
       "BEMReplicationPeriod": {
         "type": "object",
@@ -23920,7 +24135,8 @@
             "x-ballerina-name": "periodic"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BEMReplicationPeriod` entity of the SAP Business One Service Layer."
       },
       "GTIParams": {
         "type": "object",
@@ -23935,7 +24151,8 @@
             "x-ballerina-name": "inboundFile"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GTIParams` complex type of the SAP Business One Service Layer."
       },
       "DNFCodeSetupCollectionResponse": {
         "type": "object",
@@ -23954,7 +24171,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DNFCodeSetup` entities returned by the SAP Business One Service Layer."
       },
       "AFEFceAPCheckECM2EntryParams": {
         "type": "object",
@@ -23974,7 +24192,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceAPCheckECM2EntryParams` complex type of the SAP Business One Service Layer."
       },
       "CESTCodesCollectionResponse": {
         "type": "object",
@@ -23993,7 +24212,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CESTCodes` entities returned by the SAP Business One Service Layer."
       },
       "EDocGenerationTypeEnum": {
         "type": "string",
@@ -24032,7 +24252,8 @@
             "x-ballerina-name": "pickListEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocLinePickList` complex type of the SAP Business One Service Layer."
       },
       "FolioLetterEnum": {
         "type": "string",
@@ -24071,7 +24292,8 @@
             "x-ballerina-name": "fuelGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilFuelIndexer` entity of the SAP Business One Service Layer."
       },
       "DocumentDeliveryTypeEnum": {
         "type": "string",
@@ -24244,7 +24466,8 @@
             "x-ballerina-name": "eWayBillDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWayBillDetails` complex type of the SAP Business One Service Layer."
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -24378,7 +24601,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
       },
       "EDFEntryLogInputParams": {
         "type": "object",
@@ -24432,7 +24656,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFEntryLogInputParams` complex type of the SAP Business One Service Layer."
       },
       "ISDRecipientCreditMemoLine": {
         "type": "object",
@@ -24460,7 +24685,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDRecipientCreditMemoLine` complex type of the SAP Business One Service Layer."
       },
       "EcmActionPeriodTypeEnum": {
         "type": "string",
@@ -24524,7 +24750,8 @@
             "x-ballerina-name": "menuPath"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ElectronicFileFormat` entity of the SAP Business One Service Layer."
       },
       "AFEFceID": {
         "type": "object",
@@ -24535,7 +24762,8 @@
             "x-ballerina-name": "fceID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceID` complex type of the SAP Business One Service Layer."
       },
       "CommissionTradeTypeEnum": {
         "type": "string",
@@ -24704,7 +24932,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EDFEntry` complex type of the SAP Business One Service Layer."
       },
       "AFEFceActionGetByFceID": {
         "type": "object",
@@ -24784,7 +25013,8 @@
             "x-ballerina-name": "actStatus"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceActionGetByFceID` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocProcessingTargetEnum": {
         "type": "string",
@@ -24842,7 +25072,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ServiceGroups` entities returned by the SAP Business One Service Layer."
       },
       "ImportDeterminationsParams": {
         "type": "object",
@@ -24851,7 +25082,8 @@
             "$ref": "#/components/schemas/ElectronicDocProtocolCodeStrEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ImportDeterminationsParams` complex type of the SAP Business One Service Layer."
       },
       "BoTaxOnInstallmentsTypeEnum": {
         "type": "string",
@@ -24885,7 +25117,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CertificateSeriesParams` complex type of the SAP Business One Service Layer."
       },
       "EmergencyNumber": {
         "type": "object",
@@ -24908,7 +25141,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmergencyNumber` complex type of the SAP Business One Service Layer."
       },
       "ISDInvoiceParams": {
         "type": "object",
@@ -24924,7 +25158,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ISDInvoiceParams` complex type of the SAP Business One Service Layer."
       },
       "BoDocItemType": {
         "type": "string",
@@ -24962,7 +25197,8 @@
             "x-ballerina-name": "prefix"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SeriesLine` complex type of the SAP Business One Service Layer."
       },
       "AFEFceAPGetLatestAFIPDate": {
         "type": "object",
@@ -24973,7 +25209,8 @@
             "x-ballerina-name": "maxFCEDocDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceAPGetLatestAFIPDate` complex type of the SAP Business One Service Layer."
       },
       "BrazilMultiIndexer": {
         "type": "object",
@@ -25012,7 +25249,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilMultiIndexer` entity of the SAP Business One Service Layer."
       },
       "LegalData": {
         "type": "object",
@@ -25089,7 +25327,8 @@
             "x-ballerina-name": "fiscalUserID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `LegalData` entity of the SAP Business One Service Layer."
       },
       "ISDRecipientInvoice": {
         "type": "object",
@@ -25207,7 +25446,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDRecipientInvoice` entity of the SAP Business One Service Layer."
       },
       "NFTaxCategoriesCollectionResponse": {
         "type": "object",
@@ -25226,7 +25466,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `NFTaxCategories` entities returned by the SAP Business One Service Layer."
       },
       "EcmActionLogTypeEnum": {
         "type": "string",
@@ -25257,7 +25498,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceAPCheckECM2Entry` complex type of the SAP Business One Service Layer."
       },
       "DocExpenseTaxJurisdiction": {
         "type": "object",
@@ -25314,7 +25556,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -25372,7 +25615,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `IndiaSacCode` entities returned by the SAP Business One Service Layer."
       },
       "ElecCommStatusEnum": {
         "type": "string",
@@ -25396,7 +25640,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DefaultElementsforCR` entity of the SAP Business One Service Layer."
       },
       "DownPaymentToDraw": {
         "type": "object",
@@ -25508,7 +25753,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDraw` complex type of the SAP Business One Service Layer."
       },
       "EWBTransactionTypeEnum": {
         "type": "string",
@@ -25537,7 +25783,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CustomsDeclaration` entities returned by the SAP Business One Service Layer."
       },
       "ISDRecipientInvoiceParams": {
         "type": "object",
@@ -25553,7 +25800,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ISDRecipientInvoiceParams` complex type of the SAP Business One Service Layer."
       },
       "ISDDocumentsCollectionResponse": {
         "type": "object",
@@ -25572,7 +25820,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ISDDocuments` entities returned by the SAP Business One Service Layer."
       },
       "DistributableLine": {
         "type": "object",
@@ -25609,7 +25858,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DistributableLine` complex type of the SAP Business One Service Layer."
       },
       "AFERenumberFolioParams": {
         "type": "object",
@@ -25625,7 +25875,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFERenumberFolioParams` complex type of the SAP Business One Service Layer."
       },
       "NCMCodeSetup": {
         "type": "object",
@@ -25655,7 +25906,8 @@
             "x-ballerina-name": "dNFCodeSetup"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NCMCodeSetup` entity of the SAP Business One Service Layer."
       },
       "EBooksDetail": {
         "type": "object",
@@ -25737,7 +25989,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "NFTaxCategoryParams": {
         "type": "object",
@@ -25752,7 +26005,8 @@
             "x-ballerina-name": "absId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NFTaxCategoryParams` complex type of the SAP Business One Service Layer."
       },
       "EcmAction": {
         "type": "object",
@@ -25851,7 +26105,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EcmAction` complex type of the SAP Business One Service Layer."
       },
       "EcmActionLog": {
         "type": "object",
@@ -25918,7 +26173,8 @@
             "x-ballerina-name": "logDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EcmActionLog` complex type of the SAP Business One Service Layer."
       },
       "NCMCodeSetupParams": {
         "type": "object",
@@ -25937,7 +26193,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NCMCodeSetupParams` complex type of the SAP Business One Service Layer."
       },
       "NotaFiscalCST": {
         "type": "object",
@@ -25966,7 +26223,8 @@
             "$ref": "#/components/schemas/NFTaxCategory"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `NotaFiscalCST` entity of the SAP Business One Service Layer."
       },
       "EcmActionTypeEnum": {
         "type": "string",
@@ -26012,7 +26270,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFProtocolParameterInputParams` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocumentEntryTypeEnum": {
         "type": "string",
@@ -26233,7 +26492,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer."
       },
       "FiscalPrinterParams": {
         "type": "object",
@@ -26243,7 +26503,8 @@
             "x-ballerina-name": "equipmentNo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FiscalPrinterParams` complex type of the SAP Business One Service Layer."
       },
       "GeneratedAssetStatusEnum": {
         "type": "string",
@@ -26266,7 +26527,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceGroupParams` complex type of the SAP Business One Service Layer."
       },
       "BrazilNumericIndexersCollectionResponse": {
         "type": "object",
@@ -26285,7 +26547,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BrazilNumericIndexers` entities returned by the SAP Business One Service Layer."
       },
       "RetornoCodeParams": {
         "type": "object",
@@ -26331,7 +26594,8 @@
             "x-ballerina-name": "fileFormat"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RetornoCodeParams` complex type of the SAP Business One Service Layer."
       },
       "BoAPARDocumentTypes": {
         "type": "string",
@@ -26380,7 +26644,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackage` complex type of the SAP Business One Service Layer."
       },
       "ExportDeterminationsParams": {
         "type": "object",
@@ -26389,7 +26654,8 @@
             "$ref": "#/components/schemas/ElectronicDocProtocolCodeStrEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ExportDeterminationsParams` complex type of the SAP Business One Service Layer."
       },
       "IdentificationCodeTypeEnum": {
         "type": "string",
@@ -26439,7 +26705,8 @@
             "x-ballerina-name": "lineType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `LegalDataDetail` complex type of the SAP Business One Service Layer."
       },
       "BoBoeStatus": {
         "type": "string",
@@ -26482,7 +26749,8 @@
             "x-ballerina-name": "transporterCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWBTransporter` entity of the SAP Business One Service Layer."
       },
       "EDFEntryAddLogInputParams": {
         "type": "object",
@@ -26557,7 +26825,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFEntryAddLogInputParams` complex type of the SAP Business One Service Layer."
       },
       "DatevRun": {
         "type": "object",
@@ -26637,7 +26906,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DatevRun` entity of the SAP Business One Service Layer."
       },
       "ImportProcess": {
         "type": "object",
@@ -26697,7 +26967,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ImportProcess` complex type of the SAP Business One Service Layer."
       },
       "IndiaHsnCollectionResponse": {
         "type": "object",
@@ -26716,7 +26987,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `IndiaHsn` entities returned by the SAP Business One Service Layer."
       },
       "BrazilBeverageIndexersCollectionResponse": {
         "type": "object",
@@ -26735,7 +27007,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BrazilBeverageIndexers` entities returned by the SAP Business One Service Layer."
       },
       "ElectronicDocumentAuthorityProcessEnum": {
         "type": "string",
@@ -26778,7 +27051,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BrazilStringIndexer` entity of the SAP Business One Service Layer."
       },
       "EcmActionStatusEnum": {
         "type": "string",
@@ -26841,7 +27115,8 @@
             "x-ballerina-name": "dateTo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IntrastatConfigurationParams` complex type of the SAP Business One Service Layer."
       },
       "NFModelParams": {
         "type": "object",
@@ -26863,7 +27138,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `NFModelParams` complex type of the SAP Business One Service Layer."
       },
       "EcmActionLogParams": {
         "type": "object",
@@ -26879,7 +27155,8 @@
             "x-ballerina-name": "logID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EcmActionLogParams` complex type of the SAP Business One Service Layer."
       },
       "MaterialGroupsCollectionResponse": {
         "type": "object",
@@ -26898,7 +27175,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `MaterialGroups` entities returned by the SAP Business One Service Layer."
       },
       "ISDInvoicesCollectionResponse": {
         "type": "object",
@@ -26917,7 +27195,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ISDInvoices` entities returned by the SAP Business One Service Layer."
       },
       "ISDCreditMemosCollectionResponse": {
         "type": "object",
@@ -26936,7 +27215,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ISDCreditMemos` entities returned by the SAP Business One Service Layer."
       },
       "AFEFceARGetDateFromTo": {
         "type": "object",
@@ -26952,7 +27232,8 @@
             "x-ballerina-name": "dateTo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AFEFceARGetDateFromTo` complex type of the SAP Business One Service Layer."
       },
       "AutoDistributionRuleLine": {
         "type": "object",
@@ -26972,7 +27253,8 @@
             "x-ballerina-name": "allocatePercent"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AutoDistributionRuleLine` complex type of the SAP Business One Service Layer."
       },
       "LineTaxJurisdiction": {
         "type": "object",
@@ -27049,7 +27331,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "BoItemTreeTypes": {
         "type": "string",
@@ -27080,7 +27363,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CESTCodeData` entity of the SAP Business One Service Layer."
       },
       "DocFreightEBooksDetail": {
         "type": "object",
@@ -27146,7 +27430,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "EDFMapping": {
         "type": "object",
@@ -27169,7 +27454,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFMapping` complex type of the SAP Business One Service Layer."
       },
       "EWBTransporterParams": {
         "type": "object",
@@ -27192,7 +27478,8 @@
             "x-ballerina-name": "transporterCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWBTransporterParams` complex type of the SAP Business One Service Layer."
       },
       "ISDInvoiceLine": {
         "type": "object",
@@ -27239,7 +27526,8 @@
             "$ref": "#/components/schemas/ISDITCTypeEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDInvoiceLine` complex type of the SAP Business One Service Layer."
       },
       "IdentificationCodesCollectionResponse": {
         "type": "object",
@@ -27258,7 +27546,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `IdentificationCodes` entities returned by the SAP Business One Service Layer."
       },
       "ISDSTATypeEnum": {
         "type": "string",
@@ -27288,7 +27577,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ExportDeterminations` entities returned by the SAP Business One Service Layer."
       },
       "CUPCodeParams": {
         "type": "object",
@@ -27299,7 +27589,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CUPCodeParams` complex type of the SAP Business One Service Layer."
       },
       "EWBTransporterLine": {
         "type": "object",
@@ -27328,7 +27619,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWBTransporter_Line` complex type of the SAP Business One Service Layer."
       },
       "DocumentInstallment": {
         "type": "object",
@@ -27373,7 +27665,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentInstallment` complex type of the SAP Business One Service Layer."
       },
       "ExportDetermination": {
         "type": "object",
@@ -27420,7 +27713,8 @@
             "$ref": "#/components/schemas/ElectronicFileFormat"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ExportDetermination` entity of the SAP Business One Service Layer."
       },
       "ElectronicDocumentEntryPeriodTypeEnum": {
         "type": "string",
@@ -27462,7 +27756,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ECMCodeParams` complex type of the SAP Business One Service Layer."
       },
       "EDFProtocol": {
         "type": "object",
@@ -27488,7 +27783,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDFProtocol` entity of the SAP Business One Service Layer."
       },
       "ISDDocument": {
         "type": "object",
@@ -27624,7 +27920,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ISDDocument` entity of the SAP Business One Service Layer."
       },
       "ISDITCTypeEnum": {
         "type": "string",
