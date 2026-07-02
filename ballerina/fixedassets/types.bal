@@ -70,6 +70,7 @@ public type ListAssetDepreciationGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `FixedAssetEndBalance` complex type of the SAP Business One Service Layer.
 public type FixedAssetEndBalance record {|
     @jsondata:Name {value: "SalvageValue"}
     decimal salvageValue?;
@@ -96,6 +97,7 @@ public type FixedAssetEndBalance record {|
 # OData EnumType 'AssetTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetTypeEnum "atAssetTypeGeneral"|"atAssetTypeLowValueAsset";
 
+# A paged collection of `DepreciationTypePools` entities returned by the SAP Business One Service Layer.
 public type DepreciationTypePoolsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -104,6 +106,7 @@ public type DepreciationTypePoolsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `FixedAssetValuesParams` complex type of the SAP Business One Service Layer.
 public type FixedAssetValuesParams record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -116,6 +119,7 @@ public type FixedAssetValuesParams record {|
 # OData EnumType 'CalculationBaseEnum'. Serialised by the Service Layer as the member name
 public type CalculationBaseEnum "cbYearly"|"cbMonthly";
 
+# A paged collection of `AssetManualDepreciation` entities returned by the SAP Business One Service Layer.
 public type AssetManualDepreciationCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -124,6 +128,7 @@ public type AssetManualDepreciationCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AssetDocument` entity of the SAP Business One Service Layer.
 public type AssetDocument record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
@@ -169,7 +174,9 @@ public type AssetDocument record {
     int:Signed32 FolNumFrom?;
     int:Signed32 FolNumTo?;
     AssetDocumentNewLoc[] AssetDocumentNewLocCollection?;
+    # The `DepreciationType` entity of the SAP Business One Service Layer.
     DepreciationType DepreciationType?;
+    # The `DepreciationArea` entity of the SAP Business One Service Layer.
     DepreciationArea DepreciationArea2?;
 };
 
@@ -182,6 +189,7 @@ public type ClosingOptionEnum "coByCurrentSystemDate"|"coByOriginalDocumentDate"
 # OData EnumType 'SubsequentAcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type SubsequentAcquisitionPeriodControlEnum "sapcProRataTemporis"|"sapcHalfYearConvention"|"sapcFullYear";
 
+# The `FixedAssetValues` complex type of the SAP Business One Service Layer.
 public type FixedAssetValues record {|
     @jsondata:Name {value: "TransactionType"}
     AssetTransactionTypeEnum transactionType?;
@@ -243,6 +251,7 @@ public type GetDepreciationTypesQueries record {
 # OData EnumType 'SubsequentAcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type SubsequentAcquisitionProRataTypeEnum "saprtExactlyDailyBase"|"saprtFirstDayOfCurrentPeriod"|"saprtFirstDayOfNextPeriod";
 
+# The `AssetGroupParams` complex type of the SAP Business One Service Layer.
 public type AssetGroupParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -263,6 +272,7 @@ public type GetAssetManualDepreciationQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `AssetDepreciationGroups` entities returned by the SAP Business One Service Layer.
 public type AssetDepreciationGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -271,6 +281,7 @@ public type AssetDepreciationGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AssetDocumentParams` complex type of the SAP Business One Service Layer.
 public type AssetDocumentParams record {|
     @jsondata:Name {value: "CancellationOption"}
     ClosingOptionEnum cancellationOption?;
@@ -357,6 +368,7 @@ public type GetAssetTransferQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer.
 public type FixedAssetItemsService_GetAssetValuesList_body record {
     @jsondata:Name {value: "FixedAssetValuesParams"}
     FixedAssetValuesParams fixedAssetValuesParams?;
@@ -372,6 +384,7 @@ public type ListAssetClassesHeaders record {
     string prefer?;
 };
 
+# A paged collection of `DepreciationAreas` entities returned by the SAP Business One Service Layer.
 public type DepreciationAreasCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -380,6 +393,7 @@ public type DepreciationAreasCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AssetDepreciationGroup` entity of the SAP Business One Service Layer.
 public type AssetDepreciationGroup record {|
     @jsondata:Name {value: "Group"}
     string group?;
@@ -424,6 +438,7 @@ public type ListAssetCapitalizationCreditMemoQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `AssetRevaluations` entities returned by the SAP Business One Service Layer.
 public type AssetRevaluationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -464,6 +479,7 @@ public type ListDepreciationAreasQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `AssetCapitalization` entities returned by the SAP Business One Service Layer.
 public type AssetCapitalizationCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -473,11 +489,13 @@ public type AssetCapitalizationCollectionResponse record {
 };
 
 
+# Represents the request payload for the `AssetCapitalizationCreditMemoService_Cancel` operation of the SAP Business One Service Layer.
 public type AssetCapitalizationCreditMemoService_Cancel_body record {
     @jsondata:Name {value: "AssetDocumentParams"}
     AssetDocumentParams assetDocumentParams?;
 };
 
+# A paged collection of `AssetClasses` entities returned by the SAP Business One Service Layer.
 public type AssetClassesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -486,6 +504,7 @@ public type AssetClassesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AssetDepreciationGroupParams` complex type of the SAP Business One Service Layer.
 public type AssetDepreciationGroupParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -493,6 +512,7 @@ public type AssetDepreciationGroupParams record {|
     string code?;
 |};
 
+# A paged collection of `AssetTransfer` entities returned by the SAP Business One Service Layer.
 public type AssetTransferCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -518,6 +538,7 @@ public type ListAssetGroupsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `AssetManualDepreciationService_Cancel` operation of the SAP Business One Service Layer.
 public type AssetManualDepreciationService_Cancel_body record {
     @jsondata:Name {value: "AssetDocumentParams"}
     AssetDocumentParams assetDocumentParams?;
@@ -536,6 +557,7 @@ public type ListAssetCapitalizationHeaders record {
 # OData EnumType 'TransferSourcePeriodControlEnum'. Serialised by the Service Layer as the member name
 public type TransferSourcePeriodControlEnum "tspcProRataTemporis";
 
+# The `AssetDocumentNewLoc` complex type of the SAP Business One Service Layer.
 public type AssetDocumentNewLoc record {|
     @jsondata:Name {value: "NBV"}
     decimal nBV?;
@@ -614,6 +636,7 @@ public type PostingOfDepreciationEnum "podDirectPosting"|"podIndirectPosting";
 # OData EnumType 'AssetOriginalTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetOriginalTypeEnum "aotARInvoice"|"aotAPCreditMemo"|"aotAPInvoice"|"aotOutgoingPayment"|"aotAPCorrectionInvoice"|"aotCapitalization"|"aotFixedAssetsCreditMemo"|"aotAllTransactions"|"aotManualDepreciation"|"aotFixedAssetsTransfer"|"aotRetirement";
 
+# The `AssetDocumentAreaJournal` complex type of the SAP Business One Service Layer.
 public type AssetDocumentAreaJournal record {|
     @jsondata:Name {value: "TransactionNumber"}
     int:Signed32 transactionNumber?;
@@ -631,6 +654,7 @@ public type AssetDocumentAreaJournal record {|
     int:Signed32 lineNumber?;
 |};
 
+# The `DepreciationTypePoolParams` complex type of the SAP Business One Service Layer.
 public type DepreciationTypePoolParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -641,6 +665,7 @@ public type DepreciationTypePoolParams record {|
 # OData EnumType 'RetirementPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type RetirementPeriodControlEnum "rpcProRataTemporis"|"rpcHalfYearConvention"|"rpcOnlyAfterEndOfUsefulLife";
 
+# The `DepreciationLevel` complex type of the SAP Business One Service Layer.
 public type DepreciationLevel record {|
     @jsondata:Name {value: "DepreciationCalculationBase"}
     DepreciationCalculationBaseEnum depreciationCalculationBase?;
@@ -654,6 +679,7 @@ public type DepreciationLevel record {|
     int:Signed32 level?;
 |};
 
+# Represents the request payload for the `AssetCapitalizationService_Cancel` operation of the SAP Business One Service Layer.
 public type AssetCapitalizationService_Cancel_body record {
     @jsondata:Name {value: "AssetDocumentParams"}
     AssetDocumentParams assetDocumentParams?;
@@ -684,6 +710,7 @@ public type ListAssetRetirementQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `AssetTransferService_Cancel` operation of the SAP Business One Service Layer.
 public type AssetTransferService_Cancel_body record {
     @jsondata:Name {value: "AssetDocumentParams"}
     AssetDocumentParams assetDocumentParams?;
@@ -717,6 +744,7 @@ public type ListAssetTransferQueries record {
     string dollarSelect?;
 };
 
+# The `FAAccountDetermination` entity of the SAP Business One Service Layer.
 public type FAAccountDetermination record {|
     @jsondata:Name {value: "RevaluationReserveAccount"}
     string revaluationReserveAccount?;
@@ -765,6 +793,7 @@ public type FAAccountDetermination record {|
 # OData EnumType 'DepreciationRoundingMethodEnum'. Serialised by the Service Layer as the member name
 public type DepreciationRoundingMethodEnum "drmTruncate"|"drmRoundUp"|"drmRoundDown";
 
+# The `AssetRevaluationLine` complex type of the SAP Business One Service Layer.
 public type AssetRevaluationLine record {|
     @jsondata:Name {value: "CurrentNBV"}
     decimal currentNBV?;
@@ -797,6 +826,7 @@ public type AssetRevaluationLine record {|
 # OData EnumType 'AcquisitionProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type AcquisitionProRataTypeEnum "aprtExactlyDailyBase"|"aprtFirstDayOfCurrentPeriod"|"aprtFirstDayOfNextPeriod";
 
+# The `DepreciationTypePool` entity of the SAP Business One Service Layer.
 public type DepreciationTypePool record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -806,6 +836,7 @@ public type DepreciationTypePool record {|
     DepreciationType[] depreciationTypes?;
 |};
 
+# The `DepreciationArea` entity of the SAP Business One Service Layer.
 public type DepreciationArea record {|
     @jsondata:Name {value: "UsageForTaxCorrection"}
     int:Signed32 usageForTaxCorrection?;
@@ -850,6 +881,7 @@ public type DepreciationArea record {|
 # OData EnumType 'AcquisitionPeriodControlEnum'. Serialised by the Service Layer as the member name
 public type AcquisitionPeriodControlEnum "apcProRataTemporis"|"apcFirstYearConvention"|"apcHalfYear"|"apcFullYear";
 
+# The `DepreciationAreaParams` complex type of the SAP Business One Service Layer.
 public type DepreciationAreaParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -857,11 +889,13 @@ public type DepreciationAreaParams record {|
     string code?;
 |};
 
+# The `AssetRevaluationParams` complex type of the SAP Business One Service Layer.
 public type AssetRevaluationParams record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
 |};
 
+# The `AssetDocumentLine` complex type of the SAP Business One Service Layer.
 public type AssetDocumentLine record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNumber?;
@@ -886,6 +920,7 @@ public type AssetDocumentLine record {
     string Project?;
 };
 
+# Represents the request payload for the `AssetRetirementService_Cancel` operation of the SAP Business One Service Layer.
 public type AssetRetirementService_Cancel_body record {
     @jsondata:Name {value: "AssetDocumentParams"}
     AssetDocumentParams assetDocumentParams?;
@@ -922,6 +957,7 @@ public type AssetDocumentTypeEnum "adtOrdinaryDepreciation"|"adtUnplannedDepreci
 # OData EnumType 'StraightLinePeriodControlDepreciationPeriodsEnum'. Serialised by the Service Layer as the member name
 public type StraightLinePeriodControlDepreciationPeriodsEnum "slpcdpStandard"|"slpcdpIndividual"|"slpcdpIndividualUsage";
 
+# A paged collection of `AssetCapitalizationCreditMemo` entities returned by the SAP Business One Service Layer.
 public type AssetCapitalizationCreditMemoCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -930,6 +966,7 @@ public type AssetCapitalizationCreditMemoCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `FixedAssetItemsService_UpdateAssetEndBalance` operation of the SAP Business One Service Layer.
 public type FixedAssetItemsService_UpdateAssetEndBalance_body record {
     @jsondata:Name {value: "FixedAssetEndBalance"}
     FixedAssetEndBalance fixedAssetEndBalance?;
@@ -944,10 +981,11 @@ public type ListDepreciationAreasHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `DepreciationAreasService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_9 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    FixedAssetValues[] value?;
+    DepreciationAreaParams[] value?;
 };
 
 # Represents the Queries record for the operation: listDepreciationTypePools
@@ -978,10 +1016,11 @@ public type ListDepreciationTypePoolsQueries record {
 # OData EnumType 'DepreciationCalculationBaseEnum'. Serialised by the Service Layer as the member name
 public type DepreciationCalculationBaseEnum "dcbAcquisitionValue"|"dcbNetBookValue";
 
+# Represents the response payload for the `AssetManualDepreciationService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    DepreciationAreaParams[] value?;
+    AssetDocumentParams[] value?;
 };
 
 # Represents the Headers record for the operation: listDepreciationTypePools
@@ -991,25 +1030,28 @@ public type ListDepreciationTypePoolsHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `AssetRetirementService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    DepreciationTypePoolParams[] value?;
+    AssetDocumentParams[] value?;
 };
 
 # OData EnumType 'TransferSourceProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type TransferSourceProRataTypeEnum "tsprtExactlyDailyBase"|"tsprtLastDayOfPriorPeriod"|"tsprtLastDayofCurrentPeriod";
 
+# Represents the response payload for the `AssetRevaluationService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    DepreciationTypeParams[] value?;
+    AssetRevaluationParams[] value?;
 };
 
+# Represents the response payload for the `AssetTransferService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_8 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    FAAccountDeterminationParams[] value?;
+    AssetDocumentParams[] value?;
 };
 
 # Represents the Headers record for the operation: listAssetCapitalizationCreditMemo
@@ -1047,30 +1089,35 @@ public type ListAssetClassesQueries record {
 # OData EnumType 'RetirementProRataTypeEnum'. Serialised by the Service Layer as the member name
 public type RetirementProRataTypeEnum "rprtExactlyDailyBase"|"rprtLastDayOfPriorPeriod"|"rprtLastDayOfCurrentPeriod";
 
+# Represents the response payload for the `AssetCapitalizationService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    AssetDocumentParams[] value?;
+};
+
+# Represents the response payload for the `AssetClassesService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     AssetClassParams[] value?;
 };
 
-public type inline_response_200_2 record {
+# Represents the response payload for the `AssetDepreciationGroupsService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     AssetDepreciationGroupParams[] value?;
 };
 
-public type inline_response_200_3 record {
+# Represents the response payload for the `AssetGroupsService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     AssetGroupParams[] value?;
 };
 
-public type inline_response_200_4 record {
-    @jsondata:Name {value: "odata.metadata"}
-    string odataMetadata?;
-    AssetRevaluationParams[] value?;
-};
-
+# The `AssetClass` entity of the SAP Business One Service Layer.
 public type AssetClass record {|
     @jsondata:Name {value: "AssetType"}
     AssetTypeEnum assetType?;
@@ -1115,11 +1162,39 @@ public type ListFAAccountDeterminationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `DepreciationTypesService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_11 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DepreciationTypeParams[] value?;
+};
+
 # Represents the Headers record for the operation: listAssetDepreciationGroups
 public type ListAssetDepreciationGroupsHeaders record {
     # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
     @http:Header {name: "Prefer"}
     string prefer?;
+};
+
+# Represents the response payload for the `DepreciationTypePoolsService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_10 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    DepreciationTypePoolParams[] value?;
+};
+
+# Represents the response payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer.
+public type inline_response_200_13 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    FixedAssetValues[] value?;
+};
+
+# Represents the response payload for the `FAAccountDeterminationsService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_12 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    FAAccountDeterminationParams[] value?;
 };
 
 # Represents the Queries record for the operation: getAssetClasses
@@ -1135,6 +1210,7 @@ public type GetAssetClassesQueries record {
 # OData EnumType 'AssetTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type AssetTransactionTypeEnum "att_BeginningOfYear"|"att_Acquistion"|"att_Retirement"|"att_Transfer"|"att_WriteUp"|"att_OrdinaryDepreciation"|"att_UplannedDepreciation"|"att_SpecialDepreciation"|"att_EndOfYear";
 
+# The `DepreciationTypeParams` complex type of the SAP Business One Service Layer.
 public type DepreciationTypeParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -1142,6 +1218,7 @@ public type DepreciationTypeParams record {|
     string code?;
 |};
 
+# The `AssetClassLine` complex type of the SAP Business One Service Layer.
 public type AssetClassLine record {|
     @jsondata:Name {value: "DepreciationAreaID"}
     string depreciationAreaID?;
@@ -1189,6 +1266,7 @@ public type ListAssetManualDepreciationHeaders record {
     string prefer?;
 };
 
+# A paged collection of `AssetGroups` entities returned by the SAP Business One Service Layer.
 public type AssetGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1197,12 +1275,14 @@ public type AssetGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `AssetCapitalizationCreditMemoService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     AssetDocumentParams[] value?;
 };
 
+# The `DepreciationType` entity of the SAP Business One Service Layer.
 public type DepreciationType record {|
     @jsondata:Name {value: "DepreciationTypePool"}
     string depreciationTypePool?;
@@ -1306,6 +1386,7 @@ public type DepreciationType record {|
     AcquisitionPeriodControlEnum acquisitionPeriodControl?;
 |};
 
+# A paged collection of `AssetRetirement` entities returned by the SAP Business One Service Layer.
 public type AssetRetirementCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1314,6 +1395,7 @@ public type AssetRetirementCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `DepreciationTypes` entities returned by the SAP Business One Service Layer.
 public type DepreciationTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1322,6 +1404,7 @@ public type DepreciationTypesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AssetRevaluation` entity of the SAP Business One Service Layer.
 public type AssetRevaluation record {|
     @jsondata:Name {value: "HandWritten"}
     BoYesNoEnum handWritten?;
@@ -1393,6 +1476,7 @@ public type ListAssetTransferHeaders record {
     string prefer?;
 };
 
+# A paged collection of `FAAccountDeterminations` entities returned by the SAP Business One Service Layer.
 public type FAAccountDeterminationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1417,6 +1501,7 @@ public type GetDepreciationAreasQueries record {
     string dollarSelect?;
 };
 
+# The `FAAccountDeterminationParams` complex type of the SAP Business One Service Layer.
 public type FAAccountDeterminationParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -1424,11 +1509,13 @@ public type FAAccountDeterminationParams record {|
     string code?;
 |};
 
+# Represents the request payload for the `FixedAssetItemsService_GetAssetEndBalance` operation of the SAP Business One Service Layer.
 public type FixedAssetItemsService_GetAssetEndBalance_body record {
     @jsondata:Name {value: "FixedAssetValuesParams"}
     FixedAssetValuesParams fixedAssetValuesParams?;
 };
 
+# The `AssetClassParams` complex type of the SAP Business One Service Layer.
 public type AssetClassParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -1449,6 +1536,7 @@ public type GetFAAccountDeterminationsQueries record {
     string dollarSelect?;
 };
 
+# The `AssetGroup` entity of the SAP Business One Service Layer.
 public type AssetGroup record {|
     @jsondata:Name {value: "Description"}
     string description?;

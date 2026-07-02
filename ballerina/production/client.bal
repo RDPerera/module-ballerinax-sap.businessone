@@ -248,7 +248,7 @@ public isolated client class Client {
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function resourceCapacitiesServiceGetListWithFilter(ResourceCapacitiesService_GetListWithFilter_body payload, map<string|string[]> headers = {}) returns inline_response_200|error {
+    remote isolated function resourceCapacitiesServiceGetListWithFilter(ResourceCapacitiesService_GetListWithFilter_body payload, map<string|string[]> headers = {}) returns inline_response_200_1|error {
         string resourcePath = string `/ResourceCapacitiesService_GetListWithFilter`;
         http:Request request = new;
         json jsonBody = jsondata:toJson(payload);
@@ -321,7 +321,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function resourceGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_1|error {
+    remote isolated function resourceGroupsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
         string resourcePath = string `/ResourceGroupsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -392,7 +392,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function resourcePropertiesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_2|error {
+    remote isolated function resourcePropertiesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
         string resourcePath = string `/ResourcePropertiesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -474,7 +474,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function resourcesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_3|error {
+    remote isolated function resourcesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
         string resourcePath = string `/ResourcesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -545,7 +545,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function routeStagesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_4|error {
+    remote isolated function routeStagesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_5|error {
         string resourcePath = string `/RouteStagesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);

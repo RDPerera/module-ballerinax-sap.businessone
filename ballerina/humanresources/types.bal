@@ -23,6 +23,7 @@ import ballerina/http;
 # OData EnumType 'BoMeritalStatuses'. Serialised by the Service Layer as the member name
 public type BoMeritalStatuses "mts_Single"|"mts_Married"|"mts_Divorced"|"mts_Widowed"|"mts_NotSpecified";
 
+# The `EmployeePreviousEmpoymentInfo` complex type of the SAP Business One Service Layer.
 public type EmployeePreviousEmpoymentInfo record {
     int:Signed32 EmployeeNo?;
     int:Signed32 LineNum?;
@@ -33,6 +34,7 @@ public type EmployeePreviousEmpoymentInfo record {
     string Remarks?;
 };
 
+# A paged collection of `EmployeeImages` entities returned by the SAP Business One Service Layer.
 public type EmployeeImagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -41,6 +43,7 @@ public type EmployeeImagesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `EmployeePosition` entity of the SAP Business One Service Layer.
 public type EmployeePosition record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -69,6 +72,7 @@ public type GetTeamsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `EmployeeIDType` entities returned by the SAP Business One Service Layer.
 public type EmployeeIDTypeCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -84,6 +88,7 @@ public type ListEmploymentCategorysHeaders record {
     string prefer?;
 };
 
+# A paged collection of `EmploymentCategorys` entities returned by the SAP Business One Service Layer.
 public type EmploymentCategorysCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -92,6 +97,7 @@ public type EmploymentCategorysCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `Gender` entity of the SAP Business One Service Layer.
 public type Gender record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -111,6 +117,7 @@ public type GetEmployeePositionQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `EmployeeRolesSetup` entities returned by the SAP Business One Service Layer.
 public type EmployeeRolesSetupCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -119,6 +126,7 @@ public type EmployeeRolesSetupCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `EmployeeTransfer` entity of the SAP Business One Service Layer.
 public type EmployeeTransfer record {|
     @jsondata:Name {value: "TransEndTime"}
     string transEndTime?;
@@ -148,6 +156,7 @@ public type ListEmployeeTransfersHeaders record {
     string prefer?;
 };
 
+# A paged collection of `EmployeeTransfers` entities returned by the SAP Business One Service Layer.
 public type EmployeeTransfersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -156,6 +165,7 @@ public type EmployeeTransfersCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `EmployeeReviewsInfo` complex type of the SAP Business One Service Layer.
 public type EmployeeReviewsInfo record {
     int:Signed32 EmployeeNo?;
     int:Signed32 LineNum?;
@@ -201,6 +211,7 @@ public type GetEmploymentCategorysQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `Teams` entities returned by the SAP Business One Service Layer.
 public type TeamsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -209,6 +220,7 @@ public type TeamsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `EmploymentCategoryParams` complex type of the SAP Business One Service Layer.
 public type EmploymentCategoryParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -281,29 +293,34 @@ public type ListEmployeeRolesSetupQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `EmploymentCategoryService_GetEmploymentCategoryList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     EmploymentCategoryParams[] value?;
 };
 
+# Represents the response payload for the `GendersService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     GendersParams[] value?;
 };
 
+# The `EmployeeIDTypeParams` complex type of the SAP Business One Service Layer.
 public type EmployeeIDTypeParams record {|
     @jsondata:Name {value: "IDType"}
     string iDType?;
 |};
 
+# Represents the response payload for the `TerminationReasonService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     TerminationReasonParams[] value?;
 };
 
+# The `EmployeeSavingsPaymentInfo` complex type of the SAP Business One Service Layer.
 public type EmployeeSavingsPaymentInfo record {
     int:Signed32 EmployeeID?;
     int:Signed32 LineNum?;
@@ -320,6 +337,7 @@ public type EmployeeSavingsPaymentInfo record {
     ContractSequenceEnum Sequence?;
 };
 
+# The `EmployeeAbsenceInfo` complex type of the SAP Business One Service Layer.
 public type EmployeeAbsenceInfo record {
     int:Signed32 EmployeeID?;
     int:Signed32 LineNum?;
@@ -350,11 +368,13 @@ public type ListEmployeeRolesSetupHeaders record {
 # OData EnumType 'EmployeeExemptionUnitEnum'. Serialised by the Service Layer as the member name
 public type EmployeeExemptionUnitEnum "eeu_None"|"eeu_Yearly"|"eeu_Monthly"|"eeu_Weekly"|"eeu_Daily";
 
+# The `EmployeeBranchAssignmentItem` complex type of the SAP Business One Service Layer.
 public type EmployeeBranchAssignmentItem record {
     int:Signed32 EmployeeID?;
     int:Signed32 BPLID?;
 };
 
+# The `EmployeeTransferDetail` complex type of the SAP Business One Service Layer.
 public type EmployeeTransferDetail record {|
     @jsondata:Name {value: "Status"}
     EmployeeTransferProcessingStatusEnum status?;
@@ -395,6 +415,7 @@ public type ListTerminationReasonQueries record {
     string dollarSelect?;
 };
 
+# The `TerminationReasonParams` complex type of the SAP Business One Service Layer.
 public type TerminationReasonParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -471,6 +492,7 @@ public type ListEmployeePositionHeaders record {
     string prefer?;
 };
 
+# A paged collection of `EmployeeStatus` entities returned by the SAP Business One Service Layer.
 public type EmployeeStatusCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -486,12 +508,14 @@ public type ListTerminationReasonHeaders record {
     string prefer?;
 };
 
+# The `EmployeeRolesInfo` complex type of the SAP Business One Service Layer.
 public type EmployeeRolesInfo record {
     int:Signed32 EmployeeID?;
     int:Signed32 LineNum?;
     int:Signed32 RoleID?;
 };
 
+# The `EmployeeStatus` entity of the SAP Business One Service Layer.
 public type EmployeeStatus record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -527,6 +551,7 @@ public type GetEmployeesInfoQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `EmployeePositionService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -558,24 +583,28 @@ public type ListEmployeePositionQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `EmployeeRolesSetupService_GetEmployeeRoleSetupList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     EmployeeRoleSetupParams[] value?;
 };
 
+# Represents the response payload for the `EmployeeStatusService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     EmployeeStatusParams[] value?;
 };
 
+# Represents the response payload for the `EmployeeTransfersService_GetEmployeeTransferList` operation of the SAP Business One Service Layer.
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     EmployeeTransferParams[] value?;
 };
 
+# A paged collection of `EmployeesInfo` entities returned by the SAP Business One Service Layer.
 public type EmployeesInfoCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -623,6 +652,7 @@ public type ListGendersQueries record {
     string dollarSelect?;
 };
 
+# The `EmployeeRoleSetup` entity of the SAP Business One Service Layer.
 public type EmployeeRoleSetup record {|
     @jsondata:Name {value: "TypeID"}
     int:Signed32 typeID?;
@@ -634,6 +664,7 @@ public type EmployeeRoleSetup record {|
     string name?;
 |};
 
+# The `EmploymentCategory` entity of the SAP Business One Service Layer.
 public type EmploymentCategory record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -647,6 +678,7 @@ public type BoRoleInTeam "borit_Leader"|"borit_Member";
 # OData EnumType 'BoGenderTypes'. Serialised by the Service Layer as the member name
 public type BoGenderTypes "gt_Female"|"gt_Male"|"gt_Undefined"|"gt_Masked"|"gt_Invalid";
 
+# The `EmployeeStatusParams` complex type of the SAP Business One Service Layer.
 public type EmployeeStatusParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -659,6 +691,7 @@ public type EmployeeStatusParams record {|
 # OData EnumType 'EmployeePaymentMethodEnum'. Serialised by the Service Layer as the member name
 public type EmployeePaymentMethodEnum "epm_None"|"epm_BankTransfer";
 
+# The `EmployeePositionParams` complex type of the SAP Business One Service Layer.
 public type EmployeePositionParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -693,6 +726,7 @@ public type ListEmployeesInfoQueries record {
     string dollarSelect?;
 };
 
+# The `EmployeeEducationInfo` complex type of the SAP Business One Service Layer.
 public type EmployeeEducationInfo record {
     int:Signed32 EmployeeNo?;
     int:Signed32 LineNum?;
@@ -732,6 +766,7 @@ public type ListEmploymentCategorysQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `TerminationReason` entities returned by the SAP Business One Service Layer.
 public type TerminationReasonCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -740,6 +775,7 @@ public type TerminationReasonCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `EmployeePosition` entities returned by the SAP Business One Service Layer.
 public type EmployeePositionCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -748,6 +784,7 @@ public type EmployeePositionCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `EmployeeImage` entity of the SAP Business One Service Layer.
 public type EmployeeImage record {|
     @jsondata:Name {value: "Picture"}
     int:Signed32 picture?;
@@ -780,6 +817,7 @@ public type ListEmployeeTransfersQueries record {
     string dollarSelect?;
 };
 
+# The `EmployeeRoleSetupParams` complex type of the SAP Business One Service Layer.
 public type EmployeeRoleSetupParams record {|
     @jsondata:Name {value: "TypeID"}
     int:Signed32 typeID?;
@@ -787,6 +825,7 @@ public type EmployeeRoleSetupParams record {|
     string name?;
 |};
 
+# Represents the response payload for the `EmployeeIDTypeService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -806,6 +845,7 @@ public type GetGendersQueries record {
 # OData EnumType 'SPEDContabilQualificationCodeEnum'. Serialised by the Service Layer as the member name
 public type SPEDContabilQualificationCodeEnum "spedNA"|"spedDiretor"|"spedConselheiroDeAdministracao"|"spedAdministrador"|"spedAdministradorDoGrupo"|"spedAdministradorDeSociedadeFiliada"|"spedAdministradorJudicialPessoaFisica"|"spedAdministradorJudicialPessoaJuridicaProfissionalResponsavel"|"spedAdministradorJudicialGestor"|"spedGestorJudicial"|"spedProcurador"|"spedInventariante"|"spedLiquidante"|"spedInterventor"|"spedEmpresario"|"spedContador"|"spedOutros";
 
+# The `EmployeeIDType` entity of the SAP Business One Service Layer.
 public type EmployeeIDType record {|
     @jsondata:Name {value: "IDType"}
     string iDType?;
@@ -813,11 +853,13 @@ public type EmployeeIDType record {|
     EmployeeInfo[] employeesInfo?;
 |};
 
+# The `EmployeeTransferParams` complex type of the SAP Business One Service Layer.
 public type EmployeeTransferParams record {|
     @jsondata:Name {value: "TransferID"}
     int:Signed32 transferID?;
 |};
 
+# The `Team` entity of the SAP Business One Service Layer.
 public type Team record {
     int:Signed32 TeamID?;
     string TeamName?;
@@ -825,6 +867,7 @@ public type Team record {
     TeamMember[] TeamMembers?;
 };
 
+# The `EmployeeInfo` entity of the SAP Business One Service Layer.
 public type EmployeeInfo record {
     int:Signed32 EmployeeID?;
     string LastName?;
@@ -969,11 +1012,17 @@ public type EmployeeInfo record {
     EmployeeRolesInfo[] EmployeeRolesInfoLines?;
     EmployeeSavingsPaymentInfo[] EmployeeSavingsPaymentInfoLines?;
     EmployeeBranchAssignmentItem[] EmployeeBranchAssignment?;
+    # The `EmployeeRoleSetup` entity of the SAP Business One Service Layer.
     EmployeeRoleSetup EmployeeRoleSetup?;
+    # The `EmployeeStatus` entity of the SAP Business One Service Layer.
     EmployeeStatus EmployeeStatus?;
+    # The `TerminationReason` entity of the SAP Business One Service Layer.
     TerminationReason TerminationReason?;
+    # The `EmployeePosition` entity of the SAP Business One Service Layer.
     EmployeePosition EmployeePosition?;
+    # The `EmployeeIDType` entity of the SAP Business One Service Layer.
     EmployeeIDType EmployeeIDType?;
+    # The `Gender` entity of the SAP Business One Service Layer.
     Gender Gender2?;
 };
 
@@ -1007,6 +1056,7 @@ public type GetTerminationReasonQueries record {
 # OData EnumType 'BoSalaryCostUnits'. Serialised by the Service Layer as the member name
 public type BoSalaryCostUnits "scu_Hour"|"scu_Day"|"scu_Week"|"scu_Month"|"scu_Year"|"scu_Semimonthly"|"scu_Biweekly";
 
+# A paged collection of `Genders` entities returned by the SAP Business One Service Layer.
 public type GendersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1015,6 +1065,7 @@ public type GendersCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `TeamMember` complex type of the SAP Business One Service Layer.
 public type TeamMember record {
     int:Signed32 TeamID?;
     int:Signed32 EmployeeID?;
@@ -1022,6 +1073,7 @@ public type TeamMember record {
     BoRoleInTeam RoleInTeam?;
 };
 
+# The `TerminationReason` entity of the SAP Business One Service Layer.
 public type TerminationReason record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -1060,6 +1112,7 @@ public type ListEmployeeImagesHeaders record {
     string prefer?;
 };
 
+# The `GendersParams` complex type of the SAP Business One Service Layer.
 public type GendersParams record {|
     @jsondata:Name {value: "Code"}
     string code?;

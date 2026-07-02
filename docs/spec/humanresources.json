@@ -288,7 +288,8 @@
                         "$ref": "#/components/schemas/EmployeeIDTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmployeeIDTypeService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -809,7 +810,8 @@
                         "$ref": "#/components/schemas/EmployeePositionParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmployeePositionService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1091,7 +1093,8 @@
                         "$ref": "#/components/schemas/EmployeeRoleSetupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmployeeRolesSetupService_GetEmployeeRoleSetupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1373,7 +1376,8 @@
                         "$ref": "#/components/schemas/EmployeeStatusParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmployeeStatusService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1655,7 +1659,8 @@
                         "$ref": "#/components/schemas/EmployeeTransferParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmployeeTransfersService_GetEmployeeTransferList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2013,7 +2018,8 @@
                         "$ref": "#/components/schemas/EmploymentCategoryParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmploymentCategoryService_GetEmploymentCategoryList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2528,7 +2534,8 @@
                         "$ref": "#/components/schemas/GendersParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `GendersService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3049,7 +3056,8 @@
                         "$ref": "#/components/schemas/TerminationReasonParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TerminationReasonService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3110,7 +3118,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeePreviousEmpoymentInfo` complex type of the SAP Business One Service Layer."
       },
       "EmployeeImagesCollectionResponse": {
         "type": "object",
@@ -3129,7 +3138,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeeImages` entities returned by the SAP Business One Service Layer."
       },
       "EmployeePosition": {
         "type": "object",
@@ -3155,7 +3165,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeePosition` entity of the SAP Business One Service Layer."
       },
       "EmployeeIDTypeCollectionResponse": {
         "type": "object",
@@ -3174,7 +3185,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeeIDType` entities returned by the SAP Business One Service Layer."
       },
       "EmploymentCategorysCollectionResponse": {
         "type": "object",
@@ -3193,7 +3205,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmploymentCategorys` entities returned by the SAP Business One Service Layer."
       },
       "Gender": {
         "type": "object",
@@ -3214,7 +3227,8 @@
             "x-ballerina-name": "employeesInfo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Gender` entity of the SAP Business One Service Layer."
       },
       "EmployeeRolesSetupCollectionResponse": {
         "type": "object",
@@ -3233,7 +3247,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeeRolesSetup` entities returned by the SAP Business One Service Layer."
       },
       "EmployeeTransfer": {
         "type": "object",
@@ -3281,7 +3296,8 @@
             "x-ballerina-name": "transStartTime"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeTransfer` entity of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -3308,7 +3324,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeeTransfers` entities returned by the SAP Business One Service Layer."
       },
       "EmployeeReviewsInfo": {
         "type": "object",
@@ -3339,7 +3356,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeReviewsInfo` complex type of the SAP Business One Service Layer."
       },
       "TeamsCollectionResponse": {
         "type": "object",
@@ -3358,7 +3376,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Teams` entities returned by the SAP Business One Service Layer."
       },
       "EmploymentCategoryParams": {
         "type": "object",
@@ -3368,7 +3387,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmploymentCategoryParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeeIDTypeParams": {
         "type": "object",
@@ -3378,7 +3398,8 @@
             "x-ballerina-name": "iDType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeIDTypeParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeeSavingsPaymentInfo": {
         "type": "object",
@@ -3424,7 +3445,8 @@
             "$ref": "#/components/schemas/ContractSequenceEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeSavingsPaymentInfo` complex type of the SAP Business One Service Layer."
       },
       "EmployeeAbsenceInfo": {
         "type": "object",
@@ -3456,7 +3478,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeAbsenceInfo` complex type of the SAP Business One Service Layer."
       },
       "EmployeeBranchAssignmentItem": {
         "type": "object",
@@ -3470,7 +3493,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeBranchAssignmentItem` complex type of the SAP Business One Service Layer."
       },
       "EmployeeExemptionUnitEnum": {
         "type": "string",
@@ -3518,7 +3542,8 @@
             "x-ballerina-name": "employeeID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeTransferDetail` complex type of the SAP Business One Service Layer."
       },
       "TerminationReasonParams": {
         "type": "object",
@@ -3537,7 +3562,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TerminationReasonParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeeStatusCollectionResponse": {
         "type": "object",
@@ -3556,7 +3582,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeeStatus` entities returned by the SAP Business One Service Layer."
       },
       "EmployeeRolesInfo": {
         "type": "object",
@@ -3574,7 +3601,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeRolesInfo` complex type of the SAP Business One Service Layer."
       },
       "EmployeeStatus": {
         "type": "object",
@@ -3600,7 +3628,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeStatus` entity of the SAP Business One Service Layer."
       },
       "EmployeesInfoCollectionResponse": {
         "type": "object",
@@ -3619,7 +3648,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeesInfo` entities returned by the SAP Business One Service Layer."
       },
       "ContractSequenceEnum": {
         "type": "string",
@@ -3673,7 +3703,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeRoleSetup` entity of the SAP Business One Service Layer."
       },
       "EmploymentCategory": {
         "type": "object",
@@ -3687,7 +3718,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmploymentCategory` entity of the SAP Business One Service Layer."
       },
       "BoGenderTypes": {
         "type": "string",
@@ -3717,7 +3749,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeStatusParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeePaymentMethodEnum": {
         "type": "string",
@@ -3744,7 +3777,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeePositionParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeeEducationInfo": {
         "type": "object",
@@ -3779,7 +3813,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeEducationInfo` complex type of the SAP Business One Service Layer."
       },
       "EmployeeTransferStatusEnum": {
         "type": "string",
@@ -3810,7 +3845,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TerminationReason` entities returned by the SAP Business One Service Layer."
       },
       "EmployeePositionCollectionResponse": {
         "type": "object",
@@ -3829,7 +3865,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmployeePosition` entities returned by the SAP Business One Service Layer."
       },
       "EmployeeImage": {
         "type": "object",
@@ -3845,7 +3882,8 @@
             "x-ballerina-name": "employeeNo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeImage` entity of the SAP Business One Service Layer."
       },
       "EmployeeRoleSetupParams": {
         "type": "object",
@@ -3860,7 +3898,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeRoleSetupParams` complex type of the SAP Business One Service Layer."
       },
       "EmployeeIDType": {
         "type": "object",
@@ -3877,7 +3916,8 @@
             "x-ballerina-name": "employeesInfo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeIDType` entity of the SAP Business One Service Layer."
       },
       "EmployeeTransferParams": {
         "type": "object",
@@ -3888,7 +3928,8 @@
             "x-ballerina-name": "transferID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeTransferParams` complex type of the SAP Business One Service Layer."
       },
       "SPEDContabilQualificationCodeEnum": {
         "type": "string",
@@ -3933,7 +3974,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Team` entity of the SAP Business One Service Layer."
       },
       "EmployeeInfo": {
         "type": "object",
@@ -4383,7 +4425,8 @@
             "$ref": "#/components/schemas/Gender"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EmployeeInfo` entity of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4408,7 +4451,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "GendersCollectionResponse": {
         "type": "object",
@@ -4427,7 +4471,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Genders` entities returned by the SAP Business One Service Layer."
       },
       "BoSalaryCostUnits": {
         "type": "string",
@@ -4457,7 +4502,8 @@
             "$ref": "#/components/schemas/BoRoleInTeam"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `TeamMember` complex type of the SAP Business One Service Layer."
       },
       "TerminationReason": {
         "type": "object",
@@ -4483,7 +4529,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TerminationReason` entity of the SAP Business One Service Layer."
       },
       "GendersParams": {
         "type": "object",
@@ -4493,7 +4540,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GendersParams` complex type of the SAP Business One Service Layer."
       }
     },
     "parameters": {

@@ -2135,7 +2135,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function recurringTransactionServiceGetAvailableRecurringTransactions(map<string|string[]> headers = {}) returns inline_response_200_18|error {
+    remote isolated function recurringTransactionServiceGetAvailableRecurringTransactions(map<string|string[]> headers = {}) returns inline_response_200_19|error {
         string resourcePath = string `/RecurringTransactionService_GetAvailableRecurringTransactions`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2219,7 +2219,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function recurringTransactionTemplatesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_19|error {
+    remote isolated function recurringTransactionTemplatesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_20|error {
         string resourcePath = string `/RecurringTransactionTemplatesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2482,7 +2482,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function specificWTHAmountsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_20|error {
+    remote isolated function specificWTHAmountsServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_21|error {
         string resourcePath = string `/SpecificWTHAmountsService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2553,7 +2553,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function taxCodeDeterminationsServiceGetTaxCodeDeterminationList(map<string|string[]> headers = {}) returns inline_response_200_21|error {
+    remote isolated function taxCodeDeterminationsServiceGetTaxCodeDeterminationList(map<string|string[]> headers = {}) returns inline_response_200_22|error {
         string resourcePath = string `/TaxCodeDeterminationsService_GetTaxCodeDeterminationList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2624,7 +2624,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function taxCodeDeterminationsTCDServiceGetTaxCodeDeterminationTCDList(map<string|string[]> headers = {}) returns inline_response_200_22|error {
+    remote isolated function taxCodeDeterminationsTCDServiceGetTaxCodeDeterminationTCDList(map<string|string[]> headers = {}) returns inline_response_200_23|error {
         string resourcePath = string `/TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2634,7 +2634,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function taxExemptReasonServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_23|error {
+    remote isolated function taxExemptReasonServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_24|error {
         string resourcePath = string `/TaxExemptReasonService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2920,7 +2920,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function taxWebSitesServiceGetTaxWebSiteList(map<string|string[]> headers = {}) returns inline_response_200_24|error {
+    remote isolated function taxWebSitesServiceGetTaxWebSiteList(map<string|string[]> headers = {}) returns inline_response_200_25|error {
         string resourcePath = string `/TaxWebSitesService_GetTaxWebSiteList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -2991,7 +2991,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function transactionCodesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_25|error {
+    remote isolated function transactionCodesServiceGetList(map<string|string[]> headers = {}) returns inline_response_200_26|error {
         string resourcePath = string `/TransactionCodesService_GetList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
@@ -3062,7 +3062,7 @@ public isolated client class Client {
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
-    remote isolated function wTaxTypeCodeServiceGetWTaxTypeCodeList(map<string|string[]> headers = {}) returns inline_response_200_26|error {
+    remote isolated function wTaxTypeCodeServiceGetWTaxTypeCodeList(map<string|string[]> headers = {}) returns inline_response_200_27|error {
         string resourcePath = string `/WTaxTypeCodeService_GetWTaxTypeCodeList`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);

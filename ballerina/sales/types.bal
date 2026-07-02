@@ -20,6 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
+# The `BlanketAgreementsDocument` complex type of the SAP Business One Service Layer.
 public type BlanketAgreementsDocument record {|
     @jsondata:Name {value: "DocStatus"}
     BADocumentStatus docStatus?;
@@ -60,6 +61,7 @@ public type ListSalesTaxInvoicesHeaders record {
     string prefer?;
 };
 
+# The `BlanketAgreements_DetailsLine` complex type of the SAP Business One Service Layer.
 public type BlanketAgreementsDetailsLine record {
     int:Signed32 AgreementNo?;
     int:Signed32 AgreementRowNumber?;
@@ -78,6 +80,7 @@ public type BlanketAgreementsDetailsLine record {
     decimal PlannedAmountFC?;
 };
 
+# A paged collection of `ReturnRequest` entities returned by the SAP Business One Service Layer.
 public type ReturnRequestCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -86,6 +89,7 @@ public type ReturnRequestCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer.
 public type DocumentApprovalRequest record {|
     @jsondata:Name {value: "ActiveForUpdate"}
     BoYesNoEnum activeForUpdate?;
@@ -97,6 +101,7 @@ public type DocumentApprovalRequest record {|
     string approvalTemplatesName?;
 |};
 
+# The `Document` entity of the SAP Business One Service Layer.
 public type Document record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
@@ -449,7 +454,9 @@ public type Document record {
     string AddressForReturn?;
     DocumentApprovalRequest[] Document_ApprovalRequests?;
     DocumentLine[] DocumentLines?;
+    # The `EWayBillDetails` complex type of the SAP Business One Service Layer.
     EWayBillDetails EWayBillDetails?;
+    # The `EDeliveryInfo` complex type of the SAP Business One Service Layer.
     EDeliveryInfo EDeliveryInfo?;
     ElectronicProtocol[] ElectronicProtocols?;
     DocumentAdditionalExpense[] DocumentAdditionalExpenses?;
@@ -460,7 +467,9 @@ public type Document record {
     DocumentSpecialLine[] DocumentSpecialLines?;
     DocumentInstallment[] DocumentInstallments?;
     DownPaymentToDraw[] DownPaymentsToDraw?;
+    # The `TaxExtension` complex type of the SAP Business One Service Layer.
     TaxExtension TaxExtension?;
+    # The `AddressExtension` complex type of the SAP Business One Service Layer.
     AddressExtension AddressExtension?;
     DocumentReference[] DocumentReferences?;
     DocumentAdditionalIntrastatExpense[] DocumentAdditionalIntrastatExpenses?;
@@ -479,10 +488,13 @@ public type Document record {
     string RoutingCode?;
     string Suffix?;
     int:Signed32 SOIWizardId?;
+    # The `SalesPerson` entity of the SAP Business One Service Layer.
     SalesPerson SalesPerson?;
+    # The `POSDailySummary` entity of the SAP Business One Service Layer.
     POSDailySummary POSDailySummary?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -519,14 +531,17 @@ public type ListDunningTermsQueries record {
     string dollarSelect?;
 };
 
+# The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer.
 public type DocumentDistributedExpense record {|
 |};
 
+# Represents the request payload for the `CorrectionInvoiceReversalService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `EDeliveryInfo` complex type of the SAP Business One Service Layer.
 public type EDeliveryInfo record {|
     @jsondata:Name {value: "VehicleNo"}
     string vehicleNo?;
@@ -539,6 +554,7 @@ public type EDeliveryInfo record {|
 # OData EnumType 'PrintStatusEnum'. Serialised by the Service Layer as the member name
 public type PrintStatusEnum "psNo"|"psYes"|"psAmended";
 
+# The `DocumentReference` complex type of the SAP Business One Service Layer.
 public type DocumentReference record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -620,6 +636,7 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
+# A paged collection of `CorrectionInvoice` entities returned by the SAP Business One Service Layer.
 public type CorrectionInvoiceCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -628,6 +645,7 @@ public type CorrectionInvoiceCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `Orders` entities returned by the SAP Business One Service Layer.
 public type OrdersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -639,6 +657,7 @@ public type OrdersCollectionResponse record {
 # OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name
 public type CancelStatusEnum "csYes"|"csNo"|"csCancellation";
 
+# A paged collection of `CreditNotes` entities returned by the SAP Business One Service Layer.
 public type CreditNotesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -647,11 +666,13 @@ public type CreditNotesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `CreditNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type CreditNotesService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `DunningTermLine` complex type of the SAP Business One Service Layer.
 public type DunningTermLine record {|
     @jsondata:Name {value: "LetterFee"}
     decimal letterFee?;
@@ -674,6 +695,7 @@ public type DunningTermLine record {|
 # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name
 public type BoAdEpnsDistribMethods "aedm_None"|"aedm_Quantity"|"aedm_Volume"|"aedm_Weight"|"aedm_Equally"|"aedm_RowTotal";
 
+# A paged collection of `CorrectionInvoiceReversal` entities returned by the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -682,6 +704,7 @@ public type CorrectionInvoiceReversalCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer.
 public type LineFreightEBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -713,6 +736,7 @@ public type GetReturnsQueries record {
 # OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name
 public type BoCorInvItemStatus "ciis_Was"|"ciis_ShouldBe";
 
+# The `BatchNumber` complex type of the SAP Business One Service Layer.
 public type BatchNumber record {
     string BatchNumber?;
     string ManufacturerSerialNumber?;
@@ -736,6 +760,7 @@ public type BoPayTermDueTypes "pdt_MonthEnd"|"pdt_HalfMonth"|"pdt_MonthStart"|"p
 # OData EnumType 'DocumentPriceSourceEnum'. Serialised by the Service Layer as the member name
 public type DocumentPriceSourceEnum "dpsSpecialPricesForBusinessPartner"|"dpsManual"|"dpsActivePriceListDiscountGroups"|"dpsActivePriceList"|"dpsInactivePriceList"|"dpsBlanketAgreement"|"dpsPeriodAndVolumeDiscounts"|"dpsPeriodAndVolumeDiscountsDiscountGroups"|"dpsInactivePriceListDiscountGroups"|"dpsNewSpecialPricesForBusinessPartner"|"dpsNewActivePriceListDiscountGroups"|"dpsNewActivePriceList"|"dpsNewInactivePriceList"|"dpsNewBlanketAgreement"|"dpsNewPeriodAndVolumeDiscounts"|"dpsNewPeriodAndVolumeDiscountsDiscountGroups"|"dpsNewInactivePriceListDiscountGroups";
 
+# A paged collection of `DeliveryNotes` entities returned by the SAP Business One Service Layer.
 public type DeliveryNotesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -744,6 +769,7 @@ public type DeliveryNotesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `OrdersService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type OrdersService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -752,6 +778,7 @@ public type OrdersService_ExportEWayBill_body record {
 # OData EnumType 'BlanketAgreementMethodEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementMethodEnum "amItem"|"amMonetary";
 
+# The `DunningLetter` entity of the SAP Business One Service Layer.
 public type DunningLetter record {
     string FeeCurrency?;
     int:Signed32 RowNumber?;
@@ -767,6 +794,7 @@ public type DunningLetter record {
 # OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name
 public type BoDocumentSubType "bod_None"|"bod_InvoiceExempt"|"bod_DebitMemo"|"bod_Bill"|"bod_ExemptBill"|"bod_PurchaseDebitMemo"|"bod_ExportInvoice"|"bod_GSTTaxInvoice"|"bod_GSTDebitMemo"|"bod_RefundVoucher";
 
+# Represents the request payload for the `QuotationsService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type QuotationsService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -778,6 +806,7 @@ public type BoDocSpecialLineType "dslt_Text"|"dslt_Subtotal";
 # OData EnumType 'PriceModeDocumentEnum'. Serialised by the Service Layer as the member name
 public type PriceModeDocumentEnum "pmdNet"|"pmdGross"|"pmdNetAndGross";
 
+# A paged collection of `Invoices` entities returned by the SAP Business One Service Layer.
 public type InvoicesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -786,6 +815,7 @@ public type InvoicesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `DocumentLine` complex type of the SAP Business One Service Layer.
 public type DocumentLine record {
     int:Signed32 LineNum?;
     string ItemCode?;
@@ -1088,6 +1118,7 @@ public type ListReturnsQueries record {
     string dollarSelect?;
 };
 
+# The `ExportProcess` complex type of the SAP Business One Service Layer.
 public type ExportProcess record {|
     @jsondata:Name {value: "LadingBillTypeCode"}
     int:Signed32 ladingBillTypeCode?;
@@ -1130,6 +1161,7 @@ public type BoDocSummaryTypes "dNoSummary"|"dByItems"|"dByDocuments";
 # OData EnumType 'BoRemindUnits'. Serialised by the Service Layer as the member name
 public type BoRemindUnits "reu_Days"|"reu_Weeks"|"reu_Month";
 
+# The `DocumentCloseParams` complex type of the SAP Business One Service Layer.
 public type DocumentCloseParams record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -1139,6 +1171,7 @@ public type DocumentCloseParams record {|
     ClosingOptionEnum closingOption?;
 |};
 
+# A paged collection of `POSDailySummary` entities returned by the SAP Business One Service Layer.
 public type POSDailySummaryCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1147,6 +1180,7 @@ public type POSDailySummaryCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `DownPayments` entities returned by the SAP Business One Service Layer.
 public type DownPaymentsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1155,11 +1189,13 @@ public type DownPaymentsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `QuotationsService_CloseByDate` operation of the SAP Business One Service Layer.
 public type QuotationsService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# A paged collection of `CommissionGroups` entities returned by the SAP Business One Service Layer.
 public type CommissionGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1190,16 +1226,19 @@ public type GSTTransactionTypeEnum "gsttrantyp_BillOfSupply"|"gsttrantyp_GSTTaxI
 # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
 public type BoSoStatus "so_Open"|"so_Closed";
 
+# Represents the request payload for the `DraftsService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type DraftsService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `CreditNotesService_CloseByDate` operation of the SAP Business One Service Layer.
 public type CreditNotesService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer.
 public type DocumentAdditionalIntrastatExpense record {
     int:Signed32 ExpenseCode?;
     decimal LineTotal?;
@@ -1230,11 +1269,13 @@ public type ListCorrectionInvoiceHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `OrdersService_CloseByDate` operation of the SAP Business One Service Layer.
 public type OrdersService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# The `BlanketAgreementParams` complex type of the SAP Business One Service Layer.
 public type BlanketAgreementParams record {|
     @jsondata:Name {value: "AgreementNo"}
     int:Signed32 agreementNo?;
@@ -1243,11 +1284,13 @@ public type BlanketAgreementParams record {|
 # OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name
 public type BoDocLineType "dlt_Regular"|"dlt_Alternative"|"dlt_Resource";
 
+# Represents the request payload for the `ReturnRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type ReturnRequestService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type LineExpenseTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -1271,11 +1314,13 @@ public type ListDunningTermsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `CreditNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type CreditNotesService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `DunningTerm` entity of the SAP Business One Service Layer.
 public type DunningTerm record {|
     @jsondata:Name {value: "ExchangeRateSelect"}
     ExchangeRateSelectEnum exchangeRateSelect?;
@@ -1317,6 +1362,7 @@ public type DunningTerm record {|
     string minimumBalanceCurrency?;
 |};
 
+# The `GeneratedAsset` complex type of the SAP Business One Service Layer.
 public type GeneratedAsset record {|
     @jsondata:Name {value: "Status"}
     GeneratedAssetStatusEnum status?;
@@ -1356,11 +1402,13 @@ public type GetDeliveryNotesQueries record {
 # OData EnumType 'BoTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTransactionTypeEnum "botrntComplete"|"botrntReject";
 
+# Represents the request payload for the `DownPaymentsService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type DownPaymentsService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `WithholdingTaxData` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxData record {
     string WTCode?;
     decimal WTAmountSys?;
@@ -1393,11 +1441,13 @@ public type WithholdingTaxData record {
 # OData EnumType 'EDocStatusEnum'. Serialised by the Service Layer as the member name
 public type EDocStatusEnum "edoc_New"|"edoc_Pending"|"edoc_Sent"|"edoc_Error"|"edoc_Ok";
 
+# Represents the request payload for the `DeliveryNotesService_CloseByDate` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# A paged collection of `Drafts` entities returned by the SAP Business One Service Layer.
 public type DraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1406,6 +1456,7 @@ public type DraftsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `OrdersService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type OrdersService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -1436,11 +1487,13 @@ public type ListDunningLettersQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `OrdersService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type OrdersService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `SalesTaxInvoiceDocumentReference` complex type of the SAP Business One Service Layer.
 public type SalesTaxInvoiceDocumentReference record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNumber?;
@@ -1457,11 +1510,13 @@ public type SalesTaxInvoiceDocumentReference record {
 # OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name
 public type BoExpenseOperationTypeEnum "bo_ExpOpType_ProfessionalServices"|"bo_ExpOpType_RentingAssets"|"bo_ExpOpType_Others"|"bo_ExpOpType_None"|"bo_ExpOpType_DisposalOfGoods"|"bo_ExpOpType_ImportOfGoodsAndServices"|"bo_ExpOpType_ImportByVirtualTransfer"|"bo_ExpOpType_GlobalOperations";
 
+# Represents the request payload for the `QuotationsService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type QuotationsService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `SalesTaxInvoiceOperationCode` complex type of the SAP Business One Service Layer.
 public type SalesTaxInvoiceOperationCode record {
     int:Signed32 OpCode?;
 };
@@ -1479,11 +1534,13 @@ public type ListCorrectionInvoiceReversalHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `OrdersService_Preview` operation of the SAP Business One Service Layer.
 public type OrdersService_Preview_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# A paged collection of `Returns` entities returned by the SAP Business One Service Layer.
 public type ReturnsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1492,6 +1549,7 @@ public type ReturnsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceReversalService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -1522,6 +1580,7 @@ public type ListCorrectionInvoiceReversalQueries record {
     string dollarSelect?;
 };
 
+# The `RelatedDocument` complex type of the SAP Business One Service Layer.
 public type RelatedDocument record {|
     @jsondata:Name {value: "AbsEnry"}
     int:Signed32 absEnry?;
@@ -1545,6 +1604,7 @@ public type ListOrdersHeaders record {
     string prefer?;
 };
 
+# The `SalesTaxInvoiceLinkedDownPayment` complex type of the SAP Business One Service Layer.
 public type SalesTaxInvoiceLinkedDownPayment record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNum?;
@@ -1569,6 +1629,7 @@ public type SalesTaxInvoiceLinkedDownPayment record {
     string DocCurrency?;
 };
 
+# The `AddressExtension` complex type of the SAP Business One Service Layer.
 public type AddressExtension record {
     string ShipToStreet?;
     string ShipToStreetNo?;
@@ -1686,6 +1747,7 @@ public type ListReturnsHeaders record {
     string prefer?;
 };
 
+# The `SerialNumber` complex type of the SAP Business One Service Layer.
 public type SerialNumber record {
     string ManufacturerSerialNumber?;
     string InternalSerialNumber?;
@@ -1708,6 +1770,7 @@ public type SerialNumber record {
 # OData EnumType 'LinkReferenceTypeEnum'. Serialised by the Service Layer as the member name
 public type LinkReferenceTypeEnum "lrt_00"|"lrt_01"|"lrt_02"|"lrt_03"|"lrt_04"|"lrt_05"|"lrt_06"|"lrt_07"|"lrt_08"|"lrt_MX_08"|"lrt_MX_09";
 
+# Represents the request payload for the `DraftsService_CloseByDate` operation of the SAP Business One Service Layer.
 public type DraftsService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
@@ -1748,6 +1811,7 @@ public type ListInvoicesQueries record {
     string dollarSelect?;
 };
 
+# The `TaxExtension` complex type of the SAP Business One Service Layer.
 public type TaxExtension record {|
     @jsondata:Name {value: "BuildingS"}
     string buildingS?;
@@ -1865,6 +1929,7 @@ public type TaxExtension record {|
     string incoterms?;
 |};
 
+# The `CommissionGroup` entity of the SAP Business One Service Layer.
 public type CommissionGroup record {
     int:Signed32 CommissionGroupCode?;
     string CommissionGroupName?;
@@ -1875,6 +1940,7 @@ public type CommissionGroup record {
 # OData EnumType 'BlanketAgreementTypeEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementTypeEnum "atGeneral"|"atSpecific";
 
+# Represents the request payload for the `InvoicesService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type InvoicesService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -1883,11 +1949,13 @@ public type InvoicesService_ApproveAndAdd_body record {
 # OData EnumType 'BADocumentStatus'. Serialised by the Service Layer as the member name
 public type BADocumentStatus "bads_Open"|"bads_Closed"|"bads_Cancelled";
 
+# Represents the request payload for the `ReturnsService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type ReturnsService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer.
 public type DocumentAdditionalExpense record {
     int:Signed32 ExpenseCode?;
     decimal LineTotal?;
@@ -1963,6 +2031,7 @@ public type DocumentAdditionalExpense record {
 # OData EnumType 'BaseDateSelectEnum'. Serialised by the Service Layer as the member name
 public type BaseDateSelectEnum "bdsFromDueDate"|"bdsFromLastDunningRun";
 
+# A paged collection of `SalesTaxInvoices` entities returned by the SAP Business One Service Layer.
 public type SalesTaxInvoicesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1971,26 +2040,31 @@ public type SalesTaxInvoicesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `ReturnsService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type ReturnsService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `DeliveryNotesService_Cancel2` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_Cancel2_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `DraftsService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type DraftsService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `InvoicesService_CloseByDate` operation of the SAP Business One Service Layer.
 public type InvoicesService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
@@ -2002,11 +2076,13 @@ public type BoAdEpnsTaxTypes "aext_NormalTax"|"aext_NoTax"|"aext_UseTax";
 # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 
+# Represents the request payload for the `OrdersService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type OrdersService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `POSDailySummary` entity of the SAP Business One Service Layer.
 public type POSDailySummary record {|
     @jsondata:Name {value: "POSTotalizerCollection"}
     POSTotalizer[] pOSTotalizerCollection?;
@@ -2109,16 +2185,19 @@ public type ListCreditNotesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceReversalService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `InvoicesService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type InvoicesService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `SalesTaxInvoice` entity of the SAP Business One Service Layer.
 public type SalesTaxInvoice record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
@@ -2184,6 +2263,7 @@ public type ListReturnRequestQueries record {
     string dollarSelect?;
 };
 
+# The `DocumentSpecialLine` complex type of the SAP Business One Service Layer.
 public type DocumentSpecialLine record {|
     @jsondata:Name {value: "SubtotalSC"}
     decimal subtotalSC?;
@@ -2233,6 +2313,7 @@ public type DocumentSpecialLine record {|
     BoDocSpecialLineType lineType?;
 |};
 
+# The `CCDNumber` complex type of the SAP Business One Service Layer.
 public type CCDNumber record {
     int:Signed32 TrackingNote?;
     int:Signed32 TrackingNoteLine?;
@@ -2245,6 +2326,7 @@ public type CCDNumber record {
     int:Signed32 ChildNumber?;
 };
 
+# The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer.
 public type DownPaymentToDrawDetails record {|
     @jsondata:Name {value: "SeqNum"}
     int:Signed32 seqNum?;
@@ -2301,6 +2383,7 @@ public type GetReturnRequestQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `DownPaymentsService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type DownPaymentsService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2322,6 +2405,7 @@ public type ListDraftsHeaders record {
 # OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name
 public type DownPaymentTypeEnum "dptRequest"|"dptInvoice";
 
+# The `WithholdingTaxLine` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxLine record {
     string WTCode?;
     decimal WTAmountSys?;
@@ -2361,6 +2445,7 @@ public type ListDeliveryNotesHeaders record {
     string prefer?;
 };
 
+# The `SalesPerson` entity of the SAP Business One Service Layer.
 public type SalesPerson record {
     int:Signed32 SalesEmployeeCode?;
     string SalesEmployeeName?;
@@ -2377,6 +2462,7 @@ public type SalesPerson record {
     string Fax?;
     string Email?;
     Document[] PurchaseQuotations?;
+    # The `CommissionGroup` entity of the SAP Business One Service Layer.
     CommissionGroup CommissionGroup2?;
     Document[] CorrectionInvoiceReversal?;
     Document[] CorrectionInvoice?;
@@ -2452,6 +2538,7 @@ public type GetPOSDailySummaryQueries record {
 # OData EnumType 'LineTypeEnum'. Serialised by the Service Layer as the member name
 public type LineTypeEnum "ltDocument"|"ltRounding"|"ltVat";
 
+# The `DocumentPackageItem` complex type of the SAP Business One Service Layer.
 public type DocumentPackageItem record {
     int:Signed32 PackageNumber?;
     string ItemCode?;
@@ -2461,6 +2548,7 @@ public type DocumentPackageItem record {
     decimal UnitsOfMeasurement?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceReversalService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2469,6 +2557,7 @@ public type CorrectionInvoiceReversalService_ApproveAndAdd_body record {
 # OData EnumType 'BlanketAgreementDocTypeEnum'. Serialised by the Service Layer as the member name
 public type BlanketAgreementDocTypeEnum "ARInvoice"|"ARCreditMemo"|"Delivery"|"Return"|"SalesOrder"|"APInvoice"|"APCreditMemo"|"GoodsReceiptPO"|"GoodsReturn"|"PurchaseOrder"|"SalesQuotation"|"APCorrectionInvoice"|"APCorrectionInvoiceReversal"|"ARCorrectionInvoice"|"ARCorrectionInvoiceReversal"|"ARDownPayment"|"APDownPayment"|"PurchaseQuotation";
 
+# The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer.
 public type DocumentLineAdditionalExpense record {
     int:Signed32 LineNumber?;
     int:Signed32 GroupCode?;
@@ -2525,16 +2614,19 @@ public type DocumentLineAdditionalExpense record {
     LineFreightEBooksDetail[] LineFreightEBooksDetails?;
 };
 
+# Represents the request payload for the `ReturnsService_CloseByDate` operation of the SAP Business One Service Layer.
 public type ReturnsService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# The `SalesTaxInvoiceLine` complex type of the SAP Business One Service Layer.
 public type SalesTaxInvoiceLine record {
     int:Signed32 RefEntry1?;
     int:Signed32 RefEntry2?;
 };
 
+# Represents the request payload for the `InvoicesService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type InvoicesService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2550,6 +2642,7 @@ public type GetDownPaymentsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `DraftsService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type DraftsService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2558,6 +2651,7 @@ public type DraftsService_GetApprovalTemplates_body record {
 # OData EnumType 'ImportOrExportTypeEnum'. Serialised by the Service Layer as the member name
 public type ImportOrExportTypeEnum "et_IpmortsOrExports"|"et_SEZ_Developer"|"et_SEZ_Unit"|"et_Deemed_ImportsOrExports";
 
+# The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxDataWTX record {
     decimal WTAmountSys?;
     decimal WTAmountFC?;
@@ -2593,6 +2687,7 @@ public type WithholdingTaxDataWTX record {
     decimal AccumWTaxAmount?;
 };
 
+# A paged collection of `Quotations` entities returned by the SAP Business One Service Layer.
 public type QuotationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2601,6 +2696,7 @@ public type QuotationsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `DunningLetters` entities returned by the SAP Business One Service Layer.
 public type DunningLettersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2633,6 +2729,7 @@ public type GetCreditNotesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `DeliveryNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2663,6 +2760,7 @@ public type ListSalesPersonsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BlanketAgreements` entities returned by the SAP Business One Service Layer.
 public type BlanketAgreementsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2688,6 +2786,7 @@ public type BlanketAgreementDatePeriodsEnum "Daily"|"Weekly"|"Monthly"|"Quarterl
 # OData EnumType 'EDocGenerationTypeEnum'. Serialised by the Service Layer as the member name
 public type EDocGenerationTypeEnum "edocGenerate"|"edocGenerateLater"|"edocNotRelevant"|"edocGenerateOffline";
 
+# Represents the request payload for the `InvoicesService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type InvoicesService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2721,6 +2820,7 @@ public type ListDeliveryNotesQueries record {
 # OData EnumType 'FolioLetterEnum'. Serialised by the Service Layer as the member name
 public type FolioLetterEnum "fLetterA"|"fLetterB"|"fLetterC"|"fLetterE"|"fLetterM"|"fLetterR"|"fLetterT"|"fLetterX"|"fLetterEMPTY";
 
+# The `DocLinePickList` complex type of the SAP Business One Service Layer.
 public type DocLinePickList record {|
     @jsondata:Name {value: "PickListLineNum"}
     int:Signed32 pickListLineNum?;
@@ -2733,6 +2833,7 @@ public type DocLinePickList record {|
 # OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name
 public type DocumentDeliveryTypeEnum "ddtNoneSeleted"|"ddtCreateOnlineDocument"|"ddtPostToAribaNetwork";
 
+# The `EWayBillDetails` complex type of the SAP Business One Service Layer.
 public type EWayBillDetails record {|
     @jsondata:Name {value: "BillFromName"}
     string billFromName?;
@@ -2806,6 +2907,7 @@ public type EWayBillDetails record {|
     string eWayBillDate?;
 |};
 
+# The `ElectronicProtocol` complex type of the SAP Business One Service Layer.
 public type ElectronicProtocol record {
     # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
@@ -2853,11 +2955,13 @@ public type ElectronicProtocol record {
     string EBooksDispatchTime?;
 };
 
+# Represents the request payload for the `CreditNotesService_RequestApproveCancellation` operation of the SAP Business One Service Layer.
 public type CreditNotesService_RequestApproveCancellation_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# A paged collection of `SalesPersons` entities returned by the SAP Business One Service Layer.
 public type SalesPersonsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2866,6 +2970,7 @@ public type SalesPersonsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `InvoicesService_Cancel2` operation of the SAP Business One Service Layer.
 public type InvoicesService_Cancel2_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2936,11 +3041,13 @@ public type GetBlanketAgreementsQueries record {
 # OData EnumType 'BoTaxOnInstallmentsTypeEnum'. Serialised by the Service Layer as the member name
 public type BoTaxOnInstallmentsTypeEnum "toiProportionally"|"toiTaxInFirst"|"toiTaxInFirstOnly";
 
+# Represents the request payload for the `CorrectionInvoiceService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `DeliveryNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2956,6 +3063,7 @@ public type ListPOSDailySummaryHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ReturnRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type ReturnRequestService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2968,6 +3076,7 @@ public type ListDownPaymentsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `DownPaymentsService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type DownPaymentsService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -2976,16 +3085,19 @@ public type DownPaymentsService_ExportEWayBill_body record {
 # OData EnumType 'BoDocItemType'. Serialised by the Service Layer as the member name
 public type BoDocItemType "dit_Item"|"dit_Resource";
 
+# Represents the request payload for the `QuotationsService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type QuotationsService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `ReturnsService_Cancel2` operation of the SAP Business One Service Layer.
 public type ReturnsService_Cancel2_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type DocExpenseTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -3005,6 +3117,7 @@ public type DocExpenseTaxJurisdiction record {
 # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"edpc_CFDI"|"edpc_FPA"|"edpc_MTD"|"edpc_EWB"|"edpc_PEPPOL"|"edpc_HOI"|"edpc_MYF"|"edpc_EIS"|"edpc_IIS"|"edpc_IIS_Annual"|"edpc_DIGIPOORT"|"edpc_EBooks"|"edpc_DOX"|"edpc_RTIE"|"edpc_EBilling"|"edpc_TaxService"|"edpc_AFE"|"edpc_DocSign"|"edpc_KSeF"|"edpc_GSTReturn"|"edpc_PTDocSign"|"edpc_SkatDK"|"edpc_EII"|"edpc_NFe"|"edpc_PTeInvoicing"|"edpc_PTeCom"|"edpc_VeriFactu"|"edpc_BAS"|"edpc_PDFwithXML"|"edpc_FReINV";
 
+# Represents the request payload for the `CorrectionInvoiceService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -3035,6 +3148,7 @@ public type ListBlanketAgreementsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ReturnRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type ReturnRequestService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -3043,6 +3157,7 @@ public type ReturnRequestService_GetApprovalTemplates_body record {
 # OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name
 public type ElecCommStatusEnum "ecsApproved"|"ecsPendingApproval"|"ecsRejected";
 
+# The `DownPaymentToDraw` complex type of the SAP Business One Service Layer.
 public type DownPaymentToDraw record {|
     @jsondata:Name {value: "TaxFC"}
     decimal taxFC?;
@@ -3086,6 +3201,7 @@ public type DownPaymentToDraw record {|
     decimal amountToDrawFC?;
 |};
 
+# Represents the request payload for the `CreditNotesService_Cancel2` operation of the SAP Business One Service Layer.
 public type CreditNotesService_Cancel2_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -3094,16 +3210,19 @@ public type CreditNotesService_Cancel2_body record {
 # OData EnumType 'EWBTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type EWBTransactionTypeEnum "ewb_tt_Regular"|"ewb_tt_BillToShipTo"|"ewb_tt_BillFromDispathFrom"|"ewb_tt_CombinationOfBillAndShip";
 
+# Represents the request payload for the `DraftsService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type DraftsService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `CreditNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type CreditNotesService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `EBooksDetail` complex type of the SAP Business One Service Layer.
 public type EBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -3126,6 +3245,7 @@ public type EBooksDetail record {
     int:Signed32 FeesCategory?;
 };
 
+# Represents the request payload for the `DeliveryNotesService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -3173,6 +3293,7 @@ public type BoObjectTypes "oChartOfAccounts"|"oBusinessPartners"|"oBanks"|"oItem
 # OData EnumType 'GeneratedAssetStatusEnum'. Serialised by the Service Layer as the member name
 public type GeneratedAssetStatusEnum "gasOpen"|"gasClosed";
 
+# The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer.
 public type DocumentLinesBinAllocation record {
     int:Signed32 BinAbsEntry?;
     decimal Quantity?;
@@ -3195,6 +3316,7 @@ public type GetQuotationsQueries record {
     string dollarSelect?;
 };
 
+# The `BlanketAgreement` entity of the SAP Business One Service Layer.
 public type BlanketAgreement record {
     int:Signed32 AgreementNo?;
     string BPCode?;
@@ -3244,18 +3366,21 @@ public type BlanketAgreement record {
     BlanketAgreementsItemsLine[] BlanketAgreements_ItemsLines?;
 };
 
+# Represents the response payload for the `BlanketAgreementsService_GetBlanketAgreementList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BlanketAgreementParams[] value?;
 };
 
+# Represents the response payload for the `DunningTermsService_GetDunningTermList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     DunningTermParams[] value?;
 };
 
+# The `DocumentPackage` complex type of the SAP Business One Service Layer.
 public type DocumentPackage record {
     int:Signed32 Number?;
     string Type?;
@@ -3271,16 +3396,19 @@ public type ListSalesPersonsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ReturnRequestService_CloseByDate` operation of the SAP Business One Service Layer.
 public type ReturnRequestService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# Represents the request payload for the `DownPaymentsService_CloseByDate` operation of the SAP Business One Service Layer.
 public type DownPaymentsService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# The `ImportProcess` complex type of the SAP Business One Service Layer.
 public type ImportProcess record {|
     @jsondata:Name {value: "DateOfRegistry_DI_DSI_DA"}
     string dateOfRegistryDIDSIDA?;
@@ -3318,6 +3446,7 @@ public type ListBlanketAgreementsHeaders record {
 # OData EnumType 'CalculateInterestMethodEnum'. Serialised by the Service Layer as the member name
 public type CalculateInterestMethodEnum "cimOnRemainingAmount"|"cimOnOriginalSum";
 
+# A paged collection of `DunningTerms` entities returned by the SAP Business One Service Layer.
 public type DunningTermsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3361,11 +3490,13 @@ public type GetCorrectionInvoiceQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceReversalService_CloseByDate` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceReversalService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
 };
 
+# The `BlanketAgreements_ItemsLine` complex type of the SAP Business One Service Layer.
 public type BlanketAgreementsItemsLine record {
     int:Signed32 AgreementNo?;
     int:Signed32 AgreementRowNumber?;
@@ -3405,47 +3536,56 @@ public type BlanketAgreementsItemsLine record {
 # OData EnumType 'ExchangeRateSelectEnum'. Serialised by the Service Layer as the member name
 public type ExchangeRateSelectEnum "ierFromInovice"|"ierCurrentRate";
 
+# Represents the request payload for the `CreditNotesService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type CreditNotesService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `ReturnRequestService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type ReturnRequestService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `DraftsService_SaveDraftToDocument` operation of the SAP Business One Service Layer.
 public type DraftsService_SaveDraftToDocument_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `DownPaymentsService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type DownPaymentsService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `InvoicesService_RequestApproveCancellation` operation of the SAP Business One Service Layer.
 public type InvoicesService_RequestApproveCancellation_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `ReturnsService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type ReturnsService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the response payload for the `BlanketAgreements_GetRelatedDocuments` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BlanketAgreementsDocument[] value?;
 };
 
+# Represents the request payload for the `ReturnsService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type ReturnsService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type LineTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -3475,6 +3615,7 @@ public type LineTaxJurisdiction record {
 # OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name
 public type BoItemTreeTypes "iNotATree"|"iAssemblyTree"|"iSalesTree"|"iProductionTree"|"iTemplateTree"|"iIngredient";
 
+# The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer.
 public type DocFreightEBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -3493,6 +3634,7 @@ public type DocFreightEBooksDetail record {
     int:Signed32 VATExemptionCause?;
 };
 
+# The `DunningTermParams` complex type of the SAP Business One Service Layer.
 public type DunningTermParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -3528,6 +3670,7 @@ public type ListCorrectionInvoiceQueries record {
 # OData EnumType 'BoTaxInvoiceTypes'. Serialised by the Service Layer as the member name
 public type BoTaxInvoiceTypes "botit_AlterationCorrectionInvoice"|"botit_AlterationInvoice"|"botit_CorrectionInvoice"|"botit_Invoice"|"botit_JournalEntry"|"botit_Payment";
 
+# The `DocumentInstallment` complex type of the SAP Business One Service Layer.
 public type DocumentInstallment record {
     string DueDate?;
     decimal Percentage?;
@@ -3605,6 +3748,7 @@ public type ListQuotationsQueries record {
     string dollarSelect?;
 };
 
+# The `POSTotalizer` complex type of the SAP Business One Service Layer.
 public type POSTotalizer record {|
     @jsondata:Name {value: "LineNum"}
     int:Signed32 lineNum?;
@@ -3618,11 +3762,13 @@ public type POSTotalizer record {|
     string code?;
 |};
 
+# Represents the request payload for the `QuotationsService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type QuotationsService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the request payload for the `CorrectionInvoiceService_CloseByDate` operation of the SAP Business One Service Layer.
 public type CorrectionInvoiceService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
@@ -3653,6 +3799,7 @@ public type ListPOSDailySummaryQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `DeliveryNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type DeliveryNotesService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;

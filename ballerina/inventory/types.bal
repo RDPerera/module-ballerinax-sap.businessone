@@ -20,6 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
+# The `UnitOfMeasurementGroupParams` complex type of the SAP Business One Service Layer.
 public type UnitOfMeasurementGroupParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
@@ -37,6 +38,7 @@ public type GetInventoryGenEntriesQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BinLocations` entities returned by the SAP Business One Service Layer.
 public type BinLocationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -76,6 +78,7 @@ public type ListCustomsGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `InventoryPosting` entity of the SAP Business One Service Layer.
 public type InventoryPosting record {
     int:Signed32 DocumentEntry?;
     int:Signed32 DocumentNumber?;
@@ -99,6 +102,7 @@ public type InventoryPosting record {
     InventoryPostingDocumentReferences[] InventoryPostingDocumentReferencesCollection?;
 };
 
+# The `InventoryPostingLineUoM` complex type of the SAP Business One Service Layer.
 public type InventoryPostingLineUoM record {
     int:Signed32 DocumentEntry?;
     int:Signed32 LineNumber?;
@@ -117,6 +121,7 @@ public type ListWarehouseLocationsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `InventoryPostings` entities returned by the SAP Business One Service Layer.
 public type InventoryPostingsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -125,9 +130,11 @@ public type InventoryPostingsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer.
 public type DocumentDistributedExpense record {|
 |};
 
+# The `EDeliveryInfo` complex type of the SAP Business One Service Layer.
 public type EDeliveryInfo record {|
     @jsondata:Name {value: "VehicleNo"}
     string vehicleNo?;
@@ -186,6 +193,7 @@ public type GetEnhancedDiscountGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `DocumentReference` complex type of the SAP Business One Service Layer.
 public type DocumentReference record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -228,6 +236,7 @@ public type DocumentReference record {|
 # OData EnumType 'CancelStatusEnum'. Serialised by the Service Layer as the member name
 public type CancelStatusEnum "csYes"|"csNo"|"csCancellation";
 
+# Represents the request payload for the `InventoryGenExitService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type InventoryGenExitService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -236,6 +245,7 @@ public type InventoryGenExitService_ExportEWayBill_body record {
 # OData EnumType 'BoAdEpnsDistribMethods'. Serialised by the Service Layer as the member name
 public type BoAdEpnsDistribMethods "aedm_None"|"aedm_Quantity"|"aedm_Volume"|"aedm_Weight"|"aedm_Equally"|"aedm_RowTotal";
 
+# The `ShippingType` entity of the SAP Business One Service Layer.
 public type ShippingType record {
     int:Signed32 Code?;
     string Name?;
@@ -269,6 +279,7 @@ public type ShippingType record {
     Document[] PurchaseRequests?;
 };
 
+# The `BatchNumber` complex type of the SAP Business One Service Layer.
 public type BatchNumber record {
     string BatchNumber?;
     string ManufacturerSerialNumber?;
@@ -286,6 +297,7 @@ public type BatchNumber record {
     int:Signed32 SystemSerialNumber?;
 };
 
+# The `ItemPreferredVendor` complex type of the SAP Business One Service Layer.
 public type ItemPreferredVendor record {
     string BPCode?;
 };
@@ -293,6 +305,7 @@ public type ItemPreferredVendor record {
 # OData EnumType 'BoPayTermDueTypes'. Serialised by the Service Layer as the member name
 public type BoPayTermDueTypes "pdt_MonthEnd"|"pdt_HalfMonth"|"pdt_MonthStart"|"pdt_None";
 
+# The `SpecialPriceDataArea` complex type of the SAP Business One Service Layer.
 public type SpecialPriceDataArea record {
     string PriceCurrency?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
@@ -370,6 +383,7 @@ public type ListEnhancedDiscountGroupsQueries record {
 # OData EnumType 'CycleCountDeterminationCycleByEnum'. Serialised by the Service Layer as the member name
 public type CycleCountDeterminationCycleByEnum "ccdcbItemGroup"|"ccdcbWarehouseSublevel1"|"ccdcbWarehouseSublevel2"|"ccdcbWarehouseSublevel3"|"ccdcbWarehouseSublevel4";
 
+# The `BinLocationAttributeParams` complex type of the SAP Business One Service Layer.
 public type BinLocationAttributeParams record {|
     @jsondata:Name {value: "Attribute"}
     int:Signed32 attribute?;
@@ -396,6 +410,7 @@ public type GetWarehousesQueries record {
     string dollarSelect?;
 };
 
+# The `ItemIntrastatExtension` complex type of the SAP Business One Service Layer.
 public type ItemIntrastatExtension record {|
     @jsondata:Name {value: "ImportNatureOfTransaction"}
     int:Signed32 importNatureOfTransaction?;
@@ -474,6 +489,7 @@ public type GetAlternateCatNumQueries record {
     string dollarSelect?;
 };
 
+# The `InventoryPostingLine` complex type of the SAP Business One Service Layer.
 public type InventoryPostingLine record {
     int:Signed32 DocumentEntry?;
     int:Signed32 LineNumber?;
@@ -525,6 +541,7 @@ public type InventoryPostingLine record {
 # OData EnumType 'BoTaxTypes'. Serialised by the Service Layer as the member name
 public type BoTaxTypes "tt_Yes"|"tt_No"|"tt_UseTax"|"tt_OffsetTax";
 
+# The `ItemCycleCount` complex type of the SAP Business One Service Layer.
 public type ItemCycleCount record {
     int:Signed32 CycleCode?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
@@ -538,6 +555,7 @@ public type ItemCycleCount record {
 # OData EnumType 'BoDocSummaryTypes'. Serialised by the Service Layer as the member name
 public type BoDocSummaryTypes "dNoSummary"|"dByItems"|"dByDocuments";
 
+# The `DocumentCloseParams` complex type of the SAP Business One Service Layer.
 public type DocumentCloseParams record {|
     @jsondata:Name {value: "DocEntry"}
     int:Signed32 docEntry?;
@@ -547,6 +565,7 @@ public type DocumentCloseParams record {|
     ClosingOptionEnum closingOption?;
 |};
 
+# The `SpecialPriceQuantityArea` complex type of the SAP Business One Service Layer.
 public type SpecialPriceQuantityArea record {
     decimal Quantity?;
     int:Signed32 SPDARowNumber?;
@@ -579,11 +598,14 @@ public type GetCycleCountDeterminationsQueries record {
     string dollarSelect?;
 };
 
+# The `StockTaking` entity of the SAP Business One Service Layer.
 public type StockTaking record {
     string ItemCode?;
     string WarehouseCode?;
     decimal Counted?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
+    # The `Warehouse` entity of the SAP Business One Service Layer.
     Warehouse Warehouse?;
 };
 
@@ -594,6 +616,7 @@ public type ListStockTransferDraftsHeaders record {
     string prefer?;
 };
 
+# The `WeightMeasure` entity of the SAP Business One Service Layer.
 public type WeightMeasure record {
     int:Signed32 UnitCode?;
     string UnitDisplay?;
@@ -605,6 +628,7 @@ public type WeightMeasure record {
 # OData EnumType 'GSTTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type GSTTransactionTypeEnum "gsttrantyp_BillOfSupply"|"gsttrantyp_GSTTaxInvoice"|"gsttrantyp_GSTDebitMemo";
 
+# The `StockTransfer` entity of the SAP Business One Service Layer.
 public type StockTransfer record {
     int:Signed32 DocEntry?;
     int:Signed32 Series?;
@@ -668,13 +692,18 @@ public type StockTransfer record {
     StockTransferApprovalRequest[] StockTransfer_ApprovalRequests?;
     ElectronicProtocol[] ElectronicProtocols?;
     StockTransferLine[] StockTransferLines?;
+    # The `StockTransferTaxExtension` complex type of the SAP Business One Service Layer.
     StockTransferTaxExtension StockTransferTaxExtension?;
     DocumentReference[] DocumentReferences?;
+    # The `EDeliveryInfo` complex type of the SAP Business One Service Layer.
     EDeliveryInfo EDeliveryInfo?;
+    # The `PriceList` entity of the SAP Business One Service Layer.
     PriceList PriceList2?;
+    # The `Warehouse` entity of the SAP Business One Service Layer.
     Warehouse Warehouse?;
 };
 
+# The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer.
 public type DocumentAdditionalIntrastatExpense record {
     int:Signed32 ExpenseCode?;
     decimal LineTotal?;
@@ -692,6 +721,7 @@ public type DocumentAdditionalIntrastatExpense record {
     int:Signed32 LineNum?;
 };
 
+# The `WarehouseLocation` entity of the SAP Business One Service Layer.
 public type WarehouseLocation record {
     int:Signed32 Code?;
     string Name?;
@@ -730,6 +760,7 @@ public type WarehouseLocation record {
     Item[] Items?;
 };
 
+# Represents the request payload for the `InventoryGenExitService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type InventoryGenExitService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -745,11 +776,13 @@ public type ListInventoryPostingsHeaders record {
 # OData EnumType 'BoMaterialTypes'. Serialised by the Service Layer as the member name
 public type BoMaterialTypes "mt_GoodsForReseller"|"mt_FinishedGoods"|"mt_GoodsInProcess"|"mt_RawMaterial"|"mt_Package"|"mt_SubProduct"|"mt_IntermediateMaterial"|"mt_ConsumerMaterial"|"mt_FixedAsset"|"mt_Service"|"mt_OtherInput"|"mt_Other";
 
+# Represents the request payload for the `InventoryGenEntryService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type InventoryGenEntryService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# A paged collection of `MaterialRevaluation` entities returned by the SAP Business One Service Layer.
 public type MaterialRevaluationCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -761,6 +794,7 @@ public type MaterialRevaluationCollectionResponse record {
 # OData EnumType 'CountingLineStatusEnum'. Serialised by the Service Layer as the member name
 public type CountingLineStatusEnum "clsOpen"|"clsClosed";
 
+# A paged collection of `WarehouseLocations` entities returned by the SAP Business One Service Layer.
 public type WarehouseLocationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -775,6 +809,7 @@ public type BoTransactionTypeEnum "botrntComplete"|"botrntReject";
 # OData EnumType 'DiscountGroupDiscountTypeEnum'. Serialised by the Service Layer as the member name
 public type DiscountGroupDiscountTypeEnum "dgdt_Fixed"|"dgdt_Variable";
 
+# The `InventoryOpeningBalanceLine` complex type of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceLine record {
     int:Signed32 DocumentEntry?;
     int:Signed32 LineNumber?;
@@ -815,11 +850,13 @@ public type InventoryOpeningBalanceLine record {
 # OData EnumType 'ItemUoMTypeEnum'. Serialised by the Service Layer as the member name
 public type ItemUoMTypeEnum "iutPurchasing"|"iutSales"|"iutInventory";
 
+# The `BinLocationFieldParams` complex type of the SAP Business One Service Layer.
 public type BinLocationFieldParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
 |};
 
+# The `BinLocationParams` complex type of the SAP Business One Service Layer.
 public type BinLocationParams record {|
     @jsondata:Name {value: "BinCode"}
     string binCode?;
@@ -865,6 +902,7 @@ public type ListPackagesTypesQueries record {
 # OData EnumType 'BoExpenseOperationTypeEnum'. Serialised by the Service Layer as the member name
 public type BoExpenseOperationTypeEnum "bo_ExpOpType_ProfessionalServices"|"bo_ExpOpType_RentingAssets"|"bo_ExpOpType_Others"|"bo_ExpOpType_None"|"bo_ExpOpType_DisposalOfGoods"|"bo_ExpOpType_ImportOfGoodsAndServices"|"bo_ExpOpType_ImportByVirtualTransfer"|"bo_ExpOpType_GlobalOperations";
 
+# A paged collection of `WeightMeasures` entities returned by the SAP Business One Service Layer.
 public type WeightMeasuresCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -904,6 +942,7 @@ public type ItemClassEnum "itcService"|"itcMaterial";
 # OData EnumType 'InventoryOpeningBalancePriceSourceEnum'. Serialised by the Service Layer as the member name
 public type InventoryOpeningBalancePriceSourceEnum "iobpsByPriceList"|"iobpsLastEvaluatedPrice"|"iobpsItemCost";
 
+# The `InventoryCountingDraft` entity of the SAP Business One Service Layer.
 public type InventoryCountingDraft record {
     int:Signed32 DocumentEntry?;
     int:Signed32 DocumentNumber?;
@@ -952,6 +991,7 @@ public type ListStockTransferDraftsQueries record {
     string dollarSelect?;
 };
 
+# The `InventoryCountingLine` complex type of the SAP Business One Service Layer.
 public type InventoryCountingLine record {
     int:Signed32 DocumentEntry?;
     int:Signed32 LineNumber?;
@@ -1030,11 +1070,13 @@ public type GetTrackingNotesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `AlternativeItemsService_AddItem` operation of the SAP Business One Service Layer.
 public type AlternativeItemsService_AddItem_body record {
     @jsondata:Name {value: "OriginalItem"}
     OriginalItem originalItem?;
 };
 
+# The `SerialNumber` complex type of the SAP Business One Service Layer.
 public type SerialNumber record {
     string ManufacturerSerialNumber?;
     string InternalSerialNumber?;
@@ -1057,6 +1099,7 @@ public type SerialNumber record {
 # OData EnumType 'LinkReferenceTypeEnum'. Serialised by the Service Layer as the member name
 public type LinkReferenceTypeEnum "lrt_00"|"lrt_01"|"lrt_02"|"lrt_03"|"lrt_04"|"lrt_05"|"lrt_06"|"lrt_07"|"lrt_08"|"lrt_MX_08"|"lrt_MX_09";
 
+# Represents the request payload for the `InventoryGenExitService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type InventoryGenExitService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -1090,6 +1133,7 @@ public type ListStockTakingsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `WarehouseSublevelCodes` entities returned by the SAP Business One Service Layer.
 public type WarehouseSublevelCodesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1098,6 +1142,7 @@ public type WarehouseSublevelCodesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `PickListsService_Close` operation of the SAP Business One Service Layer.
 public type PickListsService_Close_body record {
     @jsondata:Name {value: "PickList"}
     PickList pickList?;
@@ -1126,6 +1171,7 @@ public type ListPackagesTypesHeaders record {
     string prefer?;
 };
 
+# The `InventoryOpeningBalanceParams` complex type of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceParams record {|
     @jsondata:Name {value: "DocumentEntry"}
     int:Signed32 documentEntry?;
@@ -1133,6 +1179,7 @@ public type InventoryOpeningBalanceParams record {|
     int:Signed32 documentNumber?;
 |};
 
+# The `EnhancedDiscountGroupParams` complex type of the SAP Business One Service Layer.
 public type EnhancedDiscountGroupParams record {|
     @jsondata:Name {value: "Type"}
     DiscountGroupTypeEnum 'type?;
@@ -1181,11 +1228,13 @@ public type ListInventoryGenExitsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `AlternativeItemsService_DeleteItem` operation of the SAP Business One Service Layer.
 public type AlternativeItemsService_DeleteItem_body record {
     @jsondata:Name {value: "OriginalItemParams"}
     OriginalItemParams originalItemParams?;
 };
 
+# A paged collection of `StockTransferDrafts` entities returned by the SAP Business One Service Layer.
 public type StockTransferDraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1194,6 +1243,7 @@ public type StockTransferDraftsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `CustomsGroups` entities returned by the SAP Business One Service Layer.
 public type CustomsGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1215,6 +1265,7 @@ public type GetInventoryPostingsQueries record {
 # OData EnumType 'RelatedDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 
+# A paged collection of `ItemGroups` entities returned by the SAP Business One Service Layer.
 public type ItemGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1223,6 +1274,7 @@ public type ItemGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `MaterialRevaluation` entity of the SAP Business One Service Layer.
 public type MaterialRevaluation record {
     int:Signed32 DocNum?;
     string DocDate?;
@@ -1275,6 +1327,7 @@ public type ListBatchNumberDetailsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `InventoryCountings` entities returned by the SAP Business One Service Layer.
 public type InventoryCountingsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1308,11 +1361,13 @@ public type ListInventoryGenEntriesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `InventoryTransferRequestsService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type InventoryTransferRequestsService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "StockTransfer"}
     StockTransfer stockTransfer?;
 };
 
+# The `SNBLines` complex type of the SAP Business One Service Layer.
 public type SNBLines record {|
     @jsondata:Name {value: "NewCost"}
     decimal newCost?;
@@ -1344,6 +1399,7 @@ public type GetLengthMeasuresQueries record {
     string dollarSelect?;
 };
 
+# The `MaterialRevaluationFIFOParams` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationFIFOParams record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -1355,16 +1411,19 @@ public type MaterialRevaluationFIFOParams record {|
     string locationType?;
 |};
 
+# Represents the request payload for the `StockTransferService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type StockTransferService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "StockTransfer"}
     StockTransfer stockTransfer?;
 };
 
+# Represents the request payload for the `MaterialRevaluationSNBService_GetList` operation of the SAP Business One Service Layer.
 public type MaterialRevaluationSNBService_GetList_body record {
     @jsondata:Name {value: "MaterialRevaluationSNBParam"}
     MaterialRevaluationSNBParam materialRevaluationSNBParam?;
 };
 
+# A paged collection of `AlternateCatNum` entities returned by the SAP Business One Service Layer.
 public type AlternateCatNumCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1401,6 +1460,7 @@ public type ListWeightMeasuresQueries record {
     string dollarSelect?;
 };
 
+# The `DocumentSpecialLine` complex type of the SAP Business One Service Layer.
 public type DocumentSpecialLine record {|
     @jsondata:Name {value: "SubtotalSC"}
     decimal subtotalSC?;
@@ -1456,6 +1516,7 @@ public type SourceCurrencyEnum "sc_PrimaryCurrency"|"sc_AdditionalCurrency1"|"sc
 # OData EnumType 'BoInterimDocTypes'. Serialised by the Service Layer as the member name
 public type BoInterimDocTypes "boidt_None"|"boidt_ExchangeRate"|"boidt_CashDiscount";
 
+# The `OriginalItemParams` complex type of the SAP Business One Service Layer.
 public type OriginalItemParams record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -1463,6 +1524,7 @@ public type OriginalItemParams record {|
     string itemName?;
 |};
 
+# The `InventoryPostingCopyOption` complex type of the SAP Business One Service Layer.
 public type InventoryPostingCopyOption record {|
     @jsondata:Name {value: "CopyOption"}
     InventoryPostingCopyOptionEnum copyOption?;
@@ -1473,6 +1535,7 @@ public type InventoryPostingCopyOption record {|
 # OData EnumType 'BoPriceListGroupNum'. Serialised by the Service Layer as the member name
 public type BoPriceListGroupNum "boplgn_Group1"|"boplgn_Group2"|"boplgn_Group3"|"boplgn_Group4";
 
+# The `UnitOfMeasurement` entity of the SAP Business One Service Layer.
 public type UnitOfMeasurement record {
     int:Signed32 AbsEntry?;
     string Code?;
@@ -1508,6 +1571,7 @@ public type UnitOfMeasurement record {
     UnitOfMeasurementGroup[] UnitOfMeasurementGroups?;
 };
 
+# The `InventoryPostingDraft` entity of the SAP Business One Service Layer.
 public type InventoryPostingDraft record {
     int:Signed32 DocumentEntry?;
     int:Signed32 DocumentNumber?;
@@ -1529,6 +1593,7 @@ public type InventoryPostingDraft record {
 # OData EnumType 'EWBSupplyTypeEnum'. Serialised by the Service Layer as the member name
 public type EWBSupplyTypeEnum "ewb_st_Inward"|"ewb_st_Outward";
 
+# A paged collection of `LengthMeasures` entities returned by the SAP Business One Service Layer.
 public type LengthMeasuresCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1537,6 +1602,7 @@ public type LengthMeasuresCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `InventoryPostingParams` complex type of the SAP Business One Service Layer.
 public type InventoryPostingParams record {|
     @jsondata:Name {value: "DocumentEntry"}
     int:Signed32 documentEntry?;
@@ -1547,6 +1613,7 @@ public type InventoryPostingParams record {|
 # OData EnumType 'StockTransferAuthorizationStatusEnum'. Serialised by the Service Layer as the member name
 public type StockTransferAuthorizationStatusEnum "sasWithout"|"sasPending"|"sasApproved"|"sasRejected"|"sasGenerated"|"sasGeneratedbyAuthorizer"|"sasCancelled";
 
+# The `InventoryOpeningBalance` entity of the SAP Business One Service Layer.
 public type InventoryOpeningBalance record {
     int:Signed32 DocumentEntry?;
     string PostingDate?;
@@ -1587,6 +1654,7 @@ public type GetWeightMeasuresQueries record {
 # OData EnumType 'BoProcurementMethod'. Serialised by the Service Layer as the member name
 public type BoProcurementMethod "bom_Buy"|"bom_Make";
 
+# A paged collection of `CycleCountDeterminations` entities returned by the SAP Business One Service Layer.
 public type CycleCountDeterminationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1595,6 +1663,7 @@ public type CycleCountDeterminationsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `MaterialRevaluationLine` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationLine record {
     int:Signed32 LineNum?;
     string ItemCode?;
@@ -1619,6 +1688,7 @@ public type MaterialRevaluationLine record {
     SNBLines[] SNBLinesCollection?;
 };
 
+# The `ItemUnitOfMeasurement` complex type of the SAP Business One Service Layer.
 public type ItemUnitOfMeasurement record {
     # OData EnumType 'ItemUoMTypeEnum'. Serialised by the Service Layer as the member name
     ItemUoMTypeEnum UoMType?;
@@ -1646,6 +1716,7 @@ public type ItemUnitOfMeasurement record {
     ItemUoMPackage[] ItemUoMPackageCollection?;
 };
 
+# The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer.
 public type DocumentLineAdditionalExpense record {
     int:Signed32 LineNumber?;
     int:Signed32 GroupCode?;
@@ -1712,6 +1783,7 @@ public type GetCustomsGroupsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `SpecialPrices` entities returned by the SAP Business One Service Layer.
 public type SpecialPricesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1726,6 +1798,7 @@ public type SpecialProductTypeEnum "sptMT"|"sptIO";
 # OData EnumType 'ImportOrExportTypeEnum'. Serialised by the Service Layer as the member name
 public type ImportOrExportTypeEnum "et_IpmortsOrExports"|"et_SEZ_Developer"|"et_SEZ_Unit"|"et_Deemed_ImportsOrExports";
 
+# The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxDataWTX record {
     decimal WTAmountSys?;
     decimal WTAmountFC?;
@@ -1761,6 +1834,7 @@ public type WithholdingTaxDataWTX record {
     decimal AccumWTaxAmount?;
 };
 
+# The `InventoryCountingBatchNumber` complex type of the SAP Business One Service Layer.
 public type InventoryCountingBatchNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -1813,6 +1887,7 @@ public type GetManufacturersQueries record {
 # OData EnumType 'BinRestrictTransactionEnum'. Serialised by the Service Layer as the member name
 public type BinRestrictTransactionEnum "brtNoRestrictions"|"brtAllTrans"|"brtInboundTrans"|"brtOutboundTrans"|"brtAllExceptInventoryTrans";
 
+# The `InventoryCountingDocumentReferences` complex type of the SAP Business One Service Layer.
 public type InventoryCountingDocumentReferences record {|
     @jsondata:Name {value: "ReferencedDocEntry"}
     int:Signed32 referencedDocEntry?;
@@ -1839,6 +1914,7 @@ public type ListStockTakingsHeaders record {
     string prefer?;
 };
 
+# The `ItemProject` complex type of the SAP Business One Service Layer.
 public type ItemProject record {|
     @jsondata:Name {value: "Project"}
     string project?;
@@ -1853,6 +1929,7 @@ public type ItemProject record {|
 # OData EnumType 'ItemTypeEnum'. Serialised by the Service Layer as the member name
 public type ItemTypeEnum "itItems"|"itLabor"|"itTravel"|"itFixedAssets";
 
+# The `BinLocationAttribute` entity of the SAP Business One Service Layer.
 public type BinLocationAttribute record {|
     @jsondata:Name {value: "BinLocationField"}
     BinLocationField binLocationField?;
@@ -1935,6 +2012,7 @@ public type ListBinLocationAttributesHeaders record {
     string prefer?;
 };
 
+# The `TrackingNoteItem` complex type of the SAP Business One Service Layer.
 public type TrackingNoteItem record {|
     @jsondata:Name {value: "ItemCCDNumber"}
     string itemCCDNumber?;
@@ -1968,6 +2046,7 @@ public type ListInventoryPostingDraftsHeaders record {
 # OData EnumType 'GSTTaxCategoryEnum'. Serialised by the Service Layer as the member name
 public type GSTTaxCategoryEnum "gtc_Regular"|"gtc_NilRated"|"gtc_Exempt";
 
+# The `Layer` complex type of the SAP Business One Service Layer.
 public type Layer record {|
     @jsondata:Name {value: "OpenQty"}
     decimal openQty?;
@@ -1985,6 +2064,7 @@ public type Layer record {|
     int:Signed32 transactionSequenceNum?;
 |};
 
+# The `InventoryOpeningBalanceCCDNumber` complex type of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceCCDNumber record {|
     @jsondata:Name {value: "CCDNumber"}
     string cCDNumber?;
@@ -2031,6 +2111,7 @@ public type ListCycleCountDeterminationsQueries record {
     string dollarSelect?;
 };
 
+# The `MaterialRevaluationSNBParam` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationSNBParam record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -2043,6 +2124,7 @@ public type ListItemGroupsHeaders record {
     string prefer?;
 };
 
+# The `ItemDepreciationParameter` complex type of the SAP Business One Service Layer.
 public type ItemDepreciationParameter record {|
     @jsondata:Name {value: "RemainingUnits"}
     int:Signed32 remainingUnits?;
@@ -2069,6 +2151,7 @@ public type ItemDepreciationParameter record {|
 # OData EnumType 'BoFrequency'. Serialised by the Service Layer as the member name
 public type BoFrequency "bof_Daily"|"bof_Weekly"|"bof_Every4Weeks"|"bof_Monthly"|"bof_Quarterly"|"bof_HalfYearly"|"bof_Annually"|"bof_OneTime"|"bof_EveryXDays";
 
+# A paged collection of `ShippingTypes` entities returned by the SAP Business One Service Layer.
 public type ShippingTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2122,6 +2205,7 @@ public type ListSpecialPricesHeaders record {
     string prefer?;
 };
 
+# The `InventoryCountingSerialNumber` complex type of the SAP Business One Service Layer.
 public type InventoryCountingSerialNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -2172,6 +2256,7 @@ public type ListBinLocationFieldsHeaders record {
     string prefer?;
 };
 
+# The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type DocExpenseTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -2188,6 +2273,7 @@ public type DocExpenseTaxJurisdiction record {
     decimal ExternalCalcTaxAmountSC?;
 };
 
+# The `BarCodeParams` complex type of the SAP Business One Service Layer.
 public type BarCodeParams record {|
     @jsondata:Name {value: "UoMEntry"}
     int:Signed32 uoMEntry?;
@@ -2205,6 +2291,7 @@ public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"
 # OData EnumType 'BinActionTypeEnum'. Serialised by the Service Layer as the member name
 public type BinActionTypeEnum "batToWarehouse"|"batFromWarehouse";
 
+# The `InventoryOpeningBalanceSerialNumber` complex type of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceSerialNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -2252,6 +2339,7 @@ public type GetSerialNumberDetailsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `InventoryPostingsService_SetCopyOption` operation of the SAP Business One Service Layer.
 public type InventoryPostingsService_SetCopyOption_body record {
     @jsondata:Name {value: "InventoryPostingCopyOption"}
     InventoryPostingCopyOption inventoryPostingCopyOption?;
@@ -2263,6 +2351,7 @@ public type BoGLMethods "glm_WH"|"glm_ItemClass"|"glm_ItemLevel";
 # OData EnumType 'ElecCommStatusEnum'. Serialised by the Service Layer as the member name
 public type ElecCommStatusEnum "ecsApproved"|"ecsPendingApproval"|"ecsRejected";
 
+# The `OriginalItem` complex type of the SAP Business One Service Layer.
 public type OriginalItem record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -2272,6 +2361,7 @@ public type OriginalItem record {|
     string itemName?;
 |};
 
+# The `DownPaymentToDraw` complex type of the SAP Business One Service Layer.
 public type DownPaymentToDraw record {|
     @jsondata:Name {value: "TaxFC"}
     decimal taxFC?;
@@ -2315,6 +2405,7 @@ public type DownPaymentToDraw record {|
     decimal amountToDrawFC?;
 |};
 
+# The `CustomsGroup` entity of the SAP Business One Service Layer.
 public type CustomsGroup record {
     int:Signed32 Code?;
     string Name?;
@@ -2332,6 +2423,7 @@ public type CustomsGroup record {
     Item[] Items?;
 };
 
+# A paged collection of `BinLocationAttributes` entities returned by the SAP Business One Service Layer.
 public type BinLocationAttributesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2343,6 +2435,7 @@ public type BinLocationAttributesCollectionResponse record {
 # OData EnumType 'EWBTransactionTypeEnum'. Serialised by the Service Layer as the member name
 public type EWBTransactionTypeEnum "ewb_tt_Regular"|"ewb_tt_BillToShipTo"|"ewb_tt_BillFromDispathFrom"|"ewb_tt_CombinationOfBillAndShip";
 
+# The `InventoryPostingBatchNumber` complex type of the SAP Business One Service Layer.
 public type InventoryPostingBatchNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -2379,6 +2472,7 @@ public type InventoryPostingBatchNumber record {|
 # OData EnumType 'BoManageMethod'. Serialised by the Service Layer as the member name
 public type BoManageMethod "bomm_OnEveryTransaction"|"bomm_OnReleaseOnly";
 
+# A paged collection of `InventoryGenEntries` entities returned by the SAP Business One Service Layer.
 public type InventoryGenEntriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2394,6 +2488,7 @@ public type ListMaterialRevaluationHeaders record {
     string prefer?;
 };
 
+# The `TeamCounter` complex type of the SAP Business One Service Layer.
 public type TeamCounter record {|
     @jsondata:Name {value: "CounterType"}
     CounterTypeEnum counterType?;
@@ -2409,12 +2504,14 @@ public type TeamCounter record {|
     int:Signed32 counterID?;
 |};
 
+# Represents the response payload for the `InventoryPostingsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_9 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     InventoryPostingParams[] value?;
 };
 
+# The `EBooksDetail` complex type of the SAP Business One Service Layer.
 public type EBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -2447,24 +2544,28 @@ public type GetWarehouseLocationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `CycleCountDeterminationsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CycleCountDeterminationParams[] value?;
 };
 
+# Represents the response payload for the `EnhancedDiscountGroupsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     EnhancedDiscountGroupParams[] value?;
 };
 
+# Represents the response payload for the `InventoryCountingsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     InventoryCountingParams[] value?;
 };
 
+# The `SpecialPrice` entity of the SAP Business One Service Layer.
 public type SpecialPrice record {
     string ItemCode?;
     string CardCode?;
@@ -2481,16 +2582,20 @@ public type SpecialPrice record {
     string ValidFrom?;
     string ValidTo?;
     SpecialPriceDataArea[] SpecialPriceDataAreas?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
+    # The `PriceList` entity of the SAP Business One Service Layer.
     PriceList PriceList?;
 };
 
+# Represents the response payload for the `InventoryOpeningBalancesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_8 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     InventoryOpeningBalanceParams[] value?;
 };
 
+# The `UoMPrice` complex type of the SAP Business One Service Layer.
 public type UoMPrice record {
     int:Signed32 PriceList?;
     int:Signed32 UoMEntry?;
@@ -2507,6 +2612,7 @@ public type UoMPrice record {
     BoYesNoEnum Auto?;
 };
 
+# The `CycleCountDeterminationParams` complex type of the SAP Business One Service Layer.
 public type CycleCountDeterminationParams record {|
     @jsondata:Name {value: "CycleBy"}
     int:Signed32 cycleBy?;
@@ -2514,6 +2620,7 @@ public type CycleCountDeterminationParams record {|
     string warehouseCode?;
 |};
 
+# The `WarehouseSublevelCodeParams` complex type of the SAP Business One Service Layer.
 public type WarehouseSublevelCodeParams record {|
     @jsondata:Name {value: "WarehouseSublevel"}
     int:Signed32 warehouseSublevel?;
@@ -2526,6 +2633,7 @@ public type WarehouseSublevelCodeParams record {|
 # OData EnumType 'GeneratedAssetStatusEnum'. Serialised by the Service Layer as the member name
 public type GeneratedAssetStatusEnum "gasOpen"|"gasClosed";
 
+# The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer.
 public type DocumentLinesBinAllocation record {
     int:Signed32 BinAbsEntry?;
     decimal Quantity?;
@@ -2542,18 +2650,21 @@ public type ListStockTransfersHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `BarCodesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BarCodeParams[] value?;
 };
 
+# Represents the response payload for the `BinLocationAttributesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BinLocationAttributeParams[] value?;
 };
 
+# The `UnitOfMeasurementParams` complex type of the SAP Business One Service Layer.
 public type UnitOfMeasurementParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
@@ -2561,12 +2672,14 @@ public type UnitOfMeasurementParams record {|
     string code?;
 |};
 
+# Represents the response payload for the `BinLocationFieldsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BinLocationFieldParams[] value?;
 };
 
+# Represents the response payload for the `BinLocationsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2596,6 +2709,7 @@ public type GetBatchNumberDetailsQueries record {
 # OData EnumType 'BoPickStatus'. Serialised by the Service Layer as the member name
 public type BoPickStatus "ps_Released"|"ps_Picked"|"ps_PartiallyPicked"|"ps_PartiallyDelivered"|"ps_Closed";
 
+# The `DocumentPackage` complex type of the SAP Business One Service Layer.
 public type DocumentPackage record {
     int:Signed32 Number?;
     string Type?;
@@ -2632,29 +2746,34 @@ public type ListBinLocationFieldsQueries record {
 # OData EnumType 'MultipleCounterRoleEnum'. Serialised by the Service Layer as the member name
 public type MultipleCounterRoleEnum "mcrTeamCounter"|"mcrIndividualCounter";
 
+# Represents the response payload for the `TrackingNotesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_11 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     TrackingNoteParams[] value?;
 };
 
+# Represents the request payload for the `InventoryGenExitService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type InventoryGenExitService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
 };
 
+# Represents the response payload for the `MaterialRevaluationSNBService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_10 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     MaterialRevaluationSNBParams[] value?;
 };
 
+# Represents the response payload for the `UnitOfMeasurementsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_13 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     UnitOfMeasurementParams[] value?;
 };
 
+# The `InventoryPostingCCDNumber` complex type of the SAP Business One Service Layer.
 public type InventoryPostingCCDNumber record {|
     @jsondata:Name {value: "CCDNumber"}
     string cCDNumber?;
@@ -2683,12 +2802,14 @@ public type ListPriceListsHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `UnitOfMeasurementGroupsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_12 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     UnitOfMeasurementGroupParams[] value?;
 };
 
+# The `ImportProcess` complex type of the SAP Business One Service Layer.
 public type ImportProcess record {|
     @jsondata:Name {value: "DateOfRegistry_DI_DSI_DA"}
     string dateOfRegistryDIDSIDA?;
@@ -2719,6 +2840,7 @@ public type ImportProcess record {|
 # OData EnumType 'InventoryPostingPriceSourceEnum'. Serialised by the Service Layer as the member name
 public type InventoryPostingPriceSourceEnum "ippsByPriceList"|"ippsLastEvaluatedPrice"|"ippsItemCost";
 
+# The `MaterialRevaluationDocumentReferences` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationDocumentReferences record {|
     @jsondata:Name {value: "ReferencedDocEntry"}
     int:Signed32 referencedDocEntry?;
@@ -2763,6 +2885,7 @@ public type ListAlternateCatNumQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `WarehouseSublevelCodesService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_14 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2789,6 +2912,7 @@ public type GetUnitOfMeasurementGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `TrackingNoteBroker` complex type of the SAP Business One Service Layer.
 public type TrackingNoteBroker record {|
     @jsondata:Name {value: "AgreementNumber"}
     int:Signed32 agreementNumber?;
@@ -2800,6 +2924,7 @@ public type TrackingNoteBroker record {|
     string bPCode?;
 |};
 
+# The `AlternativeItem` complex type of the SAP Business One Service Layer.
 public type AlternativeItem record {|
     @jsondata:Name {value: "MatchFactor"}
     decimal matchFactor?;
@@ -2809,6 +2934,7 @@ public type AlternativeItem record {|
     string alternativeItemCode?;
 |};
 
+# Represents the request payload for the `PickListsService_UpdateReleasedAllocation` operation of the SAP Business One Service Layer.
 public type PickListsService_UpdateReleasedAllocation_body record {
     @jsondata:Name {value: "PickList"}
     PickList pickList?;
@@ -2817,6 +2943,7 @@ public type PickListsService_UpdateReleasedAllocation_body record {
 # OData EnumType 'BinRestrictionBatchEnum'. Serialised by the Service Layer as the member name
 public type BinRestrictionBatchEnum "brbNoRestrictions"|"brbSingleBatch";
 
+# The `PriceList` entity of the SAP Business One Service Layer.
 public type PriceList record {
     # OData EnumType 'BoRoundingMethod'. Serialised by the Service Layer as the member name
     BoRoundingMethod RoundingMethod?;
@@ -2868,6 +2995,7 @@ public type PriceList record {
     Document[] PurchaseRequests?;
 };
 
+# A paged collection of `PickLists` entities returned by the SAP Business One Service Layer.
 public type PickListsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2886,6 +3014,7 @@ public type GetInventoryGenExitsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `ItemImages` entities returned by the SAP Business One Service Layer.
 public type ItemImagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2922,6 +3051,7 @@ public type ListBinLocationAttributesQueries record {
     string dollarSelect?;
 };
 
+# The `DocumentInstallment` complex type of the SAP Business One Service Layer.
 public type DocumentInstallment record {
     string DueDate?;
     decimal Percentage?;
@@ -2991,6 +3121,7 @@ public type ListItemGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `AlternateCatNum` entity of the SAP Business One Service Layer.
 public type AlternateCatNum record {
     string ItemCode?;
     string CardCode?;
@@ -3000,9 +3131,11 @@ public type AlternateCatNum record {
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum IsDefault?;
     string Description?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
 };
 
+# A paged collection of `TrackingNotes` entities returned by the SAP Business One Service Layer.
 public type TrackingNotesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3018,6 +3151,7 @@ public type ListInventoryCountingDraftsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `BarCodes` entities returned by the SAP Business One Service Layer.
 public type BarCodesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3026,6 +3160,7 @@ public type BarCodesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `LengthMeasure` entity of the SAP Business One Service Layer.
 public type LengthMeasure record {
     int:Signed32 UnitCode?;
     string UnitDisplay?;
@@ -3034,6 +3169,7 @@ public type LengthMeasure record {
     decimal UnitLengthinmm?;
 };
 
+# The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer.
 public type DocumentApprovalRequest record {|
     @jsondata:Name {value: "ActiveForUpdate"}
     BoYesNoEnum activeForUpdate?;
@@ -3045,6 +3181,7 @@ public type DocumentApprovalRequest record {|
     string approvalTemplatesName?;
 |};
 
+# The `Document` entity of the SAP Business One Service Layer.
 public type Document record {
     int:Signed32 DocEntry?;
     int:Signed32 DocNum?;
@@ -3397,7 +3534,9 @@ public type Document record {
     string AddressForReturn?;
     DocumentApprovalRequest[] Document_ApprovalRequests?;
     DocumentLine[] DocumentLines?;
+    # The `EWayBillDetails` complex type of the SAP Business One Service Layer.
     EWayBillDetails EWayBillDetails?;
+    # The `EDeliveryInfo` complex type of the SAP Business One Service Layer.
     EDeliveryInfo EDeliveryInfo?;
     ElectronicProtocol[] ElectronicProtocols?;
     DocumentAdditionalExpense[] DocumentAdditionalExpenses?;
@@ -3408,7 +3547,9 @@ public type Document record {
     DocumentSpecialLine[] DocumentSpecialLines?;
     DocumentInstallment[] DocumentInstallments?;
     DownPaymentToDraw[] DownPaymentsToDraw?;
+    # The `TaxExtension` complex type of the SAP Business One Service Layer.
     TaxExtension TaxExtension?;
+    # The `AddressExtension` complex type of the SAP Business One Service Layer.
     AddressExtension AddressExtension?;
     DocumentReference[] DocumentReferences?;
     DocumentAdditionalIntrastatExpense[] DocumentAdditionalIntrastatExpenses?;
@@ -3427,7 +3568,9 @@ public type Document record {
     string RoutingCode?;
     string Suffix?;
     int:Signed32 SOIWizardId?;
+    # The `ShippingType` entity of the SAP Business One Service Layer.
     ShippingType ShippingType?;
+    # The `PriceList` entity of the SAP Business One Service Layer.
     PriceList PriceList?;
 };
 
@@ -3441,6 +3584,7 @@ public type GetBinLocationAttributesQueries record {
     string dollarSelect?;
 };
 
+# The `TrackingNote` entity of the SAP Business One Service Layer.
 public type TrackingNote record {|
     @jsondata:Name {value: "CCDNumber"}
     string cCDNumber?;
@@ -3460,6 +3604,7 @@ public type TrackingNote record {|
     string date?;
 |};
 
+# The `BinLocation` entity of the SAP Business One Service Layer.
 public type BinLocation record {
     int:Signed32 AbsEntry?;
     string Warehouse?;
@@ -3510,11 +3655,17 @@ public type BinLocation record {
     int:Signed32 SpecificUoM?;
     int:Signed32 SpecificUoMGroup?;
     Warehouse[] Warehouses?;
+    # The `Warehouse` entity of the SAP Business One Service Layer.
     Warehouse Warehouse2?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
+    # The `ItemGroups` entity of the SAP Business One Service Layer.
     ItemGroups ItemGroups?;
+    # The `WeightMeasure` entity of the SAP Business One Service Layer.
     WeightMeasure WeightMeasure?;
+    # The `UnitOfMeasurement` entity of the SAP Business One Service Layer.
     UnitOfMeasurement UnitOfMeasurement?;
+    # The `UnitOfMeasurementGroup` entity of the SAP Business One Service Layer.
     UnitOfMeasurementGroup UnitOfMeasurementGroup?;
 };
 
@@ -3563,6 +3714,7 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
+# The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer.
 public type LineFreightEBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -3591,6 +3743,7 @@ public type ListManufacturersHeaders record {
 # OData EnumType 'BoCorInvItemStatus'. Serialised by the Service Layer as the member name
 public type BoCorInvItemStatus "ciis_Was"|"ciis_ShouldBe";
 
+# The `ItemProperty` entity of the SAP Business One Service Layer.
 public type ItemProperty record {
     int:Signed32 Number?;
     string PropertyName?;
@@ -3624,6 +3777,7 @@ public type ListManufacturersQueries record {
     string dollarSelect?;
 };
 
+# The `TrackingNoteParams` complex type of the SAP Business One Service Layer.
 public type TrackingNoteParams record {|
     @jsondata:Name {value: "CCDNumber"}
     string cCDNumber?;
@@ -3641,6 +3795,7 @@ public type GetInventoryOpeningBalancesQueries record {
     string dollarSelect?;
 };
 
+# The `MaterialRevaluationSNBParams` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationSNBParams record {|
     @jsondata:Name {value: "NewCost"}
     decimal newCost?;
@@ -3663,6 +3818,7 @@ public type MaterialRevaluationSNBParams record {|
 # OData EnumType 'BoDocumentSubType'. Serialised by the Service Layer as the member name
 public type BoDocumentSubType "bod_None"|"bod_InvoiceExempt"|"bod_DebitMemo"|"bod_Bill"|"bod_ExemptBill"|"bod_PurchaseDebitMemo"|"bod_ExportInvoice"|"bod_GSTTaxInvoice"|"bod_GSTDebitMemo"|"bod_RefundVoucher";
 
+# A paged collection of `PriceLists` entities returned by the SAP Business One Service Layer.
 public type PriceListsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3671,6 +3827,7 @@ public type PriceListsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AttributeGroupLine` complex type of the SAP Business One Service Layer.
 public type AttributeGroupLine record {|
     @jsondata:Name {value: "DefaultValue"}
     string defaultValue?;
@@ -3686,6 +3843,7 @@ public type AttributeGroupLine record {|
     AttributeGroupFieldTypeEnum fieldType?;
 |};
 
+# The `IndividualCounter` complex type of the SAP Business One Service Layer.
 public type IndividualCounter record {|
     @jsondata:Name {value: "CounterType"}
     CounterTypeEnum counterType?;
@@ -3701,6 +3859,7 @@ public type IndividualCounter record {|
     int:Signed32 counterID?;
 |};
 
+# The `DocumentLine` complex type of the SAP Business One Service Layer.
 public type DocumentLine record {
     int:Signed32 LineNum?;
     string ItemCode?;
@@ -3978,6 +4137,7 @@ public type DocumentLine record {
     ImportProcess[] ImportProcesses?;
 };
 
+# The `InventoryCountingLineUoM` complex type of the SAP Business One Service Layer.
 public type InventoryCountingLineUoM record {
     int:Signed32 DocumentEntry?;
     int:Signed32 LineNumber?;
@@ -3994,6 +4154,7 @@ public type InventoryCountingLineUoM record {
     MultipleCounterRoleEnum MultipleCounterRole?;
 };
 
+# The `ExportProcess` complex type of the SAP Business One Service Layer.
 public type ExportProcess record {|
     @jsondata:Name {value: "LadingBillTypeCode"}
     int:Signed32 ladingBillTypeCode?;
@@ -4090,6 +4251,7 @@ public type ListInventoryCountingDraftsQueries record {
     string dollarSelect?;
 };
 
+# The `ItemBarCode` complex type of the SAP Business One Service Layer.
 public type ItemBarCode record {
     int:Signed32 AbsEntry?;
     int:Signed32 UoMEntry?;
@@ -4097,6 +4259,7 @@ public type ItemBarCode record {
     string FreeText?;
 };
 
+# The `StockTransferLine` complex type of the SAP Business One Service Layer.
 public type StockTransferLine record {
     int:Signed32 LineNum?;
     int:Signed32 DocEntry?;
@@ -4158,6 +4321,7 @@ public type GetItemGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `MaterialRevaluationFIFO` complex type of the SAP Business One Service Layer.
 public type MaterialRevaluationFIFO record {|
     @jsondata:Name {value: "Layers"}
     Layer[] layers?;
@@ -4182,6 +4346,7 @@ public type GetItemsQueries record {
 # OData EnumType 'BoSoStatus'. Serialised by the Service Layer as the member name
 public type BoSoStatus "so_Open"|"so_Closed";
 
+# A paged collection of `InventoryOpeningBalances` entities returned by the SAP Business One Service Layer.
 public type InventoryOpeningBalancesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4196,6 +4361,7 @@ public type ReferencedObjectTypeEnum "rot_ExternalDocument"|"rot_SalesQuotation"
 # OData EnumType 'EDocTypeEnum'. Serialised by the Service Layer as the member name
 public type EDocTypeEnum "edocFE"|"edocFCE";
 
+# A paged collection of `Warehouses` entities returned by the SAP Business One Service Layer.
 public type WarehousesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4204,11 +4370,13 @@ public type WarehousesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO` operation of the SAP Business One Service Layer.
 public type MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO_body record {
     @jsondata:Name {value: "MaterialRevaluationFIFOParams"}
     MaterialRevaluationFIFOParams materialRevaluationFIFOParams?;
 };
 
+# The `UnitOfMeasurementGroup` entity of the SAP Business One Service Layer.
 public type UnitOfMeasurementGroup record {|
     @jsondata:Name {value: "ItemGroups"}
     ItemGroups[] itemGroups?;
@@ -4230,6 +4398,7 @@ public type UnitOfMeasurementGroup record {|
     string name?;
 |};
 
+# The `CycleCountDeterminationSetup` complex type of the SAP Business One Service Layer.
 public type CycleCountDeterminationSetup record {|
     @jsondata:Name {value: "ExcludeItemsWithZeroQuantity"}
     BoYesNoEnum excludeItemsWithZeroQuantity?;
@@ -4254,6 +4423,7 @@ public type CycleCountDeterminationSetup record {|
 # OData EnumType 'BoDocLineType'. Serialised by the Service Layer as the member name
 public type BoDocLineType "dlt_Regular"|"dlt_Alternative"|"dlt_Resource";
 
+# The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type LineExpenseTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -4270,6 +4440,7 @@ public type LineExpenseTaxJurisdiction record {
     decimal ExternalCalcTaxAmountSC?;
 };
 
+# Represents the request payload for the `InventoryGenEntryService_CloseByDate` operation of the SAP Business One Service Layer.
 public type InventoryGenEntryService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
@@ -4282,6 +4453,7 @@ public type ListBarCodesHeaders record {
     string prefer?;
 };
 
+# The `GeneratedAsset` complex type of the SAP Business One Service Layer.
 public type GeneratedAsset record {|
     @jsondata:Name {value: "Status"}
     GeneratedAssetStatusEnum status?;
@@ -4333,6 +4505,7 @@ public type ListInventoryTransferRequestsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `Items` entities returned by the SAP Business One Service Layer.
 public type ItemsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4341,6 +4514,7 @@ public type ItemsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `InventoryCountingParams` complex type of the SAP Business One Service Layer.
 public type InventoryCountingParams record {|
     @jsondata:Name {value: "DocumentEntry"}
     int:Signed32 documentEntry?;
@@ -4348,6 +4522,7 @@ public type InventoryCountingParams record {|
     int:Signed32 documentNumber?;
 |};
 
+# The `WithholdingTaxData` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxData record {
     string WTCode?;
     decimal WTAmountSys?;
@@ -4412,6 +4587,7 @@ public type GetInventoryOpeningBalanceDraftsQueries record {
     string dollarSelect?;
 };
 
+# The `WarehouseSublevelCode` entity of the SAP Business One Service Layer.
 public type WarehouseSublevelCode record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -4438,6 +4614,7 @@ public type GetWarehouseSublevelCodesQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BinLocationFields` entities returned by the SAP Business One Service Layer.
 public type BinLocationFieldsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4459,6 +4636,7 @@ public type GetSpecialPricesQueries record {
 # OData EnumType 'BinRestrictUoMEnum'. Serialised by the Service Layer as the member name
 public type BinRestrictUoMEnum "bruNone"|"bruSpecificUoM"|"bruSingleUoMOnly"|"bruSpecificUoMGroup"|"bruSpecificUoMGroupOnly";
 
+# The `ItemUoMPackage` complex type of the SAP Business One Service Layer.
 public type ItemUoMPackage record {
     # OData EnumType 'ItemUoMTypeEnum'. Serialised by the Service Layer as the member name
     ItemUoMTypeEnum UoMType?;
@@ -4485,6 +4663,7 @@ public type ItemUoMPackage record {
     decimal QuantityPerPackage?;
 };
 
+# The `PickListsLine` complex type of the SAP Business One Service Layer.
 public type PickListsLine record {
     int:Signed32 AbsoluteEntry?;
     int:Signed32 LineNumber?;
@@ -4513,6 +4692,7 @@ public type BoServicePaymentMethods "spmAccreditedToBankAccount"|"spmBankTransfe
 # OData EnumType 'DiscountGroupTypeEnum'. Serialised by the Service Layer as the member name
 public type DiscountGroupTypeEnum "dgt_AllBPs"|"dgt_CustomerGroup"|"dgt_VendorGroup"|"dgt_SpecificBP";
 
+# The `RelatedDocument` complex type of the SAP Business One Service Layer.
 public type RelatedDocument record {|
     @jsondata:Name {value: "AbsEnry"}
     int:Signed32 absEnry?;
@@ -4526,6 +4706,7 @@ public type RelatedDocument record {|
     RelatedDocumentTypeEnum docType?;
 |};
 
+# A paged collection of `ItemProperties` entities returned by the SAP Business One Service Layer.
 public type ItemPropertiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4537,6 +4718,7 @@ public type ItemPropertiesCollectionResponse record {
 # OData EnumType 'BoStatus'. Serialised by the Service Layer as the member name
 public type BoStatus "bost_Open"|"bost_Close"|"bost_Paid"|"bost_Delivered";
 
+# The `ItemDistributionRule` complex type of the SAP Business One Service Layer.
 public type ItemDistributionRule record {|
     @jsondata:Name {value: "DistributionRule"}
     string distributionRule?;
@@ -4559,6 +4741,7 @@ public type ItemDistributionRule record {|
 # OData EnumType 'RepeatOptionEnum'. Serialised by the Service Layer as the member name
 public type RepeatOptionEnum "roByDate"|"roByWeekDay";
 
+# The `AddressExtension` complex type of the SAP Business One Service Layer.
 public type AddressExtension record {
     string ShipToStreet?;
     string ShipToStreetNo?;
@@ -4659,11 +4842,13 @@ public type ListStockTransfersQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `AlternativeItemsService_UpdateItem` operation of the SAP Business One Service Layer.
 public type AlternativeItemsService_UpdateItem_body record {
     @jsondata:Name {value: "OriginalItem"}
     OriginalItem originalItem?;
 };
 
+# The `TaxExtension` complex type of the SAP Business One Service Layer.
 public type TaxExtension record {|
     @jsondata:Name {value: "BuildingS"}
     string buildingS?;
@@ -4781,6 +4966,7 @@ public type TaxExtension record {|
     string incoterms?;
 |};
 
+# A paged collection of `InventoryCountingDrafts` entities returned by the SAP Business One Service Layer.
 public type InventoryCountingDraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4789,6 +4975,7 @@ public type InventoryCountingDraftsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `InventoryPostingDocumentReferences` complex type of the SAP Business One Service Layer.
 public type InventoryPostingDocumentReferences record {|
     @jsondata:Name {value: "ReferencedDocEntry"}
     int:Signed32 referencedDocEntry?;
@@ -4808,11 +4995,13 @@ public type InventoryPostingDocumentReferences record {|
     string remark?;
 |};
 
+# Represents the request payload for the `ItemGroupsService_UpdateWithOITMs` operation of the SAP Business One Service Layer.
 public type ItemGroupsService_UpdateWithOITMs_body record {
     @jsondata:Name {value: "ItemGroups"}
     ItemGroups itemGroups?;
 };
 
+# The `InventoryCounting` entity of the SAP Business One Service Layer.
 public type InventoryCounting record {
     int:Signed32 DocumentEntry?;
     int:Signed32 DocumentNumber?;
@@ -4847,6 +5036,7 @@ public type ListInventoryOpeningBalanceDraftsHeaders record {
     string prefer?;
 };
 
+# The `Warehouse` entity of the SAP Business One Service Layer.
 public type Warehouse record {
     string Street?;
     string StockInflationOffsetAccount?;
@@ -4953,7 +5143,9 @@ public type Warehouse record {
     string AddressName2?;
     string AddressName3?;
     StockTransfer[] StockTransfers?;
+    # The `WarehouseLocation` entity of the SAP Business One Service Layer.
     WarehouseLocation WarehouseLocation?;
+    # The `BinLocation` entity of the SAP Business One Service Layer.
     BinLocation BinLocation?;
     BinLocation[] BinLocations?;
     StockTaking[] StockTakings?;
@@ -4961,6 +5153,7 @@ public type Warehouse record {
     StockTransfer[] StockTransferDrafts?;
 };
 
+# The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer.
 public type DocumentAdditionalExpense record {
     int:Signed32 ExpenseCode?;
     decimal LineTotal?;
@@ -5068,6 +5261,7 @@ public type ListTrackingNotesHeaders record {
     string prefer?;
 };
 
+# A paged collection of `AttributeGroups` entities returned by the SAP Business One Service Layer.
 public type AttributeGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5076,6 +5270,7 @@ public type AttributeGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `UnitOfMeasurements` entities returned by the SAP Business One Service Layer.
 public type UnitOfMeasurementsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5118,6 +5313,7 @@ public type ListAttributeGroupsQueries record {
 # OData EnumType 'InvBaseDocTypeEnum'. Serialised by the Service Layer as the member name
 public type InvBaseDocTypeEnum "Default"|"Empty"|"PurchaseDeliveryNotes"|"InventoryGeneralEntry"|"WarehouseTransfers"|"InventoryTransferRequest";
 
+# A paged collection of `SerialNumberDetails` entities returned by the SAP Business One Service Layer.
 public type SerialNumberDetailsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5133,6 +5329,7 @@ public type ListUnitOfMeasurementsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `StockTakings` entities returned by the SAP Business One Service Layer.
 public type StockTakingsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5179,6 +5376,7 @@ public type GetInventoryCountingDraftsQueries record {
     string dollarSelect?;
 };
 
+# The `ItemAttributeGroups` complex type of the SAP Business One Service Layer.
 public type ItemAttributeGroups record {|
     @jsondata:Name {value: "Attribute41"}
     int:Signed32 attribute41?;
@@ -5310,6 +5508,7 @@ public type ItemAttributeGroups record {|
     decimal attribute48?;
 |};
 
+# The `ItemPeriodControl` complex type of the SAP Business One Service Layer.
 public type ItemPeriodControl record {|
     @jsondata:Name {value: "FiscalYear"}
     string fiscalYear?;
@@ -5325,6 +5524,7 @@ public type ItemPeriodControl record {|
     int:Signed32 actualUnits?;
 |};
 
+# The `CCDNumber` complex type of the SAP Business One Service Layer.
 public type CCDNumber record {
     int:Signed32 TrackingNote?;
     int:Signed32 TrackingNoteLine?;
@@ -5337,6 +5537,7 @@ public type CCDNumber record {
     int:Signed32 ChildNumber?;
 };
 
+# The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer.
 public type DownPaymentToDrawDetails record {|
     @jsondata:Name {value: "SeqNum"}
     int:Signed32 seqNum?;
@@ -5376,6 +5577,7 @@ public type DownPaymentToDrawDetails record {|
     decimal amountToDrawFC?;
 |};
 
+# The `BatchNumberDetail` entity of the SAP Business One Service Layer.
 public type BatchNumberDetail record {
     int:Signed32 DocEntry?;
     string ItemCode?;
@@ -5390,6 +5592,7 @@ public type BatchNumberDetail record {
     string ExpirationDate?;
     string Details?;
     int:Signed32 SystemNumber?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
 };
 
@@ -5418,6 +5621,7 @@ public type ListSerialNumberDetailsQueries record {
     string dollarSelect?;
 };
 
+# The `InventoryPostingSerialNumber` complex type of the SAP Business One Service Layer.
 public type InventoryPostingSerialNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -5493,6 +5697,7 @@ public type ReceivingUpToMethodEnum "rutmBothMaxQtyAndWeight"|"rutmMaximumQty"|"
 # OData EnumType 'DownPaymentTypeEnum'. Serialised by the Service Layer as the member name
 public type DownPaymentTypeEnum "dptRequest"|"dptInvoice";
 
+# The `WithholdingTaxLine` complex type of the SAP Business One Service Layer.
 public type WithholdingTaxLine record {
     string WTCode?;
     decimal WTAmountSys?;
@@ -5525,6 +5730,7 @@ public type WithholdingTaxLine record {
     int:Signed32 Doc1LineNum?;
 };
 
+# A paged collection of `InventoryGenExits` entities returned by the SAP Business One Service Layer.
 public type InventoryGenExitsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5533,6 +5739,7 @@ public type InventoryGenExitsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ItemGroupsWarehouseInfo` complex type of the SAP Business One Service Layer.
 public type ItemGroupsWarehouseInfo record {|
     @jsondata:Name {value: "DefaultBin"}
     int:Signed32 defaultBin?;
@@ -5607,6 +5814,7 @@ public type ListUnitOfMeasurementGroupsQueries record {
 # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
+# The `Item` entity of the SAP Business One Service Layer.
 public type Item record {
     string ItemCode?;
     string ItemName?;
@@ -6010,14 +6218,23 @@ public type Item record {
     ItemPeriodControl[] ItemPeriodControls?;
     ItemUnitOfMeasurement[] ItemUnitOfMeasurementCollection?;
     ItemBarCode[] ItemBarCodeCollection?;
+    # The `ItemIntrastatExtension` complex type of the SAP Business One Service Layer.
     ItemIntrastatExtension ItemIntrastatExtension?;
+    # The `ItemGroups` entity of the SAP Business One Service Layer.
     ItemGroups ItemGroups?;
+    # The `CustomsGroup` entity of the SAP Business One Service Layer.
     CustomsGroup CustomsGroup?;
+    # The `Manufacturer` entity of the SAP Business One Service Layer.
     Manufacturer Manufacturer2?;
+    # The `ShippingType` entity of the SAP Business One Service Layer.
     ShippingType ShippingType?;
+    # The `InventoryCycles` entity of the SAP Business One Service Layer.
     InventoryCycles InventoryCycles?;
+    # The `WarehouseLocation` entity of the SAP Business One Service Layer.
     WarehouseLocation WarehouseLocation?;
+    # The `UnitOfMeasurementGroup` entity of the SAP Business One Service Layer.
     UnitOfMeasurementGroup UnitOfMeasurementGroup?;
+    # The `UnitOfMeasurement` entity of the SAP Business One Service Layer.
     UnitOfMeasurement UnitOfMeasurement?;
     BinLocation[] BinLocations?;
     AlternateCatNum[] AlternateCatNum?;
@@ -6028,6 +6245,7 @@ public type Item record {
     BatchNumberDetail[] BatchNumberDetails?;
 };
 
+# The `PackagesType` entity of the SAP Business One Service Layer.
 public type PackagesType record {
     string Type?;
     int:Signed32 Code?;
@@ -6064,6 +6282,7 @@ public type GetUnitOfMeasurementsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `EnhancedDiscountGroups` entities returned by the SAP Business One Service Layer.
 public type EnhancedDiscountGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6072,6 +6291,7 @@ public type EnhancedDiscountGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `DocumentPackageItem` complex type of the SAP Business One Service Layer.
 public type DocumentPackageItem record {
     int:Signed32 PackageNumber?;
     string ItemCode?;
@@ -6084,6 +6304,7 @@ public type DocumentPackageItem record {
 # OData EnumType 'IssuePrimarilyByEnum'. Serialised by the Service Layer as the member name
 public type IssuePrimarilyByEnum "ipbSerialAndBatchNumbers"|"ipbBinLocations";
 
+# A paged collection of `InventoryOpeningBalanceDrafts` entities returned by the SAP Business One Service Layer.
 public type InventoryOpeningBalanceDraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6109,6 +6330,7 @@ public type GetBinLocationFieldsQueries record {
     string dollarSelect?;
 };
 
+# The `StockTransfer_ApprovalRequest` complex type of the SAP Business One Service Layer.
 public type StockTransferApprovalRequest record {|
     @jsondata:Name {value: "ActiveForUpdate"}
     BoYesNoEnum activeForUpdate?;
@@ -6120,6 +6342,7 @@ public type StockTransferApprovalRequest record {|
     string approvalTemplatesName?;
 |};
 
+# The `UoMGroupDefinition` complex type of the SAP Business One Service Layer.
 public type UoMGroupDefinition record {|
     @jsondata:Name {value: "WeightFactor"}
     int:Signed32 weightFactor?;
@@ -6164,6 +6387,7 @@ public type ListInventoryCountingsQueries record {
     string dollarSelect?;
 };
 
+# The `ItemPrice` complex type of the SAP Business One Service Layer.
 public type ItemPrice record {
     int:Signed32 PriceList?;
     decimal Price?;
@@ -6205,6 +6429,7 @@ public type ListPickListsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `UnitOfMeasurementGroups` entities returned by the SAP Business One Service Layer.
 public type UnitOfMeasurementGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6213,6 +6438,7 @@ public type UnitOfMeasurementGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `InventoryOpeningBalanceDraft` entity of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceDraft record {
     int:Signed32 DocumentEntry?;
     int:Signed32 DocumentNumber?;
@@ -6245,6 +6471,7 @@ public type ListWarehouseSublevelCodesQueries record {
     string dollarSelect?;
 };
 
+# The `StockTransferLinesBinAllocation` complex type of the SAP Business One Service Layer.
 public type StockTransferLinesBinAllocation record {
     int:Signed32 BinAbsEntry?;
     decimal Quantity?;
@@ -6256,6 +6483,7 @@ public type StockTransferLinesBinAllocation record {
     int:Signed32 BaseLineNumber?;
 };
 
+# Represents the request payload for the `InventoryGenEntryService_ApproveAndUpdate` operation of the SAP Business One Service Layer.
 public type InventoryGenEntryService_ApproveAndUpdate_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -6277,6 +6505,7 @@ public type ListItemPropertiesHeaders record {
     string prefer?;
 };
 
+# The `DocLinePickList` complex type of the SAP Business One Service Layer.
 public type DocLinePickList record {|
     @jsondata:Name {value: "PickListLineNum"}
     int:Signed32 pickListLineNum?;
@@ -6286,6 +6515,7 @@ public type DocLinePickList record {|
     int:Signed32 pickListEntry?;
 |};
 
+# The `ElectronicProtocol` complex type of the SAP Business One Service Layer.
 public type ElectronicProtocol record {
     # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
@@ -6336,6 +6566,7 @@ public type ElectronicProtocol record {
 # OData EnumType 'DocumentDeliveryTypeEnum'. Serialised by the Service Layer as the member name
 public type DocumentDeliveryTypeEnum "ddtNoneSeleted"|"ddtCreateOnlineDocument"|"ddtPostToAribaNetwork";
 
+# The `EWayBillDetails` complex type of the SAP Business One Service Layer.
 public type EWayBillDetails record {|
     @jsondata:Name {value: "BillFromName"}
     string billFromName?;
@@ -6409,6 +6640,7 @@ public type EWayBillDetails record {|
     string eWayBillDate?;
 |};
 
+# The `ItemWarehouseInfo` complex type of the SAP Business One Service Layer.
 public type ItemWarehouseInfo record {
     decimal MinimalStock?;
     decimal MaximalStock?;
@@ -6508,6 +6740,7 @@ public type GetBinLocationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `StockTransferDraftService_GetApprovalTemplates` operation of the SAP Business One Service Layer.
 public type StockTransferDraftService_GetApprovalTemplates_body record {
     @jsondata:Name {value: "StockTransfer"}
     StockTransfer stockTransfer?;
@@ -6548,6 +6781,7 @@ public type ListAttributeGroupsHeaders record {
 # OData EnumType 'CommissionTradeTypeEnum'. Serialised by the Service Layer as the member name
 public type CommissionTradeTypeEnum "ct_Empty"|"ct_SalesAgent"|"ct_PurchaseAgent"|"ct_Consignor";
 
+# The `AttributeGroup` entity of the SAP Business One Service Layer.
 public type AttributeGroup record {|
     @jsondata:Name {value: "Locked"}
     BoYesNoEnum locked?;
@@ -6559,6 +6793,7 @@ public type AttributeGroup record {|
     string name?;
 |};
 
+# A paged collection of `StockTransfers` entities returned by the SAP Business One Service Layer.
 public type StockTransfersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6574,6 +6809,7 @@ public type ListWeightMeasuresHeaders record {
     string prefer?;
 };
 
+# The `DiscountGroupLine` complex type of the SAP Business One Service Layer.
 public type DiscountGroupLine record {|
     @jsondata:Name {value: "FreeQuantity"}
     decimal freeQuantity?;
@@ -6596,6 +6832,7 @@ public type DiscountGroupLine record {|
 # OData EnumType 'TransTypesEnum'. Serialised by the Service Layer as the member name
 public type TransTypesEnum "ttAllTransactions"|"ttOpeningBalance"|"ttClosingBalance"|"ttARInvoice"|"ttARCredItnote"|"ttDelivery"|"ttReturn"|"ttAPInvoice"|"ttAPCreditNote"|"ttPurchaseDeliveryNote"|"ttPurchaseReturn"|"ttReceipt"|"ttDeposit"|"ttJournalEntry"|"ttVendorPayment"|"ttChequesForPayment"|"ttStockList"|"ttGeneralReceiptToStock"|"ttGeneralReleaseFromStock"|"ttTransferBetweenWarehouses"|"ttWorkInstructions"|"ttLandedCosts"|"ttDeferredDeposit"|"ttCorrectionInvoice"|"ttInventoryValuation"|"ttAPCorrectionInvoice"|"ttAPCorrectionInvoiceReversal"|"ttARCorrectionInvoice"|"ttARCorrectionInvoiceReversal"|"ttBoETransaction"|"ttProductionOrder"|"ttDownPayment"|"ttPurchaseDownPayment"|"ttInternalReconciliation"|"ttInventoryPosting"|"ttInventoryOpeningBalance";
 
+# The `ItemImage` entity of the SAP Business One Service Layer.
 public type ItemImage record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -6638,6 +6875,7 @@ public type ListItemsQueries record {
     string dollarSelect?;
 };
 
+# The `InventoryCycles` entity of the SAP Business One Service Layer.
 public type InventoryCycles record {
     int:Signed32 CycleCode?;
     string CycleName?;
@@ -6764,6 +7002,7 @@ public type ListItemPropertiesQueries record {
     string dollarSelect?;
 };
 
+# The `ItemGroups` entity of the SAP Business One Service Layer.
 public type ItemGroups record {
     string PriceDifferencesAccount?;
     string StockInflationAdjustAccount?;
@@ -6836,8 +7075,11 @@ public type ItemGroups record {
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum RawMaterial?;
     ItemGroupsWarehouseInfo[] ItemGroupsWarehouseInfos?;
+    # The `InventoryCycles` entity of the SAP Business One Service Layer.
     InventoryCycles InventoryCycles?;
+    # The `UnitOfMeasurementGroup` entity of the SAP Business One Service Layer.
     UnitOfMeasurementGroup UnitOfMeasurementGroup?;
+    # The `UnitOfMeasurement` entity of the SAP Business One Service Layer.
     UnitOfMeasurement UnitOfMeasurement?;
     Item[] Items?;
     BinLocation[] BinLocations?;
@@ -6868,6 +7110,7 @@ public type ListInventoryGenExitsQueries record {
     string dollarSelect?;
 };
 
+# The `BinLocationField` entity of the SAP Business One Service Layer.
 public type BinLocationField record {|
     @jsondata:Name {value: "FieldNumber"}
     int:Signed32 fieldNumber?;
@@ -6887,12 +7130,14 @@ public type BinLocationField record {|
     string name?;
 |};
 
+# The `Manufacturer` entity of the SAP Business One Service Layer.
 public type Manufacturer record {
     int:Signed32 Code?;
     string ManufacturerName?;
     Item[] Items?;
 };
 
+# Represents the request payload for the `InventoryGenExitService_CloseByDate` operation of the SAP Business One Service Layer.
 public type InventoryGenExitService_CloseByDate_body record {
     @jsondata:Name {value: "DocumentCloseParams"}
     DocumentCloseParams documentCloseParams?;
@@ -6901,6 +7146,7 @@ public type InventoryGenExitService_CloseByDate_body record {
 # OData EnumType 'DiscountGroupBaseObjectEnum'. Serialised by the Service Layer as the member name
 public type DiscountGroupBaseObjectEnum "dgboNone"|"dgboItemGroups"|"dgboItemProperties"|"dgboManufacturer"|"dgboItems";
 
+# A paged collection of `InventoryCycles` entities returned by the SAP Business One Service Layer.
 public type InventoryCyclesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6909,6 +7155,7 @@ public type InventoryCyclesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `StockTransferTaxExtension` complex type of the SAP Business One Service Layer.
 public type StockTransferTaxExtension record {
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum SupportVAT?;
@@ -6929,6 +7176,7 @@ public type GetStockTransferDraftsQueries record {
 # OData EnumType 'BoObjectTypes'. Serialised by the Service Layer as the member name
 public type BoObjectTypes "oChartOfAccounts"|"oBusinessPartners"|"oBanks"|"oItems"|"oVatGroups"|"oPriceLists"|"oSpecialPrices"|"oItemProperties"|"oBusinessPartnerGroups"|"oUsers"|"oInvoices"|"oCreditNotes"|"oDeliveryNotes"|"oReturns"|"oOrders"|"oPurchaseInvoices"|"oPurchaseCreditNotes"|"oPurchaseDeliveryNotes"|"oPurchaseReturns"|"oPurchaseOrders"|"oQuotations"|"oIncomingPayments"|"oJournalVouchers"|"oJournalEntries"|"oStockTakings"|"oContacts"|"oCreditCards"|"oCurrencyCodes"|"oPaymentTermsTypes"|"oBankPages"|"oManufacturers"|"oVendorPayments"|"oLandedCostsCodes"|"oShippingTypes"|"oLengthMeasures"|"oWeightMeasures"|"oItemGroups"|"oSalesPersons"|"oCustomsGroups"|"oChecksforPayment"|"oInventoryGenEntry"|"oInventoryGenExit"|"oWarehouses"|"oCommissionGroups"|"oProductTrees"|"oStockTransfer"|"oWorkOrders"|"oCreditPaymentMethods"|"oCreditCardPayments"|"oAlternateCatNum"|"oBudget"|"oBudgetDistribution"|"oMessages"|"oBudgetScenarios"|"oUserDefaultGroups"|"oSalesOpportunities"|"oSalesStages"|"oActivityTypes"|"oActivityLocations"|"oDrafts"|"oDeductionTaxHierarchies"|"oDeductionTaxGroups"|"oAdditionalExpenses"|"oSalesTaxAuthorities"|"oSalesTaxAuthoritiesTypes"|"oSalesTaxCodes"|"oQueryCategories"|"oFactoringIndicators"|"oPaymentsDrafts"|"oAccountSegmentations"|"oAccountSegmentationCategories"|"oWarehouseLocations"|"oForms1099"|"oInventoryCycles"|"oWizardPaymentMethods"|"oBPPriorities"|"oDunningLetters"|"oUserFields"|"oUserTables"|"oPickLists"|"oPaymentRunExport"|"oUserQueries"|"oMaterialRevaluation"|"oCorrectionPurchaseInvoice"|"oCorrectionPurchaseInvoiceReversal"|"oCorrectionInvoice"|"oCorrectionInvoiceReversal"|"oContractTemplates"|"oEmployeesInfo"|"oCustomerEquipmentCards"|"oWithholdingTaxCodes"|"oBillOfExchangeTransactions"|"oKnowledgeBaseSolutions"|"oServiceContracts"|"oServiceCalls"|"oUserKeys"|"oQueue"|"oSalesForecast"|"oTerritories"|"oIndustries"|"oProductionOrders"|"oDownPayments"|"oPurchaseDownPayments"|"oPackagesTypes"|"oUserObjectsMD"|"oTeams"|"oRelationships"|"oUserPermissionTree"|"oActivityStatus"|"oChooseFromList"|"oFormattedSearches"|"oAttachments2"|"oUserLanguages"|"oMultiLanguageTranslations"|"oDynamicSystemStrings"|"oHouseBankAccounts"|"oBusinessPlaces"|"oLocalEra"|"oNotaFiscalCFOP"|"oNotaFiscalCST"|"oNotaFiscalUsage"|"oClosingDateProcedure"|"oBPFiscalRegistryID"|"oSalesTaxInvoice"|"oPurchaseTaxInvoice"|"oPurchaseQuotations"|"oStockTransferDraft"|"oInventoryTransferRequest"|"oPurchaseRequest"|"oReturnRequest"|"oGoodsReturnRequest"|"oSelfInvoice"|"oSelfCreditMemo";
 
+# Represents the request payload for the `InventoryGenEntryService_ExportEWayBill` operation of the SAP Business One Service Layer.
 public type InventoryGenEntryService_ExportEWayBill_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -6947,6 +7195,7 @@ public type GetBarCodesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `InventoryGenEntryService_ApproveAndAdd` operation of the SAP Business One Service Layer.
 public type InventoryGenEntryService_ApproveAndAdd_body record {
     @jsondata:Name {value: "Document"}
     Document document?;
@@ -6965,6 +7214,7 @@ public type GetItemImagesQueries record {
     string dollarSelect?;
 };
 
+# The `PickList` entity of the SAP Business One Service Layer.
 public type PickList record {
     int:Signed32 Absoluteentry?;
     string Name?;
@@ -6981,6 +7231,7 @@ public type PickList record {
     PickListsLine[] PickListsLines?;
 };
 
+# The `InventoryOpeningBalanceBatchNumber` complex type of the SAP Business One Service Layer.
 public type InventoryOpeningBalanceBatchNumber record {|
     @jsondata:Name {value: "BaseLineNumber"}
     int:Signed32 baseLineNumber?;
@@ -7014,6 +7265,7 @@ public type InventoryOpeningBalanceBatchNumber record {|
     string location?;
 |};
 
+# A paged collection of `BatchNumberDetails` entities returned by the SAP Business One Service Layer.
 public type BatchNumberDetailsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7047,6 +7299,7 @@ public type ListInventoryOpeningBalancesQueries record {
     string dollarSelect?;
 };
 
+# The `BarCode` entity of the SAP Business One Service Layer.
 public type BarCode record {|
     @jsondata:Name {value: "FreeText"}
     string freeText?;
@@ -7089,6 +7342,7 @@ public type ListItemImagesQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `InventoryPostingDrafts` entities returned by the SAP Business One Service Layer.
 public type InventoryPostingDraftsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7100,11 +7354,13 @@ public type InventoryPostingDraftsCollectionResponse record {
 # OData EnumType 'BoPlanningSystem'. Serialised by the Service Layer as the member name
 public type BoPlanningSystem "bop_MRP"|"bop_None";
 
+# Represents the request payload for the `AlternativeItemsService_GetItem` operation of the SAP Business One Service Layer.
 public type AlternativeItemsService_GetItem_body record {
     @jsondata:Name {value: "OriginalItemParams"}
     OriginalItemParams originalItemParams?;
 };
 
+# A paged collection of `InventoryTransferRequests` entities returned by the SAP Business One Service Layer.
 public type InventoryTransferRequestsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7113,6 +7369,7 @@ public type InventoryTransferRequestsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `PackagesTypes` entities returned by the SAP Business One Service Layer.
 public type PackagesTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7121,6 +7378,7 @@ public type PackagesTypesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `AttributeGroupsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7134,6 +7392,7 @@ public type ListInventoryCountingsHeaders record {
     string prefer?;
 };
 
+# The `CycleCountDetermination` entity of the SAP Business One Service Layer.
 public type CycleCountDetermination record {|
     @jsondata:Name {value: "CycleBy"}
     CycleCountDeterminationCycleByEnum cycleBy?;
@@ -7143,6 +7402,7 @@ public type CycleCountDetermination record {|
     CycleCountDeterminationSetup[] cycleCountDeterminationSetupCollection?;
 |};
 
+# The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer.
 public type LineTaxJurisdiction record {
     string JurisdictionCode?;
     int:Signed32 JurisdictionType?;
@@ -7172,6 +7432,7 @@ public type LineTaxJurisdiction record {
 # OData EnumType 'BoMRPComponentWarehouse'. Serialised by the Service Layer as the member name
 public type BoMRPComponentWarehouse "bomcw_BOM"|"bomcw_Parent";
 
+# The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer.
 public type DocFreightEBooksDetail record {
     int:Signed32 IncomeClassificationType?;
     int:Signed32 IncomeClassificationCategory?;
@@ -7190,6 +7451,7 @@ public type DocFreightEBooksDetail record {
     int:Signed32 VATExemptionCause?;
 };
 
+# The `FIFOLayer` complex type of the SAP Business One Service Layer.
 public type FIFOLayer record {
     int:Signed32 TransactionSequenceNum?;
     int:Signed32 LayerID?;
@@ -7199,6 +7461,7 @@ public type FIFOLayer record {
     int:Signed32 BaseLine?;
 };
 
+# The `ItemLocalizationInfo` complex type of the SAP Business One Service Layer.
 public type ItemLocalizationInfo record {
     string ItemCode?;
     string IncomeNature?;
@@ -7210,6 +7473,7 @@ public type BatchDetailServiceStatusEnum "bdsStatus_Released"|"bdsStatus_NotAcce
 # OData EnumType 'CountingTypeEnum'. Serialised by the Service Layer as the member name
 public type CountingTypeEnum "ctSingleCounter"|"ctMultipleCounters";
 
+# The `SerialNumberDetail` entity of the SAP Business One Service Layer.
 public type SerialNumberDetail record {
     int:Signed32 DocEntry?;
     string ItemCode?;
@@ -7225,9 +7489,11 @@ public type SerialNumberDetail record {
     string MFrWarrantyEnd?;
     string Location?;
     string Details?;
+    # The `Item` entity of the SAP Business One Service Layer.
     Item Item?;
 };
 
+# Represents the request payload for the `MaterialRevaluationSNBService_Add` operation of the SAP Business One Service Layer.
 public type MaterialRevaluationSNBService_Add_body record {
     @jsondata:Name {value: "MaterialRevaluationSNBParam"}
     MaterialRevaluationSNBParam materialRevaluationSNBParam?;
@@ -7236,6 +7502,7 @@ public type MaterialRevaluationSNBService_Add_body record {
 # OData EnumType 'BoDocumentTypes'. Serialised by the Service Layer as the member name
 public type BoDocumentTypes "dDocument_Items"|"dDocument_Service";
 
+# The `EnhancedDiscountGroup` entity of the SAP Business One Service Layer.
 public type EnhancedDiscountGroup record {|
     @jsondata:Name {value: "Type"}
     DiscountGroupTypeEnum 'type?;
@@ -7255,6 +7522,7 @@ public type EnhancedDiscountGroup record {|
     string objectCode?;
 |};
 
+# The `AttributeGroupParams` complex type of the SAP Business One Service Layer.
 public type AttributeGroupParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -7262,6 +7530,7 @@ public type AttributeGroupParams record {|
     string name?;
 |};
 
+# A paged collection of `Manufacturers` entities returned by the SAP Business One Service Layer.
 public type ManufacturersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;

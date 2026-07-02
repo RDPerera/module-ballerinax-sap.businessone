@@ -350,7 +350,8 @@
                     ],
                     "x-ballerina-name": "originalItem"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AlternativeItemsService_AddItem` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -401,7 +402,8 @@
                     ],
                     "x-ballerina-name": "originalItemParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AlternativeItemsService_DeleteItem` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -445,7 +447,8 @@
                     ],
                     "x-ballerina-name": "originalItemParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AlternativeItemsService_GetItem` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -496,7 +499,8 @@
                     ],
                     "x-ballerina-name": "originalItem"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AlternativeItemsService_UpdateItem` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -783,7 +787,8 @@
                         "$ref": "#/components/schemas/AttributeGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AttributeGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1065,7 +1070,8 @@
                         "$ref": "#/components/schemas/BarCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BarCodesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1586,7 +1592,8 @@
                         "$ref": "#/components/schemas/BinLocationAttributeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BinLocationAttributesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1868,7 +1875,8 @@
                         "$ref": "#/components/schemas/BinLocationFieldParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BinLocationFieldsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2150,7 +2158,8 @@
                         "$ref": "#/components/schemas/BinLocationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BinLocationsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2668,7 +2677,8 @@
                         "$ref": "#/components/schemas/CycleCountDeterminationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CycleCountDeterminationsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2950,7 +2960,8 @@
                         "$ref": "#/components/schemas/EnhancedDiscountGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EnhancedDiscountGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3509,7 +3520,8 @@
                         "$ref": "#/components/schemas/InventoryCountingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `InventoryCountingsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4185,7 +4197,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenEntryService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4229,7 +4242,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenEntryService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4273,7 +4287,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenEntryService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4317,7 +4332,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenEntryService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4361,7 +4377,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenEntryService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4467,7 +4484,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenExitService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4511,7 +4529,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenExitService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4555,7 +4574,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenExitService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4599,7 +4619,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenExitService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4643,7 +4664,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryGenExitService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5629,7 +5651,8 @@
                         "$ref": "#/components/schemas/InventoryOpeningBalanceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `InventoryOpeningBalancesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6150,7 +6173,8 @@
                         "$ref": "#/components/schemas/InventoryPostingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `InventoryPostingsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6189,7 +6213,8 @@
                     ],
                     "x-ballerina-name": "inventoryPostingCopyOption"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryPostingsService_SetCopyOption` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6586,7 +6611,8 @@
                     ],
                     "x-ballerina-name": "stockTransfer"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `InventoryTransferRequestsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6900,7 +6926,8 @@
                     ],
                     "x-ballerina-name": "itemGroups"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ItemGroupsService_UpdateWithOITMs` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8516,7 +8543,8 @@
                     ],
                     "x-ballerina-name": "materialRevaluationFIFOParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8567,7 +8595,8 @@
                     ],
                     "x-ballerina-name": "materialRevaluationSNBParam"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MaterialRevaluationSNBService_Add` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8618,7 +8647,8 @@
                     ],
                     "x-ballerina-name": "materialRevaluationSNBParam"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MaterialRevaluationSNBService_GetList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8642,7 +8672,8 @@
                         "$ref": "#/components/schemas/MaterialRevaluationSNBParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MaterialRevaluationSNBService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9204,7 +9235,8 @@
                     ],
                     "x-ballerina-name": "pickList"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PickListsService_Close` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -9248,7 +9280,8 @@
                     ],
                     "x-ballerina-name": "pickList"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PickListsService_UpdateReleasedAllocation` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10547,7 +10580,8 @@
                     ],
                     "x-ballerina-name": "stockTransfer"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `StockTransferDraftService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10975,7 +11009,8 @@
                     ],
                     "x-ballerina-name": "stockTransfer"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `StockTransferService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -11646,7 +11681,8 @@
                         "$ref": "#/components/schemas/TrackingNoteParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TrackingNotesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11928,7 +11964,8 @@
                         "$ref": "#/components/schemas/UnitOfMeasurementGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `UnitOfMeasurementGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12210,7 +12247,8 @@
                         "$ref": "#/components/schemas/UnitOfMeasurementParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `UnitOfMeasurementsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12731,7 +12769,8 @@
                         "$ref": "#/components/schemas/WarehouseSublevelCodeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WarehouseSublevelCodesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -13240,7 +13279,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UnitOfMeasurementGroupParams` complex type of the SAP Business One Service Layer."
       },
       "AlternateCatNum": {
         "type": "object",
@@ -13267,7 +13307,8 @@
             "$ref": "#/components/schemas/Item"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AlternateCatNum` entity of the SAP Business One Service Layer."
       },
       "TrackingNotesCollectionResponse": {
         "type": "object",
@@ -13286,7 +13327,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TrackingNotes` entities returned by the SAP Business One Service Layer."
       },
       "LengthMeasure": {
         "type": "object",
@@ -13309,7 +13351,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LengthMeasure` entity of the SAP Business One Service Layer."
       },
       "BarCodesCollectionResponse": {
         "type": "object",
@@ -13328,7 +13371,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BarCodes` entities returned by the SAP Business One Service Layer."
       },
       "DocumentApprovalRequest": {
         "type": "object",
@@ -13355,7 +13399,8 @@
             "x-ballerina-name": "approvalTemplatesName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer."
       },
       "BinLocationsCollectionResponse": {
         "type": "object",
@@ -13374,7 +13419,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BinLocations` entities returned by the SAP Business One Service Layer."
       },
       "Document": {
         "type": "object",
@@ -14466,7 +14512,8 @@
             "$ref": "#/components/schemas/PriceList"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Document` entity of the SAP Business One Service Layer."
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -14564,7 +14611,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryPosting` entity of the SAP Business One Service Layer."
       },
       "InventoryPostingLineUoM": {
         "type": "object",
@@ -14600,7 +14648,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryPostingLineUoM` complex type of the SAP Business One Service Layer."
       },
       "InventoryPostingsCollectionResponse": {
         "type": "object",
@@ -14619,7 +14668,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryPostings` entities returned by the SAP Business One Service Layer."
       },
       "TrackingNote": {
         "type": "object",
@@ -14669,12 +14719,14 @@
             "x-ballerina-name": "date"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TrackingNote` entity of the SAP Business One Service Layer."
       },
       "DocumentDistributedExpense": {
         "type": "object",
         "properties": {},
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer."
       },
       "BinLocation": {
         "type": "object",
@@ -14835,7 +14887,8 @@
             "$ref": "#/components/schemas/UnitOfMeasurementGroup"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BinLocation` entity of the SAP Business One Service Layer."
       },
       "EDeliveryInfo": {
         "type": "object",
@@ -14855,7 +14908,8 @@
             "x-ballerina-name": "moveType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDeliveryInfo` complex type of the SAP Business One Service Layer."
       },
       "PrintStatusEnum": {
         "type": "string",
@@ -14957,7 +15011,8 @@
             "x-ballerina-name": "refObjType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentReference` complex type of the SAP Business One Service Layer."
       },
       "CancelStatusEnum": {
         "type": "string",
@@ -15156,7 +15211,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ShippingType` entity of the SAP Business One Service Layer."
       },
       "LineFreightEBooksDetail": {
         "type": "object",
@@ -15222,7 +15278,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "BatchNumber": {
         "type": "object",
@@ -15278,7 +15335,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
       },
       "BoCorInvItemStatus": {
         "type": "string",
@@ -15305,7 +15363,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemPreferredVendor` complex type of the SAP Business One Service Layer."
       },
       "ItemProperty": {
         "type": "object",
@@ -15318,7 +15377,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemProperty` entity of the SAP Business One Service Layer."
       },
       "SpecialPriceDataArea": {
         "type": "object",
@@ -15366,7 +15426,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SpecialPriceDataArea` complex type of the SAP Business One Service Layer."
       },
       "DocumentPriceSourceEnum": {
         "type": "string",
@@ -15404,7 +15465,8 @@
             "x-ballerina-name": "trackingNoteNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TrackingNoteParams` complex type of the SAP Business One Service Layer."
       },
       "TypeOfAdvancedRulesEnum": {
         "type": "string",
@@ -15457,7 +15519,8 @@
             "x-ballerina-name": "lotNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialRevaluationSNBParams` complex type of the SAP Business One Service Layer."
       },
       "BoDocumentSubType": {
         "type": "string",
@@ -15492,7 +15555,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PriceLists` entities returned by the SAP Business One Service Layer."
       },
       "AttributeGroupLine": {
         "type": "object",
@@ -15529,7 +15593,8 @@
             "x-ballerina-name": "fieldType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AttributeGroupLine` complex type of the SAP Business One Service Layer."
       },
       "BoDocSpecialLineType": {
         "type": "string",
@@ -15575,7 +15640,8 @@
             "x-ballerina-name": "counterID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IndividualCounter` complex type of the SAP Business One Service Layer."
       },
       "PriceModeDocumentEnum": {
         "type": "string",
@@ -16514,7 +16580,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLine` complex type of the SAP Business One Service Layer."
       },
       "InventoryCountingLineUoM": {
         "type": "object",
@@ -16560,7 +16627,8 @@
             "$ref": "#/components/schemas/MultipleCounterRoleEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryCountingLineUoM` complex type of the SAP Business One Service Layer."
       },
       "BinLocationAttributeParams": {
         "type": "object",
@@ -16580,7 +16648,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BinLocationAttributeParams` complex type of the SAP Business One Service Layer."
       },
       "ExportProcess": {
         "type": "object",
@@ -16658,7 +16727,8 @@
             "x-ballerina-name": "exportationDeclarationNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExportProcess` complex type of the SAP Business One Service Layer."
       },
       "ItemIntrastatExtension": {
         "type": "object",
@@ -16774,7 +16844,8 @@
             "x-ballerina-name": "exportStatisticalProcedure"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemIntrastatExtension` complex type of the SAP Business One Service Layer."
       },
       "BoRoundingMethod": {
         "type": "string",
@@ -16956,7 +17027,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryPostingLine` complex type of the SAP Business One Service Layer."
       },
       "BoTaxTypes": {
         "type": "string",
@@ -17002,7 +17074,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemCycleCount` complex type of the SAP Business One Service Layer."
       },
       "DocumentCloseParams": {
         "type": "object",
@@ -17026,7 +17099,8 @@
             "x-ballerina-name": "closingOption"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentCloseParams` complex type of the SAP Business One Service Layer."
       },
       "EndTypeEnum": {
         "type": "string",
@@ -17074,7 +17148,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SpecialPriceQuantityArea` complex type of the SAP Business One Service Layer."
       },
       "ItemBarCode": {
         "type": "object",
@@ -17094,7 +17169,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemBarCode` complex type of the SAP Business One Service Layer."
       },
       "StockTransferLine": {
         "type": "object",
@@ -17269,7 +17345,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `StockTransferLine` complex type of the SAP Business One Service Layer."
       },
       "MaterialRevaluationFIFO": {
         "type": "object",
@@ -17282,7 +17359,8 @@
             "x-ballerina-name": "layers"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialRevaluationFIFO` complex type of the SAP Business One Service Layer."
       },
       "DocumentAuthorizationStatusEnum": {
         "type": "string",
@@ -17317,7 +17395,8 @@
             "$ref": "#/components/schemas/Warehouse"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `StockTaking` entity of the SAP Business One Service Layer."
       },
       "BoDocumentLinePickStatus": {
         "type": "string",
@@ -17353,7 +17432,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WeightMeasure` entity of the SAP Business One Service Layer."
       },
       "GSTTransactionTypeEnum": {
         "type": "string",
@@ -17582,7 +17662,8 @@
             "$ref": "#/components/schemas/Warehouse"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `StockTransfer` entity of the SAP Business One Service Layer."
       },
       "BoSoStatus": {
         "type": "string",
@@ -17609,7 +17690,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryOpeningBalances` entities returned by the SAP Business One Service Layer."
       },
       "DocumentAdditionalIntrastatExpense": {
         "type": "object",
@@ -17666,7 +17748,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer."
       },
       "WarehouseLocation": {
         "type": "object",
@@ -17781,7 +17864,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WarehouseLocation` entity of the SAP Business One Service Layer."
       },
       "EDocTypeEnum": {
         "type": "string",
@@ -17870,7 +17954,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Warehouses` entities returned by the SAP Business One Service Layer."
       },
       "CycleCountDeterminationSetup": {
         "type": "object",
@@ -17928,7 +18013,8 @@
             "x-ballerina-name": "changeExistingItems"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CycleCountDeterminationSetup` complex type of the SAP Business One Service Layer."
       },
       "UnitOfMeasurementGroup": {
         "type": "object",
@@ -17988,7 +18074,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UnitOfMeasurementGroup` entity of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -18013,7 +18100,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "MaterialRevaluationCollectionResponse": {
         "type": "object",
@@ -18032,7 +18120,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `MaterialRevaluation` entities returned by the SAP Business One Service Layer."
       },
       "BoDocLineType": {
         "type": "string",
@@ -18068,7 +18157,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WarehouseLocations` entities returned by the SAP Business One Service Layer."
       },
       "LineExpenseTaxJurisdiction": {
         "type": "object",
@@ -18125,7 +18215,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "GeneratedAsset": {
         "type": "object",
@@ -18174,7 +18265,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GeneratedAsset` complex type of the SAP Business One Service Layer."
       },
       "BoTransactionTypeEnum": {
         "type": "string",
@@ -18317,7 +18409,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryOpeningBalanceLine` complex type of the SAP Business One Service Layer."
       },
       "ItemUoMTypeEnum": {
         "type": "string",
@@ -18345,7 +18438,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Items` entities returned by the SAP Business One Service Layer."
       },
       "BinLocationFieldParams": {
         "type": "object",
@@ -18356,7 +18450,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BinLocationFieldParams` complex type of the SAP Business One Service Layer."
       },
       "InventoryCountingParams": {
         "type": "object",
@@ -18372,7 +18467,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryCountingParams` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTaxData": {
         "type": "object",
@@ -18470,7 +18566,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer."
       },
       "BinLocationParams": {
         "type": "object",
@@ -18485,7 +18582,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BinLocationParams` complex type of the SAP Business One Service Layer."
       },
       "EDocStatusEnum": {
         "type": "string",
@@ -18536,7 +18634,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WarehouseSublevelCode` entity of the SAP Business One Service Layer."
       },
       "BoExpenseOperationTypeEnum": {
         "type": "string",
@@ -18569,7 +18668,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WeightMeasures` entities returned by the SAP Business One Service Layer."
       },
       "BinLocationFieldsCollectionResponse": {
         "type": "object",
@@ -18588,7 +18688,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BinLocationFields` entities returned by the SAP Business One Service Layer."
       },
       "InventoryOpeningBalancePriceSourceEnum": {
         "type": "string",
@@ -18671,7 +18772,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryCountingDraft` entity of the SAP Business One Service Layer."
       },
       "BinRestrictUoMEnum": {
         "type": "string",
@@ -18775,7 +18877,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemUoMPackage` complex type of the SAP Business One Service Layer."
       },
       "PickListsLine": {
         "type": "object",
@@ -18834,7 +18937,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PickListsLine` complex type of the SAP Business One Service Layer."
       },
       "AttributeGroupFieldTypeEnum": {
         "type": "string",
@@ -19008,7 +19112,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryCountingLine` complex type of the SAP Business One Service Layer."
       },
       "BoServicePaymentMethods": {
         "type": "string",
@@ -19063,7 +19168,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
       },
       "ItemPropertiesCollectionResponse": {
         "type": "object",
@@ -19082,7 +19188,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ItemProperties` entities returned by the SAP Business One Service Layer."
       },
       "BoStatus": {
         "type": "string",
@@ -19133,7 +19240,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemDistributionRule` complex type of the SAP Business One Service Layer."
       },
       "RepeatOptionEnum": {
         "type": "string",
@@ -19366,7 +19474,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AddressExtension` complex type of the SAP Business One Service Layer."
       },
       "SerialNumber": {
         "type": "object",
@@ -19430,7 +19539,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
       },
       "LinkReferenceTypeEnum": {
         "type": "string",
@@ -19474,7 +19584,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WarehouseSublevelCodes` entities returned by the SAP Business One Service Layer."
       },
       "TaxExtension": {
         "type": "object",
@@ -19734,7 +19845,8 @@
             "x-ballerina-name": "incoterms"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxExtension` complex type of the SAP Business One Service Layer."
       },
       "InventoryCountingDraftsCollectionResponse": {
         "type": "object",
@@ -19753,7 +19865,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryCountingDrafts` entities returned by the SAP Business One Service Layer."
       },
       "InventoryPostingDocumentReferences": {
         "type": "object",
@@ -19800,7 +19913,8 @@
             "x-ballerina-name": "remark"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingDocumentReferences` complex type of the SAP Business One Service Layer."
       },
       "SAFTProductTypeEnum": {
         "type": "string",
@@ -19901,7 +20015,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryCounting` entity of the SAP Business One Service Layer."
       },
       "Warehouse": {
         "type": "object",
@@ -20212,7 +20327,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Warehouse` entity of the SAP Business One Service Layer."
       },
       "DocumentAdditionalExpense": {
         "type": "object",
@@ -20439,7 +20555,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "InventoryPostingCopyOptionEnum": {
         "type": "string",
@@ -20476,7 +20593,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryOpeningBalanceParams` complex type of the SAP Business One Service Layer."
       },
       "EnhancedDiscountGroupParams": {
         "type": "object",
@@ -20499,7 +20617,8 @@
             "x-ballerina-name": "objectCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EnhancedDiscountGroupParams` complex type of the SAP Business One Service Layer."
       },
       "AttributeGroupsCollectionResponse": {
         "type": "object",
@@ -20518,7 +20637,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AttributeGroups` entities returned by the SAP Business One Service Layer."
       },
       "UnitOfMeasurementsCollectionResponse": {
         "type": "object",
@@ -20537,7 +20657,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UnitOfMeasurements` entities returned by the SAP Business One Service Layer."
       },
       "StockTransferDraftsCollectionResponse": {
         "type": "object",
@@ -20556,7 +20677,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `StockTransferDrafts` entities returned by the SAP Business One Service Layer."
       },
       "BoAdEpnsTaxTypes": {
         "type": "string",
@@ -20584,7 +20706,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CustomsGroups` entities returned by the SAP Business One Service Layer."
       },
       "RelatedDocumentTypeEnum": {
         "type": "string",
@@ -20611,7 +20734,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ItemGroups` entities returned by the SAP Business One Service Layer."
       },
       "MaterialRevaluation": {
         "type": "object",
@@ -20701,7 +20825,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `MaterialRevaluation` entity of the SAP Business One Service Layer."
       },
       "RecurrenceDayOfWeekEnum": {
         "type": "string",
@@ -20736,7 +20861,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryCountings` entities returned by the SAP Business One Service Layer."
       },
       "SNBLines": {
         "type": "object",
@@ -20785,7 +20911,8 @@
             "x-ballerina-name": "baseLine"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SNBLines` complex type of the SAP Business One Service Layer."
       },
       "InvBaseDocTypeEnum": {
         "type": "string",
@@ -20816,7 +20943,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SerialNumberDetails` entities returned by the SAP Business One Service Layer."
       },
       "MaterialRevaluationFIFOParams": {
         "type": "object",
@@ -20842,7 +20970,8 @@
             "x-ballerina-name": "locationType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialRevaluationFIFOParams` complex type of the SAP Business One Service Layer."
       },
       "StockTakingsCollectionResponse": {
         "type": "object",
@@ -20861,7 +20990,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `StockTakings` entities returned by the SAP Business One Service Layer."
       },
       "AlternateCatNumCollectionResponse": {
         "type": "object",
@@ -20880,7 +21010,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AlternateCatNum` entities returned by the SAP Business One Service Layer."
       },
       "BoFatherCardTypes": {
         "type": "string",
@@ -21022,7 +21153,8 @@
             "x-ballerina-name": "lineType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentSpecialLine` complex type of the SAP Business One Service Layer."
       },
       "ItemAttributeGroups": {
         "type": "object",
@@ -21316,7 +21448,8 @@
             "x-ballerina-name": "attribute48"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemAttributeGroups` complex type of the SAP Business One Service Layer."
       },
       "CCDNumber": {
         "type": "object",
@@ -21356,7 +21489,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CCDNumber` complex type of the SAP Business One Service Layer."
       },
       "DownPaymentToDrawDetails": {
         "type": "object",
@@ -21460,7 +21594,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer."
       },
       "ItemPeriodControl": {
         "type": "object",
@@ -21497,7 +21632,8 @@
             "x-ballerina-name": "actualUnits"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemPeriodControl` complex type of the SAP Business One Service Layer."
       },
       "BatchNumberDetail": {
         "type": "object",
@@ -21547,7 +21683,8 @@
             "$ref": "#/components/schemas/Item"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BatchNumberDetail` entity of the SAP Business One Service Layer."
       },
       "SourceCurrencyEnum": {
         "type": "string",
@@ -21650,7 +21787,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingSerialNumber` complex type of the SAP Business One Service Layer."
       },
       "OriginalItemParams": {
         "type": "object",
@@ -21664,7 +21802,8 @@
             "x-ballerina-name": "itemName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OriginalItemParams` complex type of the SAP Business One Service Layer."
       },
       "InventoryPostingCopyOption": {
         "type": "object",
@@ -21683,7 +21822,8 @@
             "x-ballerina-name": "baseEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingCopyOption` complex type of the SAP Business One Service Layer."
       },
       "ReceivingUpToMethodEnum": {
         "type": "string",
@@ -21808,7 +21948,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxLine` complex type of the SAP Business One Service Layer."
       },
       "InventoryGenExitsCollectionResponse": {
         "type": "object",
@@ -21827,7 +21968,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryGenExits` entities returned by the SAP Business One Service Layer."
       },
       "BoPriceListGroupNum": {
         "type": "string",
@@ -21865,7 +22007,8 @@
             "x-ballerina-name": "warehouseCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemGroupsWarehouseInfo` complex type of the SAP Business One Service Layer."
       },
       "UnitOfMeasurement": {
         "type": "object",
@@ -22006,7 +22149,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UnitOfMeasurement` entity of the SAP Business One Service Layer."
       },
       "BoDocWhsUpdateTypes": {
         "type": "string",
@@ -22077,7 +22221,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryPostingDraft` entity of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -22112,7 +22257,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `LengthMeasures` entities returned by the SAP Business One Service Layer."
       },
       "Item": {
         "type": "object",
@@ -23206,7 +23352,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Item` entity of the SAP Business One Service Layer."
       },
       "PackagesType": {
         "type": "object",
@@ -23291,7 +23438,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PackagesType` entity of the SAP Business One Service Layer."
       },
       "InventoryPostingParams": {
         "type": "object",
@@ -23307,7 +23455,8 @@
             "x-ballerina-name": "documentNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingParams` complex type of the SAP Business One Service Layer."
       },
       "LineTypeEnum": {
         "type": "string",
@@ -23348,7 +23497,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EnhancedDiscountGroups` entities returned by the SAP Business One Service Layer."
       },
       "DocumentPackageItem": {
         "type": "object",
@@ -23376,7 +23526,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackageItem` complex type of the SAP Business One Service Layer."
       },
       "InventoryOpeningBalance": {
         "type": "object",
@@ -23442,7 +23593,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryOpeningBalance` entity of the SAP Business One Service Layer."
       },
       "BoProcurementMethod": {
         "type": "string",
@@ -23477,7 +23629,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryOpeningBalanceDrafts` entities returned by the SAP Business One Service Layer."
       },
       "CycleCountDeterminationsCollectionResponse": {
         "type": "object",
@@ -23496,7 +23649,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CycleCountDeterminations` entities returned by the SAP Business One Service Layer."
       },
       "MaterialRevaluationLine": {
         "type": "object",
@@ -23579,7 +23733,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `MaterialRevaluationLine` complex type of the SAP Business One Service Layer."
       },
       "ItemUnitOfMeasurement": {
         "type": "object",
@@ -23678,7 +23833,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemUnitOfMeasurement` complex type of the SAP Business One Service Layer."
       },
       "StockTransferApprovalRequest": {
         "type": "object",
@@ -23705,7 +23861,8 @@
             "x-ballerina-name": "approvalTemplatesName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `StockTransfer_ApprovalRequest` complex type of the SAP Business One Service Layer."
       },
       "DocumentLineAdditionalExpense": {
         "type": "object",
@@ -23889,7 +24046,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "UoMGroupDefinition": {
         "type": "object",
@@ -23938,7 +24096,8 @@
             "x-ballerina-name": "baseUdfFtr"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UoMGroupDefinition` complex type of the SAP Business One Service Layer."
       },
       "ItemPrice": {
         "type": "object",
@@ -23983,7 +24142,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemPrice` complex type of the SAP Business One Service Layer."
       },
       "SpecialPricesCollectionResponse": {
         "type": "object",
@@ -24002,7 +24162,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SpecialPrices` entities returned by the SAP Business One Service Layer."
       },
       "SpecialProductTypeEnum": {
         "type": "string",
@@ -24156,7 +24317,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer."
       },
       "UnitOfMeasurementGroupsCollectionResponse": {
         "type": "object",
@@ -24175,7 +24337,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UnitOfMeasurementGroups` entities returned by the SAP Business One Service Layer."
       },
       "InventoryCountingBatchNumber": {
         "type": "object",
@@ -24271,7 +24434,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryCountingBatchNumber` complex type of the SAP Business One Service Layer."
       },
       "InventoryOpeningBalanceDraft": {
         "type": "object",
@@ -24289,7 +24453,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryOpeningBalanceDraft` entity of the SAP Business One Service Layer."
       },
       "BinRestrictTransactionEnum": {
         "type": "string",
@@ -24347,7 +24512,8 @@
             "x-ballerina-name": "remark"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryCountingDocumentReferences` complex type of the SAP Business One Service Layer."
       },
       "ItemProject": {
         "type": "object",
@@ -24372,7 +24538,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemProject` complex type of the SAP Business One Service Layer."
       },
       "ItemTypeEnum": {
         "type": "string",
@@ -24410,7 +24577,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BinLocationAttribute` entity of the SAP Business One Service Layer."
       },
       "StockTransferLinesBinAllocation": {
         "type": "object",
@@ -24438,7 +24606,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `StockTransferLinesBinAllocation` complex type of the SAP Business One Service Layer."
       },
       "BoInventorySystem": {
         "type": "string",
@@ -24496,7 +24665,8 @@
             "x-ballerina-name": "pickListEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocLinePickList` complex type of the SAP Business One Service Layer."
       },
       "FolioLetterEnum": {
         "type": "string",
@@ -24684,7 +24854,8 @@
             "x-ballerina-name": "eWayBillDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWayBillDetails` complex type of the SAP Business One Service Layer."
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -24818,7 +24989,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
       },
       "ItemWarehouseInfo": {
         "type": "object",
@@ -25033,7 +25205,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemWarehouseInfo` complex type of the SAP Business One Service Layer."
       },
       "BoDocWhsAutoIssueMethod": {
         "type": "string",
@@ -25108,7 +25281,8 @@
             "x-ballerina-name": "accumulatedARQuantity"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TrackingNoteItem` complex type of the SAP Business One Service Layer."
       },
       "CommissionTradeTypeEnum": {
         "type": "string",
@@ -25157,7 +25331,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AttributeGroup` entity of the SAP Business One Service Layer."
       },
       "StockTransfersCollectionResponse": {
         "type": "object",
@@ -25176,7 +25351,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `StockTransfers` entities returned by the SAP Business One Service Layer."
       },
       "DiscountGroupLine": {
         "type": "object",
@@ -25227,7 +25403,8 @@
             "x-ballerina-name": "paidQuantity"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DiscountGroupLine` complex type of the SAP Business One Service Layer."
       },
       "Layer": {
         "type": "object",
@@ -25270,7 +25447,8 @@
             "x-ballerina-name": "transactionSequenceNum"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Layer` complex type of the SAP Business One Service Layer."
       },
       "TransTypesEnum": {
         "type": "string",
@@ -25326,7 +25504,8 @@
             "x-ballerina-name": "picture"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemImage` entity of the SAP Business One Service Layer."
       },
       "BoTaxOnInstallmentsTypeEnum": {
         "type": "string",
@@ -25384,7 +25563,8 @@
             "x-ballerina-name": "trackingNoteLine"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryOpeningBalanceCCDNumber` complex type of the SAP Business One Service Layer."
       },
       "MaterialRevaluationSNBParam": {
         "type": "object",
@@ -25394,7 +25574,8 @@
             "x-ballerina-name": "itemCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialRevaluationSNBParam` complex type of the SAP Business One Service Layer."
       },
       "ItemDepreciationParameter": {
         "type": "object",
@@ -25447,7 +25628,8 @@
             "x-ballerina-name": "totalUnitsInUsefulLife"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemDepreciationParameter` complex type of the SAP Business One Service Layer."
       },
       "BoFrequency": {
         "type": "string",
@@ -25554,7 +25736,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `InventoryCycles` entity of the SAP Business One Service Layer."
       },
       "ShippingTypesCollectionResponse": {
         "type": "object",
@@ -25573,7 +25756,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ShippingTypes` entities returned by the SAP Business One Service Layer."
       },
       "AssetStatusEnum": {
         "type": "string",
@@ -25696,7 +25880,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryCountingSerialNumber` complex type of the SAP Business One Service Layer."
       },
       "BarCodeParams": {
         "type": "object",
@@ -25720,7 +25905,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BarCodeParams` complex type of the SAP Business One Service Layer."
       },
       "DocExpenseTaxJurisdiction": {
         "type": "object",
@@ -25777,7 +25963,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -25909,7 +26096,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryOpeningBalanceSerialNumber` complex type of the SAP Business One Service Layer."
       },
       "BoGLMethods": {
         "type": "string",
@@ -25948,7 +26136,8 @@
             "x-ballerina-name": "itemName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OriginalItem` complex type of the SAP Business One Service Layer."
       },
       "DownPaymentToDraw": {
         "type": "object",
@@ -26060,7 +26249,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDraw` complex type of the SAP Business One Service Layer."
       },
       "ItemGroups": {
         "type": "object",
@@ -26291,7 +26481,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemGroups` entity of the SAP Business One Service Layer."
       },
       "BinLocationField": {
         "type": "object",
@@ -26345,7 +26536,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BinLocationField` entity of the SAP Business One Service Layer."
       },
       "CustomsGroup": {
         "type": "object",
@@ -26398,7 +26590,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CustomsGroup` entity of the SAP Business One Service Layer."
       },
       "BinLocationAttributesCollectionResponse": {
         "type": "object",
@@ -26417,7 +26610,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BinLocationAttributes` entities returned by the SAP Business One Service Layer."
       },
       "EWBTransactionTypeEnum": {
         "type": "string",
@@ -26502,7 +26696,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingBatchNumber` complex type of the SAP Business One Service Layer."
       },
       "Manufacturer": {
         "type": "object",
@@ -26521,7 +26716,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Manufacturer` entity of the SAP Business One Service Layer."
       },
       "InventoryGenEntriesCollectionResponse": {
         "type": "object",
@@ -26540,7 +26736,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryGenEntries` entities returned by the SAP Business One Service Layer."
       },
       "BoManageMethod": {
         "type": "string",
@@ -26586,7 +26783,8 @@
             "x-ballerina-name": "counterID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TeamCounter` complex type of the SAP Business One Service Layer."
       },
       "EBooksDetail": {
         "type": "object",
@@ -26668,7 +26866,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "DiscountGroupBaseObjectEnum": {
         "type": "string",
@@ -26698,7 +26897,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryCycles` entities returned by the SAP Business One Service Layer."
       },
       "SpecialPrice": {
         "type": "object",
@@ -26754,7 +26954,8 @@
             "$ref": "#/components/schemas/PriceList"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SpecialPrice` entity of the SAP Business One Service Layer."
       },
       "StockTransferTaxExtension": {
         "type": "object",
@@ -26769,7 +26970,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `StockTransferTaxExtension` complex type of the SAP Business One Service Layer."
       },
       "CycleCountDeterminationParams": {
         "type": "object",
@@ -26784,7 +26986,8 @@
             "x-ballerina-name": "warehouseCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CycleCountDeterminationParams` complex type of the SAP Business One Service Layer."
       },
       "UoMPrice": {
         "type": "object",
@@ -26834,7 +27037,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UoMPrice` complex type of the SAP Business One Service Layer."
       },
       "WarehouseSublevelCodeParams": {
         "type": "object",
@@ -26854,7 +27058,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WarehouseSublevelCodeParams` complex type of the SAP Business One Service Layer."
       },
       "BoObjectTypes": {
         "type": "string",
@@ -27018,7 +27223,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer."
       },
       "GeneratedAssetStatusEnum": {
         "type": "string",
@@ -27064,7 +27270,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UnitOfMeasurementParams` complex type of the SAP Business One Service Layer."
       },
       "PickList": {
         "type": "object",
@@ -27109,7 +27316,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PickList` entity of the SAP Business One Service Layer."
       },
       "BoPickStatus": {
         "type": "string",
@@ -27147,7 +27355,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackage` complex type of the SAP Business One Service Layer."
       },
       "InventoryOpeningBalanceBatchNumber": {
         "type": "object",
@@ -27222,7 +27431,8 @@
             "x-ballerina-name": "location"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryOpeningBalanceBatchNumber` complex type of the SAP Business One Service Layer."
       },
       "MultipleCounterRoleEnum": {
         "type": "string",
@@ -27279,7 +27489,8 @@
             "x-ballerina-name": "trackingNoteLine"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `InventoryPostingCCDNumber` complex type of the SAP Business One Service Layer."
       },
       "BatchNumberDetailsCollectionResponse": {
         "type": "object",
@@ -27298,7 +27509,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BatchNumberDetails` entities returned by the SAP Business One Service Layer."
       },
       "BarCode": {
         "type": "object",
@@ -27342,7 +27554,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BarCode` entity of the SAP Business One Service Layer."
       },
       "ImportProcess": {
         "type": "object",
@@ -27402,7 +27615,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ImportProcess` complex type of the SAP Business One Service Layer."
       },
       "InventoryPostingPriceSourceEnum": {
         "type": "string",
@@ -27458,7 +27672,8 @@
             "x-ballerina-name": "remark"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MaterialRevaluationDocumentReferences` complex type of the SAP Business One Service Layer."
       },
       "TrackingNoteBroker": {
         "type": "object",
@@ -27483,7 +27698,8 @@
             "x-ballerina-name": "bPCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TrackingNoteBroker` complex type of the SAP Business One Service Layer."
       },
       "InventoryPostingDraftsCollectionResponse": {
         "type": "object",
@@ -27502,7 +27718,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryPostingDrafts` entities returned by the SAP Business One Service Layer."
       },
       "BoPlanningSystem": {
         "type": "string",
@@ -27529,7 +27746,8 @@
             "x-ballerina-name": "alternativeItemCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AlternativeItem` complex type of the SAP Business One Service Layer."
       },
       "InventoryTransferRequestsCollectionResponse": {
         "type": "object",
@@ -27548,7 +27766,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `InventoryTransferRequests` entities returned by the SAP Business One Service Layer."
       },
       "PackagesTypesCollectionResponse": {
         "type": "object",
@@ -27567,7 +27786,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PackagesTypes` entities returned by the SAP Business One Service Layer."
       },
       "BinRestrictionBatchEnum": {
         "type": "string",
@@ -27594,7 +27814,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PickLists` entities returned by the SAP Business One Service Layer."
       },
       "PriceList": {
         "type": "object",
@@ -27819,7 +28040,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PriceList` entity of the SAP Business One Service Layer."
       },
       "CycleCountDetermination": {
         "type": "object",
@@ -27844,7 +28066,8 @@
             "x-ballerina-name": "cycleCountDeterminationSetupCollection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CycleCountDetermination` entity of the SAP Business One Service Layer."
       },
       "LineTaxJurisdiction": {
         "type": "object",
@@ -27921,7 +28144,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "ItemImagesCollectionResponse": {
         "type": "object",
@@ -27940,7 +28164,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ItemImages` entities returned by the SAP Business One Service Layer."
       },
       "BoMRPComponentWarehouse": {
         "type": "string",
@@ -28026,7 +28251,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "FIFOLayer": {
         "type": "object",
@@ -28056,7 +28282,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `FIFOLayer` complex type of the SAP Business One Service Layer."
       },
       "BatchDetailServiceStatusEnum": {
         "type": "string",
@@ -28077,7 +28304,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ItemLocalizationInfo` complex type of the SAP Business One Service Layer."
       },
       "CountingTypeEnum": {
         "type": "string",
@@ -28143,7 +28371,8 @@
             "$ref": "#/components/schemas/Item"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SerialNumberDetail` entity of the SAP Business One Service Layer."
       },
       "DocumentInstallment": {
         "type": "object",
@@ -28188,7 +28417,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentInstallment` complex type of the SAP Business One Service Layer."
       },
       "BoDocumentTypes": {
         "type": "string",
@@ -28252,7 +28482,8 @@
             "x-ballerina-name": "objectCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EnhancedDiscountGroup` entity of the SAP Business One Service Layer."
       },
       "BinRestrictItemEnum": {
         "type": "string",
@@ -28278,7 +28509,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AttributeGroupParams` complex type of the SAP Business One Service Layer."
       },
       "ManufacturersCollectionResponse": {
         "type": "object",
@@ -28297,7 +28529,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Manufacturers` entities returned by the SAP Business One Service Layer."
       },
       "SOIExcisableTypeEnum": {
         "type": "string",

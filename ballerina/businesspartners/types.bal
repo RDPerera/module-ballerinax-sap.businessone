@@ -20,6 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
+# The `BPAccountReceivablePayble` complex type of the SAP Business One Service Layer.
 public type BPAccountReceivablePayble record {
     # OData EnumType 'BoBpAccountTypes'. Serialised by the Service Layer as the member name
     BoBpAccountTypes AccountType?;
@@ -27,6 +28,7 @@ public type BPAccountReceivablePayble record {
     string BPCode?;
 };
 
+# The `BPIntrastatExtension` complex type of the SAP Business One Service Layer.
 public type BPIntrastatExtension record {|
     @jsondata:Name {value: "IntrastatRelevant"}
     BoYesNoEnum intrastatRelevant?;
@@ -48,6 +50,7 @@ public type BPIntrastatExtension record {|
     int:Signed32 incoterms?;
 |};
 
+# Represents the request payload for the `AddressService_GetAddressFormat` operation of the SAP Business One Service Layer.
 public type AddressService_GetAddressFormat_body record {
     @jsondata:Name {value: "AddressFormatParams"}
     AddressFormatParams addressFormatParams?;
@@ -60,6 +63,7 @@ public type ListBusinessPartnerGroupsHeaders record {
     string prefer?;
 };
 
+# The `BusinessPartner` entity of the SAP Business One Service Layer.
 public type BusinessPartner record {
     string CardCode?;
     string CardName?;
@@ -494,15 +498,21 @@ public type BusinessPartner record {
     BPBankAccount[] BPBankAccounts?;
     BPFiscalTaxID[] BPFiscalTaxIDCollection?;
     DiscountGroup[] DiscountGroups?;
+    # The `BPIntrastatExtension` complex type of the SAP Business One Service Layer.
     BPIntrastatExtension BPIntrastatExtension?;
     BPBlockSendingMarketingContent[] BPBlockSendingMarketingContents?;
     BPCurrencies[] BPCurrenciesCollection?;
     BPVatExemptions[] BPVatExemptions?;
     Contact[] Contacts?;
+    # The `BusinessPartnerGroup` entity of the SAP Business One Service Layer.
     BusinessPartnerGroup BusinessPartnerGroup?;
+    # The `PaymentTermsType` entity of the SAP Business One Service Layer.
     PaymentTermsType PaymentTermsType?;
+    # The `BPPriority` entity of the SAP Business One Service Layer.
     BPPriority BPPriority?;
+    # The `Territory` entity of the SAP Business One Service Layer.
     Territory Territory2?;
+    # The `Industry` entity of the SAP Business One Service Layer.
     Industry Industry2?;
 };
 
@@ -532,6 +542,7 @@ public type GetContactsQueries record {
     string dollarSelect?;
 };
 
+# The `BPAddress` complex type of the SAP Business One Service Layer.
 public type BPAddress record {
     string AddressName?;
     string Street?;
@@ -669,6 +680,7 @@ public type ListBPFiscalRegistryIDQueries record {
     string dollarSelect?;
 };
 
+# The `BPBlockSendingMarketingContent` complex type of the SAP Business One Service Layer.
 public type BPBlockSendingMarketingContent record {|
     @jsondata:Name {value: "CommunicationMediaId"}
     int:Signed32 communicationMediaId?;
@@ -678,6 +690,7 @@ public type BPBlockSendingMarketingContent record {|
     string cardCode?;
 |};
 
+# The `AddressParams` complex type of the SAP Business One Service Layer.
 public type AddressParams record {
     string Country?;
     string State?;
@@ -738,6 +751,7 @@ public type ListBPPrioritiesQueries record {
     string dollarSelect?;
 };
 
+# The `BusinessPartnerGroup` entity of the SAP Business One Service Layer.
 public type BusinessPartnerGroup record {
     int:Signed32 Code?;
     string Name?;
@@ -746,6 +760,7 @@ public type BusinessPartnerGroup record {
     BusinessPartner[] BusinessPartners?;
 };
 
+# A paged collection of `Contacts` entities returned by the SAP Business One Service Layer.
 public type ContactsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -761,6 +776,7 @@ public type BoPublicDirectoryStatusTypes "pds_ActivePrivateEntry"|"pds_ActivePub
 # OData EnumType 'OperationCode347Enum'. Serialised by the Service Layer as the member name
 public type OperationCode347Enum "ocGoodsOrServiciesAcquisitions"|"ocPublicEntitiesAcquisitions"|"ocTravelAgenciesPurchases"|"ocSalesOrServicesRevenues"|"ocPublicSubsidies"|"ocTravelAgenciesSales";
 
+# A paged collection of `Industries` entities returned by the SAP Business One Service Layer.
 public type IndustriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -811,6 +827,7 @@ public type ListContactsQueries record {
     string dollarSelect?;
 };
 
+# The `AddressReturnParams` complex type of the SAP Business One Service Layer.
 public type AddressReturnParams record {|
     @jsondata:Name {value: "FullAddress"}
     string fullAddress?;
@@ -822,6 +839,7 @@ public type EDocGenerationTypeEnum "edocGenerate"|"edocGenerateLater"|"edocNotRe
 # OData EnumType 'BoCardCompanyTypes'. Serialised by the Service Layer as the member name
 public type BoCardCompanyTypes "cCompany"|"cPrivate"|"cGovernment"|"cEmployee"|"cSoleTaxableSubject";
 
+# A paged collection of `Territories` entities returned by the SAP Business One Service Layer.
 public type TerritoriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -833,6 +851,7 @@ public type TerritoriesCollectionResponse record {
 # OData EnumType 'BoCardTypes'. Serialised by the Service Layer as the member name
 public type BoCardTypes "cCustomer"|"cSupplier"|"cLid";
 
+# Represents the request payload for the `AddressService_GetFullAddress` operation of the SAP Business One Service Layer.
 public type AddressService_GetFullAddress_body record {
     @jsondata:Name {value: "AddressParams"}
     AddressParams addressParams?;
@@ -844,6 +863,7 @@ public type BoTaxRoundingRuleTypes "trr_RoundDown"|"trr_RoundUp"|"trr_RoundOff"|
 # OData EnumType 'BoMYFTypeEnum'. Serialised by the Service Layer as the member name
 public type BoMYFTypeEnum "myft_WholesaleSales"|"myft_RetailSales"|"myft_WholesalePurchases"|"myft_OtherExpenseTransactions";
 
+# The `ElectronicProtocol` complex type of the SAP Business One Service Layer.
 public type ElectronicProtocol record {
     # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
     ElectronicDocProtocolCodeEnum ProtocolCode?;
@@ -894,6 +914,7 @@ public type ElectronicProtocol record {
 # OData EnumType 'TypeOfOperationEnum'. Serialised by the Service Layer as the member name
 public type TypeOfOperationEnum "tooProfessionalServices"|"tooRentingAssets"|"tooOthers"|"tooDisposalOfGoods"|"tooImportOfGoodsAndServices"|"tooImportByVirtualTransfer"|"tooGlobalOperations";
 
+# The `PaymentTermsType` entity of the SAP Business One Service Layer.
 public type PaymentTermsType record {
     int:Signed32 GroupNumber?;
     string PaymentTermsGroupName?;
@@ -944,6 +965,7 @@ public type ListBusinessPartnerGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `BPVatExemptionsParams` complex type of the SAP Business One Service Layer.
 public type BPVatExemptionsParams record {|
     @jsondata:Name {value: "AbsoluteEntry"}
     int:Signed32 absoluteEntry?;
@@ -951,6 +973,7 @@ public type BPVatExemptionsParams record {|
     string bPCode?;
 |};
 
+# The `BPVatExemptions` entity of the SAP Business One Service Layer.
 public type BPVatExemptions record {|
     @jsondata:Name {value: "AbsoluteEntry"}
     int:Signed32 absoluteEntry?;
@@ -967,12 +990,14 @@ public type BPVatExemptions record {|
 # OData EnumType 'BoOpenIncPayment'. Serialised by the Service Layer as the member name
 public type BoOpenIncPayment "oip_No"|"oip_Cash"|"oip_Checks"|"oip_Credit"|"oip_BankTransfer";
 
+# The `BPPaymentMethod` complex type of the SAP Business One Service Layer.
 public type BPPaymentMethod record {
     string PaymentMethodCode?;
     int:Signed32 RowNumber?;
     string BPCode?;
 };
 
+# The `BPBranchAssignmentItem` complex type of the SAP Business One Service Layer.
 public type BPBranchAssignmentItem record {
     string BPCode?;
     int:Signed32 BPLID?;
@@ -1050,11 +1075,13 @@ public type ListBusinessPartnersQueries record {
     string dollarSelect?;
 };
 
+# The `Relationship` entity of the SAP Business One Service Layer.
 public type Relationship record {
     string RelationshipDescription?;
     int:Signed32 RelationshipCode?;
 };
 
+# A paged collection of `BusinessPartnerProperties` entities returned by the SAP Business One Service Layer.
 public type BusinessPartnerPropertiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1063,6 +1090,7 @@ public type BusinessPartnerPropertiesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `BusinessPartnerPropertyParams` complex type of the SAP Business One Service Layer.
 public type BusinessPartnerPropertyParams record {|
     @jsondata:Name {value: "PropertyName"}
     string propertyName?;
@@ -1070,11 +1098,13 @@ public type BusinessPartnerPropertyParams record {|
     int:Signed32 propertyCode?;
 |};
 
+# The `BPPaymentDate` complex type of the SAP Business One Service Layer.
 public type BPPaymentDate record {
     string PaymentDate?;
     string BPCode?;
 };
 
+# The `BPCurrencies` complex type of the SAP Business One Service Layer.
 public type BPCurrencies record {
     string CurrencyCode?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
@@ -1088,6 +1118,7 @@ public type ListIndustriesHeaders record {
     string prefer?;
 };
 
+# The `BPCode` complex type of the SAP Business One Service Layer.
 public type BPCode record {|
     @jsondata:Name {value: "Debit"}
     decimal debit?;
@@ -1114,6 +1145,7 @@ public type BPCode record {|
 # OData EnumType 'BoAddressType'. Serialised by the Service Layer as the member name
 public type BoAddressType "bo_ShipTo"|"bo_BillTo";
 
+# The `BPBankAccount` complex type of the SAP Business One Service Layer.
 public type BPBankAccount record {
     int:Signed32 LogInstance?;
     string UserNo4?;
@@ -1152,6 +1184,7 @@ public type BPBankAccount record {
     SEPASequenceTypeEnum SEPASeqType?;
 };
 
+# Represents the request payload for the `BusinessPartnersService_CreateOpenBalance` operation of the SAP Business One Service Layer.
 public type BusinessPartnersService_CreateOpenBalance_body record {
     @jsondata:Name {value: "OpenningBalanceAccount"}
     OpenningBalanceAccount openningBalanceAccount?;
@@ -1159,6 +1192,7 @@ public type BusinessPartnersService_CreateOpenBalance_body record {
     BPCode[] bPCodes?;
 };
 
+# A paged collection of `Relationships` entities returned by the SAP Business One Service Layer.
 public type RelationshipsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1180,6 +1214,7 @@ public type GetBPFiscalRegistryIDQueries record {
 # OData EnumType 'ElectronicDocProtocolCodeEnum'. Serialised by the Service Layer as the member name
 public type ElectronicDocProtocolCodeEnum "edpc_Invalid"|"edpc_GEN"|"edpc_EET"|"edpc_CFDI"|"edpc_FPA"|"edpc_MTD"|"edpc_EWB"|"edpc_PEPPOL"|"edpc_HOI"|"edpc_MYF"|"edpc_EIS"|"edpc_IIS"|"edpc_IIS_Annual"|"edpc_DIGIPOORT"|"edpc_EBooks"|"edpc_DOX"|"edpc_RTIE"|"edpc_EBilling"|"edpc_TaxService"|"edpc_AFE"|"edpc_DocSign"|"edpc_KSeF"|"edpc_GSTReturn"|"edpc_PTDocSign"|"edpc_SkatDK"|"edpc_EII"|"edpc_NFe"|"edpc_PTeInvoicing"|"edpc_PTeCom"|"edpc_VeriFactu"|"edpc_BAS"|"edpc_PDFwithXML"|"edpc_FReINV";
 
+# The `OpenningBalanceAccount` complex type of the SAP Business One Service Layer.
 public type OpenningBalanceAccount record {|
     @jsondata:Name {value: "Details"}
     string details?;
@@ -1230,11 +1265,13 @@ public type ListBusinessPartnerPropertiesQueries record {
     string dollarSelect?;
 };
 
+# The `BPWithholdingTax` complex type of the SAP Business One Service Layer.
 public type BPWithholdingTax record {
     string WTCode?;
     string BPCode?;
 };
 
+# The `Industry` entity of the SAP Business One Service Layer.
 public type Industry record {
     string IndustryDescription?;
     string IndustryName?;
@@ -1267,6 +1304,7 @@ public type ListPaymentTermsTypesQueries record {
     string dollarSelect?;
 };
 
+# The `BPFiscalTaxID` complex type of the SAP Business One Service Layer.
 public type BPFiscalTaxID record {
     string Address?;
     int:Signed32 CNAECode?;
@@ -1292,6 +1330,7 @@ public type BPFiscalTaxID record {
     string TaxId14?;
 };
 
+# The `Territory` entity of the SAP Business One Service Layer.
 public type Territory record {
     int:Signed32 TerritoryID?;
     string Description?;
@@ -1302,6 +1341,7 @@ public type Territory record {
     BusinessPartner[] BusinessPartners?;
 };
 
+# Represents the request payload for the `PaymentTermsTypesService_UpdateWithBPs` operation of the SAP Business One Service Layer.
 public type PaymentTermsTypesService_UpdateWithBPs_body record {
     @jsondata:Name {value: "PaymentTermsType"}
     PaymentTermsType paymentTermsType?;
@@ -1320,6 +1360,7 @@ public type GetBusinessPartnerGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `BPPriority` entity of the SAP Business One Service Layer.
 public type BPPriority record {
     int:Signed32 Priority?;
     string PriorityDescription?;
@@ -1336,6 +1377,7 @@ public type ListBPPrioritiesHeaders record {
     string prefer?;
 };
 
+# The `RelatedDocument` complex type of the SAP Business One Service Layer.
 public type RelatedDocument record {|
     @jsondata:Name {value: "AbsEnry"}
     int:Signed32 absEnry?;
@@ -1355,6 +1397,7 @@ public type AutomaticPostingEnum "apNo"|"apInterestAndFee"|"apInterestOnly"|"apF
 # OData EnumType 'BoGSTRegnTypeEnum'. Serialised by the Service Layer as the member name
 public type BoGSTRegnTypeEnum "invalid"|"gstRegularTDSISD"|"gstCasualTaxablePerson"|"gstCompositionLevy"|"gstGoverDepartPSU"|"gstNonResidentTaxablePerson"|"gstUNAgencyEmbassy";
 
+# The `AddressFormatParams` complex type of the SAP Business One Service Layer.
 public type AddressFormatParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -1362,6 +1405,7 @@ public type AddressFormatParams record {|
     string name?;
 |};
 
+# A paged collection of `BPPriorities` entities returned by the SAP Business One Service Layer.
 public type BPPrioritiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1370,6 +1414,7 @@ public type BPPrioritiesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1386,6 +1431,7 @@ public type GetBusinessPartnerPropertiesQueries record {
     string dollarSelect?;
 };
 
+# The `ContactEmployee` complex type of the SAP Business One Service Layer.
 public type ContactEmployee record {
     string CardCode?;
     string Name?;
@@ -1430,6 +1476,7 @@ public type ContactEmployee record {
     ContactEmployeeBlockSendingMarketingContent[] ContactEmployeeBlockSendingMarketingContents?;
 };
 
+# A paged collection of `BusinessPartnerGroups` entities returned by the SAP Business One Service Layer.
 public type BusinessPartnerGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1463,6 +1510,7 @@ public type ListTerritoriesQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `BPVatExemptions` entities returned by the SAP Business One Service Layer.
 public type BPVatExemptionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1478,6 +1526,7 @@ public type ListBusinessPartnerPropertiesHeaders record {
     string prefer?;
 };
 
+# The `ContactEmployeeBlockSendingMarketingContent` complex type of the SAP Business One Service Layer.
 public type ContactEmployeeBlockSendingMarketingContent record {|
     @jsondata:Name {value: "CommunicationMediaId"}
     int:Signed32 communicationMediaId?;
@@ -1494,6 +1543,7 @@ public type ContactEmployeeBlockSendingMarketingContent record {|
 # OData EnumType 'BoBusinessPartnerGroupTypes'. Serialised by the Service Layer as the member name
 public type BoBusinessPartnerGroupTypes "bbpgt_CustomerGroup"|"bbpgt_VendorGroup";
 
+# The `BPVatExemptionsLine` complex type of the SAP Business One Service Layer.
 public type BPVatExemptionsLine record {|
     @jsondata:Name {value: "VATRate"}
     decimal vATRate?;
@@ -1527,6 +1577,7 @@ public type BPVatExemptionsLine record {|
     int:Signed32 visualOrder?;
 |};
 
+# The `BusinessPartnerProperty` entity of the SAP Business One Service Layer.
 public type BusinessPartnerProperty record {
     int:Signed32 PropertyCode?;
     string PropertyName?;
@@ -1548,12 +1599,14 @@ public type RelatedDocumentTypeEnum "rdt_Payment"|"rdt_Reconciliation";
 # OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name
 public type BoActivities "cn_Conversation"|"cn_Meeting"|"cn_Task"|"cn_Other"|"cn_Note"|"cn_Campaign"|"cn_Email";
 
+# Represents the response payload for the `BPVatExemptionsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     BPVatExemptionsParams[] value?;
 };
 
+# A paged collection of `BPFiscalRegistryID` entities returned by the SAP Business One Service Layer.
 public type BPFiscalRegistryIDCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1562,6 +1615,7 @@ public type BPFiscalRegistryIDCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AddressFormat` complex type of the SAP Business One Service Layer.
 public type AddressFormat record {|
     @jsondata:Name {value: "Format"}
     string format?;
@@ -1574,6 +1628,7 @@ public type AddressFormat record {|
 # OData EnumType 'BoBaselineDate'. Serialised by the Service Layer as the member name
 public type BoBaselineDate "bld_PostingDate"|"bld_SystemDate"|"bld_TaxDate"|"bld_ClosingDate";
 
+# Represents the request payload for the `BPOpeningBalanceService_CreateOpenBalance` operation of the SAP Business One Service Layer.
 public type BPOpeningBalanceService_CreateOpenBalance_body record {
     @jsondata:Name {value: "OpenningBalanceAccount"}
     OpenningBalanceAccount openningBalanceAccount?;
@@ -1587,6 +1642,7 @@ public type BoYesNoNoneEnum "boNO"|"boYES"|"boNONE";
 # OData EnumType 'EffectivePriceEnum'. Serialised by the Service Layer as the member name
 public type EffectivePriceEnum "epDefaultPriority"|"epLowestPrice"|"epHighestPrice";
 
+# The `BPFiscalRegistryID` entity of the SAP Business One Service Layer.
 public type BPFiscalRegistryID record {
     int:Signed32 Numerator?;
     string CNAECode?;
@@ -1606,6 +1662,7 @@ public type ListRelationshipsHeaders record {
     string prefer?;
 };
 
+# The `Contact` entity of the SAP Business One Service Layer.
 public type Contact record {
     string CardCode?;
     string Notes?;
@@ -1665,9 +1722,11 @@ public type Contact record {
     int:Signed32 UserSignature2?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum Emailedflag?;
+    # The `BusinessPartner` entity of the SAP Business One Service Layer.
     BusinessPartner BusinessPartner?;
 };
 
+# A paged collection of `PaymentTermsTypes` entities returned by the SAP Business One Service Layer.
 public type PaymentTermsTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1676,6 +1735,7 @@ public type PaymentTermsTypesCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `BusinessPartners` entities returned by the SAP Business One Service Layer.
 public type BusinessPartnersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1757,6 +1817,7 @@ public type ListBPVatExemptionsQueries record {
     string dollarSelect?;
 };
 
+# The `DiscountGroup` complex type of the SAP Business One Service Layer.
 public type DiscountGroup record {|
     @jsondata:Name {value: "DiscountPercentage"}
     decimal discountPercentage?;

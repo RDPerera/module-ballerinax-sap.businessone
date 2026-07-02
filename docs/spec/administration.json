@@ -544,7 +544,8 @@
                         "$ref": "#/components/schemas/AlertManagementParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `AlertManagements_GetAlertManagementList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -902,7 +903,8 @@
                         "$ref": "#/components/schemas/ApprovalRequestParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ApprovalRequestsService_GetAllApprovalRequestsList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -945,7 +947,8 @@
                         "$ref": "#/components/schemas/ApprovalRequestParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ApprovalRequestsService_GetApprovalRequestList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -988,7 +991,8 @@
                         "$ref": "#/components/schemas/ApprovalRequestParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ApprovalRequestsService_GetOpenApprovalRequestList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1270,7 +1274,8 @@
                         "$ref": "#/components/schemas/ApprovalStageParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ApprovalStagesService_GetApprovalStageList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1552,7 +1557,8 @@
                         "$ref": "#/components/schemas/ApprovalTemplateParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ApprovalTemplatesService_GetApprovalTemplateList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2309,7 +2315,8 @@
                         "$ref": "#/components/schemas/BranchParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BranchesService_GetBranchList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2587,7 +2594,8 @@
                     ],
                     "x-ballerina-name": "getChangeLogParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ChangeLogsService_GetChangeLog` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2611,7 +2619,8 @@
                         "$ref": "#/components/schemas/ChangeLogParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ChangeLogsService_GetChangeLog` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2650,7 +2659,8 @@
                     ],
                     "x-ballerina-name": "showDifferenceParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ChangeLogsService_GetChangeLogDifferences` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2674,7 +2684,8 @@
                         "$ref": "#/components/schemas/ChangeLogDifferenceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ChangeLogsService_GetChangeLogDifferences` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3192,7 +3203,8 @@
                         "$ref": "#/components/schemas/CockpitParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CockpitsService_GetCockpitList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3235,7 +3247,8 @@
                         "$ref": "#/components/schemas/CockpitParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CockpitsService_GetTemplateCockpitList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3278,7 +3291,8 @@
                         "$ref": "#/components/schemas/CockpitParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CockpitsService_GetUserCockpitList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3317,7 +3331,8 @@
                     ],
                     "x-ballerina-name": "cockpit"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CockpitsService_PublishCockpit` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3361,7 +3376,8 @@
                     ],
                     "x-ballerina-name": "periodCategory"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_CreatePeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3420,7 +3436,8 @@
                     ],
                     "x-ballerina-name": "periodCategory"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_CreatePeriodWithFinanceParams` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3502,7 +3519,8 @@
                     ],
                     "x-ballerina-name": "advancedGLAccountParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_GetAdvancedGLAccount` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3619,7 +3637,8 @@
                         "$ref": "#/components/schemas/FeatureStatus"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CompanyService_GetFeaturesStatus` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3658,7 +3677,8 @@
                     ],
                     "x-ballerina-name": "financePeriodParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_GetFinancePeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3709,7 +3729,8 @@
                     ],
                     "x-ballerina-name": "periodCategoryParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_GetFinancePeriods` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3733,7 +3754,8 @@
                         "$ref": "#/components/schemas/FinancePeriod"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CompanyService_GetFinancePeriods` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3772,7 +3794,8 @@
                     ],
                     "x-ballerina-name": "itemPriceParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_GetItemPrice` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3854,7 +3877,8 @@
                     ],
                     "x-ballerina-name": "periodCategoryParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_GetPeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3909,7 +3933,8 @@
                         "$ref": "#/components/schemas/PeriodCategoryParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CompanyService_GetPeriods` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3956,7 +3981,8 @@
                     ],
                     "x-ballerina-name": "supportUserLoginRecord"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_LogLoginAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4015,7 +4041,8 @@
                     ],
                     "x-ballerina-name": "supportUserLoginRecord"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_LogLogoffAction` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4090,7 +4117,8 @@
                     ],
                     "x-ballerina-name": "financePeriodParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_RemoveFinancePeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4134,7 +4162,8 @@
                     ],
                     "x-ballerina-name": "decimalData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_RoundDecimal` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4185,7 +4214,8 @@
                     ],
                     "x-ballerina-name": "adminInfo"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_UpdateAdminInfo` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4229,7 +4259,8 @@
                     ],
                     "x-ballerina-name": "companyInfo"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_UpdateCompanyInfo` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4273,7 +4304,8 @@
                     ],
                     "x-ballerina-name": "financePeriod"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_UpdateFinancePeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4317,7 +4349,8 @@
                     ],
                     "x-ballerina-name": "pathAdmin"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_UpdatePathAdmin` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4361,7 +4394,8 @@
                     ],
                     "x-ballerina-name": "periodCategory"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CompanyService_UpdatePeriod` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4648,7 +4682,8 @@
                         "$ref": "#/components/schemas/CountyParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CountiesService_GetCountyList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4927,7 +4962,8 @@
                         "$ref": "#/components/schemas/CountryParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `CountriesService_GetCountryList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -4966,7 +5002,8 @@
                     ],
                     "x-ballerina-name": "dashboardPackageImportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `DashboardPackagesService_ImportDashboardPackage` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5260,7 +5297,8 @@
                         "$ref": "#/components/schemas/DepartmentParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DepartmentsService_GetDepartmentList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -5656,7 +5694,8 @@
                         "$ref": "#/components/schemas/DistributionListParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `DistributionListsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6237,7 +6276,8 @@
                         "$ref": "#/components/schemas/EmailGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `EmailGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -6931,7 +6971,8 @@
                         "$ref": "#/components/schemas/ExceptionalEventParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ExceptionalEventService_GetExceptionalEventList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7449,7 +7490,8 @@
                         "$ref": "#/components/schemas/ExtendedTranslationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ExtendedTranslationsService_GetExtendedTranslationList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -7488,7 +7530,8 @@
                     ],
                     "x-ballerina-name": "externalCallParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ExternalCallsService_GetCall` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7539,7 +7582,8 @@
                     ],
                     "x-ballerina-name": "externalCall"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ExternalCallsService_SendCall` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7590,7 +7634,8 @@
                     ],
                     "x-ballerina-name": "externalCall"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ExternalCallsService_UpdateCall` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8215,7 +8260,8 @@
                         "$ref": "#/components/schemas/HolidayParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `HolidayService_GetHolidayList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -8733,7 +8779,8 @@
                         "$ref": "#/components/schemas/IntegrationPackageParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `IntegrationPackagesConfigureService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9012,7 +9059,8 @@
                         "$ref": "#/components/schemas/KPIParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `KPIsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9090,7 +9138,8 @@
                     "type": "string",
                     "x-ballerina-name": "password"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `Login` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -9410,7 +9459,8 @@
                         "$ref": "#/components/schemas/MessageHeader"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MessagesService_GetInbox` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9453,7 +9503,8 @@
                         "$ref": "#/components/schemas/MessageHeader"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MessagesService_GetOutbox` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9496,7 +9547,8 @@
                         "$ref": "#/components/schemas/MessageHeader"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MessagesService_GetSentMessages` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9775,7 +9827,8 @@
                         "$ref": "#/components/schemas/MobileAddOnSettingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MobileAddOnSettingService_GetMobileAddOnSettingList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9845,7 +9898,8 @@
                     ],
                     "x-ballerina-name": "dppChangeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetDppChangeParams` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -9895,7 +9949,8 @@
                     },
                     "x-ballerina-name": "employeeFullNamesParamsCollection"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetEmployeeFullNames` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -9919,7 +9974,8 @@
                         "$ref": "#/components/schemas/EmployeeFullNamesParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MobileAppService_GetEmployeeFullNames` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -9958,7 +10014,8 @@
                     ],
                     "x-ballerina-name": "salesAppSettingParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetSalesAppSetting` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10009,7 +10066,8 @@
                     ],
                     "x-ballerina-name": "serviceAppReportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetServiceAppReport` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10060,7 +10118,8 @@
                     ],
                     "x-ballerina-name": "serviceAppReportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetServiceAppReportContent` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10111,7 +10170,8 @@
                     ],
                     "x-ballerina-name": "technicianSchedulingsParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetTechnicianSchedulings` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10135,7 +10195,8 @@
                         "$ref": "#/components/schemas/TechnicianSchedulings"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `MobileAppService_GetTechnicianSchedulings` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -10174,7 +10235,8 @@
                     ],
                     "x-ballerina-name": "technicianSettingsParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetTechnicianSettings` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10225,7 +10287,8 @@
                     ],
                     "x-ballerina-name": "technicianSettingsGroupParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_GetTechnicianSettingsGroup` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10276,7 +10339,8 @@
                     ],
                     "x-ballerina-name": "salesAppSetting"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_UpdateSalesAppSetting` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10320,7 +10384,8 @@
                     ],
                     "x-ballerina-name": "serviceAppReport"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_UpdateServiceAppReport` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10372,7 +10437,8 @@
                     ],
                     "x-ballerina-name": "serviceAppReportContent"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_UpdateServiceAppReportContent` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10416,7 +10482,8 @@
                     ],
                     "x-ballerina-name": "technicianSettings"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_UpdateTechnicianSettings` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -10460,7 +10527,8 @@
                     ],
                     "x-ballerina-name": "technicianSettingsGroup"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `MobileAppService_UpdateTechnicianSettingsGroup` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -11222,7 +11290,8 @@
                         "$ref": "#/components/schemas/PredefinedTextParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `PredefinedTextsService_GetPredefinedTextList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11261,7 +11330,8 @@
                     ],
                     "x-ballerina-name": "qRCodeData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `QRCodeService_AddOrUpdateQRCode` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -11309,7 +11379,8 @@
                         "$ref": "#/components/schemas/QueryAuthGroup"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `QueryAuthGroupService_GetQueryAuthGroupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -11826,7 +11897,8 @@
                     "type": "string",
                     "x-ballerina-name": "queryOption"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `QueryService_PostQuery` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12116,7 +12188,8 @@
                     ],
                     "x-ballerina-name": "taxReportFilterParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportFilterService_GetTaxReportFilterList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12140,7 +12213,8 @@
                         "$ref": "#/components/schemas/TaxReportFilterParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ReportFilterService_GetTaxReportFilterList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12179,7 +12253,8 @@
                     ],
                     "x-ballerina-name": "reportLayout"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_AddReportLayout` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12238,7 +12313,8 @@
                     ],
                     "x-ballerina-name": "reportLayout"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_AddReportLayoutToMenu` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12289,7 +12365,8 @@
                     ],
                     "x-ballerina-name": "reportLayoutParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_DeleteReportLayout` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12333,7 +12410,8 @@
                     ],
                     "x-ballerina-name": "reportLayoutParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_DeleteReportLayoutAndMenu` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12377,7 +12455,8 @@
                     ],
                     "x-ballerina-name": "reportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_GetDefaultReport` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12428,7 +12507,8 @@
                     ],
                     "x-ballerina-name": "reportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_GetDefaultReportLayout` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12479,7 +12559,8 @@
                     ],
                     "x-ballerina-name": "reportLayoutParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_GetReportLayout` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12530,7 +12611,8 @@
                     ],
                     "x-ballerina-name": "reportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_GetReportLayoutList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12554,7 +12636,8 @@
                         "$ref": "#/components/schemas/ReportLayoutParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ReportLayoutsService_GetReportLayoutList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -12593,7 +12676,8 @@
                     ],
                     "x-ballerina-name": "defaultReportParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_SetDefaultReport` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12637,7 +12721,8 @@
                     ],
                     "x-ballerina-name": "reportLayout"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_UpdateLanguageReport` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12681,7 +12766,8 @@
                     ],
                     "x-ballerina-name": "reportLayout"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ReportLayoutsService_UpdatePrinterSettings` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -12965,7 +13051,8 @@
                         "$ref": "#/components/schemas/ReportTypeParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ReportTypesService_GetReportTypeList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -13005,7 +13092,8 @@
                     "type": "string",
                     "x-ballerina-name": "inPrecision"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_Format_MoneyToString` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13056,7 +13144,8 @@
                     "type": "string",
                     "x-ballerina-name": "date"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_GetCurrencyRate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13108,7 +13197,8 @@
                     "type": "string",
                     "x-ballerina-name": "cardCode"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_GetDueDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13159,7 +13249,8 @@
                     "type": "string",
                     "x-ballerina-name": "date"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_GetIndexRate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13273,7 +13364,8 @@
                     "type": "string",
                     "x-ballerina-name": "permissionID"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_GetSystemPermission` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13329,7 +13421,8 @@
                     "type": "string",
                     "x-ballerina-name": "currency"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_SetCurrencyRate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13378,7 +13471,8 @@
                     "type": "string",
                     "x-ballerina-name": "permissionID"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SBOBobService_SetSystemPermission` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -13667,7 +13761,8 @@
                     "type": "string",
                     "x-ballerina-name": "paramList"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SQLQueries_List_2` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14271,7 +14366,8 @@
                         "$ref": "#/components/schemas/SectionParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SectionsService_GetSectionList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -14310,7 +14406,8 @@
                     ],
                     "x-ballerina-name": "sensitiveDataAccess"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SensitiveDataAccessService_Access` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14361,7 +14458,8 @@
                     ],
                     "x-ballerina-name": "sensitiveDataAccess"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SensitiveDataAccessService_IsDataSensitive` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14412,7 +14510,8 @@
                     ],
                     "x-ballerina-name": "electronicSeries"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_AddElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14463,7 +14562,8 @@
                     ],
                     "x-ballerina-name": "series"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_AddSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14514,7 +14614,8 @@
                     ],
                     "x-ballerina-name": "documentSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_AttachSeriesToDocument` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14558,7 +14659,8 @@
                     ],
                     "x-ballerina-name": "documentChangeMenuName"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_ChangeDocumentMenuName` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14602,7 +14704,8 @@
                     ],
                     "x-ballerina-name": "seriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetDefaultElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14653,7 +14756,8 @@
                     ],
                     "x-ballerina-name": "documentTypeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetDefaultSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14704,7 +14808,8 @@
                     ],
                     "x-ballerina-name": "documentTypeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetDocumentChangedMenuName` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14755,7 +14860,8 @@
                     ],
                     "x-ballerina-name": "documentTypeParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetDocumentSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14779,7 +14885,8 @@
                         "$ref": "#/components/schemas/Series"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `SeriesService_GetDocumentSeries` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -14818,7 +14925,8 @@
                     ],
                     "x-ballerina-name": "electronicSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14869,7 +14977,8 @@
                     ],
                     "x-ballerina-name": "seriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_GetSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14920,7 +15029,8 @@
                     ],
                     "x-ballerina-name": "electronicSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_RemoveElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -14964,7 +15074,8 @@
                     ],
                     "x-ballerina-name": "seriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_RemoveSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15008,7 +15119,8 @@
                     ],
                     "x-ballerina-name": "defaultElectronicSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_SetDefaultElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15052,7 +15164,8 @@
                     ],
                     "x-ballerina-name": "documentSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_SetDefaultSeriesForAllUsers` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15096,7 +15209,8 @@
                     ],
                     "x-ballerina-name": "documentSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_SetDefaultSeriesForCurrentUser` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15140,7 +15254,8 @@
                     ],
                     "x-ballerina-name": "documentSeriesUserParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_SetDefaultSeriesForUser` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15184,7 +15299,8 @@
                     ],
                     "x-ballerina-name": "documentSeriesParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_UnattachSeriesFromDocument` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15228,7 +15344,8 @@
                     ],
                     "x-ballerina-name": "electronicSeries"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_UpdateElectronicSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15272,7 +15389,8 @@
                     ],
                     "x-ballerina-name": "series"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `SeriesService_UpdateSeries` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -15344,7 +15462,8 @@
                         "$ref": "#/components/schemas/ShortLinkMappingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ShortLinkMappingsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -15895,7 +16014,8 @@
                         "$ref": "#/components/schemas/StateParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `StatesService_GetStateList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -15938,7 +16058,8 @@
                         "$ref": "#/components/schemas/TSRExceptionalEventParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `TSRExceptionalEventService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -16725,7 +16846,8 @@
                         "$ref": "#/components/schemas/UserGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `UserGroupService_GetUserGroupList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -17518,7 +17640,8 @@
                         "$ref": "#/components/schemas/UserMenuItem"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `UserMenuService_GetCurrentUserMenu` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -17557,7 +17680,8 @@
                     ],
                     "x-ballerina-name": "userMenuParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `UserMenuService_GetUserMenu` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -17581,7 +17705,8 @@
                         "$ref": "#/components/schemas/UserMenuItem"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `UserMenuService_GetUserMenu` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -17619,7 +17744,8 @@
                     },
                     "x-ballerina-name": "userMenuItems"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `UserMenuService_UpdateCurrentUserMenu` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -17670,7 +17796,8 @@
                     },
                     "x-ballerina-name": "userMenuItems"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `UserMenuService_UpdateUserMenu` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -19521,7 +19648,8 @@
                     ],
                     "x-ballerina-name": "vMB1ValuesData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ValueMappingService_GetMappedB1Value` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -19545,7 +19673,8 @@
                         "$ref": "#/components/schemas/VMB1ValuesData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ValueMappingService_GetMappedB1Value` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -19584,7 +19713,8 @@
                     ],
                     "x-ballerina-name": "vMB1ValuesData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ValueMappingService_GetThirdPartyValuesForB1Value` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -19608,7 +19738,8 @@
                         "$ref": "#/components/schemas/VMThirdPartyValuesData"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ValueMappingService_GetThirdPartyValuesForB1Value` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -19647,7 +19778,8 @@
                     ],
                     "x-ballerina-name": "vMThirdPartyValuesData"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ValueMappingService_RemoveMappedValue` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -19695,7 +19827,8 @@
                         "$ref": "#/components/schemas/WebClientBookmarkTileParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientBookmarkTileService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -19974,7 +20107,8 @@
                         "$ref": "#/components/schemas/WebClientDashboardParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientDashboardService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -20253,7 +20387,8 @@
                         "$ref": "#/components/schemas/WebClientFormSettingParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientFormSettingService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -20532,7 +20667,8 @@
                         "$ref": "#/components/schemas/WebClientLaunchpadParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientLaunchpadService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -20811,7 +20947,8 @@
                         "$ref": "#/components/schemas/WebClientListviewFilterParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientListviewFilterService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -21090,7 +21227,8 @@
                         "$ref": "#/components/schemas/WebClientNotificationParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientNotificationService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -21369,7 +21507,8 @@
                         "$ref": "#/components/schemas/WebClientPreferenceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientPreferenceService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -21884,7 +22023,8 @@
                         "$ref": "#/components/schemas/WebClientRecentActivityParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientRecentActivityService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -21927,7 +22067,8 @@
                         "$ref": "#/components/schemas/WebClientVariantGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientVariantGroupService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -22206,7 +22347,8 @@
                         "$ref": "#/components/schemas/WebClientVariantParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WebClientVariantService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -22481,7 +22623,8 @@
                     ],
                     "x-ballerina-name": "workflowTaskCompleteParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `WorkflowTaskService_Complete` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -22525,7 +22668,8 @@
                     ],
                     "x-ballerina-name": "workflowApprovalTaskListParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `WorkflowTaskService_GetApprovalTaskList` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -22549,7 +22693,8 @@
                         "$ref": "#/components/schemas/WorkflowTask"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `WorkflowTaskService_GetApprovalTaskList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -22658,7 +22803,8 @@
             "x-ballerina-name": "fieldValues"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EventNotification` entity of the SAP Business One Service Layer."
       },
       "ExternalCallParams": {
         "type": "object",
@@ -22669,7 +22815,8 @@
             "x-ballerina-name": "iD"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExternalCallParams` complex type of the SAP Business One Service Layer."
       },
       "MobileAddOnSettingCollectionResponse": {
         "type": "object",
@@ -22688,7 +22835,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `MobileAddOnSetting` entities returned by the SAP Business One Service Layer."
       },
       "CallMessage": {
         "type": "object",
@@ -22740,7 +22888,8 @@
             "x-ballerina-name": "messageBody"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CallMessage` complex type of the SAP Business One Service Layer."
       },
       "TransactionTypeEnum": {
         "type": "string",
@@ -22859,7 +23008,8 @@
             "x-ballerina-name": "approvalStage"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalRequest` entity of the SAP Business One Service Layer."
       },
       "DefaultReportParams": {
         "type": "object",
@@ -22882,7 +23032,8 @@
             "x-ballerina-name": "cardCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DefaultReportParams` complex type of the SAP Business One Service Layer."
       },
       "AdvancedGLAccountParams": {
         "type": "object",
@@ -22954,7 +23105,8 @@
             "x-ballerina-name": "uDF1"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AdvancedGLAccountParams` complex type of the SAP Business One Service Layer."
       },
       "KPIParams": {
         "type": "object",
@@ -22968,7 +23120,8 @@
             "x-ballerina-name": "kPIName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `KPIParams` complex type of the SAP Business One Service Layer."
       },
       "QueryCategory": {
         "type": "object",
@@ -22990,7 +23143,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `QueryCategory` entity of the SAP Business One Service Layer."
       },
       "SalesAppSetting": {
         "type": "object",
@@ -23015,7 +23169,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesAppSetting` complex type of the SAP Business One Service Layer."
       },
       "BoUTBTableType": {
         "type": "string",
@@ -23041,7 +23196,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CallMessageArgument` complex type of the SAP Business One Service Layer."
       },
       "FormattedSearchByFieldEnum": {
         "type": "string",
@@ -23061,7 +23217,8 @@
             "x-ballerina-name": "series"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SeriesParams` complex type of the SAP Business One Service Layer."
       },
       "SingleUserConnection": {
         "type": "object",
@@ -23080,7 +23237,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SingleUserConnection` entity of the SAP Business One Service Layer."
       },
       "WorkflowTaskCompleteParams": {
         "type": "object",
@@ -23099,7 +23257,8 @@
             "x-ballerina-name": "triggerParams"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowTaskCompleteParams` complex type of the SAP Business One Service Layer."
       },
       "Picture": {
         "type": "object",
@@ -23126,7 +23285,8 @@
             "x-ballerina-name": "pictureModifyDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Picture` entity of the SAP Business One Service Layer."
       },
       "IntegrationPackageParams": {
         "type": "object",
@@ -23137,7 +23297,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IntegrationPackageParams` complex type of the SAP Business One Service Layer."
       },
       "BoConsumptionMethod": {
         "type": "string",
@@ -23164,7 +23325,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ExceptionalEvents` entities returned by the SAP Business One Service Layer."
       },
       "ExtendedAdminInfo": {
         "type": "object",
@@ -23380,7 +23542,8 @@
             "x-ballerina-name": "dateOfIncorporation"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExtendedAdminInfo` complex type of the SAP Business One Service Layer."
       },
       "TSRExceptionalEventParams": {
         "type": "object",
@@ -23390,7 +23553,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TSRExceptionalEventParams` complex type of the SAP Business One Service Layer."
       },
       "BoUPTOptions": {
         "type": "string",
@@ -23462,7 +23626,8 @@
             "x-ballerina-name": "usageArray"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientRecentActivity` entity of the SAP Business One Service Layer."
       },
       "CockpitsCollectionResponse": {
         "type": "object",
@@ -23481,7 +23646,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Cockpits` entities returned by the SAP Business One Service Layer."
       },
       "ApprovalTemplateConditionTypeEnum": {
         "type": "string",
@@ -23529,7 +23695,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantSelectedColumn` complex type of the SAP Business One Service Layer."
       },
       "MultiLanguageTranslationsCollectionResponse": {
         "type": "object",
@@ -23548,7 +23715,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `MultiLanguageTranslations` entities returned by the SAP Business One Service Layer."
       },
       "CallArgument": {
         "type": "object",
@@ -23562,7 +23730,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CallArgument` complex type of the SAP Business One Service Layer."
       },
       "BoSubPeriodTypeEnum": {
         "type": "string",
@@ -23595,7 +23764,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SQLView` entity of the SAP Business One Service Layer."
       },
       "TaxRateDeterminationEnum": {
         "type": "string",
@@ -23641,7 +23811,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPlaceTributaryInfo` complex type of the SAP Business One Service Layer."
       },
       "DomesticBankAccountValidationEnum": {
         "type": "string",
@@ -23671,7 +23842,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `TranslationsInUserLanguage` complex type of the SAP Business One Service Layer."
       },
       "VMCommunicationTypeEnum": {
         "type": "string",
@@ -23702,7 +23874,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AlertManagementParams` complex type of the SAP Business One Service Layer."
       },
       "DistributionListParams": {
         "type": "object",
@@ -23717,7 +23890,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DistributionListParams` complex type of the SAP Business One Service Layer."
       },
       "AlertManagementFrequencyType": {
         "type": "string",
@@ -23751,7 +23925,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportFilterParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientRecentActivitiesCollectionResponse": {
         "type": "object",
@@ -23770,7 +23945,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientRecentActivities` entities returned by the SAP Business One Service Layer."
       },
       "PredefinedTextsCollectionResponse": {
         "type": "object",
@@ -23789,7 +23965,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PredefinedTexts` entities returned by the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -23814,7 +23991,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "B1SessionsCollectionResponse": {
         "type": "object",
@@ -23833,7 +24011,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `B1Sessions` entities returned by the SAP Business One Service Layer."
       },
       "ReportParams": {
         "type": "object",
@@ -23852,7 +24031,8 @@
             "x-ballerina-name": "cardCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportParams` complex type of the SAP Business One Service Layer."
       },
       "CountiesCollectionResponse": {
         "type": "object",
@@ -23871,7 +24051,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Counties` entities returned by the SAP Business One Service Layer."
       },
       "UserActionTypeEnum": {
         "type": "string",
@@ -23941,7 +24122,8 @@
             "x-ballerina-name": "weekendFrom"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Holiday` entity of the SAP Business One Service Layer."
       },
       "Cockpit": {
         "type": "object",
@@ -24003,7 +24185,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Cockpit` entity of the SAP Business One Service Layer."
       },
       "EmailGroup": {
         "type": "object",
@@ -24017,7 +24200,8 @@
             "x-ballerina-name": "emailGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmailGroup` entity of the SAP Business One Service Layer."
       },
       "BoFieldTypes": {
         "type": "string",
@@ -24070,7 +24254,8 @@
             "x-ballerina-name": "importQueries"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DashboardPackageImportParams` complex type of the SAP Business One Service Layer."
       },
       "MobileAddOnSetting": {
         "type": "object",
@@ -24148,7 +24333,8 @@
             "x-ballerina-name": "provider"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MobileAddOnSetting` entity of the SAP Business One Service Layer."
       },
       "BoSuppLangs": {
         "type": "string",
@@ -24207,7 +24393,8 @@
             "x-ballerina-name": "documentType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportSeries` complex type of the SAP Business One Service Layer."
       },
       "UserGroupByUserItem": {
         "type": "object",
@@ -24229,7 +24416,8 @@
             "format": "date-time"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserGroupByUserItem` complex type of the SAP Business One Service Layer."
       },
       "WebClientNotification": {
         "type": "object",
@@ -24262,7 +24450,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientNotification` entity of the SAP Business One Service Layer."
       },
       "FieldID": {
         "type": "object",
@@ -24271,7 +24460,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `FieldID` complex type of the SAP Business One Service Layer."
       },
       "ReportTypesCollectionResponse": {
         "type": "object",
@@ -24290,7 +24480,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ReportTypes` entities returned by the SAP Business One Service Layer."
       },
       "AlertManagementDocument": {
         "type": "object",
@@ -24312,7 +24503,8 @@
             "x-ballerina-name": "document"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AlertManagementDocument` complex type of the SAP Business One Service Layer."
       },
       "UserMenuItemTypeEnum": {
         "type": "string",
@@ -24337,7 +24529,8 @@
             "x-ballerina-name": "documentType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateDocument` complex type of the SAP Business One Service Layer."
       },
       "WorkflowTaskNote": {
         "type": "object",
@@ -24366,7 +24559,8 @@
             "x-ballerina-name": "creator"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowTaskNote` complex type of the SAP Business One Service Layer."
       },
       "TaxReportFilterPeriod": {
         "type": "string",
@@ -24393,7 +24587,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SQLQueryResult` complex type of the SAP Business One Service Layer."
       },
       "MobileAddonSettingTypeEnum": {
         "type": "string",
@@ -24480,7 +24675,8 @@
             "x-ballerina-name": "categoryAxis2"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantEmbeddedChart` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplatesDocumentTypeEnum": {
         "type": "string",
@@ -24527,7 +24723,8 @@
             "x-ballerina-name": "holidayCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `HolidayParams` complex type of the SAP Business One Service Layer."
       },
       "State": {
         "type": "object",
@@ -24565,7 +24762,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `State` entity of the SAP Business One Service Layer."
       },
       "WebClientVariantSortBy": {
         "type": "object",
@@ -24588,7 +24786,8 @@
             "x-ballerina-name": "direction"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantSortBy` complex type of the SAP Business One Service Layer."
       },
       "DepartmentParams": {
         "type": "object",
@@ -24603,7 +24802,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DepartmentParams` complex type of the SAP Business One Service Layer."
       },
       "SAFTProductTypeEnum": {
         "type": "string",
@@ -24641,7 +24841,8 @@
             "x-ballerina-name": "realName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SupportUserLoginRecord` complex type of the SAP Business One Service Layer."
       },
       "BoApprovalRequestDecisionEnum": {
         "type": "string",
@@ -24669,7 +24870,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SingleUserConnections` entities returned by the SAP Business One Service Layer."
       },
       "EventSubscriptionsCollectionResponse": {
         "type": "object",
@@ -24688,7 +24890,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EventSubscriptions` entities returned by the SAP Business One Service Layer."
       },
       "BoSeriesTypeEnum": {
         "type": "string",
@@ -26489,7 +26692,8 @@
             "x-ballerina-name": "applyBaseInactiveStatusToPeriodVolumeDiscounts"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AdminInfo` complex type of the SAP Business One Service Layer."
       },
       "QueryCategoriesCollectionResponse": {
         "type": "object",
@@ -26508,7 +26712,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `QueryCategories` entities returned by the SAP Business One Service Layer."
       },
       "WorkflowTask": {
         "type": "object",
@@ -26582,7 +26787,8 @@
             "x-ballerina-name": "templateID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowTask` complex type of the SAP Business One Service Layer."
       },
       "WIPMapping": {
         "type": "object",
@@ -26606,7 +26812,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WIPMapping` complex type of the SAP Business One Service Layer."
       },
       "WebClientVariantGroupsCollectionResponse": {
         "type": "object",
@@ -26625,7 +26832,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientVariantGroups` entities returned by the SAP Business One Service Layer."
       },
       "CurrentServerTime": {
         "type": "object",
@@ -26640,7 +26848,8 @@
             "x-ballerina-name": "currentDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CurrentServerTime` complex type of the SAP Business One Service Layer."
       },
       "WebClientDashboardsCollectionResponse": {
         "type": "object",
@@ -26659,7 +26868,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientDashboards` entities returned by the SAP Business One Service Layer."
       },
       "UserFieldsMDCollectionResponse": {
         "type": "object",
@@ -26678,7 +26888,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserFieldsMD` entities returned by the SAP Business One Service Layer."
       },
       "ChangeLogParams": {
         "type": "object",
@@ -26702,7 +26913,8 @@
             "x-ballerina-name": "logInstance"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ChangeLogParams` complex type of the SAP Business One Service Layer."
       },
       "RoundedData": {
         "type": "object",
@@ -26713,7 +26925,8 @@
             "x-ballerina-name": "value"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RoundedData` complex type of the SAP Business One Service Layer."
       },
       "WebClientFormSetting": {
         "type": "object",
@@ -26743,7 +26956,8 @@
             "x-ballerina-name": "formId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientFormSetting` entity of the SAP Business One Service Layer."
       },
       "SortOrderEnum": {
         "type": "string",
@@ -26786,7 +27000,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `IntegrationPackageConfigure` entity of the SAP Business One Service Layer."
       },
       "UserObjectsMDCollectionResponse": {
         "type": "object",
@@ -26805,7 +27020,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserObjectsMD` entities returned by the SAP Business One Service Layer."
       },
       "BoAlertTypeforWHStockEnum": {
         "type": "string",
@@ -26839,7 +27055,8 @@
             "x-ballerina-name": "documentSubType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentTypeParams` complex type of the SAP Business One Service Layer."
       },
       "TaxReportAccount": {
         "type": "object",
@@ -26849,7 +27066,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportAccount` complex type of the SAP Business One Service Layer."
       },
       "WebClientRecentActivityParams": {
         "type": "object",
@@ -26859,7 +27077,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientRecentActivityParams` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplateStage": {
         "type": "object",
@@ -26879,7 +27098,8 @@
             "x-ballerina-name": "sortID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateStage` complex type of the SAP Business One Service Layer."
       },
       "BoQueryTypeEnum": {
         "type": "string",
@@ -26906,7 +27126,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserQueries` entities returned by the SAP Business One Service Layer."
       },
       "BoDataOwnershipManageMethodEnum": {
         "type": "string",
@@ -26950,7 +27171,8 @@
             "x-ballerina-name": "sys"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientDashboard` entity of the SAP Business One Service Layer."
       },
       "Attachments2Line": {
         "type": "object",
@@ -27015,7 +27237,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Attachments2_Line` complex type of the SAP Business One Service Layer."
       },
       "ReportLayoutCategoryEnum": {
         "type": "string",
@@ -27108,7 +27331,8 @@
             "x-ballerina-name": "sessionID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserAccessLog` complex type of the SAP Business One Service Layer."
       },
       "UserObjectMDChildTable": {
         "type": "object",
@@ -27130,7 +27354,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserObjectMD_ChildTable` complex type of the SAP Business One Service Layer."
       },
       "WebClientVariantEmbeddedChartValue2": {
         "type": "object",
@@ -27149,7 +27374,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantEmbeddedChartValue2` complex type of the SAP Business One Service Layer."
       },
       "WebClientListviewFilter": {
         "type": "object",
@@ -27179,7 +27405,8 @@
             "x-ballerina-name": "webClientListviewFilterConditions"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientListviewFilter` entity of the SAP Business One Service Layer."
       },
       "WebClientVariantEmbeddedChartValue1": {
         "type": "object",
@@ -27198,7 +27425,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantEmbeddedChartValue1` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplateParams": {
         "type": "object",
@@ -27213,7 +27441,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateParams` complex type of the SAP Business One Service Layer."
       },
       "ValueMappingCommunicationCollectionResponse": {
         "type": "object",
@@ -27232,7 +27461,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ValueMappingCommunication` entities returned by the SAP Business One Service Layer."
       },
       "BoPrintReceiptEnum": {
         "type": "string",
@@ -27259,7 +27489,8 @@
             "x-ballerina-name": "object"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MessageDataLine` complex type of the SAP Business One Service Layer."
       },
       "MobileServerDateTime": {
         "type": "object",
@@ -27274,7 +27505,8 @@
             "x-ballerina-name": "date"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MobileServerDateTime` complex type of the SAP Business One Service Layer."
       },
       "UserKeysMD": {
         "type": "object",
@@ -27299,7 +27531,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserKeysMD` entity of the SAP Business One Service Layer."
       },
       "DefaultCreditCard": {
         "type": "object",
@@ -27315,7 +27548,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DefaultCreditCard` complex type of the SAP Business One Service Layer."
       },
       "CountyParams": {
         "type": "object",
@@ -27334,7 +27568,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CountyParams` complex type of the SAP Business One Service Layer."
       },
       "DisplayBatchQtyUoMByEnum": {
         "type": "string",
@@ -27391,7 +27626,8 @@
             "x-ballerina-name": "createDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExtendedTranslation` entity of the SAP Business One Service Layer."
       },
       "StateParams": {
         "type": "object",
@@ -27409,7 +27645,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `StateParams` complex type of the SAP Business One Service Layer."
       },
       "BoOrientationEnum": {
         "type": "string",
@@ -27468,7 +27705,8 @@
             "x-ballerina-name": "propertyID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SensitiveDataAccess` complex type of the SAP Business One Service Layer."
       },
       "BoMsgPriorities": {
         "type": "string",
@@ -27487,7 +27725,8 @@
             "x-ballerina-name": "status"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowApprovalTaskListParams` complex type of the SAP Business One Service Layer."
       },
       "UserLanguagesCollectionResponse": {
         "type": "object",
@@ -27506,7 +27745,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserLanguages` entities returned by the SAP Business One Service Layer."
       },
       "WebClientBookmarkTileParams": {
         "type": "object",
@@ -27516,7 +27756,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientBookmarkTileParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceAppReport": {
         "type": "object",
@@ -27543,7 +27784,8 @@
             "x-ballerina-name": "reportChoice"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceAppReport` complex type of the SAP Business One Service Layer."
       },
       "TaxReportFilterType": {
         "type": "string",
@@ -27584,7 +27826,8 @@
             "x-ballerina-name": "qRCodeText"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `QRCodeData` complex type of the SAP Business One Service Layer."
       },
       "PathAdmin": {
         "type": "object",
@@ -27610,7 +27853,8 @@
             "x-ballerina-name": "printId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PathAdmin` complex type of the SAP Business One Service Layer."
       },
       "DepartmentsCollectionResponse": {
         "type": "object",
@@ -27629,7 +27873,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Departments` entities returned by the SAP Business One Service Layer."
       },
       "PeriodCategoryParams": {
         "type": "object",
@@ -27640,7 +27885,8 @@
             "x-ballerina-name": "absoluteEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PeriodCategoryParams` complex type of the SAP Business One Service Layer."
       },
       "ApprovalRequestsCollectionResponse": {
         "type": "object",
@@ -27659,7 +27905,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ApprovalRequests` entities returned by the SAP Business One Service Layer."
       },
       "BusinessPlace": {
         "type": "object",
@@ -27845,7 +28092,8 @@
             "$ref": "#/components/schemas/Country"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPlace` entity of the SAP Business One Service Layer."
       },
       "ReportLayout": {
         "type": "object",
@@ -28117,7 +28365,8 @@
             "x-ballerina-name": "queryType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportLayout` complex type of the SAP Business One Service Layer."
       },
       "DefaultDocument": {
         "type": "object",
@@ -28161,7 +28410,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DefaultDocument` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplate": {
         "type": "object",
@@ -28246,7 +28496,8 @@
             "x-ballerina-name": "approvalTemplateUsers"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplate` entity of the SAP Business One Service Layer."
       },
       "ElectronicSeries": {
         "type": "object",
@@ -28296,7 +28547,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ElectronicSeries` complex type of the SAP Business One Service Layer."
       },
       "BoBudgetAlert": {
         "type": "string",
@@ -28343,7 +28595,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserTablesMD` entity of the SAP Business One Service Layer."
       },
       "ApprovalTemplateTerm": {
         "type": "object",
@@ -28369,7 +28622,8 @@
             "x-ballerina-name": "operationType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateTerm` complex type of the SAP Business One Service Layer."
       },
       "TSRExceptionalEventsCollectionResponse": {
         "type": "object",
@@ -28388,7 +28642,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `TSRExceptionalEvents` entities returned by the SAP Business One Service Layer."
       },
       "ReportTypeParams": {
         "type": "object",
@@ -28414,7 +28669,8 @@
             "x-ballerina-name": "addonFormType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportTypeParams` complex type of the SAP Business One Service Layer."
       },
       "AlertManagementPriorityEnum": {
         "type": "string",
@@ -28448,7 +28704,8 @@
             "x-ballerina-name": "link"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MessageDataColumn` complex type of the SAP Business One Service Layer."
       },
       "UserQuery": {
         "type": "object",
@@ -28497,7 +28754,8 @@
             "$ref": "#/components/schemas/QueryCategory"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserQuery` entity of the SAP Business One Service Layer."
       },
       "BoFormattedSearchActionEnum": {
         "type": "string",
@@ -28533,7 +28791,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientNotificationParams` complex type of the SAP Business One Service Layer."
       },
       "ReportFilterCollectionResponse": {
         "type": "object",
@@ -28552,7 +28811,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ReportFilter` entities returned by the SAP Business One Service Layer."
       },
       "DataSensitiveStatus": {
         "type": "object",
@@ -28566,7 +28826,8 @@
             "x-ballerina-name": "dataSensitiveStatus"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DataSensitiveStatus` complex type of the SAP Business One Service Layer."
       },
       "QueryAuthGroupsCollectionResponse": {
         "type": "object",
@@ -28585,7 +28846,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `QueryAuthGroups` entities returned by the SAP Business One Service Layer."
       },
       "UserDefaultGroupsCollectionResponse": {
         "type": "object",
@@ -28604,7 +28866,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserDefaultGroups` entities returned by the SAP Business One Service Layer."
       },
       "ApprovalRequestParams": {
         "type": "object",
@@ -28627,7 +28890,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalRequestParams` complex type of the SAP Business One Service Layer."
       },
       "ExtendedTranslationResultLine": {
         "type": "object",
@@ -28657,7 +28921,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExtendedTranslation_ResultLine` complex type of the SAP Business One Service Layer."
       },
       "BoGLMethods": {
         "type": "string",
@@ -28676,7 +28941,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientFormSettingParams` complex type of the SAP Business One Service Layer."
       },
       "AuthenticationTypeEnum": {
         "type": "string",
@@ -28705,7 +28971,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantGroupBy` complex type of the SAP Business One Service Layer."
       },
       "BoManageMethod": {
         "type": "string",
@@ -28759,7 +29026,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserActionRecordItem` complex type of the SAP Business One Service Layer."
       },
       "BoBarCodeStandardEnum": {
         "type": "string",
@@ -29018,7 +29286,8 @@
             "x-ballerina-name": "fromSeries"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportFilter` entity of the SAP Business One Service Layer."
       },
       "BoAeDistMthd": {
         "type": "string",
@@ -29096,7 +29365,8 @@
             "x-ballerina-name": "sendFax"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Recipient` complex type of the SAP Business One Service Layer."
       },
       "UserQueryTypeEnum": {
         "type": "string",
@@ -29117,7 +29387,8 @@
             "x-ballerina-name": "electronicSeries"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ElectronicSeriesParams` complex type of the SAP Business One Service Layer."
       },
       "BoBaseDateRateEnum": {
         "type": "string",
@@ -29144,7 +29415,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Users` entities returned by the SAP Business One Service Layer."
       },
       "TechnicianSettingsGroup": {
         "type": "object",
@@ -29228,7 +29500,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSettingsGroup` complex type of the SAP Business One Service Layer."
       },
       "WebClientLaunchpadsCollectionResponse": {
         "type": "object",
@@ -29247,7 +29520,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientLaunchpads` entities returned by the SAP Business One Service Layer."
       },
       "WebClientBookmarkTile": {
         "type": "object",
@@ -29281,7 +29555,8 @@
             "x-ballerina-name": "subTitle"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientBookmarkTile` entity of the SAP Business One Service Layer."
       },
       "County": {
         "type": "object",
@@ -29318,7 +29593,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `County` entity of the SAP Business One Service Layer."
       },
       "BoCockpitTypeEnum": {
         "type": "string",
@@ -29433,7 +29709,8 @@
             "x-ballerina-name": "handshake"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EventSubscription` entity of the SAP Business One Service Layer."
       },
       "PredefinedTextParams": {
         "type": "object",
@@ -29448,7 +29725,8 @@
             "x-ballerina-name": "textCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PredefinedTextParams` complex type of the SAP Business One Service Layer."
       },
       "UserObjectMDFindColumn": {
         "type": "object",
@@ -29467,7 +29745,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserObjectMD_FindColumn` complex type of the SAP Business One Service Layer."
       },
       "CallMessageTypeEnum": {
         "type": "string",
@@ -29516,7 +29795,8 @@
             "x-ballerina-name": "objectName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantGroup` entity of the SAP Business One Service Layer."
       },
       "UserKeysMDCollectionResponse": {
         "type": "object",
@@ -29535,7 +29815,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserKeysMD` entities returned by the SAP Business One Service Layer."
       },
       "ReportLayoutItem": {
         "type": "object",
@@ -29943,7 +30224,8 @@
             "x-ballerina-name": "leftMargin"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportLayoutItem` complex type of the SAP Business One Service Layer."
       },
       "ShowDifferenceParams": {
         "type": "object",
@@ -29975,7 +30257,8 @@
             "x-ballerina-name": "logInstance"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ShowDifferenceParams` complex type of the SAP Business One Service Layer."
       },
       "BoCurrencyCheck": {
         "type": "string",
@@ -30099,7 +30382,8 @@
             "$ref": "#/components/schemas/UserTablesMD"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserObjectsMD` entity of the SAP Business One Service Layer."
       },
       "UserObjectMDFormColumn": {
         "type": "object",
@@ -30125,7 +30409,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserObjectMD_FormColumn` complex type of the SAP Business One Service Layer."
       },
       "DistributionListsCollectionResponse": {
         "type": "object",
@@ -30144,7 +30429,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DistributionLists` entities returned by the SAP Business One Service Layer."
       },
       "WebClientLaunchpadTile": {
         "type": "object",
@@ -30163,7 +30449,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientLaunchpadTile` complex type of the SAP Business One Service Layer."
       },
       "Series": {
         "type": "object",
@@ -30255,7 +30542,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Series` complex type of the SAP Business One Service Layer."
       },
       "TechnicianSettingsGroupParams": {
         "type": "object",
@@ -30270,7 +30558,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSettingsGroupParams` complex type of the SAP Business One Service Layer."
       },
       "BoWeekEnum": {
         "type": "string",
@@ -30302,7 +30591,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientVariants` entities returned by the SAP Business One Service Layer."
       },
       "AlertManagementsCollectionResponse": {
         "type": "object",
@@ -30321,7 +30611,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AlertManagements` entities returned by the SAP Business One Service Layer."
       },
       "WebClientVariantMChart": {
         "type": "object",
@@ -30388,7 +30679,8 @@
             "x-ballerina-name": "webClientVariantMChartValue1Collection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantMChart` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplateUser": {
         "type": "object",
@@ -30399,7 +30691,8 @@
             "x-ballerina-name": "userID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateUser` complex type of the SAP Business One Service Layer."
       },
       "KPITypeEnum": {
         "type": "string",
@@ -30419,7 +30712,8 @@
             "x-ballerina-name": "reportLayoutMenuID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportInputParams` complex type of the SAP Business One Service Layer."
       },
       "ChooseFromListLine": {
         "type": "object",
@@ -30454,7 +30748,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ChooseFromList_Line` complex type of the SAP Business One Service Layer."
       },
       "QueryAuthGroup": {
         "type": "object",
@@ -30480,7 +30775,8 @@
             "x-ballerina-name": "categoryGroupCollection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `QueryAuthGroup` entity of the SAP Business One Service Layer."
       },
       "DashboardPackageParams": {
         "type": "object",
@@ -30491,7 +30787,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DashboardPackageParams` complex type of the SAP Business One Service Layer."
       },
       "ApprovalRequestDecision": {
         "type": "object",
@@ -30517,7 +30814,8 @@
             "x-ballerina-name": "approverUserName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalRequestDecision` complex type of the SAP Business One Service Layer."
       },
       "Department": {
         "type": "object",
@@ -30543,7 +30841,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Department` entity of the SAP Business One Service Layer."
       },
       "CountryParams": {
         "type": "object",
@@ -30557,7 +30856,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CountryParams` complex type of the SAP Business One Service Layer."
       },
       "FinancePeriodParams": {
         "type": "object",
@@ -30572,7 +30872,8 @@
             "x-ballerina-name": "periodIndicator"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FinancePeriodParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientDashboardParams": {
         "type": "object",
@@ -30582,7 +30883,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientDashboardParams` complex type of the SAP Business One Service Layer."
       },
       "Attachments2CollectionResponse": {
         "type": "object",
@@ -30601,7 +30903,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Attachments2` entities returned by the SAP Business One Service Layer."
       },
       "BoTimeTemplate": {
         "type": "string",
@@ -30665,7 +30968,8 @@
             "x-ballerina-name": "linkedFormNum"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserMenuItem` complex type of the SAP Business One Service Layer."
       },
       "BoSeriesGroupEnum": {
         "type": "string",
@@ -30700,7 +31004,8 @@
             "x-ballerina-name": "sessionId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `B1Session` entity of the SAP Business One Service Layer."
       },
       "BoHorizontalAlignmentEnum": {
         "type": "string",
@@ -30746,7 +31051,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ChangeLogDifferenceParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientDashboardCard": {
         "type": "object",
@@ -30777,7 +31083,8 @@
             "x-ballerina-name": "sys"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientDashboardCard` complex type of the SAP Business One Service Layer."
       },
       "ApprovalStagesCollectionResponse": {
         "type": "object",
@@ -30796,7 +31103,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ApprovalStages` entities returned by the SAP Business One Service Layer."
       },
       "ApprovalStageApprover": {
         "type": "object",
@@ -30807,7 +31115,8 @@
             "x-ballerina-name": "userID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalStageApprover` complex type of the SAP Business One Service Layer."
       },
       "WebClientVariantMChartSize": {
         "type": "object",
@@ -30826,7 +31135,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantMChartSize` complex type of the SAP Business One Service Layer."
       },
       "TranslationCategoryEnum": {
         "type": "string",
@@ -30861,7 +31171,8 @@
             "x-ballerina-name": "userGroupName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserGroupParams` complex type of the SAP Business One Service Layer."
       },
       "TaxReportGroup": {
         "type": "object",
@@ -30879,7 +31190,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportGroup` complex type of the SAP Business One Service Layer."
       },
       "KPIItemLine": {
         "type": "object",
@@ -31048,7 +31360,8 @@
             "x-ballerina-name": "kPIValue29"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `KPI_ItemLine` complex type of the SAP Business One Service Layer."
       },
       "VMCommunicationStatusEnum": {
         "type": "string",
@@ -31094,7 +31407,8 @@
             "x-ballerina-name": "electronicSeries"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DefaultElectronicSeriesParams` complex type of the SAP Business One Service Layer."
       },
       "ServiceAppReportParams": {
         "type": "object",
@@ -31113,7 +31427,8 @@
             "x-ballerina-name": "reportChoice"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceAppReportParams` complex type of the SAP Business One Service Layer."
       },
       "UserPermissionTreeCollectionResponse": {
         "type": "object",
@@ -31132,7 +31447,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserPermissionTree` entities returned by the SAP Business One Service Layer."
       },
       "SectionParams": {
         "type": "object",
@@ -31151,7 +31467,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SectionParams` complex type of the SAP Business One Service Layer."
       },
       "ShortLinkMappingParams": {
         "type": "object",
@@ -31161,7 +31478,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ShortLinkMappingParams` complex type of the SAP Business One Service Layer."
       },
       "BoDateTemplate": {
         "type": "string",
@@ -31252,7 +31570,8 @@
             "x-ballerina-name": "visibleInForm"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ColumnPreferences` entity of the SAP Business One Service Layer."
       },
       "WorkflowTaskOutputObject": {
         "type": "object",
@@ -31279,7 +31598,8 @@
             "x-ballerina-name": "key"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowTaskOutputObject` complex type of the SAP Business One Service Layer."
       },
       "Section": {
         "type": "object",
@@ -31302,7 +31622,8 @@
             "x-ballerina-name": "eCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Section` entity of the SAP Business One Service Layer."
       },
       "ItemPriceReturnParams": {
         "type": "object",
@@ -31322,7 +31643,8 @@
             "x-ballerina-name": "currency"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemPriceReturnParams` complex type of the SAP Business One Service Layer."
       },
       "UserPermissionForm": {
         "type": "object",
@@ -31338,7 +31660,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserPermissionForm` complex type of the SAP Business One Service Layer."
       },
       "FinancePeriod": {
         "type": "object",
@@ -31428,7 +31751,8 @@
             "x-ballerina-name": "taxDateTo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FinancePeriod` complex type of the SAP Business One Service Layer."
       },
       "TechnicianSettingsParams": {
         "type": "object",
@@ -31439,7 +31763,8 @@
             "x-ballerina-name": "technician"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSettingsParams` complex type of the SAP Business One Service Layer."
       },
       "Event": {
         "type": "object",
@@ -31465,7 +31790,8 @@
             "x-ballerina-name": "businessObject"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Event` complex type of the SAP Business One Service Layer."
       },
       "MessageHeader": {
         "type": "object",
@@ -31510,7 +31836,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MessageHeader` complex type of the SAP Business One Service Layer."
       },
       "DppChangeParams": {
         "type": "object",
@@ -31533,7 +31860,8 @@
             "x-ballerina-name": "fromTime"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DppChangeParams` complex type of the SAP Business One Service Layer."
       },
       "BoChangeLogEnum": {
         "type": "string",
@@ -31612,7 +31940,8 @@
             "x-ballerina-name": "authGroupId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CategoryGroup` complex type of the SAP Business One Service Layer."
       },
       "EventReplayStateEnum": {
         "type": "string",
@@ -31667,7 +31996,8 @@
             "x-ballerina-name": "stageCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalRequestLine` complex type of the SAP Business One Service Layer."
       },
       "ElectronicReportInfo": {
         "type": "object",
@@ -31682,7 +32012,8 @@
             "x-ballerina-name": "companyType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ElectronicReportInfo` complex type of the SAP Business One Service Layer."
       },
       "SQLQuery": {
         "type": "object",
@@ -31714,7 +32045,8 @@
             "x-ballerina-name": "paramList"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SQLQuery` entity of the SAP Business One Service Layer."
       },
       "TechnicianSchedulingsParams": {
         "type": "object",
@@ -31735,7 +32067,8 @@
             "x-ballerina-name": "endDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSchedulingsParams` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplateOperationTypeEnum": {
         "type": "string",
@@ -31823,7 +32156,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AlertManagement` entity of the SAP Business One Service Layer."
       },
       "WebClientLaunchpad": {
         "type": "object",
@@ -31862,7 +32196,8 @@
             "x-ballerina-name": "displayQuickView"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientLaunchpad` entity of the SAP Business One Service Layer."
       },
       "HolidayDate": {
         "type": "object",
@@ -31886,7 +32221,8 @@
             "x-ballerina-name": "endDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `HolidayDate` complex type of the SAP Business One Service Layer."
       },
       "PeriodCategory": {
         "type": "object",
@@ -32421,7 +32757,8 @@
             "x-ballerina-name": "reconciliationDifference"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PeriodCategory` complex type of the SAP Business One Service Layer."
       },
       "FormattedSearchesCollectionResponse": {
         "type": "object",
@@ -32440,7 +32777,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `FormattedSearches` entities returned by the SAP Business One Service Layer."
       },
       "VMB1ValuesData": {
         "type": "object",
@@ -32467,7 +32805,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `VM_B1ValuesData` entity of the SAP Business One Service Layer."
       },
       "BoUserGroup": {
         "type": "string",
@@ -32494,7 +32833,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CockpitParams` complex type of the SAP Business One Service Layer."
       },
       "MessagesCollectionResponse": {
         "type": "object",
@@ -32513,7 +32853,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Messages` entities returned by the SAP Business One Service Layer."
       },
       "GetChangeLogParams": {
         "type": "object",
@@ -32535,7 +32876,8 @@
             "x-ballerina-name": "object"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GetChangeLogParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientVariant": {
         "type": "object",
@@ -32659,7 +33001,8 @@
             "x-ballerina-name": "conditionFilter"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariant` entity of the SAP Business One Service Layer."
       },
       "BoFldSubTypes": {
         "type": "string",
@@ -32696,7 +33039,8 @@
             "x-ballerina-name": "documentSubType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentChangeMenuName` complex type of the SAP Business One Service Layer."
       },
       "DocumentRemarksIncludeTypeEnum": {
         "type": "string",
@@ -32730,7 +33074,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DistributionListLine` complex type of the SAP Business One Service Layer."
       },
       "WebClientNotificationsCollectionResponse": {
         "type": "object",
@@ -32749,7 +33094,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientNotifications` entities returned by the SAP Business One Service Layer."
       },
       "WebClientListviewFiltersCollectionResponse": {
         "type": "object",
@@ -32768,7 +33114,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientListviewFilters` entities returned by the SAP Business One Service Layer."
       },
       "FormPreferencesCollectionResponse": {
         "type": "object",
@@ -32787,7 +33134,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `FormPreferences` entities returned by the SAP Business One Service Layer."
       },
       "MobileAppReportChoiceEnum": {
         "type": "string",
@@ -32830,7 +33178,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Branch` entity of the SAP Business One Service Layer."
       },
       "SalesAppSettingParams": {
         "type": "object",
@@ -32845,7 +33194,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `SalesAppSettingParams` complex type of the SAP Business One Service Layer."
       },
       "BADivationAlertLevelEnum": {
         "type": "string",
@@ -32883,7 +33233,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientBookmarkTiles` entities returned by the SAP Business One Service Layer."
       },
       "BoSortTypeEnum": {
         "type": "string",
@@ -32929,7 +33280,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Branches` entities returned by the SAP Business One Service Layer."
       },
       "TaxReportFilterApArDocumentType": {
         "type": "string",
@@ -32980,7 +33332,8 @@
             "x-ballerina-name": "sendFax"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AlertManagementRecipient` complex type of the SAP Business One Service Layer."
       },
       "ServiceAppReportContent": {
         "type": "object",
@@ -32990,7 +33343,8 @@
             "x-ballerina-name": "reportContent"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ServiceAppReportContent` complex type of the SAP Business One Service Layer."
       },
       "PredefinedText": {
         "type": "object",
@@ -33009,7 +33363,8 @@
             "x-ballerina-name": "text"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `PredefinedText` entity of the SAP Business One Service Layer."
       },
       "AdditionalExpensesCollectionResponse": {
         "type": "object",
@@ -33028,7 +33383,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `AdditionalExpenses` entities returned by the SAP Business One Service Layer."
       },
       "ExtendedTranslationsCollectionResponse": {
         "type": "object",
@@ -33047,7 +33403,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ExtendedTranslations` entities returned by the SAP Business One Service Layer."
       },
       "UserGroupsCollectionResponse": {
         "type": "object",
@@ -33066,7 +33423,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserGroups` entities returned by the SAP Business One Service Layer."
       },
       "Attachments2": {
         "type": "object",
@@ -33082,7 +33440,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Attachments2` entity of the SAP Business One Service Layer."
       },
       "WebClientPreference": {
         "type": "object",
@@ -33109,7 +33468,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientPreference` entity of the SAP Business One Service Layer."
       },
       "MultiLanguageTranslation": {
         "type": "object",
@@ -33134,7 +33494,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `MultiLanguageTranslation` entity of the SAP Business One Service Layer."
       },
       "WorkflowTaskInputObject": {
         "type": "object",
@@ -33166,7 +33527,8 @@
             "x-ballerina-name": "detail"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WorkflowTaskInputObject` complex type of the SAP Business One Service Layer."
       },
       "ChooseFromListCollectionResponse": {
         "type": "object",
@@ -33185,7 +33547,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ChooseFromList` entities returned by the SAP Business One Service Layer."
       },
       "WebClientListviewFilterParams": {
         "type": "object",
@@ -33195,7 +33558,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientListviewFilterParams` complex type of the SAP Business One Service Layer."
       },
       "FeatureStatus": {
         "type": "object",
@@ -33213,7 +33577,8 @@
             "x-ballerina-name": "blocked"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `FeatureStatus` complex type of the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -33263,7 +33628,8 @@
             "x-ballerina-name": "tPLId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserGroup` entity of the SAP Business One Service Layer."
       },
       "ValidValueMD": {
         "type": "object",
@@ -33277,7 +33643,8 @@
             "x-ballerina-name": "value"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ValidValueMD` complex type of the SAP Business One Service Layer."
       },
       "ExceptionalEventParams": {
         "type": "object",
@@ -33287,7 +33654,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExceptionalEventParams` complex type of the SAP Business One Service Layer."
       },
       "CallMessageStatusEnum": {
         "type": "string",
@@ -33306,7 +33674,8 @@
             "x-ballerina-name": "queryID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalTemplateQuery` complex type of the SAP Business One Service Layer."
       },
       "IssuePrimarilyByEnum": {
         "type": "string",
@@ -33343,7 +33712,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserObjectMD_EnhancedFormColumn` complex type of the SAP Business One Service Layer."
       },
       "MobileAddOnSettingParams": {
         "type": "object",
@@ -33357,7 +33727,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `MobileAddOnSettingParams` complex type of the SAP Business One Service Layer."
       },
       "HolidaysCollectionResponse": {
         "type": "object",
@@ -33376,7 +33747,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Holidays` entities returned by the SAP Business One Service Layer."
       },
       "CountriesCollectionResponse": {
         "type": "object",
@@ -33395,7 +33767,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Countries` entities returned by the SAP Business One Service Layer."
       },
       "UserValidValue": {
         "type": "object",
@@ -33404,7 +33777,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserValidValue` complex type of the SAP Business One Service Layer."
       },
       "RoundingContextEnum": {
         "type": "string",
@@ -33448,7 +33822,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantGroupParams` complex type of the SAP Business One Service Layer."
       },
       "BoDataSourceEnum": {
         "type": "string",
@@ -33477,7 +33852,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `KPIs` entities returned by the SAP Business One Service Layer."
       },
       "ReportLayoutParams": {
         "type": "object",
@@ -33499,7 +33875,8 @@
             "x-ballerina-name": "layoutName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportLayoutParams` complex type of the SAP Business One Service Layer."
       },
       "ReportLayoutTranslationLine": {
         "type": "object",
@@ -33543,7 +33920,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportLayout_TranslationLine` complex type of the SAP Business One Service Layer."
       },
       "FreightTypeEnum": {
         "type": "string",
@@ -33572,7 +33950,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EmailGroups` entities returned by the SAP Business One Service Layer."
       },
       "ExceptionalEvent": {
         "type": "object",
@@ -33586,7 +33965,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExceptionalEvent` entity of the SAP Business One Service Layer."
       },
       "AlertManagementDocumentEnum": {
         "type": "string",
@@ -33630,7 +34010,8 @@
             "x-ballerina-name": "events"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EventCatagory` complex type of the SAP Business One Service Layer."
       },
       "Country": {
         "type": "object",
@@ -33714,7 +34095,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Country` entity of the SAP Business One Service Layer."
       },
       "UserAccessLogReasonIDTypeEnum": {
         "type": "string",
@@ -33746,7 +34128,8 @@
             "x-ballerina-name": "emailGroupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmailGroupParams` complex type of the SAP Business One Service Layer."
       },
       "EventNotificationsCollectionResponse": {
         "type": "object",
@@ -33765,7 +34148,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `EventNotifications` entities returned by the SAP Business One Service Layer."
       },
       "EmployeeFullNamesParams": {
         "type": "object",
@@ -33780,7 +34164,8 @@
             "x-ballerina-name": "employeeID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EmployeeFullNamesParams` complex type of the SAP Business One Service Layer."
       },
       "ViewStyleTypeEnum": {
         "type": "string",
@@ -33808,7 +34193,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BusinessPlaces` entities returned by the SAP Business One Service Layer."
       },
       "BoInventorySystem": {
         "type": "string",
@@ -33841,7 +34227,8 @@
             "x-ballerina-name": "value"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DecimalData` complex type of the SAP Business One Service Layer."
       },
       "WebClientVariantMChartValue2": {
         "type": "object",
@@ -33860,7 +34247,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantMChartValue2` complex type of the SAP Business One Service Layer."
       },
       "StatesCollectionResponse": {
         "type": "object",
@@ -33879,7 +34267,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `States` entities returned by the SAP Business One Service Layer."
       },
       "SingleUserConnectionActionEnum": {
         "type": "string",
@@ -33903,7 +34292,8 @@
             "x-ballerina-name": "groupCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSettings` complex type of the SAP Business One Service Layer."
       },
       "TaxReportBusinessPartner": {
         "type": "object",
@@ -33913,7 +34303,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportBusinessPartner` complex type of the SAP Business One Service Layer."
       },
       "ApprovalTemplatesCollectionResponse": {
         "type": "object",
@@ -33932,7 +34323,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ApprovalTemplates` entities returned by the SAP Business One Service Layer."
       },
       "UserPermissionTree": {
         "type": "object",
@@ -33974,7 +34366,8 @@
             "$ref": "#/components/schemas/User"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserPermissionTree` entity of the SAP Business One Service Layer."
       },
       "FormattedSearch": {
         "type": "object",
@@ -34027,7 +34420,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `FormattedSearch` entity of the SAP Business One Service Layer."
       },
       "WebClientLaunchpadGroup": {
         "type": "object",
@@ -34065,7 +34459,8 @@
             "x-ballerina-name": "groupId"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientLaunchpadGroup` complex type of the SAP Business One Service Layer."
       },
       "ReportType": {
         "type": "object",
@@ -34095,7 +34490,8 @@
             "x-ballerina-name": "defaultReportLayout"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ReportType` entity of the SAP Business One Service Layer."
       },
       "WebClientVariantMChartValue1": {
         "type": "object",
@@ -34114,7 +34510,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantMChartValue1` complex type of the SAP Business One Service Layer."
       },
       "ItemPriceParams": {
         "type": "object",
@@ -34167,7 +34564,8 @@
             "x-ballerina-name": "date"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ItemPriceParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientFormSettingItem": {
         "type": "object",
@@ -34202,7 +34600,8 @@
             "x-ballerina-name": "editableInGrid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientFormSettingItem` complex type of the SAP Business One Service Layer."
       },
       "TSRExceptionalEvent": {
         "type": "object",
@@ -34216,7 +34615,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TSRExceptionalEvent` entity of the SAP Business One Service Layer."
       },
       "BranchParams": {
         "type": "object",
@@ -34231,7 +34631,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BranchParams` complex type of the SAP Business One Service Layer."
       },
       "RefreshPathsDocuments": {
         "type": "object",
@@ -34241,7 +34642,8 @@
             "x-ballerina-name": "attachmentsFolderPath"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RefreshPathsDocuments` complex type of the SAP Business One Service Layer."
       },
       "ValueMappingCommunicationData": {
         "type": "object",
@@ -34302,7 +34704,8 @@
             "x-ballerina-name": "communicationType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ValueMappingCommunicationData` entity of the SAP Business One Service Layer."
       },
       "SQLViewsCollectionResponse": {
         "type": "object",
@@ -34321,7 +34724,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SQLViews` entities returned by the SAP Business One Service Layer."
       },
       "BoMsgRcpTypes": {
         "type": "string",
@@ -34354,7 +34758,8 @@
             "x-ballerina-name": "documentSubType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentSeriesUserParams` complex type of the SAP Business One Service Layer."
       },
       "WebClientFormSettingsCollectionResponse": {
         "type": "object",
@@ -34373,7 +34778,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientFormSettings` entities returned by the SAP Business One Service Layer."
       },
       "DistributionList": {
         "type": "object",
@@ -34392,7 +34798,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DistributionList` entity of the SAP Business One Service Layer."
       },
       "TechnicianSchedulings": {
         "type": "object",
@@ -34426,7 +34833,8 @@
             "x-ballerina-name": "endDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TechnicianSchedulings` complex type of the SAP Business One Service Layer."
       },
       "VMThirdPartyValuesData": {
         "type": "object",
@@ -34451,7 +34859,8 @@
             "x-ballerina-name": "absEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `VM_ThirdPartyValuesData` complex type of the SAP Business One Service Layer."
       },
       "KPI": {
         "type": "object",
@@ -34485,7 +34894,8 @@
             "x-ballerina-name": "kPIName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `KPI` entity of the SAP Business One Service Layer."
       },
       "AlertManagementTypeEnum": {
         "type": "string",
@@ -34503,7 +34913,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientLaunchpadParams` complex type of the SAP Business One Service Layer."
       },
       "UserBranchAssignmentItem": {
         "type": "object",
@@ -34516,7 +34927,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserBranchAssignmentItem` complex type of the SAP Business One Service Layer."
       },
       "DynamicSystemString": {
         "type": "object",
@@ -34540,7 +34952,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DynamicSystemString` entity of the SAP Business One Service Layer."
       },
       "ExtendedTranslationParams": {
         "type": "object",
@@ -34567,7 +34980,8 @@
             "x-ballerina-name": "iD"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExtendedTranslationParams` complex type of the SAP Business One Service Layer."
       },
       "SQLQueriesCollectionResponse": {
         "type": "object",
@@ -34586,7 +35000,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SQLQueries` entities returned by the SAP Business One Service Layer."
       },
       "TaxReportFilterDocumentType": {
         "type": "string",
@@ -34622,7 +35037,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Pictures` entities returned by the SAP Business One Service Layer."
       },
       "UserKeysMDElement": {
         "type": "object",
@@ -34635,7 +35051,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserKeysMD_Element` complex type of the SAP Business One Service Layer."
       },
       "WebClientPreferenceParams": {
         "type": "object",
@@ -34645,7 +35062,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientPreferenceParams` complex type of the SAP Business One Service Layer."
       },
       "BoUniqueSerialNumber": {
         "type": "string",
@@ -34674,7 +35092,8 @@
             "x-ballerina-name": "documentSubType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentSeriesParams` complex type of the SAP Business One Service Layer."
       },
       "BoLineBreakEnum": {
         "type": "string",
@@ -34702,7 +35121,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `IntegrationPackagesConfigure` entities returned by the SAP Business One Service Layer."
       },
       "UserMenuParams": {
         "type": "object",
@@ -34713,7 +35133,8 @@
             "x-ballerina-name": "userID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserMenuParams` complex type of the SAP Business One Service Layer."
       },
       "ChooseFromList": {
         "type": "object",
@@ -34728,7 +35149,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ChooseFromList` entity of the SAP Business One Service Layer."
       },
       "WebhookStateEnum": {
         "type": "string",
@@ -34756,7 +35178,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `WebClientPreferences` entities returned by the SAP Business One Service Layer."
       },
       "UserTablesMDCollectionResponse": {
         "type": "object",
@@ -34775,7 +35198,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `UserTablesMD` entities returned by the SAP Business One Service Layer."
       },
       "SupportUserLoginRecordLogReasonTypeEnum": {
         "type": "string",
@@ -34857,7 +35281,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantParams` complex type of the SAP Business One Service Layer."
       },
       "UserFieldMD": {
         "type": "object",
@@ -34949,7 +35374,8 @@
             "x-ballerina-name": "mandatory"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `UserFieldMD` entity of the SAP Business One Service Layer."
       },
       "EventStatusEnum": {
         "type": "string",
@@ -34970,7 +35396,8 @@
             "x-ballerina-name": "accountCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AdvancedGLAccountReturnParams` complex type of the SAP Business One Service Layer."
       },
       "BoGridTypeEnum": {
         "type": "string",
@@ -35006,7 +35433,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserLanguage` entity of the SAP Business One Service Layer."
       },
       "CompanyInfo": {
         "type": "object",
@@ -35242,7 +35670,8 @@
             "x-ballerina-name": "defaultDaysForOrdCanc"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `CompanyInfo` complex type of the SAP Business One Service Layer."
       },
       "ValueMappingCollectionResponse": {
         "type": "object",
@@ -35261,7 +35690,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ValueMapping` entities returned by the SAP Business One Service Layer."
       },
       "TaxReportDocument": {
         "type": "object",
@@ -35285,7 +35715,8 @@
             "x-ballerina-name": "documentType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxReportDocument` complex type of the SAP Business One Service Layer."
       },
       "User": {
         "type": "object",
@@ -35434,7 +35865,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `User` entity of the SAP Business One Service Layer."
       },
       "DynamicSystemStringsCollectionResponse": {
         "type": "object",
@@ -35453,7 +35885,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `DynamicSystemStrings` entities returned by the SAP Business One Service Layer."
       },
       "Message": {
         "type": "object",
@@ -35504,7 +35937,8 @@
             "x-ballerina-name": "subject"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Message` entity of the SAP Business One Service Layer."
       },
       "AdditionalExpense": {
         "type": "object",
@@ -35598,7 +36032,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AdditionalExpense` entity of the SAP Business One Service Layer."
       },
       "UserDefaultGroup": {
         "type": "object",
@@ -35722,7 +36157,8 @@
             "$ref": "#/components/schemas/UserLanguage"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserDefaultGroup` entity of the SAP Business One Service Layer."
       },
       "ExtendedTranslationItemLine": {
         "type": "object",
@@ -35770,7 +36206,8 @@
             "x-ballerina-name": "memo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExtendedTranslation_ItemLine` complex type of the SAP Business One Service Layer."
       },
       "UserPermissionItem": {
         "type": "object",
@@ -35789,7 +36226,8 @@
             "$ref": "#/components/schemas/BoPermission"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `UserPermissionItem` complex type of the SAP Business One Service Layer."
       },
       "ExternalCall": {
         "type": "object",
@@ -35851,7 +36289,8 @@
             "x-ballerina-name": "lastUpdateDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExternalCall` complex type of the SAP Business One Service Layer."
       },
       "InventoryAccountTypeEnum": {
         "type": "string",
@@ -35932,7 +36371,8 @@
             "x-ballerina-name": "compareExpression"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientListviewFilterCondition` complex type of the SAP Business One Service Layer."
       },
       "ApprovalStage": {
         "type": "object",
@@ -35970,7 +36410,8 @@
             "x-ballerina-name": "noOfApproversRequired"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalStage` entity of the SAP Business One Service Layer."
       },
       "WebClientVariantEmbeddedChartSize": {
         "type": "object",
@@ -35989,7 +36430,8 @@
             "x-ballerina-name": "guid"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `WebClientVariantEmbeddedChartSize` complex type of the SAP Business One Service Layer."
       },
       "ApprovalStageParams": {
         "type": "object",
@@ -36004,7 +36446,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ApprovalStageParams` complex type of the SAP Business One Service Layer."
       },
       "BoVerticalAlignmentEnum": {
         "type": "string",
@@ -36029,7 +36472,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPlaceIENumber` complex type of the SAP Business One Service Layer."
       },
       "SectionsCollectionResponse": {
         "type": "object",
@@ -36048,7 +36492,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Sections` entities returned by the SAP Business One Service Layer."
       }
     },
     "parameters": {

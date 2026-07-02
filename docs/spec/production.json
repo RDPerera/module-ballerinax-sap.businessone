@@ -804,7 +804,8 @@
                         "$ref": "#/components/schemas/ResourceCapacityParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -843,7 +844,8 @@
                     ],
                     "x-ballerina-name": "resourceCapacityWithFilterParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -867,7 +869,8 @@
                         "$ref": "#/components/schemas/ResourceCapacityParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1149,7 +1152,8 @@
                         "$ref": "#/components/schemas/ResourceGroupParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ResourceGroupsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1431,7 +1435,8 @@
                         "$ref": "#/components/schemas/ResourcePropertyParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ResourcePropertiesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1747,7 +1752,8 @@
                         "$ref": "#/components/schemas/ResourceParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `ResourcesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2029,7 +2035,8 @@
                         "$ref": "#/components/schemas/RouteStageParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `RouteStagesService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -2068,7 +2075,8 @@
                     ],
                     "x-ballerina-name": "routingDateCalculationInput"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `RoutingDateCalculationService_Calculate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2357,7 +2365,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ResourceCapacities` entities returned by the SAP Business One Service Layer."
       },
       "ResourceTypeEnum": {
         "type": "string",
@@ -2439,7 +2448,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductTree` entity of the SAP Business One Service Layer."
       },
       "SalesForecastCollectionResponse": {
         "type": "object",
@@ -2458,7 +2468,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `SalesForecast` entities returned by the SAP Business One Service Layer."
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -2666,7 +2677,8 @@
             "$ref": "#/components/schemas/ProductTree"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductionOrder` entity of the SAP Business One Service Layer."
       },
       "RoutingDateCalculationOutput": {
         "type": "object",
@@ -2682,7 +2694,8 @@
             "x-ballerina-name": "resultDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RoutingDateCalculationOutput` complex type of the SAP Business One Service Layer."
       },
       "BatchNumber": {
         "type": "object",
@@ -2738,7 +2751,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
       },
       "Resource": {
         "type": "object",
@@ -3112,7 +3126,8 @@
             "$ref": "#/components/schemas/ResourceGroup"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Resource` entity of the SAP Business One Service Layer."
       },
       "ProductionItemType": {
         "type": "string",
@@ -3135,7 +3150,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceFixedAsset` complex type of the SAP Business One Service Layer."
       },
       "ProductionOrdersCollectionResponse": {
         "type": "object",
@@ -3154,7 +3170,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ProductionOrders` entities returned by the SAP Business One Service Layer."
       },
       "ResourceGroupParams": {
         "type": "object",
@@ -3169,7 +3186,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceGroupParams` complex type of the SAP Business One Service Layer."
       },
       "ResourcePropertyParams": {
         "type": "object",
@@ -3184,7 +3202,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourcePropertyParams` complex type of the SAP Business One Service Layer."
       },
       "SalesForecast": {
         "type": "object",
@@ -3217,7 +3236,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesForecast` entity of the SAP Business One Service Layer."
       },
       "ResourceCapacityParams": {
         "type": "object",
@@ -3363,7 +3383,8 @@
             "x-ballerina-name": "memo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceCapacityParams` complex type of the SAP Business One Service Layer."
       },
       "RouteStageParams": {
         "type": "object",
@@ -3396,7 +3417,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RouteStageParams` complex type of the SAP Business One Service Layer."
       },
       "BoProductionOrderStatusEnum": {
         "type": "string",
@@ -3451,7 +3473,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductionOrdersStage` complex type of the SAP Business One Service Layer."
       },
       "SerialNumber": {
         "type": "object",
@@ -3515,7 +3538,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
       },
       "ResourceCapacityBaseTypeEnum": {
         "type": "string",
@@ -3558,7 +3582,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductionOrdersDocumentReference` complex type of the SAP Business One Service Layer."
       },
       "RoutingDateCalculationInput": {
         "type": "object",
@@ -3610,7 +3635,8 @@
             "x-ballerina-name": "resourceAlloc"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RoutingDateCalculationInput` complex type of the SAP Business One Service Layer."
       },
       "RouteStagesCollectionResponse": {
         "type": "object",
@@ -3629,7 +3655,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `RouteStages` entities returned by the SAP Business One Service Layer."
       },
       "RouteStage": {
         "type": "object",
@@ -3662,7 +3689,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RouteStage` entity of the SAP Business One Service Layer."
       },
       "ResourceDailyCapacity": {
         "type": "object",
@@ -3714,7 +3742,8 @@
             "x-ballerina-name": "singleRun"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceDailyCapacity` complex type of the SAP Business One Service Layer."
       },
       "BoIssueMethod": {
         "type": "string",
@@ -3752,7 +3781,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductionOrdersSalesOrderLine` complex type of the SAP Business One Service Layer."
       },
       "ProductTreeStage": {
         "type": "object",
@@ -3780,7 +3810,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductTreeStage` complex type of the SAP Business One Service Layer."
       },
       "ProductTreeLine": {
         "type": "object",
@@ -3865,7 +3896,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductTreeLine` complex type of the SAP Business One Service Layer."
       },
       "ResourceWarehouse": {
         "type": "object",
@@ -3880,7 +3912,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ResourceWarehouse` complex type of the SAP Business One Service Layer."
       },
       "ResourceCapacityActionEnum": {
         "type": "string",
@@ -3915,7 +3948,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SalesForecastLine` complex type of the SAP Business One Service Layer."
       },
       "BoProductionOrderOriginEnum": {
         "type": "string",
@@ -3952,7 +3986,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceEmployee` complex type of the SAP Business One Service Layer."
       },
       "ReferencedObjectTypeEnum": {
         "type": "string",
@@ -4130,7 +4165,8 @@
             "x-ballerina-name": "costName4"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceGroup` entity of the SAP Business One Service Layer."
       },
       "ResourceParams": {
         "type": "object",
@@ -4140,7 +4176,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceParams` complex type of the SAP Business One Service Layer."
       },
       "BoItemTreeTypes": {
         "type": "string",
@@ -4171,7 +4208,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ResourceProperties` entities returned by the SAP Business One Service Layer."
       },
       "ProductionOrderLine": {
         "type": "object",
@@ -4294,7 +4332,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ProductionOrderLine` complex type of the SAP Business One Service Layer."
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4319,7 +4358,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "ResourceCapacityMemoSourceEnum": {
         "type": "string",
@@ -4365,7 +4405,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ProductTrees` entities returned by the SAP Business One Service Layer."
       },
       "ResourceCapacity": {
         "type": "object",
@@ -4519,7 +4560,8 @@
             "x-ballerina-name": "memo"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceCapacity` entity of the SAP Business One Service Layer."
       },
       "ResourceProperty": {
         "type": "object",
@@ -4534,7 +4576,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceProperty` entity of the SAP Business One Service Layer."
       },
       "ResourcesCollectionResponse": {
         "type": "object",
@@ -4553,7 +4596,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Resources` entities returned by the SAP Business One Service Layer."
       },
       "ResourceCapacityWithFilterParams": {
         "type": "object",
@@ -4580,7 +4624,8 @@
             "x-ballerina-name": "date"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ResourceCapacityWithFilterParams` complex type of the SAP Business One Service Layer."
       },
       "ResourceGroupsCollectionResponse": {
         "type": "object",
@@ -4599,7 +4644,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `ResourceGroups` entities returned by the SAP Business One Service Layer."
       },
       "BoProductionOrderTypeEnum": {
         "type": "string",

@@ -23,6 +23,7 @@ import ballerina/http;
 # OData EnumType 'BoWeekNoRuleEnum'. Serialised by the Service Layer as the member name
 public type BoWeekNoRuleEnum "fromJanFirst"|"fromFirstFourDayWeek"|"fromFirstFullWeek";
 
+# The `EventNotification` entity of the SAP Business One Service Layer.
 public type EventNotification record {|
     @jsondata:Name {value: "Status"}
     EventStatusEnum status?;
@@ -58,11 +59,13 @@ public type EventNotification record {|
     string fieldValues?;
 |};
 
+# The `ExternalCallParams` complex type of the SAP Business One Service Layer.
 public type ExternalCallParams record {|
     @jsondata:Name {value: "ID"}
     int:Signed32 iD?;
 |};
 
+# A paged collection of `MobileAddOnSetting` entities returned by the SAP Business One Service Layer.
 public type MobileAddOnSettingCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -71,6 +74,7 @@ public type MobileAddOnSettingCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `CallMessage` complex type of the SAP Business One Service Layer.
 public type CallMessage record {|
     @jsondata:Name {value: "Status"}
     CallMessageStatusEnum status?;
@@ -118,6 +122,7 @@ public type ListUserFieldsMDQueries record {
     string dollarSelect?;
 };
 
+# The `ApprovalRequest` entity of the SAP Business One Service Layer.
 public type ApprovalRequest record {|
     @jsondata:Name {value: "IsDraft"}
     string isDraft?;
@@ -157,6 +162,7 @@ public type ApprovalRequest record {|
     ApprovalStage approvalStage?;
 |};
 
+# The `DefaultReportParams` complex type of the SAP Business One Service Layer.
 public type DefaultReportParams record {|
     @jsondata:Name {value: "LayoutCode"}
     string layoutCode?;
@@ -168,6 +174,7 @@ public type DefaultReportParams record {|
     string cardCode?;
 |};
 
+# The `AdvancedGLAccountParams` complex type of the SAP Business One Service Layer.
 public type AdvancedGLAccountParams record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -201,6 +208,7 @@ public type AdvancedGLAccountParams record {|
     string uDF1?;
 |};
 
+# The `KPIParams` complex type of the SAP Business One Service Layer.
 public type KPIParams record {|
     @jsondata:Name {value: "KPICode"}
     string kPICode?;
@@ -208,6 +216,7 @@ public type KPIParams record {|
     string kPIName?;
 |};
 
+# The `SalesAppSetting` complex type of the SAP Business One Service Layer.
 public type SalesAppSetting record {|
     @jsondata:Name {value: "CustomerAdvancedDashBoard"}
     int:Signed32 customerAdvancedDashBoard?;
@@ -219,6 +228,7 @@ public type SalesAppSetting record {|
     string name?;
 |};
 
+# The `QueryCategory` entity of the SAP Business One Service Layer.
 public type QueryCategory record {
     int:Signed32 Code?;
     string Name?;
@@ -254,6 +264,7 @@ public type ListQueryCategoriesQueries record {
 # OData EnumType 'BoUTBTableType'. Serialised by the Service Layer as the member name
 public type BoUTBTableType "bott_Document"|"bott_DocumentLines"|"bott_MasterData"|"bott_MasterDataLines"|"bott_NoObject"|"bott_NoObjectAutoIncrement";
 
+# The `CallMessageArgument` complex type of the SAP Business One Service Layer.
 public type CallMessageArgument record {|
     @jsondata:Name {value: "Value"}
     string value?;
@@ -261,6 +272,7 @@ public type CallMessageArgument record {|
     string name?;
 |};
 
+# Represents the request payload for the `CompanyService_UpdatePathAdmin` operation of the SAP Business One Service Layer.
 public type CompanyService_UpdatePathAdmin_body record {
     @jsondata:Name {value: "PathAdmin"}
     PathAdmin pathAdmin?;
@@ -269,11 +281,13 @@ public type CompanyService_UpdatePathAdmin_body record {
 # OData EnumType 'FormattedSearchByFieldEnum'. Serialised by the Service Layer as the member name
 public type FormattedSearchByFieldEnum "fsbfWhenExitingAlteredColumn"|"fsbfWhenFieldChanges"|"fsbfWhenColumnValueChanges";
 
+# The `SeriesParams` complex type of the SAP Business One Service Layer.
 public type SeriesParams record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
 |};
 
+# The `SingleUserConnection` entity of the SAP Business One Service Layer.
 public type SingleUserConnection record {|
     @jsondata:Name {value: "Action"}
     SingleUserConnectionActionEnum action?;
@@ -306,6 +320,7 @@ public type ListPredefinedTextsQueries record {
     string dollarSelect?;
 };
 
+# The `WorkflowTaskCompleteParams` complex type of the SAP Business One Service Layer.
 public type WorkflowTaskCompleteParams record {|
     @jsondata:Name {value: "TaskID"}
     int:Signed32 taskID?;
@@ -315,6 +330,7 @@ public type WorkflowTaskCompleteParams record {|
     string triggerParams?;
 |};
 
+# The `Picture` entity of the SAP Business One Service Layer.
 public type Picture record {|
     @jsondata:Name {value: "PictureSize"}
     int:Signed32 pictureSize?;
@@ -328,6 +344,7 @@ public type Picture record {|
     string pictureModifyDate?;
 |};
 
+# Represents the request payload for the `ReportLayoutsService_GetDefaultReport` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_GetDefaultReport_body record {
     @jsondata:Name {value: "ReportParams"}
     ReportParams reportParams?;
@@ -340,6 +357,7 @@ public type ListUserKeysMDHeaders record {
     string prefer?;
 };
 
+# The `IntegrationPackageParams` complex type of the SAP Business One Service Layer.
 public type IntegrationPackageParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
@@ -355,6 +373,7 @@ public type ListWebClientRecentActivitiesHeaders record {
 # OData EnumType 'BoConsumptionMethod'. Serialised by the Service Layer as the member name
 public type BoConsumptionMethod "cm_BackwardForward"|"cm_ForwardBackward";
 
+# A paged collection of `ExceptionalEvents` entities returned by the SAP Business One Service Layer.
 public type ExceptionalEventsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -363,6 +382,7 @@ public type ExceptionalEventsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `MobileAppService_UpdateTechnicianSettingsGroup` operation of the SAP Business One Service Layer.
 public type MobileAppService_UpdateTechnicianSettingsGroup_body record {
     @jsondata:Name {value: "TechnicianSettingsGroup"}
     TechnicianSettingsGroup technicianSettingsGroup?;
@@ -393,11 +413,13 @@ public type ListSQLQueriesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_DeleteReportLayoutAndMenu` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_DeleteReportLayoutAndMenu_body record {
     @jsondata:Name {value: "ReportLayoutParams"}
     ReportLayoutParams reportLayoutParams?;
 };
 
+# The `ExtendedAdminInfo` complex type of the SAP Business One Service Layer.
 public type ExtendedAdminInfo record {|
     @jsondata:Name {value: "CreditContributionOriginCode"}
     string creditContributionOriginCode?;
@@ -477,6 +499,7 @@ public type ExtendedAdminInfo record {|
     string dateOfIncorporation?;
 |};
 
+# The `TSRExceptionalEventParams` complex type of the SAP Business One Service Layer.
 public type TSRExceptionalEventParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -495,6 +518,7 @@ public type ListIntegrationPackagesConfigureHeaders record {
     string prefer?;
 };
 
+# A paged collection of `Cockpits` entities returned by the SAP Business One Service Layer.
 public type CockpitsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -503,6 +527,7 @@ public type CockpitsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `WebClientRecentActivity` entity of the SAP Business One Service Layer.
 public type WebClientRecentActivity record {|
     @jsondata:Name {value: "AppId"}
     string appId?;
@@ -532,6 +557,7 @@ public type ApprovalTemplateConditionTypeEnum "atctUndefined"|"atctDeviationFrom
 # OData EnumType 'DrawingMethodEnum'. Serialised by the Service Layer as the member name
 public type DrawingMethodEnum "dmAll"|"dmNone"|"dmQuantity"|"dmTotal";
 
+# A paged collection of `MultiLanguageTranslations` entities returned by the SAP Business One Service Layer.
 public type MultiLanguageTranslationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -540,6 +566,7 @@ public type MultiLanguageTranslationsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `WebClientVariantSelectedColumn` complex type of the SAP Business One Service Layer.
 public type WebClientVariantSelectedColumn record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -566,6 +593,7 @@ public type GetMessagesQueries record {
     string dollarSelect?;
 };
 
+# The `CallArgument` complex type of the SAP Business One Service Layer.
 public type CallArgument record {|
     @jsondata:Name {value: "Value"}
     string value?;
@@ -580,6 +608,7 @@ public type ListWebClientPreferencesHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `SBOBobService_SetCurrencyRate` operation of the SAP Business One Service Layer.
 public type SBOBobService_SetCurrencyRate_body record {
     @jsondata:Name {value: "RateDate"}
     string rateDate?;
@@ -592,6 +621,7 @@ public type SBOBobService_SetCurrencyRate_body record {
 # OData EnumType 'BoSubPeriodTypeEnum'. Serialised by the Service Layer as the member name
 public type BoSubPeriodTypeEnum "spt_Year"|"spt_Quarters"|"spt_Months"|"spt_Days";
 
+# The `SQLView` entity of the SAP Business One Service Layer.
 public type SQLView record {|
     @jsondata:Name {value: "DBType"}
     string dBType?;
@@ -680,6 +710,7 @@ public type ListAdditionalExpensesQueries record {
     string dollarSelect?;
 };
 
+# The `BusinessPlaceTributaryInfo` complex type of the SAP Business One Service Layer.
 public type BusinessPlaceTributaryInfo record {
     int:Signed32 BPLID?;
     int:Signed32 TributaryID?;
@@ -728,6 +759,7 @@ public type ListHolidaysHeaders record {
     string prefer?;
 };
 
+# The `TranslationsInUserLanguage` complex type of the SAP Business One Service Layer.
 public type TranslationsInUserLanguage record {
     int:Signed32 KeyFromHeaderTable?;
     int:Signed32 LanguageCodeOfUserLanguage?;
@@ -737,6 +769,7 @@ public type TranslationsInUserLanguage record {
 # OData EnumType 'VMCommunicationTypeEnum'. Serialised by the Service Layer as the member name
 public type VMCommunicationTypeEnum "vmct_MasterData"|"vmct_Transaction";
 
+# The `AlertManagementParams` complex type of the SAP Business One Service Layer.
 public type AlertManagementParams record {|
     @jsondata:Name {value: "Type"}
     AlertManagementTypeEnum 'type?;
@@ -746,6 +779,7 @@ public type AlertManagementParams record {|
     string name?;
 |};
 
+# The `DistributionListParams` complex type of the SAP Business One Service Layer.
 public type DistributionListParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -776,6 +810,7 @@ public type GetFormattedSearchesQueries record {
     string dollarSelect?;
 };
 
+# The `TaxReportFilterParams` complex type of the SAP Business One Service Layer.
 public type TaxReportFilterParams record {|
     @jsondata:Name {value: "FilterType"}
     TaxReportFilterType filterType?;
@@ -785,6 +820,7 @@ public type TaxReportFilterParams record {|
     string name?;
 |};
 
+# A paged collection of `WebClientRecentActivities` entities returned by the SAP Business One Service Layer.
 public type WebClientRecentActivitiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -793,6 +829,7 @@ public type WebClientRecentActivitiesCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `PredefinedTexts` entities returned by the SAP Business One Service Layer.
 public type PredefinedTextsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -801,6 +838,7 @@ public type PredefinedTextsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `ExternalCallsService_UpdateCall` operation of the SAP Business One Service Layer.
 public type ExternalCallsService_UpdateCall_body record {
     @jsondata:Name {value: "ExternalCall"}
     ExternalCall externalCall?;
@@ -831,11 +869,13 @@ public type ListEventSubscriptionsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ExternalCallsService_GetCall` operation of the SAP Business One Service Layer.
 public type ExternalCallsService_GetCall_body record {
     @jsondata:Name {value: "ExternalCallParams"}
     ExternalCallParams externalCallParams?;
 };
 
+# A paged collection of `B1Sessions` entities returned by the SAP Business One Service Layer.
 public type B1SessionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -844,6 +884,7 @@ public type B1SessionsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `Counties` entities returned by the SAP Business One Service Layer.
 public type CountiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -852,6 +893,7 @@ public type CountiesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ReportParams` complex type of the SAP Business One Service Layer.
 public type ReportParams record {|
     @jsondata:Name {value: "UserID"}
     int:Signed32 userID?;
@@ -899,16 +941,19 @@ public type ListAttachments2Queries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SeriesService_SetDefaultSeriesForCurrentUser` operation of the SAP Business One Service Layer.
 public type SeriesService_SetDefaultSeriesForCurrentUser_body record {
     @jsondata:Name {value: "DocumentSeriesParams"}
     DocumentSeriesParams documentSeriesParams?;
 };
 
+# Represents the request payload for the `ExternalCallsService_SendCall` operation of the SAP Business One Service Layer.
 public type ExternalCallsService_SendCall_body record {
     @jsondata:Name {value: "ExternalCall"}
     ExternalCall externalCall?;
 };
 
+# The `Holiday` entity of the SAP Business One Service Layer.
 public type Holiday record {|
     @jsondata:Name {value: "SetWeekendsAsWorkDays"}
     string setWeekendsAsWorkDays?;
@@ -926,16 +971,19 @@ public type Holiday record {|
     BoWeekEnum weekendFrom?;
 |};
 
+# Represents the request payload for the `SeriesService_UpdateElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_UpdateElectronicSeries_body record {
     @jsondata:Name {value: "ElectronicSeries"}
     ElectronicSeries electronicSeries?;
 };
 
+# Represents the request payload for the `UserMenuService_GetUserMenu` operation of the SAP Business One Service Layer.
 public type UserMenuService_GetUserMenu_body record {
     @jsondata:Name {value: "UserMenuParams"}
     UserMenuParams userMenuParams?;
 };
 
+# The `Cockpit` entity of the SAP Business One Service Layer.
 public type Cockpit record {|
     @jsondata:Name {value: "UserSignature"}
     int:Signed32 userSignature?;
@@ -961,6 +1009,7 @@ public type Cockpit record {|
     string name?;
 |};
 
+# The `EmailGroup` entity of the SAP Business One Service Layer.
 public type EmailGroup record {|
     @jsondata:Name {value: "EmailGroupName"}
     string emailGroupName?;
@@ -1034,6 +1083,7 @@ public type ListWebClientVariantGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `DashboardPackageImportParams` complex type of the SAP Business One Service Layer.
 public type DashboardPackageImportParams record {|
     @jsondata:Name {value: "ForceOverwriteQuery"}
     BoYesNoEnum forceOverwriteQuery?;
@@ -1045,6 +1095,7 @@ public type DashboardPackageImportParams record {|
     BoYesNoEnum importQueries?;
 |};
 
+# The `MobileAddOnSetting` entity of the SAP Business One Service Layer.
 public type MobileAddOnSetting record {|
     @jsondata:Name {value: "Type"}
     MobileAddonSettingTypeEnum 'type?;
@@ -1073,6 +1124,7 @@ public type MobileAddOnSetting record {|
 # OData EnumType 'BoSuppLangs'. Serialised by the Service Layer as the member name
 public type BoSuppLangs "ln_Null"|"ln_Hebrew"|"ln_Spanish_Ar"|"ln_English"|"ln_Polish"|"ln_English_Sg"|"ln_Spanish_Pa"|"ln_English_Gb"|"ln_German"|"ln_Serbian"|"ln_Danish"|"ln_Norwegian"|"ln_Italian"|"ln_Hungarian"|"ln_Chinese"|"ln_Dutch"|"ln_Finnish"|"ln_Greek"|"ln_Portuguese"|"ln_Swedish"|"ln_English_Cy"|"ln_French"|"ln_Spanish"|"ln_Russian"|"ln_Spanish_La"|"ln_Czech_Cz"|"ln_Slovak_Sk"|"ln_Korean_Kr"|"ln_Portuguese_Br"|"ln_Japanese_Jp"|"ln_Turkish_Tr"|"ln_Arabic"|"ln_Ukrainian"|"ln_TrdtnlChinese_Hk";
 
+# The `TaxReportSeries` complex type of the SAP Business One Service Layer.
 public type TaxReportSeries record {|
     @jsondata:Name {value: "SeriesCode"}
     int:Signed32 seriesCode?;
@@ -1080,6 +1132,7 @@ public type TaxReportSeries record {|
     TaxReportFilterDocumentType documentType?;
 |};
 
+# The `UserGroupByUserItem` complex type of the SAP Business One Service Layer.
 public type UserGroupByUserItem record {
     int:Signed32 USERId?;
     int:Signed32 GroupId?;
@@ -1087,6 +1140,7 @@ public type UserGroupByUserItem record {
     string DueDate?;
 };
 
+# The `WebClientNotification` entity of the SAP Business One Service Layer.
 public type WebClientNotification record {|
     @jsondata:Name {value: "ReadStatus"}
     string readStatus?;
@@ -1127,10 +1181,12 @@ public type ListFormattedSearchesQueries record {
     string dollarSelect?;
 };
 
+# The `FieldID` complex type of the SAP Business One Service Layer.
 public type FieldID record {
     string FieldID?;
 };
 
+# A paged collection of `ReportTypes` entities returned by the SAP Business One Service Layer.
 public type ReportTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1139,6 +1195,7 @@ public type ReportTypesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `AlertManagementDocument` complex type of the SAP Business One Service Layer.
 public type AlertManagementDocument record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -1149,11 +1206,13 @@ public type AlertManagementDocument record {|
 # OData EnumType 'UserMenuItemTypeEnum'. Serialised by the Service Layer as the member name
 public type UserMenuItemTypeEnum "umitForm"|"umitQuery"|"umitFolder"|"umitReport"|"umitLink";
 
+# The `ApprovalTemplateDocument` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateDocument record {|
     @jsondata:Name {value: "DocumentType"}
     ApprovalTemplatesDocumentTypeEnum documentType?;
 |};
 
+# Represents the request payload for the `CompanyService_CreatePeriodWithFinanceParams` operation of the SAP Business One Service Layer.
 public type CompanyService_CreatePeriodWithFinanceParams_body record {
     @jsondata:Name {value: "FinancePeriodParams"}
     FinancePeriodParams financePeriodParams?;
@@ -1161,6 +1220,7 @@ public type CompanyService_CreatePeriodWithFinanceParams_body record {
     PeriodCategory periodCategory?;
 };
 
+# Represents the request payload for the `QRCodeService_AddOrUpdateQRCode` operation of the SAP Business One Service Layer.
 public type QRCodeService_AddOrUpdateQRCode_body record {
     @jsondata:Name {value: "QRCodeData"}
     QRCodeData qRCodeData?;
@@ -1176,6 +1236,7 @@ public type GetWebClientLaunchpadsQueries record {
     string dollarSelect?;
 };
 
+# The `WorkflowTaskNote` complex type of the SAP Business One Service Layer.
 public type WorkflowTaskNote record {|
     @jsondata:Name {value: "NoteDate"}
     string noteDate?;
@@ -1269,11 +1330,13 @@ public type GetUserQueriesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CompanyService_CreatePeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_CreatePeriod_body record {
     @jsondata:Name {value: "PeriodCategory"}
     PeriodCategory periodCategory?;
 };
 
+# The `SQLQueryResult` complex type of the SAP Business One Service Layer.
 public type SQLQueryResult record {
     string SqlText?;
 };
@@ -1284,6 +1347,7 @@ public type MobileAddonSettingTypeEnum "mastModule"|"mastHome";
 # OData EnumType 'DataSensitiveStatusEnum'. Serialised by the Service Layer as the member name
 public type DataSensitiveStatusEnum "dss_FieldNotSentive"|"dss_DataSubjectNotNaturalPerson"|"dss_DataSubjectIsBlockedOrErased"|"dss_DataIsSensitive"|"dss_Error"|"dss_TransactionIsErased";
 
+# The `WebClientVariantEmbeddedChart` complex type of the SAP Business One Service Layer.
 public type WebClientVariantEmbeddedChart record {|
     @jsondata:Name {value: "TimeAxis"}
     string timeAxis?;
@@ -1311,6 +1375,7 @@ public type WebClientVariantEmbeddedChart record {|
     string categoryAxis2?;
 |};
 
+# Represents the request payload for the `ValueMappingService_RemoveMappedValue` operation of the SAP Business One Service Layer.
 public type ValueMappingService_RemoveMappedValue_body record {
     @jsondata:Name {value: "VM_ThirdPartyValuesData"}
     VMThirdPartyValuesData vMThirdPartyValuesData?;
@@ -1323,11 +1388,13 @@ public type ListSectionsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ValueMappingService_GetThirdPartyValuesForB1Value` operation of the SAP Business One Service Layer.
 public type ValueMappingService_GetThirdPartyValuesForB1Value_body record {
     @jsondata:Name {value: "VM_B1ValuesData"}
     VMB1ValuesData vMB1ValuesData?;
 };
 
+# Represents the request payload for the `MobileAppService_GetServiceAppReportContent` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetServiceAppReportContent_body record {
     @jsondata:Name {value: "ServiceAppReportParams"}
     ServiceAppReportParams serviceAppReportParams?;
@@ -1346,6 +1413,7 @@ public type GetApprovalRequestsQueries record {
     string dollarSelect?;
 };
 
+# The `HolidayParams` complex type of the SAP Business One Service Layer.
 public type HolidayParams record {|
     @jsondata:Name {value: "HolidayCode"}
     string holidayCode?;
@@ -1358,6 +1426,7 @@ public type ListCountriesHeaders record {
     string prefer?;
 };
 
+# The `State` entity of the SAP Business One Service Layer.
 public type State record {|
     @jsondata:Name {value: "Country2"}
     Country country2?;
@@ -1383,6 +1452,7 @@ public type GetStatesQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientVariantSortBy` complex type of the SAP Business One Service Layer.
 public type WebClientVariantSortBy record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -1394,6 +1464,7 @@ public type WebClientVariantSortBy record {|
     string direction?;
 |};
 
+# The `DepartmentParams` complex type of the SAP Business One Service Layer.
 public type DepartmentParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -1404,6 +1475,7 @@ public type DepartmentParams record {|
 # OData EnumType 'SAFTProductTypeEnum'. Serialised by the Service Layer as the member name
 public type SAFTProductTypeEnum "saftpt_Products"|"saftpt_Services"|"saftpt_Other"|"saftpt_Taxes"|"saftpt_NonSystem";
 
+# The `SupportUserLoginRecord` complex type of the SAP Business One Service Layer.
 public type SupportUserLoginRecord record {|
     @jsondata:Name {value: "LogDetail"}
     string logDetail?;
@@ -1418,6 +1490,7 @@ public type SupportUserLoginRecord record {|
 # OData EnumType 'BoApprovalRequestDecisionEnum'. Serialised by the Service Layer as the member name
 public type BoApprovalRequestDecisionEnum "ardPending"|"ardApproved"|"ardNotApproved";
 
+# A paged collection of `SingleUserConnections` entities returned by the SAP Business One Service Layer.
 public type SingleUserConnectionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1426,6 +1499,7 @@ public type SingleUserConnectionsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `EventSubscriptions` entities returned by the SAP Business One Service Layer.
 public type EventSubscriptionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1437,11 +1511,13 @@ public type EventSubscriptionsCollectionResponse record {
 # OData EnumType 'BoSeriesTypeEnum'. Serialised by the Service Layer as the member name
 public type BoSeriesTypeEnum "stDocument"|"stBusinessPartner"|"stItem"|"stResource";
 
+# Represents the request payload for the `CompanyService_UpdateFinancePeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_UpdateFinancePeriod_body record {
     @jsondata:Name {value: "FinancePeriod"}
     FinancePeriod financePeriod?;
 };
 
+# The `AdminInfo` complex type of the SAP Business One Service Layer.
 public type AdminInfo record {|
     @jsondata:Name {value: "AlertTypeforWHStock"}
     BoAlertTypeforWHStockEnum alertTypeforWHStock?;
@@ -2014,6 +2090,7 @@ public type AdminInfo record {|
     BoYesNoEnum applyBaseInactiveStatusToPeriodVolumeDiscounts?;
 |};
 
+# Represents the request payload for the `CompanyService_LogLoginAction` operation of the SAP Business One Service Layer.
 public type CompanyService_LogLoginAction_body record {
     @jsondata:Name {value: "UserAccessLog"}
     UserAccessLog userAccessLog?;
@@ -2021,6 +2098,7 @@ public type CompanyService_LogLoginAction_body record {
     SupportUserLoginRecord supportUserLoginRecord?;
 };
 
+# A paged collection of `QueryCategories` entities returned by the SAP Business One Service Layer.
 public type QueryCategoriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2043,6 +2121,7 @@ public type ListQueryCategoriesHeaders record {
     string prefer?;
 };
 
+# The `WorkflowTask` complex type of the SAP Business One Service Layer.
 public type WorkflowTask record {|
     @jsondata:Name {value: "Status"}
     string status?;
@@ -2074,6 +2153,7 @@ public type WorkflowTask record {|
     string templateID?;
 |};
 
+# The `WIPMapping` complex type of the SAP Business One Service Layer.
 public type WIPMapping record {|
     @jsondata:Name {value: "AccountTo"}
     string accountTo?;
@@ -2095,6 +2175,7 @@ public type GetAttachments2Queries record {
     string dollarSelect?;
 };
 
+# A paged collection of `WebClientVariantGroups` entities returned by the SAP Business One Service Layer.
 public type WebClientVariantGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2103,6 +2184,7 @@ public type WebClientVariantGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `CurrentServerTime` complex type of the SAP Business One Service Layer.
 public type CurrentServerTime record {|
     @jsondata:Name {value: "CurrentTime"}
     string currentTime?;
@@ -2110,6 +2192,7 @@ public type CurrentServerTime record {|
     string currentDate?;
 |};
 
+# Represents the request payload for the `MobileAppService_UpdateServiceAppReportContent` operation of the SAP Business One Service Layer.
 public type MobileAppService_UpdateServiceAppReportContent_body record {
     @jsondata:Name {value: "ServiceAppReportParams"}
     ServiceAppReportParams serviceAppReportParams?;
@@ -2117,6 +2200,7 @@ public type MobileAppService_UpdateServiceAppReportContent_body record {
     ServiceAppReportContent serviceAppReportContent?;
 };
 
+# A paged collection of `WebClientDashboards` entities returned by the SAP Business One Service Layer.
 public type WebClientDashboardsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2132,6 +2216,7 @@ public type ListPredefinedTextsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `UserFieldsMD` entities returned by the SAP Business One Service Layer.
 public type UserFieldsMDCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2140,6 +2225,7 @@ public type UserFieldsMDCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ChangeLogParams` complex type of the SAP Business One Service Layer.
 public type ChangeLogParams record {|
     @jsondata:Name {value: "UserName"}
     string userName?;
@@ -2151,6 +2237,7 @@ public type ChangeLogParams record {|
     int:Signed32 logInstance?;
 |};
 
+# The `RoundedData` complex type of the SAP Business One Service Layer.
 public type RoundedData record {|
     @jsondata:Name {value: "Value"}
     decimal value?;
@@ -2206,6 +2293,7 @@ public type ListWebClientDashboardsQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientFormSetting` entity of the SAP Business One Service Layer.
 public type WebClientFormSetting record {|
     @jsondata:Name {value: "WebClientFormSettingItems"}
     WebClientFormSettingItem[] webClientFormSettingItems?;
@@ -2264,11 +2352,13 @@ public type ListValueMappingHeaders record {
 # OData EnumType 'SortOrderEnum'. Serialised by the Service Layer as the member name
 public type SortOrderEnum "soAscending"|"soDescending";
 
+# Represents the request payload for the `WorkflowTaskService_Complete` operation of the SAP Business One Service Layer.
 public type WorkflowTaskService_Complete_body record {
     @jsondata:Name {value: "WorkflowTaskCompleteParams"}
     WorkflowTaskCompleteParams workflowTaskCompleteParams?;
 };
 
+# Represents the request payload for the `CompanyService_GetPeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_GetPeriod_body record {
     @jsondata:Name {value: "PeriodCategoryParams"}
     PeriodCategoryParams periodCategoryParams?;
@@ -2294,6 +2384,7 @@ public type GetExceptionalEventsQueries record {
     string dollarSelect?;
 };
 
+# The `IntegrationPackageConfigure` entity of the SAP Business One Service Layer.
 public type IntegrationPackageConfigure record {|
     @jsondata:Name {value: "IsEnable"}
     BoYesNoEnum isEnable?;
@@ -2305,11 +2396,13 @@ public type IntegrationPackageConfigure record {|
     string name?;
 |};
 
+# Represents the request payload for the `MobileAppService_GetTechnicianSchedulings` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetTechnicianSchedulings_body record {
     @jsondata:Name {value: "TechnicianSchedulingsParams"}
     TechnicianSchedulingsParams technicianSchedulingsParams?;
 };
 
+# A paged collection of `UserObjectsMD` entities returned by the SAP Business One Service Layer.
 public type UserObjectsMDCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2324,6 +2417,7 @@ public type BoPermission "boper_Full"|"boper_ReadOnly"|"boper_None"|"boper_Vario
 # OData EnumType 'BoAlertTypeforWHStockEnum'. Serialised by the Service Layer as the member name
 public type BoAlertTypeforWHStockEnum "atfwhs_WarningOnly"|"atfwhs_Block"|"atfwhs_NoMessage";
 
+# The `DocumentTypeParams` complex type of the SAP Business One Service Layer.
 public type DocumentTypeParams record {|
     @jsondata:Name {value: "Document"}
     string document?;
@@ -2331,21 +2425,25 @@ public type DocumentTypeParams record {|
     string documentSubType?;
 |};
 
+# Represents the request payload for the `ReportFilterService_GetTaxReportFilterList` operation of the SAP Business One Service Layer.
 public type ReportFilterService_GetTaxReportFilterList_body record {
     @jsondata:Name {value: "TaxReportFilterParams"}
     TaxReportFilterParams taxReportFilterParams?;
 };
 
+# The `TaxReportAccount` complex type of the SAP Business One Service Layer.
 public type TaxReportAccount record {|
     @jsondata:Name {value: "Code"}
     string code?;
 |};
 
+# The `WebClientRecentActivityParams` complex type of the SAP Business One Service Layer.
 public type WebClientRecentActivityParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# The `ApprovalTemplateStage` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateStage record {|
     @jsondata:Name {value: "Remarks"}
     string remarks?;
@@ -2358,6 +2456,7 @@ public type ApprovalTemplateStage record {|
 # OData EnumType 'BoQueryTypeEnum'. Serialised by the Service Layer as the member name
 public type BoQueryTypeEnum "qtRegular"|"qtWizard";
 
+# A paged collection of `UserQueries` entities returned by the SAP Business One Service Layer.
 public type UserQueriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2394,6 +2493,7 @@ public type ListUsersQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientDashboard` entity of the SAP Business One Service Layer.
 public type WebClientDashboard record {|
     @jsondata:Name {value: "UserId"}
     int:Signed32 userId?;
@@ -2421,11 +2521,13 @@ public type ListStatesHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_GetReportLayoutList` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_GetReportLayoutList_body record {
     @jsondata:Name {value: "ReportParams"}
     ReportParams reportParams?;
 };
 
+# The `Attachments2_Line` complex type of the SAP Business One Service Layer.
 public type Attachments2Line record {
     int:Signed32 AbsoluteEntry?;
     int:Signed32 LineNum?;
@@ -2456,6 +2558,7 @@ public type Attachments2Line record {
 # OData EnumType 'ReportLayoutCategoryEnum'. Serialised by the Service Layer as the member name
 public type ReportLayoutCategoryEnum "rlcPLD"|"rlcCrystal"|"rlcLegalList"|"rlcUserDefinedType";
 
+# Represents the request payload for the `SBOBobService_Format_MoneyToString` operation of the SAP Business One Service Layer.
 public type SBOBobService_Format_MoneyToString_body record {
     @jsondata:Name {value: "InMoney"}
     decimal inMoney?;
@@ -2473,6 +2576,7 @@ public type GetUserKeysMDQueries record {
     string dollarSelect?;
 };
 
+# The `UserAccessLog` complex type of the SAP Business One Service Layer.
 public type UserAccessLog record {|
     @jsondata:Name {value: "WinUsrName"}
     string winUsrName?;
@@ -2533,6 +2637,7 @@ public type ListExtendedTranslationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `MobileAppService_GetTechnicianSettings` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetTechnicianSettings_body record {
     @jsondata:Name {value: "TechnicianSettingsParams"}
     TechnicianSettingsParams technicianSettingsParams?;
@@ -2563,6 +2668,7 @@ public type ListBranchesQueries record {
     string dollarSelect?;
 };
 
+# The `UserObjectMD_ChildTable` complex type of the SAP Business One Service Layer.
 public type UserObjectMDChildTable record {
     int:Signed32 SonNumber?;
     string TableName?;
@@ -2571,6 +2677,7 @@ public type UserObjectMDChildTable record {
     string ObjectName?;
 };
 
+# The `WebClientVariantEmbeddedChartValue2` complex type of the SAP Business One Service Layer.
 public type WebClientVariantEmbeddedChartValue2 record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -2580,6 +2687,7 @@ public type WebClientVariantEmbeddedChartValue2 record {|
     string guid?;
 |};
 
+# The `WebClientListviewFilter` entity of the SAP Business One Service Layer.
 public type WebClientListviewFilter record {|
     @jsondata:Name {value: "TableName"}
     string tableName?;
@@ -2593,6 +2701,7 @@ public type WebClientListviewFilter record {|
     WebClientListviewFilterCondition[] webClientListviewFilterConditions?;
 |};
 
+# The `WebClientVariantEmbeddedChartValue1` complex type of the SAP Business One Service Layer.
 public type WebClientVariantEmbeddedChartValue1 record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -2602,6 +2711,7 @@ public type WebClientVariantEmbeddedChartValue1 record {|
     string guid?;
 |};
 
+# The `ApprovalTemplateParams` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -2609,6 +2719,7 @@ public type ApprovalTemplateParams record {|
     string name?;
 |};
 
+# A paged collection of `ValueMappingCommunication` entities returned by the SAP Business One Service Layer.
 public type ValueMappingCommunicationCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2620,6 +2731,7 @@ public type ValueMappingCommunicationCollectionResponse record {
 # OData EnumType 'BoPrintReceiptEnum'. Serialised by the Service Layer as the member name
 public type BoPrintReceiptEnum "boprcAlways"|"boprcNo"|"boprcOnlyWhenAdding";
 
+# The `MessageDataLine` complex type of the SAP Business One Service Layer.
 public type MessageDataLine record {|
     @jsondata:Name {value: "Value"}
     string value?;
@@ -2629,6 +2741,7 @@ public type MessageDataLine record {|
     string 'object?;
 |};
 
+# The `MobileServerDateTime` complex type of the SAP Business One Service Layer.
 public type MobileServerDateTime record {|
     @jsondata:Name {value: "Time"}
     string time?;
@@ -2636,6 +2749,7 @@ public type MobileServerDateTime record {|
     string date?;
 |};
 
+# The `UserKeysMD` entity of the SAP Business One Service Layer.
 public type UserKeysMD record {
     string TableName?;
     int:Signed32 KeyIndex?;
@@ -2645,6 +2759,7 @@ public type UserKeysMD record {
     UserKeysMDElement[] UserKeysMD_Elements?;
 };
 
+# The `DefaultCreditCard` complex type of the SAP Business One Service Layer.
 public type DefaultCreditCard record {
     string Code?;
     string CreditAccountCode?;
@@ -2654,6 +2769,7 @@ public type DefaultCreditCard record {
 # OData EnumType 'DisplayBatchQtyUoMByEnum'. Serialised by the Service Layer as the member name
 public type DisplayBatchQtyUoMByEnum "dispBatchQtyByDocRowUoM"|"dispBatchQtyByInventoryUoM";
 
+# The `CountyParams` complex type of the SAP Business One Service Layer.
 public type CountyParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -2663,6 +2779,7 @@ public type CountyParams record {|
     string name?;
 |};
 
+# The `ExtendedTranslation` entity of the SAP Business One Service Layer.
 public type ExtendedTranslation record {|
     @jsondata:Name {value: "SourceLanguage"}
     int:Signed32 sourceLanguage?;
@@ -2707,6 +2824,7 @@ public type ListMultiLanguageTranslationsQueries record {
     string dollarSelect?;
 };
 
+# The `StateParams` complex type of the SAP Business One Service Layer.
 public type StateParams record {|
     @jsondata:Name {value: "Country"}
     string country?;
@@ -2733,6 +2851,7 @@ public type ListEventNotificationsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `CompanyService_GetAdvancedGLAccount` operation of the SAP Business One Service Layer.
 public type CompanyService_GetAdvancedGLAccount_body record {
     @jsondata:Name {value: "AdvancedGLAccountParams"}
     AdvancedGLAccountParams advancedGLAccountParams?;
@@ -2773,6 +2892,7 @@ public type ListUserObjectsMDQueries record {
 # OData EnumType 'BoApprovalRequestStatusEnum'. Serialised by the Service Layer as the member name
 public type BoApprovalRequestStatusEnum "arsPending"|"arsApproved"|"arsNotApproved"|"arsGenerated"|"arsGeneratedByAuthorizer"|"arsCancelled";
 
+# The `SensitiveDataAccess` complex type of the SAP Business One Service Layer.
 public type SensitiveDataAccess record {|
     @jsondata:Name {value: "Key2"}
     string key2?;
@@ -2820,16 +2940,19 @@ public type ListDepartmentsQueries record {
 # OData EnumType 'BoMsgPriorities'. Serialised by the Service Layer as the member name
 public type BoMsgPriorities "pr_Low"|"pr_Normal"|"pr_High";
 
+# The `WorkflowApprovalTaskListParams` complex type of the SAP Business One Service Layer.
 public type WorkflowApprovalTaskListParams record {|
     @jsondata:Name {value: "Status"}
     string status?;
 |};
 
+# Represents the request payload for the `CompanyService_RemoveFinancePeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_RemoveFinancePeriod_body record {
     @jsondata:Name {value: "FinancePeriodParams"}
     FinancePeriodParams financePeriodParams?;
 };
 
+# A paged collection of `UserLanguages` entities returned by the SAP Business One Service Layer.
 public type UserLanguagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2838,16 +2961,19 @@ public type UserLanguagesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `WebClientBookmarkTileParams` complex type of the SAP Business One Service Layer.
 public type WebClientBookmarkTileParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# Represents the request payload for the `SeriesService_AddSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_AddSeries_body record {
     @jsondata:Name {value: "Series"}
     Series series?;
 };
 
+# The `ServiceAppReport` complex type of the SAP Business One Service Layer.
 public type ServiceAppReport record {|
     @jsondata:Name {value: "CustomizedReportName"}
     string customizedReportName?;
@@ -2862,11 +2988,13 @@ public type ServiceAppReport record {|
 # OData EnumType 'TaxReportFilterType'. Serialised by the Service Layer as the member name
 public type TaxReportFilterType "trft_TaxReport"|"trft_WTReport"|"trft_Report347"|"trft_Report349"|"trft_ReconciliationReport"|"trft_StampTax"|"trft_SalesReport"|"trft_None"|"trft_BoxReport"|"trft_AppendixOP"|"trft_AnnualSalesReport"|"trft_VATRefundReport";
 
+# Represents the request payload for the `CompanyService_GetFinancePeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_GetFinancePeriod_body record {
     @jsondata:Name {value: "FinancePeriodParams"}
     FinancePeriodParams financePeriodParams?;
 };
 
+# The `QRCodeData` complex type of the SAP Business One Service Layer.
 public type QRCodeData record {|
     @jsondata:Name {value: "ObjectType"}
     int:Signed32 objectType?;
@@ -2878,6 +3006,7 @@ public type QRCodeData record {|
     string qRCodeText?;
 |};
 
+# The `PathAdmin` complex type of the SAP Business One Service Layer.
 public type PathAdmin record {|
     @jsondata:Name {value: "AttachmentsFolderPath"}
     string attachmentsFolderPath?;
@@ -2891,6 +3020,7 @@ public type PathAdmin record {|
     string printId?;
 |};
 
+# A paged collection of `Departments` entities returned by the SAP Business One Service Layer.
 public type DepartmentsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2909,11 +3039,13 @@ public type GetMultiLanguageTranslationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_AddReportLayout` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_AddReportLayout_body record {
     @jsondata:Name {value: "ReportLayout"}
     ReportLayout reportLayout?;
 };
 
+# The `PeriodCategoryParams` complex type of the SAP Business One Service Layer.
 public type PeriodCategoryParams record {|
     @jsondata:Name {value: "AbsoluteEntry"}
     int:Signed32 absoluteEntry?;
@@ -2929,6 +3061,7 @@ public type GetUserDefaultGroupsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `ApprovalRequests` entities returned by the SAP Business One Service Layer.
 public type ApprovalRequestsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -2937,6 +3070,7 @@ public type ApprovalRequestsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_SetDefaultReport` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_SetDefaultReport_body record {
     @jsondata:Name {value: "DefaultReportParams"}
     DefaultReportParams defaultReportParams?;
@@ -2949,11 +3083,13 @@ public type ListExtendedTranslationsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `MobileAppService_GetDppChangeParams` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetDppChangeParams_body record {
     @jsondata:Name {value: "DppChangeParams"}
     DppChangeParams dppChangeParams?;
 };
 
+# The `BusinessPlace` entity of the SAP Business One Service Layer.
 public type BusinessPlace record {
     int:Signed32 BPLID?;
     string BPLName?;
@@ -3010,10 +3146,13 @@ public type BusinessPlace record {
     BusinessPlaceIENumber[] BusinessPlaceIENumbers?;
     BusinessPlaceTributaryInfo[] BusinessPlaceTributaryInfos?;
     UserDefaultGroup[] UserDefaultGroups?;
+    # The `County` entity of the SAP Business One Service Layer.
     County County2?;
+    # The `Country` entity of the SAP Business One Service Layer.
     Country Country2?;
 };
 
+# The `ReportLayout` complex type of the SAP Business One Service Layer.
 public type ReportLayout record {|
     @jsondata:Name {value: "TopMargin"}
     int:Signed32 topMargin?;
@@ -3119,11 +3258,13 @@ public type ListValueMappingCommunicationHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ValueMappingService_GetMappedB1Value` operation of the SAP Business One Service Layer.
 public type ValueMappingService_GetMappedB1Value_body record {
     @jsondata:Name {value: "VM_B1ValuesData"}
     VMB1ValuesData vMB1ValuesData?;
 };
 
+# The `DefaultDocument` complex type of the SAP Business One Service Layer.
 public type DefaultDocument record {
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum AddExport?;
@@ -3153,6 +3294,7 @@ public type ListMultiLanguageTranslationsHeaders record {
     string prefer?;
 };
 
+# The `ApprovalTemplate` entity of the SAP Business One Service Layer.
 public type ApprovalTemplate record {|
     @jsondata:Name {value: "ApprovalTemplateStages"}
     ApprovalTemplateStage[] approvalTemplateStages?;
@@ -3180,6 +3322,7 @@ public type ApprovalTemplate record {|
     ApprovalTemplateUser[] approvalTemplateUsers?;
 |};
 
+# The `ElectronicSeries` complex type of the SAP Business One Service Layer.
 public type ElectronicSeries record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
@@ -3203,6 +3346,7 @@ public type ElectronicSeries record {|
     string name?;
 |};
 
+# Represents the request payload for the `WorkflowTaskService_GetApprovalTaskList` operation of the SAP Business One Service Layer.
 public type WorkflowTaskService_GetApprovalTaskList_body record {
     @jsondata:Name {value: "WorkflowApprovalTaskListParams"}
     WorkflowApprovalTaskListParams workflowApprovalTaskListParams?;
@@ -3221,6 +3365,7 @@ public type GetUserPermissionTreeQueries record {
     string dollarSelect?;
 };
 
+# The `UserTablesMD` entity of the SAP Business One Service Layer.
 public type UserTablesMD record {
     string TableName?;
     string TableDescription?;
@@ -3237,6 +3382,7 @@ public type UserTablesMD record {
     UserObjectsMD[] UserObjectsMD?;
 };
 
+# The `ApprovalTemplateTerm` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateTerm record {|
     @jsondata:Name {value: "Value"}
     string value?;
@@ -3278,6 +3424,7 @@ public type ListWebClientNotificationsHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_UpdatePrinterSettings` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_UpdatePrinterSettings_body record {
     @jsondata:Name {value: "ReportLayout"}
     ReportLayout reportLayout?;
@@ -3293,6 +3440,7 @@ public type GetWebClientNotificationsQueries record {
     string dollarSelect?;
 };
 
+# The `ReportTypeParams` complex type of the SAP Business One Service Layer.
 public type ReportTypeParams record {|
     @jsondata:Name {value: "TypeName"}
     string typeName?;
@@ -3306,6 +3454,7 @@ public type ReportTypeParams record {|
     string addonFormType?;
 |};
 
+# A paged collection of `TSRExceptionalEvents` entities returned by the SAP Business One Service Layer.
 public type TSRExceptionalEventsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3317,6 +3466,7 @@ public type TSRExceptionalEventsCollectionResponse record {
 # OData EnumType 'AlertManagementPriorityEnum'. Serialised by the Service Layer as the member name
 public type AlertManagementPriorityEnum "atp_Low"|"atp_Normal"|"atp_High";
 
+# The `MessageDataColumn` complex type of the SAP Business One Service Layer.
 public type MessageDataColumn record {|
     @jsondata:Name {value: "ColumnName"}
     string columnName?;
@@ -3340,6 +3490,7 @@ public type ListCockpitsHeaders record {
     string prefer?;
 };
 
+# The `UserQuery` entity of the SAP Business One Service Layer.
 public type UserQuery record {
     int:Signed32 InternalKey?;
     int:Signed32 QueryCategory?;
@@ -3355,14 +3506,17 @@ public type UserQuery record {
     string MenuUniqueID?;
     # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
     BoYesNoEnum EnableMenuEntry?;
+    # The `QueryCategory` entity of the SAP Business One Service Layer.
     QueryCategory QueryCategory2?;
 };
 
+# Represents the request payload for the `SeriesService_UnattachSeriesFromDocument` operation of the SAP Business One Service Layer.
 public type SeriesService_UnattachSeriesFromDocument_body record {
     @jsondata:Name {value: "DocumentSeriesParams"}
     DocumentSeriesParams documentSeriesParams?;
 };
 
+# Represents the request payload for the `SeriesService_SetDefaultSeriesForUser` operation of the SAP Business One Service Layer.
 public type SeriesService_SetDefaultSeriesForUser_body record {
     @jsondata:Name {value: "DocumentSeriesUserParams"}
     DocumentSeriesUserParams documentSeriesUserParams?;
@@ -3374,11 +3528,13 @@ public type BoFormattedSearchActionEnum "bofsaNone"|"bofsaValidValues"|"bofsaQue
 # OData EnumType 'BoUDOObjType'. Serialised by the Service Layer as the member name
 public type BoUDOObjType "boud_Document"|"boud_MasterData";
 
+# Represents the request payload for the `SeriesService_RemoveElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_RemoveElectronicSeries_body record {
     @jsondata:Name {value: "ElectronicSeriesParams"}
     ElectronicSeriesParams electronicSeriesParams?;
 };
 
+# Represents the request payload for the `SBOBobService_GetSystemPermission` operation of the SAP Business One Service Layer.
 public type SBOBobService_GetSystemPermission_body record {
     @jsondata:Name {value: "UserCode"}
     string userCode?;
@@ -3389,11 +3545,13 @@ public type SBOBobService_GetSystemPermission_body record {
 # OData EnumType 'BoBlockBudget'. Serialised by the Service Layer as the member name
 public type BoBlockBudget "bb_OnlyAnnualAlert"|"bb_MonthlyAlertOnly"|"bb_Block";
 
+# The `WebClientNotificationParams` complex type of the SAP Business One Service Layer.
 public type WebClientNotificationParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# A paged collection of `QueryAuthGroups` entities returned by the SAP Business One Service Layer.
 public type QueryAuthGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3402,6 +3560,7 @@ public type QueryAuthGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `ReportFilter` entities returned by the SAP Business One Service Layer.
 public type ReportFilterCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3410,11 +3569,13 @@ public type ReportFilterCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `DataSensitiveStatus` complex type of the SAP Business One Service Layer.
 public type DataSensitiveStatus record {|
     @jsondata:Name {value: "DataSensitiveStatus"}
     DataSensitiveStatusEnum dataSensitiveStatus?;
 |};
 
+# A paged collection of `UserDefaultGroups` entities returned by the SAP Business One Service Layer.
 public type UserDefaultGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3465,6 +3626,7 @@ public type ListBusinessPlacesHeaders record {
     string prefer?;
 };
 
+# The `ApprovalRequestParams` complex type of the SAP Business One Service Layer.
 public type ApprovalRequestParams record {|
     @jsondata:Name {value: "Status"}
     BoApprovalRequestStatusEnum status?;
@@ -3474,6 +3636,7 @@ public type ApprovalRequestParams record {|
     int:Signed32 code?;
 |};
 
+# The `ExtendedTranslation_ResultLine` complex type of the SAP Business One Service Layer.
 public type ExtendedTranslationResultLine record {|
     @jsondata:Name {value: "LanguageCode"}
     int:Signed32 languageCode?;
@@ -3497,6 +3660,7 @@ public type GetSingleUserConnectionsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SeriesService_GetDocumentChangedMenuName` operation of the SAP Business One Service Layer.
 public type SeriesService_GetDocumentChangedMenuName_body record {
     @jsondata:Name {value: "DocumentTypeParams"}
     DocumentTypeParams documentTypeParams?;
@@ -3530,6 +3694,7 @@ public type ListMobileAddOnSettingQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientFormSettingParams` complex type of the SAP Business One Service Layer.
 public type WebClientFormSettingParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
@@ -3545,6 +3710,7 @@ public type ListWebClientDashboardsHeaders record {
 # OData EnumType 'AuthenticationTypeEnum'. Serialised by the Service Layer as the member name
 public type AuthenticationTypeEnum "None"|"Basic"|"OAuth"|"HMAC";
 
+# The `WebClientVariantGroupBy` complex type of the SAP Business One Service Layer.
 public type WebClientVariantGroupBy record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -3557,11 +3723,13 @@ public type WebClientVariantGroupBy record {|
 # OData EnumType 'BoManageMethod'. Serialised by the Service Layer as the member name
 public type BoManageMethod "bomm_OnEveryTransaction"|"bomm_OnReleaseOnly";
 
+# Represents the request payload for the `MobileAppService_GetTechnicianSettingsGroup` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetTechnicianSettingsGroup_body record {
     @jsondata:Name {value: "TechnicianSettingsGroupParams"}
     TechnicianSettingsGroupParams technicianSettingsGroupParams?;
 };
 
+# The `UserActionRecordItem` complex type of the SAP Business One Service Layer.
 public type UserActionRecordItem record {
     string UserCode?;
     # OData EnumType 'UserActionTypeEnum'. Serialised by the Service Layer as the member name
@@ -3581,6 +3749,7 @@ public type UserActionRecordItem record {
 # OData EnumType 'BoBarCodeStandardEnum'. Serialised by the Service Layer as the member name
 public type BoBarCodeStandardEnum "rlbsan13"|"rlbsCode39"|"rlbsCode128";
 
+# Represents the request payload for the `UserMenuService_UpdateUserMenu` operation of the SAP Business One Service Layer.
 public type UserMenuService_UpdateUserMenu_body record {
     @jsondata:Name {value: "UserMenuParams"}
     UserMenuParams userMenuParams?;
@@ -3598,6 +3767,7 @@ public type GetUserLanguagesQueries record {
     string dollarSelect?;
 };
 
+# The `TaxReportFilter` entity of the SAP Business One Service Layer.
 public type TaxReportFilter record {|
     @jsondata:Name {value: "Quarter"}
     int:Signed32 quarter?;
@@ -3671,25 +3841,28 @@ public type TaxReportFilter record {|
     int:Signed32 fromSeries?;
 |};
 
+# Represents the response payload for the `CockpitsService_GetCockpitList` operation of the SAP Business One Service Layer.
 public type inline_response_200_9 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    FinancePeriod[] value?;
+    CockpitParams[] value?;
 };
 
 # OData EnumType 'BoAeDistMthd'. Serialised by the Service Layer as the member name
 public type BoAeDistMthd "aed_Equally"|"aed_LineTotal"|"aed_None"|"aed_Quantity"|"aed_Volume"|"aed_Weight";
 
+# Represents the response payload for the `ApprovalTemplatesService_GetApprovalTemplateList` operation of the SAP Business One Service Layer.
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ChangeLogParams[] value?;
+    ApprovalTemplateParams[] value?;
 };
 
+# Represents the response payload for the `BranchesService_GetBranchList` operation of the SAP Business One Service Layer.
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ChangeLogDifferenceParams[] value?;
+    BranchParams[] value?;
 };
 
 # Represents the Queries record for the operation: getUserFieldsMD
@@ -3702,16 +3875,18 @@ public type GetUserFieldsMDQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ChangeLogsService_GetChangeLog` operation of the SAP Business One Service Layer.
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    CockpitParams[] value?;
+    ChangeLogParams[] value?;
 };
 
+# Represents the response payload for the `ChangeLogsService_GetChangeLogDifferences` operation of the SAP Business One Service Layer.
 public type inline_response_200_8 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    FeatureStatus[] value?;
+    ChangeLogDifferenceParams[] value?;
 };
 
 # Represents the Queries record for the operation: listSingleUserConnections
@@ -3739,6 +3914,7 @@ public type ListSingleUserConnectionsQueries record {
     string dollarSelect?;
 };
 
+# The `Recipient` complex type of the SAP Business One Service Layer.
 public type Recipient record {|
     @jsondata:Name {value: "SendInternal"}
     BoYesNoEnum sendInternal?;
@@ -3802,6 +3978,7 @@ public type GetApprovalStagesQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ApprovalRequestsService_GetAllApprovalRequestsList` operation of the SAP Business One Service Layer.
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3833,16 +4010,18 @@ public type ListIntegrationPackagesConfigureQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ApprovalRequestsService_GetApprovalRequestList` operation of the SAP Business One Service Layer.
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ApprovalStageParams[] value?;
+    ApprovalRequestParams[] value?;
 };
 
+# Represents the response payload for the `ApprovalRequestsService_GetOpenApprovalRequestList` operation of the SAP Business One Service Layer.
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ApprovalTemplateParams[] value?;
+    ApprovalRequestParams[] value?;
 };
 
 # Represents the Queries record for the operation: listCountries
@@ -3870,12 +4049,14 @@ public type ListCountriesQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `ApprovalStagesService_GetApprovalStageList` operation of the SAP Business One Service Layer.
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    BranchParams[] value?;
+    ApprovalStageParams[] value?;
 };
 
+# The `ElectronicSeriesParams` complex type of the SAP Business One Service Layer.
 public type ElectronicSeriesParams record {|
     @jsondata:Name {value: "ElectronicSeries"}
     int:Signed32 electronicSeries?;
@@ -3884,6 +4065,7 @@ public type ElectronicSeriesParams record {|
 # OData EnumType 'BoBaseDateRateEnum'. Serialised by the Service Layer as the member name
 public type BoBaseDateRateEnum "bdr_PostingDate"|"bdr_TaxDate";
 
+# A paged collection of `Users` entities returned by the SAP Business One Service Layer.
 public type UsersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3892,18 +4074,21 @@ public type UsersCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `CockpitsService_GetUserCockpitList` operation of the SAP Business One Service Layer.
 public type inline_response_200_11 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    CountyParams[] value?;
+    CockpitParams[] value?;
 };
 
+# Represents the response payload for the `CockpitsService_GetTemplateCockpitList` operation of the SAP Business One Service Layer.
 public type inline_response_200_10 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    PeriodCategoryParams[] value?;
+    CockpitParams[] value?;
 };
 
+# The `TechnicianSettingsGroup` complex type of the SAP Business One Service Layer.
 public type TechnicianSettingsGroup record {|
     @jsondata:Name {value: "EnableResign"}
     BoYesNoEnum enableResign?;
@@ -3929,24 +4114,28 @@ public type TechnicianSettingsGroup record {|
     string name?;
 |};
 
+# Represents the response payload for the `CompanyService_GetFinancePeriods` operation of the SAP Business One Service Layer.
 public type inline_response_200_13 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    DepartmentParams[] value?;
+    FinancePeriod[] value?;
 };
 
+# Represents the response payload for the `CompanyService_GetFeaturesStatus` operation of the SAP Business One Service Layer.
 public type inline_response_200_12 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    CountryParams[] value?;
+    FeatureStatus[] value?;
 };
 
+# Represents the response payload for the `EmailGroupsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_19 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    IntegrationPackageParams[] value?;
+    EmailGroupParams[] value?;
 };
 
+# A paged collection of `WebClientLaunchpads` entities returned by the SAP Business One Service Layer.
 public type WebClientLaunchpadsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -3955,18 +4144,21 @@ public type WebClientLaunchpadsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `DistributionListsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_18 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    HolidayParams[] value?;
+    DistributionListParams[] value?;
 };
 
+# Represents the response payload for the `CountiesService_GetCountyList` operation of the SAP Business One Service Layer.
 public type inline_response_200_15 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    EmailGroupParams[] value?;
+    CountyParams[] value?;
 };
 
+# The `WebClientBookmarkTile` entity of the SAP Business One Service Layer.
 public type WebClientBookmarkTile record {|
     @jsondata:Name {value: "UrlTarget"}
     string urlTarget?;
@@ -3984,6 +4176,7 @@ public type WebClientBookmarkTile record {|
     string subTitle?;
 |};
 
+# The `County` entity of the SAP Business One Service Layer.
 public type County record {
     int:Signed32 AbsId?;
     string Code?;
@@ -3997,22 +4190,25 @@ public type County record {
     BusinessPlace[] BusinessPlaces?;
 };
 
+# Represents the response payload for the `CompanyService_GetPeriods` operation of the SAP Business One Service Layer.
 public type inline_response_200_14 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    DistributionListParams[] value?;
+    PeriodCategoryParams[] value?;
 };
 
+# Represents the response payload for the `DepartmentsService_GetDepartmentList` operation of the SAP Business One Service Layer.
 public type inline_response_200_17 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ExtendedTranslationParams[] value?;
+    DepartmentParams[] value?;
 };
 
+# Represents the response payload for the `CountriesService_GetCountryList` operation of the SAP Business One Service Layer.
 public type inline_response_200_16 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ExceptionalEventParams[] value?;
+    CountryParams[] value?;
 };
 
 # Represents the Queries record for the operation: getAdditionalExpenses
@@ -4028,6 +4224,7 @@ public type GetAdditionalExpensesQueries record {
 # OData EnumType 'BoCockpitTypeEnum'. Serialised by the Service Layer as the member name
 public type BoCockpitTypeEnum "cptt_UserCockpit"|"cptt_TemplateCockpit";
 
+# The `EventSubscription` entity of the SAP Business One Service Layer.
 public type EventSubscription record {|
     @jsondata:Name {value: "VerifyCertificate"}
     BoYesNoEnum verifyCertificate?;
@@ -4063,6 +4260,7 @@ public type EventSubscription record {|
     BoYesNoEnum handshake?;
 |};
 
+# The `PredefinedTextParams` complex type of the SAP Business One Service Layer.
 public type PredefinedTextParams record {|
     @jsondata:Name {value: "Numerator"}
     int:Signed32 numerator?;
@@ -4073,11 +4271,13 @@ public type PredefinedTextParams record {|
 # OData EnumType 'BoPictureSizeEnum'. Serialised by the Service Layer as the member name
 public type BoPictureSizeEnum "rlpsOriginalSize"|"rlpsFitFieldSizeNonProportionally"|"rlpsFitFieldSizeProportionally"|"rlpsFitFieldHeight"|"rlpsFitFieldWidth";
 
+# Represents the request payload for the `ReportLayoutsService_UpdateLanguageReport` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_UpdateLanguageReport_body record {
     @jsondata:Name {value: "ReportLayout"}
     ReportLayout reportLayout?;
 };
 
+# The `UserObjectMD_FindColumn` complex type of the SAP Business One Service Layer.
 public type UserObjectMDFindColumn record {
     int:Signed32 ColumnNumber?;
     string ColumnAlias?;
@@ -4141,6 +4341,7 @@ public type ListWebClientRecentActivitiesQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientVariantGroup` entity of the SAP Business One Service Layer.
 public type WebClientVariantGroup record {|
     @jsondata:Name {value: "UserId"}
     int:Signed32 userId?;
@@ -4156,6 +4357,7 @@ public type WebClientVariantGroup record {|
     string objectName?;
 |};
 
+# The `ReportLayoutItem` complex type of the SAP Business One Service Layer.
 public type ReportLayoutItem record {|
     @jsondata:Name {value: "DisplayTotalAsAWord"}
     BoYesNoEnum displayTotalAsAWord?;
@@ -4297,6 +4499,7 @@ public type ReportLayoutItem record {|
     int:Signed32 leftMargin?;
 |};
 
+# A paged collection of `UserKeysMD` entities returned by the SAP Business One Service Layer.
 public type UserKeysMDCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4340,6 +4543,7 @@ public type GetWebClientVariantsQueries record {
     string dollarSelect?;
 };
 
+# The `ShowDifferenceParams` complex type of the SAP Business One Service Layer.
 public type ShowDifferenceParams record {|
     @jsondata:Name {value: "LogInstance2"}
     int:Signed32 logInstance2?;
@@ -4356,11 +4560,13 @@ public type ShowDifferenceParams record {|
 # OData EnumType 'BoCurrencyCheck'. Serialised by the Service Layer as the member name
 public type BoCurrencyCheck "cc_Block"|"cc_NoMessage";
 
+# Represents the request payload for the `MobileAppService_UpdateSalesAppSetting` operation of the SAP Business One Service Layer.
 public type MobileAppService_UpdateSalesAppSetting_body record {
     @jsondata:Name {value: "SalesAppSetting"}
     SalesAppSetting salesAppSetting?;
 };
 
+# The `UserObjectMD_FormColumn` complex type of the SAP Business One Service Layer.
 public type UserObjectMDFormColumn record {
     string FormColumnAlias?;
     string FormColumnDescription?;
@@ -4371,6 +4577,7 @@ public type UserObjectMDFormColumn record {
     BoYesNoEnum Editable?;
 };
 
+# The `UserObjectsMD` entity of the SAP Business One Service Layer.
 public type UserObjectsMD record {
     string TableName?;
     string Code?;
@@ -4420,9 +4627,11 @@ public type UserObjectsMD record {
     UserObjectMDFindColumn[] UserObjectMD_FindColumns?;
     UserObjectMDFormColumn[] UserObjectMD_FormColumns?;
     UserObjectMDEnhancedFormColumn[] UserObjectMD_EnhancedFormColumns?;
+    # The `UserTablesMD` entity of the SAP Business One Service Layer.
     UserTablesMD UserTablesMD?;
 };
 
+# A paged collection of `DistributionLists` entities returned by the SAP Business One Service Layer.
 public type DistributionListsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4441,6 +4650,7 @@ public type GetReportTypesQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientLaunchpadTile` complex type of the SAP Business One Service Layer.
 public type WebClientLaunchpadTile record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -4475,16 +4685,19 @@ public type ListHolidaysQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `MobileAppService_UpdateServiceAppReport` operation of the SAP Business One Service Layer.
 public type MobileAppService_UpdateServiceAppReport_body record {
     @jsondata:Name {value: "ServiceAppReport"}
     ServiceAppReport serviceAppReport?;
 };
 
+# Represents the request payload for the `SeriesService_UpdateSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_UpdateSeries_body record {
     @jsondata:Name {value: "Series"}
     Series series?;
 };
 
+# The `Series` complex type of the SAP Business One Service Layer.
 public type Series record {
     string Document?;
     string DocumentSubType?;
@@ -4521,6 +4734,7 @@ public type Series record {
     string PortugalSeriesPhase?;
 };
 
+# The `TechnicianSettingsGroupParams` complex type of the SAP Business One Service Layer.
 public type TechnicianSettingsGroupParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -4548,6 +4762,7 @@ public type GetBranchesQueries record {
 # OData EnumType 'BoWeekEnum'. Serialised by the Service Layer as the member name
 public type BoWeekEnum "Sunday"|"Monday"|"Tuesday"|"Wednesday"|"Thursday"|"Friday"|"Saturday";
 
+# A paged collection of `WebClientVariants` entities returned by the SAP Business One Service Layer.
 public type WebClientVariantsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4563,6 +4778,7 @@ public type ListUserLanguagesHeaders record {
     string prefer?;
 };
 
+# A paged collection of `AlertManagements` entities returned by the SAP Business One Service Layer.
 public type AlertManagementsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4571,24 +4787,28 @@ public type AlertManagementsCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the response payload for the `ReportFilterService_GetTaxReportFilterList` operation of the SAP Business One Service Layer.
 public type inline_response_200_33 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    StateParams[] value?;
+    TaxReportFilterParams[] value?;
 };
 
+# Represents the response payload for the `QueryAuthGroupService_GetQueryAuthGroupList` operation of the SAP Business One Service Layer.
 public type inline_response_200_32 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ShortLinkMappingParams[] value?;
+    QueryAuthGroup[] value?;
 };
 
+# Represents the response payload for the `ReportTypesService_GetReportTypeList` operation of the SAP Business One Service Layer.
 public type inline_response_200_35 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    UserGroupParams[] value?;
+    ReportTypeParams[] value?;
 };
 
+# The `WebClientVariantMChart` complex type of the SAP Business One Service Layer.
 public type WebClientVariantMChart record {|
     @jsondata:Name {value: "TimeAxis"}
     string timeAxis?;
@@ -4616,17 +4836,20 @@ public type WebClientVariantMChart record {|
     WebClientVariantMChartValue1[] webClientVariantMChartValue1Collection?;
 |};
 
+# Represents the response payload for the `ReportLayoutsService_GetReportLayoutList` operation of the SAP Business One Service Layer.
 public type inline_response_200_34 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    TSRExceptionalEventParams[] value?;
+    ReportLayoutParams[] value?;
 };
 
+# The `ApprovalTemplateUser` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateUser record {|
     @jsondata:Name {value: "UserID"}
     int:Signed32 userID?;
 |};
 
+# The `ChooseFromList_Line` complex type of the SAP Business One Service Layer.
 public type ChooseFromListLine record {
     string ObjectName?;
     int:Signed32 FieldIndex?;
@@ -4646,15 +4869,24 @@ public type ChooseFromListLine record {
 # OData EnumType 'KPITypeEnum'. Serialised by the Service Layer as the member name
 public type KPITypeEnum "asSingle"|"asQuarterly"|"asMonthly"|"asMultiple";
 
+# The `ReportInputParams` complex type of the SAP Business One Service Layer.
 public type ReportInputParams record {|
     @jsondata:Name {value: "ReportLayoutMenuID"}
     string reportLayoutMenuID?;
 |};
 
+# Represents the response payload for the `PredefinedTextsService_GetPredefinedTextList` operation of the SAP Business One Service Layer.
 public type inline_response_200_31 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    Series[] value?;
+    PredefinedTextParams[] value?;
+};
+
+# Represents the response payload for the `MobileAppService_GetTechnicianSchedulings` operation of the SAP Business One Service Layer.
+public type inline_response_200_30 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    TechnicianSchedulings[] value?;
 };
 
 # Represents the Headers record for the operation: listReportTypes
@@ -4662,12 +4894,6 @@ public type ListReportTypesHeaders record {
     # Service Layer paging control, e.g. 'odata.maxpagesize=100'. Use 'odata.maxpagesize=0' to disable server paging
     @http:Header {name: "Prefer"}
     string prefer?;
-};
-
-public type inline_response_200_30 record {
-    @jsondata:Name {value: "odata.metadata"}
-    string odataMetadata?;
-    SectionParams[] value?;
 };
 
 # Represents the Headers record for the operation: listMessages
@@ -4702,6 +4928,7 @@ public type ListUserDefaultGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `QueryAuthGroup` entity of the SAP Business One Service Layer.
 public type QueryAuthGroup record {|
     @jsondata:Name {value: "AuthGroupCode"}
     string authGroupCode?;
@@ -4723,38 +4950,44 @@ public type GetExtendedTranslationsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CockpitsService_PublishCockpit` operation of the SAP Business One Service Layer.
 public type CockpitsService_PublishCockpit_body record {
     @jsondata:Name {value: "Cockpit"}
     Cockpit cockpit?;
 };
 
+# The `DashboardPackageParams` complex type of the SAP Business One Service Layer.
 public type DashboardPackageParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
 |};
 
+# Represents the response payload for the `SeriesService_GetDocumentSeries` operation of the SAP Business One Service Layer.
 public type inline_response_200_37 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    VMB1ValuesData[] value?;
+    Series[] value?;
 };
 
+# Represents the response payload for the `SectionsService_GetSectionList` operation of the SAP Business One Service Layer.
 public type inline_response_200_36 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    UserMenuItem[] value?;
+    SectionParams[] value?;
 };
 
+# Represents the response payload for the `StatesService_GetStateList` operation of the SAP Business One Service Layer.
 public type inline_response_200_39 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientBookmarkTileParams[] value?;
+    StateParams[] value?;
 };
 
+# Represents the response payload for the `ShortLinkMappingsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_38 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    VMThirdPartyValuesData[] value?;
+    ShortLinkMappingParams[] value?;
 };
 
 # Represents the Queries record for the operation: getWebClientFormSettings
@@ -4767,6 +5000,7 @@ public type GetWebClientFormSettingsQueries record {
     string dollarSelect?;
 };
 
+# The `ApprovalRequestDecision` complex type of the SAP Business One Service Layer.
 public type ApprovalRequestDecision record {|
     @jsondata:Name {value: "Status"}
     BoApprovalRequestDecisionEnum status?;
@@ -4778,11 +5012,13 @@ public type ApprovalRequestDecision record {|
     string approverUserName?;
 |};
 
+# Represents the request payload for the `CompanyService_UpdateCompanyInfo` operation of the SAP Business One Service Layer.
 public type CompanyService_UpdateCompanyInfo_body record {
     @jsondata:Name {value: "CompanyInfo"}
     CompanyInfo companyInfo?;
 };
 
+# The `Department` entity of the SAP Business One Service Layer.
 public type Department record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -4794,6 +5030,7 @@ public type Department record {|
     string name?;
 |};
 
+# The `FinancePeriodParams` complex type of the SAP Business One Service Layer.
 public type FinancePeriodParams record {|
     @jsondata:Name {value: "AbsoluteEntry"}
     int:Signed32 absoluteEntry?;
@@ -4801,6 +5038,7 @@ public type FinancePeriodParams record {|
     string periodIndicator?;
 |};
 
+# The `CountryParams` complex type of the SAP Business One Service Layer.
 public type CountryParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -4808,11 +5046,13 @@ public type CountryParams record {|
     string name?;
 |};
 
+# The `WebClientDashboardParams` complex type of the SAP Business One Service Layer.
 public type WebClientDashboardParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# A paged collection of `Attachments2` entities returned by the SAP Business One Service Layer.
 public type Attachments2CollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4827,6 +5067,7 @@ public type BoTimeTemplate "tt_24H"|"tt_12H";
 # OData EnumType 'ExternalCallStatusEnum'. Serialised by the Service Layer as the member name
 public type ExternalCallStatusEnum "ecsNew"|"ecsInProcess"|"ecsCompleted"|"ecsConfirmed"|"ecsFailed";
 
+# The `UserMenuItem` complex type of the SAP Business One Service Layer.
 public type UserMenuItem record {|
     @jsondata:Name {value: "Type"}
     UserMenuItemTypeEnum 'type?;
@@ -4891,6 +5132,7 @@ public type ConnectionConfig record {|
 # OData EnumType 'BoSeriesGroupEnum'. Serialised by the Service Layer as the member name
 public type BoSeriesGroupEnum "sg_Group1"|"sg_Group2"|"sg_Group3"|"sg_Group4"|"sg_Group5"|"sg_Group6"|"sg_Group7"|"sg_Group8"|"sg_Group9"|"sg_Group10";
 
+# The `B1Session` entity of the SAP Business One Service Layer.
 public type B1Session record {|
     @jsondata:Name {value: "SessionTimeout"}
     int:Signed32 sessionTimeout?;
@@ -4900,33 +5142,38 @@ public type B1Session record {|
     string sessionId?;
 |};
 
+# Represents the response payload for the `HolidayService_GetHolidayList` operation of the SAP Business One Service Layer.
 public type inline_response_200_22 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    MobileAddOnSettingParams[] value?;
+    HolidayParams[] value?;
 };
 
+# Represents the response payload for the `ExtendedTranslationsService_GetExtendedTranslationList` operation of the SAP Business One Service Layer.
 public type inline_response_200_21 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    MessageHeader[] value?;
+    ExtendedTranslationParams[] value?;
 };
 
 # OData EnumType 'BoHorizontalAlignmentEnum'. Serialised by the Service Layer as the member name
 public type BoHorizontalAlignmentEnum "rlhjRight"|"rlhjLeft"|"rlhjCentralized"|"rlhjLanguageDependent";
 
+# Represents the response payload for the `KPIsService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_24 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    TechnicianSchedulings[] value?;
+    KPIParams[] value?;
 };
 
+# Represents the response payload for the `IntegrationPackagesConfigureService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_23 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    EmployeeFullNamesParams[] value?;
+    IntegrationPackageParams[] value?;
 };
 
+# The `ChangeLogDifferenceParams` complex type of the SAP Business One Service Layer.
 public type ChangeLogDifferenceParams record {|
     @jsondata:Name {value: "UserName"}
     string userName?;
@@ -4954,15 +5201,17 @@ public type GetQueryAuthGroupsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `UserMenuService_UpdateCurrentUserMenu` operation of the SAP Business One Service Layer.
 public type UserMenuService_UpdateCurrentUserMenu_body record {
     @jsondata:Name {value: "UserMenuItems"}
     UserMenuItem[] userMenuItems?;
 };
 
+# Represents the response payload for the `ExceptionalEventService_GetExceptionalEventList` operation of the SAP Business One Service Layer.
 public type inline_response_200_20 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    KPIParams[] value?;
+    ExceptionalEventParams[] value?;
 };
 
 # Represents the Headers record for the operation: listFormPreferences
@@ -4972,12 +5221,14 @@ public type ListFormPreferencesHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `MobileAppService_GetEmployeeFullNames` operation of the SAP Business One Service Layer.
 public type inline_response_200_29 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ReportTypeParams[] value?;
+    EmployeeFullNamesParams[] value?;
 };
 
+# The `WebClientDashboardCard` complex type of the SAP Business One Service Layer.
 public type WebClientDashboardCard record {|
     @jsondata:Name {value: "Version"}
     string version?;
@@ -4991,6 +5242,7 @@ public type WebClientDashboardCard record {|
     BoYesNoEnum sys?;
 |};
 
+# A paged collection of `ApprovalStages` entities returned by the SAP Business One Service Layer.
 public type ApprovalStagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -4999,29 +5251,34 @@ public type ApprovalStagesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ApprovalStageApprover` complex type of the SAP Business One Service Layer.
 public type ApprovalStageApprover record {|
     @jsondata:Name {value: "UserID"}
     int:Signed32 userID?;
 |};
 
+# Represents the response payload for the `MessagesService_GetOutbox` operation of the SAP Business One Service Layer.
 public type inline_response_200_26 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    QueryAuthGroup[] value?;
+    MessageHeader[] value?;
 };
 
+# Represents the response payload for the `MessagesService_GetInbox` operation of the SAP Business One Service Layer.
 public type inline_response_200_25 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    PredefinedTextParams[] value?;
+    MessageHeader[] value?;
 };
 
+# Represents the response payload for the `MobileAddOnSettingService_GetMobileAddOnSettingList` operation of the SAP Business One Service Layer.
 public type inline_response_200_28 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    ReportLayoutParams[] value?;
+    MobileAddOnSettingParams[] value?;
 };
 
+# The `WebClientVariantMChartSize` complex type of the SAP Business One Service Layer.
 public type WebClientVariantMChartSize record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -5031,6 +5288,7 @@ public type WebClientVariantMChartSize record {|
     string guid?;
 |};
 
+# Represents the request payload for the `DashboardPackagesService_ImportDashboardPackage` operation of the SAP Business One Service Layer.
 public type DashboardPackagesService_ImportDashboardPackage_body record {
     @jsondata:Name {value: "DashboardPackageImportParams"}
     DashboardPackageImportParams dashboardPackageImportParams?;
@@ -5039,10 +5297,11 @@ public type DashboardPackagesService_ImportDashboardPackage_body record {
 # OData EnumType 'TranslationCategoryEnum'. Serialised by the Service Layer as the member name
 public type TranslationCategoryEnum "asCRReport"|"asMenuItem"|"asEFMItem";
 
+# Represents the response payload for the `MessagesService_GetSentMessages` operation of the SAP Business One Service Layer.
 public type inline_response_200_27 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    TaxReportFilterParams[] value?;
+    MessageHeader[] value?;
 };
 
 # OData EnumType 'UserGroupCategoryEnum'. Serialised by the Service Layer as the member name
@@ -5058,6 +5317,7 @@ public type GetWebClientRecentActivitiesQueries record {
     string dollarSelect?;
 };
 
+# The `UserGroupParams` complex type of the SAP Business One Service Layer.
 public type UserGroupParams record {|
     @jsondata:Name {value: "UserGroupId"}
     int:Signed32 userGroupId?;
@@ -5075,6 +5335,7 @@ public type GetHolidaysQueries record {
     string dollarSelect?;
 };
 
+# The `TaxReportGroup` complex type of the SAP Business One Service Layer.
 public type TaxReportGroup record {|
     @jsondata:Name {value: "Sum"}
     BoYesNoEnum sum?;
@@ -5107,6 +5368,7 @@ public type ListB1SessionsQueries record {
     string dollarSelect?;
 };
 
+# The `KPI_ItemLine` complex type of the SAP Business One Service Layer.
 public type KPIItemLine record {|
     @jsondata:Name {value: "KPIValue30"}
     decimal kPIValue30?;
@@ -5196,8 +5458,22 @@ public type GetFormPreferencesQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `WebClientVariantService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_55 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientVariantParams[] value?;
+};
+
 # OData EnumType 'VMCommunicationStatusEnum'. Serialised by the Service Layer as the member name
 public type VMCommunicationStatusEnum "vmcs_Pending"|"vmcs_Error"|"vmcs_Successful"|"vmcs_New"|"vmcs_Rejected";
+
+# Represents the response payload for the `WebClientVariantGroupService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_54 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientVariantGroupParams[] value?;
+};
 
 # Represents the Queries record for the operation: listReportTypes
 public type ListReportTypesQueries record {
@@ -5227,6 +5503,13 @@ public type ListReportTypesQueries record {
 # OData EnumType 'PeriodStatusEnum'. Serialised by the Service Layer as the member name
 public type PeriodStatusEnum "ltUnlocked"|"ltUnlockedExceptSales"|"ltPeriodClosing"|"ltLocked";
 
+# Represents the response payload for the `WorkflowTaskService_GetApprovalTaskList` operation of the SAP Business One Service Layer.
+public type inline_response_200_56 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WorkflowTask[] value?;
+};
+
 # Represents the Queries record for the operation: getCounties
 public type GetCountiesQueries record {
     # Comma-separated navigation properties to expand
@@ -5235,6 +5518,20 @@ public type GetCountiesQueries record {
     # Comma-separated list of properties to return
     @http:Query {name: "$select"}
     string dollarSelect?;
+};
+
+# Represents the response payload for the `WebClientNotificationService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_51 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientNotificationParams[] value?;
+};
+
+# Represents the response payload for the `WebClientListviewFilterService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_50 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientListviewFilterParams[] value?;
 };
 
 # OData EnumType 'BoDefaultBatchStatus'. Serialised by the Service Layer as the member name
@@ -5265,6 +5562,14 @@ public type ListMessagesQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `WebClientRecentActivityService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_53 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientRecentActivityParams[] value?;
+};
+
+# Represents the request payload for the `Login` operation of the SAP Business One Service Layer.
 public type Login_body record {
     @jsondata:Name {value: "UserName"}
     string userName?;
@@ -5276,6 +5581,14 @@ public type Login_body record {
     string password?;
 };
 
+# Represents the response payload for the `WebClientPreferenceService_GetList` operation of the SAP Business One Service Layer.
+public type inline_response_200_52 record {
+    @jsondata:Name {value: "odata.metadata"}
+    string odataMetadata?;
+    WebClientPreferenceParams[] value?;
+};
+
+# The `DefaultElectronicSeriesParams` complex type of the SAP Business One Service Layer.
 public type DefaultElectronicSeriesParams record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
@@ -5283,6 +5596,7 @@ public type DefaultElectronicSeriesParams record {|
     int:Signed32 electronicSeries?;
 |};
 
+# The `ServiceAppReportParams` complex type of the SAP Business One Service Layer.
 public type ServiceAppReportParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -5315,6 +5629,7 @@ public type ListEmailGroupsQueries record {
     string dollarSelect?;
 };
 
+# The `SectionParams` complex type of the SAP Business One Service Layer.
 public type SectionParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -5324,11 +5639,13 @@ public type SectionParams record {|
     string code?;
 |};
 
+# The `ShortLinkMappingParams` complex type of the SAP Business One Service Layer.
 public type ShortLinkMappingParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# A paged collection of `UserPermissionTree` entities returned by the SAP Business One Service Layer.
 public type UserPermissionTreeCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -5337,6 +5654,7 @@ public type UserPermissionTreeCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `SeriesService_GetDefaultElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_GetDefaultElectronicSeries_body record {
     @jsondata:Name {value: "SeriesParams"}
     SeriesParams seriesParams?;
@@ -5363,45 +5681,52 @@ public type ListQueryAuthGroupsHeaders record {
     string prefer?;
 };
 
+# Represents the response payload for the `ValueMappingService_GetMappedB1Value` operation of the SAP Business One Service Layer.
 public type inline_response_200_44 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientNotificationParams[] value?;
+    VMB1ValuesData[] value?;
 };
 
+# Represents the response payload for the `UserMenuService_GetUserMenu` operation of the SAP Business One Service Layer.
 public type inline_response_200_43 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientListviewFilterParams[] value?;
+    UserMenuItem[] value?;
 };
 
+# Represents the response payload for the `WebClientBookmarkTileService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_46 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientRecentActivityParams[] value?;
+    WebClientBookmarkTileParams[] value?;
 };
 
+# Represents the response payload for the `ValueMappingService_GetThirdPartyValuesForB1Value` operation of the SAP Business One Service Layer.
 public type inline_response_200_45 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientPreferenceParams[] value?;
+    VMThirdPartyValuesData[] value?;
 };
 
 # OData EnumType 'BoDateTemplate'. Serialised by the Service Layer as the member name
 public type BoDateTemplate "dt_DDMMYY"|"dt_DDMMCCYY"|"dt_MMDDYY"|"dt_MMDDCCYY"|"dt_CCYYMMDD"|"dt_DDMonthYYYY"|"dt_YYMMDD";
 
+# Represents the response payload for the `TSRExceptionalEventService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_40 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientDashboardParams[] value?;
+    TSRExceptionalEventParams[] value?;
 };
 
+# Represents the response payload for the `UserMenuService_GetCurrentUserMenu` operation of the SAP Business One Service Layer.
 public type inline_response_200_42 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientLaunchpadParams[] value?;
+    UserMenuItem[] value?;
 };
 
+# The `ColumnPreferences` entity of the SAP Business One Service Layer.
 public type ColumnPreferences record {|
     @jsondata:Name {value: "VisibleInExpanded"}
     BoYesNoEnum visibleInExpanded?;
@@ -5429,12 +5754,14 @@ public type ColumnPreferences record {|
     BoYesNoEnum visibleInForm?;
 |};
 
+# Represents the response payload for the `UserGroupService_GetUserGroupList` operation of the SAP Business One Service Layer.
 public type inline_response_200_41 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientFormSettingParams[] value?;
+    UserGroupParams[] value?;
 };
 
+# The `WorkflowTaskOutputObject` complex type of the SAP Business One Service Layer.
 public type WorkflowTaskOutputObject record {|
     @jsondata:Name {value: "Type"}
     string 'type?;
@@ -5448,12 +5775,14 @@ public type WorkflowTaskOutputObject record {|
     string 'key?;
 |};
 
+# Represents the response payload for the `WebClientFormSettingService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_48 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientVariantParams[] value?;
+    WebClientFormSettingParams[] value?;
 };
 
+# The `Section` entity of the SAP Business One Service Layer.
 public type Section record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -5465,16 +5794,18 @@ public type Section record {|
     string eCode?;
 |};
 
+# Represents the response payload for the `WebClientDashboardService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_47 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WebClientVariantGroupParams[] value?;
+    WebClientDashboardParams[] value?;
 };
 
+# Represents the response payload for the `WebClientLaunchpadService_GetList` operation of the SAP Business One Service Layer.
 public type inline_response_200_49 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
-    WorkflowTask[] value?;
+    WebClientLaunchpadParams[] value?;
 };
 
 # Represents the Queries record for the operation: getEventNotifications
@@ -5494,12 +5825,14 @@ public type ListPicturesHeaders record {
     string prefer?;
 };
 
+# The `UserPermissionForm` complex type of the SAP Business One Service Layer.
 public type UserPermissionForm record {
     string FormType?;
     int:Signed32 DisplayOrder?;
     string PermissionID?;
 };
 
+# The `ItemPriceReturnParams` complex type of the SAP Business One Service Layer.
 public type ItemPriceReturnParams record {|
     @jsondata:Name {value: "Discount"}
     decimal discount?;
@@ -5509,6 +5842,7 @@ public type ItemPriceReturnParams record {|
     string currency?;
 |};
 
+# The `FinancePeriod` complex type of the SAP Business One Service Layer.
 public type FinancePeriod record {|
     @jsondata:Name {value: "TaxDateFrom"}
     string taxDateFrom?;
@@ -5542,11 +5876,13 @@ public type FinancePeriod record {|
     string taxDateTo?;
 |};
 
+# The `TechnicianSettingsParams` complex type of the SAP Business One Service Layer.
 public type TechnicianSettingsParams record {|
     @jsondata:Name {value: "Technician"}
     int:Signed32 technician?;
 |};
 
+# The `Event` complex type of the SAP Business One Service Layer.
 public type Event record {|
     @jsondata:Name {value: "WebhookID"}
     string webhookID?;
@@ -5558,6 +5894,7 @@ public type Event record {|
     string businessObject?;
 |};
 
+# The `MessageHeader` complex type of the SAP Business One Service Layer.
 public type MessageHeader record {|
     @jsondata:Name {value: "Read"}
     BoYesNoEnum read?;
@@ -5582,6 +5919,7 @@ public type ListApprovalStagesHeaders record {
     string prefer?;
 };
 
+# The `DppChangeParams` complex type of the SAP Business One Service Layer.
 public type DppChangeParams record {|
     @jsondata:Name {value: "FromDate"}
     string fromDate?;
@@ -5597,6 +5935,7 @@ public type BoChangeLogEnum "clChartOfAccounts"|"clBusinessPartners"|"clItems"|"
 # OData EnumType 'EventReplayStateEnum'. Serialised by the Service Layer as the member name
 public type EventReplayStateEnum "None"|"Replaying"|"Completed";
 
+# The `CategoryGroup` complex type of the SAP Business One Service Layer.
 public type CategoryGroup record {|
     @jsondata:Name {value: "CategoryId"}
     int:Signed32 categoryId?;
@@ -5611,6 +5950,7 @@ public type ListEmailGroupsHeaders record {
     string prefer?;
 };
 
+# The `ApprovalRequestLine` complex type of the SAP Business One Service Layer.
 public type ApprovalRequestLine record {|
     @jsondata:Name {value: "Status"}
     BoApprovalRequestDecisionEnum status?;
@@ -5630,6 +5970,7 @@ public type ApprovalRequestLine record {|
     int:Signed32 stageCode?;
 |};
 
+# The `ElectronicReportInfo` complex type of the SAP Business One Service Layer.
 public type ElectronicReportInfo record {|
     @jsondata:Name {value: "ShareCapitalAmount"}
     decimal shareCapitalAmount?;
@@ -5687,6 +6028,7 @@ public type ListAlertManagementsQueries record {
     string dollarSelect?;
 };
 
+# The `TechnicianSchedulingsParams` complex type of the SAP Business One Service Layer.
 public type TechnicianSchedulingsParams record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -5696,6 +6038,7 @@ public type TechnicianSchedulingsParams record {|
     string endDate?;
 |};
 
+# The `SQLQuery` entity of the SAP Business One Service Layer.
 public type SQLQuery record {|
     @jsondata:Name {value: "SqlCode"}
     string sqlCode?;
@@ -5756,11 +6099,13 @@ public type GetKPIsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SensitiveDataAccessService_IsDataSensitive` operation of the SAP Business One Service Layer.
 public type SensitiveDataAccessService_IsDataSensitive_body record {
     @jsondata:Name {value: "SensitiveDataAccess"}
     SensitiveDataAccess sensitiveDataAccess?;
 };
 
+# Represents the request payload for the `SeriesService_AddElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_AddElectronicSeries_body record {
     @jsondata:Name {value: "ElectronicSeries"}
     ElectronicSeries electronicSeries?;
@@ -5794,6 +6139,7 @@ public type ListValueMappingCommunicationQueries record {
     string dollarSelect?;
 };
 
+# The `AlertManagement` entity of the SAP Business One Service Layer.
 public type AlertManagement record {
     int:Signed32 Code?;
     string Name?;
@@ -5820,6 +6166,7 @@ public type AlertManagement record {
     AlertManagementDocument[] AlertManagementDocuments?;
 };
 
+# The `WebClientLaunchpad` entity of the SAP Business One Service Layer.
 public type WebClientLaunchpad record {|
     @jsondata:Name {value: "ThemeId"}
     string themeId?;
@@ -5835,6 +6182,7 @@ public type WebClientLaunchpad record {|
     BoYesNoEnum displayQuickView?;
 |};
 
+# The `PeriodCategory` complex type of the SAP Business One Service Layer.
 public type PeriodCategory record {|
     @jsondata:Name {value: "UnderpaymentsARAccount"}
     string underpaymentsARAccount?;
@@ -6094,6 +6442,7 @@ public type PeriodCategory record {|
     string reconciliationDifference?;
 |};
 
+# The `HolidayDate` complex type of the SAP Business One Service Layer.
 public type HolidayDate record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -6105,6 +6454,7 @@ public type HolidayDate record {|
     string endDate?;
 |};
 
+# A paged collection of `FormattedSearches` entities returned by the SAP Business One Service Layer.
 public type FormattedSearchesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6113,6 +6463,7 @@ public type FormattedSearchesCollectionResponse record {
     string odataNextLink?;
 };
 
+# Represents the request payload for the `SensitiveDataAccessService_Access` operation of the SAP Business One Service Layer.
 public type SensitiveDataAccessService_Access_body record {
     @jsondata:Name {value: "SensitiveDataAccess"}
     SensitiveDataAccess sensitiveDataAccess?;
@@ -6153,6 +6504,7 @@ public type ListFormPreferencesQueries record {
     string dollarSelect?;
 };
 
+# The `VM_B1ValuesData` entity of the SAP Business One Service Layer.
 public type VMB1ValuesData record {|
     @jsondata:Name {value: "VM_ThirdPartyValuesCollection"}
     VMThirdPartyValuesData[] vMThirdPartyValuesCollection?;
@@ -6177,6 +6529,7 @@ public type GetUserObjectsMDQueries record {
     string dollarSelect?;
 };
 
+# The `CockpitParams` complex type of the SAP Business One Service Layer.
 public type CockpitParams record {|
     @jsondata:Name {value: "CockpitType"}
     BoCockpitTypeEnum cockpitType?;
@@ -6184,11 +6537,13 @@ public type CockpitParams record {|
     int:Signed32 absEntry?;
 |};
 
+# Represents the request payload for the `MobileAppService_GetEmployeeFullNames` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetEmployeeFullNames_body record {
     @jsondata:Name {value: "EmployeeFullNamesParamsCollection"}
     EmployeeFullNamesParams[] employeeFullNamesParamsCollection?;
 };
 
+# A paged collection of `Messages` entities returned by the SAP Business One Service Layer.
 public type MessagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6197,6 +6552,7 @@ public type MessagesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `GetChangeLogParams` complex type of the SAP Business One Service Layer.
 public type GetChangeLogParams record {|
     @jsondata:Name {value: "PrimaryKey"}
     string primaryKey?;
@@ -6206,16 +6562,19 @@ public type GetChangeLogParams record {|
     BoChangeLogEnum 'object?;
 |};
 
+# Represents the request payload for the `ReportLayoutsService_GetReportLayout` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_GetReportLayout_body record {
     @jsondata:Name {value: "ReportLayoutParams"}
     ReportLayoutParams reportLayoutParams?;
 };
 
+# Represents the request payload for the `SeriesService_SetDefaultElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_SetDefaultElectronicSeries_body record {
     @jsondata:Name {value: "DefaultElectronicSeriesParams"}
     DefaultElectronicSeriesParams defaultElectronicSeriesParams?;
 };
 
+# The `WebClientVariant` entity of the SAP Business One Service Layer.
 public type WebClientVariant record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -6268,11 +6627,13 @@ public type WebClientVariant record {|
 # OData EnumType 'BoFldSubTypes'. Serialised by the Service Layer as the member name
 public type BoFldSubTypes "st_None"|"st_Address"|"st_Phone"|"st_Time"|"st_Rate"|"st_Sum"|"st_Price"|"st_Quantity"|"st_Percentage"|"st_Measurement"|"st_Link"|"st_Image"|"st_Checkbox";
 
+# Represents the request payload for the `MobileAppService_GetSalesAppSetting` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetSalesAppSetting_body record {
     @jsondata:Name {value: "SalesAppSettingParams"}
     SalesAppSettingParams salesAppSettingParams?;
 };
 
+# Represents the request payload for the `SeriesService_GetSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_GetSeries_body record {
     @jsondata:Name {value: "SeriesParams"}
     SeriesParams seriesParams?;
@@ -6281,6 +6642,7 @@ public type SeriesService_GetSeries_body record {
 # OData EnumType 'DocumentRemarksIncludeTypeEnum'. Serialised by the Service Layer as the member name
 public type DocumentRemarksIncludeTypeEnum "driBaseDocumentNumber"|"driBPReferenceNumber"|"driManualRemarksOnly";
 
+# The `DocumentChangeMenuName` complex type of the SAP Business One Service Layer.
 public type DocumentChangeMenuName record {|
     @jsondata:Name {value: "ChangedMenuName"}
     string changedMenuName?;
@@ -6290,6 +6652,7 @@ public type DocumentChangeMenuName record {|
     string documentSubType?;
 |};
 
+# The `DistributionListLine` complex type of the SAP Business One Service Layer.
 public type DistributionListLine record {
     int:Signed32 LineNumber?;
     string DistributionType?;
@@ -6334,11 +6697,13 @@ public type ListBusinessPlacesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CompanyService_UpdateAdminInfo` operation of the SAP Business One Service Layer.
 public type CompanyService_UpdateAdminInfo_body record {
     @jsondata:Name {value: "AdminInfo"}
     AdminInfo adminInfo?;
 };
 
+# A paged collection of `WebClientListviewFilters` entities returned by the SAP Business One Service Layer.
 public type WebClientListviewFiltersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6347,6 +6712,7 @@ public type WebClientListviewFiltersCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `WebClientNotifications` entities returned by the SAP Business One Service Layer.
 public type WebClientNotificationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6355,6 +6721,7 @@ public type WebClientNotificationsCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `FormPreferences` entities returned by the SAP Business One Service Layer.
 public type FormPreferencesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6379,11 +6746,13 @@ public type GetEventSubscriptionsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SeriesService_ChangeDocumentMenuName` operation of the SAP Business One Service Layer.
 public type SeriesService_ChangeDocumentMenuName_body record {
     @jsondata:Name {value: "DocumentChangeMenuName"}
     DocumentChangeMenuName documentChangeMenuName?;
 };
 
+# The `Branch` entity of the SAP Business One Service Layer.
 public type Branch record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -6402,6 +6771,7 @@ public type ListBranchesHeaders record {
     string prefer?;
 };
 
+# The `SalesAppSettingParams` complex type of the SAP Business One Service Layer.
 public type SalesAppSettingParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -6425,6 +6795,7 @@ public type ListAlertManagementsHeaders record {
 # OData EnumType 'BoSortTypeEnum'. Serialised by the Service Layer as the member name
 public type BoSortTypeEnum "rlstAlpha"|"rlstNumeric"|"rlstMoney"|"rlstDate";
 
+# A paged collection of `WebClientBookmarkTiles` entities returned by the SAP Business One Service Layer.
 public type WebClientBookmarkTilesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6486,6 +6857,7 @@ public type ListApprovalStagesQueries record {
 # OData EnumType 'LogonMethodEnum'. Serialised by the Service Layer as the member name
 public type LogonMethodEnum "lmBOneIntegrationFramework"|"lmStandardLogon"|"lmNoControl";
 
+# Represents the request payload for the `ReportLayoutsService_DeleteReportLayout` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_DeleteReportLayout_body record {
     @jsondata:Name {value: "ReportLayoutParams"}
     ReportLayoutParams reportLayoutParams?;
@@ -6494,6 +6866,7 @@ public type ReportLayoutsService_DeleteReportLayout_body record {
 # OData EnumType 'WebhookWorkModeEnum'. Serialised by the Service Layer as the member name
 public type WebhookWorkModeEnum "Standard"|"Replay";
 
+# A paged collection of `Branches` entities returned by the SAP Business One Service Layer.
 public type BranchesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6530,6 +6903,7 @@ public type ListCockpitsQueries record {
     string dollarSelect?;
 };
 
+# The `AlertManagementRecipient` complex type of the SAP Business One Service Layer.
 public type AlertManagementRecipient record {|
     @jsondata:Name {value: "SendInternal"}
     BoYesNoEnum sendInternal?;
@@ -6543,11 +6917,13 @@ public type AlertManagementRecipient record {|
     BoYesNoEnum sendFax?;
 |};
 
+# The `ServiceAppReportContent` complex type of the SAP Business One Service Layer.
 public type ServiceAppReportContent record {|
     @jsondata:Name {value: "ReportContent"}
     string reportContent?;
 |};
 
+# The `PredefinedText` entity of the SAP Business One Service Layer.
 public type PredefinedText record {|
     @jsondata:Name {value: "Numerator"}
     int:Signed32 numerator?;
@@ -6557,6 +6933,7 @@ public type PredefinedText record {|
     string text?;
 |};
 
+# A paged collection of `AdditionalExpenses` entities returned by the SAP Business One Service Layer.
 public type AdditionalExpensesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6572,6 +6949,7 @@ public type ListDistributionListsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `ExtendedTranslations` entities returned by the SAP Business One Service Layer.
 public type ExtendedTranslationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6580,11 +6958,13 @@ public type ExtendedTranslationsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `Attachments2` entity of the SAP Business One Service Layer.
 public type Attachments2 record {
     int:Signed32 AbsoluteEntry?;
     Attachments2Line[] Attachments2_Lines?;
 };
 
+# A paged collection of `UserGroups` entities returned by the SAP Business One Service Layer.
 public type UserGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6593,6 +6973,7 @@ public type UserGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `WebClientPreference` entity of the SAP Business One Service Layer.
 public type WebClientPreference record {|
     @jsondata:Name {value: "TableName"}
     string tableName?;
@@ -6631,6 +7012,7 @@ public type ListUserQueriesQueries record {
     string dollarSelect?;
 };
 
+# The `MultiLanguageTranslation` entity of the SAP Business One Service Layer.
 public type MultiLanguageTranslation record {
     int:Signed32 Numerator?;
     string TableName?;
@@ -6664,16 +7046,19 @@ public type ListPicturesQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `ChangeLogsService_GetChangeLog` operation of the SAP Business One Service Layer.
 public type ChangeLogsService_GetChangeLog_body record {
     @jsondata:Name {value: "GetChangeLogParams"}
     GetChangeLogParams getChangeLogParams?;
 };
 
+# Represents the request payload for the `ChangeLogsService_GetChangeLogDifferences` operation of the SAP Business One Service Layer.
 public type ChangeLogsService_GetChangeLogDifferences_body record {
     @jsondata:Name {value: "ShowDifferenceParams"}
     ShowDifferenceParams showDifferenceParams?;
 };
 
+# The `WorkflowTaskInputObject` complex type of the SAP Business One Service Layer.
 public type WorkflowTaskInputObject record {|
     @jsondata:Name {value: "Type"}
     string 'type?;
@@ -6689,6 +7074,7 @@ public type WorkflowTaskInputObject record {|
     string detail?;
 |};
 
+# A paged collection of `ChooseFromList` entities returned by the SAP Business One Service Layer.
 public type ChooseFromListCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6697,6 +7083,7 @@ public type ChooseFromListCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `WebClientListviewFilterParams` complex type of the SAP Business One Service Layer.
 public type WebClientListviewFilterParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
@@ -6712,6 +7099,7 @@ public type GetMobileAddOnSettingQueries record {
     string dollarSelect?;
 };
 
+# The `FeatureStatus` complex type of the SAP Business One Service Layer.
 public type FeatureStatus record {|
     @jsondata:Name {value: "FeatureID"}
     string featureID?;
@@ -6719,6 +7107,7 @@ public type FeatureStatus record {|
     BoYesNoEnum blocked?;
 |};
 
+# Represents the request payload for the `SBOBobService_GetDueDate` operation of the SAP Business One Service Layer.
 public type SBOBobService_GetDueDate_body record {
     @jsondata:Name {value: "RefDate"}
     string refDate?;
@@ -6726,6 +7115,7 @@ public type SBOBobService_GetDueDate_body record {
     string cardCode?;
 };
 
+# Represents the request payload for the `SBOBobService_GetIndexRate` operation of the SAP Business One Service Layer.
 public type SBOBobService_GetIndexRate_body record {
     @jsondata:Name {value: "Index"}
     string index?;
@@ -6736,11 +7126,13 @@ public type SBOBobService_GetIndexRate_body record {
 # OData EnumType 'BoYesNoEnum'. Serialised by the Service Layer as the member name
 public type BoYesNoEnum "tNO"|"tYES";
 
+# Represents the request payload for the `CompanyService_GetItemPrice` operation of the SAP Business One Service Layer.
 public type CompanyService_GetItemPrice_body record {
     @jsondata:Name {value: "ItemPriceParams"}
     ItemPriceParams itemPriceParams?;
 };
 
+# The `UserGroup` entity of the SAP Business One Service Layer.
 public type UserGroup record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -6758,11 +7150,13 @@ public type UserGroup record {|
     int:Signed32 tPLId?;
 |};
 
+# Represents the request payload for the `SeriesService_AttachSeriesToDocument` operation of the SAP Business One Service Layer.
 public type SeriesService_AttachSeriesToDocument_body record {
     @jsondata:Name {value: "DocumentSeriesParams"}
     DocumentSeriesParams documentSeriesParams?;
 };
 
+# The `ValidValueMD` complex type of the SAP Business One Service Layer.
 public type ValidValueMD record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -6770,6 +7164,7 @@ public type ValidValueMD record {|
     string value?;
 |};
 
+# The `ExceptionalEventParams` complex type of the SAP Business One Service Layer.
 public type ExceptionalEventParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -6788,6 +7183,7 @@ public type GetCockpitsQueries record {
 # OData EnumType 'CallMessageStatusEnum'. Serialised by the Service Layer as the member name
 public type CallMessageStatusEnum "cmsUnread"|"cmsRead";
 
+# The `ApprovalTemplateQuery` complex type of the SAP Business One Service Layer.
 public type ApprovalTemplateQuery record {|
     @jsondata:Name {value: "QueryID"}
     int:Signed32 queryID?;
@@ -6821,6 +7217,7 @@ public type ListEventNotificationsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `Holidays` entities returned by the SAP Business One Service Layer.
 public type HolidaysCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6829,6 +7226,7 @@ public type HolidaysCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `MobileAddOnSettingParams` complex type of the SAP Business One Service Layer.
 public type MobileAddOnSettingParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -6836,6 +7234,7 @@ public type MobileAddOnSettingParams record {|
     string code?;
 |};
 
+# The `UserObjectMD_EnhancedFormColumn` complex type of the SAP Business One Service Layer.
 public type UserObjectMDEnhancedFormColumn record {
     string Code?;
     int:Signed32 ColumnNumber?;
@@ -6898,6 +7297,7 @@ public type ListKPIsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SBOBobService_GetCurrencyRate` operation of the SAP Business One Service Layer.
 public type SBOBobService_GetCurrencyRate_body record {
     @jsondata:Name {value: "Currency"}
     string currency?;
@@ -6905,6 +7305,7 @@ public type SBOBobService_GetCurrencyRate_body record {
     string date?;
 };
 
+# A paged collection of `Countries` entities returned by the SAP Business One Service Layer.
 public type CountriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6913,6 +7314,7 @@ public type CountriesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `UserValidValue` complex type of the SAP Business One Service Layer.
 public type UserValidValue record {
     string FieldValue?;
 };
@@ -6923,6 +7325,7 @@ public type RoundingContextEnum "rcSum"|"rcPrice"|"rcRate"|"rcQuantity"|"rcMeasu
 # OData EnumType 'TaxCalcSysEnum'. Serialised by the Service Layer as the member name
 public type TaxCalcSysEnum "PreconfiguredFormulaWithJurisdictionSupport"|"UserDefinedFormula"|"PreconfiguredFormula";
 
+# The `WebClientVariantGroupParams` complex type of the SAP Business One Service Layer.
 public type WebClientVariantGroupParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
@@ -6938,6 +7341,7 @@ public type ListKPIsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `KPIs` entities returned by the SAP Business One Service Layer.
 public type KPIsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6946,6 +7350,7 @@ public type KPIsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ReportLayoutParams` complex type of the SAP Business One Service Layer.
 public type ReportLayoutParams record {|
     @jsondata:Name {value: "LayoutCode"}
     string layoutCode?;
@@ -6958,6 +7363,7 @@ public type ReportLayoutParams record {|
 # OData EnumType 'FreightTypeEnum'. Serialised by the Service Layer as the member name
 public type FreightTypeEnum "ftShipping"|"ftInsurance"|"ftOther"|"ftSpecial";
 
+# The `ReportLayout_TranslationLine` complex type of the SAP Business One Service Layer.
 public type ReportLayoutTranslationLine record {|
     @jsondata:Name {value: "LanguageCode"}
     int:Signed32 languageCode?;
@@ -6977,6 +7383,7 @@ public type ReportLayoutTranslationLine record {|
     int:Signed32 lineNumber?;
 |};
 
+# A paged collection of `EmailGroups` entities returned by the SAP Business One Service Layer.
 public type EmailGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -6985,6 +7392,7 @@ public type EmailGroupsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `ExceptionalEvent` entity of the SAP Business One Service Layer.
 public type ExceptionalEvent record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -6995,6 +7403,7 @@ public type ExceptionalEvent record {|
 # OData EnumType 'AlertManagementDocumentEnum'. Serialised by the Service Layer as the member name
 public type AlertManagementDocumentEnum "atd_NOB"|"atd_Invoices"|"atd_RevertInvoice"|"atd_DeliveryNotes"|"atd_Returns"|"atd_Orders"|"atd_PurchaseInvoices"|"atd_PurchaseDeliveryNotes"|"atd_PurchaseOrders"|"atd_Quotations"|"atd_IncomingPayments"|"atd_JournalEntries"|"atd_OutgoingPayments"|"atd_ChecksForPayment"|"atd_CorrectionInvoice"|"atd_DownPaymentIncoming"|"atd_DownPaymentOutgoing";
 
+# The `EventCatagory` complex type of the SAP Business One Service Layer.
 public type EventCatagory record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -7004,6 +7413,7 @@ public type EventCatagory record {|
     Event[] events?;
 |};
 
+# The `Country` entity of the SAP Business One Service Layer.
 public type Country record {
     string Code?;
     string Name?;
@@ -7044,6 +7454,7 @@ public type ListDynamicSystemStringsHeaders record {
 };
 
 
+# The `EmailGroupParams` complex type of the SAP Business One Service Layer.
 public type EmailGroupParams record {|
     @jsondata:Name {value: "EmailGroupName"}
     string emailGroupName?;
@@ -7051,6 +7462,7 @@ public type EmailGroupParams record {|
     string emailGroupCode?;
 |};
 
+# A paged collection of `EventNotifications` entities returned by the SAP Business One Service Layer.
 public type EventNotificationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7091,6 +7503,7 @@ public type ListExceptionalEventsHeaders record {
     string prefer?;
 };
 
+# The `EmployeeFullNamesParams` complex type of the SAP Business One Service Layer.
 public type EmployeeFullNamesParams record {|
     @jsondata:Name {value: "EmployeeFullName"}
     string employeeFullName?;
@@ -7108,6 +7521,7 @@ public type ListWebClientVariantGroupsHeaders record {
 # OData EnumType 'ViewStyleTypeEnum'. Serialised by the Service Layer as the member name
 public type ViewStyleTypeEnum "vstPage"|"vstFullScreen"|"vstLandscape";
 
+# Represents the request payload for the `SQLQueries_List_2` operation of the SAP Business One Service Layer.
 public type SQLQueriessqlCode_List_body record {
     @jsondata:Name {value: "ParamList"}
     string paramList?;
@@ -7120,6 +7534,7 @@ public type ListApprovalRequestsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `BusinessPlaces` entities returned by the SAP Business One Service Layer.
 public type BusinessPlacesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7141,6 +7556,7 @@ public type GetValueMappingCommunicationQueries record {
 # OData EnumType 'BoInventorySystem'. Serialised by the Service Layer as the member name
 public type BoInventorySystem "bis_MovingAverage"|"bis_Standard"|"bis_FIFO"|"bis_SNB";
 
+# The `DecimalData` complex type of the SAP Business One Service Layer.
 public type DecimalData record {|
     @jsondata:Name {value: "Context"}
     RoundingContextEnum context?;
@@ -7150,6 +7566,7 @@ public type DecimalData record {|
     decimal value?;
 |};
 
+# The `WebClientVariantMChartValue2` complex type of the SAP Business One Service Layer.
 public type WebClientVariantMChartValue2 record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -7173,6 +7590,7 @@ public type ListWebClientVariantsHeaders record {
     string prefer?;
 };
 
+# A paged collection of `States` entities returned by the SAP Business One Service Layer.
 public type StatesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7184,6 +7602,7 @@ public type StatesCollectionResponse record {
 # OData EnumType 'SingleUserConnectionActionEnum'. Serialised by the Service Layer as the member name
 public type SingleUserConnectionActionEnum "sucaWarning"|"sucaBlock";
 
+# The `TechnicianSettings` complex type of the SAP Business One Service Layer.
 public type TechnicianSettings record {|
     @jsondata:Name {value: "Technician"}
     int:Signed32 technician?;
@@ -7191,11 +7610,13 @@ public type TechnicianSettings record {|
     int:Signed32 groupCode?;
 |};
 
+# The `TaxReportBusinessPartner` complex type of the SAP Business One Service Layer.
 public type TaxReportBusinessPartner record {|
     @jsondata:Name {value: "Code"}
     string code?;
 |};
 
+# The `UserPermissionTree` entity of the SAP Business One Service Layer.
 public type UserPermissionTree record {
     int:Signed32 UserSignature?;
     int:Signed32 DisplayOrder?;
@@ -7208,9 +7629,11 @@ public type UserPermissionTree record {
     BoYesNoEnum IsItem?;
     string ParentID?;
     UserPermissionForm[] UserPermissionForms?;
+    # The `User` entity of the SAP Business One Service Layer.
     User User?;
 };
 
+# A paged collection of `ApprovalTemplates` entities returned by the SAP Business One Service Layer.
 public type ApprovalTemplatesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7219,6 +7642,7 @@ public type ApprovalTemplatesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `FormattedSearch` entity of the SAP Business One Service Layer.
 public type FormattedSearch record {
     string FormID?;
     string ItemID?;
@@ -7272,6 +7696,7 @@ public type ListWebClientBookmarkTilesHeaders record {
     string prefer?;
 };
 
+# The `WebClientLaunchpadGroup` complex type of the SAP Business One Service Layer.
 public type WebClientLaunchpadGroup record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -7287,6 +7712,7 @@ public type WebClientLaunchpadGroup record {|
     string groupId?;
 |};
 
+# The `ReportType` entity of the SAP Business One Service Layer.
 public type ReportType record {|
     @jsondata:Name {value: "TypeName"}
     string typeName?;
@@ -7302,6 +7728,7 @@ public type ReportType record {|
     string defaultReportLayout?;
 |};
 
+# The `WebClientVariantMChartValue1` complex type of the SAP Business One Service Layer.
 public type WebClientVariantMChartValue1 record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -7311,6 +7738,7 @@ public type WebClientVariantMChartValue1 record {|
     string guid?;
 |};
 
+# The `ItemPriceParams` complex type of the SAP Business One Service Layer.
 public type ItemPriceParams record {|
     @jsondata:Name {value: "UoMQuantity"}
     decimal uoMQuantity?;
@@ -7334,6 +7762,7 @@ public type ItemPriceParams record {|
     string date?;
 |};
 
+# Represents the request payload for the `QueryService_PostQuery` operation of the SAP Business One Service Layer.
 public type QueryService_PostQuery_body record {
     @jsondata:Name {value: "QueryPath"}
     string queryPath?;
@@ -7341,6 +7770,7 @@ public type QueryService_PostQuery_body record {
     string queryOption?;
 };
 
+# The `WebClientFormSettingItem` complex type of the SAP Business One Service Layer.
 public type WebClientFormSettingItem record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -7358,6 +7788,7 @@ public type WebClientFormSettingItem record {|
     string editableInGrid?;
 |};
 
+# The `TSRExceptionalEvent` entity of the SAP Business One Service Layer.
 public type TSRExceptionalEvent record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -7365,6 +7796,7 @@ public type TSRExceptionalEvent record {|
     string code?;
 |};
 
+# The `BranchParams` complex type of the SAP Business One Service Layer.
 public type BranchParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -7372,11 +7804,13 @@ public type BranchParams record {|
     string name?;
 |};
 
+# The `RefreshPathsDocuments` complex type of the SAP Business One Service Layer.
 public type RefreshPathsDocuments record {|
     @jsondata:Name {value: "AttachmentsFolderPath"}
     string attachmentsFolderPath?;
 |};
 
+# The `ValueMappingCommunicationData` entity of the SAP Business One Service Layer.
 public type ValueMappingCommunicationData record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -7403,6 +7837,7 @@ public type ValueMappingCommunicationData record {|
 # OData EnumType 'BoMsgRcpTypes'. Serialised by the Service Layer as the member name
 public type BoMsgRcpTypes "rt_RandomUser"|"rt_ContactPerson"|"rt_InternalUser";
 
+# A paged collection of `SQLViews` entities returned by the SAP Business One Service Layer.
 public type SQLViewsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7411,6 +7846,7 @@ public type SQLViewsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `DocumentSeriesUserParams` complex type of the SAP Business One Service Layer.
 public type DocumentSeriesUserParams record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
@@ -7432,6 +7868,7 @@ public type GetUserTablesMDQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `WebClientFormSettings` entities returned by the SAP Business One Service Layer.
 public type WebClientFormSettingsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7472,6 +7909,7 @@ public type ListUserPermissionTreeHeaders record {
     string prefer?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_AddReportLayoutToMenu` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_AddReportLayoutToMenu_body record {
     @jsondata:Name {value: "ReportInputParams"}
     ReportInputParams reportInputParams?;
@@ -7486,6 +7924,7 @@ public type ListUserGroupsHeaders record {
     string prefer?;
 };
 
+# The `DistributionList` entity of the SAP Business One Service Layer.
 public type DistributionList record {
     int:Signed32 Code?;
     string Name?;
@@ -7499,6 +7938,7 @@ public type ListAdditionalExpensesHeaders record {
     string prefer?;
 };
 
+# The `TechnicianSchedulings` complex type of the SAP Business One Service Layer.
 public type TechnicianSchedulings record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -7512,6 +7952,7 @@ public type TechnicianSchedulings record {|
     string endDate?;
 |};
 
+# The `VM_ThirdPartyValuesData` complex type of the SAP Business One Service Layer.
 public type VMThirdPartyValuesData record {|
     @jsondata:Name {value: "ThirdPartySystemId"}
     int:Signed32 thirdPartySystemId?;
@@ -7523,6 +7964,7 @@ public type VMThirdPartyValuesData record {|
     int:Signed32 absEntry?;
 |};
 
+# The `KPI` entity of the SAP Business One Service Layer.
 public type KPI record {|
     @jsondata:Name {value: "KPI_ItemLines"}
     KPIItemLine[] kPIItemLines?;
@@ -7546,6 +7988,7 @@ public type ListWebClientLaunchpadsHeaders record {
 # OData EnumType 'AlertManagementTypeEnum'. Serialised by the Service Layer as the member name
 public type AlertManagementTypeEnum "att_User"|"att_System";
 
+# The `WebClientLaunchpadParams` complex type of the SAP Business One Service Layer.
 public type WebClientLaunchpadParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
@@ -7601,11 +8044,13 @@ public type ListApprovalRequestsQueries record {
     string dollarSelect?;
 };
 
+# The `UserBranchAssignmentItem` complex type of the SAP Business One Service Layer.
 public type UserBranchAssignmentItem record {
     string UserCode?;
     int:Signed32 BPLID?;
 };
 
+# The `DynamicSystemString` entity of the SAP Business One Service Layer.
 public type DynamicSystemString record {
     string FormID?;
     string ItemID?;
@@ -7617,6 +8062,7 @@ public type DynamicSystemString record {
     BoYesNoEnum IsItalics?;
 };
 
+# The `ExtendedTranslationParams` complex type of the SAP Business One Service Layer.
 public type ExtendedTranslationParams record {|
     @jsondata:Name {value: "Category"}
     TranslationCategoryEnum category?;
@@ -7631,6 +8077,7 @@ public type ExtendedTranslationParams record {|
 # OData EnumType 'TaxReportFilterDocumentType'. Serialised by the Service Layer as the member name
 public type TaxReportFilterDocumentType "trfdt_ARInvoices"|"trfdt_ARCreditMemos"|"trfdt_APInvoices"|"trfdt_APCreditMemos"|"trfdt_IncomingPayments"|"trfdt_JournalEntries"|"trfdt_OutgoingPayments"|"trfdt_ChecksforPayment"|"trfdt_InventoryTransfers"|"trfdt_ARDownPayment"|"trfdt_APDownPayment";
 
+# A paged collection of `SQLQueries` entities returned by the SAP Business One Service Layer.
 public type SQLQueriesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7639,6 +8086,7 @@ public type SQLQueriesCollectionResponse record {
     string odataNextLink?;
 };
 
+# A paged collection of `Pictures` entities returned by the SAP Business One Service Layer.
 public type PicturesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7647,11 +8095,13 @@ public type PicturesCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `UserKeysMD_Element` complex type of the SAP Business One Service Layer.
 public type UserKeysMDElement record {
     int:Signed32 SubKeyIndex?;
     string ColumnAlias?;
 };
 
+# The `WebClientPreferenceParams` complex type of the SAP Business One Service Layer.
 public type WebClientPreferenceParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
@@ -7660,6 +8110,7 @@ public type WebClientPreferenceParams record {|
 # OData EnumType 'BoUniqueSerialNumber'. Serialised by the Service Layer as the member name
 public type BoUniqueSerialNumber "usn_None"|"usn_MfrSerialNumber"|"usn_SerialNumber"|"usn_LotNumber";
 
+# The `DocumentSeriesParams` complex type of the SAP Business One Service Layer.
 public type DocumentSeriesParams record {|
     @jsondata:Name {value: "Series"}
     int:Signed32 series?;
@@ -7669,6 +8120,7 @@ public type DocumentSeriesParams record {|
     string documentSubType?;
 |};
 
+# Represents the request payload for the `MobileAppService_GetServiceAppReport` operation of the SAP Business One Service Layer.
 public type MobileAppService_GetServiceAppReport_body record {
     @jsondata:Name {value: "ServiceAppReportParams"}
     ServiceAppReportParams serviceAppReportParams?;
@@ -7711,6 +8163,7 @@ public type GetAlertManagementsQueries record {
     string dollarSelect?;
 };
 
+# A paged collection of `IntegrationPackagesConfigure` entities returned by the SAP Business One Service Layer.
 public type IntegrationPackagesConfigureCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7719,6 +8172,7 @@ public type IntegrationPackagesConfigureCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `UserMenuParams` complex type of the SAP Business One Service Layer.
 public type UserMenuParams record {|
     @jsondata:Name {value: "UserID"}
     int:Signed32 userID?;
@@ -7756,6 +8210,7 @@ public type ListReportFilterHeaders record {
     string prefer?;
 };
 
+# The `ChooseFromList` entity of the SAP Business One Service Layer.
 public type ChooseFromList record {
     string ObjectName?;
     ChooseFromListLine[] ChooseFromList_Lines?;
@@ -7764,6 +8219,7 @@ public type ChooseFromList record {
 # OData EnumType 'WebhookStateEnum'. Serialised by the Service Layer as the member name
 public type WebhookStateEnum "Active"|"Inactive"|"Exceptional";
 
+# Represents the request payload for the `CompanyService_LogLogoffAction` operation of the SAP Business One Service Layer.
 public type CompanyService_LogLogoffAction_body record {
     @jsondata:Name {value: "UserAccessLog"}
     UserAccessLog userAccessLog?;
@@ -7771,6 +8227,7 @@ public type CompanyService_LogLogoffAction_body record {
     SupportUserLoginRecord supportUserLoginRecord?;
 };
 
+# A paged collection of `WebClientPreferences` entities returned by the SAP Business One Service Layer.
 public type WebClientPreferencesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7782,6 +8239,7 @@ public type WebClientPreferencesCollectionResponse record {
 # OData EnumType 'SupportUserLoginRecordLogReasonTypeEnum'. Serialised by the Service Layer as the member name
 public type SupportUserLoginRecordLogReasonTypeEnum "reasonTransIssueAnaly"|"reasonSetupIssueAnaly"|"reasonDataIssueAnaly"|"reasonAddonIssueAnaly"|"reasonCustomerIssueAnaly"|"reasonSystemMaint"|"reasonConsulting"|"reasonOther"|"reasonAddonAccess"|"reasonRootCauseAnaly"|"reasonConsultSupport";
 
+# A paged collection of `UserTablesMD` entities returned by the SAP Business One Service Layer.
 public type UserTablesMDCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -7803,6 +8261,7 @@ public type GetPredefinedTextsQueries record {
 # OData EnumType 'UDFLinkedSystemObjectTypesEnum'. Serialised by the Service Layer as the member name
 public type UDFLinkedSystemObjectTypesEnum "ulNone"|"ulChartOfAccounts"|"ulBusinessPartners"|"ulBanks"|"ulItems"|"ulUsers"|"ulInvoices"|"ulCreditNotes"|"ulDeliveryNotes"|"ulReturns"|"ulOrders"|"ulPurchaseInvoices"|"ulPurchaseCreditNotes"|"ulPurchaseDeliveryNotes"|"ulPurchaseReturns"|"ulPurchaseOrders"|"ulQuotations"|"ulIncomingPayments"|"ulDepositsService"|"ulJournalEntries"|"ulContacts"|"ulVendorPayments"|"ulChecksforPayment"|"ulInventoryGenEntry"|"ulInventoryGenExit"|"ulWarehouses"|"ulProductTrees"|"ulStockTransfer"|"ulSalesOpportunities"|"ulDrafts"|"ulMaterialRevaluation"|"ulEmployeesInfo"|"ulCustomerEquipmentCards"|"ulServiceContracts"|"ulServiceCalls"|"ulProductionOrders"|"ulInventoryTransferRequest"|"ulBlanketAgreementsService"|"ulProjectManagementService"|"ulReturnRequest"|"ulGoodsReturnRequest"|"ulSalesEmployee"|"ulLocations"|"ulStates"|"ulResources"|"ulUnitsofMeasure"|"ulPaymentTerms"|"ulPriceLists"|"ulBranches";
 
+# Represents the request payload for the `SeriesService_GetDocumentSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_GetDocumentSeries_body record {
     @jsondata:Name {value: "DocumentTypeParams"}
     DocumentTypeParams documentTypeParams?;
@@ -7818,11 +8277,13 @@ public type GetPicturesQueries record {
     string dollarSelect?;
 };
 
+# The `WebClientVariantParams` complex type of the SAP Business One Service Layer.
 public type WebClientVariantParams record {|
     @jsondata:Name {value: "Guid"}
     string guid?;
 |};
 
+# The `UserFieldMD` entity of the SAP Business One Service Layer.
 public type UserFieldMD record {|
     @jsondata:Name {value: "UserTablesMD"}
     UserTablesMD userTablesMD?;
@@ -7859,6 +8320,7 @@ public type UserFieldMD record {|
 # OData EnumType 'EventStatusEnum'. Serialised by the Service Layer as the member name
 public type EventStatusEnum "New"|"Failed"|"PartiallyDelivered"|"Delivered"|"Archived";
 
+# The `AdvancedGLAccountReturnParams` complex type of the SAP Business One Service Layer.
 public type AdvancedGLAccountReturnParams record {|
     @jsondata:Name {value: "AccountCode"}
     string accountCode?;
@@ -7867,6 +8329,7 @@ public type AdvancedGLAccountReturnParams record {|
 # OData EnumType 'BoGridTypeEnum'. Serialised by the Service Layer as the member name
 public type BoGridTypeEnum "gtCombination"|"gtContinuousLine"|"gtBrokenLine"|"gtDots";
 
+# Represents the request payload for the `SeriesService_GetDefaultSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_GetDefaultSeries_body record {
     @jsondata:Name {value: "DocumentTypeParams"}
     DocumentTypeParams documentTypeParams?;
@@ -7914,6 +8377,7 @@ public type ListDynamicSystemStringsQueries record {
     string dollarSelect?;
 };
 
+# The `UserLanguage` entity of the SAP Business One Service Layer.
 public type UserLanguage record {
     int:Signed32 Code?;
     string LanguageShortName?;
@@ -7922,6 +8386,7 @@ public type UserLanguage record {
     UserDefaultGroup[] UserDefaultGroups?;
 };
 
+# The `CompanyInfo` complex type of the SAP Business One Service Layer.
 public type CompanyInfo record {|
     @jsondata:Name {value: "MinimumAmountForAnnualList"}
     decimal minimumAmountForAnnualList?;
@@ -7997,6 +8462,7 @@ public type CompanyInfo record {|
     int:Signed32 defaultDaysForOrdCanc?;
 |};
 
+# The `TaxReportDocument` complex type of the SAP Business One Service Layer.
 public type TaxReportDocument record {|
     @jsondata:Name {value: "ToNumber"}
     int:Signed32 toNumber?;
@@ -8006,6 +8472,7 @@ public type TaxReportDocument record {|
     TaxReportFilterDocumentType documentType?;
 |};
 
+# A paged collection of `ValueMapping` entities returned by the SAP Business One Service Layer.
 public type ValueMappingCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -8034,6 +8501,7 @@ public type GetValueMappingQueries record {
     string dollarSelect?;
 };
 
+# The `User` entity of the SAP Business One Service Layer.
 public type User record {
     int:Signed32 InternalKey?;
     string UserPassword?;
@@ -8073,12 +8541,15 @@ public type User record {
     UserDefaultGroup[] UserDefaultGroups?;
     ColumnPreferences[] FormPreferences?;
     ApprovalRequest[] ApprovalRequests?;
+    # The `Branch` entity of the SAP Business One Service Layer.
     Branch Branch2?;
+    # The `Department` entity of the SAP Business One Service Layer.
     Department Department2?;
     Cockpit[] Cockpits?;
     UserPermissionTree[] UserPermissionTree?;
 };
 
+# A paged collection of `DynamicSystemStrings` entities returned by the SAP Business One Service Layer.
 public type DynamicSystemStringsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -8087,6 +8558,7 @@ public type DynamicSystemStringsCollectionResponse record {
     string odataNextLink?;
 };
 
+# The `Message` entity of the SAP Business One Service Layer.
 public type Message record {|
     @jsondata:Name {value: "User"}
     int:Signed32 user?;
@@ -8106,6 +8578,7 @@ public type Message record {|
     string subject?;
 |};
 
+# The `AdditionalExpense` entity of the SAP Business One Service Layer.
 public type AdditionalExpense record {
     string Name?;
     string RevenuesAccount?;
@@ -8145,6 +8618,7 @@ public type AdditionalExpense record {
     string SAFTProductTypeEx?;
 };
 
+# The `UserDefaultGroup` entity of the SAP Business One Service Layer.
 public type UserDefaultGroup record {
     string Code?;
     string Name?;
@@ -8184,12 +8658,17 @@ public type UserDefaultGroup record {
     BoSuppLangs LanguageCode?;
     DefaultDocument[] DefaultDocuments?;
     DefaultCreditCard[] DefaultCreditCards?;
+    # The `Country` entity of the SAP Business One Service Layer.
     Country Country2?;
+    # The `User` entity of the SAP Business One Service Layer.
     User User?;
+    # The `BusinessPlace` entity of the SAP Business One Service Layer.
     BusinessPlace BusinessPlace?;
+    # The `UserLanguage` entity of the SAP Business One Service Layer.
     UserLanguage UserLanguage?;
 };
 
+# The `UserPermissionItem` complex type of the SAP Business One Service Layer.
 public type UserPermissionItem record {
     int:Signed32 UserCode?;
     string PermissionID?;
@@ -8199,6 +8678,7 @@ public type UserPermissionItem record {
     BoPermission EffectivePermission?;
 };
 
+# The `ExtendedTranslation_ItemLine` complex type of the SAP Business One Service Layer.
 public type ExtendedTranslationItemLine record {|
     @jsondata:Name {value: "SlimType"}
     string slimType?;
@@ -8230,6 +8710,7 @@ public type GetIntegrationPackagesConfigureQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SBOBobService_SetSystemPermission` operation of the SAP Business One Service Layer.
 public type SBOBobService_SetSystemPermission_body record {
     @jsondata:Name {value: "UserCode"}
     string userCode?;
@@ -8284,6 +8765,7 @@ public type ListWebClientLaunchpadsQueries record {
     string dollarSelect?;
 };
 
+# The `ExternalCall` complex type of the SAP Business One Service Layer.
 public type ExternalCall record {|
     @jsondata:Name {value: "Status"}
     ExternalCallStatusEnum status?;
@@ -8310,6 +8792,7 @@ public type ExternalCall record {|
 # OData EnumType 'InventoryAccountTypeEnum'. Serialised by the Service Layer as the member name
 public type InventoryAccountTypeEnum "iatExpenses"|"iatRevenues"|"iatExemptIncome"|"iatInventory"|"iatCost"|"iatTransfer"|"iatVarience"|"iatPriceDifference"|"iatNegativeInventoryAdjustment"|"iatDecreasing"|"iatIncreasing"|"iatReturning"|"iatEURevenues"|"iatEUExpenses"|"iatForeignRevenue"|"iatForeignExpens"|"iatPurchase"|"iatPAReturn"|"iatPurchaseOffset"|"iatExchangeRateDifferences"|"iatGoodsClearing"|"iatGLDecrease"|"iatGLIncrease"|"iatWip"|"iatWipVariance"|"iatWipOffsetProfitAndLoss"|"iatInventoryOffsetProfitAndLoss"|"iatStockInflationAdjust"|"iatStockInflationOffset"|"iatCostInflation"|"iatCostInflationOffset"|"iatExpenseClearing"|"iatExpenseOffsetting"|"iatStockInTransit"|"iatShippedGoods"|"iatVATInRevenue"|"iatSalesCredit"|"iatPurchaseCredit"|"iatExemptedCredits"|"iatSalesCreditForeign"|"iatForeignPurchaseCredit"|"iatSalesCreditEU"|"iatEUPurchaseCredit"|"iatPurchaseBalance"|"iatWHIncomingCenvat"|"iatWHOutgoingCenvat"|"iatFreeOfChargeSales"|"iatFreeOfChargePurchase";
 
+# Represents the request payload for the `SeriesService_GetElectronicSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_GetElectronicSeries_body record {
     @jsondata:Name {value: "ElectronicSeriesParams"}
     ElectronicSeriesParams electronicSeriesParams?;
@@ -8325,12 +8808,14 @@ public type GetB1SessionsQueries record {
     string dollarSelect?;
 };
 
+# Represents the response payload for the `AlertManagements_GetAlertManagementList` operation of the SAP Business One Service Layer.
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     AlertManagementParams[] value?;
 };
 
+# The `WebClientListviewFilterCondition` complex type of the SAP Business One Service Layer.
 public type WebClientListviewFilterCondition record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -8344,11 +8829,13 @@ public type WebClientListviewFilterCondition record {|
     string compareExpression?;
 |};
 
+# Represents the request payload for the `CompanyService_UpdatePeriod` operation of the SAP Business One Service Layer.
 public type CompanyService_UpdatePeriod_body record {
     @jsondata:Name {value: "PeriodCategory"}
     PeriodCategory periodCategory?;
 };
 
+# The `ApprovalStage` entity of the SAP Business One Service Layer.
 public type ApprovalStage record {|
     @jsondata:Name {value: "ApprovalRequests"}
     ApprovalRequest[] approvalRequests?;
@@ -8414,6 +8901,7 @@ public type ListTSRExceptionalEventsQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `CompanyService_RoundDecimal` operation of the SAP Business One Service Layer.
 public type CompanyService_RoundDecimal_body record {
     @jsondata:Name {value: "DecimalData"}
     DecimalData decimalData?;
@@ -8444,11 +8932,13 @@ public type ListUserPermissionTreeQueries record {
     string dollarSelect?;
 };
 
+# Represents the request payload for the `SeriesService_SetDefaultSeriesForAllUsers` operation of the SAP Business One Service Layer.
 public type SeriesService_SetDefaultSeriesForAllUsers_body record {
     @jsondata:Name {value: "DocumentSeriesParams"}
     DocumentSeriesParams documentSeriesParams?;
 };
 
+# The `WebClientVariantEmbeddedChartSize` complex type of the SAP Business One Service Layer.
 public type WebClientVariantEmbeddedChartSize record {|
     @jsondata:Name {value: "Order"}
     int:Signed32 'order?;
@@ -8458,11 +8948,13 @@ public type WebClientVariantEmbeddedChartSize record {|
     string guid?;
 |};
 
+# Represents the request payload for the `CompanyService_GetFinancePeriods` operation of the SAP Business One Service Layer.
 public type CompanyService_GetFinancePeriods_body record {
     @jsondata:Name {value: "PeriodCategoryParams"}
     PeriodCategoryParams periodCategoryParams?;
 };
 
+# The `ApprovalStageParams` complex type of the SAP Business One Service Layer.
 public type ApprovalStageParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -8473,11 +8965,13 @@ public type ApprovalStageParams record {|
 # OData EnumType 'BoVerticalAlignmentEnum'. Serialised by the Service Layer as the member name
 public type BoVerticalAlignmentEnum "rlvaTop"|"rlvaBottom"|"rlvaCentralized";
 
+# Represents the request payload for the `MobileAppService_UpdateTechnicianSettings` operation of the SAP Business One Service Layer.
 public type MobileAppService_UpdateTechnicianSettings_body record {
     @jsondata:Name {value: "TechnicianSettings"}
     TechnicianSettings technicianSettings?;
 };
 
+# Represents the request payload for the `SeriesService_RemoveSeries` operation of the SAP Business One Service Layer.
 public type SeriesService_RemoveSeries_body record {
     @jsondata:Name {value: "SeriesParams"}
     SeriesParams seriesParams?;
@@ -8525,17 +9019,20 @@ public type ListChooseFromListHeaders record {
     string prefer?;
 };
 
+# The `BusinessPlaceIENumber` complex type of the SAP Business One Service Layer.
 public type BusinessPlaceIENumber record {
     int:Signed32 BPLID?;
     string State?;
     string IENumber?;
 };
 
+# Represents the request payload for the `ReportLayoutsService_GetDefaultReportLayout` operation of the SAP Business One Service Layer.
 public type ReportLayoutsService_GetDefaultReportLayout_body record {
     @jsondata:Name {value: "ReportParams"}
     ReportParams reportParams?;
 };
 
+# A paged collection of `Sections` entities returned by the SAP Business One Service Layer.
 public type SectionsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;

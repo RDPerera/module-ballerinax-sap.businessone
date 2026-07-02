@@ -48,7 +48,8 @@
                     ],
                     "x-ballerina-name": "addressFormatParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AddressService_GetAddressFormat` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -99,7 +100,8 @@
                     ],
                     "x-ballerina-name": "addressParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `AddressService_GetFullAddress` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -396,7 +398,8 @@
                     },
                     "x-ballerina-name": "bPCodes"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `BPOpeningBalanceService_CreateOpenBalance` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -922,7 +925,8 @@
                         "$ref": "#/components/schemas/BPVatExemptionsParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BPVatExemptionsService_GetList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1443,7 +1447,8 @@
                         "$ref": "#/components/schemas/BusinessPartnerPropertyParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -1725,7 +1730,8 @@
                     },
                     "x-ballerina-name": "bPCodes"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `BusinessPartnersService_CreateOpenBalance` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2555,7 +2561,8 @@
                     ],
                     "x-ballerina-name": "paymentTermsType"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PaymentTermsTypesService_UpdateWithBPs` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3072,7 +3079,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPAccountReceivablePayble` complex type of the SAP Business One Service Layer."
       },
       "BoAddressType": {
         "type": "string",
@@ -3132,7 +3140,8 @@
             "x-ballerina-name": "incoterms"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPIntrastatExtension` complex type of the SAP Business One Service Layer."
       },
       "BPBankAccount": {
         "type": "object",
@@ -3245,7 +3254,8 @@
             "$ref": "#/components/schemas/SEPASequenceTypeEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPBankAccount` complex type of the SAP Business One Service Layer."
       },
       "RelationshipsCollectionResponse": {
         "type": "object",
@@ -3264,7 +3274,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Relationships` entities returned by the SAP Business One Service Layer."
       },
       "BusinessPartner": {
         "type": "object",
@@ -4349,7 +4360,8 @@
             "$ref": "#/components/schemas/Industry"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPartner` entity of the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -4420,7 +4432,8 @@
             "x-ballerina-name": "bPLID"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `OpenningBalanceAccount` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -4450,7 +4463,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPWithholdingTax` complex type of the SAP Business One Service Layer."
       },
       "Industry": {
         "type": "object",
@@ -4472,7 +4486,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Industry` entity of the SAP Business One Service Layer."
       },
       "BPAddress": {
         "type": "object",
@@ -4561,7 +4576,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPAddress` complex type of the SAP Business One Service Layer."
       },
       "SEPASequenceTypeEnum": {
         "type": "string",
@@ -4638,7 +4654,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPFiscalTaxID` complex type of the SAP Business One Service Layer."
       },
       "Territory": {
         "type": "object",
@@ -4668,7 +4685,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Territory` entity of the SAP Business One Service Layer."
       },
       "DiscountGroupBaseObjectEnum": {
         "type": "string",
@@ -4698,7 +4716,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPPriority` entity of the SAP Business One Service Layer."
       },
       "BoPayTermDueTypes": {
         "type": "string",
@@ -4764,7 +4783,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
       },
       "BPBlockSendingMarketingContent": {
         "type": "object",
@@ -4787,7 +4807,8 @@
             "x-ballerina-name": "cardCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPBlockSendingMarketingContent` complex type of the SAP Business One Service Layer."
       },
       "AddressParams": {
         "type": "object",
@@ -4832,7 +4853,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AddressParams` complex type of the SAP Business One Service Layer."
       },
       "BoVatStatus": {
         "type": "string",
@@ -4889,7 +4911,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Contacts` entities returned by the SAP Business One Service Layer."
       },
       "BusinessPartnerGroup": {
         "type": "object",
@@ -4911,7 +4934,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPartnerGroup` entity of the SAP Business One Service Layer."
       },
       "AutomaticPostingEnum": {
         "type": "string",
@@ -4949,7 +4973,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AddressFormatParams` complex type of the SAP Business One Service Layer."
       },
       "BPPrioritiesCollectionResponse": {
         "type": "object",
@@ -4968,7 +4993,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BPPriorities` entities returned by the SAP Business One Service Layer."
       },
       "BoPublicDirectoryStatusTypes": {
         "type": "string",
@@ -5100,7 +5126,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ContactEmployee` complex type of the SAP Business One Service Layer."
       },
       "OperationCode347Enum": {
         "type": "string",
@@ -5131,7 +5158,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Industries` entities returned by the SAP Business One Service Layer."
       },
       "BusinessPartnerGroupsCollectionResponse": {
         "type": "object",
@@ -5150,7 +5178,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BusinessPartnerGroups` entities returned by the SAP Business One Service Layer."
       },
       "BoGenderTypes": {
         "type": "string",
@@ -5171,7 +5200,8 @@
             "x-ballerina-name": "fullAddress"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AddressReturnParams` complex type of the SAP Business One Service Layer."
       },
       "BPVatExemptionsCollectionResponse": {
         "type": "object",
@@ -5190,7 +5220,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BPVatExemptions` entities returned by the SAP Business One Service Layer."
       },
       "EDocGenerationTypeEnum": {
         "type": "string",
@@ -5230,7 +5261,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `Territories` entities returned by the SAP Business One Service Layer."
       },
       "ContactEmployeeBlockSendingMarketingContent": {
         "type": "object",
@@ -5262,7 +5294,8 @@
             "x-ballerina-name": "cardCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ContactEmployeeBlockSendingMarketingContent` complex type of the SAP Business One Service Layer."
       },
       "BoCardTypes": {
         "type": "string",
@@ -5433,7 +5466,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
       },
       "BPVatExemptionsLine": {
         "type": "object",
@@ -5511,7 +5545,8 @@
             "x-ballerina-name": "visualOrder"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPVatExemptionsLine` complex type of the SAP Business One Service Layer."
       },
       "BusinessPartnerProperty": {
         "type": "object",
@@ -5524,7 +5559,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BusinessPartnerProperty` entity of the SAP Business One Service Layer."
       },
       "TypeOfOperationEnum": {
         "type": "string",
@@ -5577,7 +5613,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BPFiscalRegistryID` entities returned by the SAP Business One Service Layer."
       },
       "PaymentTermsType": {
         "type": "object",
@@ -5650,7 +5687,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PaymentTermsType` entity of the SAP Business One Service Layer."
       },
       "BPVatExemptionsParams": {
         "type": "object",
@@ -5665,7 +5703,8 @@
             "x-ballerina-name": "bPCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPVatExemptionsParams` complex type of the SAP Business One Service Layer."
       },
       "AddressFormat": {
         "type": "object",
@@ -5684,7 +5723,8 @@
             "x-ballerina-name": "name"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `AddressFormat` complex type of the SAP Business One Service Layer."
       },
       "BPVatExemptions": {
         "type": "object",
@@ -5718,7 +5758,8 @@
             "x-ballerina-name": "bPCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPVatExemptions` entity of the SAP Business One Service Layer."
       },
       "BoOpenIncPayment": {
         "type": "string",
@@ -5755,7 +5796,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPPaymentMethod` complex type of the SAP Business One Service Layer."
       },
       "BoYesNoNoneEnum": {
         "type": "string",
@@ -5798,7 +5840,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "BPBranchAssignmentItem": {
         "type": "object",
@@ -5814,7 +5857,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPBranchAssignmentItem` complex type of the SAP Business One Service Layer."
       },
       "BPFiscalRegistryID": {
         "type": "object",
@@ -5830,7 +5874,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPFiscalRegistryID` entity of the SAP Business One Service Layer."
       },
       "BoFatherCardTypes": {
         "type": "string",
@@ -6030,7 +6075,8 @@
             "$ref": "#/components/schemas/BusinessPartner"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Contact` entity of the SAP Business One Service Layer."
       },
       "PaymentTermsTypesCollectionResponse": {
         "type": "object",
@@ -6049,7 +6095,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PaymentTermsTypes` entities returned by the SAP Business One Service Layer."
       },
       "BusinessPartnersCollectionResponse": {
         "type": "object",
@@ -6068,7 +6115,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BusinessPartners` entities returned by the SAP Business One Service Layer."
       },
       "BoDurations": {
         "type": "string",
@@ -6091,7 +6139,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Relationship` entity of the SAP Business One Service Layer."
       },
       "BusinessPartnerPropertiesCollectionResponse": {
         "type": "object",
@@ -6110,7 +6159,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `BusinessPartnerProperties` entities returned by the SAP Business One Service Layer."
       },
       "BoBpAccountTypes": {
         "type": "string",
@@ -6146,7 +6196,8 @@
             "x-ballerina-name": "propertyCode"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BusinessPartnerPropertyParams` complex type of the SAP Business One Service Layer."
       },
       "BPCurrencies": {
         "type": "object",
@@ -6158,7 +6209,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPCurrencies` complex type of the SAP Business One Service Layer."
       },
       "BPPaymentDate": {
         "type": "object",
@@ -6170,7 +6222,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BPPaymentDate` complex type of the SAP Business One Service Layer."
       },
       "BPCode": {
         "type": "object",
@@ -6223,7 +6276,8 @@
             "x-ballerina-name": "code"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `BPCode` complex type of the SAP Business One Service Layer."
       },
       "DiscountGroup": {
         "type": "object",
@@ -6250,7 +6304,8 @@
             "x-ballerina-name": "baseObjectType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DiscountGroup` complex type of the SAP Business One Service Layer."
       }
     },
     "parameters": {

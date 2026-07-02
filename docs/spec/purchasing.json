@@ -844,7 +844,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -888,7 +889,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -932,7 +934,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -976,7 +979,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1020,7 +1024,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1126,7 +1131,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1170,7 +1176,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1214,7 +1221,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1258,7 +1266,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1302,7 +1311,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1806,7 +1816,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1850,7 +1861,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1894,7 +1906,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GoodsReturnRequestService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1938,7 +1951,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -1982,7 +1996,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `GoodsReturnRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -2643,7 +2658,8 @@
                         "$ref": "#/components/schemas/LandedCostParams"
                       }
                     }
-                  }
+                  },
+                  "description": "Represents the response payload for the `LandedCostsService_GetLandedCostList` operation of the SAP Business One Service Layer."
                 }
               }
             }
@@ -3080,7 +3096,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3124,7 +3141,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3168,7 +3186,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_Cancel2` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3212,7 +3231,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3256,7 +3276,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3300,7 +3321,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3804,7 +3826,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3848,7 +3871,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3892,7 +3916,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_Cancel2` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3936,7 +3961,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -3980,7 +4006,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4024,7 +4051,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4528,7 +4556,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4572,7 +4601,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4616,7 +4646,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4660,7 +4691,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -4704,7 +4736,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5208,7 +5241,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5252,7 +5286,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5296,7 +5331,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_Cancel2` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5340,7 +5376,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5384,7 +5421,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5428,7 +5466,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseInvoicesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5932,7 +5971,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -5976,7 +6016,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6020,7 +6061,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseOrdersService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6064,7 +6106,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseOrdersService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6108,7 +6151,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseOrdersService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6612,7 +6656,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6656,7 +6701,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6700,7 +6746,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseQuotationsService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6744,7 +6791,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6788,7 +6836,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseQuotationsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6894,7 +6943,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6938,7 +6988,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -6982,7 +7033,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseRequestService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7026,7 +7078,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseRequestService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7070,7 +7123,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -7972,7 +8026,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8016,7 +8071,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8060,7 +8116,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_Cancel2` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8104,7 +8161,8 @@
                     ],
                     "x-ballerina-name": "documentCloseParams"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_CloseByDate` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8148,7 +8206,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_ExportEWayBill` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8192,7 +8251,8 @@
                     ],
                     "x-ballerina-name": "document"
                   }
-                }
+                },
+                "description": "Represents the request payload for the `PurchaseReturnsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
               }
             }
           },
@@ -8536,7 +8596,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseDownPayments` entities returned by the SAP Business One Service Layer."
       },
       "PurchaseRequestsCollectionResponse": {
         "type": "object",
@@ -8555,7 +8616,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseRequests` entities returned by the SAP Business One Service Layer."
       },
       "BoDocWhsUpdateTypes": {
         "type": "string",
@@ -8593,7 +8655,8 @@
             "x-ballerina-name": "approvalTemplatesName"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer."
       },
       "Document": {
         "type": "object",
@@ -9682,7 +9745,8 @@
             "$ref": "#/components/schemas/LandedCost"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `Document` entity of the SAP Business One Service Layer."
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -9763,12 +9827,14 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackageItem` complex type of the SAP Business One Service Layer."
       },
       "DocumentDistributedExpense": {
         "type": "object",
         "properties": {},
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer."
       },
       "LandedCostCostCategoryEnum": {
         "type": "string",
@@ -9797,7 +9863,8 @@
             "x-ballerina-name": "moveType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EDeliveryInfo` complex type of the SAP Business One Service Layer."
       },
       "PrintStatusEnum": {
         "type": "string",
@@ -9899,7 +9966,8 @@
             "x-ballerina-name": "refObjType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentReference` complex type of the SAP Business One Service Layer."
       },
       "CancelStatusEnum": {
         "type": "string",
@@ -10092,7 +10160,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "BoAdEpnsDistribMethods": {
         "type": "string",
@@ -10170,7 +10239,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "BatchNumber": {
         "type": "object",
@@ -10226,7 +10296,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
       },
       "BoCorInvItemStatus": {
         "type": "string",
@@ -10360,7 +10431,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PurchaseTaxInvoiceLinkedDownPayment` complex type of the SAP Business One Service Layer."
       },
       "ImportOrExportTypeEnum": {
         "type": "string",
@@ -10506,7 +10578,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer."
       },
       "PriceModeDocumentEnum": {
         "type": "string",
@@ -11434,7 +11507,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLine` complex type of the SAP Business One Service Layer."
       },
       "ExportProcess": {
         "type": "object",
@@ -11512,7 +11586,8 @@
             "x-ballerina-name": "exportationDeclarationNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ExportProcess` complex type of the SAP Business One Service Layer."
       },
       "LandedCostsCodesCollectionResponse": {
         "type": "object",
@@ -11531,7 +11606,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `LandedCostsCodes` entities returned by the SAP Business One Service Layer."
       },
       "GoodsReturnRequestCollectionResponse": {
         "type": "object",
@@ -11550,7 +11626,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `GoodsReturnRequest` entities returned by the SAP Business One Service Layer."
       },
       "BoTaxTypes": {
         "type": "string",
@@ -11588,7 +11665,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CorrectionPurchaseInvoiceReversal` entities returned by the SAP Business One Service Layer."
       },
       "DocumentCloseParams": {
         "type": "object",
@@ -11612,7 +11690,8 @@
             "x-ballerina-name": "closingOption"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentCloseParams` complex type of the SAP Business One Service Layer."
       },
       "EDocGenerationTypeEnum": {
         "type": "string",
@@ -11641,7 +11720,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `CorrectionPurchaseInvoice` entities returned by the SAP Business One Service Layer."
       },
       "DocLinePickList": {
         "type": "object",
@@ -11662,7 +11742,8 @@
             "x-ballerina-name": "pickListEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocLinePickList` complex type of the SAP Business One Service Layer."
       },
       "FolioLetterEnum": {
         "type": "string",
@@ -11696,7 +11777,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseReturns` entities returned by the SAP Business One Service Layer."
       },
       "PurchaseTaxInvoicesCollectionResponse": {
         "type": "object",
@@ -11715,7 +11797,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseTaxInvoices` entities returned by the SAP Business One Service Layer."
       },
       "DocumentAuthorizationStatusEnum": {
         "type": "string",
@@ -11911,7 +11994,8 @@
             "x-ballerina-name": "eWayBillDate"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `EWayBillDetails` complex type of the SAP Business One Service Layer."
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -12045,7 +12129,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
       },
       "GSTTransactionTypeEnum": {
         "type": "string",
@@ -12119,7 +12204,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer."
       },
       "EDocTypeEnum": {
         "type": "string",
@@ -12181,7 +12267,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PurchaseTaxInvoiceOperationCode` complex type of the SAP Business One Service Layer."
       },
       "PurchaseInvoicesCollectionResponse": {
         "type": "object",
@@ -12200,7 +12287,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseInvoices` entities returned by the SAP Business One Service Layer."
       },
       "CommissionTradeTypeEnum": {
         "type": "string",
@@ -12235,7 +12323,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
       },
       "BoDocLineType": {
         "type": "string",
@@ -12282,7 +12371,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PurchaseTaxInvoiceDocumentReference` complex type of the SAP Business One Service Layer."
       },
       "LineExpenseTaxJurisdiction": {
         "type": "object",
@@ -12339,7 +12429,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "BoAllocationByEnum": {
         "type": "string",
@@ -12477,7 +12568,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PurchaseTaxInvoice` entity of the SAP Business One Service Layer."
       },
       "BoTaxOnInstallmentsTypeEnum": {
         "type": "string",
@@ -12535,7 +12627,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `GeneratedAsset` complex type of the SAP Business One Service Layer."
       },
       "BoTransactionTypeEnum": {
         "type": "string",
@@ -12565,7 +12658,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `PurchaseTaxInvoiceLine` complex type of the SAP Business One Service Layer."
       },
       "WithholdingTaxData": {
         "type": "object",
@@ -12663,7 +12757,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer."
       },
       "EDocStatusEnum": {
         "type": "string",
@@ -12731,7 +12826,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -12789,7 +12885,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseOrders` entities returned by the SAP Business One Service Layer."
       },
       "LandedCostsCollectionResponse": {
         "type": "object",
@@ -12808,7 +12905,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `LandedCosts` entities returned by the SAP Business One Service Layer."
       },
       "BoExpenseOperationTypeEnum": {
         "type": "string",
@@ -12943,7 +13041,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDraw` complex type of the SAP Business One Service Layer."
       },
       "BoCurrencySources": {
         "type": "string",
@@ -12980,7 +13079,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LandedCostsCode` entity of the SAP Business One Service Layer."
       },
       "EBooksDetail": {
         "type": "object",
@@ -13062,7 +13162,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `EBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "PurchaseQuotationsCollectionResponse": {
         "type": "object",
@@ -13081,7 +13182,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseQuotations` entities returned by the SAP Business One Service Layer."
       },
       "PurchaseDeliveryNotesCollectionResponse": {
         "type": "object",
@@ -13100,7 +13202,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseDeliveryNotes` entities returned by the SAP Business One Service Layer."
       },
       "RelatedDocument": {
         "type": "object",
@@ -13136,7 +13239,8 @@
             "x-ballerina-name": "docType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
       },
       "BoStatus": {
         "type": "string",
@@ -13371,7 +13475,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `AddressExtension` complex type of the SAP Business One Service Layer."
       },
       "LandedCost": {
         "type": "object",
@@ -13531,7 +13636,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LandedCost` entity of the SAP Business One Service Layer."
       },
       "BoObjectTypes": {
         "type": "string",
@@ -13695,7 +13801,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer."
       },
       "GeneratedAssetStatusEnum": {
         "type": "string",
@@ -13754,7 +13861,8 @@
             "$ref": "#/components/schemas/LandedCostCostCategoryEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LandedCost_CostLine` complex type of the SAP Business One Service Layer."
       },
       "SerialNumber": {
         "type": "object",
@@ -13818,7 +13926,8 @@
             "type": "string"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
       },
       "LinkReferenceTypeEnum": {
         "type": "string",
@@ -14095,7 +14204,8 @@
             "x-ballerina-name": "incoterms"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `TaxExtension` complex type of the SAP Business One Service Layer."
       },
       "DocumentPackage": {
         "type": "object",
@@ -14122,7 +14232,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentPackage` complex type of the SAP Business One Service Layer."
       },
       "LandedCostBaseDocumentTypeEnum": {
         "type": "string",
@@ -14360,7 +14471,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer."
       },
       "ImportProcess": {
         "type": "object",
@@ -14420,7 +14532,8 @@
             "x-ballerina-name": "lineNumber"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `ImportProcess` complex type of the SAP Business One Service Layer."
       },
       "BoAdEpnsTaxTypes": {
         "type": "string",
@@ -14514,7 +14627,8 @@
             "$ref": "#/components/schemas/BoYesNoEnum"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer."
       },
       "BoItemTreeTypes": {
         "type": "string",
@@ -14592,7 +14706,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer."
       },
       "BoFatherCardTypes": {
         "type": "string",
@@ -14619,7 +14734,8 @@
             "type": "string",
             "x-ballerina-name": "odataNextLink"
           }
-        }
+        },
+        "description": "A paged collection of `PurchaseCreditNotes` entities returned by the SAP Business One Service Layer."
       },
       "BoTaxInvoiceTypes": {
         "type": "string",
@@ -14754,7 +14870,8 @@
             "x-ballerina-name": "lineType"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DocumentSpecialLine` complex type of the SAP Business One Service Layer."
       },
       "CCDNumber": {
         "type": "object",
@@ -14794,7 +14911,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `CCDNumber` complex type of the SAP Business One Service Layer."
       },
       "DownPaymentToDrawDetails": {
         "type": "object",
@@ -14898,7 +15016,8 @@
             "x-ballerina-name": "amountToDrawFC"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer."
       },
       "DocumentInstallment": {
         "type": "object",
@@ -14943,7 +15062,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `DocumentInstallment` complex type of the SAP Business One Service Layer."
       },
       "LandedCostItemLine": {
         "type": "object",
@@ -15241,7 +15361,8 @@
             "format": "double"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `LandedCost_ItemLine` complex type of the SAP Business One Service Layer."
       },
       "BoDocumentTypes": {
         "type": "string",
@@ -15269,7 +15390,8 @@
             "x-ballerina-name": "docEntry"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "The `LandedCostParams` complex type of the SAP Business One Service Layer."
       },
       "LandedCostDocStatusEnum": {
         "type": "string",
@@ -15393,7 +15515,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "The `WithholdingTaxLine` complex type of the SAP Business One Service Layer."
       }
     },
     "parameters": {
