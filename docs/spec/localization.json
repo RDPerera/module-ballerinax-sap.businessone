@@ -32,7 +32,7 @@
         "tags": [
           "BEMReplicationPeriodService"
         ],
-        "summary": "Service Layer function import 'BEMReplicationPeriodService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BEMReplicationPeriodService_GetList",
         "responses": {
           "200": {
@@ -554,7 +554,7 @@
         "tags": [
           "BrazilBeverageIndexersService"
         ],
-        "summary": "Service Layer function import 'BrazilBeverageIndexersService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BrazilBeverageIndexersService_GetList",
         "responses": {
           "200": {
@@ -837,7 +837,7 @@
         "tags": [
           "BrazilFuelIndexersService"
         ],
-        "summary": "Service Layer function import 'BrazilFuelIndexersService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BrazilFuelIndexersService_GetList",
         "responses": {
           "200": {
@@ -2011,7 +2011,7 @@
         "tags": [
           "CIGCodeService"
         ],
-        "summary": "Service Layer function import 'CIGCodeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "CIGCodeService_GetList",
         "responses": {
           "200": {
@@ -2294,7 +2294,7 @@
         "tags": [
           "CUPCodeService"
         ],
-        "summary": "Service Layer function import 'CUPCodeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "CUPCodeService_GetList",
         "responses": {
           "200": {
@@ -2816,7 +2816,7 @@
         "tags": [
           "CertificateSeriesService"
         ],
-        "summary": "Service Layer function import 'CertificateSeriesService_GetCertificateSeriesList'.",
+        "summary": "Get certificate series list.",
         "operationId": "CertificateSeriesService_GetCertificateSeriesList",
         "responses": {
           "200": {
@@ -3335,7 +3335,7 @@
         "tags": [
           "DNFCodeSetupService"
         ],
-        "summary": "Service Layer function import 'DNFCodeSetupService_GetDNFCodeSetupList'.",
+        "summary": "Get DNF code setup list.",
         "operationId": "DNFCodeSetupService_GetDNFCodeSetupList",
         "responses": {
           "200": {
@@ -4199,7 +4199,7 @@
         "tags": [
           "EWBTransporterService"
         ],
-        "summary": "Service Layer function import 'EWBTransporterService_GetEWBTransporterList'.",
+        "summary": "Get EWB transporter list.",
         "operationId": "EWBTransporterService_GetEWBTransporterList",
         "responses": {
           "200": {
@@ -4482,7 +4482,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAP_CheckECM2Entry'.",
+        "summary": "Check ECM2 entry.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAP_CheckECM2Entry",
         "requestBody": {
           "content": {
@@ -4547,7 +4547,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAP_GetLatestAFIPDate'.",
+        "summary": "Get latest AFIP date.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAP_GetLatestAFIPDate",
         "responses": {
           "200": {
@@ -4578,7 +4578,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAR_GetDateFromTo'.",
+        "summary": "Get date from to.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAR_GetDateFromTo",
         "responses": {
           "200": {
@@ -4609,7 +4609,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAR_GetDocuments'.",
+        "summary": "Get documents.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAR_GetDocuments",
         "responses": {
           "200": {
@@ -4653,7 +4653,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAction_GetByFceID'.",
+        "summary": "Get by fce ID.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAction_GetByFceID",
         "requestBody": {
           "content": {
@@ -4718,7 +4718,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_FceAction_GetPaymentData'.",
+        "summary": "Get payment data.",
         "operationId": "ElectronicCommunicationActionService_AFE_FceAction_GetPaymentData",
         "requestBody": {
           "content": {
@@ -4783,7 +4783,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_RenumberFolioNumbers'.",
+        "summary": "Renumber folio numbers.",
         "operationId": "ElectronicCommunicationActionService_AFE_RenumberFolioNumbers",
         "requestBody": {
           "content": {
@@ -4828,7 +4828,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_AFE_UpdFceAPAR_GetDocuments'.",
+        "summary": "Get documents.",
         "operationId": "ElectronicCommunicationActionService_AFE_UpdFceAPAR_GetDocuments",
         "responses": {
           "200": {
@@ -4872,7 +4872,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_ConfirmSuccessOfCommunication'.",
+        "summary": "Confirm success of communication.",
         "operationId": "ElectronicCommunicationActionService_ConfirmSuccessOfCommunication",
         "requestBody": {
           "content": {
@@ -4917,7 +4917,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_GetAction'.",
+        "summary": "Get action.",
         "operationId": "ElectronicCommunicationActionService_GetAction",
         "requestBody": {
           "content": {
@@ -4969,7 +4969,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_ReportErrorAndContinue'.",
+        "summary": "Report error and continue.",
         "operationId": "ElectronicCommunicationActionService_ReportErrorAndContinue",
         "requestBody": {
           "content": {
@@ -5014,7 +5014,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_ReportErrorAndStop'.",
+        "summary": "Report error and stop.",
         "operationId": "ElectronicCommunicationActionService_ReportErrorAndStop",
         "requestBody": {
           "content": {
@@ -5059,7 +5059,7 @@
         "tags": [
           "ElectronicCommunicationActionService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionService_UpdateAction'.",
+        "summary": "Update action.",
         "operationId": "ElectronicCommunicationActionService_UpdateAction",
         "requestBody": {
           "content": {
@@ -5104,7 +5104,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_AddEcmAction'.",
+        "summary": "Add ecm action.",
         "operationId": "ElectronicCommunicationActionsService_AddEcmAction",
         "requestBody": {
           "content": {
@@ -5156,7 +5156,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_AddEcmActionLog'.",
+        "summary": "Add ecm action log.",
         "operationId": "ElectronicCommunicationActionsService_AddEcmActionLog",
         "requestBody": {
           "content": {
@@ -5208,7 +5208,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_DeleteEcmAction'.",
+        "summary": "Delete ecm action.",
         "operationId": "ElectronicCommunicationActionsService_DeleteEcmAction",
         "requestBody": {
           "content": {
@@ -5253,7 +5253,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_GetEcmAction'.",
+        "summary": "Get ecm action.",
         "operationId": "ElectronicCommunicationActionsService_GetEcmAction",
         "requestBody": {
           "content": {
@@ -5305,7 +5305,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_GetEcmActionByDoc'.",
+        "summary": "Get ecm action by doc.",
         "operationId": "ElectronicCommunicationActionsService_GetEcmActionByDoc",
         "requestBody": {
           "content": {
@@ -5357,7 +5357,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_GetEcmActionLog'.",
+        "summary": "Get ecm action log.",
         "operationId": "ElectronicCommunicationActionsService_GetEcmActionLog",
         "requestBody": {
           "content": {
@@ -5409,7 +5409,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_GetEcmActionLogList'.",
+        "summary": "Get ecm action log list.",
         "operationId": "ElectronicCommunicationActionsService_GetEcmActionLogList",
         "requestBody": {
           "content": {
@@ -5474,7 +5474,7 @@
         "tags": [
           "ElectronicCommunicationActionsService"
         ],
-        "summary": "Service Layer function import 'ElectronicCommunicationActionsService_UpdateEcmAction'.",
+        "summary": "Update ecm action.",
         "operationId": "ElectronicCommunicationActionsService_UpdateEcmAction",
         "requestBody": {
           "content": {
@@ -5519,7 +5519,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_AddEmergencyNumber'.",
+        "summary": "Add emergency number.",
         "operationId": "ElectronicDocumentService_AddEmergencyNumber",
         "requestBody": {
           "content": {
@@ -5564,7 +5564,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_AddImportEntry'.",
+        "summary": "Add import entry.",
         "operationId": "ElectronicDocumentService_AddImportEntry",
         "requestBody": {
           "content": {
@@ -5609,7 +5609,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_AddLog'.",
+        "summary": "Add log.",
         "operationId": "ElectronicDocumentService_AddLog",
         "requestBody": {
           "content": {
@@ -5654,7 +5654,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_CreateEntry'.",
+        "summary": "Create entry.",
         "operationId": "ElectronicDocumentService_CreateEntry",
         "requestBody": {
           "content": {
@@ -5699,7 +5699,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_ExportEntryLog'.",
+        "summary": "Export entry log.",
         "operationId": "ElectronicDocumentService_ExportEntryLog",
         "requestBody": {
           "content": {
@@ -5744,7 +5744,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetDocMappingList'.",
+        "summary": "Get doc mapping list.",
         "operationId": "ElectronicDocumentService_GetDocMappingList",
         "requestBody": {
           "content": {
@@ -5809,7 +5809,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetEmergencyNumbers'.",
+        "summary": "Get emergency numbers.",
         "operationId": "ElectronicDocumentService_GetEmergencyNumbers",
         "responses": {
           "200": {
@@ -5853,7 +5853,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetEntry'.",
+        "summary": "Get entry.",
         "operationId": "ElectronicDocumentService_GetEntry",
         "requestBody": {
           "content": {
@@ -5905,7 +5905,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetEntryList'.",
+        "summary": "Get entry list.",
         "operationId": "ElectronicDocumentService_GetEntryList",
         "requestBody": {
           "content": {
@@ -5970,7 +5970,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetLastLog'.",
+        "summary": "Get last log.",
         "operationId": "ElectronicDocumentService_GetLastLog",
         "requestBody": {
           "content": {
@@ -6022,7 +6022,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetLogs'.",
+        "summary": "Get logs.",
         "operationId": "ElectronicDocumentService_GetLogs",
         "requestBody": {
           "content": {
@@ -6087,7 +6087,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetMappingByHash'.",
+        "summary": "Get mapping by hash.",
         "operationId": "ElectronicDocumentService_GetMappingByHash",
         "requestBody": {
           "content": {
@@ -6139,7 +6139,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetProtocolParameter'.",
+        "summary": "Get protocol parameter.",
         "operationId": "ElectronicDocumentService_GetProtocolParameter",
         "requestBody": {
           "content": {
@@ -6191,7 +6191,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_GetProtocols'.",
+        "summary": "Get protocols.",
         "operationId": "ElectronicDocumentService_GetProtocols",
         "responses": {
           "200": {
@@ -6235,7 +6235,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_UpdateEntry'.",
+        "summary": "Update entry.",
         "operationId": "ElectronicDocumentService_UpdateEntry",
         "requestBody": {
           "content": {
@@ -6280,7 +6280,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_UpdateExtendedProperties'.",
+        "summary": "Update extended properties.",
         "operationId": "ElectronicDocumentService_UpdateExtendedProperties",
         "requestBody": {
           "content": {
@@ -6325,7 +6325,7 @@
         "tags": [
           "ElectronicDocumentService"
         ],
-        "summary": "Service Layer function import 'ElectronicDocumentService_UpdateProtocolParameter'.",
+        "summary": "Update protocol parameter.",
         "operationId": "ElectronicDocumentService_UpdateProtocolParameter",
         "requestBody": {
           "content": {
@@ -6845,7 +6845,7 @@
         "tags": [
           "ElectronicFileFormatsService"
         ],
-        "summary": "Service Layer function import 'ElectronicFileFormatsService_GetElectronicFileFormatList'.",
+        "summary": "Get electronic file format list.",
         "operationId": "ElectronicFileFormatsService_GetElectronicFileFormatList",
         "responses": {
           "200": {
@@ -6889,7 +6889,7 @@
         "tags": [
           "ExportDeterminationService"
         ],
-        "summary": "Service Layer function import 'ExportDeterminationService_GetDeterminations'.",
+        "summary": "Get determinations.",
         "operationId": "ExportDeterminationService_GetDeterminations",
         "requestBody": {
           "content": {
@@ -7429,7 +7429,7 @@
         "tags": [
           "FiscalPrinterService"
         ],
-        "summary": "Service Layer function import 'FiscalPrinterService_GetFiscalPrinterList'.",
+        "summary": "Get fiscal printer list.",
         "operationId": "FiscalPrinterService_GetFiscalPrinterList",
         "responses": {
           "200": {
@@ -7473,7 +7473,7 @@
         "tags": [
           "GTIsService"
         ],
-        "summary": "Service Layer function import 'GTIsService_Import'.",
+        "summary": "Import.",
         "operationId": "GTIsService_Import",
         "requestBody": {
           "content": {
@@ -7815,7 +7815,7 @@
         "tags": [
           "ISDCreditMemosService"
         ],
-        "summary": "Service Layer function import 'ISDCreditMemosService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ISDCreditMemosService_GetList",
         "responses": {
           "200": {
@@ -8098,7 +8098,7 @@
         "tags": [
           "ISDDocumentsService"
         ],
-        "summary": "Service Layer function import 'ISDDocumentsService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "ISDDocumentsService_Cancel",
         "requestBody": {
           "content": {
@@ -8143,7 +8143,7 @@
         "tags": [
           "ISDDocumentsService"
         ],
-        "summary": "Service Layer function import 'ISDDocumentsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ISDDocumentsService_GetList",
         "responses": {
           "200": {
@@ -8464,7 +8464,7 @@
         "tags": [
           "ISDInvoicesService"
         ],
-        "summary": "Service Layer function import 'ISDInvoicesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ISDInvoicesService_GetList",
         "responses": {
           "200": {
@@ -8785,7 +8785,7 @@
         "tags": [
           "ISDRecipientCreditMemosService"
         ],
-        "summary": "Service Layer function import 'ISDRecipientCreditMemosService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ISDRecipientCreditMemosService_GetList",
         "responses": {
           "200": {
@@ -9106,7 +9106,7 @@
         "tags": [
           "ISDRecipientInvoicesService"
         ],
-        "summary": "Service Layer function import 'ISDRecipientInvoicesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ISDRecipientInvoicesService_GetList",
         "responses": {
           "200": {
@@ -9150,7 +9150,7 @@
         "tags": [
           "IdentificationCodeService"
         ],
-        "summary": "Service Layer function import 'IdentificationCodeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "IdentificationCodeService_GetList",
         "responses": {
           "200": {
@@ -9433,7 +9433,7 @@
         "tags": [
           "ImportDeterminationService"
         ],
-        "summary": "Service Layer function import 'ImportDeterminationService_GetDeterminations'.",
+        "summary": "Get determinations.",
         "operationId": "ImportDeterminationService_GetDeterminations",
         "requestBody": {
           "content": {
@@ -9976,7 +9976,7 @@
         "tags": [
           "IndiaHsnService"
         ],
-        "summary": "Service Layer function import 'IndiaHsnService_GetList'.",
+        "summary": "Get list.",
         "operationId": "IndiaHsnService_GetList",
         "responses": {
           "200": {
@@ -10259,7 +10259,7 @@
         "tags": [
           "IndiaSacCodeService"
         ],
-        "summary": "Service Layer function import 'IndiaSacCodeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "IndiaSacCodeService_GetList",
         "responses": {
           "200": {
@@ -10542,7 +10542,7 @@
         "tags": [
           "IntrastatConfigurationService"
         ],
-        "summary": "Service Layer function import 'IntrastatConfigurationService_GetList'.",
+        "summary": "Get list.",
         "operationId": "IntrastatConfigurationService_GetList",
         "responses": {
           "200": {
@@ -11300,7 +11300,7 @@
         "tags": [
           "MaterialGroupsService"
         ],
-        "summary": "Service Layer function import 'MaterialGroupsService_GetMaterialGroupList'.",
+        "summary": "Get material group list.",
         "operationId": "MaterialGroupsService_GetMaterialGroupList",
         "responses": {
           "200": {
@@ -11583,7 +11583,7 @@
         "tags": [
           "NCMCodesSetupService"
         ],
-        "summary": "Service Layer function import 'NCMCodesSetupService_GetNCMCodeSetupList'.",
+        "summary": "Get NCM code setup list.",
         "operationId": "NCMCodesSetupService_GetNCMCodeSetupList",
         "responses": {
           "200": {
@@ -11863,7 +11863,7 @@
         "tags": [
           "NFModelsService"
         ],
-        "summary": "Service Layer function import 'NFModelsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "NFModelsService_GetList",
         "responses": {
           "200": {
@@ -12146,7 +12146,7 @@
         "tags": [
           "NFTaxCategoriesService"
         ],
-        "summary": "Service Layer function import 'NFTaxCategoriesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "NFTaxCategoriesService_GetList",
         "responses": {
           "200": {
@@ -13146,7 +13146,7 @@
         "tags": [
           "OccurrenceCodesService"
         ],
-        "summary": "Service Layer function import 'OccurrenceCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "OccurrenceCodesService_GetList",
         "responses": {
           "200": {
@@ -13429,7 +13429,7 @@
         "tags": [
           "RetornoCodesService"
         ],
-        "summary": "Service Layer function import 'RetornoCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "RetornoCodesService_GetList",
         "responses": {
           "200": {
@@ -13473,7 +13473,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "SelfCreditMemoService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -13518,7 +13518,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "SelfCreditMemoService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -13563,7 +13563,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "SelfCreditMemoService_CloseByDate",
         "requestBody": {
           "content": {
@@ -13608,7 +13608,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "SelfCreditMemoService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -13653,7 +13653,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "SelfCreditMemoService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -13705,7 +13705,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "SelfCreditMemoService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -13729,7 +13729,7 @@
         "tags": [
           "SelfCreditMemoService"
         ],
-        "summary": "Service Layer function import 'SelfCreditMemoService_InitData'.",
+        "summary": "Init data.",
         "operationId": "SelfCreditMemoService_InitData",
         "responses": {
           "200": {
@@ -14158,7 +14158,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "SelfInvoiceService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -14203,7 +14203,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "SelfInvoiceService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -14248,7 +14248,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "SelfInvoiceService_CloseByDate",
         "requestBody": {
           "content": {
@@ -14293,7 +14293,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "SelfInvoiceService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -14338,7 +14338,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "SelfInvoiceService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -14390,7 +14390,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "SelfInvoiceService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -14414,7 +14414,7 @@
         "tags": [
           "SelfInvoiceService"
         ],
-        "summary": "Service Layer function import 'SelfInvoiceService_InitData'.",
+        "summary": "Init data.",
         "operationId": "SelfInvoiceService_InitData",
         "responses": {
           "200": {
@@ -15082,7 +15082,7 @@
         "tags": [
           "ServiceGroupsService"
         ],
-        "summary": "Service Layer function import 'ServiceGroupsService_GetServiceGroupList'.",
+        "summary": "Get service group list.",
         "operationId": "ServiceGroupsService_GetServiceGroupList",
         "responses": {
           "200": {
@@ -15126,7 +15126,7 @@
         "tags": [
           "ServiceTaxPostingService"
         ],
-        "summary": "Service Layer function import 'ServiceTaxPostingService_GetTaxableDeliveries'.",
+        "summary": "Get taxable deliveries.",
         "operationId": "ServiceTaxPostingService_GetTaxableDeliveries",
         "responses": {
           "200": {
@@ -15170,7 +15170,7 @@
         "tags": [
           "ServiceTaxPostingService"
         ],
-        "summary": "Service Layer function import 'ServiceTaxPostingService_PostServiceTax'.",
+        "summary": "Post service tax.",
         "operationId": "ServiceTaxPostingService_PostServiceTax",
         "requestBody": {
           "content": {

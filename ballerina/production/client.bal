@@ -233,7 +233,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ResourceCapacitiesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -243,7 +243,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ResourceCapacitiesService_GetListWithFilter'.
+    # Get list with filter.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -317,7 +317,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ResourceGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -388,7 +388,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ResourcePropertiesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -470,7 +470,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ResourcesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -541,7 +541,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RouteStagesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -551,7 +551,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RoutingDateCalculationService_Calculate'.
+    # Calculate.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 

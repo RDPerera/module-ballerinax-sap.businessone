@@ -271,7 +271,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_DeleteSingleInstanceFromSeries'.",
+        "summary": "Delete single instance from series.",
         "operationId": "ActivitiesService_DeleteSingleInstanceFromSeries",
         "requestBody": {
           "content": {
@@ -316,7 +316,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_GetActivityList'.",
+        "summary": "Get activity list.",
         "operationId": "ActivitiesService_GetActivityList",
         "responses": {
           "200": {
@@ -360,7 +360,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_GetListByAttendUser'.",
+        "summary": "Get list by attend user.",
         "operationId": "ActivitiesService_GetListByAttendUser",
         "requestBody": {
           "content": {
@@ -425,7 +425,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_GetSingleInstanceFromSeries'.",
+        "summary": "Get single instance from series.",
         "operationId": "ActivitiesService_GetSingleInstanceFromSeries",
         "requestBody": {
           "content": {
@@ -477,7 +477,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_GetTopNActivityInstances'.",
+        "summary": "Get top N activity instances.",
         "operationId": "ActivitiesService_GetTopNActivityInstances",
         "requestBody": {
           "content": {
@@ -542,7 +542,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_InitData'.",
+        "summary": "Init data.",
         "operationId": "ActivitiesService_InitData",
         "responses": {
           "200": {
@@ -573,7 +573,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Service Layer function import 'ActivitiesService_UpdateSingleInstanceInSeries'.",
+        "summary": "Update single instance in series.",
         "operationId": "ActivitiesService_UpdateSingleInstanceInSeries",
         "requestBody": {
           "content": {
@@ -1103,7 +1103,7 @@
         "tags": [
           "ActivityRecipientListsService"
         ],
-        "summary": "Service Layer function import 'ActivityRecipientListsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ActivityRecipientListsService_GetList",
         "responses": {
           "200": {
@@ -1386,7 +1386,7 @@
         "tags": [
           "ActivitySubjectService"
         ],
-        "summary": "Service Layer function import 'ActivitySubjectService_GetActivitySubjectList'.",
+        "summary": "Get activity subject list.",
         "operationId": "ActivitySubjectService_GetActivitySubjectList",
         "responses": {
           "200": {
@@ -1430,7 +1430,7 @@
         "tags": [
           "ActivitySubjectService"
         ],
-        "summary": "Service Layer function import 'ActivitySubjectService_GetListByTypeCode'.",
+        "summary": "Get list by type code.",
         "operationId": "ActivitySubjectService_GetListByTypeCode",
         "requestBody": {
           "content": {
@@ -2209,7 +2209,7 @@
         "tags": [
           "CampaignResponseTypeService"
         ],
-        "summary": "Service Layer function import 'CampaignResponseTypeService_GetResponseTypeList'.",
+        "summary": "Get response type list.",
         "operationId": "CampaignResponseTypeService_GetResponseTypeList",
         "responses": {
           "200": {
@@ -2530,7 +2530,7 @@
         "tags": [
           "CampaignsService"
         ],
-        "summary": "Service Layer function import 'CampaignsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "CampaignsService_GetList",
         "responses": {
           "200": {
@@ -2813,7 +2813,7 @@
         "tags": [
           "PartnersSetupsService"
         ],
-        "summary": "Service Layer function import 'PartnersSetupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "PartnersSetupsService_GetList",
         "responses": {
           "200": {
@@ -3373,7 +3373,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetupService"
         ],
-        "summary": "Service Layer function import 'SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList'.",
+        "summary": "Get sales opportunity competitor setup list.",
         "operationId": "SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList",
         "responses": {
           "200": {
@@ -3656,7 +3656,7 @@
         "tags": [
           "SalesOpportunityInterestsSetupService"
         ],
-        "summary": "Service Layer function import 'SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList'.",
+        "summary": "Get sales opportunity interest setup list.",
         "operationId": "SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList",
         "responses": {
           "200": {
@@ -3939,7 +3939,7 @@
         "tags": [
           "SalesOpportunityReasonsSetupService"
         ],
-        "summary": "Service Layer function import 'SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList'.",
+        "summary": "Get sales opportunity reason setup list.",
         "operationId": "SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList",
         "responses": {
           "200": {
@@ -4222,7 +4222,7 @@
         "tags": [
           "SalesOpportunitySourcesSetupService"
         ],
-        "summary": "Service Layer function import 'SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList'.",
+        "summary": "Get sales opportunity source setup list.",
         "operationId": "SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList",
         "responses": {
           "200": {
@@ -4741,7 +4741,7 @@
         "tags": [
           "TargetGroupsService"
         ],
-        "summary": "Service Layer function import 'TargetGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TargetGroupsService_GetList",
         "responses": {
           "200": {

@@ -32,7 +32,7 @@
         "tags": [
           "AddressService"
         ],
-        "summary": "Service Layer function import 'AddressService_GetAddressFormat'.",
+        "summary": "Get address format.",
         "operationId": "AddressService_GetAddressFormat",
         "requestBody": {
           "content": {
@@ -84,7 +84,7 @@
         "tags": [
           "AddressService"
         ],
-        "summary": "Service Layer function import 'AddressService_GetFullAddress'.",
+        "summary": "Get full address.",
         "operationId": "AddressService_GetFullAddress",
         "requestBody": {
           "content": {
@@ -375,7 +375,7 @@
         "tags": [
           "BPOpeningBalanceService"
         ],
-        "summary": "Service Layer function import 'BPOpeningBalanceService_CreateOpenBalance'.",
+        "summary": "Create open balance.",
         "operationId": "BPOpeningBalanceService_CreateOpenBalance",
         "requestBody": {
           "content": {
@@ -905,7 +905,7 @@
         "tags": [
           "BPVatExemptionsService"
         ],
-        "summary": "Service Layer function import 'BPVatExemptionsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BPVatExemptionsService_GetList",
         "responses": {
           "200": {
@@ -1427,7 +1427,7 @@
         "tags": [
           "BusinessPartnerPropertiesService"
         ],
-        "summary": "Service Layer function import 'BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList'.",
+        "summary": "Get business partner property list.",
         "operationId": "BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList",
         "responses": {
           "200": {
@@ -1707,7 +1707,7 @@
         "tags": [
           "BusinessPartnersService"
         ],
-        "summary": "Service Layer function import 'BusinessPartnersService_CreateOpenBalance'.",
+        "summary": "Create open balance.",
         "operationId": "BusinessPartnersService_CreateOpenBalance",
         "requestBody": {
           "content": {
@@ -1759,7 +1759,7 @@
         "tags": [
           "BusinessPartnersService"
         ],
-        "summary": "Service Layer function import 'BusinessPartnersService_InitData'.",
+        "summary": "Init data.",
         "operationId": "BusinessPartnersService_InitData",
         "responses": {
           "200": {
@@ -2545,7 +2545,7 @@
         "tags": [
           "PaymentTermsTypesService"
         ],
-        "summary": "Service Layer function import 'PaymentTermsTypesService_UpdateWithBPs'.",
+        "summary": "Update with B ps.",
         "operationId": "PaymentTermsTypesService_UpdateWithBPs",
         "requestBody": {
           "content": {

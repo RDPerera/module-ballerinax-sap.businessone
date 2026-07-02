@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmployeeIDTypeService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -232,7 +232,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmployeePositionService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -303,7 +303,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmployeeRolesSetupService_GetEmployeeRoleSetupList'.
+    # Get employee role setup list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -374,7 +374,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmployeeStatusService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -445,7 +445,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmployeeTransfersService_GetEmployeeTransferList'.
+    # Get employee transfer list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -538,7 +538,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmploymentCategoryService_GetEmploymentCategoryList'.
+    # Get employment category list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -670,7 +670,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'GendersService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -802,7 +802,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TerminationReasonService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

@@ -122,7 +122,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BlanketAgreementsService_GetBlanketAgreementList'.
+    # Get blanket agreement list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -403,7 +403,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -416,7 +416,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -429,7 +429,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -442,7 +442,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -455,7 +455,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -468,7 +468,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -478,7 +478,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceReversalService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -488,7 +488,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -501,7 +501,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -514,7 +514,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -527,7 +527,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -540,7 +540,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -553,7 +553,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -563,7 +563,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CorrectionInvoiceService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -678,7 +678,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -691,7 +691,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -704,7 +704,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_Cancel2'.
+    # Cancel2.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -717,7 +717,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -730,7 +730,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -743,7 +743,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -756,7 +756,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -766,7 +766,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -776,7 +776,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditNotesService_RequestApproveCancellation'.
+    # Request approve cancellation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -894,7 +894,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -907,7 +907,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -920,7 +920,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_Cancel2'.
+    # Cancel2.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -933,7 +933,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -946,7 +946,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -959,7 +959,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -972,7 +972,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -982,7 +982,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeliveryNotesService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1097,7 +1097,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1110,7 +1110,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1123,7 +1123,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1136,7 +1136,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1149,7 +1149,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1162,7 +1162,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1172,7 +1172,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DownPaymentsService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1287,7 +1287,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1300,7 +1300,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1313,7 +1313,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1326,7 +1326,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1339,7 +1339,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1352,7 +1352,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1362,7 +1362,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1372,7 +1372,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DraftsService_SaveDraftToDocument'.
+    # Save draft to document.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1507,7 +1507,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DunningTermsService_GetDunningTermList'.
+    # Get dunning term list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1622,7 +1622,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1635,7 +1635,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1648,7 +1648,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_Cancel2'.
+    # Cancel2.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1661,7 +1661,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1674,7 +1674,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1687,7 +1687,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1700,7 +1700,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1710,7 +1710,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1720,7 +1720,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InvoicesService_RequestApproveCancellation'.
+    # Request approve cancellation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1838,7 +1838,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1851,7 +1851,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1864,7 +1864,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1877,7 +1877,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1890,7 +1890,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1903,7 +1903,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1913,7 +1913,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1923,7 +1923,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'OrdersService_Preview'.
+    # Preview.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2102,7 +2102,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2115,7 +2115,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2128,7 +2128,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2141,7 +2141,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2154,7 +2154,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2167,7 +2167,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2177,7 +2177,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QuotationsService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2292,7 +2292,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2305,7 +2305,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2318,7 +2318,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2331,7 +2331,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2344,7 +2344,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2357,7 +2357,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2367,7 +2367,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnRequestService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2482,7 +2482,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2495,7 +2495,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2508,7 +2508,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_Cancel2'.
+    # Cancel2.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2521,7 +2521,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2534,7 +2534,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2547,7 +2547,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2560,7 +2560,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2570,7 +2570,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReturnsService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

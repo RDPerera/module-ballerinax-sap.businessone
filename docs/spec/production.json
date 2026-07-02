@@ -784,7 +784,7 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "summary": "Service Layer function import 'ResourceCapacitiesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ResourceCapacitiesService_GetList",
         "responses": {
           "200": {
@@ -828,7 +828,7 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "summary": "Service Layer function import 'ResourceCapacitiesService_GetListWithFilter'.",
+        "summary": "Get list with filter.",
         "operationId": "ResourceCapacitiesService_GetListWithFilter",
         "requestBody": {
           "content": {
@@ -1132,7 +1132,7 @@
         "tags": [
           "ResourceGroupsService"
         ],
-        "summary": "Service Layer function import 'ResourceGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ResourceGroupsService_GetList",
         "responses": {
           "200": {
@@ -1415,7 +1415,7 @@
         "tags": [
           "ResourcePropertiesService"
         ],
-        "summary": "Service Layer function import 'ResourcePropertiesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ResourcePropertiesService_GetList",
         "responses": {
           "200": {
@@ -1732,7 +1732,7 @@
         "tags": [
           "ResourcesService"
         ],
-        "summary": "Service Layer function import 'ResourcesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ResourcesService_GetList",
         "responses": {
           "200": {
@@ -2015,7 +2015,7 @@
         "tags": [
           "RouteStagesService"
         ],
-        "summary": "Service Layer function import 'RouteStagesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "RouteStagesService_GetList",
         "responses": {
           "200": {
@@ -2059,7 +2059,7 @@
         "tags": [
           "RoutingDateCalculationService"
         ],
-        "summary": "Service Layer function import 'RoutingDateCalculationService_Calculate'.",
+        "summary": "Calculate.",
         "operationId": "RoutingDateCalculationService_Calculate",
         "requestBody": {
           "content": {

@@ -510,7 +510,7 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "summary": "Service Layer function import 'AssetCapitalizationCreditMemoService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "AssetCapitalizationCreditMemoService_Cancel",
         "requestBody": {
           "content": {
@@ -555,7 +555,7 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "summary": "Service Layer function import 'AssetCapitalizationCreditMemoService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetCapitalizationCreditMemoService_GetList",
         "responses": {
           "200": {
@@ -599,7 +599,7 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "summary": "Service Layer function import 'AssetCapitalizationService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "AssetCapitalizationService_Cancel",
         "requestBody": {
           "content": {
@@ -644,7 +644,7 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "summary": "Service Layer function import 'AssetCapitalizationService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetCapitalizationService_GetList",
         "responses": {
           "200": {
@@ -924,7 +924,7 @@
         "tags": [
           "AssetClassesService"
         ],
-        "summary": "Service Layer function import 'AssetClassesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetClassesService_GetList",
         "responses": {
           "200": {
@@ -1204,7 +1204,7 @@
         "tags": [
           "AssetDepreciationGroupsService"
         ],
-        "summary": "Service Layer function import 'AssetDepreciationGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetDepreciationGroupsService_GetList",
         "responses": {
           "200": {
@@ -1484,7 +1484,7 @@
         "tags": [
           "AssetGroupsService"
         ],
-        "summary": "Service Layer function import 'AssetGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetGroupsService_GetList",
         "responses": {
           "200": {
@@ -1767,7 +1767,7 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "summary": "Service Layer function import 'AssetManualDepreciationService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "AssetManualDepreciationService_Cancel",
         "requestBody": {
           "content": {
@@ -1812,7 +1812,7 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "summary": "Service Layer function import 'AssetManualDepreciationService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetManualDepreciationService_GetList",
         "responses": {
           "200": {
@@ -2095,7 +2095,7 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "summary": "Service Layer function import 'AssetRetirementService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "AssetRetirementService_Cancel",
         "requestBody": {
           "content": {
@@ -2140,7 +2140,7 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "summary": "Service Layer function import 'AssetRetirementService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetRetirementService_GetList",
         "responses": {
           "200": {
@@ -2184,7 +2184,7 @@
         "tags": [
           "AssetRevaluationService"
         ],
-        "summary": "Service Layer function import 'AssetRevaluationService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetRevaluationService_GetList",
         "responses": {
           "200": {
@@ -2706,7 +2706,7 @@
         "tags": [
           "AssetTransferService"
         ],
-        "summary": "Service Layer function import 'AssetTransferService_Cancel'.",
+        "summary": "Cancel.",
         "operationId": "AssetTransferService_Cancel",
         "requestBody": {
           "content": {
@@ -2751,7 +2751,7 @@
         "tags": [
           "AssetTransferService"
         ],
-        "summary": "Service Layer function import 'AssetTransferService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AssetTransferService_GetList",
         "responses": {
           "200": {
@@ -3031,7 +3031,7 @@
         "tags": [
           "DepreciationAreasService"
         ],
-        "summary": "Service Layer function import 'DepreciationAreasService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DepreciationAreasService_GetList",
         "responses": {
           "200": {
@@ -3311,7 +3311,7 @@
         "tags": [
           "DepreciationTypePoolsService"
         ],
-        "summary": "Service Layer function import 'DepreciationTypePoolsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DepreciationTypePoolsService_GetList",
         "responses": {
           "200": {
@@ -3591,7 +3591,7 @@
         "tags": [
           "DepreciationTypesService"
         ],
-        "summary": "Service Layer function import 'DepreciationTypesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DepreciationTypesService_GetList",
         "responses": {
           "200": {
@@ -3871,7 +3871,7 @@
         "tags": [
           "FAAccountDeterminationsService"
         ],
-        "summary": "Service Layer function import 'FAAccountDeterminationsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "FAAccountDeterminationsService_GetList",
         "responses": {
           "200": {
@@ -3915,7 +3915,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Service Layer function import 'FixedAssetItemsService_GetAssetEndBalance'.",
+        "summary": "Get asset end balance.",
         "operationId": "FixedAssetItemsService_GetAssetEndBalance",
         "requestBody": {
           "content": {
@@ -3967,7 +3967,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Service Layer function import 'FixedAssetItemsService_GetAssetValuesList'.",
+        "summary": "Get asset values list.",
         "operationId": "FixedAssetItemsService_GetAssetValuesList",
         "requestBody": {
           "content": {
@@ -4032,7 +4032,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Service Layer function import 'FixedAssetItemsService_UpdateAssetEndBalance'.",
+        "summary": "Update asset end balance.",
         "operationId": "FixedAssetItemsService_UpdateAssetEndBalance",
         "requestBody": {
           "content": {

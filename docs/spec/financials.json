@@ -271,7 +271,7 @@
         "tags": [
           "AccountCategoryService"
         ],
-        "summary": "Service Layer function import 'AccountCategoryService_GetCategoryList'.",
+        "summary": "Get category list.",
         "operationId": "AccountCategoryService_GetCategoryList",
         "responses": {
           "200": {
@@ -826,7 +826,7 @@
         "tags": [
           "AccountsService"
         ],
-        "summary": "Service Layer function import 'AccountsService_CreateOpenBalance'.",
+        "summary": "Create open balance.",
         "operationId": "AccountsService_CreateOpenBalance",
         "requestBody": {
           "content": {
@@ -1114,7 +1114,7 @@
         "tags": [
           "AccrualTypesService"
         ],
-        "summary": "Service Layer function import 'AccrualTypesService_GetAccrualTypeList'.",
+        "summary": "Get accrual type list.",
         "operationId": "AccrualTypesService_GetAccrualTypeList",
         "responses": {
           "200": {
@@ -2111,7 +2111,7 @@
         "tags": [
           "CashDiscountsService"
         ],
-        "summary": "Service Layer function import 'CashDiscountsService_GetCashDiscountList'.",
+        "summary": "Get cash discount list.",
         "operationId": "CashDiscountsService_GetCashDiscountList",
         "responses": {
           "200": {
@@ -2394,7 +2394,7 @@
         "tags": [
           "CashFlowLineItemsService"
         ],
-        "summary": "Service Layer function import 'CashFlowLineItemsService_GetCashFlowLineItemList'.",
+        "summary": "Get cash flow line item list.",
         "operationId": "CashFlowLineItemsService_GetCashFlowLineItemList",
         "responses": {
           "200": {
@@ -3149,7 +3149,7 @@
         "tags": [
           "CostCenterTypesService"
         ],
-        "summary": "Service Layer function import 'CostCenterTypesService_GetCostCenterTypeList'.",
+        "summary": "Get cost center type list.",
         "operationId": "CostCenterTypesService_GetCostCenterTypeList",
         "responses": {
           "200": {
@@ -3193,7 +3193,7 @@
         "tags": [
           "CostElementService"
         ],
-        "summary": "Service Layer function import 'CostElementService_GetCostElementList'.",
+        "summary": "Get cost element list.",
         "operationId": "CostElementService_GetCostElementList",
         "responses": {
           "200": {
@@ -3709,7 +3709,7 @@
         "tags": [
           "DeductibleTaxService"
         ],
-        "summary": "Service Layer function import 'DeductibleTaxService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DeductibleTaxService_GetList",
         "responses": {
           "200": {
@@ -4703,7 +4703,7 @@
         "tags": [
           "DeductionTaxSubGroupsService"
         ],
-        "summary": "Service Layer function import 'DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList'.",
+        "summary": "Get deduction tax sub group list.",
         "operationId": "DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList",
         "responses": {
           "200": {
@@ -4986,7 +4986,7 @@
         "tags": [
           "DeterminationCriteriasService"
         ],
-        "summary": "Service Layer function import 'DeterminationCriteriasService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DeterminationCriteriasService_GetList",
         "responses": {
           "200": {
@@ -5269,7 +5269,7 @@
         "tags": [
           "DimensionsService"
         ],
-        "summary": "Service Layer function import 'DimensionsService_GetDimensionList'.",
+        "summary": "Get dimension list.",
         "operationId": "DimensionsService_GetDimensionList",
         "responses": {
           "200": {
@@ -5549,7 +5549,7 @@
         "tags": [
           "DistributionRulesService"
         ],
-        "summary": "Service Layer function import 'DistributionRulesService_GetDistributionRuleList'.",
+        "summary": "Get distribution rule list.",
         "operationId": "DistributionRulesService_GetDistributionRuleList",
         "responses": {
           "200": {
@@ -5832,7 +5832,7 @@
         "tags": [
           "FinancialYearsService"
         ],
-        "summary": "Service Layer function import 'FinancialYearsService_GetFinancialYearList'.",
+        "summary": "Get financial year list.",
         "operationId": "FinancialYearsService_GetFinancialYearList",
         "responses": {
           "200": {
@@ -6354,7 +6354,7 @@
         "tags": [
           "GLAccountAdvancedRulesService"
         ],
-        "summary": "Service Layer function import 'GLAccountAdvancedRulesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "GLAccountAdvancedRulesService_GetList",
         "responses": {
           "200": {
@@ -6675,7 +6675,7 @@
         "tags": [
           "JournalEntriesService"
         ],
-        "summary": "Service Layer function import 'JournalEntriesService_Close'.",
+        "summary": "Close.",
         "operationId": "JournalEntriesService_Close",
         "requestBody": {
           "content": {
@@ -6720,7 +6720,7 @@
         "tags": [
           "JournalEntryDocumentTypeService"
         ],
-        "summary": "Service Layer function import 'JournalEntryDocumentTypeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "JournalEntryDocumentTypeService_GetList",
         "responses": {
           "200": {
@@ -7000,7 +7000,7 @@
         "tags": [
           "JournalVouchersService"
         ],
-        "summary": "Service Layer function import 'JournalVouchersService_Add'.",
+        "summary": "Add.",
         "operationId": "JournalVouchersService_Add",
         "requestBody": {
           "content": {
@@ -7283,7 +7283,7 @@
         "tags": [
           "NatureOfAssesseesService"
         ],
-        "summary": "Service Layer function import 'NatureOfAssesseesService_GetNatureOfAssesseeList'.",
+        "summary": "Get nature of assessee list.",
         "operationId": "NatureOfAssesseesService_GetNatureOfAssesseeList",
         "responses": {
           "200": {
@@ -7563,7 +7563,7 @@
         "tags": [
           "PostingTemplatesService"
         ],
-        "summary": "Service Layer function import 'PostingTemplatesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "PostingTemplatesService_GetList",
         "responses": {
           "200": {
@@ -7843,7 +7843,7 @@
         "tags": [
           "ProfitCentersService"
         ],
-        "summary": "Service Layer function import 'ProfitCentersService_GetProfitCenterList'.",
+        "summary": "Get profit center list.",
         "operationId": "ProfitCentersService_GetProfitCenterList",
         "responses": {
           "200": {
@@ -8159,7 +8159,7 @@
         "tags": [
           "RecurringPostingsService"
         ],
-        "summary": "Service Layer function import 'RecurringPostingsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "RecurringPostingsService_GetList",
         "responses": {
           "200": {
@@ -8203,7 +8203,7 @@
         "tags": [
           "RecurringTransactionService"
         ],
-        "summary": "Service Layer function import 'RecurringTransactionService_DeleteRecurringTransactions'.",
+        "summary": "Delete recurring transactions.",
         "operationId": "RecurringTransactionService_DeleteRecurringTransactions",
         "requestBody": {
           "content": {
@@ -8247,7 +8247,7 @@
         "tags": [
           "RecurringTransactionService"
         ],
-        "summary": "Service Layer function import 'RecurringTransactionService_ExecuteRecurringTransactions'.",
+        "summary": "Execute recurring transactions.",
         "operationId": "RecurringTransactionService_ExecuteRecurringTransactions",
         "requestBody": {
           "content": {
@@ -8319,7 +8319,7 @@
         "tags": [
           "RecurringTransactionService"
         ],
-        "summary": "Service Layer function import 'RecurringTransactionService_GetAvailableRecurringTransactions'.",
+        "summary": "Get available recurring transactions.",
         "operationId": "RecurringTransactionService_GetAvailableRecurringTransactions",
         "responses": {
           "200": {
@@ -8363,7 +8363,7 @@
         "tags": [
           "RecurringTransactionService"
         ],
-        "summary": "Service Layer function import 'RecurringTransactionService_GetRecurringTransaction'.",
+        "summary": "Get recurring transaction.",
         "operationId": "RecurringTransactionService_GetRecurringTransaction",
         "requestBody": {
           "content": {
@@ -8654,7 +8654,7 @@
         "tags": [
           "RecurringTransactionTemplatesService"
         ],
-        "summary": "Service Layer function import 'RecurringTransactionTemplatesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "RecurringTransactionTemplatesService_GetList",
         "responses": {
           "200": {
@@ -9747,7 +9747,7 @@
         "tags": [
           "SpecificWTHAmountsService"
         ],
-        "summary": "Service Layer function import 'SpecificWTHAmountsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "SpecificWTHAmountsService_GetList",
         "responses": {
           "200": {
@@ -10030,7 +10030,7 @@
         "tags": [
           "TaxCodeDeterminationsService"
         ],
-        "summary": "Service Layer function import 'TaxCodeDeterminationsService_GetTaxCodeDeterminationList'.",
+        "summary": "Get tax code determination list.",
         "operationId": "TaxCodeDeterminationsService_GetTaxCodeDeterminationList",
         "responses": {
           "200": {
@@ -10313,7 +10313,7 @@
         "tags": [
           "TaxCodeDeterminationsTCDService"
         ],
-        "summary": "Service Layer function import 'TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList'.",
+        "summary": "Get tax code determination TCD list.",
         "operationId": "TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList",
         "responses": {
           "200": {
@@ -10357,7 +10357,7 @@
         "tags": [
           "TaxExemptReasonService"
         ],
-        "summary": "Service Layer function import 'TaxExemptReasonService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TaxExemptReasonService_GetList",
         "responses": {
           "200": {
@@ -11423,7 +11423,7 @@
         "tags": [
           "TaxWebSitesService"
         ],
-        "summary": "Service Layer function import 'TaxWebSitesService_GetDefaultWebSite'.",
+        "summary": "Get default web site.",
         "operationId": "TaxWebSitesService_GetDefaultWebSite",
         "responses": {
           "200": {
@@ -11454,7 +11454,7 @@
         "tags": [
           "TaxWebSitesService"
         ],
-        "summary": "Service Layer function import 'TaxWebSitesService_GetTaxWebSiteList'.",
+        "summary": "Get tax web site list.",
         "operationId": "TaxWebSitesService_GetTaxWebSiteList",
         "responses": {
           "200": {
@@ -11734,7 +11734,7 @@
         "tags": [
           "TransactionCodesService"
         ],
-        "summary": "Service Layer function import 'TransactionCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TransactionCodesService_GetList",
         "responses": {
           "200": {
@@ -12014,7 +12014,7 @@
         "tags": [
           "WTaxTypeCodeService"
         ],
-        "summary": "Service Layer function import 'WTaxTypeCodeService_GetWTaxTypeCodeList'.",
+        "summary": "Get W tax type code list.",
         "operationId": "WTaxTypeCodeService_GetWTaxTypeCodeList",
         "responses": {
           "200": {

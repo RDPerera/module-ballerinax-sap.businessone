@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BOEDocumentTypesService_GetBOEDocumentTypeList'.
+    # Get BOE document type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -171,7 +171,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BOEInstructionsService_GetBOEInstructionList'.
+    # Get BOE instruction list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -181,7 +181,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BOELinesService_GetBOELine'.
+    # Get BOE line.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -255,7 +255,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BOEPortfoliosService_GetBOEPortfolioList'.
+    # Get BOE portfolio list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -337,7 +337,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BankChargesAllocationCodesService_GetBankChargesAllocationCodeList'.
+    # Get bank charges allocation code list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -472,7 +472,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BankStatementsService_GetBankStatementList'.
+    # Get bank statement list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -668,7 +668,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CentralBankIndicatorService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -678,7 +678,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CheckLinesService_GetCheckLine'.
+    # Get check line.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -691,7 +691,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CheckLinesService_GetValidCheckLineList'.
+    # Get valid check line list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -884,7 +884,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditLinesService_GetCreditLine'.
+    # Get credit line.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -897,7 +897,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CreditLinesService_GetValidCreditLineList'.
+    # Get valid credit line list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1051,7 +1051,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DepositsService_CancelCheckRow'.
+    # Cancel check row.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1064,7 +1064,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DepositsService_CancelCheckRowbyCurrentSystemDate'.
+    # Cancel check rowby current system date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1077,7 +1077,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DepositsService_GetDepositList'.
+    # Get deposit list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1087,7 +1087,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalReconciliationsService_CancelReconciliation'.
+    # Cancel reconciliation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1100,7 +1100,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalReconciliationsService_GetReconciliation'.
+    # Get reconciliation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1113,7 +1113,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalReconciliationsService_GetReconciliationList'.
+    # Get reconciliation list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1126,7 +1126,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalReconciliationsService_Reconcile'.
+    # Reconcile.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1261,7 +1261,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'GovPayCodesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1448,7 +1448,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'IncomingPaymentsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1530,7 +1530,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InternalReconciliationsService_GetOpenTransactions'.
+    # Get open transactions.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1543,7 +1543,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InternalReconciliationsService_RequestApproveCancellation'.
+    # Request approve cancellation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1617,7 +1617,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentBlocksService_GetPaymentBlockList'.
+    # Get payment block list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1627,7 +1627,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentCalculationService_GetPaymentAmount'.
+    # Get payment amount.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1756,7 +1756,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentDraftsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1766,7 +1766,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentReasonCodeService_GetPaymentReasonCodeList'.
+    # Get payment reason code list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1898,7 +1898,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentWizardService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2085,7 +2085,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'VendorPaymentsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 

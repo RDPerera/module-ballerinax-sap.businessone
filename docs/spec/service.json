@@ -1221,7 +1221,7 @@
         "tags": [
           "ServiceCallOriginsService"
         ],
-        "summary": "Service Layer function import 'ServiceCallOriginsService_GetServiceCallOriginList'.",
+        "summary": "Get service call origin list.",
         "operationId": "ServiceCallOriginsService_GetServiceCallOriginList",
         "responses": {
           "200": {
@@ -1504,7 +1504,7 @@
         "tags": [
           "ServiceCallProblemSubTypesService"
         ],
-        "summary": "Service Layer function import 'ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList'.",
+        "summary": "Get service call problem sub type list.",
         "operationId": "ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList",
         "responses": {
           "200": {
@@ -1787,7 +1787,7 @@
         "tags": [
           "ServiceCallProblemTypesService"
         ],
-        "summary": "Service Layer function import 'ServiceCallProblemTypesService_GetServiceCallProblemTypeList'.",
+        "summary": "Get service call problem type list.",
         "operationId": "ServiceCallProblemTypesService_GetServiceCallProblemTypeList",
         "responses": {
           "200": {
@@ -2070,7 +2070,7 @@
         "tags": [
           "ServiceCallSolutionStatusService"
         ],
-        "summary": "Service Layer function import 'ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList'.",
+        "summary": "Get service call solution status list.",
         "operationId": "ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList",
         "responses": {
           "200": {
@@ -2353,7 +2353,7 @@
         "tags": [
           "ServiceCallStatusService"
         ],
-        "summary": "Service Layer function import 'ServiceCallStatusService_GetServiceCallStatusList'.",
+        "summary": "Get service call status list.",
         "operationId": "ServiceCallStatusService_GetServiceCallStatusList",
         "responses": {
           "200": {
@@ -2636,7 +2636,7 @@
         "tags": [
           "ServiceCallTypesService"
         ],
-        "summary": "Service Layer function import 'ServiceCallTypesService_GetServiceCallTypeList'.",
+        "summary": "Get service call type list.",
         "operationId": "ServiceCallTypesService_GetServiceCallTypeList",
         "responses": {
           "200": {

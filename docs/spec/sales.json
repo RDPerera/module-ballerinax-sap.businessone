@@ -367,7 +367,7 @@
         "tags": [
           "BlanketAgreementsService"
         ],
-        "summary": "Service Layer function import 'BlanketAgreementsService_GetBlanketAgreementList'.",
+        "summary": "Get blanket agreement list.",
         "operationId": "BlanketAgreementsService_GetBlanketAgreementList",
         "responses": {
           "200": {
@@ -1446,7 +1446,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "CorrectionInvoiceReversalService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -1491,7 +1491,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "CorrectionInvoiceReversalService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -1536,7 +1536,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "CorrectionInvoiceReversalService_CloseByDate",
         "requestBody": {
           "content": {
@@ -1581,7 +1581,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "CorrectionInvoiceReversalService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -1626,7 +1626,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "CorrectionInvoiceReversalService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -1678,7 +1678,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "CorrectionInvoiceReversalService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -1702,7 +1702,7 @@
         "tags": [
           "CorrectionInvoiceReversalService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceReversalService_InitData'.",
+        "summary": "Init data.",
         "operationId": "CorrectionInvoiceReversalService_InitData",
         "responses": {
           "200": {
@@ -1733,7 +1733,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "CorrectionInvoiceService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -1778,7 +1778,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "CorrectionInvoiceService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -1823,7 +1823,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "CorrectionInvoiceService_CloseByDate",
         "requestBody": {
           "content": {
@@ -1868,7 +1868,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "CorrectionInvoiceService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -1913,7 +1913,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "CorrectionInvoiceService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -1965,7 +1965,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "CorrectionInvoiceService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -1989,7 +1989,7 @@
         "tags": [
           "CorrectionInvoiceService"
         ],
-        "summary": "Service Layer function import 'CorrectionInvoiceService_InitData'.",
+        "summary": "Init data.",
         "operationId": "CorrectionInvoiceService_InitData",
         "responses": {
           "200": {
@@ -2418,7 +2418,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "CreditNotesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -2463,7 +2463,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "CreditNotesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -2508,7 +2508,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_Cancel2'.",
+        "summary": "Cancel2.",
         "operationId": "CreditNotesService_Cancel2",
         "requestBody": {
           "content": {
@@ -2553,7 +2553,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "CreditNotesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -2598,7 +2598,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "CreditNotesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -2643,7 +2643,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "CreditNotesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -2695,7 +2695,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "CreditNotesService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -2719,7 +2719,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_InitData'.",
+        "summary": "Init data.",
         "operationId": "CreditNotesService_InitData",
         "responses": {
           "200": {
@@ -2750,7 +2750,7 @@
         "tags": [
           "CreditNotesService"
         ],
-        "summary": "Service Layer function import 'CreditNotesService_RequestApproveCancellation'.",
+        "summary": "Request approve cancellation.",
         "operationId": "CreditNotesService_RequestApproveCancellation",
         "requestBody": {
           "content": {
@@ -3193,7 +3193,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "DeliveryNotesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -3238,7 +3238,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "DeliveryNotesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -3283,7 +3283,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_Cancel2'.",
+        "summary": "Cancel2.",
         "operationId": "DeliveryNotesService_Cancel2",
         "requestBody": {
           "content": {
@@ -3328,7 +3328,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "DeliveryNotesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -3373,7 +3373,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "DeliveryNotesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -3418,7 +3418,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "DeliveryNotesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -3470,7 +3470,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "DeliveryNotesService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -3494,7 +3494,7 @@
         "tags": [
           "DeliveryNotesService"
         ],
-        "summary": "Service Layer function import 'DeliveryNotesService_InitData'.",
+        "summary": "Init data.",
         "operationId": "DeliveryNotesService_InitData",
         "responses": {
           "200": {
@@ -3923,7 +3923,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "DownPaymentsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -3968,7 +3968,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "DownPaymentsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -4013,7 +4013,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "DownPaymentsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -4058,7 +4058,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "DownPaymentsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4103,7 +4103,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "DownPaymentsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4155,7 +4155,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "DownPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -4179,7 +4179,7 @@
         "tags": [
           "DownPaymentsService"
         ],
-        "summary": "Service Layer function import 'DownPaymentsService_InitData'.",
+        "summary": "Init data.",
         "operationId": "DownPaymentsService_InitData",
         "responses": {
           "200": {
@@ -4608,7 +4608,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "DraftsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -4653,7 +4653,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "DraftsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -4698,7 +4698,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "DraftsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -4743,7 +4743,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "DraftsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4788,7 +4788,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "DraftsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4840,7 +4840,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "DraftsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -4864,7 +4864,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_InitData'.",
+        "summary": "Init data.",
         "operationId": "DraftsService_InitData",
         "responses": {
           "200": {
@@ -4895,7 +4895,7 @@
         "tags": [
           "DraftsService"
         ],
-        "summary": "Service Layer function import 'DraftsService_SaveDraftToDocument'.",
+        "summary": "Save draft to document.",
         "operationId": "DraftsService_SaveDraftToDocument",
         "requestBody": {
           "content": {
@@ -5415,7 +5415,7 @@
         "tags": [
           "DunningTermsService"
         ],
-        "summary": "Service Layer function import 'DunningTermsService_GetDunningTermList'.",
+        "summary": "Get dunning term list.",
         "operationId": "DunningTermsService_GetDunningTermList",
         "responses": {
           "200": {
@@ -5857,7 +5857,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "InvoicesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -5902,7 +5902,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "InvoicesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -5947,7 +5947,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_Cancel2'.",
+        "summary": "Cancel2.",
         "operationId": "InvoicesService_Cancel2",
         "requestBody": {
           "content": {
@@ -5992,7 +5992,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "InvoicesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -6037,7 +6037,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "InvoicesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -6082,7 +6082,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "InvoicesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -6134,7 +6134,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "InvoicesService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -6158,7 +6158,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_InitData'.",
+        "summary": "Init data.",
         "operationId": "InvoicesService_InitData",
         "responses": {
           "200": {
@@ -6189,7 +6189,7 @@
         "tags": [
           "InvoicesService"
         ],
-        "summary": "Service Layer function import 'InvoicesService_RequestApproveCancellation'.",
+        "summary": "Request approve cancellation.",
         "operationId": "InvoicesService_RequestApproveCancellation",
         "requestBody": {
           "content": {
@@ -6632,7 +6632,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "OrdersService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -6677,7 +6677,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "OrdersService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -6722,7 +6722,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "OrdersService_CloseByDate",
         "requestBody": {
           "content": {
@@ -6767,7 +6767,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "OrdersService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -6812,7 +6812,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "OrdersService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -6864,7 +6864,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "OrdersService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -6888,7 +6888,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_InitData'.",
+        "summary": "Init data.",
         "operationId": "OrdersService_InitData",
         "responses": {
           "200": {
@@ -6919,7 +6919,7 @@
         "tags": [
           "OrdersService"
         ],
-        "summary": "Service Layer function import 'OrdersService_Preview'.",
+        "summary": "Preview.",
         "operationId": "OrdersService_Preview",
         "requestBody": {
           "content": {
@@ -7608,7 +7608,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "QuotationsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -7653,7 +7653,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "QuotationsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -7698,7 +7698,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "QuotationsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -7743,7 +7743,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "QuotationsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -7788,7 +7788,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "QuotationsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -7840,7 +7840,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "QuotationsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -7864,7 +7864,7 @@
         "tags": [
           "QuotationsService"
         ],
-        "summary": "Service Layer function import 'QuotationsService_InitData'.",
+        "summary": "Init data.",
         "operationId": "QuotationsService_InitData",
         "responses": {
           "200": {
@@ -8293,7 +8293,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "ReturnRequestService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -8338,7 +8338,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "ReturnRequestService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -8383,7 +8383,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "ReturnRequestService_CloseByDate",
         "requestBody": {
           "content": {
@@ -8428,7 +8428,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "ReturnRequestService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -8473,7 +8473,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "ReturnRequestService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -8525,7 +8525,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "ReturnRequestService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -8549,7 +8549,7 @@
         "tags": [
           "ReturnRequestService"
         ],
-        "summary": "Service Layer function import 'ReturnRequestService_InitData'.",
+        "summary": "Init data.",
         "operationId": "ReturnRequestService_InitData",
         "responses": {
           "200": {
@@ -8978,7 +8978,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "ReturnsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -9023,7 +9023,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "ReturnsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -9068,7 +9068,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_Cancel2'.",
+        "summary": "Cancel2.",
         "operationId": "ReturnsService_Cancel2",
         "requestBody": {
           "content": {
@@ -9113,7 +9113,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "ReturnsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -9158,7 +9158,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "ReturnsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -9203,7 +9203,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "ReturnsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -9255,7 +9255,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "ReturnsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -9279,7 +9279,7 @@
         "tags": [
           "ReturnsService"
         ],
-        "summary": "Service Layer function import 'ReturnsService_InitData'.",
+        "summary": "Init data.",
         "operationId": "ReturnsService_InitData",
         "responses": {
           "200": {

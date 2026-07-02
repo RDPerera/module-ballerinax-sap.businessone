@@ -106,7 +106,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AlternativeItemsService_AddItem'.
+    # Add item.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -119,7 +119,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AlternativeItemsService_DeleteItem'.
+    # Delete item.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -132,7 +132,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AlternativeItemsService_GetItem'.
+    # Get item.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -145,7 +145,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AlternativeItemsService_UpdateItem'.
+    # Update item.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -219,7 +219,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AttributeGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -290,7 +290,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BarCodesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -422,7 +422,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BinLocationAttributesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -493,7 +493,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BinLocationFieldsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -564,7 +564,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BinLocationsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -696,7 +696,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CycleCountDeterminationsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -767,7 +767,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EnhancedDiscountGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -910,7 +910,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryCountingsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1086,7 +1086,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1099,7 +1099,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1112,7 +1112,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1125,7 +1125,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1138,7 +1138,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1151,7 +1151,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1161,7 +1161,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenEntryService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1171,7 +1171,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_ApproveAndAdd'.
+    # Approve and add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1184,7 +1184,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_ApproveAndUpdate'.
+    # Approve and update.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1197,7 +1197,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_CloseByDate'.
+    # Close by date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1210,7 +1210,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_ExportEWayBill'.
+    # Export E way bill.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1223,7 +1223,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1236,7 +1236,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1246,7 +1246,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryGenExitService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1483,7 +1483,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryOpeningBalancesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1615,7 +1615,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryPostingsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1625,7 +1625,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryPostingsService_SetCopyOption'.
+    # Set copy option.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1732,7 +1732,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryTransferRequestsService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1745,7 +1745,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'InventoryTransferRequestsService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1816,7 +1816,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ItemGroupsService_UpdateWithOITMs'.
+    # Update with OIT ms.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2023,7 +2023,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ItemsService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2238,7 +2238,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO'.
+    # Get material revaluation FIFO.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2251,7 +2251,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MaterialRevaluationSNBService_Add'.
+    # Add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2264,7 +2264,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MaterialRevaluationSNBService_GetList'.
+    # Get list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2410,7 +2410,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PickListsService_Close'.
+    # Close.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2423,7 +2423,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PickListsService_UpdateReleasedAllocation'.
+    # Update released allocation.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2747,7 +2747,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'StockTransferDraftService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2760,7 +2760,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'StockTransferDraftService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2864,7 +2864,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'StockTransferService_GetApprovalTemplates'.
+    # Get approval templates.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2877,7 +2877,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'StockTransferService_HandleApprovalRequest'.
+    # Handle approval request.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -3042,7 +3042,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TrackingNotesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3113,7 +3113,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UnitOfMeasurementGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3184,7 +3184,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UnitOfMeasurementsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3316,7 +3316,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WarehouseSublevelCodesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

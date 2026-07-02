@@ -344,7 +344,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallOriginsService_GetServiceCallOriginList'.
+    # Get service call origin list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -415,7 +415,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList'.
+    # Get service call problem sub type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -486,7 +486,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallProblemTypesService_GetServiceCallProblemTypeList'.
+    # Get service call problem type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -557,7 +557,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList'.
+    # Get service call solution status list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -628,7 +628,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallStatusService_GetServiceCallStatusList'.
+    # Get service call status list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -699,7 +699,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ServiceCallTypesService_GetServiceCallTypeList'.
+    # Get service call type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

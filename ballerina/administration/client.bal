@@ -255,7 +255,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ApprovalRequestsService_GetAllApprovalRequestsList'.
+    # Get all approval requests list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -265,7 +265,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ApprovalRequestsService_GetApprovalRequestList'.
+    # Get approval request list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -275,7 +275,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ApprovalRequestsService_GetOpenApprovalRequestList'.
+    # Get open approval request list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -346,7 +346,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ApprovalStagesService_GetApprovalStageList'.
+    # Get approval stage list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -417,7 +417,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ApprovalTemplatesService_GetApprovalTemplateList'.
+    # Get approval template list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -610,7 +610,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BranchesService_GetBranchList'.
+    # Get branch list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -681,7 +681,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ChangeLogsService_GetChangeLog'.
+    # Get change log.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -694,7 +694,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ChangeLogsService_GetChangeLogDifferences'.
+    # Get change log differences.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -829,7 +829,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CockpitsService_GetCockpitList'.
+    # Get cockpit list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -839,7 +839,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CockpitsService_GetTemplateCockpitList'.
+    # Get template cockpit list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -849,7 +849,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CockpitsService_GetUserCockpitList'.
+    # Get user cockpit list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -859,7 +859,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CockpitsService_PublishCockpit'.
+    # Publish cockpit.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -872,7 +872,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_CreatePeriod'.
+    # Create period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -885,7 +885,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_CreatePeriodWithFinanceParams'.
+    # Create period with finance params.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -898,7 +898,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetAdminInfo'.
+    # Get admin info.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -908,7 +908,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetAdvancedGLAccount'.
+    # Get advanced GL account.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -921,7 +921,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetCompanyInfo'.
+    # Get company info.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -931,7 +931,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetCurrentServerTime'.
+    # Get current server time.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -941,7 +941,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetFeaturesStatus'.
+    # Get features status.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -951,7 +951,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetFinancePeriod'.
+    # Get finance period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -964,7 +964,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetFinancePeriods'.
+    # Get finance periods.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -977,7 +977,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetItemPrice'.
+    # Get item price.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -990,7 +990,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetPathAdmin'.
+    # Get path admin.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1000,7 +1000,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetPeriod'.
+    # Get period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1013,7 +1013,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_GetPeriods'.
+    # Get periods.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1023,7 +1023,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_LogLoginAction'.
+    # Log login action.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1036,7 +1036,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_LogLogoffAction'.
+    # Log logoff action.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1049,7 +1049,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_RefreshPathsinDocuments'.
+    # Refresh pathsin documents.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1059,7 +1059,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_RemoveFinancePeriod'.
+    # Remove finance period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1072,7 +1072,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_RoundDecimal'.
+    # Round decimal.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1085,7 +1085,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_UpdateAdminInfo'.
+    # Update admin info.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1098,7 +1098,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_UpdateCompanyInfo'.
+    # Update company info.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1111,7 +1111,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_UpdateFinancePeriod'.
+    # Update finance period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1124,7 +1124,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_UpdatePathAdmin'.
+    # Update path admin.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1137,7 +1137,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CompanyService_UpdatePeriod'.
+    # Update period.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1211,7 +1211,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CountiesService_GetCountyList'.
+    # Get county list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1282,7 +1282,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CountriesService_GetCountryList'.
+    # Get country list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1292,7 +1292,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DashboardPackagesService_ImportDashboardPackage'.
+    # Import dashboard package.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1366,7 +1366,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DepartmentsService_GetDepartmentList'.
+    # Get department list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1470,7 +1470,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DistributionListsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1608,7 +1608,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EmailGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1784,7 +1784,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'EventSubscriptionsService_GetEventCatalog'.
+    # Get event catalog.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1794,7 +1794,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExceptionalEventService_GetExceptionalEventList'.
+    # Get exceptional event list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1926,7 +1926,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExtendedTranslationsService_GetExtendedTranslationList'.
+    # Get extended translation list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1936,7 +1936,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalCallsService_GetCall'.
+    # Get call.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1949,7 +1949,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalCallsService_SendCall'.
+    # Send call.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1962,7 +1962,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ExternalCallsService_UpdateCall'.
+    # Update call.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2106,7 +2106,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'HolidayService_GetHolidayList'.
+    # Get holiday list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2238,7 +2238,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'IntegrationPackagesConfigureService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2309,7 +2309,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'KPIsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2319,7 +2319,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'LicenseService_GetInstallationNumber'.
+    # Get installation number.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2329,7 +2329,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'Login'.
+    # Login.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2342,7 +2342,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'Logout'.
+    # Logout.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2413,7 +2413,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MessagesService_GetInbox'.
+    # Get inbox.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2423,7 +2423,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MessagesService_GetOutbox'.
+    # Get outbox.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2433,7 +2433,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MessagesService_GetSentMessages'.
+    # Get sent messages.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2504,7 +2504,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAddOnSettingService_GetMobileAddOnSettingList'.
+    # Get mobile add on setting list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2514,7 +2514,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetCurrentServerDateTime'.
+    # Get current server date time.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2524,7 +2524,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetDppChangeParams'.
+    # Get dpp change params.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2537,7 +2537,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetEmployeeFullNames'.
+    # Get employee full names.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2550,7 +2550,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetSalesAppSetting'.
+    # Get sales app setting.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2563,7 +2563,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetServiceAppReport'.
+    # Get service app report.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2576,7 +2576,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetServiceAppReportContent'.
+    # Get service app report content.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2589,7 +2589,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetTechnicianSchedulings'.
+    # Get technician schedulings.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2602,7 +2602,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetTechnicianSettings'.
+    # Get technician settings.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2615,7 +2615,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_GetTechnicianSettingsGroup'.
+    # Get technician settings group.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2628,7 +2628,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_UpdateSalesAppSetting'.
+    # Update sales app setting.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2641,7 +2641,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_UpdateServiceAppReport'.
+    # Update service app report.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2654,7 +2654,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_UpdateServiceAppReportContent'.
+    # Update service app report content.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2667,7 +2667,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_UpdateTechnicianSettings'.
+    # Update technician settings.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2680,7 +2680,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'MobileAppService_UpdateTechnicianSettingsGroup'.
+    # Update technician settings group.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2876,7 +2876,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PredefinedTextsService_GetPredefinedTextList'.
+    # Get predefined text list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2886,7 +2886,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QRCodeService_AddOrUpdateQRCode'.
+    # Add or update QR code.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2899,7 +2899,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QueryAuthGroupService_GetQueryAuthGroupList'.
+    # Get query auth group list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3031,7 +3031,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'QueryService_PostQuery'.
+    # Post query.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3105,7 +3105,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportFilterService_GetTaxReportFilterList'.
+    # Get tax report filter list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3118,7 +3118,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_AddReportLayout'.
+    # Add report layout.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3131,7 +3131,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_AddReportLayoutToMenu'.
+    # Add report layout to menu.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3144,7 +3144,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_DeleteReportLayout'.
+    # Delete report layout.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3157,7 +3157,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_DeleteReportLayoutAndMenu'.
+    # Delete report layout and menu.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3170,7 +3170,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_GetDefaultReport'.
+    # Get default report.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3183,7 +3183,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_GetDefaultReportLayout'.
+    # Get default report layout.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3196,7 +3196,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_GetReportLayout'.
+    # Get report layout.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3209,7 +3209,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_GetReportLayoutList'.
+    # Get report layout list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3222,7 +3222,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_SetDefaultReport'.
+    # Set default report.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3235,7 +3235,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_UpdateLanguageReport'.
+    # Update language report.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3248,7 +3248,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportLayoutsService_UpdatePrinterSettings'.
+    # Update printer settings.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3322,7 +3322,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ReportTypesService_GetReportTypeList'.
+    # Get report type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3332,7 +3332,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_Format_MoneyToString'.
+    # Money to string.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3345,7 +3345,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetCurrencyRate'.
+    # Get currency rate.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3358,7 +3358,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetDueDate'.
+    # Get due date.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3371,7 +3371,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetIndexRate'.
+    # Get index rate.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3384,7 +3384,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetLocalCurrency'.
+    # Get local currency.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3394,7 +3394,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetSystemCurrency'.
+    # Get system currency.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3404,7 +3404,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_GetSystemPermission'.
+    # Get system permission.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3417,7 +3417,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_SetCurrencyRate'.
+    # Set currency rate.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3430,7 +3430,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SBOBobService_SetSystemPermission'.
+    # Set system permission.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3662,7 +3662,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SectionsService_GetSectionList'.
+    # Get section list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3672,7 +3672,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SensitiveDataAccessService_Access'.
+    # Access.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3685,7 +3685,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SensitiveDataAccessService_IsDataSensitive'.
+    # Is data sensitive.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3698,7 +3698,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_AddElectronicSeries'.
+    # Add electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3711,7 +3711,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_AddSeries'.
+    # Add series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3724,7 +3724,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_AttachSeriesToDocument'.
+    # Attach series to document.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3737,7 +3737,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_ChangeDocumentMenuName'.
+    # Change document menu name.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3750,7 +3750,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetDefaultElectronicSeries'.
+    # Get default electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3763,7 +3763,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetDefaultSeries'.
+    # Get default series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3776,7 +3776,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetDocumentChangedMenuName'.
+    # Get document changed menu name.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3789,7 +3789,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetDocumentSeries'.
+    # Get document series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3802,7 +3802,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetElectronicSeries'.
+    # Get electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3815,7 +3815,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_GetSeries'.
+    # Get series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3828,7 +3828,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_RemoveElectronicSeries'.
+    # Remove electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3841,7 +3841,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_RemoveSeries'.
+    # Remove series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3854,7 +3854,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_SetDefaultElectronicSeries'.
+    # Set default electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3867,7 +3867,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_SetDefaultSeriesForAllUsers'.
+    # Set default series for all users.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3880,7 +3880,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_SetDefaultSeriesForCurrentUser'.
+    # Set default series for current user.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3893,7 +3893,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_SetDefaultSeriesForUser'.
+    # Set default series for user.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3906,7 +3906,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_UnattachSeriesFromDocument'.
+    # Unattach series from document.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3919,7 +3919,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_UpdateElectronicSeries'.
+    # Update electronic series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3932,7 +3932,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SeriesService_UpdateSeries'.
+    # Update series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -3945,7 +3945,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ShortLinkMappingsService_BatchDelete'.
+    # Batch delete.
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -3955,7 +3955,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ShortLinkMappingsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -4090,7 +4090,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'StatesService_GetStateList'.
+    # Get state list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -4100,7 +4100,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TSRExceptionalEventService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -4296,7 +4296,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UserGroupService_GetUserGroupList'.
+    # Get user group list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -4492,7 +4492,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UserMenuService_GetCurrentUserMenu'.
+    # Get current user menu.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -4502,7 +4502,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UserMenuService_GetUserMenu'.
+    # Get user menu.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -4515,7 +4515,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UserMenuService_UpdateCurrentUserMenu'.
+    # Update current user menu.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -4528,7 +4528,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UserMenuService_UpdateUserMenu'.
+    # Update user menu.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -4871,7 +4871,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'UsersService_GetCurrentUser'.
+    # Get current user.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5003,7 +5003,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ValueMappingService_GetMappedB1Value'.
+    # Get mapped B1 value.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -5016,7 +5016,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ValueMappingService_GetThirdPartyValuesForB1Value'.
+    # Get third party values for B1 value.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -5029,7 +5029,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ValueMappingService_RemoveMappedValue'.
+    # Remove mapped value.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -5042,7 +5042,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientBookmarkTileService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5113,7 +5113,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientDashboardService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5184,7 +5184,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientFormSettingService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5255,7 +5255,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientLaunchpadService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5326,7 +5326,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientListviewFilterService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5397,7 +5397,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientNotificationService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5468,7 +5468,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientPreferenceService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5600,7 +5600,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientRecentActivityService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5610,7 +5610,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientVariantGroupService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5681,7 +5681,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WebClientVariantService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -5752,7 +5752,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WorkflowTaskService_Complete'.
+    # Complete.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -5765,7 +5765,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WorkflowTaskService_GetApprovalTaskList'.
+    # Get approval task list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 

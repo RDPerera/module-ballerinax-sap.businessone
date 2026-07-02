@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Service Layer function import 'AddressService_GetAddressFormat'.
+    # Get address format.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -52,7 +52,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AddressService_GetFullAddress'.
+    # Get full address.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -126,7 +126,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BPOpeningBalanceService_CreateOpenBalance'.
+    # Create open balance.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -261,7 +261,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BPVatExemptionsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -393,7 +393,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BusinessPartnerPropertiesService_GetBusinessPartnerPropertyList'.
+    # Get business partner property list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -464,7 +464,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BusinessPartnersService_CreateOpenBalance'.
+    # Create open balance.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -477,7 +477,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'BusinessPartnersService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -681,7 +681,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PaymentTermsTypesService_UpdateWithBPs'.
+    # Update with B ps.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 

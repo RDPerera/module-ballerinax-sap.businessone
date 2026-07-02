@@ -268,7 +268,7 @@
         "tags": [
           "EmployeeIDTypeService"
         ],
-        "summary": "Service Layer function import 'EmployeeIDTypeService_GetList'.",
+        "summary": "Get list.",
         "operationId": "EmployeeIDTypeService_GetList",
         "responses": {
           "200": {
@@ -790,7 +790,7 @@
         "tags": [
           "EmployeePositionService"
         ],
-        "summary": "Service Layer function import 'EmployeePositionService_GetList'.",
+        "summary": "Get list.",
         "operationId": "EmployeePositionService_GetList",
         "responses": {
           "200": {
@@ -1073,7 +1073,7 @@
         "tags": [
           "EmployeeRolesSetupService"
         ],
-        "summary": "Service Layer function import 'EmployeeRolesSetupService_GetEmployeeRoleSetupList'.",
+        "summary": "Get employee role setup list.",
         "operationId": "EmployeeRolesSetupService_GetEmployeeRoleSetupList",
         "responses": {
           "200": {
@@ -1356,7 +1356,7 @@
         "tags": [
           "EmployeeStatusService"
         ],
-        "summary": "Service Layer function import 'EmployeeStatusService_GetList'.",
+        "summary": "Get list.",
         "operationId": "EmployeeStatusService_GetList",
         "responses": {
           "200": {
@@ -1639,7 +1639,7 @@
         "tags": [
           "EmployeeTransfersService"
         ],
-        "summary": "Service Layer function import 'EmployeeTransfersService_GetEmployeeTransferList'.",
+        "summary": "Get employee transfer list.",
         "operationId": "EmployeeTransfersService_GetEmployeeTransferList",
         "responses": {
           "200": {
@@ -1998,7 +1998,7 @@
         "tags": [
           "EmploymentCategoryService"
         ],
-        "summary": "Service Layer function import 'EmploymentCategoryService_GetEmploymentCategoryList'.",
+        "summary": "Get employment category list.",
         "operationId": "EmploymentCategoryService_GetEmploymentCategoryList",
         "responses": {
           "200": {
@@ -2514,7 +2514,7 @@
         "tags": [
           "GendersService"
         ],
-        "summary": "Service Layer function import 'GendersService_GetList'.",
+        "summary": "Get list.",
         "operationId": "GendersService_GetList",
         "responses": {
           "200": {
@@ -3036,7 +3036,7 @@
         "tags": [
           "TerminationReasonService"
         ],
-        "summary": "Service Layer function import 'TerminationReasonService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TerminationReasonService_GetList",
         "responses": {
           "200": {

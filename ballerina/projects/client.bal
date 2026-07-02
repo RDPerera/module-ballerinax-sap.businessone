@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddActivities'.
+    # Add activities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -113,7 +113,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddAreas'.
+    # Add areas.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -126,7 +126,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddPriorities'.
+    # Add priorities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -139,7 +139,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddStageTypes'.
+    # Add stage types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -152,7 +152,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddSubprojectTypes'.
+    # Add subproject types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -165,7 +165,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_AddTasks'.
+    # Add tasks.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -178,7 +178,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeleteActivities'.
+    # Delete activities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -191,7 +191,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeleteAreas'.
+    # Delete areas.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -204,7 +204,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeletePriorities'.
+    # Delete priorities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -217,7 +217,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeleteStageTypes'.
+    # Delete stage types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -230,7 +230,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeleteSubprojectTypes'.
+    # Delete subproject types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -243,7 +243,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_DeleteTasks'.
+    # Delete tasks.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -256,7 +256,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetActivities'.
+    # Get activities.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -266,7 +266,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetAreas'.
+    # Get areas.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -276,7 +276,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetPriorities'.
+    # Get priorities.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -286,7 +286,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetStageTypes'.
+    # Get stage types.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -296,7 +296,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetSubprojectTypes'.
+    # Get subproject types.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -306,7 +306,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_GetTasks'.
+    # Get tasks.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -316,7 +316,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdateActivities'.
+    # Update activities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -329,7 +329,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdateAreas'.
+    # Update areas.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -342,7 +342,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdatePriorities'.
+    # Update priorities.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -355,7 +355,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdateStageTypes'.
+    # Update stage types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -368,7 +368,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdateSubprojectTypes'.
+    # Update subproject types.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -381,7 +381,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementConfigurationService_UpdateTasks'.
+    # Update tasks.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -394,7 +394,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementService_AddSubproject'.
+    # Add subproject.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -407,7 +407,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementService_DeleteSubproject'.
+    # Delete subproject.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -420,7 +420,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementService_GetSubproject'.
+    # Get subproject.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -433,7 +433,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementService_GetSubprojectsList'.
+    # Get subprojects list.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -446,7 +446,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectManagementService_UpdateSubproject'.
+    # Update subproject.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -653,7 +653,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProjectsService_GetProjectList'.
+    # Get project list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

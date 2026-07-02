@@ -883,7 +883,7 @@
         "tags": [
           "ApprovalRequestsService"
         ],
-        "summary": "Service Layer function import 'ApprovalRequestsService_GetAllApprovalRequestsList'.",
+        "summary": "Get all approval requests list.",
         "operationId": "ApprovalRequestsService_GetAllApprovalRequestsList",
         "responses": {
           "200": {
@@ -927,7 +927,7 @@
         "tags": [
           "ApprovalRequestsService"
         ],
-        "summary": "Service Layer function import 'ApprovalRequestsService_GetApprovalRequestList'.",
+        "summary": "Get approval request list.",
         "operationId": "ApprovalRequestsService_GetApprovalRequestList",
         "responses": {
           "200": {
@@ -971,7 +971,7 @@
         "tags": [
           "ApprovalRequestsService"
         ],
-        "summary": "Service Layer function import 'ApprovalRequestsService_GetOpenApprovalRequestList'.",
+        "summary": "Get open approval request list.",
         "operationId": "ApprovalRequestsService_GetOpenApprovalRequestList",
         "responses": {
           "200": {
@@ -1254,7 +1254,7 @@
         "tags": [
           "ApprovalStagesService"
         ],
-        "summary": "Service Layer function import 'ApprovalStagesService_GetApprovalStageList'.",
+        "summary": "Get approval stage list.",
         "operationId": "ApprovalStagesService_GetApprovalStageList",
         "responses": {
           "200": {
@@ -1537,7 +1537,7 @@
         "tags": [
           "ApprovalTemplatesService"
         ],
-        "summary": "Service Layer function import 'ApprovalTemplatesService_GetApprovalTemplateList'.",
+        "summary": "Get approval template list.",
         "operationId": "ApprovalTemplatesService_GetApprovalTemplateList",
         "responses": {
           "200": {
@@ -2295,7 +2295,7 @@
         "tags": [
           "BranchesService"
         ],
-        "summary": "Service Layer function import 'BranchesService_GetBranchList'.",
+        "summary": "Get branch list.",
         "operationId": "BranchesService_GetBranchList",
         "responses": {
           "200": {
@@ -2578,7 +2578,7 @@
         "tags": [
           "ChangeLogsService"
         ],
-        "summary": "Service Layer function import 'ChangeLogsService_GetChangeLog'.",
+        "summary": "Get change log.",
         "operationId": "ChangeLogsService_GetChangeLog",
         "requestBody": {
           "content": {
@@ -2643,7 +2643,7 @@
         "tags": [
           "ChangeLogsService"
         ],
-        "summary": "Service Layer function import 'ChangeLogsService_GetChangeLogDifferences'.",
+        "summary": "Get change log differences.",
         "operationId": "ChangeLogsService_GetChangeLogDifferences",
         "requestBody": {
           "content": {
@@ -3183,7 +3183,7 @@
         "tags": [
           "CockpitsService"
         ],
-        "summary": "Service Layer function import 'CockpitsService_GetCockpitList'.",
+        "summary": "Get cockpit list.",
         "operationId": "CockpitsService_GetCockpitList",
         "responses": {
           "200": {
@@ -3227,7 +3227,7 @@
         "tags": [
           "CockpitsService"
         ],
-        "summary": "Service Layer function import 'CockpitsService_GetTemplateCockpitList'.",
+        "summary": "Get template cockpit list.",
         "operationId": "CockpitsService_GetTemplateCockpitList",
         "responses": {
           "200": {
@@ -3271,7 +3271,7 @@
         "tags": [
           "CockpitsService"
         ],
-        "summary": "Service Layer function import 'CockpitsService_GetUserCockpitList'.",
+        "summary": "Get user cockpit list.",
         "operationId": "CockpitsService_GetUserCockpitList",
         "responses": {
           "200": {
@@ -3315,7 +3315,7 @@
         "tags": [
           "CockpitsService"
         ],
-        "summary": "Service Layer function import 'CockpitsService_PublishCockpit'.",
+        "summary": "Publish cockpit.",
         "operationId": "CockpitsService_PublishCockpit",
         "requestBody": {
           "content": {
@@ -3360,7 +3360,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_CreatePeriod'.",
+        "summary": "Create period.",
         "operationId": "CompanyService_CreatePeriod",
         "requestBody": {
           "content": {
@@ -3412,7 +3412,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_CreatePeriodWithFinanceParams'.",
+        "summary": "Create period with finance params.",
         "operationId": "CompanyService_CreatePeriodWithFinanceParams",
         "requestBody": {
           "content": {
@@ -3472,7 +3472,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetAdminInfo'.",
+        "summary": "Get admin info.",
         "operationId": "CompanyService_GetAdminInfo",
         "responses": {
           "200": {
@@ -3503,7 +3503,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetAdvancedGLAccount'.",
+        "summary": "Get advanced GL account.",
         "operationId": "CompanyService_GetAdvancedGLAccount",
         "requestBody": {
           "content": {
@@ -3555,7 +3555,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetCompanyInfo'.",
+        "summary": "Get company info.",
         "operationId": "CompanyService_GetCompanyInfo",
         "responses": {
           "200": {
@@ -3586,7 +3586,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetCurrentServerTime'.",
+        "summary": "Get current server time.",
         "operationId": "CompanyService_GetCurrentServerTime",
         "responses": {
           "200": {
@@ -3617,7 +3617,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetFeaturesStatus'.",
+        "summary": "Get features status.",
         "operationId": "CompanyService_GetFeaturesStatus",
         "responses": {
           "200": {
@@ -3661,7 +3661,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetFinancePeriod'.",
+        "summary": "Get finance period.",
         "operationId": "CompanyService_GetFinancePeriod",
         "requestBody": {
           "content": {
@@ -3713,7 +3713,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetFinancePeriods'.",
+        "summary": "Get finance periods.",
         "operationId": "CompanyService_GetFinancePeriods",
         "requestBody": {
           "content": {
@@ -3778,7 +3778,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetItemPrice'.",
+        "summary": "Get item price.",
         "operationId": "CompanyService_GetItemPrice",
         "requestBody": {
           "content": {
@@ -3830,7 +3830,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetPathAdmin'.",
+        "summary": "Get path admin.",
         "operationId": "CompanyService_GetPathAdmin",
         "responses": {
           "200": {
@@ -3861,7 +3861,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetPeriod'.",
+        "summary": "Get period.",
         "operationId": "CompanyService_GetPeriod",
         "requestBody": {
           "content": {
@@ -3913,7 +3913,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_GetPeriods'.",
+        "summary": "Get periods.",
         "operationId": "CompanyService_GetPeriods",
         "responses": {
           "200": {
@@ -3957,7 +3957,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_LogLoginAction'.",
+        "summary": "Log login action.",
         "operationId": "CompanyService_LogLoginAction",
         "requestBody": {
           "content": {
@@ -4017,7 +4017,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_LogLogoffAction'.",
+        "summary": "Log logoff action.",
         "operationId": "CompanyService_LogLogoffAction",
         "requestBody": {
           "content": {
@@ -4070,7 +4070,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_RefreshPathsinDocuments'.",
+        "summary": "Refresh pathsin documents.",
         "operationId": "CompanyService_RefreshPathsinDocuments",
         "responses": {
           "200": {
@@ -4101,7 +4101,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_RemoveFinancePeriod'.",
+        "summary": "Remove finance period.",
         "operationId": "CompanyService_RemoveFinancePeriod",
         "requestBody": {
           "content": {
@@ -4146,7 +4146,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_RoundDecimal'.",
+        "summary": "Round decimal.",
         "operationId": "CompanyService_RoundDecimal",
         "requestBody": {
           "content": {
@@ -4198,7 +4198,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_UpdateAdminInfo'.",
+        "summary": "Update admin info.",
         "operationId": "CompanyService_UpdateAdminInfo",
         "requestBody": {
           "content": {
@@ -4243,7 +4243,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_UpdateCompanyInfo'.",
+        "summary": "Update company info.",
         "operationId": "CompanyService_UpdateCompanyInfo",
         "requestBody": {
           "content": {
@@ -4288,7 +4288,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_UpdateFinancePeriod'.",
+        "summary": "Update finance period.",
         "operationId": "CompanyService_UpdateFinancePeriod",
         "requestBody": {
           "content": {
@@ -4333,7 +4333,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_UpdatePathAdmin'.",
+        "summary": "Update path admin.",
         "operationId": "CompanyService_UpdatePathAdmin",
         "requestBody": {
           "content": {
@@ -4378,7 +4378,7 @@
         "tags": [
           "CompanyService"
         ],
-        "summary": "Service Layer function import 'CompanyService_UpdatePeriod'.",
+        "summary": "Update period.",
         "operationId": "CompanyService_UpdatePeriod",
         "requestBody": {
           "content": {
@@ -4662,7 +4662,7 @@
         "tags": [
           "CountiesService"
         ],
-        "summary": "Service Layer function import 'CountiesService_GetCountyList'.",
+        "summary": "Get county list.",
         "operationId": "CountiesService_GetCountyList",
         "responses": {
           "200": {
@@ -4942,7 +4942,7 @@
         "tags": [
           "CountriesService"
         ],
-        "summary": "Service Layer function import 'CountriesService_GetCountryList'.",
+        "summary": "Get country list.",
         "operationId": "CountriesService_GetCountryList",
         "responses": {
           "200": {
@@ -4986,7 +4986,7 @@
         "tags": [
           "DashboardPackagesService"
         ],
-        "summary": "Service Layer function import 'DashboardPackagesService_ImportDashboardPackage'.",
+        "summary": "Import dashboard package.",
         "operationId": "DashboardPackagesService_ImportDashboardPackage",
         "requestBody": {
           "content": {
@@ -5277,7 +5277,7 @@
         "tags": [
           "DepartmentsService"
         ],
-        "summary": "Service Layer function import 'DepartmentsService_GetDepartmentList'.",
+        "summary": "Get department list.",
         "operationId": "DepartmentsService_GetDepartmentList",
         "responses": {
           "200": {
@@ -5674,7 +5674,7 @@
         "tags": [
           "DistributionListsService"
         ],
-        "summary": "Service Layer function import 'DistributionListsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "DistributionListsService_GetList",
         "responses": {
           "200": {
@@ -6256,7 +6256,7 @@
         "tags": [
           "EmailGroupsService"
         ],
-        "summary": "Service Layer function import 'EmailGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "EmailGroupsService_GetList",
         "responses": {
           "200": {
@@ -6920,7 +6920,7 @@
         "tags": [
           "EventSubscriptionsService"
         ],
-        "summary": "Service Layer function import 'EventSubscriptionsService_GetEventCatalog'.",
+        "summary": "Get event catalog.",
         "operationId": "EventSubscriptionsService_GetEventCatalog",
         "responses": {
           "200": {
@@ -6951,7 +6951,7 @@
         "tags": [
           "ExceptionalEventService"
         ],
-        "summary": "Service Layer function import 'ExceptionalEventService_GetExceptionalEventList'.",
+        "summary": "Get exceptional event list.",
         "operationId": "ExceptionalEventService_GetExceptionalEventList",
         "responses": {
           "200": {
@@ -7470,7 +7470,7 @@
         "tags": [
           "ExtendedTranslationsService"
         ],
-        "summary": "Service Layer function import 'ExtendedTranslationsService_GetExtendedTranslationList'.",
+        "summary": "Get extended translation list.",
         "operationId": "ExtendedTranslationsService_GetExtendedTranslationList",
         "responses": {
           "200": {
@@ -7514,7 +7514,7 @@
         "tags": [
           "ExternalCallsService"
         ],
-        "summary": "Service Layer function import 'ExternalCallsService_GetCall'.",
+        "summary": "Get call.",
         "operationId": "ExternalCallsService_GetCall",
         "requestBody": {
           "content": {
@@ -7566,7 +7566,7 @@
         "tags": [
           "ExternalCallsService"
         ],
-        "summary": "Service Layer function import 'ExternalCallsService_SendCall'.",
+        "summary": "Send call.",
         "operationId": "ExternalCallsService_SendCall",
         "requestBody": {
           "content": {
@@ -7618,7 +7618,7 @@
         "tags": [
           "ExternalCallsService"
         ],
-        "summary": "Service Layer function import 'ExternalCallsService_UpdateCall'.",
+        "summary": "Update call.",
         "operationId": "ExternalCallsService_UpdateCall",
         "requestBody": {
           "content": {
@@ -8240,7 +8240,7 @@
         "tags": [
           "HolidayService"
         ],
-        "summary": "Service Layer function import 'HolidayService_GetHolidayList'.",
+        "summary": "Get holiday list.",
         "operationId": "HolidayService_GetHolidayList",
         "responses": {
           "200": {
@@ -8759,7 +8759,7 @@
         "tags": [
           "IntegrationPackagesConfigureService"
         ],
-        "summary": "Service Layer function import 'IntegrationPackagesConfigureService_GetList'.",
+        "summary": "Get list.",
         "operationId": "IntegrationPackagesConfigureService_GetList",
         "responses": {
           "200": {
@@ -9039,7 +9039,7 @@
         "tags": [
           "KPIsService"
         ],
-        "summary": "Service Layer function import 'KPIsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "KPIsService_GetList",
         "responses": {
           "200": {
@@ -9083,7 +9083,7 @@
         "tags": [
           "LicenseService"
         ],
-        "summary": "Service Layer function import 'LicenseService_GetInstallationNumber'.",
+        "summary": "Get installation number.",
         "operationId": "LicenseService_GetInstallationNumber",
         "responses": {
           "200": {
@@ -9114,7 +9114,7 @@
         "tags": [
           "ServiceFunctions"
         ],
-        "summary": "Service Layer function import 'Login'.",
+        "summary": "Login.",
         "operationId": "Login",
         "requestBody": {
           "content": {
@@ -9175,7 +9175,7 @@
         "tags": [
           "ServiceFunctions"
         ],
-        "summary": "Service Layer function import 'Logout'.",
+        "summary": "Logout.",
         "operationId": "Logout",
         "responses": {
           "204": {
@@ -9439,7 +9439,7 @@
         "tags": [
           "MessagesService"
         ],
-        "summary": "Service Layer function import 'MessagesService_GetInbox'.",
+        "summary": "Get inbox.",
         "operationId": "MessagesService_GetInbox",
         "responses": {
           "200": {
@@ -9483,7 +9483,7 @@
         "tags": [
           "MessagesService"
         ],
-        "summary": "Service Layer function import 'MessagesService_GetOutbox'.",
+        "summary": "Get outbox.",
         "operationId": "MessagesService_GetOutbox",
         "responses": {
           "200": {
@@ -9527,7 +9527,7 @@
         "tags": [
           "MessagesService"
         ],
-        "summary": "Service Layer function import 'MessagesService_GetSentMessages'.",
+        "summary": "Get sent messages.",
         "operationId": "MessagesService_GetSentMessages",
         "responses": {
           "200": {
@@ -9807,7 +9807,7 @@
         "tags": [
           "MobileAddOnSettingService"
         ],
-        "summary": "Service Layer function import 'MobileAddOnSettingService_GetMobileAddOnSettingList'.",
+        "summary": "Get mobile add on setting list.",
         "operationId": "MobileAddOnSettingService_GetMobileAddOnSettingList",
         "responses": {
           "200": {
@@ -9851,7 +9851,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetCurrentServerDateTime'.",
+        "summary": "Get current server date time.",
         "operationId": "MobileAppService_GetCurrentServerDateTime",
         "responses": {
           "200": {
@@ -9882,7 +9882,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetDppChangeParams'.",
+        "summary": "Get dpp change params.",
         "operationId": "MobileAppService_GetDppChangeParams",
         "requestBody": {
           "content": {
@@ -9934,7 +9934,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetEmployeeFullNames'.",
+        "summary": "Get employee full names.",
         "operationId": "MobileAppService_GetEmployeeFullNames",
         "requestBody": {
           "content": {
@@ -9998,7 +9998,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetSalesAppSetting'.",
+        "summary": "Get sales app setting.",
         "operationId": "MobileAppService_GetSalesAppSetting",
         "requestBody": {
           "content": {
@@ -10050,7 +10050,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetServiceAppReport'.",
+        "summary": "Get service app report.",
         "operationId": "MobileAppService_GetServiceAppReport",
         "requestBody": {
           "content": {
@@ -10102,7 +10102,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetServiceAppReportContent'.",
+        "summary": "Get service app report content.",
         "operationId": "MobileAppService_GetServiceAppReportContent",
         "requestBody": {
           "content": {
@@ -10154,7 +10154,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetTechnicianSchedulings'.",
+        "summary": "Get technician schedulings.",
         "operationId": "MobileAppService_GetTechnicianSchedulings",
         "requestBody": {
           "content": {
@@ -10219,7 +10219,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetTechnicianSettings'.",
+        "summary": "Get technician settings.",
         "operationId": "MobileAppService_GetTechnicianSettings",
         "requestBody": {
           "content": {
@@ -10271,7 +10271,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_GetTechnicianSettingsGroup'.",
+        "summary": "Get technician settings group.",
         "operationId": "MobileAppService_GetTechnicianSettingsGroup",
         "requestBody": {
           "content": {
@@ -10323,7 +10323,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_UpdateSalesAppSetting'.",
+        "summary": "Update sales app setting.",
         "operationId": "MobileAppService_UpdateSalesAppSetting",
         "requestBody": {
           "content": {
@@ -10368,7 +10368,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_UpdateServiceAppReport'.",
+        "summary": "Update service app report.",
         "operationId": "MobileAppService_UpdateServiceAppReport",
         "requestBody": {
           "content": {
@@ -10413,7 +10413,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_UpdateServiceAppReportContent'.",
+        "summary": "Update service app report content.",
         "operationId": "MobileAppService_UpdateServiceAppReportContent",
         "requestBody": {
           "content": {
@@ -10466,7 +10466,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_UpdateTechnicianSettings'.",
+        "summary": "Update technician settings.",
         "operationId": "MobileAppService_UpdateTechnicianSettings",
         "requestBody": {
           "content": {
@@ -10511,7 +10511,7 @@
         "tags": [
           "MobileAppService"
         ],
-        "summary": "Service Layer function import 'MobileAppService_UpdateTechnicianSettingsGroup'.",
+        "summary": "Update technician settings group.",
         "operationId": "MobileAppService_UpdateTechnicianSettingsGroup",
         "requestBody": {
           "content": {
@@ -11270,7 +11270,7 @@
         "tags": [
           "PredefinedTextsService"
         ],
-        "summary": "Service Layer function import 'PredefinedTextsService_GetPredefinedTextList'.",
+        "summary": "Get predefined text list.",
         "operationId": "PredefinedTextsService_GetPredefinedTextList",
         "responses": {
           "200": {
@@ -11314,7 +11314,7 @@
         "tags": [
           "QRCodeService"
         ],
-        "summary": "Service Layer function import 'QRCodeService_AddOrUpdateQRCode'.",
+        "summary": "Add or update QR code.",
         "operationId": "QRCodeService_AddOrUpdateQRCode",
         "requestBody": {
           "content": {
@@ -11359,7 +11359,7 @@
         "tags": [
           "QueryAuthGroupService"
         ],
-        "summary": "Service Layer function import 'QueryAuthGroupService_GetQueryAuthGroupList'.",
+        "summary": "Get query auth group list.",
         "operationId": "QueryAuthGroupService_GetQueryAuthGroupList",
         "responses": {
           "200": {
@@ -11881,7 +11881,7 @@
         "tags": [
           "QueryService"
         ],
-        "summary": "Service Layer function import 'QueryService_PostQuery'.",
+        "summary": "Post query.",
         "operationId": "QueryService_PostQuery",
         "requestBody": {
           "content": {
@@ -12172,7 +12172,7 @@
         "tags": [
           "ReportFilterService"
         ],
-        "summary": "Service Layer function import 'ReportFilterService_GetTaxReportFilterList'.",
+        "summary": "Get tax report filter list.",
         "operationId": "ReportFilterService_GetTaxReportFilterList",
         "requestBody": {
           "content": {
@@ -12237,7 +12237,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_AddReportLayout'.",
+        "summary": "Add report layout.",
         "operationId": "ReportLayoutsService_AddReportLayout",
         "requestBody": {
           "content": {
@@ -12289,7 +12289,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_AddReportLayoutToMenu'.",
+        "summary": "Add report layout to menu.",
         "operationId": "ReportLayoutsService_AddReportLayoutToMenu",
         "requestBody": {
           "content": {
@@ -12349,7 +12349,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_DeleteReportLayout'.",
+        "summary": "Delete report layout.",
         "operationId": "ReportLayoutsService_DeleteReportLayout",
         "requestBody": {
           "content": {
@@ -12394,7 +12394,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_DeleteReportLayoutAndMenu'.",
+        "summary": "Delete report layout and menu.",
         "operationId": "ReportLayoutsService_DeleteReportLayoutAndMenu",
         "requestBody": {
           "content": {
@@ -12439,7 +12439,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_GetDefaultReport'.",
+        "summary": "Get default report.",
         "operationId": "ReportLayoutsService_GetDefaultReport",
         "requestBody": {
           "content": {
@@ -12491,7 +12491,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_GetDefaultReportLayout'.",
+        "summary": "Get default report layout.",
         "operationId": "ReportLayoutsService_GetDefaultReportLayout",
         "requestBody": {
           "content": {
@@ -12543,7 +12543,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_GetReportLayout'.",
+        "summary": "Get report layout.",
         "operationId": "ReportLayoutsService_GetReportLayout",
         "requestBody": {
           "content": {
@@ -12595,7 +12595,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_GetReportLayoutList'.",
+        "summary": "Get report layout list.",
         "operationId": "ReportLayoutsService_GetReportLayoutList",
         "requestBody": {
           "content": {
@@ -12660,7 +12660,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_SetDefaultReport'.",
+        "summary": "Set default report.",
         "operationId": "ReportLayoutsService_SetDefaultReport",
         "requestBody": {
           "content": {
@@ -12705,7 +12705,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_UpdateLanguageReport'.",
+        "summary": "Update language report.",
         "operationId": "ReportLayoutsService_UpdateLanguageReport",
         "requestBody": {
           "content": {
@@ -12750,7 +12750,7 @@
         "tags": [
           "ReportLayoutsService"
         ],
-        "summary": "Service Layer function import 'ReportLayoutsService_UpdatePrinterSettings'.",
+        "summary": "Update printer settings.",
         "operationId": "ReportLayoutsService_UpdatePrinterSettings",
         "requestBody": {
           "content": {
@@ -13031,7 +13031,7 @@
         "tags": [
           "ReportTypesService"
         ],
-        "summary": "Service Layer function import 'ReportTypesService_GetReportTypeList'.",
+        "summary": "Get report type list.",
         "operationId": "ReportTypesService_GetReportTypeList",
         "responses": {
           "200": {
@@ -13075,7 +13075,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_Format_MoneyToString'.",
+        "summary": "Money to string.",
         "operationId": "SBOBobService_Format_MoneyToString",
         "requestBody": {
           "content": {
@@ -13128,7 +13128,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetCurrencyRate'.",
+        "summary": "Get currency rate.",
         "operationId": "SBOBobService_GetCurrencyRate",
         "requestBody": {
           "content": {
@@ -13181,7 +13181,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetDueDate'.",
+        "summary": "Get due date.",
         "operationId": "SBOBobService_GetDueDate",
         "requestBody": {
           "content": {
@@ -13233,7 +13233,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetIndexRate'.",
+        "summary": "Get index rate.",
         "operationId": "SBOBobService_GetIndexRate",
         "requestBody": {
           "content": {
@@ -13286,7 +13286,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetLocalCurrency'.",
+        "summary": "Get local currency.",
         "operationId": "SBOBobService_GetLocalCurrency",
         "responses": {
           "200": {
@@ -13317,7 +13317,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetSystemCurrency'.",
+        "summary": "Get system currency.",
         "operationId": "SBOBobService_GetSystemCurrency",
         "responses": {
           "200": {
@@ -13348,7 +13348,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_GetSystemPermission'.",
+        "summary": "Get system permission.",
         "operationId": "SBOBobService_GetSystemPermission",
         "requestBody": {
           "content": {
@@ -13401,7 +13401,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_SetCurrencyRate'.",
+        "summary": "Set currency rate.",
         "operationId": "SBOBobService_SetCurrencyRate",
         "requestBody": {
           "content": {
@@ -13450,7 +13450,7 @@
         "tags": [
           "SBOBobService"
         ],
-        "summary": "Service Layer function import 'SBOBobService_SetSystemPermission'.",
+        "summary": "Set system permission.",
         "operationId": "SBOBobService_SetSystemPermission",
         "requestBody": {
           "content": {
@@ -14346,7 +14346,7 @@
         "tags": [
           "SectionsService"
         ],
-        "summary": "Service Layer function import 'SectionsService_GetSectionList'.",
+        "summary": "Get section list.",
         "operationId": "SectionsService_GetSectionList",
         "responses": {
           "200": {
@@ -14390,7 +14390,7 @@
         "tags": [
           "SensitiveDataAccessService"
         ],
-        "summary": "Service Layer function import 'SensitiveDataAccessService_Access'.",
+        "summary": "Access.",
         "operationId": "SensitiveDataAccessService_Access",
         "requestBody": {
           "content": {
@@ -14442,7 +14442,7 @@
         "tags": [
           "SensitiveDataAccessService"
         ],
-        "summary": "Service Layer function import 'SensitiveDataAccessService_IsDataSensitive'.",
+        "summary": "Is data sensitive.",
         "operationId": "SensitiveDataAccessService_IsDataSensitive",
         "requestBody": {
           "content": {
@@ -14494,7 +14494,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_AddElectronicSeries'.",
+        "summary": "Add electronic series.",
         "operationId": "SeriesService_AddElectronicSeries",
         "requestBody": {
           "content": {
@@ -14546,7 +14546,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_AddSeries'.",
+        "summary": "Add series.",
         "operationId": "SeriesService_AddSeries",
         "requestBody": {
           "content": {
@@ -14598,7 +14598,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_AttachSeriesToDocument'.",
+        "summary": "Attach series to document.",
         "operationId": "SeriesService_AttachSeriesToDocument",
         "requestBody": {
           "content": {
@@ -14643,7 +14643,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_ChangeDocumentMenuName'.",
+        "summary": "Change document menu name.",
         "operationId": "SeriesService_ChangeDocumentMenuName",
         "requestBody": {
           "content": {
@@ -14688,7 +14688,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetDefaultElectronicSeries'.",
+        "summary": "Get default electronic series.",
         "operationId": "SeriesService_GetDefaultElectronicSeries",
         "requestBody": {
           "content": {
@@ -14740,7 +14740,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetDefaultSeries'.",
+        "summary": "Get default series.",
         "operationId": "SeriesService_GetDefaultSeries",
         "requestBody": {
           "content": {
@@ -14792,7 +14792,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetDocumentChangedMenuName'.",
+        "summary": "Get document changed menu name.",
         "operationId": "SeriesService_GetDocumentChangedMenuName",
         "requestBody": {
           "content": {
@@ -14844,7 +14844,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetDocumentSeries'.",
+        "summary": "Get document series.",
         "operationId": "SeriesService_GetDocumentSeries",
         "requestBody": {
           "content": {
@@ -14909,7 +14909,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetElectronicSeries'.",
+        "summary": "Get electronic series.",
         "operationId": "SeriesService_GetElectronicSeries",
         "requestBody": {
           "content": {
@@ -14961,7 +14961,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_GetSeries'.",
+        "summary": "Get series.",
         "operationId": "SeriesService_GetSeries",
         "requestBody": {
           "content": {
@@ -15013,7 +15013,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_RemoveElectronicSeries'.",
+        "summary": "Remove electronic series.",
         "operationId": "SeriesService_RemoveElectronicSeries",
         "requestBody": {
           "content": {
@@ -15058,7 +15058,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_RemoveSeries'.",
+        "summary": "Remove series.",
         "operationId": "SeriesService_RemoveSeries",
         "requestBody": {
           "content": {
@@ -15103,7 +15103,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_SetDefaultElectronicSeries'.",
+        "summary": "Set default electronic series.",
         "operationId": "SeriesService_SetDefaultElectronicSeries",
         "requestBody": {
           "content": {
@@ -15148,7 +15148,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_SetDefaultSeriesForAllUsers'.",
+        "summary": "Set default series for all users.",
         "operationId": "SeriesService_SetDefaultSeriesForAllUsers",
         "requestBody": {
           "content": {
@@ -15193,7 +15193,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_SetDefaultSeriesForCurrentUser'.",
+        "summary": "Set default series for current user.",
         "operationId": "SeriesService_SetDefaultSeriesForCurrentUser",
         "requestBody": {
           "content": {
@@ -15238,7 +15238,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_SetDefaultSeriesForUser'.",
+        "summary": "Set default series for user.",
         "operationId": "SeriesService_SetDefaultSeriesForUser",
         "requestBody": {
           "content": {
@@ -15283,7 +15283,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_UnattachSeriesFromDocument'.",
+        "summary": "Unattach series from document.",
         "operationId": "SeriesService_UnattachSeriesFromDocument",
         "requestBody": {
           "content": {
@@ -15328,7 +15328,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_UpdateElectronicSeries'.",
+        "summary": "Update electronic series.",
         "operationId": "SeriesService_UpdateElectronicSeries",
         "requestBody": {
           "content": {
@@ -15373,7 +15373,7 @@
         "tags": [
           "SeriesService"
         ],
-        "summary": "Service Layer function import 'SeriesService_UpdateSeries'.",
+        "summary": "Update series.",
         "operationId": "SeriesService_UpdateSeries",
         "requestBody": {
           "content": {
@@ -15418,7 +15418,7 @@
         "tags": [
           "ShortLinkMappingsService"
         ],
-        "summary": "Service Layer function import 'ShortLinkMappingsService_BatchDelete'.",
+        "summary": "Batch delete.",
         "operationId": "ShortLinkMappingsService_BatchDelete",
         "responses": {
           "204": {
@@ -15442,7 +15442,7 @@
         "tags": [
           "ShortLinkMappingsService"
         ],
-        "summary": "Service Layer function import 'ShortLinkMappingsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "ShortLinkMappingsService_GetList",
         "responses": {
           "200": {
@@ -15994,7 +15994,7 @@
         "tags": [
           "StatesService"
         ],
-        "summary": "Service Layer function import 'StatesService_GetStateList'.",
+        "summary": "Get state list.",
         "operationId": "StatesService_GetStateList",
         "responses": {
           "200": {
@@ -16038,7 +16038,7 @@
         "tags": [
           "TSRExceptionalEventService"
         ],
-        "summary": "Service Layer function import 'TSRExceptionalEventService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TSRExceptionalEventService_GetList",
         "responses": {
           "200": {
@@ -16826,7 +16826,7 @@
         "tags": [
           "UserGroupService"
         ],
-        "summary": "Service Layer function import 'UserGroupService_GetUserGroupList'.",
+        "summary": "Get user group list.",
         "operationId": "UserGroupService_GetUserGroupList",
         "responses": {
           "200": {
@@ -17620,7 +17620,7 @@
         "tags": [
           "UserMenuService"
         ],
-        "summary": "Service Layer function import 'UserMenuService_GetCurrentUserMenu'.",
+        "summary": "Get current user menu.",
         "operationId": "UserMenuService_GetCurrentUserMenu",
         "responses": {
           "200": {
@@ -17664,7 +17664,7 @@
         "tags": [
           "UserMenuService"
         ],
-        "summary": "Service Layer function import 'UserMenuService_GetUserMenu'.",
+        "summary": "Get user menu.",
         "operationId": "UserMenuService_GetUserMenu",
         "requestBody": {
           "content": {
@@ -17729,7 +17729,7 @@
         "tags": [
           "UserMenuService"
         ],
-        "summary": "Service Layer function import 'UserMenuService_UpdateCurrentUserMenu'.",
+        "summary": "Update current user menu.",
         "operationId": "UserMenuService_UpdateCurrentUserMenu",
         "requestBody": {
           "content": {
@@ -17773,7 +17773,7 @@
         "tags": [
           "UserMenuService"
         ],
-        "summary": "Service Layer function import 'UserMenuService_UpdateUserMenu'.",
+        "summary": "Update user menu.",
         "operationId": "UserMenuService_UpdateUserMenu",
         "requestBody": {
           "content": {
@@ -19123,7 +19123,7 @@
         "tags": [
           "UsersService"
         ],
-        "summary": "Service Layer function import 'UsersService_GetCurrentUser'.",
+        "summary": "Get current user.",
         "operationId": "UsersService_GetCurrentUser",
         "responses": {
           "200": {
@@ -19632,7 +19632,7 @@
         "tags": [
           "ValueMappingService"
         ],
-        "summary": "Service Layer function import 'ValueMappingService_GetMappedB1Value'.",
+        "summary": "Get mapped B1 value.",
         "operationId": "ValueMappingService_GetMappedB1Value",
         "requestBody": {
           "content": {
@@ -19697,7 +19697,7 @@
         "tags": [
           "ValueMappingService"
         ],
-        "summary": "Service Layer function import 'ValueMappingService_GetThirdPartyValuesForB1Value'.",
+        "summary": "Get third party values for B1 value.",
         "operationId": "ValueMappingService_GetThirdPartyValuesForB1Value",
         "requestBody": {
           "content": {
@@ -19762,7 +19762,7 @@
         "tags": [
           "ValueMappingService"
         ],
-        "summary": "Service Layer function import 'ValueMappingService_RemoveMappedValue'.",
+        "summary": "Remove mapped value.",
         "operationId": "ValueMappingService_RemoveMappedValue",
         "requestBody": {
           "content": {
@@ -19807,7 +19807,7 @@
         "tags": [
           "WebClientBookmarkTileService"
         ],
-        "summary": "Service Layer function import 'WebClientBookmarkTileService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientBookmarkTileService_GetList",
         "responses": {
           "200": {
@@ -20087,7 +20087,7 @@
         "tags": [
           "WebClientDashboardService"
         ],
-        "summary": "Service Layer function import 'WebClientDashboardService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientDashboardService_GetList",
         "responses": {
           "200": {
@@ -20367,7 +20367,7 @@
         "tags": [
           "WebClientFormSettingService"
         ],
-        "summary": "Service Layer function import 'WebClientFormSettingService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientFormSettingService_GetList",
         "responses": {
           "200": {
@@ -20647,7 +20647,7 @@
         "tags": [
           "WebClientLaunchpadService"
         ],
-        "summary": "Service Layer function import 'WebClientLaunchpadService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientLaunchpadService_GetList",
         "responses": {
           "200": {
@@ -20927,7 +20927,7 @@
         "tags": [
           "WebClientListviewFilterService"
         ],
-        "summary": "Service Layer function import 'WebClientListviewFilterService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientListviewFilterService_GetList",
         "responses": {
           "200": {
@@ -21207,7 +21207,7 @@
         "tags": [
           "WebClientNotificationService"
         ],
-        "summary": "Service Layer function import 'WebClientNotificationService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientNotificationService_GetList",
         "responses": {
           "200": {
@@ -21487,7 +21487,7 @@
         "tags": [
           "WebClientPreferenceService"
         ],
-        "summary": "Service Layer function import 'WebClientPreferenceService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientPreferenceService_GetList",
         "responses": {
           "200": {
@@ -22003,7 +22003,7 @@
         "tags": [
           "WebClientRecentActivityService"
         ],
-        "summary": "Service Layer function import 'WebClientRecentActivityService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientRecentActivityService_GetList",
         "responses": {
           "200": {
@@ -22047,7 +22047,7 @@
         "tags": [
           "WebClientVariantGroupService"
         ],
-        "summary": "Service Layer function import 'WebClientVariantGroupService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientVariantGroupService_GetList",
         "responses": {
           "200": {
@@ -22327,7 +22327,7 @@
         "tags": [
           "WebClientVariantService"
         ],
-        "summary": "Service Layer function import 'WebClientVariantService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WebClientVariantService_GetList",
         "responses": {
           "200": {
@@ -22607,7 +22607,7 @@
         "tags": [
           "WorkflowTaskService"
         ],
-        "summary": "Service Layer function import 'WorkflowTaskService_Complete'.",
+        "summary": "Complete.",
         "operationId": "WorkflowTaskService_Complete",
         "requestBody": {
           "content": {
@@ -22652,7 +22652,7 @@
         "tags": [
           "WorkflowTaskService"
         ],
-        "summary": "Service Layer function import 'WorkflowTaskService_GetApprovalTaskList'.",
+        "summary": "Get approval task list.",
         "operationId": "WorkflowTaskService_GetApprovalTaskList",
         "requestBody": {
           "content": {

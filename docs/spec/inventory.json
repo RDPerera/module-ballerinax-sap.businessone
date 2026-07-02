@@ -334,7 +334,7 @@
         "tags": [
           "AlternativeItemsService"
         ],
-        "summary": "Service Layer function import 'AlternativeItemsService_AddItem'.",
+        "summary": "Add item.",
         "operationId": "AlternativeItemsService_AddItem",
         "requestBody": {
           "content": {
@@ -386,7 +386,7 @@
         "tags": [
           "AlternativeItemsService"
         ],
-        "summary": "Service Layer function import 'AlternativeItemsService_DeleteItem'.",
+        "summary": "Delete item.",
         "operationId": "AlternativeItemsService_DeleteItem",
         "requestBody": {
           "content": {
@@ -431,7 +431,7 @@
         "tags": [
           "AlternativeItemsService"
         ],
-        "summary": "Service Layer function import 'AlternativeItemsService_GetItem'.",
+        "summary": "Get item.",
         "operationId": "AlternativeItemsService_GetItem",
         "requestBody": {
           "content": {
@@ -483,7 +483,7 @@
         "tags": [
           "AlternativeItemsService"
         ],
-        "summary": "Service Layer function import 'AlternativeItemsService_UpdateItem'.",
+        "summary": "Update item.",
         "operationId": "AlternativeItemsService_UpdateItem",
         "requestBody": {
           "content": {
@@ -767,7 +767,7 @@
         "tags": [
           "AttributeGroupsService"
         ],
-        "summary": "Service Layer function import 'AttributeGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "AttributeGroupsService_GetList",
         "responses": {
           "200": {
@@ -1050,7 +1050,7 @@
         "tags": [
           "BarCodesService"
         ],
-        "summary": "Service Layer function import 'BarCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BarCodesService_GetList",
         "responses": {
           "200": {
@@ -1572,7 +1572,7 @@
         "tags": [
           "BinLocationAttributesService"
         ],
-        "summary": "Service Layer function import 'BinLocationAttributesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BinLocationAttributesService_GetList",
         "responses": {
           "200": {
@@ -1855,7 +1855,7 @@
         "tags": [
           "BinLocationFieldsService"
         ],
-        "summary": "Service Layer function import 'BinLocationFieldsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BinLocationFieldsService_GetList",
         "responses": {
           "200": {
@@ -2138,7 +2138,7 @@
         "tags": [
           "BinLocationsService"
         ],
-        "summary": "Service Layer function import 'BinLocationsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "BinLocationsService_GetList",
         "responses": {
           "200": {
@@ -2657,7 +2657,7 @@
         "tags": [
           "CycleCountDeterminationsService"
         ],
-        "summary": "Service Layer function import 'CycleCountDeterminationsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "CycleCountDeterminationsService_GetList",
         "responses": {
           "200": {
@@ -2940,7 +2940,7 @@
         "tags": [
           "EnhancedDiscountGroupsService"
         ],
-        "summary": "Service Layer function import 'EnhancedDiscountGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "EnhancedDiscountGroupsService_GetList",
         "responses": {
           "200": {
@@ -3500,7 +3500,7 @@
         "tags": [
           "InventoryCountingsService"
         ],
-        "summary": "Service Layer function import 'InventoryCountingsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "InventoryCountingsService_GetList",
         "responses": {
           "200": {
@@ -4181,7 +4181,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "InventoryGenEntryService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -4226,7 +4226,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "InventoryGenEntryService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -4271,7 +4271,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "InventoryGenEntryService_CloseByDate",
         "requestBody": {
           "content": {
@@ -4316,7 +4316,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "InventoryGenEntryService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4361,7 +4361,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "InventoryGenEntryService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4413,7 +4413,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "InventoryGenEntryService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -4437,7 +4437,7 @@
         "tags": [
           "InventoryGenEntryService"
         ],
-        "summary": "Service Layer function import 'InventoryGenEntryService_InitData'.",
+        "summary": "Init data.",
         "operationId": "InventoryGenEntryService_InitData",
         "responses": {
           "200": {
@@ -4468,7 +4468,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_ApproveAndAdd'.",
+        "summary": "Approve and add.",
         "operationId": "InventoryGenExitService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -4513,7 +4513,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_ApproveAndUpdate'.",
+        "summary": "Approve and update.",
         "operationId": "InventoryGenExitService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -4558,7 +4558,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_CloseByDate'.",
+        "summary": "Close by date.",
         "operationId": "InventoryGenExitService_CloseByDate",
         "requestBody": {
           "content": {
@@ -4603,7 +4603,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_ExportEWayBill'.",
+        "summary": "Export E way bill.",
         "operationId": "InventoryGenExitService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4648,7 +4648,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "InventoryGenExitService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4700,7 +4700,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "InventoryGenExitService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -4724,7 +4724,7 @@
         "tags": [
           "InventoryGenExitService"
         ],
-        "summary": "Service Layer function import 'InventoryGenExitService_InitData'.",
+        "summary": "Init data.",
         "operationId": "InventoryGenExitService_InitData",
         "responses": {
           "200": {
@@ -5631,7 +5631,7 @@
         "tags": [
           "InventoryOpeningBalancesService"
         ],
-        "summary": "Service Layer function import 'InventoryOpeningBalancesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "InventoryOpeningBalancesService_GetList",
         "responses": {
           "200": {
@@ -6153,7 +6153,7 @@
         "tags": [
           "InventoryPostingsService"
         ],
-        "summary": "Service Layer function import 'InventoryPostingsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "InventoryPostingsService_GetList",
         "responses": {
           "200": {
@@ -6197,7 +6197,7 @@
         "tags": [
           "InventoryPostingsService"
         ],
-        "summary": "Service Layer function import 'InventoryPostingsService_SetCopyOption'.",
+        "summary": "Set copy option.",
         "operationId": "InventoryPostingsService_SetCopyOption",
         "requestBody": {
           "content": {
@@ -6595,7 +6595,7 @@
         "tags": [
           "InventoryTransferRequestsService"
         ],
-        "summary": "Service Layer function import 'InventoryTransferRequestsService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "InventoryTransferRequestsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -6647,7 +6647,7 @@
         "tags": [
           "InventoryTransferRequestsService"
         ],
-        "summary": "Service Layer function import 'InventoryTransferRequestsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "InventoryTransferRequestsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -6910,7 +6910,7 @@
         "tags": [
           "ItemGroupsService"
         ],
-        "summary": "Service Layer function import 'ItemGroupsService_UpdateWithOITMs'.",
+        "summary": "Update with OIT ms.",
         "operationId": "ItemGroupsService_UpdateWithOITMs",
         "requestBody": {
           "content": {
@@ -7703,7 +7703,7 @@
         "tags": [
           "ItemsService"
         ],
-        "summary": "Service Layer function import 'ItemsService_InitData'.",
+        "summary": "Init data.",
         "operationId": "ItemsService_InitData",
         "responses": {
           "200": {
@@ -8527,7 +8527,7 @@
         "tags": [
           "MaterialRevaluationFIFOService"
         ],
-        "summary": "Service Layer function import 'MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO'.",
+        "summary": "Get material revaluation FIFO.",
         "operationId": "MaterialRevaluationFIFOService_GetMaterialRevaluationFIFO",
         "requestBody": {
           "content": {
@@ -8579,7 +8579,7 @@
         "tags": [
           "MaterialRevaluationSNBService"
         ],
-        "summary": "Service Layer function import 'MaterialRevaluationSNBService_Add'.",
+        "summary": "Add.",
         "operationId": "MaterialRevaluationSNBService_Add",
         "requestBody": {
           "content": {
@@ -8631,7 +8631,7 @@
         "tags": [
           "MaterialRevaluationSNBService"
         ],
-        "summary": "Service Layer function import 'MaterialRevaluationSNBService_GetList'.",
+        "summary": "Get list.",
         "operationId": "MaterialRevaluationSNBService_GetList",
         "requestBody": {
           "content": {
@@ -9219,7 +9219,7 @@
         "tags": [
           "PickListsService"
         ],
-        "summary": "Service Layer function import 'PickListsService_Close'.",
+        "summary": "Close.",
         "operationId": "PickListsService_Close",
         "requestBody": {
           "content": {
@@ -9264,7 +9264,7 @@
         "tags": [
           "PickListsService"
         ],
-        "summary": "Service Layer function import 'PickListsService_UpdateReleasedAllocation'.",
+        "summary": "Update released allocation.",
         "operationId": "PickListsService_UpdateReleasedAllocation",
         "requestBody": {
           "content": {
@@ -10564,7 +10564,7 @@
         "tags": [
           "StockTransferDraftService"
         ],
-        "summary": "Service Layer function import 'StockTransferDraftService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "StockTransferDraftService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -10616,7 +10616,7 @@
         "tags": [
           "StockTransferDraftService"
         ],
-        "summary": "Service Layer function import 'StockTransferDraftService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "StockTransferDraftService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -10993,7 +10993,7 @@
         "tags": [
           "StockTransferService"
         ],
-        "summary": "Service Layer function import 'StockTransferService_GetApprovalTemplates'.",
+        "summary": "Get approval templates.",
         "operationId": "StockTransferService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -11045,7 +11045,7 @@
         "tags": [
           "StockTransferService"
         ],
-        "summary": "Service Layer function import 'StockTransferService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "StockTransferService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -11661,7 +11661,7 @@
         "tags": [
           "TrackingNotesService"
         ],
-        "summary": "Service Layer function import 'TrackingNotesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "TrackingNotesService_GetList",
         "responses": {
           "200": {
@@ -11944,7 +11944,7 @@
         "tags": [
           "UnitOfMeasurementGroupsService"
         ],
-        "summary": "Service Layer function import 'UnitOfMeasurementGroupsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "UnitOfMeasurementGroupsService_GetList",
         "responses": {
           "200": {
@@ -12227,7 +12227,7 @@
         "tags": [
           "UnitOfMeasurementsService"
         ],
-        "summary": "Service Layer function import 'UnitOfMeasurementsService_GetList'.",
+        "summary": "Get list.",
         "operationId": "UnitOfMeasurementsService_GetList",
         "responses": {
           "200": {
@@ -12749,7 +12749,7 @@
         "tags": [
           "WarehouseSublevelCodesService"
         ],
-        "summary": "Service Layer function import 'WarehouseSublevelCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "WarehouseSublevelCodesService_GetList",
         "responses": {
           "200": {

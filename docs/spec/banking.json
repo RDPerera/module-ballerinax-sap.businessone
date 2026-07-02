@@ -271,7 +271,7 @@
         "tags": [
           "BOEDocumentTypesService"
         ],
-        "summary": "Service Layer function import 'BOEDocumentTypesService_GetBOEDocumentTypeList'.",
+        "summary": "Get BOE document type list.",
         "operationId": "BOEDocumentTypesService_GetBOEDocumentTypeList",
         "responses": {
           "200": {
@@ -554,7 +554,7 @@
         "tags": [
           "BOEInstructionsService"
         ],
-        "summary": "Service Layer function import 'BOEInstructionsService_GetBOEInstructionList'.",
+        "summary": "Get BOE instruction list.",
         "operationId": "BOEInstructionsService_GetBOEInstructionList",
         "responses": {
           "200": {
@@ -598,7 +598,7 @@
         "tags": [
           "BOELinesService"
         ],
-        "summary": "Service Layer function import 'BOELinesService_GetBOELine'.",
+        "summary": "Get BOE line.",
         "operationId": "BOELinesService_GetBOELine",
         "requestBody": {
           "content": {
@@ -889,7 +889,7 @@
         "tags": [
           "BOEPortfoliosService"
         ],
-        "summary": "Service Layer function import 'BOEPortfoliosService_GetBOEPortfolioList'.",
+        "summary": "Get BOE portfolio list.",
         "operationId": "BOEPortfoliosService_GetBOEPortfolioList",
         "responses": {
           "200": {
@@ -1206,7 +1206,7 @@
         "tags": [
           "BankChargesAllocationCodesService"
         ],
-        "summary": "Service Layer function import 'BankChargesAllocationCodesService_GetBankChargesAllocationCodeList'.",
+        "summary": "Get bank charges allocation code list.",
         "operationId": "BankChargesAllocationCodesService_GetBankChargesAllocationCodeList",
         "responses": {
           "200": {
@@ -1761,7 +1761,7 @@
         "tags": [
           "BankStatementsService"
         ],
-        "summary": "Service Layer function import 'BankStatementsService_GetBankStatementList'.",
+        "summary": "Get bank statement list.",
         "operationId": "BankStatementsService_GetBankStatementList",
         "requestBody": {
           "content": {
@@ -2540,7 +2540,7 @@
         "tags": [
           "CentralBankIndicatorService"
         ],
-        "summary": "Service Layer function import 'CentralBankIndicatorService_GetList'.",
+        "summary": "Get list.",
         "operationId": "CentralBankIndicatorService_GetList",
         "responses": {
           "200": {
@@ -2584,7 +2584,7 @@
         "tags": [
           "CheckLinesService"
         ],
-        "summary": "Service Layer function import 'CheckLinesService_GetCheckLine'.",
+        "summary": "Get check line.",
         "operationId": "CheckLinesService_GetCheckLine",
         "requestBody": {
           "content": {
@@ -2636,7 +2636,7 @@
         "tags": [
           "CheckLinesService"
         ],
-        "summary": "Service Layer function import 'CheckLinesService_GetValidCheckLineList'.",
+        "summary": "Get valid check line list.",
         "operationId": "CheckLinesService_GetValidCheckLineList",
         "responses": {
           "200": {
@@ -3394,7 +3394,7 @@
         "tags": [
           "CreditLinesService"
         ],
-        "summary": "Service Layer function import 'CreditLinesService_GetCreditLine'.",
+        "summary": "Get credit line.",
         "operationId": "CreditLinesService_GetCreditLine",
         "requestBody": {
           "content": {
@@ -3446,7 +3446,7 @@
         "tags": [
           "CreditLinesService"
         ],
-        "summary": "Service Layer function import 'CreditLinesService_GetValidCreditLineList'.",
+        "summary": "Get valid credit line list.",
         "operationId": "CreditLinesService_GetValidCreditLineList",
         "responses": {
           "200": {
@@ -4044,7 +4044,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Service Layer function import 'DepositsService_CancelCheckRow'.",
+        "summary": "Cancel check row.",
         "operationId": "DepositsService_CancelCheckRow",
         "requestBody": {
           "content": {
@@ -4089,7 +4089,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Service Layer function import 'DepositsService_CancelCheckRowbyCurrentSystemDate'.",
+        "summary": "Cancel check rowby current system date.",
         "operationId": "DepositsService_CancelCheckRowbyCurrentSystemDate",
         "requestBody": {
           "content": {
@@ -4134,7 +4134,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Service Layer function import 'DepositsService_GetDepositList'.",
+        "summary": "Get deposit list.",
         "operationId": "DepositsService_GetDepositList",
         "responses": {
           "200": {
@@ -4178,7 +4178,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'ExternalReconciliationsService_CancelReconciliation'.",
+        "summary": "Cancel reconciliation.",
         "operationId": "ExternalReconciliationsService_CancelReconciliation",
         "requestBody": {
           "content": {
@@ -4223,7 +4223,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'ExternalReconciliationsService_GetReconciliation'.",
+        "summary": "Get reconciliation.",
         "operationId": "ExternalReconciliationsService_GetReconciliation",
         "requestBody": {
           "content": {
@@ -4275,7 +4275,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'ExternalReconciliationsService_GetReconciliationList'.",
+        "summary": "Get reconciliation list.",
         "operationId": "ExternalReconciliationsService_GetReconciliationList",
         "requestBody": {
           "content": {
@@ -4340,7 +4340,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'ExternalReconciliationsService_Reconcile'.",
+        "summary": "Reconcile.",
         "operationId": "ExternalReconciliationsService_Reconcile",
         "requestBody": {
           "content": {
@@ -4860,7 +4860,7 @@
         "tags": [
           "GovPayCodesService"
         ],
-        "summary": "Service Layer function import 'GovPayCodesService_GetList'.",
+        "summary": "Get list.",
         "operationId": "GovPayCodesService_GetList",
         "responses": {
           "200": {
@@ -5579,7 +5579,7 @@
         "tags": [
           "IncomingPaymentsService"
         ],
-        "summary": "Service Layer function import 'IncomingPaymentsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "IncomingPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -5880,7 +5880,7 @@
         "tags": [
           "InternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'InternalReconciliationsService_GetOpenTransactions'.",
+        "summary": "Get open transactions.",
         "operationId": "InternalReconciliationsService_GetOpenTransactions",
         "requestBody": {
           "content": {
@@ -5932,7 +5932,7 @@
         "tags": [
           "InternalReconciliationsService"
         ],
-        "summary": "Service Layer function import 'InternalReconciliationsService_RequestApproveCancellation'.",
+        "summary": "Request approve cancellation.",
         "operationId": "InternalReconciliationsService_RequestApproveCancellation",
         "requestBody": {
           "content": {
@@ -6216,7 +6216,7 @@
         "tags": [
           "PaymentBlocksService"
         ],
-        "summary": "Service Layer function import 'PaymentBlocksService_GetPaymentBlockList'.",
+        "summary": "Get payment block list.",
         "operationId": "PaymentBlocksService_GetPaymentBlockList",
         "responses": {
           "200": {
@@ -6260,7 +6260,7 @@
         "tags": [
           "PaymentCalculationService"
         ],
-        "summary": "Service Layer function import 'PaymentCalculationService_GetPaymentAmount'.",
+        "summary": "Get payment amount.",
         "operationId": "PaymentCalculationService_GetPaymentAmount",
         "requestBody": {
           "content": {
@@ -6768,7 +6768,7 @@
         "tags": [
           "PaymentDraftsService"
         ],
-        "summary": "Service Layer function import 'PaymentDraftsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "PaymentDraftsService_HandleApprovalRequest",
         "responses": {
           "204": {
@@ -6792,7 +6792,7 @@
         "tags": [
           "PaymentReasonCodeService"
         ],
-        "summary": "Service Layer function import 'PaymentReasonCodeService_GetPaymentReasonCodeList'.",
+        "summary": "Get payment reason code list.",
         "operationId": "PaymentReasonCodeService_GetPaymentReasonCodeList",
         "responses": {
           "200": {
@@ -7311,7 +7311,7 @@
         "tags": [
           "PaymentWizardService"
         ],
-        "summary": "Service Layer function import 'PaymentWizardService_GetList'.",
+        "summary": "Get list.",
         "operationId": "PaymentWizardService_GetList",
         "responses": {
           "200": {
@@ -8030,7 +8030,7 @@
         "tags": [
           "VendorPaymentsService"
         ],
-        "summary": "Service Layer function import 'VendorPaymentsService_HandleApprovalRequest'.",
+        "summary": "Handle approval request.",
         "operationId": "VendorPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {

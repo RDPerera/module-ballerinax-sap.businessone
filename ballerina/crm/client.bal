@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_DeleteSingleInstanceFromSeries'.
+    # Delete single instance from series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -113,7 +113,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_GetActivityList'.
+    # Get activity list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -123,7 +123,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_GetListByAttendUser'.
+    # Get list by attend user.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -136,7 +136,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_GetSingleInstanceFromSeries'.
+    # Get single instance from series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -149,7 +149,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_GetTopNActivityInstances'.
+    # Get top N activity instances.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -162,7 +162,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_InitData'.
+    # Init data.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -172,7 +172,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitiesService_UpdateSingleInstanceInSeries'.
+    # Update single instance in series.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -307,7 +307,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivityRecipientListsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -378,7 +378,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitySubjectService_GetActivitySubjectList'.
+    # Get activity subject list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -388,7 +388,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ActivitySubjectService_GetListByTypeCode'.
+    # Get list by type code.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -584,7 +584,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CampaignResponseTypeService_GetResponseTypeList'.
+    # Get response type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -666,7 +666,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CampaignsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -737,7 +737,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PartnersSetupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -880,7 +880,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList'.
+    # Get sales opportunity competitor setup list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -951,7 +951,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList'.
+    # Get sales opportunity interest setup list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1022,7 +1022,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList'.
+    # Get sales opportunity reason setup list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1093,7 +1093,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList'.
+    # Get sales opportunity source setup list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1225,7 +1225,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TargetGroupsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 

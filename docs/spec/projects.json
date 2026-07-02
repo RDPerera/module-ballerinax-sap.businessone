@@ -268,7 +268,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddActivities'.",
+        "summary": "Add activities.",
         "operationId": "ProjectManagementConfigurationService_AddActivities",
         "requestBody": {
           "content": {
@@ -312,7 +312,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddAreas'.",
+        "summary": "Add areas.",
         "operationId": "ProjectManagementConfigurationService_AddAreas",
         "requestBody": {
           "content": {
@@ -356,7 +356,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddPriorities'.",
+        "summary": "Add priorities.",
         "operationId": "ProjectManagementConfigurationService_AddPriorities",
         "requestBody": {
           "content": {
@@ -400,7 +400,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddStageTypes'.",
+        "summary": "Add stage types.",
         "operationId": "ProjectManagementConfigurationService_AddStageTypes",
         "requestBody": {
           "content": {
@@ -444,7 +444,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddSubprojectTypes'.",
+        "summary": "Add subproject types.",
         "operationId": "ProjectManagementConfigurationService_AddSubprojectTypes",
         "requestBody": {
           "content": {
@@ -488,7 +488,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_AddTasks'.",
+        "summary": "Add tasks.",
         "operationId": "ProjectManagementConfigurationService_AddTasks",
         "requestBody": {
           "content": {
@@ -532,7 +532,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteActivities'.",
+        "summary": "Delete activities.",
         "operationId": "ProjectManagementConfigurationService_DeleteActivities",
         "requestBody": {
           "content": {
@@ -576,7 +576,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteAreas'.",
+        "summary": "Delete areas.",
         "operationId": "ProjectManagementConfigurationService_DeleteAreas",
         "requestBody": {
           "content": {
@@ -620,7 +620,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeletePriorities'.",
+        "summary": "Delete priorities.",
         "operationId": "ProjectManagementConfigurationService_DeletePriorities",
         "requestBody": {
           "content": {
@@ -664,7 +664,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteStageTypes'.",
+        "summary": "Delete stage types.",
         "operationId": "ProjectManagementConfigurationService_DeleteStageTypes",
         "requestBody": {
           "content": {
@@ -708,7 +708,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteSubprojectTypes'.",
+        "summary": "Delete subproject types.",
         "operationId": "ProjectManagementConfigurationService_DeleteSubprojectTypes",
         "requestBody": {
           "content": {
@@ -752,7 +752,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_DeleteTasks'.",
+        "summary": "Delete tasks.",
         "operationId": "ProjectManagementConfigurationService_DeleteTasks",
         "requestBody": {
           "content": {
@@ -796,7 +796,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetActivities'.",
+        "summary": "Get activities.",
         "operationId": "ProjectManagementConfigurationService_GetActivities",
         "responses": {
           "200": {
@@ -840,7 +840,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetAreas'.",
+        "summary": "Get areas.",
         "operationId": "ProjectManagementConfigurationService_GetAreas",
         "responses": {
           "200": {
@@ -884,7 +884,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetPriorities'.",
+        "summary": "Get priorities.",
         "operationId": "ProjectManagementConfigurationService_GetPriorities",
         "responses": {
           "200": {
@@ -928,7 +928,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetStageTypes'.",
+        "summary": "Get stage types.",
         "operationId": "ProjectManagementConfigurationService_GetStageTypes",
         "responses": {
           "200": {
@@ -972,7 +972,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetSubprojectTypes'.",
+        "summary": "Get subproject types.",
         "operationId": "ProjectManagementConfigurationService_GetSubprojectTypes",
         "responses": {
           "200": {
@@ -1016,7 +1016,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_GetTasks'.",
+        "summary": "Get tasks.",
         "operationId": "ProjectManagementConfigurationService_GetTasks",
         "responses": {
           "200": {
@@ -1060,7 +1060,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateActivities'.",
+        "summary": "Update activities.",
         "operationId": "ProjectManagementConfigurationService_UpdateActivities",
         "requestBody": {
           "content": {
@@ -1104,7 +1104,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateAreas'.",
+        "summary": "Update areas.",
         "operationId": "ProjectManagementConfigurationService_UpdateAreas",
         "requestBody": {
           "content": {
@@ -1148,7 +1148,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdatePriorities'.",
+        "summary": "Update priorities.",
         "operationId": "ProjectManagementConfigurationService_UpdatePriorities",
         "requestBody": {
           "content": {
@@ -1192,7 +1192,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateStageTypes'.",
+        "summary": "Update stage types.",
         "operationId": "ProjectManagementConfigurationService_UpdateStageTypes",
         "requestBody": {
           "content": {
@@ -1236,7 +1236,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateSubprojectTypes'.",
+        "summary": "Update subproject types.",
         "operationId": "ProjectManagementConfigurationService_UpdateSubprojectTypes",
         "requestBody": {
           "content": {
@@ -1280,7 +1280,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementConfigurationService_UpdateTasks'.",
+        "summary": "Update tasks.",
         "operationId": "ProjectManagementConfigurationService_UpdateTasks",
         "requestBody": {
           "content": {
@@ -1324,7 +1324,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementService_AddSubproject'.",
+        "summary": "Add subproject.",
         "operationId": "ProjectManagementService_AddSubproject",
         "requestBody": {
           "content": {
@@ -1376,7 +1376,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementService_DeleteSubproject'.",
+        "summary": "Delete subproject.",
         "operationId": "ProjectManagementService_DeleteSubproject",
         "requestBody": {
           "content": {
@@ -1421,7 +1421,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementService_GetSubproject'.",
+        "summary": "Get subproject.",
         "operationId": "ProjectManagementService_GetSubproject",
         "requestBody": {
           "content": {
@@ -1473,7 +1473,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementService_GetSubprojectsList'.",
+        "summary": "Get subprojects list.",
         "operationId": "ProjectManagementService_GetSubprojectsList",
         "requestBody": {
           "content": {
@@ -1538,7 +1538,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Service Layer function import 'ProjectManagementService_UpdateSubproject'.",
+        "summary": "Update subproject.",
         "operationId": "ProjectManagementService_UpdateSubproject",
         "requestBody": {
           "content": {
@@ -2335,7 +2335,7 @@
         "tags": [
           "ProjectsService"
         ],
-        "summary": "Service Layer function import 'ProjectsService_GetProjectList'.",
+        "summary": "Get project list.",
         "operationId": "ProjectsService_GetProjectList",
         "responses": {
           "200": {

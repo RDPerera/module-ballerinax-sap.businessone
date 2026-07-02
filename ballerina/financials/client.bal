@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AccountCategoryService_GetCategoryList'.
+    # Get category list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -235,7 +235,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AccountsService_CreateOpenBalance'.
+    # Create open balance.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -309,7 +309,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'AccrualTypesService_GetAccrualTypeList'.
+    # Get accrual type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -563,7 +563,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CashDiscountsService_GetCashDiscountList'.
+    # Get cash discount list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -634,7 +634,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CashFlowLineItemsService_GetCashFlowLineItemList'.
+    # Get cash flow line item list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -827,7 +827,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CostCenterTypesService_GetCostCenterTypeList'.
+    # Get cost center type list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -837,7 +837,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'CostElementService_GetCostElementList'.
+    # Get cost element list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -969,7 +969,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeductibleTaxService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1223,7 +1223,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeductionTaxSubGroupsService_GetDeductionTaxSubGroupList'.
+    # Get deduction tax sub group list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1294,7 +1294,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DeterminationCriteriasService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1365,7 +1365,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DimensionsService_GetDimensionList'.
+    # Get dimension list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1436,7 +1436,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'DistributionRulesService_GetDistributionRuleList'.
+    # Get distribution rule list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1507,7 +1507,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'FinancialYearsService_GetFinancialYearList'.
+    # Get financial year list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1639,7 +1639,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'GLAccountAdvancedRulesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1721,7 +1721,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'JournalEntriesService_Close'.
+    # Close.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1734,7 +1734,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'JournalEntryDocumentTypeService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1805,7 +1805,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'JournalVouchersService_Add'.
+    # Add.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1879,7 +1879,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'NatureOfAssesseesService_GetNatureOfAssesseeList'.
+    # Get nature of assessee list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1950,7 +1950,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'PostingTemplatesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2021,7 +2021,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'ProfitCentersService_GetProfitCenterList'.
+    # Get profit center list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2095,7 +2095,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringPostingsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2105,7 +2105,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringTransactionService_DeleteRecurringTransactions'.
+    # Delete recurring transactions.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2118,7 +2118,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringTransactionService_ExecuteRecurringTransactions'.
+    # Execute recurring transactions.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2131,7 +2131,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringTransactionService_GetAvailableRecurringTransactions'.
+    # Get available recurring transactions.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2141,7 +2141,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringTransactionService_GetRecurringTransaction'.
+    # Get recurring transaction.
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2215,7 +2215,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'RecurringTransactionTemplatesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2478,7 +2478,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'SpecificWTHAmountsService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2549,7 +2549,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TaxCodeDeterminationsService_GetTaxCodeDeterminationList'.
+    # Get tax code determination list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2620,7 +2620,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TaxCodeDeterminationsTCDService_GetTaxCodeDeterminationTCDList'.
+    # Get tax code determination TCD list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2630,7 +2630,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TaxExemptReasonService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2906,7 +2906,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TaxWebSitesService_GetDefaultWebSite'.
+    # Get default web site.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2916,7 +2916,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TaxWebSitesService_GetTaxWebSiteList'.
+    # Get tax web site list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2987,7 +2987,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'TransactionCodesService_GetList'.
+    # Get list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -3058,7 +3058,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Service Layer function import 'WTaxTypeCodeService_GetWTaxTypeCodeList'.
+    # Get W tax type code list.
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
