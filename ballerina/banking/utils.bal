@@ -22,7 +22,7 @@ import ballerina/url;
 
 type SimpleBasicType string|boolean|int|float|decimal;
 
-# Represents encoding mechanism details.
+# Represents encoding mechanism details
 type Encoding record {
     # Defines how multiple values are delimited
     string style = FORM;
@@ -40,7 +40,7 @@ enum EncodingStyle {
 
 final Encoding & readonly defaultEncoding = {};
 
-# Serialize the record according to the deepObject style.
+# Serialize the record according to the deepObject style
 #
 # + parent - Parent record name
 # + anyRecord - Record to be serialized
@@ -65,7 +65,7 @@ isolated function getDeepObjectStyleRequest(string parent, record {} anyRecord) 
     return string:'join("", ...recordArray);
 }
 
-# Serialize the record according to the form style.
+# Serialize the record according to the form style
 #
 # + parent - Parent record name
 # + anyRecord - Record to be serialized
@@ -101,7 +101,7 @@ isolated function getFormStyleRequest(string parent, record {} anyRecord, boolea
     return string:'join("", ...recordArray);
 }
 
-# Serialize arrays.
+# Serialize arrays
 #
 # + arrayName - Name of the field with arrays
 # + anyArray - Array to be serialized
@@ -141,7 +141,7 @@ isolated function getSerializedArray(string arrayName, anydata[] anyArray, strin
     return string:'join("", ...arrayValues);
 }
 
-# Serialize the array of records according to the form style.
+# Serialize the array of records according to the form style
 #
 # + parent - Parent record name
 # + value - Array of records to be serialized
@@ -168,7 +168,7 @@ isolated function getSerializedRecordArray(string parent, record {}[] value, str
     return string:'join("", ...serializedArray);
 }
 
-# Get Encoded URI for a given value.
+# Get Encoded URI for a given value
 #
 # + value - Value to be encoded
 # + return - Encoded string
@@ -181,7 +181,7 @@ isolated function getEncodedUri(anydata value) returns string {
     }
 }
 
-# Generate query path with query parameter.
+# Generate query path with query parameter
 #
 # + queryParam - Query parameter map
 # + encodingMap - Details on serialization mechanism

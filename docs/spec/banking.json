@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Banking & Payments",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "BOEDocumentTypes"
         ],
-        "summary": "Query the BOEDocumentTypes collection.",
+        "summary": "Query the BOEDocumentTypes collection",
         "operationId": "List_BOEDocumentTypes",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "BOEDocumentTypes"
         ],
-        "summary": "Create a new BOEDocumentType.",
+        "summary": "Create a new BOEDocumentType",
         "operationId": "Create_BOEDocumentTypes",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "BOEDocumentTypes"
         ],
-        "summary": "Get a single BOEDocumentType by key.",
+        "summary": "Get a single BOEDocumentType by key",
         "operationId": "Get_BOEDocumentTypes",
         "parameters": [
           {
@@ -162,7 +162,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +172,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -187,7 +187,7 @@
         "tags": [
           "BOEDocumentTypes"
         ],
-        "summary": "Delete a BOEDocumentType.",
+        "summary": "Delete a BOEDocumentType",
         "operationId": "Delete_BOEDocumentTypes",
         "parameters": [
           {
@@ -208,7 +208,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -223,7 +223,7 @@
         "tags": [
           "BOEDocumentTypes"
         ],
-        "summary": "Partially update a BOEDocumentType (PATCH/MERGE semantics).",
+        "summary": "Partially update a BOEDocumentType (PATCH/MERGE semantics)",
         "operationId": "Update_BOEDocumentTypes",
         "parameters": [
           {
@@ -254,7 +254,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -271,7 +271,7 @@
         "tags": [
           "BOEDocumentTypesService"
         ],
-        "summary": "Get BOE document type list.",
+        "summary": "Get BOE document type list",
         "operationId": "BOEDocumentTypesService_GetBOEDocumentTypeList",
         "responses": {
           "200": {
@@ -292,13 +292,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `BOEDocumentTypesService_GetBOEDocumentTypeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `BOEDocumentTypesService_GetBOEDocumentTypeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -315,7 +315,7 @@
         "tags": [
           "BOEInstructions"
         ],
-        "summary": "Query the BOEInstructions collection.",
+        "summary": "Query the BOEInstructions collection",
         "operationId": "List_BOEInstructions",
         "parameters": [
           {
@@ -355,7 +355,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -370,7 +370,7 @@
         "tags": [
           "BOEInstructions"
         ],
-        "summary": "Create a new BOEInstruction.",
+        "summary": "Create a new BOEInstruction",
         "operationId": "Create_BOEInstructions",
         "requestBody": {
           "content": {
@@ -394,7 +394,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -411,7 +411,7 @@
         "tags": [
           "BOEInstructions"
         ],
-        "summary": "Get a single BOEInstruction by key.",
+        "summary": "Get a single BOEInstruction by key",
         "operationId": "Get_BOEInstructions",
         "parameters": [
           {
@@ -445,7 +445,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -455,7 +455,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -470,7 +470,7 @@
         "tags": [
           "BOEInstructions"
         ],
-        "summary": "Delete a BOEInstruction.",
+        "summary": "Delete a BOEInstruction",
         "operationId": "Delete_BOEInstructions",
         "parameters": [
           {
@@ -491,7 +491,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -506,7 +506,7 @@
         "tags": [
           "BOEInstructions"
         ],
-        "summary": "Partially update a BOEInstruction (PATCH/MERGE semantics).",
+        "summary": "Partially update a BOEInstruction (PATCH/MERGE semantics)",
         "operationId": "Update_BOEInstructions",
         "parameters": [
           {
@@ -537,7 +537,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -554,7 +554,7 @@
         "tags": [
           "BOEInstructionsService"
         ],
-        "summary": "Get BOE instruction list.",
+        "summary": "Get BOE instruction list",
         "operationId": "BOEInstructionsService_GetBOEInstructionList",
         "responses": {
           "200": {
@@ -575,13 +575,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `BOEInstructionsService_GetBOEInstructionList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `BOEInstructionsService_GetBOEInstructionList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -598,7 +598,7 @@
         "tags": [
           "BOELinesService"
         ],
-        "summary": "Get BOE line.",
+        "summary": "Get BOE line",
         "operationId": "BOELinesService_GetBOELine",
         "requestBody": {
           "content": {
@@ -615,7 +615,7 @@
                     "x-ballerina-name": "bOELineParams"
                   }
                 },
-                "description": "Represents the request payload for the `BOELinesService_GetBOELine` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `BOELinesService_GetBOELine` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -633,7 +633,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -650,7 +650,7 @@
         "tags": [
           "BOEPortfolios"
         ],
-        "summary": "Query the BOEPortfolios collection.",
+        "summary": "Query the BOEPortfolios collection",
         "operationId": "List_BOEPortfolios",
         "parameters": [
           {
@@ -690,7 +690,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -705,7 +705,7 @@
         "tags": [
           "BOEPortfolios"
         ],
-        "summary": "Create a new BOEPortfolio.",
+        "summary": "Create a new BOEPortfolio",
         "operationId": "Create_BOEPortfolios",
         "requestBody": {
           "content": {
@@ -729,7 +729,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -746,7 +746,7 @@
         "tags": [
           "BOEPortfolios"
         ],
-        "summary": "Get a single BOEPortfolio by key.",
+        "summary": "Get a single BOEPortfolio by key",
         "operationId": "Get_BOEPortfolios",
         "parameters": [
           {
@@ -780,7 +780,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -790,7 +790,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -805,7 +805,7 @@
         "tags": [
           "BOEPortfolios"
         ],
-        "summary": "Delete a BOEPortfolio.",
+        "summary": "Delete a BOEPortfolio",
         "operationId": "Delete_BOEPortfolios",
         "parameters": [
           {
@@ -826,7 +826,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -841,7 +841,7 @@
         "tags": [
           "BOEPortfolios"
         ],
-        "summary": "Partially update a BOEPortfolio (PATCH/MERGE semantics).",
+        "summary": "Partially update a BOEPortfolio (PATCH/MERGE semantics)",
         "operationId": "Update_BOEPortfolios",
         "parameters": [
           {
@@ -872,7 +872,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -889,7 +889,7 @@
         "tags": [
           "BOEPortfoliosService"
         ],
-        "summary": "Get BOE portfolio list.",
+        "summary": "Get BOE portfolio list",
         "operationId": "BOEPortfoliosService_GetBOEPortfolioList",
         "responses": {
           "200": {
@@ -910,13 +910,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `BOEPortfoliosService_GetBOEPortfolioList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `BOEPortfoliosService_GetBOEPortfolioList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -933,7 +933,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Query the BankChargesAllocationCodes collection.",
+        "summary": "Query the BankChargesAllocationCodes collection",
         "operationId": "List_BankChargesAllocationCodes",
         "parameters": [
           {
@@ -973,7 +973,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -988,7 +988,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Create a new BankChargesAllocationCode.",
+        "summary": "Create a new BankChargesAllocationCode",
         "operationId": "Create_BankChargesAllocationCodes",
         "requestBody": {
           "content": {
@@ -1012,7 +1012,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1029,7 +1029,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Get a single BankChargesAllocationCode by key.",
+        "summary": "Get a single BankChargesAllocationCode by key",
         "operationId": "Get_BankChargesAllocationCodes",
         "parameters": [
           {
@@ -1062,7 +1062,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1072,7 +1072,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1087,7 +1087,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Delete a BankChargesAllocationCode.",
+        "summary": "Delete a BankChargesAllocationCode",
         "operationId": "Delete_BankChargesAllocationCodes",
         "parameters": [
           {
@@ -1107,7 +1107,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1122,7 +1122,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Partially update a BankChargesAllocationCode (PATCH/MERGE semantics).",
+        "summary": "Partially update a BankChargesAllocationCode (PATCH/MERGE semantics)",
         "operationId": "Update_BankChargesAllocationCodes",
         "parameters": [
           {
@@ -1152,7 +1152,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1169,7 +1169,7 @@
         "tags": [
           "BankChargesAllocationCodes"
         ],
-        "summary": "Bound action 'SetDefaultBankChargesAllocationCode' on BankChargesAllocationCodes (binding type BankChargesAllocationCode).",
+        "summary": "Bound action 'SetDefaultBankChargesAllocationCode' on BankChargesAllocationCodes (binding type BankChargesAllocationCode)",
         "operationId": "BankChargesAllocationCodes_SetDefaultBankChargesAllocationCode",
         "parameters": [
           {
@@ -1189,7 +1189,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1206,7 +1206,7 @@
         "tags": [
           "BankChargesAllocationCodesService"
         ],
-        "summary": "Get bank charges allocation code list.",
+        "summary": "Get bank charges allocation code list",
         "operationId": "BankChargesAllocationCodesService_GetBankChargesAllocationCodeList",
         "responses": {
           "200": {
@@ -1227,13 +1227,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `BankChargesAllocationCodesService_GetBankChargesAllocationCodeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `BankChargesAllocationCodesService_GetBankChargesAllocationCodeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1250,7 +1250,7 @@
         "tags": [
           "BankPages"
         ],
-        "summary": "Query the BankPages collection.",
+        "summary": "Query the BankPages collection",
         "operationId": "List_BankPages",
         "parameters": [
           {
@@ -1290,7 +1290,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1305,7 +1305,7 @@
         "tags": [
           "BankPages"
         ],
-        "summary": "Create a new BankPage.",
+        "summary": "Create a new BankPage",
         "operationId": "Create_BankPages",
         "requestBody": {
           "content": {
@@ -1329,7 +1329,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1346,7 +1346,7 @@
         "tags": [
           "BankPages"
         ],
-        "summary": "Get a single BankPage by key.",
+        "summary": "Get a single BankPage by key",
         "operationId": "Get_BankPages",
         "parameters": [
           {
@@ -1391,7 +1391,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1401,7 +1401,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1416,7 +1416,7 @@
         "tags": [
           "BankPages"
         ],
-        "summary": "Delete a BankPage.",
+        "summary": "Delete a BankPage",
         "operationId": "Delete_BankPages",
         "parameters": [
           {
@@ -1448,7 +1448,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1463,7 +1463,7 @@
         "tags": [
           "BankPages"
         ],
-        "summary": "Partially update a BankPage (PATCH/MERGE semantics).",
+        "summary": "Partially update a BankPage (PATCH/MERGE semantics)",
         "operationId": "Update_BankPages",
         "parameters": [
           {
@@ -1505,7 +1505,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1522,7 +1522,7 @@
         "tags": [
           "BankStatements"
         ],
-        "summary": "Query the BankStatements collection.",
+        "summary": "Query the BankStatements collection",
         "operationId": "List_BankStatements",
         "parameters": [
           {
@@ -1562,7 +1562,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1577,7 +1577,7 @@
         "tags": [
           "BankStatements"
         ],
-        "summary": "Create a new BankStatement.",
+        "summary": "Create a new BankStatement",
         "operationId": "Create_BankStatements",
         "requestBody": {
           "content": {
@@ -1601,7 +1601,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1618,7 +1618,7 @@
         "tags": [
           "BankStatements"
         ],
-        "summary": "Get a single BankStatement by key.",
+        "summary": "Get a single BankStatement by key",
         "operationId": "Get_BankStatements",
         "parameters": [
           {
@@ -1652,7 +1652,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1662,7 +1662,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1677,7 +1677,7 @@
         "tags": [
           "BankStatements"
         ],
-        "summary": "Delete a BankStatement.",
+        "summary": "Delete a BankStatement",
         "operationId": "Delete_BankStatements",
         "parameters": [
           {
@@ -1698,7 +1698,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1713,7 +1713,7 @@
         "tags": [
           "BankStatements"
         ],
-        "summary": "Partially update a BankStatement (PATCH/MERGE semantics).",
+        "summary": "Partially update a BankStatement (PATCH/MERGE semantics)",
         "operationId": "Update_BankStatements",
         "parameters": [
           {
@@ -1744,7 +1744,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1761,7 +1761,7 @@
         "tags": [
           "BankStatementsService"
         ],
-        "summary": "Get bank statement list.",
+        "summary": "Get bank statement list",
         "operationId": "BankStatementsService_GetBankStatementList",
         "requestBody": {
           "content": {
@@ -1778,7 +1778,7 @@
                     "x-ballerina-name": "bankStatementsFilter"
                   }
                 },
-                "description": "Represents the request payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1803,13 +1803,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `BankStatementsService_GetBankStatementList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1826,7 +1826,7 @@
         "tags": [
           "Banks"
         ],
-        "summary": "Query the Banks collection.",
+        "summary": "Query the Banks collection",
         "operationId": "List_Banks",
         "parameters": [
           {
@@ -1866,7 +1866,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1881,7 +1881,7 @@
         "tags": [
           "Banks"
         ],
-        "summary": "Create a new Bank.",
+        "summary": "Create a new Bank",
         "operationId": "Create_Banks",
         "requestBody": {
           "content": {
@@ -1905,7 +1905,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1922,7 +1922,7 @@
         "tags": [
           "Banks"
         ],
-        "summary": "Get a single Bank by key.",
+        "summary": "Get a single Bank by key",
         "operationId": "Get_Banks",
         "parameters": [
           {
@@ -1956,7 +1956,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1966,7 +1966,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1981,7 +1981,7 @@
         "tags": [
           "Banks"
         ],
-        "summary": "Delete a Bank.",
+        "summary": "Delete a Bank",
         "operationId": "Delete_Banks",
         "parameters": [
           {
@@ -2002,7 +2002,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2017,7 +2017,7 @@
         "tags": [
           "Banks"
         ],
-        "summary": "Partially update a Bank (PATCH/MERGE semantics).",
+        "summary": "Partially update a Bank (PATCH/MERGE semantics)",
         "operationId": "Update_Banks",
         "parameters": [
           {
@@ -2048,7 +2048,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2065,7 +2065,7 @@
         "tags": [
           "BillOfExchangeTransactions"
         ],
-        "summary": "Query the BillOfExchangeTransactions collection.",
+        "summary": "Query the BillOfExchangeTransactions collection",
         "operationId": "List_BillOfExchangeTransactions",
         "parameters": [
           {
@@ -2105,7 +2105,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2120,7 +2120,7 @@
         "tags": [
           "BillOfExchangeTransactions"
         ],
-        "summary": "Create a new BillOfExchangeTransaction.",
+        "summary": "Create a new BillOfExchangeTransaction",
         "operationId": "Create_BillOfExchangeTransactions",
         "requestBody": {
           "content": {
@@ -2144,7 +2144,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2161,7 +2161,7 @@
         "tags": [
           "BillOfExchangeTransactions"
         ],
-        "summary": "Get a single BillOfExchangeTransaction by key.",
+        "summary": "Get a single BillOfExchangeTransaction by key",
         "operationId": "Get_BillOfExchangeTransactions",
         "parameters": [
           {
@@ -2195,7 +2195,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2205,7 +2205,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2220,7 +2220,7 @@
         "tags": [
           "BillOfExchangeTransactions"
         ],
-        "summary": "Delete a BillOfExchangeTransaction.",
+        "summary": "Delete a BillOfExchangeTransaction",
         "operationId": "Delete_BillOfExchangeTransactions",
         "parameters": [
           {
@@ -2241,7 +2241,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2256,7 +2256,7 @@
         "tags": [
           "BillOfExchangeTransactions"
         ],
-        "summary": "Partially update a BillOfExchangeTransaction (PATCH/MERGE semantics).",
+        "summary": "Partially update a BillOfExchangeTransaction (PATCH/MERGE semantics)",
         "operationId": "Update_BillOfExchangeTransactions",
         "parameters": [
           {
@@ -2287,7 +2287,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2304,7 +2304,7 @@
         "tags": [
           "CentralBankIndicator"
         ],
-        "summary": "Query the CentralBankIndicator collection.",
+        "summary": "Query the CentralBankIndicator collection",
         "operationId": "List_CentralBankIndicator",
         "parameters": [
           {
@@ -2344,7 +2344,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2359,7 +2359,7 @@
         "tags": [
           "CentralBankIndicator"
         ],
-        "summary": "Create a new CentralBankIndicator.",
+        "summary": "Create a new CentralBankIndicator",
         "operationId": "Create_CentralBankIndicator",
         "requestBody": {
           "content": {
@@ -2383,7 +2383,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2400,7 +2400,7 @@
         "tags": [
           "CentralBankIndicator"
         ],
-        "summary": "Get a single CentralBankIndicator by key.",
+        "summary": "Get a single CentralBankIndicator by key",
         "operationId": "Get_CentralBankIndicator",
         "parameters": [
           {
@@ -2433,7 +2433,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2443,7 +2443,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2458,7 +2458,7 @@
         "tags": [
           "CentralBankIndicator"
         ],
-        "summary": "Delete a CentralBankIndicator.",
+        "summary": "Delete a CentralBankIndicator",
         "operationId": "Delete_CentralBankIndicator",
         "parameters": [
           {
@@ -2478,7 +2478,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2493,7 +2493,7 @@
         "tags": [
           "CentralBankIndicator"
         ],
-        "summary": "Partially update a CentralBankIndicator (PATCH/MERGE semantics).",
+        "summary": "Partially update a CentralBankIndicator (PATCH/MERGE semantics)",
         "operationId": "Update_CentralBankIndicator",
         "parameters": [
           {
@@ -2523,7 +2523,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2540,7 +2540,7 @@
         "tags": [
           "CentralBankIndicatorService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "CentralBankIndicatorService_GetList",
         "responses": {
           "200": {
@@ -2561,13 +2561,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `CentralBankIndicatorService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `CentralBankIndicatorService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2584,7 +2584,7 @@
         "tags": [
           "CheckLinesService"
         ],
-        "summary": "Get check line.",
+        "summary": "Get check line",
         "operationId": "CheckLinesService_GetCheckLine",
         "requestBody": {
           "content": {
@@ -2601,7 +2601,7 @@
                     "x-ballerina-name": "checkLineParams"
                   }
                 },
-                "description": "Represents the request payload for the `CheckLinesService_GetCheckLine` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CheckLinesService_GetCheckLine` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -2619,7 +2619,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2636,7 +2636,7 @@
         "tags": [
           "CheckLinesService"
         ],
-        "summary": "Get valid check line list.",
+        "summary": "Get valid check line list",
         "operationId": "CheckLinesService_GetValidCheckLineList",
         "responses": {
           "200": {
@@ -2657,13 +2657,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `CheckLinesService_GetValidCheckLineList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `CheckLinesService_GetValidCheckLineList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2680,7 +2680,7 @@
         "tags": [
           "ChecksforPayment"
         ],
-        "summary": "Query the ChecksforPayment collection.",
+        "summary": "Query the ChecksforPayment collection",
         "operationId": "List_ChecksforPayment",
         "parameters": [
           {
@@ -2720,7 +2720,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2735,7 +2735,7 @@
         "tags": [
           "ChecksforPayment"
         ],
-        "summary": "Create a new ChecksforPayment.",
+        "summary": "Create a new ChecksforPayment",
         "operationId": "Create_ChecksforPayment",
         "requestBody": {
           "content": {
@@ -2759,7 +2759,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2776,7 +2776,7 @@
         "tags": [
           "ChecksforPayment"
         ],
-        "summary": "Get a single ChecksforPayment by key.",
+        "summary": "Get a single ChecksforPayment by key",
         "operationId": "Get_ChecksforPayment",
         "parameters": [
           {
@@ -2810,7 +2810,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2820,7 +2820,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2835,7 +2835,7 @@
         "tags": [
           "ChecksforPayment"
         ],
-        "summary": "Delete a ChecksforPayment.",
+        "summary": "Delete a ChecksforPayment",
         "operationId": "Delete_ChecksforPayment",
         "parameters": [
           {
@@ -2856,7 +2856,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2871,7 +2871,7 @@
         "tags": [
           "ChecksforPayment"
         ],
-        "summary": "Partially update a ChecksforPayment (PATCH/MERGE semantics).",
+        "summary": "Partially update a ChecksforPayment (PATCH/MERGE semantics)",
         "operationId": "Update_ChecksforPayment",
         "parameters": [
           {
@@ -2902,7 +2902,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2919,7 +2919,7 @@
         "tags": [
           "CreditCardPayments"
         ],
-        "summary": "Query the CreditCardPayments collection.",
+        "summary": "Query the CreditCardPayments collection",
         "operationId": "List_CreditCardPayments",
         "parameters": [
           {
@@ -2959,7 +2959,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2974,7 +2974,7 @@
         "tags": [
           "CreditCardPayments"
         ],
-        "summary": "Create a new CreditCardPayment.",
+        "summary": "Create a new CreditCardPayment",
         "operationId": "Create_CreditCardPayments",
         "requestBody": {
           "content": {
@@ -2998,7 +2998,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3015,7 +3015,7 @@
         "tags": [
           "CreditCardPayments"
         ],
-        "summary": "Get a single CreditCardPayment by key.",
+        "summary": "Get a single CreditCardPayment by key",
         "operationId": "Get_CreditCardPayments",
         "parameters": [
           {
@@ -3048,7 +3048,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3058,7 +3058,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3073,7 +3073,7 @@
         "tags": [
           "CreditCardPayments"
         ],
-        "summary": "Delete a CreditCardPayment.",
+        "summary": "Delete a CreditCardPayment",
         "operationId": "Delete_CreditCardPayments",
         "parameters": [
           {
@@ -3093,7 +3093,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3108,7 +3108,7 @@
         "tags": [
           "CreditCardPayments"
         ],
-        "summary": "Partially update a CreditCardPayment (PATCH/MERGE semantics).",
+        "summary": "Partially update a CreditCardPayment (PATCH/MERGE semantics)",
         "operationId": "Update_CreditCardPayments",
         "parameters": [
           {
@@ -3138,7 +3138,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3155,7 +3155,7 @@
         "tags": [
           "CreditCards"
         ],
-        "summary": "Query the CreditCards collection.",
+        "summary": "Query the CreditCards collection",
         "operationId": "List_CreditCards",
         "parameters": [
           {
@@ -3195,7 +3195,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3210,7 +3210,7 @@
         "tags": [
           "CreditCards"
         ],
-        "summary": "Create a new CreditCard.",
+        "summary": "Create a new CreditCard",
         "operationId": "Create_CreditCards",
         "requestBody": {
           "content": {
@@ -3234,7 +3234,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3251,7 +3251,7 @@
         "tags": [
           "CreditCards"
         ],
-        "summary": "Get a single CreditCard by key.",
+        "summary": "Get a single CreditCard by key",
         "operationId": "Get_CreditCards",
         "parameters": [
           {
@@ -3285,7 +3285,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3295,7 +3295,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3310,7 +3310,7 @@
         "tags": [
           "CreditCards"
         ],
-        "summary": "Delete a CreditCard.",
+        "summary": "Delete a CreditCard",
         "operationId": "Delete_CreditCards",
         "parameters": [
           {
@@ -3331,7 +3331,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3346,7 +3346,7 @@
         "tags": [
           "CreditCards"
         ],
-        "summary": "Partially update a CreditCard (PATCH/MERGE semantics).",
+        "summary": "Partially update a CreditCard (PATCH/MERGE semantics)",
         "operationId": "Update_CreditCards",
         "parameters": [
           {
@@ -3377,7 +3377,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3394,7 +3394,7 @@
         "tags": [
           "CreditLinesService"
         ],
-        "summary": "Get credit line.",
+        "summary": "Get credit line",
         "operationId": "CreditLinesService_GetCreditLine",
         "requestBody": {
           "content": {
@@ -3411,7 +3411,7 @@
                     "x-ballerina-name": "creditLineParams"
                   }
                 },
-                "description": "Represents the request payload for the `CreditLinesService_GetCreditLine` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CreditLinesService_GetCreditLine` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3429,7 +3429,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3446,7 +3446,7 @@
         "tags": [
           "CreditLinesService"
         ],
-        "summary": "Get valid credit line list.",
+        "summary": "Get valid credit line list",
         "operationId": "CreditLinesService_GetValidCreditLineList",
         "responses": {
           "200": {
@@ -3467,13 +3467,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `CreditLinesService_GetValidCreditLineList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `CreditLinesService_GetValidCreditLineList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3490,7 +3490,7 @@
         "tags": [
           "CreditPaymentMethods"
         ],
-        "summary": "Query the CreditPaymentMethods collection.",
+        "summary": "Query the CreditPaymentMethods collection",
         "operationId": "List_CreditPaymentMethods",
         "parameters": [
           {
@@ -3530,7 +3530,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3545,7 +3545,7 @@
         "tags": [
           "CreditPaymentMethods"
         ],
-        "summary": "Create a new CreditPaymentMethod.",
+        "summary": "Create a new CreditPaymentMethod",
         "operationId": "Create_CreditPaymentMethods",
         "requestBody": {
           "content": {
@@ -3569,7 +3569,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3586,7 +3586,7 @@
         "tags": [
           "CreditPaymentMethods"
         ],
-        "summary": "Get a single CreditPaymentMethod by key.",
+        "summary": "Get a single CreditPaymentMethod by key",
         "operationId": "Get_CreditPaymentMethods",
         "parameters": [
           {
@@ -3620,7 +3620,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3630,7 +3630,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3645,7 +3645,7 @@
         "tags": [
           "CreditPaymentMethods"
         ],
-        "summary": "Delete a CreditPaymentMethod.",
+        "summary": "Delete a CreditPaymentMethod",
         "operationId": "Delete_CreditPaymentMethods",
         "parameters": [
           {
@@ -3666,7 +3666,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3681,7 +3681,7 @@
         "tags": [
           "CreditPaymentMethods"
         ],
-        "summary": "Partially update a CreditPaymentMethod (PATCH/MERGE semantics).",
+        "summary": "Partially update a CreditPaymentMethod (PATCH/MERGE semantics)",
         "operationId": "Update_CreditPaymentMethods",
         "parameters": [
           {
@@ -3712,7 +3712,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3729,7 +3729,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Query the Deposits collection.",
+        "summary": "Query the Deposits collection",
         "operationId": "List_Deposits",
         "parameters": [
           {
@@ -3769,7 +3769,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3784,7 +3784,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Create a new Deposit.",
+        "summary": "Create a new Deposit",
         "operationId": "Create_Deposits",
         "requestBody": {
           "content": {
@@ -3808,7 +3808,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3825,7 +3825,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Get a single Deposit by key.",
+        "summary": "Get a single Deposit by key",
         "operationId": "Get_Deposits",
         "parameters": [
           {
@@ -3859,7 +3859,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3869,7 +3869,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3884,7 +3884,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Delete a Deposit.",
+        "summary": "Delete a Deposit",
         "operationId": "Delete_Deposits",
         "parameters": [
           {
@@ -3905,7 +3905,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3920,7 +3920,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Partially update a Deposit (PATCH/MERGE semantics).",
+        "summary": "Partially update a Deposit (PATCH/MERGE semantics)",
         "operationId": "Update_Deposits",
         "parameters": [
           {
@@ -3951,7 +3951,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3968,7 +3968,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Bound action 'CancelDeposit' on Deposits (binding type Deposit).",
+        "summary": "Bound action 'CancelDeposit' on Deposits (binding type Deposit)",
         "operationId": "Deposits_CancelDeposit",
         "parameters": [
           {
@@ -3989,7 +3989,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4006,7 +4006,7 @@
         "tags": [
           "Deposits"
         ],
-        "summary": "Bound action 'CancelDepositbyCurrentSystemDate' on Deposits (binding type Deposit).",
+        "summary": "Bound action 'CancelDepositbyCurrentSystemDate' on Deposits (binding type Deposit)",
         "operationId": "Deposits_CancelDepositbyCurrentSystemDate",
         "parameters": [
           {
@@ -4027,7 +4027,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4044,7 +4044,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Cancel check row.",
+        "summary": "Cancel check row",
         "operationId": "DepositsService_CancelCheckRow",
         "requestBody": {
           "content": {
@@ -4061,7 +4061,7 @@
                     "x-ballerina-name": "cancelCheckRowParams"
                   }
                 },
-                "description": "Represents the request payload for the `DepositsService_CancelCheckRow` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `DepositsService_CancelCheckRow` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4072,7 +4072,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4089,7 +4089,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Cancel check rowby current system date.",
+        "summary": "Cancel check rowby current system date",
         "operationId": "DepositsService_CancelCheckRowbyCurrentSystemDate",
         "requestBody": {
           "content": {
@@ -4106,7 +4106,7 @@
                     "x-ballerina-name": "cancelCheckRowParams"
                   }
                 },
-                "description": "Represents the request payload for the `DepositsService_CancelCheckRowbyCurrentSystemDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `DepositsService_CancelCheckRowbyCurrentSystemDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4117,7 +4117,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4134,7 +4134,7 @@
         "tags": [
           "DepositsService"
         ],
-        "summary": "Get deposit list.",
+        "summary": "Get deposit list",
         "operationId": "DepositsService_GetDepositList",
         "responses": {
           "200": {
@@ -4155,13 +4155,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `DepositsService_GetDepositList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `DepositsService_GetDepositList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4178,7 +4178,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Cancel reconciliation.",
+        "summary": "Cancel reconciliation",
         "operationId": "ExternalReconciliationsService_CancelReconciliation",
         "requestBody": {
           "content": {
@@ -4195,7 +4195,7 @@
                     "x-ballerina-name": "externalReconciliationParams"
                   }
                 },
-                "description": "Represents the request payload for the `ExternalReconciliationsService_CancelReconciliation` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ExternalReconciliationsService_CancelReconciliation` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4206,7 +4206,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4223,7 +4223,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Get reconciliation.",
+        "summary": "Get reconciliation",
         "operationId": "ExternalReconciliationsService_GetReconciliation",
         "requestBody": {
           "content": {
@@ -4240,7 +4240,7 @@
                     "x-ballerina-name": "externalReconciliationParams"
                   }
                 },
-                "description": "Represents the request payload for the `ExternalReconciliationsService_GetReconciliation` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ExternalReconciliationsService_GetReconciliation` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4258,7 +4258,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4275,7 +4275,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Get reconciliation list.",
+        "summary": "Get reconciliation list",
         "operationId": "ExternalReconciliationsService_GetReconciliationList",
         "requestBody": {
           "content": {
@@ -4292,7 +4292,7 @@
                     "x-ballerina-name": "externalReconciliationFilterParams"
                   }
                 },
-                "description": "Represents the request payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4317,13 +4317,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ExternalReconciliationsService_GetReconciliationList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4340,7 +4340,7 @@
         "tags": [
           "ExternalReconciliationsService"
         ],
-        "summary": "Reconcile.",
+        "summary": "Reconcile",
         "operationId": "ExternalReconciliationsService_Reconcile",
         "requestBody": {
           "content": {
@@ -4357,7 +4357,7 @@
                     "x-ballerina-name": "externalReconciliation"
                   }
                 },
-                "description": "Represents the request payload for the `ExternalReconciliationsService_Reconcile` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ExternalReconciliationsService_Reconcile` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4368,7 +4368,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4385,7 +4385,7 @@
         "tags": [
           "FactoringIndicators"
         ],
-        "summary": "Query the FactoringIndicators collection.",
+        "summary": "Query the FactoringIndicators collection",
         "operationId": "List_FactoringIndicators",
         "parameters": [
           {
@@ -4425,7 +4425,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4440,7 +4440,7 @@
         "tags": [
           "FactoringIndicators"
         ],
-        "summary": "Create a new FactoringIndicator.",
+        "summary": "Create a new FactoringIndicator",
         "operationId": "Create_FactoringIndicators",
         "requestBody": {
           "content": {
@@ -4464,7 +4464,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4481,7 +4481,7 @@
         "tags": [
           "FactoringIndicators"
         ],
-        "summary": "Get a single FactoringIndicator by key.",
+        "summary": "Get a single FactoringIndicator by key",
         "operationId": "Get_FactoringIndicators",
         "parameters": [
           {
@@ -4514,7 +4514,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4524,7 +4524,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4539,7 +4539,7 @@
         "tags": [
           "FactoringIndicators"
         ],
-        "summary": "Delete a FactoringIndicator.",
+        "summary": "Delete a FactoringIndicator",
         "operationId": "Delete_FactoringIndicators",
         "parameters": [
           {
@@ -4559,7 +4559,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4574,7 +4574,7 @@
         "tags": [
           "FactoringIndicators"
         ],
-        "summary": "Partially update a FactoringIndicator (PATCH/MERGE semantics).",
+        "summary": "Partially update a FactoringIndicator (PATCH/MERGE semantics)",
         "operationId": "Update_FactoringIndicators",
         "parameters": [
           {
@@ -4604,7 +4604,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4621,7 +4621,7 @@
         "tags": [
           "GovPayCodes"
         ],
-        "summary": "Query the GovPayCodes collection.",
+        "summary": "Query the GovPayCodes collection",
         "operationId": "List_GovPayCodes",
         "parameters": [
           {
@@ -4661,7 +4661,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4676,7 +4676,7 @@
         "tags": [
           "GovPayCodes"
         ],
-        "summary": "Create a new GovPayCode.",
+        "summary": "Create a new GovPayCode",
         "operationId": "Create_GovPayCodes",
         "requestBody": {
           "content": {
@@ -4700,7 +4700,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4717,7 +4717,7 @@
         "tags": [
           "GovPayCodes"
         ],
-        "summary": "Get a single GovPayCode by key.",
+        "summary": "Get a single GovPayCode by key",
         "operationId": "Get_GovPayCodes",
         "parameters": [
           {
@@ -4751,7 +4751,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4761,7 +4761,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4776,7 +4776,7 @@
         "tags": [
           "GovPayCodes"
         ],
-        "summary": "Delete a GovPayCode.",
+        "summary": "Delete a GovPayCode",
         "operationId": "Delete_GovPayCodes",
         "parameters": [
           {
@@ -4797,7 +4797,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4812,7 +4812,7 @@
         "tags": [
           "GovPayCodes"
         ],
-        "summary": "Partially update a GovPayCode (PATCH/MERGE semantics).",
+        "summary": "Partially update a GovPayCode (PATCH/MERGE semantics)",
         "operationId": "Update_GovPayCodes",
         "parameters": [
           {
@@ -4843,7 +4843,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4860,7 +4860,7 @@
         "tags": [
           "GovPayCodesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "GovPayCodesService_GetList",
         "responses": {
           "200": {
@@ -4881,13 +4881,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `GovPayCodesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `GovPayCodesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4904,7 +4904,7 @@
         "tags": [
           "HouseBankAccounts"
         ],
-        "summary": "Query the HouseBankAccounts collection.",
+        "summary": "Query the HouseBankAccounts collection",
         "operationId": "List_HouseBankAccounts",
         "parameters": [
           {
@@ -4944,7 +4944,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4959,7 +4959,7 @@
         "tags": [
           "HouseBankAccounts"
         ],
-        "summary": "Create a new HouseBankAccount.",
+        "summary": "Create a new HouseBankAccount",
         "operationId": "Create_HouseBankAccounts",
         "requestBody": {
           "content": {
@@ -4983,7 +4983,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5000,7 +5000,7 @@
         "tags": [
           "HouseBankAccounts"
         ],
-        "summary": "Get a single HouseBankAccount by key.",
+        "summary": "Get a single HouseBankAccount by key",
         "operationId": "Get_HouseBankAccounts",
         "parameters": [
           {
@@ -5034,7 +5034,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -5044,7 +5044,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5059,7 +5059,7 @@
         "tags": [
           "HouseBankAccounts"
         ],
-        "summary": "Delete a HouseBankAccount.",
+        "summary": "Delete a HouseBankAccount",
         "operationId": "Delete_HouseBankAccounts",
         "parameters": [
           {
@@ -5080,7 +5080,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5095,7 +5095,7 @@
         "tags": [
           "HouseBankAccounts"
         ],
-        "summary": "Partially update a HouseBankAccount (PATCH/MERGE semantics).",
+        "summary": "Partially update a HouseBankAccount (PATCH/MERGE semantics)",
         "operationId": "Update_HouseBankAccounts",
         "parameters": [
           {
@@ -5126,7 +5126,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5143,7 +5143,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Query the IncomingPayments collection.",
+        "summary": "Query the IncomingPayments collection",
         "operationId": "List_IncomingPayments",
         "parameters": [
           {
@@ -5183,7 +5183,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5198,7 +5198,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Create a new Payment.",
+        "summary": "Create a new Payment",
         "operationId": "Create_IncomingPayments",
         "requestBody": {
           "content": {
@@ -5222,7 +5222,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5239,7 +5239,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Get a single Payment by key.",
+        "summary": "Get a single Payment by key",
         "operationId": "Get_IncomingPayments",
         "parameters": [
           {
@@ -5273,7 +5273,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -5283,7 +5283,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5298,7 +5298,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Delete a Payment.",
+        "summary": "Delete a Payment",
         "operationId": "Delete_IncomingPayments",
         "parameters": [
           {
@@ -5319,7 +5319,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5334,7 +5334,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Partially update a Payment (PATCH/MERGE semantics).",
+        "summary": "Partially update a Payment (PATCH/MERGE semantics)",
         "operationId": "Update_IncomingPayments",
         "parameters": [
           {
@@ -5365,7 +5365,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5382,7 +5382,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Bound action 'Cancel' on IncomingPayments (binding type Payment).",
+        "summary": "Bound action 'Cancel' on IncomingPayments (binding type Payment)",
         "operationId": "IncomingPayments_Cancel",
         "parameters": [
           {
@@ -5403,7 +5403,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5420,7 +5420,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Bound action 'CancelbyCurrentSystemDate' on IncomingPayments (binding type Payment).",
+        "summary": "Bound action 'CancelbyCurrentSystemDate' on IncomingPayments (binding type Payment)",
         "operationId": "IncomingPayments_CancelbyCurrentSystemDate",
         "parameters": [
           {
@@ -5441,7 +5441,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5458,7 +5458,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Bound action 'GetApprovalTemplates' on IncomingPayments (binding type Payment).",
+        "summary": "Bound action 'GetApprovalTemplates' on IncomingPayments (binding type Payment)",
         "operationId": "IncomingPayments_GetApprovalTemplates",
         "parameters": [
           {
@@ -5486,7 +5486,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5503,7 +5503,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Bound action 'RequestApproveCancellation' on IncomingPayments (binding type Payment).",
+        "summary": "Bound action 'RequestApproveCancellation' on IncomingPayments (binding type Payment)",
         "operationId": "IncomingPayments_RequestApproveCancellation",
         "parameters": [
           {
@@ -5524,7 +5524,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5541,7 +5541,7 @@
         "tags": [
           "IncomingPayments"
         ],
-        "summary": "Bound action 'SaveDraftToDocument' on IncomingPayments (binding type Payment).",
+        "summary": "Bound action 'SaveDraftToDocument' on IncomingPayments (binding type Payment)",
         "operationId": "IncomingPayments_SaveDraftToDocument",
         "parameters": [
           {
@@ -5562,7 +5562,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5579,14 +5579,14 @@
         "tags": [
           "IncomingPaymentsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "IncomingPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5603,7 +5603,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Query the InternalReconciliations collection.",
+        "summary": "Query the InternalReconciliations collection",
         "operationId": "List_InternalReconciliations",
         "parameters": [
           {
@@ -5643,7 +5643,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5658,7 +5658,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Create a new InternalReconciliation.",
+        "summary": "Create a new InternalReconciliation",
         "operationId": "Create_InternalReconciliations",
         "requestBody": {
           "content": {
@@ -5682,7 +5682,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5699,7 +5699,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Get a single InternalReconciliation by key.",
+        "summary": "Get a single InternalReconciliation by key",
         "operationId": "Get_InternalReconciliations",
         "parameters": [
           {
@@ -5733,7 +5733,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -5743,7 +5743,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5758,7 +5758,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Delete a InternalReconciliation.",
+        "summary": "Delete a InternalReconciliation",
         "operationId": "Delete_InternalReconciliations",
         "parameters": [
           {
@@ -5779,7 +5779,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5794,7 +5794,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Partially update a InternalReconciliation (PATCH/MERGE semantics).",
+        "summary": "Partially update a InternalReconciliation (PATCH/MERGE semantics)",
         "operationId": "Update_InternalReconciliations",
         "parameters": [
           {
@@ -5825,7 +5825,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5842,7 +5842,7 @@
         "tags": [
           "InternalReconciliations"
         ],
-        "summary": "Bound action 'Cancel' on InternalReconciliations (binding type InternalReconciliation).",
+        "summary": "Bound action 'Cancel' on InternalReconciliations (binding type InternalReconciliation)",
         "operationId": "InternalReconciliations_Cancel",
         "parameters": [
           {
@@ -5863,7 +5863,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5880,7 +5880,7 @@
         "tags": [
           "InternalReconciliationsService"
         ],
-        "summary": "Get open transactions.",
+        "summary": "Get open transactions",
         "operationId": "InternalReconciliationsService_GetOpenTransactions",
         "requestBody": {
           "content": {
@@ -5897,7 +5897,7 @@
                     "x-ballerina-name": "internalReconciliationOpenTransParams"
                   }
                 },
-                "description": "Represents the request payload for the `InternalReconciliationsService_GetOpenTransactions` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `InternalReconciliationsService_GetOpenTransactions` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5915,7 +5915,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5932,7 +5932,7 @@
         "tags": [
           "InternalReconciliationsService"
         ],
-        "summary": "Request approve cancellation.",
+        "summary": "Request approve cancellation",
         "operationId": "InternalReconciliationsService_RequestApproveCancellation",
         "requestBody": {
           "content": {
@@ -5949,7 +5949,7 @@
                     "x-ballerina-name": "internalReconciliation"
                   }
                 },
-                "description": "Represents the request payload for the `InternalReconciliationsService_RequestApproveCancellation` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `InternalReconciliationsService_RequestApproveCancellation` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5960,7 +5960,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5977,7 +5977,7 @@
         "tags": [
           "PaymentBlocks"
         ],
-        "summary": "Query the PaymentBlocks collection.",
+        "summary": "Query the PaymentBlocks collection",
         "operationId": "List_PaymentBlocks",
         "parameters": [
           {
@@ -6017,7 +6017,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6032,7 +6032,7 @@
         "tags": [
           "PaymentBlocks"
         ],
-        "summary": "Create a new PaymentBlock.",
+        "summary": "Create a new PaymentBlock",
         "operationId": "Create_PaymentBlocks",
         "requestBody": {
           "content": {
@@ -6056,7 +6056,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6073,7 +6073,7 @@
         "tags": [
           "PaymentBlocks"
         ],
-        "summary": "Get a single PaymentBlock by key.",
+        "summary": "Get a single PaymentBlock by key",
         "operationId": "Get_PaymentBlocks",
         "parameters": [
           {
@@ -6107,7 +6107,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -6117,7 +6117,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6132,7 +6132,7 @@
         "tags": [
           "PaymentBlocks"
         ],
-        "summary": "Delete a PaymentBlock.",
+        "summary": "Delete a PaymentBlock",
         "operationId": "Delete_PaymentBlocks",
         "parameters": [
           {
@@ -6153,7 +6153,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6168,7 +6168,7 @@
         "tags": [
           "PaymentBlocks"
         ],
-        "summary": "Partially update a PaymentBlock (PATCH/MERGE semantics).",
+        "summary": "Partially update a PaymentBlock (PATCH/MERGE semantics)",
         "operationId": "Update_PaymentBlocks",
         "parameters": [
           {
@@ -6199,7 +6199,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6216,7 +6216,7 @@
         "tags": [
           "PaymentBlocksService"
         ],
-        "summary": "Get payment block list.",
+        "summary": "Get payment block list",
         "operationId": "PaymentBlocksService_GetPaymentBlockList",
         "responses": {
           "200": {
@@ -6237,13 +6237,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `PaymentBlocksService_GetPaymentBlockList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `PaymentBlocksService_GetPaymentBlockList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6260,7 +6260,7 @@
         "tags": [
           "PaymentCalculationService"
         ],
-        "summary": "Get payment amount.",
+        "summary": "Get payment amount",
         "operationId": "PaymentCalculationService_GetPaymentAmount",
         "requestBody": {
           "content": {
@@ -6284,7 +6284,7 @@
                     "x-ballerina-name": "paymentBPCode"
                   }
                 },
-                "description": "Represents the request payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6309,13 +6309,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `PaymentCalculationService_GetPaymentAmount` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6332,7 +6332,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Query the PaymentDrafts collection.",
+        "summary": "Query the PaymentDrafts collection",
         "operationId": "List_PaymentDrafts",
         "parameters": [
           {
@@ -6372,7 +6372,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6387,7 +6387,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Create a new Payment.",
+        "summary": "Create a new Payment",
         "operationId": "Create_PaymentDrafts",
         "requestBody": {
           "content": {
@@ -6411,7 +6411,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6428,7 +6428,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Get a single Payment by key.",
+        "summary": "Get a single Payment by key",
         "operationId": "Get_PaymentDrafts",
         "parameters": [
           {
@@ -6462,7 +6462,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -6472,7 +6472,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6487,7 +6487,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Delete a Payment.",
+        "summary": "Delete a Payment",
         "operationId": "Delete_PaymentDrafts",
         "parameters": [
           {
@@ -6508,7 +6508,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6523,7 +6523,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Partially update a Payment (PATCH/MERGE semantics).",
+        "summary": "Partially update a Payment (PATCH/MERGE semantics)",
         "operationId": "Update_PaymentDrafts",
         "parameters": [
           {
@@ -6554,7 +6554,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6571,7 +6571,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Bound action 'Cancel' on PaymentDrafts (binding type Payment).",
+        "summary": "Bound action 'Cancel' on PaymentDrafts (binding type Payment)",
         "operationId": "PaymentDrafts_Cancel",
         "parameters": [
           {
@@ -6592,7 +6592,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6609,7 +6609,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Bound action 'CancelbyCurrentSystemDate' on PaymentDrafts (binding type Payment).",
+        "summary": "Bound action 'CancelbyCurrentSystemDate' on PaymentDrafts (binding type Payment)",
         "operationId": "PaymentDrafts_CancelbyCurrentSystemDate",
         "parameters": [
           {
@@ -6630,7 +6630,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6647,7 +6647,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Bound action 'GetApprovalTemplates' on PaymentDrafts (binding type Payment).",
+        "summary": "Bound action 'GetApprovalTemplates' on PaymentDrafts (binding type Payment)",
         "operationId": "PaymentDrafts_GetApprovalTemplates",
         "parameters": [
           {
@@ -6675,7 +6675,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6692,7 +6692,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Bound action 'RequestApproveCancellation' on PaymentDrafts (binding type Payment).",
+        "summary": "Bound action 'RequestApproveCancellation' on PaymentDrafts (binding type Payment)",
         "operationId": "PaymentDrafts_RequestApproveCancellation",
         "parameters": [
           {
@@ -6713,7 +6713,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6730,7 +6730,7 @@
         "tags": [
           "PaymentDrafts"
         ],
-        "summary": "Bound action 'SaveDraftToDocument' on PaymentDrafts (binding type Payment).",
+        "summary": "Bound action 'SaveDraftToDocument' on PaymentDrafts (binding type Payment)",
         "operationId": "PaymentDrafts_SaveDraftToDocument",
         "parameters": [
           {
@@ -6751,7 +6751,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6768,14 +6768,14 @@
         "tags": [
           "PaymentDraftsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PaymentDraftsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6792,7 +6792,7 @@
         "tags": [
           "PaymentReasonCodeService"
         ],
-        "summary": "Get payment reason code list.",
+        "summary": "Get payment reason code list",
         "operationId": "PaymentReasonCodeService_GetPaymentReasonCodeList",
         "responses": {
           "200": {
@@ -6813,13 +6813,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `PaymentReasonCodeService_GetPaymentReasonCodeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `PaymentReasonCodeService_GetPaymentReasonCodeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6836,7 +6836,7 @@
         "tags": [
           "PaymentReasonCodes"
         ],
-        "summary": "Query the PaymentReasonCodes collection.",
+        "summary": "Query the PaymentReasonCodes collection",
         "operationId": "List_PaymentReasonCodes",
         "parameters": [
           {
@@ -6876,7 +6876,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6891,7 +6891,7 @@
         "tags": [
           "PaymentReasonCodes"
         ],
-        "summary": "Create a new PaymentReasonCode.",
+        "summary": "Create a new PaymentReasonCode",
         "operationId": "Create_PaymentReasonCodes",
         "requestBody": {
           "content": {
@@ -6915,7 +6915,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6932,7 +6932,7 @@
         "tags": [
           "PaymentReasonCodes"
         ],
-        "summary": "Get a single PaymentReasonCode by key.",
+        "summary": "Get a single PaymentReasonCode by key",
         "operationId": "Get_PaymentReasonCodes",
         "parameters": [
           {
@@ -6965,7 +6965,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -6975,7 +6975,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6990,7 +6990,7 @@
         "tags": [
           "PaymentReasonCodes"
         ],
-        "summary": "Delete a PaymentReasonCode.",
+        "summary": "Delete a PaymentReasonCode",
         "operationId": "Delete_PaymentReasonCodes",
         "parameters": [
           {
@@ -7010,7 +7010,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7025,7 +7025,7 @@
         "tags": [
           "PaymentReasonCodes"
         ],
-        "summary": "Partially update a PaymentReasonCode (PATCH/MERGE semantics).",
+        "summary": "Partially update a PaymentReasonCode (PATCH/MERGE semantics)",
         "operationId": "Update_PaymentReasonCodes",
         "parameters": [
           {
@@ -7055,7 +7055,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7072,7 +7072,7 @@
         "tags": [
           "PaymentRunExport"
         ],
-        "summary": "Query the PaymentRunExport collection.",
+        "summary": "Query the PaymentRunExport collection",
         "operationId": "List_PaymentRunExport",
         "parameters": [
           {
@@ -7112,7 +7112,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7127,7 +7127,7 @@
         "tags": [
           "PaymentRunExport"
         ],
-        "summary": "Create a new PaymentRunExport.",
+        "summary": "Create a new PaymentRunExport",
         "operationId": "Create_PaymentRunExport",
         "requestBody": {
           "content": {
@@ -7151,7 +7151,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7168,7 +7168,7 @@
         "tags": [
           "PaymentRunExport"
         ],
-        "summary": "Get a single PaymentRunExport by key.",
+        "summary": "Get a single PaymentRunExport by key",
         "operationId": "Get_PaymentRunExport",
         "parameters": [
           {
@@ -7202,7 +7202,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7212,7 +7212,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7227,7 +7227,7 @@
         "tags": [
           "PaymentRunExport"
         ],
-        "summary": "Delete a PaymentRunExport.",
+        "summary": "Delete a PaymentRunExport",
         "operationId": "Delete_PaymentRunExport",
         "parameters": [
           {
@@ -7248,7 +7248,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7263,7 +7263,7 @@
         "tags": [
           "PaymentRunExport"
         ],
-        "summary": "Partially update a PaymentRunExport (PATCH/MERGE semantics).",
+        "summary": "Partially update a PaymentRunExport (PATCH/MERGE semantics)",
         "operationId": "Update_PaymentRunExport",
         "parameters": [
           {
@@ -7294,7 +7294,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7311,7 +7311,7 @@
         "tags": [
           "PaymentWizardService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "PaymentWizardService_GetList",
         "responses": {
           "200": {
@@ -7332,13 +7332,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `PaymentWizardService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `PaymentWizardService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7355,7 +7355,7 @@
         "tags": [
           "PaymentWizards"
         ],
-        "summary": "Query the PaymentWizards collection.",
+        "summary": "Query the PaymentWizards collection",
         "operationId": "List_PaymentWizards",
         "parameters": [
           {
@@ -7395,7 +7395,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7410,7 +7410,7 @@
         "tags": [
           "PaymentWizards"
         ],
-        "summary": "Create a new PaymentWizard.",
+        "summary": "Create a new PaymentWizard",
         "operationId": "Create_PaymentWizards",
         "requestBody": {
           "content": {
@@ -7434,7 +7434,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7451,7 +7451,7 @@
         "tags": [
           "PaymentWizards"
         ],
-        "summary": "Get a single PaymentWizard by key.",
+        "summary": "Get a single PaymentWizard by key",
         "operationId": "Get_PaymentWizards",
         "parameters": [
           {
@@ -7485,7 +7485,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7495,7 +7495,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7510,7 +7510,7 @@
         "tags": [
           "PaymentWizards"
         ],
-        "summary": "Delete a PaymentWizard.",
+        "summary": "Delete a PaymentWizard",
         "operationId": "Delete_PaymentWizards",
         "parameters": [
           {
@@ -7531,7 +7531,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7546,7 +7546,7 @@
         "tags": [
           "PaymentWizards"
         ],
-        "summary": "Partially update a PaymentWizard (PATCH/MERGE semantics).",
+        "summary": "Partially update a PaymentWizard (PATCH/MERGE semantics)",
         "operationId": "Update_PaymentWizards",
         "parameters": [
           {
@@ -7577,7 +7577,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7594,7 +7594,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Query the VendorPayments collection.",
+        "summary": "Query the VendorPayments collection",
         "operationId": "List_VendorPayments",
         "parameters": [
           {
@@ -7634,7 +7634,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7649,7 +7649,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Create a new Payment.",
+        "summary": "Create a new Payment",
         "operationId": "Create_VendorPayments",
         "requestBody": {
           "content": {
@@ -7673,7 +7673,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7690,7 +7690,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Get a single Payment by key.",
+        "summary": "Get a single Payment by key",
         "operationId": "Get_VendorPayments",
         "parameters": [
           {
@@ -7724,7 +7724,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7734,7 +7734,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7749,7 +7749,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Delete a Payment.",
+        "summary": "Delete a Payment",
         "operationId": "Delete_VendorPayments",
         "parameters": [
           {
@@ -7770,7 +7770,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7785,7 +7785,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Partially update a Payment (PATCH/MERGE semantics).",
+        "summary": "Partially update a Payment (PATCH/MERGE semantics)",
         "operationId": "Update_VendorPayments",
         "parameters": [
           {
@@ -7816,7 +7816,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7833,7 +7833,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Bound action 'Cancel' on VendorPayments (binding type Payment).",
+        "summary": "Bound action 'Cancel' on VendorPayments (binding type Payment)",
         "operationId": "VendorPayments_Cancel",
         "parameters": [
           {
@@ -7854,7 +7854,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7871,7 +7871,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Bound action 'CancelbyCurrentSystemDate' on VendorPayments (binding type Payment).",
+        "summary": "Bound action 'CancelbyCurrentSystemDate' on VendorPayments (binding type Payment)",
         "operationId": "VendorPayments_CancelbyCurrentSystemDate",
         "parameters": [
           {
@@ -7892,7 +7892,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7909,7 +7909,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Bound action 'GetApprovalTemplates' on VendorPayments (binding type Payment).",
+        "summary": "Bound action 'GetApprovalTemplates' on VendorPayments (binding type Payment)",
         "operationId": "VendorPayments_GetApprovalTemplates",
         "parameters": [
           {
@@ -7937,7 +7937,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7954,7 +7954,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Bound action 'RequestApproveCancellation' on VendorPayments (binding type Payment).",
+        "summary": "Bound action 'RequestApproveCancellation' on VendorPayments (binding type Payment)",
         "operationId": "VendorPayments_RequestApproveCancellation",
         "parameters": [
           {
@@ -7975,7 +7975,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7992,7 +7992,7 @@
         "tags": [
           "VendorPayments"
         ],
-        "summary": "Bound action 'SaveDraftToDocument' on VendorPayments (binding type Payment).",
+        "summary": "Bound action 'SaveDraftToDocument' on VendorPayments (binding type Payment)",
         "operationId": "VendorPayments_SaveDraftToDocument",
         "parameters": [
           {
@@ -8013,7 +8013,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8030,14 +8030,14 @@
         "tags": [
           "VendorPaymentsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "VendorPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8054,7 +8054,7 @@
         "tags": [
           "WizardPaymentMethods"
         ],
-        "summary": "Query the WizardPaymentMethods collection.",
+        "summary": "Query the WizardPaymentMethods collection",
         "operationId": "List_WizardPaymentMethods",
         "parameters": [
           {
@@ -8094,7 +8094,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8109,7 +8109,7 @@
         "tags": [
           "WizardPaymentMethods"
         ],
-        "summary": "Create a new WizardPaymentMethod.",
+        "summary": "Create a new WizardPaymentMethod",
         "operationId": "Create_WizardPaymentMethods",
         "requestBody": {
           "content": {
@@ -8133,7 +8133,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8150,7 +8150,7 @@
         "tags": [
           "WizardPaymentMethods"
         ],
-        "summary": "Get a single WizardPaymentMethod by key.",
+        "summary": "Get a single WizardPaymentMethod by key",
         "operationId": "Get_WizardPaymentMethods",
         "parameters": [
           {
@@ -8183,7 +8183,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -8193,7 +8193,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8208,7 +8208,7 @@
         "tags": [
           "WizardPaymentMethods"
         ],
-        "summary": "Delete a WizardPaymentMethod.",
+        "summary": "Delete a WizardPaymentMethod",
         "operationId": "Delete_WizardPaymentMethods",
         "parameters": [
           {
@@ -8228,7 +8228,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8243,7 +8243,7 @@
         "tags": [
           "WizardPaymentMethods"
         ],
-        "summary": "Partially update a WizardPaymentMethod (PATCH/MERGE semantics).",
+        "summary": "Partially update a WizardPaymentMethod (PATCH/MERGE semantics)",
         "operationId": "Update_WizardPaymentMethods",
         "parameters": [
           {
@@ -8273,7 +8273,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8312,7 +8312,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ChecksforPaymentPrintStatus` complex type of the SAP Business One Service Layer."
+        "description": "The `ChecksforPaymentPrintStatus` complex type of the SAP Business One Service Layer"
       },
       "BankPage": {
         "type": "object",
@@ -8393,7 +8393,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BankPage` entity of the SAP Business One Service Layer."
+        "description": "The `BankPage` entity of the SAP Business One Service Layer"
       },
       "BankChargesAllocationCodesCollectionResponse": {
         "type": "object",
@@ -8413,7 +8413,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BankChargesAllocationCodes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BankChargesAllocationCodes` entities returned by the SAP Business One Service Layer"
       },
       "CreditLineParams": {
         "type": "object",
@@ -8425,7 +8425,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CreditLineParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CreditLineParams` complex type of the SAP Business One Service Layer"
       },
       "CreditPaymentMethod": {
         "type": "object",
@@ -8467,7 +8467,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CreditPaymentMethod` entity of the SAP Business One Service Layer."
+        "description": "The `CreditPaymentMethod` entity of the SAP Business One Service Layer"
       },
       "BankChargesAllocationCode": {
         "type": "object",
@@ -8489,7 +8489,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BankChargesAllocationCode` entity of the SAP Business One Service Layer."
+        "description": "The `BankChargesAllocationCode` entity of the SAP Business One Service Layer"
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -8527,7 +8527,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `WizardPaymentMethods` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `WizardPaymentMethods` entities returned by the SAP Business One Service Layer"
       },
       "PaymentInvoiceEntry": {
         "type": "object",
@@ -8552,7 +8552,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentInvoiceEntry` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentInvoiceEntry` complex type of the SAP Business One Service Layer"
       },
       "InternalReconciliationOpenTransParams": {
         "type": "object",
@@ -8601,7 +8601,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliationOpenTransParams` complex type of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliationOpenTransParams` complex type of the SAP Business One Service Layer"
       },
       "BankStatementDocTypeEnum": {
         "type": "string",
@@ -8722,7 +8722,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BillOfExchange` complex type of the SAP Business One Service Layer."
+        "description": "The `BillOfExchange` complex type of the SAP Business One Service Layer"
       },
       "PaymentBPCode": {
         "type": "object",
@@ -8738,7 +8738,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentBPCode` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentBPCode` complex type of the SAP Business One Service Layer"
       },
       "BoDepositPostingTypes": {
         "type": "string",
@@ -8863,7 +8863,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentRunExport_Line` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentRunExport_Line` complex type of the SAP Business One Service Layer"
       },
       "BankPagesCollectionResponse": {
         "type": "object",
@@ -8883,7 +8883,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BankPages` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BankPages` entities returned by the SAP Business One Service Layer"
       },
       "CancelStatusEnum": {
         "type": "string",
@@ -8908,7 +8908,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `GovPayCodeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `GovPayCodeParams` complex type of the SAP Business One Service Layer"
       },
       "PrintOnEnum": {
         "type": "string",
@@ -8938,7 +8938,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PaymentBlocks` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PaymentBlocks` entities returned by the SAP Business One Service Layer"
       },
       "FactoringIndicatorsCollectionResponse": {
         "type": "object",
@@ -8958,7 +8958,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `FactoringIndicators` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `FactoringIndicators` entities returned by the SAP Business One Service Layer"
       },
       "InternalReconciliation": {
         "type": "object",
@@ -9015,7 +9015,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliation` entity of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliation` entity of the SAP Business One Service Layer"
       },
       "BankStatementsFilter": {
         "type": "object",
@@ -9034,7 +9034,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BankStatementsFilter` complex type of the SAP Business One Service Layer."
+        "description": "The `BankStatementsFilter` complex type of the SAP Business One Service Layer"
       },
       "CentralBankIndicator": {
         "type": "object",
@@ -9049,7 +9049,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CentralBankIndicator` entity of the SAP Business One Service Layer."
+        "description": "The `CentralBankIndicator` entity of the SAP Business One Service Layer"
       },
       "BoPaymentsObjectType": {
         "type": "string",
@@ -9195,7 +9195,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer."
+        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer"
       },
       "DueDateTypesEnum": {
         "type": "string",
@@ -9277,7 +9277,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WithholdingTaxCertificatesData` complex type of the SAP Business One Service Layer."
+        "description": "The `WithholdingTaxCertificatesData` complex type of the SAP Business One Service Layer"
       },
       "BoOpexStatus": {
         "type": "string",
@@ -9301,7 +9301,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentBlockParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentBlockParams` complex type of the SAP Business One Service Layer"
       },
       "BOEInstruction": {
         "type": "object",
@@ -9329,7 +9329,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEInstruction` entity of the SAP Business One Service Layer."
+        "description": "The `BOEInstruction` entity of the SAP Business One Service Layer"
       },
       "BOEPortfolioParams": {
         "type": "object",
@@ -9349,7 +9349,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEPortfolioParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BOEPortfolioParams` complex type of the SAP Business One Service Layer"
       },
       "PaymentMeansTypeEnum": {
         "type": "string",
@@ -9380,7 +9380,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BankStatements` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BankStatements` entities returned by the SAP Business One Service Layer"
       },
       "CardOrAccountEnum": {
         "type": "string",
@@ -9404,7 +9404,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEInstructionParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BOEInstructionParams` complex type of the SAP Business One Service Layer"
       },
       "BoBOTFromStatus": {
         "type": "string",
@@ -9462,7 +9462,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentDocumentReferences` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentDocumentReferences` complex type of the SAP Business One Service Layer"
       },
       "HouseBankAccountsCollectionResponse": {
         "type": "object",
@@ -9482,7 +9482,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `HouseBankAccounts` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `HouseBankAccounts` entities returned by the SAP Business One Service Layer"
       },
       "BankStatementRow": {
         "type": "object",
@@ -9666,7 +9666,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BankStatementRow` complex type of the SAP Business One Service Layer."
+        "description": "The `BankStatementRow` complex type of the SAP Business One Service Layer"
       },
       "BankStatementStatusEnum": {
         "type": "string",
@@ -9695,7 +9695,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `VendorPayments` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `VendorPayments` entities returned by the SAP Business One Service Layer"
       },
       "BillOfExchangeTransBankPage": {
         "type": "object",
@@ -9709,7 +9709,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BillOfExchangeTransBankPage` complex type of the SAP Business One Service Layer."
+        "description": "The `BillOfExchangeTransBankPage` complex type of the SAP Business One Service Layer"
       },
       "Bank": {
         "type": "object",
@@ -9761,7 +9761,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Bank` entity of the SAP Business One Service Layer."
+        "description": "The `Bank` entity of the SAP Business One Service Layer"
       },
       "BankStatement": {
         "type": "object",
@@ -9850,7 +9850,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BankStatement` entity of the SAP Business One Service Layer."
+        "description": "The `BankStatement` entity of the SAP Business One Service Layer"
       },
       "ExternalReconciliation": {
         "type": "object",
@@ -9911,7 +9911,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ExternalReconciliation` complex type of the SAP Business One Service Layer."
+        "description": "The `ExternalReconciliation` complex type of the SAP Business One Service Layer"
       },
       "InternalReconciliationOpenTrans": {
         "type": "object",
@@ -9950,7 +9950,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliationOpenTrans` complex type of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliationOpenTrans` complex type of the SAP Business One Service Layer"
       },
       "PaymentReasonCodeParams": {
         "type": "object",
@@ -9961,7 +9961,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentReasonCodeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentReasonCodeParams` complex type of the SAP Business One Service Layer"
       },
       "CreditCardsCollectionResponse": {
         "type": "object",
@@ -9981,7 +9981,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CreditCards` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CreditCards` entities returned by the SAP Business One Service Layer"
       },
       "BankStatementParams": {
         "type": "object",
@@ -10047,7 +10047,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BankStatementParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BankStatementParams` complex type of the SAP Business One Service Layer"
       },
       "IncomingPaymentsCollectionResponse": {
         "type": "object",
@@ -10067,7 +10067,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `IncomingPayments` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `IncomingPayments` entities returned by the SAP Business One Service Layer"
       },
       "BoBOTToStatus": {
         "type": "string",
@@ -10135,7 +10135,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliationOpenTransRow` complex type of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliationOpenTransRow` complex type of the SAP Business One Service Layer"
       },
       "ChecksforPaymentCollectionResponse": {
         "type": "object",
@@ -10155,7 +10155,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ChecksforPayment` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ChecksforPayment` entities returned by the SAP Business One Service Layer"
       },
       "PaymentWizardParams": {
         "type": "object",
@@ -10171,7 +10171,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentWizardParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentWizardParams` complex type of the SAP Business One Service Layer"
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -10306,7 +10306,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer"
       },
       "ReferencedObjectTypeEnum": {
         "type": "string",
@@ -10420,7 +10420,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentCheck` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentCheck` complex type of the SAP Business One Service Layer"
       },
       "CurrencyRestriction": {
         "type": "object",
@@ -10439,7 +10439,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CurrencyRestriction` complex type of the SAP Business One Service Layer."
+        "description": "The `CurrencyRestriction` complex type of the SAP Business One Service Layer"
       },
       "BanksCollectionResponse": {
         "type": "object",
@@ -10459,7 +10459,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Banks` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Banks` entities returned by the SAP Business One Service Layer"
       },
       "BoDepositTypeEnum": {
         "type": "string",
@@ -10547,7 +10547,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentCreditCard` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentCreditCard` complex type of the SAP Business One Service Layer"
       },
       "GovPayCodesCollectionResponse": {
         "type": "object",
@@ -10567,7 +10567,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `GovPayCodes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `GovPayCodes` entities returned by the SAP Business One Service Layer"
       },
       "PaymentWizardsCollectionResponse": {
         "type": "object",
@@ -10587,7 +10587,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PaymentWizards` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PaymentWizards` entities returned by the SAP Business One Service Layer"
       },
       "BoBOETypes": {
         "type": "string",
@@ -10629,7 +10629,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "CentralBankIndicatorParams": {
         "type": "object",
@@ -10640,7 +10640,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CentralBankIndicatorParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CentralBankIndicatorParams` complex type of the SAP Business One Service Layer"
       },
       "PostingMethodEnum": {
         "type": "string",
@@ -10671,7 +10671,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BOEPortfolios` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BOEPortfolios` entities returned by the SAP Business One Service Layer"
       },
       "BoCpCardAcct": {
         "type": "string",
@@ -10722,7 +10722,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `GovPayCode` entity of the SAP Business One Service Layer."
+        "description": "The `GovPayCode` entity of the SAP Business One Service Layer"
       },
       "DepositsCollectionResponse": {
         "type": "object",
@@ -10742,7 +10742,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Deposits` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Deposits` entities returned by the SAP Business One Service Layer"
       },
       "PaymentRunExportCollectionResponse": {
         "type": "object",
@@ -10762,7 +10762,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PaymentRunExport` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PaymentRunExport` entities returned by the SAP Business One Service Layer"
       },
       "FactoringIndicator": {
         "type": "object",
@@ -10775,7 +10775,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `FactoringIndicator` entity of the SAP Business One Service Layer."
+        "description": "The `FactoringIndicator` entity of the SAP Business One Service Layer"
       },
       "BoBpsDocTypes": {
         "type": "string",
@@ -10824,7 +10824,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CentralBankIndicator` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CentralBankIndicator` entities returned by the SAP Business One Service Layer"
       },
       "BillOfExchangeTransDeposit": {
         "type": "object",
@@ -10849,7 +10849,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BillOfExchangeTransDeposit` complex type of the SAP Business One Service Layer."
+        "description": "The `BillOfExchangeTransDeposit` complex type of the SAP Business One Service Layer"
       },
       "InternalReconciliationBP": {
         "type": "object",
@@ -10860,7 +10860,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliationBP` complex type of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliationBP` complex type of the SAP Business One Service Layer"
       },
       "BoDepositAccountTypeEnum": {
         "type": "string",
@@ -10937,7 +10937,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CreditLine` complex type of the SAP Business One Service Layer."
+        "description": "The `CreditLine` complex type of the SAP Business One Service Layer"
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -11021,7 +11021,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CreditPaymentMethods` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CreditPaymentMethods` entities returned by the SAP Business One Service Layer"
       },
       "PaymentInvoiceTypeEnum": {
         "type": "string",
@@ -11077,7 +11077,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ChecksforPaymentDocumentReference` complex type of the SAP Business One Service Layer."
+        "description": "The `ChecksforPaymentDocumentReference` complex type of the SAP Business One Service Layer"
       },
       "ElecCommStatusEnum": {
         "type": "string",
@@ -11405,7 +11405,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentRunExport` entity of the SAP Business One Service Layer."
+        "description": "The `PaymentRunExport` entity of the SAP Business One Service Layer"
       },
       "BOELineParams": {
         "type": "object",
@@ -11417,7 +11417,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOELineParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BOELineParams` complex type of the SAP Business One Service Layer"
       },
       "ReconSelectDateTypeEnum": {
         "type": "string",
@@ -11602,7 +11602,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WizardPaymentMethod` entity of the SAP Business One Service Layer."
+        "description": "The `WizardPaymentMethod` entity of the SAP Business One Service Layer"
       },
       "BoPaymentMeansEnum": {
         "type": "string",
@@ -11628,7 +11628,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CancelCheckRowParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CancelCheckRowParams` complex type of the SAP Business One Service Layer"
       },
       "Deposit": {
         "type": "object",
@@ -11808,7 +11808,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Deposit` entity of the SAP Business One Service Layer."
+        "description": "The `Deposit` entity of the SAP Business One Service Layer"
       },
       "ExternalReconciliationParams": {
         "type": "object",
@@ -11824,7 +11824,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ExternalReconciliationParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ExternalReconciliationParams` complex type of the SAP Business One Service Layer"
       },
       "PaymentInvoice": {
         "type": "object",
@@ -11921,7 +11921,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentInvoice` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentInvoice` complex type of the SAP Business One Service Layer"
       },
       "BOEDocumentTypesCollectionResponse": {
         "type": "object",
@@ -11941,7 +11941,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BOEDocumentTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BOEDocumentTypes` entities returned by the SAP Business One Service Layer"
       },
       "CheckLineParams": {
         "type": "object",
@@ -11953,7 +11953,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CheckLineParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CheckLineParams` complex type of the SAP Business One Service Layer"
       },
       "WTGroups": {
         "type": "object",
@@ -11994,7 +11994,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WTGroups` complex type of the SAP Business One Service Layer."
+        "description": "The `WTGroups` complex type of the SAP Business One Service Layer"
       },
       "PaymentAccount": {
         "type": "object",
@@ -12059,7 +12059,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PaymentAccount` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentAccount` complex type of the SAP Business One Service Layer"
       },
       "RelatedDocument": {
         "type": "object",
@@ -12096,7 +12096,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer"
       },
       "MultiplePayment": {
         "type": "object",
@@ -12135,7 +12135,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `MultiplePayment` complex type of the SAP Business One Service Layer."
+        "description": "The `MultiplePayment` complex type of the SAP Business One Service Layer"
       },
       "CreditCardPayment": {
         "type": "object",
@@ -12229,7 +12229,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CreditCardPayment` entity of the SAP Business One Service Layer."
+        "description": "The `CreditCardPayment` entity of the SAP Business One Service Layer"
       },
       "Payment": {
         "type": "object",
@@ -12638,7 +12638,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Payment` entity of the SAP Business One Service Layer."
+        "description": "The `Payment` entity of the SAP Business One Service Layer"
       },
       "PaymentsAuthorizationStatusEnum": {
         "type": "string",
@@ -12681,7 +12681,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CreditCardPayments` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CreditCardPayments` entities returned by the SAP Business One Service Layer"
       },
       "BOELine": {
         "type": "object",
@@ -12736,7 +12736,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOELine` complex type of the SAP Business One Service Layer."
+        "description": "The `BOELine` complex type of the SAP Business One Service Layer"
       },
       "BankChargesAllocationCodeParams": {
         "type": "object",
@@ -12751,7 +12751,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BankChargesAllocationCodeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BankChargesAllocationCodeParams` complex type of the SAP Business One Service Layer"
       },
       "ReconciliationJournalEntryLine": {
         "type": "object",
@@ -12804,7 +12804,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ReconciliationJournalEntryLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ReconciliationJournalEntryLine` complex type of the SAP Business One Service Layer"
       },
       "BillOfExchangeTransactionLine": {
         "type": "object",
@@ -12822,7 +12822,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BillOfExchangeTransactionLine` complex type of the SAP Business One Service Layer."
+        "description": "The `BillOfExchangeTransactionLine` complex type of the SAP Business One Service Layer"
       },
       "CashFlowAssignment": {
         "type": "object",
@@ -12863,7 +12863,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CashFlowAssignment` complex type of the SAP Business One Service Layer."
+        "description": "The `CashFlowAssignment` complex type of the SAP Business One Service Layer"
       },
       "BoBoeStatus": {
         "type": "string",
@@ -12919,7 +12919,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEDocumentTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `BOEDocumentTypeParams` complex type of the SAP Business One Service Layer"
       },
       "DocsInWTGroups": {
         "type": "object",
@@ -12957,7 +12957,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocsInWTGroups` complex type of the SAP Business One Service Layer."
+        "description": "The `DocsInWTGroups` complex type of the SAP Business One Service Layer"
       },
       "ChecksforPayment": {
         "type": "object",
@@ -13107,7 +13107,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ChecksforPayment` entity of the SAP Business One Service Layer."
+        "description": "The `ChecksforPayment` entity of the SAP Business One Service Layer"
       },
       "InternalReconciliationsCollectionResponse": {
         "type": "object",
@@ -13127,7 +13127,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `InternalReconciliations` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `InternalReconciliations` entities returned by the SAP Business One Service Layer"
       },
       "CreateMethodEnum": {
         "type": "string",
@@ -13218,7 +13218,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CheckLine` complex type of the SAP Business One Service Layer."
+        "description": "The `CheckLine` complex type of the SAP Business One Service Layer"
       },
       "BoPaymentTypeEnum": {
         "type": "string",
@@ -13273,7 +13273,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `Payments_ApprovalRequest` complex type of the SAP Business One Service Layer."
+        "description": "The `Payments_ApprovalRequest` complex type of the SAP Business One Service Layer"
       },
       "BoRcptCredTypes": {
         "type": "string",
@@ -13293,7 +13293,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentReasonCode` entity of the SAP Business One Service Layer."
+        "description": "The `PaymentReasonCode` entity of the SAP Business One Service Layer"
       },
       "PaymentBlock": {
         "type": "object",
@@ -13309,7 +13309,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentBlock` entity of the SAP Business One Service Layer."
+        "description": "The `PaymentBlock` entity of the SAP Business One Service Layer"
       },
       "PaymentWizard": {
         "type": "object",
@@ -13377,7 +13377,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentWizard` entity of the SAP Business One Service Layer."
+        "description": "The `PaymentWizard` entity of the SAP Business One Service Layer"
       },
       "RelatedDocumentTypeEnum": {
         "type": "string",
@@ -13442,7 +13442,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BillOfExchangeTransaction` entity of the SAP Business One Service Layer."
+        "description": "The `BillOfExchangeTransaction` entity of the SAP Business One Service Layer"
       },
       "ExternalReconciliationFilterParams": {
         "type": "object",
@@ -13485,7 +13485,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ExternalReconciliationFilterParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ExternalReconciliationFilterParams` complex type of the SAP Business One Service Layer"
       },
       "ReconciliationBankStatementLine": {
         "type": "object",
@@ -13519,7 +13519,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ReconciliationBankStatementLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ReconciliationBankStatementLine` complex type of the SAP Business One Service Layer"
       },
       "PaymentAmountParams": {
         "type": "object",
@@ -13579,7 +13579,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PaymentAmountParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PaymentAmountParams` complex type of the SAP Business One Service Layer"
       },
       "BOEDocumentType": {
         "type": "object",
@@ -13599,7 +13599,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEDocumentType` entity of the SAP Business One Service Layer."
+        "description": "The `BOEDocumentType` entity of the SAP Business One Service Layer"
       },
       "DepositParams": {
         "type": "object",
@@ -13621,7 +13621,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepositParams` complex type of the SAP Business One Service Layer."
+        "description": "The `DepositParams` complex type of the SAP Business One Service Layer"
       },
       "BoCheckDepositTypeEnum": {
         "type": "string",
@@ -13664,7 +13664,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ChecksforPaymentLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ChecksforPaymentLine` complex type of the SAP Business One Service Layer"
       },
       "HouseBankAccount": {
         "type": "object",
@@ -13887,7 +13887,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `HouseBankAccount` entity of the SAP Business One Service Layer."
+        "description": "The `HouseBankAccount` entity of the SAP Business One Service Layer"
       },
       "BOEInstructionsCollectionResponse": {
         "type": "object",
@@ -13907,7 +13907,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BOEInstructions` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BOEInstructions` entities returned by the SAP Business One Service Layer"
       },
       "BOEPortfolio": {
         "type": "object",
@@ -13935,7 +13935,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `BOEPortfolio` entity of the SAP Business One Service Layer."
+        "description": "The `BOEPortfolio` entity of the SAP Business One Service Layer"
       },
       "CreditCard": {
         "type": "object",
@@ -13967,7 +13967,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CreditCard` entity of the SAP Business One Service Layer."
+        "description": "The `CreditCard` entity of the SAP Business One Service Layer"
       },
       "BillOfExchangeTransactionsCollectionResponse": {
         "type": "object",
@@ -13987,7 +13987,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `BillOfExchangeTransactions` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `BillOfExchangeTransactions` entities returned by the SAP Business One Service Layer"
       },
       "PaymentDraftsCollectionResponse": {
         "type": "object",
@@ -14007,7 +14007,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PaymentDrafts` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PaymentDrafts` entities returned by the SAP Business One Service Layer"
       },
       "BoDueDateEnum": {
         "type": "string",
@@ -14069,7 +14069,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PaymentReasonCodes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PaymentReasonCodes` entities returned by the SAP Business One Service Layer"
       },
       "GovPayCodeAuthority": {
         "type": "object",
@@ -14094,7 +14094,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `GovPayCodeAuthority` complex type of the SAP Business One Service Layer."
+        "description": "The `GovPayCodeAuthority` complex type of the SAP Business One Service Layer"
       },
       "InternalReconciliationRow": {
         "type": "object",
@@ -14147,7 +14147,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `InternalReconciliationRow` complex type of the SAP Business One Service Layer."
+        "description": "The `InternalReconciliationRow` complex type of the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -14257,7 +14257,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

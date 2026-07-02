@@ -21,14 +21,14 @@ import ballerina/data.jsondata;
 import ballerina/http;
 import ballerinax/sap.businessone;
 
-# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').
+# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1')
 # 
-# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.
+# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session
 # 
-# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.
+# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging
 public isolated client class Client {
     final businessone:Client clientEp;
-    # Gets invoked to initialize the `connector`.
+    # Gets invoked to initialize the `connector`
     #
     # + session - SAP Business One Service Layer session credentials 
     # + config - The configurations to be used when initializing the `connector` 
@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Query the ContractTemplates collection.
+    # Query the ContractTemplates collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -51,7 +51,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ContractTemplate.
+    # Create a new ContractTemplate
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -64,7 +64,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ContractTemplate by key.
+    # Get a single ContractTemplate by key
     #
     # + templateName - Key property 'TemplateName' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -76,7 +76,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ContractTemplate.
+    # Delete a ContractTemplate
     #
     # + templateName - Key property 'TemplateName' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -86,7 +86,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ContractTemplate (PATCH/MERGE semantics).
+    # Partially update a ContractTemplate (PATCH/MERGE semantics)
     #
     # + templateName - Key property 'TemplateName' (Edm.String)
     # + payload - Request payload 
@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the CustomerEquipmentCards collection.
+    # Query the CustomerEquipmentCards collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -112,7 +112,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new CustomerEquipmentCard.
+    # Create a new CustomerEquipmentCard
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -125,7 +125,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single CustomerEquipmentCard by key.
+    # Get a single CustomerEquipmentCard by key
     #
     # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -137,7 +137,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a CustomerEquipmentCard.
+    # Delete a CustomerEquipmentCard
     #
     # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -147,7 +147,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).
+    # Partially update a CustomerEquipmentCard (PATCH/MERGE semantics)
     #
     # + equipmentCardNum - Key property 'EquipmentCardNum' (Edm.Int32)
     # + payload - Request payload 
@@ -161,7 +161,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the KnowledgeBaseSolutions collection.
+    # Query the KnowledgeBaseSolutions collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -173,7 +173,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new KnowledgeBaseSolution.
+    # Create a new KnowledgeBaseSolution
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -186,7 +186,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single KnowledgeBaseSolution by key.
+    # Get a single KnowledgeBaseSolution by key
     #
     # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -198,7 +198,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a KnowledgeBaseSolution.
+    # Delete a KnowledgeBaseSolution
     #
     # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -208,7 +208,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).
+    # Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics)
     #
     # + solutionCode - Key property 'SolutionCode' (Edm.Int32)
     # + payload - Request payload 
@@ -222,7 +222,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the Queue collection.
+    # Query the Queue collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -234,7 +234,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Queue.
+    # Create a new Queue
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -247,7 +247,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Queue by key.
+    # Get a single Queue by key
     #
     # + queueID - Key property 'QueueID' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -259,7 +259,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Queue.
+    # Delete a Queue
     #
     # + queueID - Key property 'QueueID' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -269,7 +269,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Queue (PATCH/MERGE semantics).
+    # Partially update a Queue (PATCH/MERGE semantics)
     #
     # + queueID - Key property 'QueueID' (Edm.String)
     # + payload - Request payload 
@@ -283,7 +283,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallOrigins collection.
+    # Query the ServiceCallOrigins collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -295,7 +295,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallOrigin.
+    # Create a new ServiceCallOrigin
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -308,7 +308,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallOrigin by key.
+    # Get a single ServiceCallOrigin by key
     #
     # + originID - Key property 'OriginID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -320,7 +320,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallOrigin.
+    # Delete a ServiceCallOrigin
     #
     # + originID - Key property 'OriginID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -330,7 +330,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallOrigin (PATCH/MERGE semantics).
+    # Partially update a ServiceCallOrigin (PATCH/MERGE semantics)
     #
     # + originID - Key property 'OriginID' (Edm.Int32)
     # + payload - Request payload 
@@ -344,7 +344,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call origin list.
+    # Get service call origin list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -354,7 +354,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallProblemSubTypes collection.
+    # Query the ServiceCallProblemSubTypes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -366,7 +366,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallProblemSubType.
+    # Create a new ServiceCallProblemSubType
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -379,7 +379,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallProblemSubType by key.
+    # Get a single ServiceCallProblemSubType by key
     #
     # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -391,7 +391,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallProblemSubType.
+    # Delete a ServiceCallProblemSubType
     #
     # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -401,7 +401,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).
+    # Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics)
     #
     # + problemSubTypeID - Key property 'ProblemSubTypeID' (Edm.Int32)
     # + payload - Request payload 
@@ -415,7 +415,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call problem sub type list.
+    # Get service call problem sub type list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -425,7 +425,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallProblemTypes collection.
+    # Query the ServiceCallProblemTypes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -437,7 +437,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallProblemType.
+    # Create a new ServiceCallProblemType
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -450,7 +450,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallProblemType by key.
+    # Get a single ServiceCallProblemType by key
     #
     # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -462,7 +462,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallProblemType.
+    # Delete a ServiceCallProblemType
     #
     # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -472,7 +472,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallProblemType (PATCH/MERGE semantics).
+    # Partially update a ServiceCallProblemType (PATCH/MERGE semantics)
     #
     # + problemTypeID - Key property 'ProblemTypeID' (Edm.Int32)
     # + payload - Request payload 
@@ -486,7 +486,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call problem type list.
+    # Get service call problem type list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -496,7 +496,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallSolutionStatus collection.
+    # Query the ServiceCallSolutionStatus collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -508,7 +508,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallSolutionStatus.
+    # Create a new ServiceCallSolutionStatus
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -521,7 +521,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallSolutionStatus by key.
+    # Get a single ServiceCallSolutionStatus by key
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -533,7 +533,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallSolutionStatus.
+    # Delete a ServiceCallSolutionStatus
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -543,7 +543,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).
+    # Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics)
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + payload - Request payload 
@@ -557,7 +557,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call solution status list.
+    # Get service call solution status list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -567,7 +567,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallStatus collection.
+    # Query the ServiceCallStatus collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -579,7 +579,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallStatus.
+    # Create a new ServiceCallStatus
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -592,7 +592,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallStatus by key.
+    # Get a single ServiceCallStatus by key
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -604,7 +604,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallStatus.
+    # Delete a ServiceCallStatus
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -614,7 +614,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallStatus (PATCH/MERGE semantics).
+    # Partially update a ServiceCallStatus (PATCH/MERGE semantics)
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + payload - Request payload 
@@ -628,7 +628,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call status list.
+    # Get service call status list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -638,7 +638,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCallTypes collection.
+    # Query the ServiceCallTypes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -650,7 +650,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCallType.
+    # Create a new ServiceCallType
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -663,7 +663,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCallType by key.
+    # Get a single ServiceCallType by key
     #
     # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -675,7 +675,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCallType.
+    # Delete a ServiceCallType
     #
     # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -685,7 +685,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCallType (PATCH/MERGE semantics).
+    # Partially update a ServiceCallType (PATCH/MERGE semantics)
     #
     # + callTypeID - Key property 'CallTypeID' (Edm.Int32)
     # + payload - Request payload 
@@ -699,7 +699,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get service call type list.
+    # Get service call type list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -709,7 +709,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceCalls collection.
+    # Query the ServiceCalls collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -721,7 +721,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceCall.
+    # Create a new ServiceCall
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -734,7 +734,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceCall by key.
+    # Get a single ServiceCall by key
     #
     # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -746,7 +746,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceCall.
+    # Delete a ServiceCall
     #
     # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -756,7 +756,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceCall (PATCH/MERGE semantics).
+    # Partially update a ServiceCall (PATCH/MERGE semantics)
     #
     # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + payload - Request payload 
@@ -770,7 +770,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on ServiceCalls (binding type ServiceCall).
+    # Bound action 'Close' on ServiceCalls (binding type ServiceCall)
     #
     # + serviceCallID - Key property 'ServiceCallID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -781,7 +781,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ServiceContracts collection.
+    # Query the ServiceContracts collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -793,7 +793,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ServiceContract.
+    # Create a new ServiceContract
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -806,7 +806,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ServiceContract by key.
+    # Get a single ServiceContract by key
     #
     # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -818,7 +818,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ServiceContract.
+    # Delete a ServiceContract
     #
     # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -828,7 +828,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ServiceContract (PATCH/MERGE semantics).
+    # Partially update a ServiceContract (PATCH/MERGE semantics)
     #
     # + contractID - Key property 'ContractID' (Edm.Int32)
     # + payload - Request payload 
@@ -842,7 +842,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on ServiceContracts (binding type ServiceContract).
+    # Bound action 'Cancel' on ServiceContracts (binding type ServiceContract)
     #
     # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -853,7 +853,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on ServiceContracts (binding type ServiceContract).
+    # Bound action 'Close' on ServiceContracts (binding type ServiceContract)
     #
     # + contractID - Key property 'ContractID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -864,7 +864,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Ends the active SAP Business One Service Layer session.
+    # Ends the active SAP Business One Service Layer session
     #
     # + return - An error if the logout failed
     remote isolated function logout() returns error? {

@@ -15,13 +15,13 @@
 // under the License.
 import ballerina/http;
 
-# Mock SAP Business One Service Layer used by the tests.
+# Mock SAP Business One Service Layer used by the tests
 #
 # Faithful to the real Service Layer where it matters to the client:
 # session login issues `B1SESSION`/`ROUTEID` cookies scoped to `path=/b1s/v1`,
 # every other endpoint rejects requests without the current session cookie
 # (HTTP 401), and sessions can be invalidated through a test-only control
-# endpoint to exercise the re-login flow.
+# endpoint to exercise the re-login flow
 
 isolated record {|string session; int logins;|} state = {session: "", logins: 0};
 

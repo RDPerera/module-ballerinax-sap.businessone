@@ -21,14 +21,14 @@ import ballerina/data.jsondata;
 import ballerina/http;
 import ballerinax/sap.businessone;
 
-# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').
+# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1')
 # 
-# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.
+# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session
 # 
-# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.
+# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging
 public isolated client class Client {
     final businessone:Client clientEp;
-    # Gets invoked to initialize the `connector`.
+    # Gets invoked to initialize the `connector`
     #
     # + session - SAP Business One Service Layer session credentials 
     # + config - The configurations to be used when initializing the `connector` 
@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Query the CorrectionPurchaseInvoice collection.
+    # Query the CorrectionPurchaseInvoice collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -51,7 +51,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -64,7 +64,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -76,7 +76,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -86,7 +86,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on CorrectionPurchaseInvoice (binding type Document).
+    # Bound action 'Cancel' on CorrectionPurchaseInvoice (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -111,7 +111,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on CorrectionPurchaseInvoice (binding type Document).
+    # Bound action 'Close' on CorrectionPurchaseInvoice (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -122,7 +122,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoice (binding type Document).
+    # Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoice (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -133,7 +133,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on CorrectionPurchaseInvoice (binding type Document).
+    # Bound action 'Reopen' on CorrectionPurchaseInvoice (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -144,7 +144,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the CorrectionPurchaseInvoiceReversal collection.
+    # Query the CorrectionPurchaseInvoiceReversal collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -156,7 +156,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -169,7 +169,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -181,7 +181,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -191,7 +191,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -205,7 +205,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on CorrectionPurchaseInvoiceReversal (binding type Document).
+    # Bound action 'Cancel' on CorrectionPurchaseInvoiceReversal (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -216,7 +216,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on CorrectionPurchaseInvoiceReversal (binding type Document).
+    # Bound action 'Close' on CorrectionPurchaseInvoiceReversal (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -227,7 +227,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoiceReversal (binding type Document).
+    # Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoiceReversal (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -238,7 +238,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on CorrectionPurchaseInvoiceReversal (binding type Document).
+    # Bound action 'Reopen' on CorrectionPurchaseInvoiceReversal (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -249,7 +249,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -262,7 +262,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -275,7 +275,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -288,7 +288,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -301,7 +301,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -314,7 +314,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -324,7 +324,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -334,7 +334,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -347,7 +347,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -360,7 +360,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -373,7 +373,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -386,7 +386,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -399,7 +399,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -409,7 +409,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -419,7 +419,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the GoodsReturnRequest collection.
+    # Query the GoodsReturnRequest collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -431,7 +431,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -444,7 +444,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -456,7 +456,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -466,7 +466,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -480,7 +480,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on GoodsReturnRequest (binding type Document).
+    # Bound action 'Cancel' on GoodsReturnRequest (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -491,7 +491,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on GoodsReturnRequest (binding type Document).
+    # Bound action 'Close' on GoodsReturnRequest (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -502,7 +502,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on GoodsReturnRequest (binding type Document).
+    # Bound action 'CreateCancellationDocument' on GoodsReturnRequest (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -513,7 +513,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on GoodsReturnRequest (binding type Document).
+    # Bound action 'Reopen' on GoodsReturnRequest (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -524,7 +524,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -537,7 +537,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -550,7 +550,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -563,7 +563,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -576,7 +576,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -589,7 +589,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -599,7 +599,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -609,7 +609,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the LandedCosts collection.
+    # Query the LandedCosts collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -621,7 +621,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new LandedCost.
+    # Create a new LandedCost
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -634,7 +634,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single LandedCost by key.
+    # Get a single LandedCost by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -646,7 +646,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a LandedCost.
+    # Delete a LandedCost
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -656,7 +656,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a LandedCost (PATCH/MERGE semantics).
+    # Partially update a LandedCost (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -670,7 +670,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelLandedCost' on LandedCosts (binding type LandedCost).
+    # Bound action 'CancelLandedCost' on LandedCosts (binding type LandedCost)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -681,7 +681,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CloseLandedCost' on LandedCosts (binding type LandedCost).
+    # Bound action 'CloseLandedCost' on LandedCosts (binding type LandedCost)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -692,7 +692,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the LandedCostsCodes collection.
+    # Query the LandedCostsCodes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -704,7 +704,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new LandedCostsCode.
+    # Create a new LandedCostsCode
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -717,7 +717,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single LandedCostsCode by key.
+    # Get a single LandedCostsCode by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -729,7 +729,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a LandedCostsCode.
+    # Delete a LandedCostsCode
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -739,7 +739,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a LandedCostsCode (PATCH/MERGE semantics).
+    # Partially update a LandedCostsCode (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -753,7 +753,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get landed cost list.
+    # Get landed cost list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -763,7 +763,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseCreditNotes collection.
+    # Query the PurchaseCreditNotes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -775,7 +775,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -788,7 +788,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -800,7 +800,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -810,7 +810,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -824,7 +824,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseCreditNotes (binding type Document).
+    # Bound action 'Cancel' on PurchaseCreditNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -835,7 +835,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseCreditNotes (binding type Document).
+    # Bound action 'Close' on PurchaseCreditNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -846,7 +846,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseCreditNotes (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseCreditNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -857,7 +857,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseCreditNotes (binding type Document).
+    # Bound action 'Reopen' on PurchaseCreditNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -868,7 +868,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -881,7 +881,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -894,7 +894,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel2.
+    # Cancel2
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -907,7 +907,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -920,7 +920,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -933,7 +933,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -946,7 +946,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -956,7 +956,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -966,7 +966,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseDeliveryNotes collection.
+    # Query the PurchaseDeliveryNotes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -978,7 +978,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -991,7 +991,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1003,7 +1003,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1013,7 +1013,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1027,7 +1027,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseDeliveryNotes (binding type Document).
+    # Bound action 'Cancel' on PurchaseDeliveryNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1038,7 +1038,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseDeliveryNotes (binding type Document).
+    # Bound action 'Close' on PurchaseDeliveryNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1049,7 +1049,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseDeliveryNotes (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseDeliveryNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1060,7 +1060,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseDeliveryNotes (binding type Document).
+    # Bound action 'Reopen' on PurchaseDeliveryNotes (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1071,7 +1071,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1084,7 +1084,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1097,7 +1097,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel2.
+    # Cancel2
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1110,7 +1110,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1123,7 +1123,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1136,7 +1136,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1149,7 +1149,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1159,7 +1159,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1169,7 +1169,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseDownPayments collection.
+    # Query the PurchaseDownPayments collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1181,7 +1181,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1194,7 +1194,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1206,7 +1206,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1216,7 +1216,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1230,7 +1230,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseDownPayments (binding type Document).
+    # Bound action 'Cancel' on PurchaseDownPayments (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1241,7 +1241,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseDownPayments (binding type Document).
+    # Bound action 'Close' on PurchaseDownPayments (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1252,7 +1252,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseDownPayments (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseDownPayments (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1263,7 +1263,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseDownPayments (binding type Document).
+    # Bound action 'Reopen' on PurchaseDownPayments (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1274,7 +1274,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1287,7 +1287,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1300,7 +1300,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1313,7 +1313,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1326,7 +1326,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1339,7 +1339,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1349,7 +1349,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1359,7 +1359,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseInvoices collection.
+    # Query the PurchaseInvoices collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1371,7 +1371,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1384,7 +1384,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1396,7 +1396,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1406,7 +1406,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1420,7 +1420,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseInvoices (binding type Document).
+    # Bound action 'Cancel' on PurchaseInvoices (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1431,7 +1431,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseInvoices (binding type Document).
+    # Bound action 'Close' on PurchaseInvoices (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1442,7 +1442,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseInvoices (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseInvoices (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1453,7 +1453,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseInvoices (binding type Document).
+    # Bound action 'Reopen' on PurchaseInvoices (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1464,7 +1464,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1477,7 +1477,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1490,7 +1490,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel2.
+    # Cancel2
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1503,7 +1503,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1516,7 +1516,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1529,7 +1529,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1542,7 +1542,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1552,7 +1552,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1562,7 +1562,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseOrders collection.
+    # Query the PurchaseOrders collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1574,7 +1574,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1587,7 +1587,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1599,7 +1599,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1609,7 +1609,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1623,7 +1623,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseOrders (binding type Document).
+    # Bound action 'Cancel' on PurchaseOrders (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1634,7 +1634,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseOrders (binding type Document).
+    # Bound action 'Close' on PurchaseOrders (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1645,7 +1645,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseOrders (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseOrders (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1656,7 +1656,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseOrders (binding type Document).
+    # Bound action 'Reopen' on PurchaseOrders (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1667,7 +1667,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1680,7 +1680,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1693,7 +1693,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1706,7 +1706,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1719,7 +1719,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1732,7 +1732,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1742,7 +1742,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1752,7 +1752,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseQuotations collection.
+    # Query the PurchaseQuotations collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1764,7 +1764,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1777,7 +1777,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1789,7 +1789,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1799,7 +1799,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1813,7 +1813,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseQuotations (binding type Document).
+    # Bound action 'Cancel' on PurchaseQuotations (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1824,7 +1824,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseQuotations (binding type Document).
+    # Bound action 'Close' on PurchaseQuotations (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1835,7 +1835,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseQuotations (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseQuotations (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1846,7 +1846,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseQuotations (binding type Document).
+    # Bound action 'Reopen' on PurchaseQuotations (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1857,7 +1857,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1870,7 +1870,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1883,7 +1883,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1896,7 +1896,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1909,7 +1909,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1922,7 +1922,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1932,7 +1932,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1942,7 +1942,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1955,7 +1955,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1968,7 +1968,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1981,7 +1981,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1994,7 +1994,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2007,7 +2007,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2017,7 +2017,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2027,7 +2027,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseRequests collection.
+    # Query the PurchaseRequests collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -2039,7 +2039,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2052,7 +2052,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2064,7 +2064,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2074,7 +2074,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -2088,7 +2088,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseRequests (binding type Document).
+    # Bound action 'Cancel' on PurchaseRequests (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2099,7 +2099,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseRequests (binding type Document).
+    # Bound action 'Close' on PurchaseRequests (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2110,7 +2110,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseRequests (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseRequests (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2121,7 +2121,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseRequests (binding type Document).
+    # Bound action 'Reopen' on PurchaseRequests (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2132,7 +2132,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseReturns collection.
+    # Query the PurchaseReturns collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -2144,7 +2144,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Document.
+    # Create a new Document
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2157,7 +2157,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Document by key.
+    # Get a single Document by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2169,7 +2169,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Document.
+    # Delete a Document
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2179,7 +2179,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Document (PATCH/MERGE semantics).
+    # Partially update a Document (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -2193,7 +2193,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PurchaseReturns (binding type Document).
+    # Bound action 'Cancel' on PurchaseReturns (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2204,7 +2204,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on PurchaseReturns (binding type Document).
+    # Bound action 'Close' on PurchaseReturns (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2215,7 +2215,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CreateCancellationDocument' on PurchaseReturns (binding type Document).
+    # Bound action 'CreateCancellationDocument' on PurchaseReturns (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2226,7 +2226,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Reopen' on PurchaseReturns (binding type Document).
+    # Bound action 'Reopen' on PurchaseReturns (binding type Document)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2237,7 +2237,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and add.
+    # Approve and add
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2250,7 +2250,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Approve and update.
+    # Approve and update
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2263,7 +2263,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel2.
+    # Cancel2
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2276,7 +2276,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Close by date.
+    # Close by date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2289,7 +2289,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Export E way bill.
+    # Export E way bill
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2302,7 +2302,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get approval templates.
+    # Get approval templates
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2315,7 +2315,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2325,7 +2325,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Init data.
+    # Init data
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -2335,7 +2335,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PurchaseTaxInvoices collection.
+    # Query the PurchaseTaxInvoices collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -2347,7 +2347,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PurchaseTaxInvoice.
+    # Create a new PurchaseTaxInvoice
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2360,7 +2360,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PurchaseTaxInvoice by key.
+    # Get a single PurchaseTaxInvoice by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2372,7 +2372,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PurchaseTaxInvoice.
+    # Delete a PurchaseTaxInvoice
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2382,7 +2382,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PurchaseTaxInvoice (PATCH/MERGE semantics).
+    # Partially update a PurchaseTaxInvoice (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -2396,7 +2396,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Ends the active SAP Business One Service Layer session.
+    # Ends the active SAP Business One Service Layer session
     #
     # + return - An error if the logout failed
     remote isolated function logout() returns error? {

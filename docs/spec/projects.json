@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Project Management",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "ExpenseTypes"
         ],
-        "summary": "Query the ExpenseTypes collection.",
+        "summary": "Query the ExpenseTypes collection",
         "operationId": "List_ExpenseTypes",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "ExpenseTypes"
         ],
-        "summary": "Create a new ExpenseTypeData.",
+        "summary": "Create a new ExpenseTypeData",
         "operationId": "Create_ExpenseTypes",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "ExpenseTypes"
         ],
-        "summary": "Get a single ExpenseTypeData by key.",
+        "summary": "Get a single ExpenseTypeData by key",
         "operationId": "Get_ExpenseTypes",
         "parameters": [
           {
@@ -161,7 +161,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -171,7 +171,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -186,7 +186,7 @@
         "tags": [
           "ExpenseTypes"
         ],
-        "summary": "Delete a ExpenseTypeData.",
+        "summary": "Delete a ExpenseTypeData",
         "operationId": "Delete_ExpenseTypes",
         "parameters": [
           {
@@ -206,7 +206,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -221,7 +221,7 @@
         "tags": [
           "ExpenseTypes"
         ],
-        "summary": "Partially update a ExpenseTypeData (PATCH/MERGE semantics).",
+        "summary": "Partially update a ExpenseTypeData (PATCH/MERGE semantics)",
         "operationId": "Update_ExpenseTypes",
         "parameters": [
           {
@@ -251,7 +251,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -268,7 +268,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add activities.",
+        "summary": "Add activities",
         "operationId": "ProjectManagementConfigurationService_AddActivities",
         "requestBody": {
           "content": {
@@ -284,7 +284,7 @@
                     "x-ballerina-name": "pMCActivityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddActivities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddActivities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -295,7 +295,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -312,7 +312,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add areas.",
+        "summary": "Add areas",
         "operationId": "ProjectManagementConfigurationService_AddAreas",
         "requestBody": {
           "content": {
@@ -328,7 +328,7 @@
                     "x-ballerina-name": "pMCAreaCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddAreas` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddAreas` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -339,7 +339,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -356,7 +356,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add priorities.",
+        "summary": "Add priorities",
         "operationId": "ProjectManagementConfigurationService_AddPriorities",
         "requestBody": {
           "content": {
@@ -372,7 +372,7 @@
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddPriorities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddPriorities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -383,7 +383,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -400,7 +400,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add stage types.",
+        "summary": "Add stage types",
         "operationId": "ProjectManagementConfigurationService_AddStageTypes",
         "requestBody": {
           "content": {
@@ -416,7 +416,7 @@
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddStageTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddStageTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -427,7 +427,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -444,7 +444,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add subproject types.",
+        "summary": "Add subproject types",
         "operationId": "ProjectManagementConfigurationService_AddSubprojectTypes",
         "requestBody": {
           "content": {
@@ -460,7 +460,7 @@
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddSubprojectTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddSubprojectTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -471,7 +471,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -488,7 +488,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Add tasks.",
+        "summary": "Add tasks",
         "operationId": "ProjectManagementConfigurationService_AddTasks",
         "requestBody": {
           "content": {
@@ -504,7 +504,7 @@
                     "x-ballerina-name": "pMCTaskCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddTasks` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_AddTasks` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -515,7 +515,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -532,7 +532,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete activities.",
+        "summary": "Delete activities",
         "operationId": "ProjectManagementConfigurationService_DeleteActivities",
         "requestBody": {
           "content": {
@@ -548,7 +548,7 @@
                     "x-ballerina-name": "pMCActivityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteActivities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteActivities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -559,7 +559,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -576,7 +576,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete areas.",
+        "summary": "Delete areas",
         "operationId": "ProjectManagementConfigurationService_DeleteAreas",
         "requestBody": {
           "content": {
@@ -592,7 +592,7 @@
                     "x-ballerina-name": "pMCAreaCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteAreas` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteAreas` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -603,7 +603,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -620,7 +620,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete priorities.",
+        "summary": "Delete priorities",
         "operationId": "ProjectManagementConfigurationService_DeletePriorities",
         "requestBody": {
           "content": {
@@ -636,7 +636,7 @@
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeletePriorities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeletePriorities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -647,7 +647,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -664,7 +664,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete stage types.",
+        "summary": "Delete stage types",
         "operationId": "ProjectManagementConfigurationService_DeleteStageTypes",
         "requestBody": {
           "content": {
@@ -680,7 +680,7 @@
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteStageTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteStageTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -691,7 +691,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -708,7 +708,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete subproject types.",
+        "summary": "Delete subproject types",
         "operationId": "ProjectManagementConfigurationService_DeleteSubprojectTypes",
         "requestBody": {
           "content": {
@@ -724,7 +724,7 @@
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteSubprojectTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteSubprojectTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -735,7 +735,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -752,7 +752,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Delete tasks.",
+        "summary": "Delete tasks",
         "operationId": "ProjectManagementConfigurationService_DeleteTasks",
         "requestBody": {
           "content": {
@@ -768,7 +768,7 @@
                     "x-ballerina-name": "pMCTaskCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteTasks` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_DeleteTasks` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -779,7 +779,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -796,7 +796,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get activities.",
+        "summary": "Get activities",
         "operationId": "ProjectManagementConfigurationService_GetActivities",
         "responses": {
           "200": {
@@ -817,13 +817,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetActivities` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetActivities` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -840,7 +840,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get areas.",
+        "summary": "Get areas",
         "operationId": "ProjectManagementConfigurationService_GetAreas",
         "responses": {
           "200": {
@@ -861,13 +861,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetAreas` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetAreas` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -884,7 +884,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get priorities.",
+        "summary": "Get priorities",
         "operationId": "ProjectManagementConfigurationService_GetPriorities",
         "responses": {
           "200": {
@@ -905,13 +905,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetPriorities` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetPriorities` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -928,7 +928,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get stage types.",
+        "summary": "Get stage types",
         "operationId": "ProjectManagementConfigurationService_GetStageTypes",
         "responses": {
           "200": {
@@ -949,13 +949,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetStageTypes` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetStageTypes` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -972,7 +972,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get subproject types.",
+        "summary": "Get subproject types",
         "operationId": "ProjectManagementConfigurationService_GetSubprojectTypes",
         "responses": {
           "200": {
@@ -993,13 +993,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetSubprojectTypes` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetSubprojectTypes` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1016,7 +1016,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Get tasks.",
+        "summary": "Get tasks",
         "operationId": "ProjectManagementConfigurationService_GetTasks",
         "responses": {
           "200": {
@@ -1037,13 +1037,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetTasks` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementConfigurationService_GetTasks` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1060,7 +1060,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update activities.",
+        "summary": "Update activities",
         "operationId": "ProjectManagementConfigurationService_UpdateActivities",
         "requestBody": {
           "content": {
@@ -1076,7 +1076,7 @@
                     "x-ballerina-name": "pMCActivityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateActivities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateActivities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1087,7 +1087,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1104,7 +1104,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update areas.",
+        "summary": "Update areas",
         "operationId": "ProjectManagementConfigurationService_UpdateAreas",
         "requestBody": {
           "content": {
@@ -1120,7 +1120,7 @@
                     "x-ballerina-name": "pMCAreaCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateAreas` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateAreas` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1131,7 +1131,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1148,7 +1148,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update priorities.",
+        "summary": "Update priorities",
         "operationId": "ProjectManagementConfigurationService_UpdatePriorities",
         "requestBody": {
           "content": {
@@ -1164,7 +1164,7 @@
                     "x-ballerina-name": "pMCPriorityCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdatePriorities` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdatePriorities` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1175,7 +1175,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1192,7 +1192,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update stage types.",
+        "summary": "Update stage types",
         "operationId": "ProjectManagementConfigurationService_UpdateStageTypes",
         "requestBody": {
           "content": {
@@ -1208,7 +1208,7 @@
                     "x-ballerina-name": "pMCStageTypeCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateStageTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateStageTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1219,7 +1219,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1236,7 +1236,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update subproject types.",
+        "summary": "Update subproject types",
         "operationId": "ProjectManagementConfigurationService_UpdateSubprojectTypes",
         "requestBody": {
           "content": {
@@ -1252,7 +1252,7 @@
                     "x-ballerina-name": "pMCSubprojectTypesCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateSubprojectTypes` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateSubprojectTypes` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1263,7 +1263,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1280,7 +1280,7 @@
         "tags": [
           "ProjectManagementConfigurationService"
         ],
-        "summary": "Update tasks.",
+        "summary": "Update tasks",
         "operationId": "ProjectManagementConfigurationService_UpdateTasks",
         "requestBody": {
           "content": {
@@ -1296,7 +1296,7 @@
                     "x-ballerina-name": "pMCTaskCollection"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateTasks` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementConfigurationService_UpdateTasks` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1307,7 +1307,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1324,7 +1324,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Add subproject.",
+        "summary": "Add subproject",
         "operationId": "ProjectManagementService_AddSubproject",
         "requestBody": {
           "content": {
@@ -1341,7 +1341,7 @@
                     "x-ballerina-name": "pMSubprojectDocumentData"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementService_AddSubproject` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementService_AddSubproject` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1359,7 +1359,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1376,7 +1376,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Delete subproject.",
+        "summary": "Delete subproject",
         "operationId": "ProjectManagementService_DeleteSubproject",
         "requestBody": {
           "content": {
@@ -1393,7 +1393,7 @@
                     "x-ballerina-name": "pMSubprojectDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementService_DeleteSubproject` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementService_DeleteSubproject` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1404,7 +1404,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1421,7 +1421,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Get subproject.",
+        "summary": "Get subproject",
         "operationId": "ProjectManagementService_GetSubproject",
         "requestBody": {
           "content": {
@@ -1438,7 +1438,7 @@
                     "x-ballerina-name": "pMSubprojectDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementService_GetSubproject` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementService_GetSubproject` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1456,7 +1456,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1473,7 +1473,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Get subprojects list.",
+        "summary": "Get subprojects list",
         "operationId": "ProjectManagementService_GetSubprojectsList",
         "requestBody": {
           "content": {
@@ -1490,7 +1490,7 @@
                     "x-ballerina-name": "pMSubprojectParams"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1515,13 +1515,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1538,7 +1538,7 @@
         "tags": [
           "ProjectManagementService"
         ],
-        "summary": "Update subproject.",
+        "summary": "Update subproject",
         "operationId": "ProjectManagementService_UpdateSubproject",
         "requestBody": {
           "content": {
@@ -1555,7 +1555,7 @@
                     "x-ballerina-name": "pMSubprojectDocumentData"
                   }
                 },
-                "description": "Represents the request payload for the `ProjectManagementService_UpdateSubproject` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ProjectManagementService_UpdateSubproject` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1566,7 +1566,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1583,7 +1583,7 @@
         "tags": [
           "ProjectManagementTimeSheet"
         ],
-        "summary": "Query the ProjectManagementTimeSheet collection.",
+        "summary": "Query the ProjectManagementTimeSheet collection",
         "operationId": "List_ProjectManagementTimeSheet",
         "parameters": [
           {
@@ -1623,7 +1623,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1638,7 +1638,7 @@
         "tags": [
           "ProjectManagementTimeSheet"
         ],
-        "summary": "Create a new PM_TimeSheetData.",
+        "summary": "Create a new PM_TimeSheetData",
         "operationId": "Create_ProjectManagementTimeSheet",
         "requestBody": {
           "content": {
@@ -1662,7 +1662,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1679,7 +1679,7 @@
         "tags": [
           "ProjectManagementTimeSheet"
         ],
-        "summary": "Get a single PM_TimeSheetData by key.",
+        "summary": "Get a single PM_TimeSheetData by key",
         "operationId": "Get_ProjectManagementTimeSheet",
         "parameters": [
           {
@@ -1713,7 +1713,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1723,7 +1723,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1738,7 +1738,7 @@
         "tags": [
           "ProjectManagementTimeSheet"
         ],
-        "summary": "Delete a PM_TimeSheetData.",
+        "summary": "Delete a PM_TimeSheetData",
         "operationId": "Delete_ProjectManagementTimeSheet",
         "parameters": [
           {
@@ -1759,7 +1759,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1774,7 +1774,7 @@
         "tags": [
           "ProjectManagementTimeSheet"
         ],
-        "summary": "Partially update a PM_TimeSheetData (PATCH/MERGE semantics).",
+        "summary": "Partially update a PM_TimeSheetData (PATCH/MERGE semantics)",
         "operationId": "Update_ProjectManagementTimeSheet",
         "parameters": [
           {
@@ -1805,7 +1805,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1822,7 +1822,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Query the ProjectManagements collection.",
+        "summary": "Query the ProjectManagements collection",
         "operationId": "List_ProjectManagements",
         "parameters": [
           {
@@ -1862,7 +1862,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1877,7 +1877,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Create a new PM_ProjectDocumentData.",
+        "summary": "Create a new PM_ProjectDocumentData",
         "operationId": "Create_ProjectManagements",
         "requestBody": {
           "content": {
@@ -1901,7 +1901,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1918,7 +1918,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Get a single PM_ProjectDocumentData by key.",
+        "summary": "Get a single PM_ProjectDocumentData by key",
         "operationId": "Get_ProjectManagements",
         "parameters": [
           {
@@ -1952,7 +1952,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1962,7 +1962,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1977,7 +1977,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Delete a PM_ProjectDocumentData.",
+        "summary": "Delete a PM_ProjectDocumentData",
         "operationId": "Delete_ProjectManagements",
         "parameters": [
           {
@@ -1998,7 +1998,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2013,7 +2013,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics).",
+        "summary": "Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics)",
         "operationId": "Update_ProjectManagements",
         "parameters": [
           {
@@ -2044,7 +2044,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2061,7 +2061,7 @@
         "tags": [
           "ProjectManagements"
         ],
-        "summary": "Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData).",
+        "summary": "Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData)",
         "operationId": "ProjectManagements_CancelProject",
         "parameters": [
           {
@@ -2082,7 +2082,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2099,7 +2099,7 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Query the Projects collection.",
+        "summary": "Query the Projects collection",
         "operationId": "List_Projects",
         "parameters": [
           {
@@ -2139,7 +2139,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2154,7 +2154,7 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Create a new Project.",
+        "summary": "Create a new Project",
         "operationId": "Create_Projects",
         "requestBody": {
           "content": {
@@ -2178,7 +2178,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2195,7 +2195,7 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Get a single Project by key.",
+        "summary": "Get a single Project by key",
         "operationId": "Get_Projects",
         "parameters": [
           {
@@ -2228,7 +2228,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2238,7 +2238,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2253,7 +2253,7 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Delete a Project.",
+        "summary": "Delete a Project",
         "operationId": "Delete_Projects",
         "parameters": [
           {
@@ -2273,7 +2273,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2288,7 +2288,7 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Partially update a Project (PATCH/MERGE semantics).",
+        "summary": "Partially update a Project (PATCH/MERGE semantics)",
         "operationId": "Update_Projects",
         "parameters": [
           {
@@ -2318,7 +2318,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2335,7 +2335,7 @@
         "tags": [
           "ProjectsService"
         ],
-        "summary": "Get project list.",
+        "summary": "Get project list",
         "operationId": "ProjectsService_GetProjectList",
         "responses": {
           "200": {
@@ -2356,13 +2356,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ProjectsService_GetProjectList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ProjectsService_GetProjectList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2569,7 +2569,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMS_SummaryData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_SummaryData` complex type of the SAP Business One Service Layer"
       },
       "PMSubprojectParams": {
         "type": "object",
@@ -2589,7 +2589,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PM_SubprojectParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_SubprojectParams` complex type of the SAP Business One Service Layer"
       },
       "AmountCatTypeEnum": {
         "type": "string",
@@ -2731,7 +2731,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_ProjectDocumentData` entity of the SAP Business One Service Layer."
+        "description": "The `PM_ProjectDocumentData` entity of the SAP Business One Service Layer"
       },
       "PMTimeSheetData": {
         "type": "object",
@@ -2791,7 +2791,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_TimeSheetData` entity of the SAP Business One Service Layer."
+        "description": "The `PM_TimeSheetData` entity of the SAP Business One Service Layer"
       },
       "ProjectParams": {
         "type": "object",
@@ -2806,7 +2806,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ProjectParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ProjectParams` complex type of the SAP Business One Service Layer"
       },
       "ProjectStatusTypeEnum": {
         "type": "string",
@@ -2837,7 +2837,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_StageTypeData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_StageTypeData` complex type of the SAP Business One Service Layer"
       },
       "PMCTaskData": {
         "type": "object",
@@ -2853,7 +2853,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_TaskData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_TaskData` complex type of the SAP Business One Service Layer"
       },
       "PMSDocumentData": {
         "type": "object",
@@ -2899,7 +2899,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PMS_DocumentData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_DocumentData` complex type of the SAP Business One Service Layer"
       },
       "PMCategorizeTypeEnum": {
         "type": "string",
@@ -2961,7 +2961,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PM_DocAttachement` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_DocAttachement` complex type of the SAP Business One Service Layer"
       },
       "ExpenseTypeData": {
         "type": "object",
@@ -2992,7 +2992,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ExpenseTypeData` entity of the SAP Business One Service Layer."
+        "description": "The `ExpenseTypeData` entity of the SAP Business One Service Layer"
       },
       "PMTimeSheetLineData": {
         "type": "object",
@@ -3072,7 +3072,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_TimeSheetLineData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_TimeSheetLineData` complex type of the SAP Business One Service Layer"
       },
       "PMSWorkOrderData": {
         "type": "object",
@@ -3095,7 +3095,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PMS_WorkOrderData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_WorkOrderData` complex type of the SAP Business One Service Layer"
       },
       "PMOpenIssueData": {
         "type": "object",
@@ -3144,7 +3144,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_OpenIssueData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_OpenIssueData` complex type of the SAP Business One Service Layer"
       },
       "PMDocumentTypeEnum": {
         "type": "string",
@@ -3357,7 +3357,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PM_SummaryData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_SummaryData` complex type of the SAP Business One Service Layer"
       },
       "PMCPriorityData": {
         "type": "object",
@@ -3373,7 +3373,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_PriorityData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_PriorityData` complex type of the SAP Business One Service Layer"
       },
       "ProjectsCollectionResponse": {
         "type": "object",
@@ -3393,7 +3393,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Projects` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Projects` entities returned by the SAP Business One Service Layer"
       },
       "PMCSubprojectTypeData": {
         "type": "object",
@@ -3409,7 +3409,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_SubprojectTypeData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_SubprojectTypeData` complex type of the SAP Business One Service Layer"
       },
       "PMSubprojectDocumentParams": {
         "type": "object",
@@ -3421,7 +3421,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PM_SubprojectDocumentParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_SubprojectDocumentParams` complex type of the SAP Business One Service Layer"
       },
       "ExpenseTypesCollectionResponse": {
         "type": "object",
@@ -3441,7 +3441,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ExpenseTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ExpenseTypes` entities returned by the SAP Business One Service Layer"
       },
       "LineStatusTypeEnum": {
         "type": "string",
@@ -3469,7 +3469,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ProjectManagements` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ProjectManagements` entities returned by the SAP Business One Service Layer"
       },
       "PMCAreaData": {
         "type": "object",
@@ -3485,7 +3485,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_AreaData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_AreaData` complex type of the SAP Business One Service Layer"
       },
       "PMActivityData": {
         "type": "object",
@@ -3504,7 +3504,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_ActivityData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_ActivityData` complex type of the SAP Business One Service Layer"
       },
       "PMSStageAttachement": {
         "type": "object",
@@ -3538,7 +3538,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMS_StageAttachement` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_StageAttachement` complex type of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -3564,7 +3564,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "PMSDocAttachement": {
         "type": "object",
@@ -3598,7 +3598,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMS_DocAttachement` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_DocAttachement` complex type of the SAP Business One Service Layer"
       },
       "PMSubprojectDocumentData": {
         "type": "object",
@@ -3712,7 +3712,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_SubprojectDocumentData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_SubprojectDocumentData` complex type of the SAP Business One Service Layer"
       },
       "PMDocumentData": {
         "type": "object",
@@ -3758,7 +3758,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_DocumentData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_DocumentData` complex type of the SAP Business One Service Layer"
       },
       "ProjectTypeEnum": {
         "type": "string",
@@ -3800,7 +3800,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PM_StageAttachement` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_StageAttachement` complex type of the SAP Business One Service Layer"
       },
       "Project": {
         "type": "object",
@@ -3830,7 +3830,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Project` entity of the SAP Business One Service Layer."
+        "description": "The `Project` entity of the SAP Business One Service Layer"
       },
       "TimeSheetTypeEnum": {
         "type": "string",
@@ -3858,7 +3858,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PMS_ActivityData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_ActivityData` complex type of the SAP Business One Service Layer"
       },
       "PMCActivityData": {
         "type": "object",
@@ -3894,7 +3894,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PMC_ActivityData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMC_ActivityData` complex type of the SAP Business One Service Layer"
       },
       "ProjectManagementTimeSheetCollectionResponse": {
         "type": "object",
@@ -3914,7 +3914,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ProjectManagementTimeSheet` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ProjectManagementTimeSheet` entities returned by the SAP Business One Service Layer"
       },
       "PMSStageData": {
         "type": "object",
@@ -4034,7 +4034,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PMS_StageData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_StageData` complex type of the SAP Business One Service Layer"
       },
       "StageDepTypeEnum": {
         "type": "string",
@@ -4091,7 +4091,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PMS_OpenIssueData` complex type of the SAP Business One Service Layer."
+        "description": "The `PMS_OpenIssueData` complex type of the SAP Business One Service Layer"
       },
       "PMWorkOrderData": {
         "type": "object",
@@ -4114,7 +4114,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_WorkOrderData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_WorkOrderData` complex type of the SAP Business One Service Layer"
       },
       "PMStageData": {
         "type": "object",
@@ -4234,7 +4234,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PM_StageData` complex type of the SAP Business One Service Layer."
+        "description": "The `PM_StageData` complex type of the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -4344,7 +4344,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

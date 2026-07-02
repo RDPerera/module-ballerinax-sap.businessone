@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Human Resources",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "summary": "Query the EmployeeIDType collection.",
+        "summary": "Query the EmployeeIDType collection",
         "operationId": "List_EmployeeIDType",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "summary": "Create a new EmployeeIDType.",
+        "summary": "Create a new EmployeeIDType",
         "operationId": "Create_EmployeeIDType",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "summary": "Get a single EmployeeIDType by key.",
+        "summary": "Get a single EmployeeIDType by key",
         "operationId": "Get_EmployeeIDType",
         "parameters": [
           {
@@ -161,7 +161,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -171,7 +171,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -186,7 +186,7 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "summary": "Delete a EmployeeIDType.",
+        "summary": "Delete a EmployeeIDType",
         "operationId": "Delete_EmployeeIDType",
         "parameters": [
           {
@@ -206,7 +206,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -221,7 +221,7 @@
         "tags": [
           "EmployeeIDType"
         ],
-        "summary": "Partially update a EmployeeIDType (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeIDType (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeeIDType",
         "parameters": [
           {
@@ -251,7 +251,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -268,7 +268,7 @@
         "tags": [
           "EmployeeIDTypeService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "EmployeeIDTypeService_GetList",
         "responses": {
           "200": {
@@ -289,13 +289,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmployeeIDTypeService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmployeeIDTypeService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -312,7 +312,7 @@
         "tags": [
           "EmployeeImages"
         ],
-        "summary": "Query the EmployeeImages collection.",
+        "summary": "Query the EmployeeImages collection",
         "operationId": "List_EmployeeImages",
         "parameters": [
           {
@@ -352,7 +352,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -367,7 +367,7 @@
         "tags": [
           "EmployeeImages"
         ],
-        "summary": "Create a new EmployeeImage.",
+        "summary": "Create a new EmployeeImage",
         "operationId": "Create_EmployeeImages",
         "requestBody": {
           "content": {
@@ -391,7 +391,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -408,7 +408,7 @@
         "tags": [
           "EmployeeImages"
         ],
-        "summary": "Get a single EmployeeImage by key.",
+        "summary": "Get a single EmployeeImage by key",
         "operationId": "Get_EmployeeImages",
         "parameters": [
           {
@@ -442,7 +442,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -452,7 +452,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -467,7 +467,7 @@
         "tags": [
           "EmployeeImages"
         ],
-        "summary": "Delete a EmployeeImage.",
+        "summary": "Delete a EmployeeImage",
         "operationId": "Delete_EmployeeImages",
         "parameters": [
           {
@@ -488,7 +488,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -503,7 +503,7 @@
         "tags": [
           "EmployeeImages"
         ],
-        "summary": "Partially update a EmployeeImage (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeImage (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeeImages",
         "parameters": [
           {
@@ -534,7 +534,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -551,7 +551,7 @@
         "tags": [
           "EmployeePosition"
         ],
-        "summary": "Query the EmployeePosition collection.",
+        "summary": "Query the EmployeePosition collection",
         "operationId": "List_EmployeePosition",
         "parameters": [
           {
@@ -591,7 +591,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -606,7 +606,7 @@
         "tags": [
           "EmployeePosition"
         ],
-        "summary": "Create a new EmployeePosition.",
+        "summary": "Create a new EmployeePosition",
         "operationId": "Create_EmployeePosition",
         "requestBody": {
           "content": {
@@ -630,7 +630,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -647,7 +647,7 @@
         "tags": [
           "EmployeePosition"
         ],
-        "summary": "Get a single EmployeePosition by key.",
+        "summary": "Get a single EmployeePosition by key",
         "operationId": "Get_EmployeePosition",
         "parameters": [
           {
@@ -681,7 +681,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -691,7 +691,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -706,7 +706,7 @@
         "tags": [
           "EmployeePosition"
         ],
-        "summary": "Delete a EmployeePosition.",
+        "summary": "Delete a EmployeePosition",
         "operationId": "Delete_EmployeePosition",
         "parameters": [
           {
@@ -727,7 +727,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -742,7 +742,7 @@
         "tags": [
           "EmployeePosition"
         ],
-        "summary": "Partially update a EmployeePosition (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeePosition (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeePosition",
         "parameters": [
           {
@@ -773,7 +773,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -790,7 +790,7 @@
         "tags": [
           "EmployeePositionService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "EmployeePositionService_GetList",
         "responses": {
           "200": {
@@ -811,13 +811,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmployeePositionService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmployeePositionService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -834,7 +834,7 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "summary": "Query the EmployeeRolesSetup collection.",
+        "summary": "Query the EmployeeRolesSetup collection",
         "operationId": "List_EmployeeRolesSetup",
         "parameters": [
           {
@@ -874,7 +874,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -889,7 +889,7 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "summary": "Create a new EmployeeRoleSetup.",
+        "summary": "Create a new EmployeeRoleSetup",
         "operationId": "Create_EmployeeRolesSetup",
         "requestBody": {
           "content": {
@@ -913,7 +913,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -930,7 +930,7 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "summary": "Get a single EmployeeRoleSetup by key.",
+        "summary": "Get a single EmployeeRoleSetup by key",
         "operationId": "Get_EmployeeRolesSetup",
         "parameters": [
           {
@@ -964,7 +964,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -974,7 +974,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -989,7 +989,7 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "summary": "Delete a EmployeeRoleSetup.",
+        "summary": "Delete a EmployeeRoleSetup",
         "operationId": "Delete_EmployeeRolesSetup",
         "parameters": [
           {
@@ -1010,7 +1010,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1025,7 +1025,7 @@
         "tags": [
           "EmployeeRolesSetup"
         ],
-        "summary": "Partially update a EmployeeRoleSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeRoleSetup (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeeRolesSetup",
         "parameters": [
           {
@@ -1056,7 +1056,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1073,7 +1073,7 @@
         "tags": [
           "EmployeeRolesSetupService"
         ],
-        "summary": "Get employee role setup list.",
+        "summary": "Get employee role setup list",
         "operationId": "EmployeeRolesSetupService_GetEmployeeRoleSetupList",
         "responses": {
           "200": {
@@ -1094,13 +1094,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmployeeRolesSetupService_GetEmployeeRoleSetupList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmployeeRolesSetupService_GetEmployeeRoleSetupList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1117,7 +1117,7 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "summary": "Query the EmployeeStatus collection.",
+        "summary": "Query the EmployeeStatus collection",
         "operationId": "List_EmployeeStatus",
         "parameters": [
           {
@@ -1157,7 +1157,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1172,7 +1172,7 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "summary": "Create a new EmployeeStatus.",
+        "summary": "Create a new EmployeeStatus",
         "operationId": "Create_EmployeeStatus",
         "requestBody": {
           "content": {
@@ -1196,7 +1196,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1213,7 +1213,7 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "summary": "Get a single EmployeeStatus by key.",
+        "summary": "Get a single EmployeeStatus by key",
         "operationId": "Get_EmployeeStatus",
         "parameters": [
           {
@@ -1247,7 +1247,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1257,7 +1257,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1272,7 +1272,7 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "summary": "Delete a EmployeeStatus.",
+        "summary": "Delete a EmployeeStatus",
         "operationId": "Delete_EmployeeStatus",
         "parameters": [
           {
@@ -1293,7 +1293,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1308,7 +1308,7 @@
         "tags": [
           "EmployeeStatus"
         ],
-        "summary": "Partially update a EmployeeStatus (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeStatus (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeeStatus",
         "parameters": [
           {
@@ -1339,7 +1339,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1356,7 +1356,7 @@
         "tags": [
           "EmployeeStatusService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "EmployeeStatusService_GetList",
         "responses": {
           "200": {
@@ -1377,13 +1377,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmployeeStatusService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmployeeStatusService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1400,7 +1400,7 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "summary": "Query the EmployeeTransfers collection.",
+        "summary": "Query the EmployeeTransfers collection",
         "operationId": "List_EmployeeTransfers",
         "parameters": [
           {
@@ -1440,7 +1440,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1455,7 +1455,7 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "summary": "Create a new EmployeeTransfer.",
+        "summary": "Create a new EmployeeTransfer",
         "operationId": "Create_EmployeeTransfers",
         "requestBody": {
           "content": {
@@ -1479,7 +1479,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1496,7 +1496,7 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "summary": "Get a single EmployeeTransfer by key.",
+        "summary": "Get a single EmployeeTransfer by key",
         "operationId": "Get_EmployeeTransfers",
         "parameters": [
           {
@@ -1530,7 +1530,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1540,7 +1540,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1555,7 +1555,7 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "summary": "Delete a EmployeeTransfer.",
+        "summary": "Delete a EmployeeTransfer",
         "operationId": "Delete_EmployeeTransfers",
         "parameters": [
           {
@@ -1576,7 +1576,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1591,7 +1591,7 @@
         "tags": [
           "EmployeeTransfers"
         ],
-        "summary": "Partially update a EmployeeTransfer (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeTransfer (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeeTransfers",
         "parameters": [
           {
@@ -1622,7 +1622,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1639,7 +1639,7 @@
         "tags": [
           "EmployeeTransfersService"
         ],
-        "summary": "Get employee transfer list.",
+        "summary": "Get employee transfer list",
         "operationId": "EmployeeTransfersService_GetEmployeeTransferList",
         "responses": {
           "200": {
@@ -1660,13 +1660,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmployeeTransfersService_GetEmployeeTransferList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmployeeTransfersService_GetEmployeeTransferList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1683,7 +1683,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Query the EmployeesInfo collection.",
+        "summary": "Query the EmployeesInfo collection",
         "operationId": "List_EmployeesInfo",
         "parameters": [
           {
@@ -1723,7 +1723,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1738,7 +1738,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Create a new EmployeeInfo.",
+        "summary": "Create a new EmployeeInfo",
         "operationId": "Create_EmployeesInfo",
         "requestBody": {
           "content": {
@@ -1762,7 +1762,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1779,7 +1779,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Get a single EmployeeInfo by key.",
+        "summary": "Get a single EmployeeInfo by key",
         "operationId": "Get_EmployeesInfo",
         "parameters": [
           {
@@ -1813,7 +1813,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1823,7 +1823,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1838,7 +1838,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Delete a EmployeeInfo.",
+        "summary": "Delete a EmployeeInfo",
         "operationId": "Delete_EmployeesInfo",
         "parameters": [
           {
@@ -1859,7 +1859,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1874,7 +1874,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Partially update a EmployeeInfo (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmployeeInfo (PATCH/MERGE semantics)",
         "operationId": "Update_EmployeesInfo",
         "parameters": [
           {
@@ -1905,7 +1905,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1922,7 +1922,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Bound action 'Cancel' on EmployeesInfo (binding type EmployeeInfo).",
+        "summary": "Bound action 'Cancel' on EmployeesInfo (binding type EmployeeInfo)",
         "operationId": "EmployeesInfo_Cancel",
         "parameters": [
           {
@@ -1943,7 +1943,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1960,7 +1960,7 @@
         "tags": [
           "EmployeesInfo"
         ],
-        "summary": "Bound action 'Close' on EmployeesInfo (binding type EmployeeInfo).",
+        "summary": "Bound action 'Close' on EmployeesInfo (binding type EmployeeInfo)",
         "operationId": "EmployeesInfo_Close",
         "parameters": [
           {
@@ -1981,7 +1981,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1998,7 +1998,7 @@
         "tags": [
           "EmploymentCategoryService"
         ],
-        "summary": "Get employment category list.",
+        "summary": "Get employment category list",
         "operationId": "EmploymentCategoryService_GetEmploymentCategoryList",
         "responses": {
           "200": {
@@ -2019,13 +2019,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `EmploymentCategoryService_GetEmploymentCategoryList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `EmploymentCategoryService_GetEmploymentCategoryList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2042,7 +2042,7 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "summary": "Query the EmploymentCategorys collection.",
+        "summary": "Query the EmploymentCategorys collection",
         "operationId": "List_EmploymentCategorys",
         "parameters": [
           {
@@ -2082,7 +2082,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2097,7 +2097,7 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "summary": "Create a new EmploymentCategory.",
+        "summary": "Create a new EmploymentCategory",
         "operationId": "Create_EmploymentCategorys",
         "requestBody": {
           "content": {
@@ -2121,7 +2121,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2138,7 +2138,7 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "summary": "Get a single EmploymentCategory by key.",
+        "summary": "Get a single EmploymentCategory by key",
         "operationId": "Get_EmploymentCategorys",
         "parameters": [
           {
@@ -2171,7 +2171,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2181,7 +2181,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2196,7 +2196,7 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "summary": "Delete a EmploymentCategory.",
+        "summary": "Delete a EmploymentCategory",
         "operationId": "Delete_EmploymentCategorys",
         "parameters": [
           {
@@ -2216,7 +2216,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2231,7 +2231,7 @@
         "tags": [
           "EmploymentCategorys"
         ],
-        "summary": "Partially update a EmploymentCategory (PATCH/MERGE semantics).",
+        "summary": "Partially update a EmploymentCategory (PATCH/MERGE semantics)",
         "operationId": "Update_EmploymentCategorys",
         "parameters": [
           {
@@ -2261,7 +2261,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2278,7 +2278,7 @@
         "tags": [
           "Genders"
         ],
-        "summary": "Query the Genders collection.",
+        "summary": "Query the Genders collection",
         "operationId": "List_Genders",
         "parameters": [
           {
@@ -2318,7 +2318,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2333,7 +2333,7 @@
         "tags": [
           "Genders"
         ],
-        "summary": "Create a new Gender.",
+        "summary": "Create a new Gender",
         "operationId": "Create_Genders",
         "requestBody": {
           "content": {
@@ -2357,7 +2357,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2374,7 +2374,7 @@
         "tags": [
           "Genders"
         ],
-        "summary": "Get a single Gender by key.",
+        "summary": "Get a single Gender by key",
         "operationId": "Get_Genders",
         "parameters": [
           {
@@ -2407,7 +2407,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2417,7 +2417,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2432,7 +2432,7 @@
         "tags": [
           "Genders"
         ],
-        "summary": "Delete a Gender.",
+        "summary": "Delete a Gender",
         "operationId": "Delete_Genders",
         "parameters": [
           {
@@ -2452,7 +2452,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2467,7 +2467,7 @@
         "tags": [
           "Genders"
         ],
-        "summary": "Partially update a Gender (PATCH/MERGE semantics).",
+        "summary": "Partially update a Gender (PATCH/MERGE semantics)",
         "operationId": "Update_Genders",
         "parameters": [
           {
@@ -2497,7 +2497,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2514,7 +2514,7 @@
         "tags": [
           "GendersService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "GendersService_GetList",
         "responses": {
           "200": {
@@ -2535,13 +2535,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `GendersService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `GendersService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2558,7 +2558,7 @@
         "tags": [
           "Teams"
         ],
-        "summary": "Query the Teams collection.",
+        "summary": "Query the Teams collection",
         "operationId": "List_Teams",
         "parameters": [
           {
@@ -2598,7 +2598,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2613,7 +2613,7 @@
         "tags": [
           "Teams"
         ],
-        "summary": "Create a new Team.",
+        "summary": "Create a new Team",
         "operationId": "Create_Teams",
         "requestBody": {
           "content": {
@@ -2637,7 +2637,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2654,7 +2654,7 @@
         "tags": [
           "Teams"
         ],
-        "summary": "Get a single Team by key.",
+        "summary": "Get a single Team by key",
         "operationId": "Get_Teams",
         "parameters": [
           {
@@ -2688,7 +2688,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2698,7 +2698,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2713,7 +2713,7 @@
         "tags": [
           "Teams"
         ],
-        "summary": "Delete a Team.",
+        "summary": "Delete a Team",
         "operationId": "Delete_Teams",
         "parameters": [
           {
@@ -2734,7 +2734,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2749,7 +2749,7 @@
         "tags": [
           "Teams"
         ],
-        "summary": "Partially update a Team (PATCH/MERGE semantics).",
+        "summary": "Partially update a Team (PATCH/MERGE semantics)",
         "operationId": "Update_Teams",
         "parameters": [
           {
@@ -2780,7 +2780,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2797,7 +2797,7 @@
         "tags": [
           "TerminationReason"
         ],
-        "summary": "Query the TerminationReason collection.",
+        "summary": "Query the TerminationReason collection",
         "operationId": "List_TerminationReason",
         "parameters": [
           {
@@ -2837,7 +2837,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2852,7 +2852,7 @@
         "tags": [
           "TerminationReason"
         ],
-        "summary": "Create a new TerminationReason.",
+        "summary": "Create a new TerminationReason",
         "operationId": "Create_TerminationReason",
         "requestBody": {
           "content": {
@@ -2876,7 +2876,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2893,7 +2893,7 @@
         "tags": [
           "TerminationReason"
         ],
-        "summary": "Get a single TerminationReason by key.",
+        "summary": "Get a single TerminationReason by key",
         "operationId": "Get_TerminationReason",
         "parameters": [
           {
@@ -2927,7 +2927,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2937,7 +2937,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2952,7 +2952,7 @@
         "tags": [
           "TerminationReason"
         ],
-        "summary": "Delete a TerminationReason.",
+        "summary": "Delete a TerminationReason",
         "operationId": "Delete_TerminationReason",
         "parameters": [
           {
@@ -2973,7 +2973,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2988,7 +2988,7 @@
         "tags": [
           "TerminationReason"
         ],
-        "summary": "Partially update a TerminationReason (PATCH/MERGE semantics).",
+        "summary": "Partially update a TerminationReason (PATCH/MERGE semantics)",
         "operationId": "Update_TerminationReason",
         "parameters": [
           {
@@ -3019,7 +3019,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3036,7 +3036,7 @@
         "tags": [
           "TerminationReasonService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "TerminationReasonService_GetList",
         "responses": {
           "200": {
@@ -3057,13 +3057,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `TerminationReasonService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `TerminationReasonService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3119,7 +3119,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeePreviousEmpoymentInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeePreviousEmpoymentInfo` complex type of the SAP Business One Service Layer"
       },
       "EmployeeImagesCollectionResponse": {
         "type": "object",
@@ -3139,7 +3139,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeeImages` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeeImages` entities returned by the SAP Business One Service Layer"
       },
       "EmployeePosition": {
         "type": "object",
@@ -3166,7 +3166,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeePosition` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeePosition` entity of the SAP Business One Service Layer"
       },
       "EmployeeIDTypeCollectionResponse": {
         "type": "object",
@@ -3186,7 +3186,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeeIDType` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeeIDType` entities returned by the SAP Business One Service Layer"
       },
       "EmploymentCategorysCollectionResponse": {
         "type": "object",
@@ -3206,7 +3206,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmploymentCategorys` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmploymentCategorys` entities returned by the SAP Business One Service Layer"
       },
       "Gender": {
         "type": "object",
@@ -3228,7 +3228,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `Gender` entity of the SAP Business One Service Layer."
+        "description": "The `Gender` entity of the SAP Business One Service Layer"
       },
       "EmployeeRolesSetupCollectionResponse": {
         "type": "object",
@@ -3248,7 +3248,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeeRolesSetup` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeeRolesSetup` entities returned by the SAP Business One Service Layer"
       },
       "EmployeeTransfer": {
         "type": "object",
@@ -3297,7 +3297,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeTransfer` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeTransfer` entity of the SAP Business One Service Layer"
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -3325,7 +3325,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeeTransfers` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeeTransfers` entities returned by the SAP Business One Service Layer"
       },
       "EmployeeReviewsInfo": {
         "type": "object",
@@ -3357,7 +3357,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeReviewsInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeReviewsInfo` complex type of the SAP Business One Service Layer"
       },
       "TeamsCollectionResponse": {
         "type": "object",
@@ -3377,7 +3377,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Teams` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Teams` entities returned by the SAP Business One Service Layer"
       },
       "EmploymentCategoryParams": {
         "type": "object",
@@ -3388,7 +3388,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmploymentCategoryParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmploymentCategoryParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeeIDTypeParams": {
         "type": "object",
@@ -3399,7 +3399,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeIDTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeIDTypeParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeeSavingsPaymentInfo": {
         "type": "object",
@@ -3446,7 +3446,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeSavingsPaymentInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeSavingsPaymentInfo` complex type of the SAP Business One Service Layer"
       },
       "EmployeeAbsenceInfo": {
         "type": "object",
@@ -3479,7 +3479,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeAbsenceInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeAbsenceInfo` complex type of the SAP Business One Service Layer"
       },
       "EmployeeBranchAssignmentItem": {
         "type": "object",
@@ -3494,7 +3494,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeBranchAssignmentItem` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeBranchAssignmentItem` complex type of the SAP Business One Service Layer"
       },
       "EmployeeExemptionUnitEnum": {
         "type": "string",
@@ -3543,7 +3543,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeTransferDetail` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeTransferDetail` complex type of the SAP Business One Service Layer"
       },
       "TerminationReasonParams": {
         "type": "object",
@@ -3563,7 +3563,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TerminationReasonParams` complex type of the SAP Business One Service Layer."
+        "description": "The `TerminationReasonParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeeStatusCollectionResponse": {
         "type": "object",
@@ -3583,7 +3583,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeeStatus` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeeStatus` entities returned by the SAP Business One Service Layer"
       },
       "EmployeeRolesInfo": {
         "type": "object",
@@ -3602,7 +3602,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeRolesInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeRolesInfo` complex type of the SAP Business One Service Layer"
       },
       "EmployeeStatus": {
         "type": "object",
@@ -3629,7 +3629,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeStatus` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeStatus` entity of the SAP Business One Service Layer"
       },
       "EmployeesInfoCollectionResponse": {
         "type": "object",
@@ -3649,7 +3649,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeesInfo` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeesInfo` entities returned by the SAP Business One Service Layer"
       },
       "ContractSequenceEnum": {
         "type": "string",
@@ -3704,7 +3704,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeRoleSetup` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeRoleSetup` entity of the SAP Business One Service Layer"
       },
       "EmploymentCategory": {
         "type": "object",
@@ -3719,7 +3719,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmploymentCategory` entity of the SAP Business One Service Layer."
+        "description": "The `EmploymentCategory` entity of the SAP Business One Service Layer"
       },
       "BoGenderTypes": {
         "type": "string",
@@ -3750,7 +3750,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeStatusParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeStatusParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeePaymentMethodEnum": {
         "type": "string",
@@ -3778,7 +3778,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeePositionParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeePositionParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeeEducationInfo": {
         "type": "object",
@@ -3814,7 +3814,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeEducationInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeEducationInfo` complex type of the SAP Business One Service Layer"
       },
       "EmployeeTransferStatusEnum": {
         "type": "string",
@@ -3846,7 +3846,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `TerminationReason` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `TerminationReason` entities returned by the SAP Business One Service Layer"
       },
       "EmployeePositionCollectionResponse": {
         "type": "object",
@@ -3866,7 +3866,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `EmployeePosition` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `EmployeePosition` entities returned by the SAP Business One Service Layer"
       },
       "EmployeeImage": {
         "type": "object",
@@ -3883,7 +3883,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeImage` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeImage` entity of the SAP Business One Service Layer"
       },
       "EmployeeRoleSetupParams": {
         "type": "object",
@@ -3899,7 +3899,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeRoleSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeRoleSetupParams` complex type of the SAP Business One Service Layer"
       },
       "EmployeeIDType": {
         "type": "object",
@@ -3917,7 +3917,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeIDType` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeIDType` entity of the SAP Business One Service Layer"
       },
       "EmployeeTransferParams": {
         "type": "object",
@@ -3929,7 +3929,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EmployeeTransferParams` complex type of the SAP Business One Service Layer."
+        "description": "The `EmployeeTransferParams` complex type of the SAP Business One Service Layer"
       },
       "SPEDContabilQualificationCodeEnum": {
         "type": "string",
@@ -3975,7 +3975,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Team` entity of the SAP Business One Service Layer."
+        "description": "The `Team` entity of the SAP Business One Service Layer"
       },
       "EmployeeInfo": {
         "type": "object",
@@ -4426,7 +4426,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EmployeeInfo` entity of the SAP Business One Service Layer."
+        "description": "The `EmployeeInfo` entity of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4452,7 +4452,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "GendersCollectionResponse": {
         "type": "object",
@@ -4472,7 +4472,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Genders` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Genders` entities returned by the SAP Business One Service Layer"
       },
       "BoSalaryCostUnits": {
         "type": "string",
@@ -4503,7 +4503,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `TeamMember` complex type of the SAP Business One Service Layer."
+        "description": "The `TeamMember` complex type of the SAP Business One Service Layer"
       },
       "TerminationReason": {
         "type": "object",
@@ -4530,7 +4530,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TerminationReason` entity of the SAP Business One Service Layer."
+        "description": "The `TerminationReason` entity of the SAP Business One Service Layer"
       },
       "GendersParams": {
         "type": "object",
@@ -4541,7 +4541,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `GendersParams` complex type of the SAP Business One Service Layer."
+        "description": "The `GendersParams` complex type of the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -4651,7 +4651,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

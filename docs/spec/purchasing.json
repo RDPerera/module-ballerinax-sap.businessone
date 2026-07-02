@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Purchasing (A/P)",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Query the CorrectionPurchaseInvoice collection.",
+        "summary": "Query the CorrectionPurchaseInvoice collection",
         "operationId": "List_CorrectionPurchaseInvoice",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_CorrectionPurchaseInvoice",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_CorrectionPurchaseInvoice",
         "parameters": [
           {
@@ -162,7 +162,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +172,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -187,7 +187,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_CorrectionPurchaseInvoice",
         "parameters": [
           {
@@ -208,7 +208,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -223,7 +223,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_CorrectionPurchaseInvoice",
         "parameters": [
           {
@@ -254,7 +254,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -271,7 +271,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Bound action 'Cancel' on CorrectionPurchaseInvoice (binding type Document).",
+        "summary": "Bound action 'Cancel' on CorrectionPurchaseInvoice (binding type Document)",
         "operationId": "CorrectionPurchaseInvoice_Cancel",
         "parameters": [
           {
@@ -292,7 +292,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -309,7 +309,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Bound action 'Close' on CorrectionPurchaseInvoice (binding type Document).",
+        "summary": "Bound action 'Close' on CorrectionPurchaseInvoice (binding type Document)",
         "operationId": "CorrectionPurchaseInvoice_Close",
         "parameters": [
           {
@@ -330,7 +330,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -347,7 +347,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoice (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoice (binding type Document)",
         "operationId": "CorrectionPurchaseInvoice_CreateCancellationDocument",
         "parameters": [
           {
@@ -375,7 +375,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -392,7 +392,7 @@
         "tags": [
           "CorrectionPurchaseInvoice"
         ],
-        "summary": "Bound action 'Reopen' on CorrectionPurchaseInvoice (binding type Document).",
+        "summary": "Bound action 'Reopen' on CorrectionPurchaseInvoice (binding type Document)",
         "operationId": "CorrectionPurchaseInvoice_Reopen",
         "parameters": [
           {
@@ -413,7 +413,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -430,7 +430,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Query the CorrectionPurchaseInvoiceReversal collection.",
+        "summary": "Query the CorrectionPurchaseInvoiceReversal collection",
         "operationId": "List_CorrectionPurchaseInvoiceReversal",
         "parameters": [
           {
@@ -470,7 +470,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -485,7 +485,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_CorrectionPurchaseInvoiceReversal",
         "requestBody": {
           "content": {
@@ -509,7 +509,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -526,7 +526,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_CorrectionPurchaseInvoiceReversal",
         "parameters": [
           {
@@ -560,7 +560,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -570,7 +570,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -585,7 +585,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_CorrectionPurchaseInvoiceReversal",
         "parameters": [
           {
@@ -606,7 +606,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -621,7 +621,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_CorrectionPurchaseInvoiceReversal",
         "parameters": [
           {
@@ -652,7 +652,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -669,7 +669,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Bound action 'Cancel' on CorrectionPurchaseInvoiceReversal (binding type Document).",
+        "summary": "Bound action 'Cancel' on CorrectionPurchaseInvoiceReversal (binding type Document)",
         "operationId": "CorrectionPurchaseInvoiceReversal_Cancel",
         "parameters": [
           {
@@ -690,7 +690,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -707,7 +707,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Bound action 'Close' on CorrectionPurchaseInvoiceReversal (binding type Document).",
+        "summary": "Bound action 'Close' on CorrectionPurchaseInvoiceReversal (binding type Document)",
         "operationId": "CorrectionPurchaseInvoiceReversal_Close",
         "parameters": [
           {
@@ -728,7 +728,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -745,7 +745,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoiceReversal (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on CorrectionPurchaseInvoiceReversal (binding type Document)",
         "operationId": "CorrectionPurchaseInvoiceReversal_CreateCancellationDocument",
         "parameters": [
           {
@@ -773,7 +773,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -790,7 +790,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversal"
         ],
-        "summary": "Bound action 'Reopen' on CorrectionPurchaseInvoiceReversal (binding type Document).",
+        "summary": "Bound action 'Reopen' on CorrectionPurchaseInvoiceReversal (binding type Document)",
         "operationId": "CorrectionPurchaseInvoiceReversal_Reopen",
         "parameters": [
           {
@@ -811,7 +811,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -828,7 +828,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "CorrectionPurchaseInvoiceReversalService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -845,7 +845,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -856,7 +856,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -873,7 +873,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "CorrectionPurchaseInvoiceReversalService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -890,7 +890,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -901,7 +901,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -918,7 +918,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "CorrectionPurchaseInvoiceReversalService_CloseByDate",
         "requestBody": {
           "content": {
@@ -935,7 +935,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -946,7 +946,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -963,7 +963,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "CorrectionPurchaseInvoiceReversalService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -980,7 +980,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -991,7 +991,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1008,7 +1008,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -1025,7 +1025,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceReversalService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1043,7 +1043,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1060,14 +1060,14 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "CorrectionPurchaseInvoiceReversalService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1084,7 +1084,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceReversalService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "CorrectionPurchaseInvoiceReversalService_InitData",
         "responses": {
           "200": {
@@ -1098,7 +1098,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1115,7 +1115,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "CorrectionPurchaseInvoiceService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -1132,7 +1132,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1143,7 +1143,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1160,7 +1160,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "CorrectionPurchaseInvoiceService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -1177,7 +1177,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1188,7 +1188,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1205,7 +1205,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "CorrectionPurchaseInvoiceService_CloseByDate",
         "requestBody": {
           "content": {
@@ -1222,7 +1222,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1233,7 +1233,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1250,7 +1250,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "CorrectionPurchaseInvoiceService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -1267,7 +1267,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1278,7 +1278,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1295,7 +1295,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "CorrectionPurchaseInvoiceService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -1312,7 +1312,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `CorrectionPurchaseInvoiceService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1330,7 +1330,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1347,14 +1347,14 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "CorrectionPurchaseInvoiceService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1371,7 +1371,7 @@
         "tags": [
           "CorrectionPurchaseInvoiceService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "CorrectionPurchaseInvoiceService_InitData",
         "responses": {
           "200": {
@@ -1385,7 +1385,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1402,7 +1402,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Query the GoodsReturnRequest collection.",
+        "summary": "Query the GoodsReturnRequest collection",
         "operationId": "List_GoodsReturnRequest",
         "parameters": [
           {
@@ -1442,7 +1442,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1457,7 +1457,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_GoodsReturnRequest",
         "requestBody": {
           "content": {
@@ -1481,7 +1481,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1498,7 +1498,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_GoodsReturnRequest",
         "parameters": [
           {
@@ -1532,7 +1532,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1542,7 +1542,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1557,7 +1557,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_GoodsReturnRequest",
         "parameters": [
           {
@@ -1578,7 +1578,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1593,7 +1593,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_GoodsReturnRequest",
         "parameters": [
           {
@@ -1624,7 +1624,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1641,7 +1641,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Bound action 'Cancel' on GoodsReturnRequest (binding type Document).",
+        "summary": "Bound action 'Cancel' on GoodsReturnRequest (binding type Document)",
         "operationId": "GoodsReturnRequest_Cancel",
         "parameters": [
           {
@@ -1662,7 +1662,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1679,7 +1679,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Bound action 'Close' on GoodsReturnRequest (binding type Document).",
+        "summary": "Bound action 'Close' on GoodsReturnRequest (binding type Document)",
         "operationId": "GoodsReturnRequest_Close",
         "parameters": [
           {
@@ -1700,7 +1700,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1717,7 +1717,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on GoodsReturnRequest (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on GoodsReturnRequest (binding type Document)",
         "operationId": "GoodsReturnRequest_CreateCancellationDocument",
         "parameters": [
           {
@@ -1745,7 +1745,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1762,7 +1762,7 @@
         "tags": [
           "GoodsReturnRequest"
         ],
-        "summary": "Bound action 'Reopen' on GoodsReturnRequest (binding type Document).",
+        "summary": "Bound action 'Reopen' on GoodsReturnRequest (binding type Document)",
         "operationId": "GoodsReturnRequest_Reopen",
         "parameters": [
           {
@@ -1783,7 +1783,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1800,7 +1800,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "GoodsReturnRequestService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -1817,7 +1817,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1828,7 +1828,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1845,7 +1845,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "GoodsReturnRequestService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -1862,7 +1862,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1873,7 +1873,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1890,7 +1890,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "GoodsReturnRequestService_CloseByDate",
         "requestBody": {
           "content": {
@@ -1907,7 +1907,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `GoodsReturnRequestService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `GoodsReturnRequestService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1918,7 +1918,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1935,7 +1935,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "GoodsReturnRequestService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -1952,7 +1952,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `GoodsReturnRequestService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `GoodsReturnRequestService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1963,7 +1963,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1980,7 +1980,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "GoodsReturnRequestService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -1997,7 +1997,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `GoodsReturnRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `GoodsReturnRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -2015,7 +2015,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2032,14 +2032,14 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "GoodsReturnRequestService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2056,7 +2056,7 @@
         "tags": [
           "GoodsReturnRequestService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "GoodsReturnRequestService_InitData",
         "responses": {
           "200": {
@@ -2070,7 +2070,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2087,7 +2087,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Query the LandedCosts collection.",
+        "summary": "Query the LandedCosts collection",
         "operationId": "List_LandedCosts",
         "parameters": [
           {
@@ -2127,7 +2127,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2142,7 +2142,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Create a new LandedCost.",
+        "summary": "Create a new LandedCost",
         "operationId": "Create_LandedCosts",
         "requestBody": {
           "content": {
@@ -2166,7 +2166,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2183,7 +2183,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Get a single LandedCost by key.",
+        "summary": "Get a single LandedCost by key",
         "operationId": "Get_LandedCosts",
         "parameters": [
           {
@@ -2217,7 +2217,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2227,7 +2227,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2242,7 +2242,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Delete a LandedCost.",
+        "summary": "Delete a LandedCost",
         "operationId": "Delete_LandedCosts",
         "parameters": [
           {
@@ -2263,7 +2263,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2278,7 +2278,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Partially update a LandedCost (PATCH/MERGE semantics).",
+        "summary": "Partially update a LandedCost (PATCH/MERGE semantics)",
         "operationId": "Update_LandedCosts",
         "parameters": [
           {
@@ -2309,7 +2309,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2326,7 +2326,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Bound action 'CancelLandedCost' on LandedCosts (binding type LandedCost).",
+        "summary": "Bound action 'CancelLandedCost' on LandedCosts (binding type LandedCost)",
         "operationId": "LandedCosts_CancelLandedCost",
         "parameters": [
           {
@@ -2347,7 +2347,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2364,7 +2364,7 @@
         "tags": [
           "LandedCosts"
         ],
-        "summary": "Bound action 'CloseLandedCost' on LandedCosts (binding type LandedCost).",
+        "summary": "Bound action 'CloseLandedCost' on LandedCosts (binding type LandedCost)",
         "operationId": "LandedCosts_CloseLandedCost",
         "parameters": [
           {
@@ -2385,7 +2385,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2402,7 +2402,7 @@
         "tags": [
           "LandedCostsCodes"
         ],
-        "summary": "Query the LandedCostsCodes collection.",
+        "summary": "Query the LandedCostsCodes collection",
         "operationId": "List_LandedCostsCodes",
         "parameters": [
           {
@@ -2442,7 +2442,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2457,7 +2457,7 @@
         "tags": [
           "LandedCostsCodes"
         ],
-        "summary": "Create a new LandedCostsCode.",
+        "summary": "Create a new LandedCostsCode",
         "operationId": "Create_LandedCostsCodes",
         "requestBody": {
           "content": {
@@ -2481,7 +2481,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2498,7 +2498,7 @@
         "tags": [
           "LandedCostsCodes"
         ],
-        "summary": "Get a single LandedCostsCode by key.",
+        "summary": "Get a single LandedCostsCode by key",
         "operationId": "Get_LandedCostsCodes",
         "parameters": [
           {
@@ -2531,7 +2531,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2541,7 +2541,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2556,7 +2556,7 @@
         "tags": [
           "LandedCostsCodes"
         ],
-        "summary": "Delete a LandedCostsCode.",
+        "summary": "Delete a LandedCostsCode",
         "operationId": "Delete_LandedCostsCodes",
         "parameters": [
           {
@@ -2576,7 +2576,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2591,7 +2591,7 @@
         "tags": [
           "LandedCostsCodes"
         ],
-        "summary": "Partially update a LandedCostsCode (PATCH/MERGE semantics).",
+        "summary": "Partially update a LandedCostsCode (PATCH/MERGE semantics)",
         "operationId": "Update_LandedCostsCodes",
         "parameters": [
           {
@@ -2621,7 +2621,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2638,7 +2638,7 @@
         "tags": [
           "LandedCostsService"
         ],
-        "summary": "Get landed cost list.",
+        "summary": "Get landed cost list",
         "operationId": "LandedCostsService_GetLandedCostList",
         "responses": {
           "200": {
@@ -2659,13 +2659,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `LandedCostsService_GetLandedCostList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `LandedCostsService_GetLandedCostList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2682,7 +2682,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Query the PurchaseCreditNotes collection.",
+        "summary": "Query the PurchaseCreditNotes collection",
         "operationId": "List_PurchaseCreditNotes",
         "parameters": [
           {
@@ -2722,7 +2722,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2737,7 +2737,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseCreditNotes",
         "requestBody": {
           "content": {
@@ -2761,7 +2761,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2778,7 +2778,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseCreditNotes",
         "parameters": [
           {
@@ -2812,7 +2812,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2822,7 +2822,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2837,7 +2837,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseCreditNotes",
         "parameters": [
           {
@@ -2858,7 +2858,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2873,7 +2873,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseCreditNotes",
         "parameters": [
           {
@@ -2904,7 +2904,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2921,7 +2921,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseCreditNotes (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseCreditNotes (binding type Document)",
         "operationId": "PurchaseCreditNotes_Cancel",
         "parameters": [
           {
@@ -2942,7 +2942,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2959,7 +2959,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Bound action 'Close' on PurchaseCreditNotes (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseCreditNotes (binding type Document)",
         "operationId": "PurchaseCreditNotes_Close",
         "parameters": [
           {
@@ -2980,7 +2980,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2997,7 +2997,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseCreditNotes (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseCreditNotes (binding type Document)",
         "operationId": "PurchaseCreditNotes_CreateCancellationDocument",
         "parameters": [
           {
@@ -3025,7 +3025,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3042,7 +3042,7 @@
         "tags": [
           "PurchaseCreditNotes"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseCreditNotes (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseCreditNotes (binding type Document)",
         "operationId": "PurchaseCreditNotes_Reopen",
         "parameters": [
           {
@@ -3063,7 +3063,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3080,7 +3080,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseCreditNotesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -3097,7 +3097,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3108,7 +3108,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3125,7 +3125,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseCreditNotesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -3142,7 +3142,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3153,7 +3153,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3170,7 +3170,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Cancel2.",
+        "summary": "Cancel2",
         "operationId": "PurchaseCreditNotesService_Cancel2",
         "requestBody": {
           "content": {
@@ -3187,7 +3187,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_Cancel2` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_Cancel2` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3198,7 +3198,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3215,7 +3215,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseCreditNotesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -3232,7 +3232,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3243,7 +3243,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3260,7 +3260,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseCreditNotesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -3277,7 +3277,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3288,7 +3288,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3305,7 +3305,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseCreditNotesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -3322,7 +3322,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseCreditNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseCreditNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3340,7 +3340,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3357,14 +3357,14 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseCreditNotesService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3381,7 +3381,7 @@
         "tags": [
           "PurchaseCreditNotesService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseCreditNotesService_InitData",
         "responses": {
           "200": {
@@ -3395,7 +3395,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3412,7 +3412,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Query the PurchaseDeliveryNotes collection.",
+        "summary": "Query the PurchaseDeliveryNotes collection",
         "operationId": "List_PurchaseDeliveryNotes",
         "parameters": [
           {
@@ -3452,7 +3452,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3467,7 +3467,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseDeliveryNotes",
         "requestBody": {
           "content": {
@@ -3491,7 +3491,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3508,7 +3508,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseDeliveryNotes",
         "parameters": [
           {
@@ -3542,7 +3542,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3552,7 +3552,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3567,7 +3567,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseDeliveryNotes",
         "parameters": [
           {
@@ -3588,7 +3588,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3603,7 +3603,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseDeliveryNotes",
         "parameters": [
           {
@@ -3634,7 +3634,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3651,7 +3651,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseDeliveryNotes (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseDeliveryNotes (binding type Document)",
         "operationId": "PurchaseDeliveryNotes_Cancel",
         "parameters": [
           {
@@ -3672,7 +3672,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3689,7 +3689,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Bound action 'Close' on PurchaseDeliveryNotes (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseDeliveryNotes (binding type Document)",
         "operationId": "PurchaseDeliveryNotes_Close",
         "parameters": [
           {
@@ -3710,7 +3710,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3727,7 +3727,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseDeliveryNotes (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseDeliveryNotes (binding type Document)",
         "operationId": "PurchaseDeliveryNotes_CreateCancellationDocument",
         "parameters": [
           {
@@ -3755,7 +3755,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3772,7 +3772,7 @@
         "tags": [
           "PurchaseDeliveryNotes"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseDeliveryNotes (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseDeliveryNotes (binding type Document)",
         "operationId": "PurchaseDeliveryNotes_Reopen",
         "parameters": [
           {
@@ -3793,7 +3793,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3810,7 +3810,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseDeliveryNotesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -3827,7 +3827,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3838,7 +3838,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3855,7 +3855,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseDeliveryNotesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -3872,7 +3872,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3883,7 +3883,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3900,7 +3900,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Cancel2.",
+        "summary": "Cancel2",
         "operationId": "PurchaseDeliveryNotesService_Cancel2",
         "requestBody": {
           "content": {
@@ -3917,7 +3917,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_Cancel2` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_Cancel2` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3928,7 +3928,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3945,7 +3945,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseDeliveryNotesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -3962,7 +3962,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3973,7 +3973,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3990,7 +3990,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseDeliveryNotesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4007,7 +4007,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4018,7 +4018,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4035,7 +4035,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseDeliveryNotesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4052,7 +4052,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDeliveryNotesService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4070,7 +4070,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4087,14 +4087,14 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseDeliveryNotesService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4111,7 +4111,7 @@
         "tags": [
           "PurchaseDeliveryNotesService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseDeliveryNotesService_InitData",
         "responses": {
           "200": {
@@ -4125,7 +4125,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4142,7 +4142,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Query the PurchaseDownPayments collection.",
+        "summary": "Query the PurchaseDownPayments collection",
         "operationId": "List_PurchaseDownPayments",
         "parameters": [
           {
@@ -4182,7 +4182,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4197,7 +4197,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseDownPayments",
         "requestBody": {
           "content": {
@@ -4221,7 +4221,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4238,7 +4238,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseDownPayments",
         "parameters": [
           {
@@ -4272,7 +4272,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4282,7 +4282,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4297,7 +4297,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseDownPayments",
         "parameters": [
           {
@@ -4318,7 +4318,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4333,7 +4333,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseDownPayments",
         "parameters": [
           {
@@ -4364,7 +4364,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4381,7 +4381,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseDownPayments (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseDownPayments (binding type Document)",
         "operationId": "PurchaseDownPayments_Cancel",
         "parameters": [
           {
@@ -4402,7 +4402,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4419,7 +4419,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Bound action 'Close' on PurchaseDownPayments (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseDownPayments (binding type Document)",
         "operationId": "PurchaseDownPayments_Close",
         "parameters": [
           {
@@ -4440,7 +4440,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4457,7 +4457,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseDownPayments (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseDownPayments (binding type Document)",
         "operationId": "PurchaseDownPayments_CreateCancellationDocument",
         "parameters": [
           {
@@ -4485,7 +4485,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4502,7 +4502,7 @@
         "tags": [
           "PurchaseDownPayments"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseDownPayments (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseDownPayments (binding type Document)",
         "operationId": "PurchaseDownPayments_Reopen",
         "parameters": [
           {
@@ -4523,7 +4523,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4540,7 +4540,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseDownPaymentsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -4557,7 +4557,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4568,7 +4568,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4585,7 +4585,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseDownPaymentsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -4602,7 +4602,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4613,7 +4613,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4630,7 +4630,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseDownPaymentsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -4647,7 +4647,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDownPaymentsService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4658,7 +4658,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4675,7 +4675,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseDownPaymentsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -4692,7 +4692,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4703,7 +4703,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4720,7 +4720,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseDownPaymentsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -4737,7 +4737,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseDownPaymentsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseDownPaymentsService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4755,7 +4755,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4772,14 +4772,14 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseDownPaymentsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4796,7 +4796,7 @@
         "tags": [
           "PurchaseDownPaymentsService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseDownPaymentsService_InitData",
         "responses": {
           "200": {
@@ -4810,7 +4810,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4827,7 +4827,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Query the PurchaseInvoices collection.",
+        "summary": "Query the PurchaseInvoices collection",
         "operationId": "List_PurchaseInvoices",
         "parameters": [
           {
@@ -4867,7 +4867,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4882,7 +4882,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseInvoices",
         "requestBody": {
           "content": {
@@ -4906,7 +4906,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4923,7 +4923,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseInvoices",
         "parameters": [
           {
@@ -4957,7 +4957,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4967,7 +4967,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4982,7 +4982,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseInvoices",
         "parameters": [
           {
@@ -5003,7 +5003,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5018,7 +5018,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseInvoices",
         "parameters": [
           {
@@ -5049,7 +5049,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5066,7 +5066,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseInvoices (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseInvoices (binding type Document)",
         "operationId": "PurchaseInvoices_Cancel",
         "parameters": [
           {
@@ -5087,7 +5087,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5104,7 +5104,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Bound action 'Close' on PurchaseInvoices (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseInvoices (binding type Document)",
         "operationId": "PurchaseInvoices_Close",
         "parameters": [
           {
@@ -5125,7 +5125,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5142,7 +5142,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseInvoices (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseInvoices (binding type Document)",
         "operationId": "PurchaseInvoices_CreateCancellationDocument",
         "parameters": [
           {
@@ -5170,7 +5170,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5187,7 +5187,7 @@
         "tags": [
           "PurchaseInvoices"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseInvoices (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseInvoices (binding type Document)",
         "operationId": "PurchaseInvoices_Reopen",
         "parameters": [
           {
@@ -5208,7 +5208,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5225,7 +5225,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseInvoicesService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -5242,7 +5242,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5253,7 +5253,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5270,7 +5270,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseInvoicesService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -5287,7 +5287,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5298,7 +5298,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5315,7 +5315,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Cancel2.",
+        "summary": "Cancel2",
         "operationId": "PurchaseInvoicesService_Cancel2",
         "requestBody": {
           "content": {
@@ -5332,7 +5332,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_Cancel2` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_Cancel2` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5343,7 +5343,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5360,7 +5360,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseInvoicesService_CloseByDate",
         "requestBody": {
           "content": {
@@ -5377,7 +5377,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5388,7 +5388,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5405,7 +5405,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseInvoicesService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -5422,7 +5422,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5433,7 +5433,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5450,7 +5450,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseInvoicesService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -5467,7 +5467,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseInvoicesService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseInvoicesService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5485,7 +5485,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5502,14 +5502,14 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseInvoicesService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5526,7 +5526,7 @@
         "tags": [
           "PurchaseInvoicesService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseInvoicesService_InitData",
         "responses": {
           "200": {
@@ -5540,7 +5540,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5557,7 +5557,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Query the PurchaseOrders collection.",
+        "summary": "Query the PurchaseOrders collection",
         "operationId": "List_PurchaseOrders",
         "parameters": [
           {
@@ -5597,7 +5597,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5612,7 +5612,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseOrders",
         "requestBody": {
           "content": {
@@ -5636,7 +5636,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5653,7 +5653,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseOrders",
         "parameters": [
           {
@@ -5687,7 +5687,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -5697,7 +5697,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5712,7 +5712,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseOrders",
         "parameters": [
           {
@@ -5733,7 +5733,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5748,7 +5748,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseOrders",
         "parameters": [
           {
@@ -5779,7 +5779,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5796,7 +5796,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseOrders (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseOrders (binding type Document)",
         "operationId": "PurchaseOrders_Cancel",
         "parameters": [
           {
@@ -5817,7 +5817,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5834,7 +5834,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Bound action 'Close' on PurchaseOrders (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseOrders (binding type Document)",
         "operationId": "PurchaseOrders_Close",
         "parameters": [
           {
@@ -5855,7 +5855,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5872,7 +5872,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseOrders (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseOrders (binding type Document)",
         "operationId": "PurchaseOrders_CreateCancellationDocument",
         "parameters": [
           {
@@ -5900,7 +5900,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5917,7 +5917,7 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseOrders (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseOrders (binding type Document)",
         "operationId": "PurchaseOrders_Reopen",
         "parameters": [
           {
@@ -5938,7 +5938,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5955,7 +5955,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseOrdersService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -5972,7 +5972,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -5983,7 +5983,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6000,7 +6000,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseOrdersService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -6017,7 +6017,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseOrdersService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6028,7 +6028,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6045,7 +6045,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseOrdersService_CloseByDate",
         "requestBody": {
           "content": {
@@ -6062,7 +6062,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseOrdersService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseOrdersService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6073,7 +6073,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6090,7 +6090,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseOrdersService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -6107,7 +6107,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseOrdersService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseOrdersService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6118,7 +6118,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6135,7 +6135,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseOrdersService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -6152,7 +6152,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseOrdersService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseOrdersService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6170,7 +6170,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6187,14 +6187,14 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseOrdersService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6211,7 +6211,7 @@
         "tags": [
           "PurchaseOrdersService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseOrdersService_InitData",
         "responses": {
           "200": {
@@ -6225,7 +6225,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6242,7 +6242,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Query the PurchaseQuotations collection.",
+        "summary": "Query the PurchaseQuotations collection",
         "operationId": "List_PurchaseQuotations",
         "parameters": [
           {
@@ -6282,7 +6282,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6297,7 +6297,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseQuotations",
         "requestBody": {
           "content": {
@@ -6321,7 +6321,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6338,7 +6338,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseQuotations",
         "parameters": [
           {
@@ -6372,7 +6372,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -6382,7 +6382,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6397,7 +6397,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseQuotations",
         "parameters": [
           {
@@ -6418,7 +6418,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6433,7 +6433,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseQuotations",
         "parameters": [
           {
@@ -6464,7 +6464,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6481,7 +6481,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseQuotations (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseQuotations (binding type Document)",
         "operationId": "PurchaseQuotations_Cancel",
         "parameters": [
           {
@@ -6502,7 +6502,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6519,7 +6519,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Bound action 'Close' on PurchaseQuotations (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseQuotations (binding type Document)",
         "operationId": "PurchaseQuotations_Close",
         "parameters": [
           {
@@ -6540,7 +6540,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6557,7 +6557,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseQuotations (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseQuotations (binding type Document)",
         "operationId": "PurchaseQuotations_CreateCancellationDocument",
         "parameters": [
           {
@@ -6585,7 +6585,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6602,7 +6602,7 @@
         "tags": [
           "PurchaseQuotations"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseQuotations (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseQuotations (binding type Document)",
         "operationId": "PurchaseQuotations_Reopen",
         "parameters": [
           {
@@ -6623,7 +6623,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6640,7 +6640,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseQuotationsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -6657,7 +6657,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6668,7 +6668,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6685,7 +6685,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseQuotationsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -6702,7 +6702,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6713,7 +6713,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6730,7 +6730,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseQuotationsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -6747,7 +6747,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseQuotationsService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseQuotationsService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6758,7 +6758,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6775,7 +6775,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseQuotationsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -6792,7 +6792,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseQuotationsService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseQuotationsService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6803,7 +6803,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6820,7 +6820,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseQuotationsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -6837,7 +6837,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseQuotationsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseQuotationsService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6855,7 +6855,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6872,14 +6872,14 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseQuotationsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6896,7 +6896,7 @@
         "tags": [
           "PurchaseQuotationsService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseQuotationsService_InitData",
         "responses": {
           "200": {
@@ -6910,7 +6910,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6927,7 +6927,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseRequestService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -6944,7 +6944,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -6955,7 +6955,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6972,7 +6972,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseRequestService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -6989,7 +6989,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseRequestService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -7000,7 +7000,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7017,7 +7017,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseRequestService_CloseByDate",
         "requestBody": {
           "content": {
@@ -7034,7 +7034,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseRequestService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseRequestService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -7045,7 +7045,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7062,7 +7062,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseRequestService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -7079,7 +7079,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseRequestService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseRequestService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -7090,7 +7090,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7107,7 +7107,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseRequestService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -7124,7 +7124,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseRequestService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -7142,7 +7142,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7159,14 +7159,14 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseRequestService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7183,7 +7183,7 @@
         "tags": [
           "PurchaseRequestService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseRequestService_InitData",
         "responses": {
           "200": {
@@ -7197,7 +7197,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7214,7 +7214,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Query the PurchaseRequests collection.",
+        "summary": "Query the PurchaseRequests collection",
         "operationId": "List_PurchaseRequests",
         "parameters": [
           {
@@ -7254,7 +7254,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7269,7 +7269,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseRequests",
         "requestBody": {
           "content": {
@@ -7293,7 +7293,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7310,7 +7310,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseRequests",
         "parameters": [
           {
@@ -7344,7 +7344,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7354,7 +7354,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7369,7 +7369,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseRequests",
         "parameters": [
           {
@@ -7390,7 +7390,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7405,7 +7405,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseRequests",
         "parameters": [
           {
@@ -7436,7 +7436,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7453,7 +7453,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseRequests (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseRequests (binding type Document)",
         "operationId": "PurchaseRequests_Cancel",
         "parameters": [
           {
@@ -7474,7 +7474,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7491,7 +7491,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Bound action 'Close' on PurchaseRequests (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseRequests (binding type Document)",
         "operationId": "PurchaseRequests_Close",
         "parameters": [
           {
@@ -7512,7 +7512,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7529,7 +7529,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseRequests (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseRequests (binding type Document)",
         "operationId": "PurchaseRequests_CreateCancellationDocument",
         "parameters": [
           {
@@ -7557,7 +7557,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7574,7 +7574,7 @@
         "tags": [
           "PurchaseRequests"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseRequests (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseRequests (binding type Document)",
         "operationId": "PurchaseRequests_Reopen",
         "parameters": [
           {
@@ -7595,7 +7595,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7612,7 +7612,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Query the PurchaseReturns collection.",
+        "summary": "Query the PurchaseReturns collection",
         "operationId": "List_PurchaseReturns",
         "parameters": [
           {
@@ -7652,7 +7652,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7667,7 +7667,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Create a new Document.",
+        "summary": "Create a new Document",
         "operationId": "Create_PurchaseReturns",
         "requestBody": {
           "content": {
@@ -7691,7 +7691,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7708,7 +7708,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Get a single Document by key.",
+        "summary": "Get a single Document by key",
         "operationId": "Get_PurchaseReturns",
         "parameters": [
           {
@@ -7742,7 +7742,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7752,7 +7752,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7767,7 +7767,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Delete a Document.",
+        "summary": "Delete a Document",
         "operationId": "Delete_PurchaseReturns",
         "parameters": [
           {
@@ -7788,7 +7788,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7803,7 +7803,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Partially update a Document (PATCH/MERGE semantics).",
+        "summary": "Partially update a Document (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseReturns",
         "parameters": [
           {
@@ -7834,7 +7834,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7851,7 +7851,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Bound action 'Cancel' on PurchaseReturns (binding type Document).",
+        "summary": "Bound action 'Cancel' on PurchaseReturns (binding type Document)",
         "operationId": "PurchaseReturns_Cancel",
         "parameters": [
           {
@@ -7872,7 +7872,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7889,7 +7889,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Bound action 'Close' on PurchaseReturns (binding type Document).",
+        "summary": "Bound action 'Close' on PurchaseReturns (binding type Document)",
         "operationId": "PurchaseReturns_Close",
         "parameters": [
           {
@@ -7910,7 +7910,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7927,7 +7927,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Bound action 'CreateCancellationDocument' on PurchaseReturns (binding type Document).",
+        "summary": "Bound action 'CreateCancellationDocument' on PurchaseReturns (binding type Document)",
         "operationId": "PurchaseReturns_CreateCancellationDocument",
         "parameters": [
           {
@@ -7955,7 +7955,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7972,7 +7972,7 @@
         "tags": [
           "PurchaseReturns"
         ],
-        "summary": "Bound action 'Reopen' on PurchaseReturns (binding type Document).",
+        "summary": "Bound action 'Reopen' on PurchaseReturns (binding type Document)",
         "operationId": "PurchaseReturns_Reopen",
         "parameters": [
           {
@@ -7993,7 +7993,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8010,7 +8010,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Approve and add.",
+        "summary": "Approve and add",
         "operationId": "PurchaseReturnsService_ApproveAndAdd",
         "requestBody": {
           "content": {
@@ -8027,7 +8027,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndAdd` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndAdd` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8038,7 +8038,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8055,7 +8055,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Approve and update.",
+        "summary": "Approve and update",
         "operationId": "PurchaseReturnsService_ApproveAndUpdate",
         "requestBody": {
           "content": {
@@ -8072,7 +8072,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndUpdate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_ApproveAndUpdate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8083,7 +8083,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8100,7 +8100,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Cancel2.",
+        "summary": "Cancel2",
         "operationId": "PurchaseReturnsService_Cancel2",
         "requestBody": {
           "content": {
@@ -8117,7 +8117,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_Cancel2` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_Cancel2` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8128,7 +8128,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8145,7 +8145,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Close by date.",
+        "summary": "Close by date",
         "operationId": "PurchaseReturnsService_CloseByDate",
         "requestBody": {
           "content": {
@@ -8162,7 +8162,7 @@
                     "x-ballerina-name": "documentCloseParams"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_CloseByDate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_CloseByDate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8173,7 +8173,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8190,7 +8190,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Export E way bill.",
+        "summary": "Export E way bill",
         "operationId": "PurchaseReturnsService_ExportEWayBill",
         "requestBody": {
           "content": {
@@ -8207,7 +8207,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_ExportEWayBill` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_ExportEWayBill` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8218,7 +8218,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8235,7 +8235,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Get approval templates.",
+        "summary": "Get approval templates",
         "operationId": "PurchaseReturnsService_GetApprovalTemplates",
         "requestBody": {
           "content": {
@@ -8252,7 +8252,7 @@
                     "x-ballerina-name": "document"
                   }
                 },
-                "description": "Represents the request payload for the `PurchaseReturnsService_GetApprovalTemplates` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `PurchaseReturnsService_GetApprovalTemplates` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -8270,7 +8270,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8287,14 +8287,14 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Handle approval request.",
+        "summary": "Handle approval request",
         "operationId": "PurchaseReturnsService_HandleApprovalRequest",
         "responses": {
           "204": {
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8311,7 +8311,7 @@
         "tags": [
           "PurchaseReturnsService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "PurchaseReturnsService_InitData",
         "responses": {
           "200": {
@@ -8325,7 +8325,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8342,7 +8342,7 @@
         "tags": [
           "PurchaseTaxInvoices"
         ],
-        "summary": "Query the PurchaseTaxInvoices collection.",
+        "summary": "Query the PurchaseTaxInvoices collection",
         "operationId": "List_PurchaseTaxInvoices",
         "parameters": [
           {
@@ -8382,7 +8382,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8397,7 +8397,7 @@
         "tags": [
           "PurchaseTaxInvoices"
         ],
-        "summary": "Create a new PurchaseTaxInvoice.",
+        "summary": "Create a new PurchaseTaxInvoice",
         "operationId": "Create_PurchaseTaxInvoices",
         "requestBody": {
           "content": {
@@ -8421,7 +8421,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8438,7 +8438,7 @@
         "tags": [
           "PurchaseTaxInvoices"
         ],
-        "summary": "Get a single PurchaseTaxInvoice by key.",
+        "summary": "Get a single PurchaseTaxInvoice by key",
         "operationId": "Get_PurchaseTaxInvoices",
         "parameters": [
           {
@@ -8472,7 +8472,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -8482,7 +8482,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8497,7 +8497,7 @@
         "tags": [
           "PurchaseTaxInvoices"
         ],
-        "summary": "Delete a PurchaseTaxInvoice.",
+        "summary": "Delete a PurchaseTaxInvoice",
         "operationId": "Delete_PurchaseTaxInvoices",
         "parameters": [
           {
@@ -8518,7 +8518,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8533,7 +8533,7 @@
         "tags": [
           "PurchaseTaxInvoices"
         ],
-        "summary": "Partially update a PurchaseTaxInvoice (PATCH/MERGE semantics).",
+        "summary": "Partially update a PurchaseTaxInvoice (PATCH/MERGE semantics)",
         "operationId": "Update_PurchaseTaxInvoices",
         "parameters": [
           {
@@ -8564,7 +8564,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8597,7 +8597,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseDownPayments` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseDownPayments` entities returned by the SAP Business One Service Layer"
       },
       "PurchaseRequestsCollectionResponse": {
         "type": "object",
@@ -8617,7 +8617,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseRequests` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseRequests` entities returned by the SAP Business One Service Layer"
       },
       "BoDocWhsUpdateTypes": {
         "type": "string",
@@ -8656,7 +8656,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer."
+        "description": "The `Document_ApprovalRequest` complex type of the SAP Business One Service Layer"
       },
       "Document": {
         "type": "object",
@@ -9746,7 +9746,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Document` entity of the SAP Business One Service Layer."
+        "description": "The `Document` entity of the SAP Business One Service Layer"
       },
       "ElectronicDocGenTypeEnum": {
         "type": "string",
@@ -9828,13 +9828,13 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentPackageItem` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentPackageItem` complex type of the SAP Business One Service Layer"
       },
       "DocumentDistributedExpense": {
         "type": "object",
         "properties": {},
         "additionalProperties": false,
-        "description": "The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentDistributedExpense` complex type of the SAP Business One Service Layer"
       },
       "LandedCostCostCategoryEnum": {
         "type": "string",
@@ -9864,7 +9864,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EDeliveryInfo` complex type of the SAP Business One Service Layer."
+        "description": "The `EDeliveryInfo` complex type of the SAP Business One Service Layer"
       },
       "PrintStatusEnum": {
         "type": "string",
@@ -9967,7 +9967,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DocumentReference` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentReference` complex type of the SAP Business One Service Layer"
       },
       "CancelStatusEnum": {
         "type": "string",
@@ -10161,7 +10161,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentLineAdditionalExpense` complex type of the SAP Business One Service Layer"
       },
       "BoAdEpnsDistribMethods": {
         "type": "string",
@@ -10240,7 +10240,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer."
+        "description": "The `LineFreightEBooksDetail` complex type of the SAP Business One Service Layer"
       },
       "BatchNumber": {
         "type": "object",
@@ -10297,7 +10297,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer"
       },
       "BoCorInvItemStatus": {
         "type": "string",
@@ -10432,7 +10432,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PurchaseTaxInvoiceLinkedDownPayment` complex type of the SAP Business One Service Layer."
+        "description": "The `PurchaseTaxInvoiceLinkedDownPayment` complex type of the SAP Business One Service Layer"
       },
       "ImportOrExportTypeEnum": {
         "type": "string",
@@ -10579,7 +10579,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer."
+        "description": "The `WithholdingTaxDataWTX` complex type of the SAP Business One Service Layer"
       },
       "PriceModeDocumentEnum": {
         "type": "string",
@@ -11508,7 +11508,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentLine` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentLine` complex type of the SAP Business One Service Layer"
       },
       "ExportProcess": {
         "type": "object",
@@ -11587,7 +11587,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ExportProcess` complex type of the SAP Business One Service Layer."
+        "description": "The `ExportProcess` complex type of the SAP Business One Service Layer"
       },
       "LandedCostsCodesCollectionResponse": {
         "type": "object",
@@ -11607,7 +11607,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `LandedCostsCodes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `LandedCostsCodes` entities returned by the SAP Business One Service Layer"
       },
       "GoodsReturnRequestCollectionResponse": {
         "type": "object",
@@ -11627,7 +11627,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `GoodsReturnRequest` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `GoodsReturnRequest` entities returned by the SAP Business One Service Layer"
       },
       "BoTaxTypes": {
         "type": "string",
@@ -11666,7 +11666,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CorrectionPurchaseInvoiceReversal` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CorrectionPurchaseInvoiceReversal` entities returned by the SAP Business One Service Layer"
       },
       "DocumentCloseParams": {
         "type": "object",
@@ -11691,7 +11691,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DocumentCloseParams` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentCloseParams` complex type of the SAP Business One Service Layer"
       },
       "EDocGenerationTypeEnum": {
         "type": "string",
@@ -11721,7 +11721,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CorrectionPurchaseInvoice` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CorrectionPurchaseInvoice` entities returned by the SAP Business One Service Layer"
       },
       "DocLinePickList": {
         "type": "object",
@@ -11743,7 +11743,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DocLinePickList` complex type of the SAP Business One Service Layer."
+        "description": "The `DocLinePickList` complex type of the SAP Business One Service Layer"
       },
       "FolioLetterEnum": {
         "type": "string",
@@ -11778,7 +11778,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseReturns` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseReturns` entities returned by the SAP Business One Service Layer"
       },
       "PurchaseTaxInvoicesCollectionResponse": {
         "type": "object",
@@ -11798,7 +11798,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseTaxInvoices` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseTaxInvoices` entities returned by the SAP Business One Service Layer"
       },
       "DocumentAuthorizationStatusEnum": {
         "type": "string",
@@ -11995,7 +11995,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `EWayBillDetails` complex type of the SAP Business One Service Layer."
+        "description": "The `EWayBillDetails` complex type of the SAP Business One Service Layer"
       },
       "ElectronicProtocol": {
         "type": "object",
@@ -12130,7 +12130,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer."
+        "description": "The `ElectronicProtocol` complex type of the SAP Business One Service Layer"
       },
       "GSTTransactionTypeEnum": {
         "type": "string",
@@ -12205,7 +12205,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentAdditionalIntrastatExpense` complex type of the SAP Business One Service Layer"
       },
       "EDocTypeEnum": {
         "type": "string",
@@ -12268,7 +12268,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PurchaseTaxInvoiceOperationCode` complex type of the SAP Business One Service Layer."
+        "description": "The `PurchaseTaxInvoiceOperationCode` complex type of the SAP Business One Service Layer"
       },
       "PurchaseInvoicesCollectionResponse": {
         "type": "object",
@@ -12288,7 +12288,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseInvoices` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseInvoices` entities returned by the SAP Business One Service Layer"
       },
       "CommissionTradeTypeEnum": {
         "type": "string",
@@ -12324,7 +12324,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "BoDocLineType": {
         "type": "string",
@@ -12372,7 +12372,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PurchaseTaxInvoiceDocumentReference` complex type of the SAP Business One Service Layer."
+        "description": "The `PurchaseTaxInvoiceDocumentReference` complex type of the SAP Business One Service Layer"
       },
       "LineExpenseTaxJurisdiction": {
         "type": "object",
@@ -12430,7 +12430,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
+        "description": "The `LineExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer"
       },
       "BoAllocationByEnum": {
         "type": "string",
@@ -12569,7 +12569,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PurchaseTaxInvoice` entity of the SAP Business One Service Layer."
+        "description": "The `PurchaseTaxInvoice` entity of the SAP Business One Service Layer"
       },
       "BoTaxOnInstallmentsTypeEnum": {
         "type": "string",
@@ -12628,7 +12628,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `GeneratedAsset` complex type of the SAP Business One Service Layer."
+        "description": "The `GeneratedAsset` complex type of the SAP Business One Service Layer"
       },
       "BoTransactionTypeEnum": {
         "type": "string",
@@ -12659,7 +12659,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `PurchaseTaxInvoiceLine` complex type of the SAP Business One Service Layer."
+        "description": "The `PurchaseTaxInvoiceLine` complex type of the SAP Business One Service Layer"
       },
       "WithholdingTaxData": {
         "type": "object",
@@ -12758,7 +12758,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer."
+        "description": "The `WithholdingTaxData` complex type of the SAP Business One Service Layer"
       },
       "EDocStatusEnum": {
         "type": "string",
@@ -12827,7 +12827,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer."
+        "description": "The `DocExpenseTaxJurisdiction` complex type of the SAP Business One Service Layer"
       },
       "ElectronicDocProtocolCodeEnum": {
         "type": "string",
@@ -12886,7 +12886,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseOrders` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseOrders` entities returned by the SAP Business One Service Layer"
       },
       "LandedCostsCollectionResponse": {
         "type": "object",
@@ -12906,7 +12906,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `LandedCosts` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `LandedCosts` entities returned by the SAP Business One Service Layer"
       },
       "BoExpenseOperationTypeEnum": {
         "type": "string",
@@ -13042,7 +13042,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DownPaymentToDraw` complex type of the SAP Business One Service Layer."
+        "description": "The `DownPaymentToDraw` complex type of the SAP Business One Service Layer"
       },
       "BoCurrencySources": {
         "type": "string",
@@ -13080,7 +13080,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LandedCostsCode` entity of the SAP Business One Service Layer."
+        "description": "The `LandedCostsCode` entity of the SAP Business One Service Layer"
       },
       "EBooksDetail": {
         "type": "object",
@@ -13163,7 +13163,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `EBooksDetail` complex type of the SAP Business One Service Layer."
+        "description": "The `EBooksDetail` complex type of the SAP Business One Service Layer"
       },
       "PurchaseQuotationsCollectionResponse": {
         "type": "object",
@@ -13183,7 +13183,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseQuotations` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseQuotations` entities returned by the SAP Business One Service Layer"
       },
       "PurchaseDeliveryNotesCollectionResponse": {
         "type": "object",
@@ -13203,7 +13203,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseDeliveryNotes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseDeliveryNotes` entities returned by the SAP Business One Service Layer"
       },
       "RelatedDocument": {
         "type": "object",
@@ -13240,7 +13240,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer."
+        "description": "The `RelatedDocument` complex type of the SAP Business One Service Layer"
       },
       "BoStatus": {
         "type": "string",
@@ -13476,7 +13476,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `AddressExtension` complex type of the SAP Business One Service Layer."
+        "description": "The `AddressExtension` complex type of the SAP Business One Service Layer"
       },
       "LandedCost": {
         "type": "object",
@@ -13637,7 +13637,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LandedCost` entity of the SAP Business One Service Layer."
+        "description": "The `LandedCost` entity of the SAP Business One Service Layer"
       },
       "BoObjectTypes": {
         "type": "string",
@@ -13802,7 +13802,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentLinesBinAllocation` complex type of the SAP Business One Service Layer"
       },
       "GeneratedAssetStatusEnum": {
         "type": "string",
@@ -13862,7 +13862,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LandedCost_CostLine` complex type of the SAP Business One Service Layer."
+        "description": "The `LandedCost_CostLine` complex type of the SAP Business One Service Layer"
       },
       "SerialNumber": {
         "type": "object",
@@ -13927,7 +13927,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer"
       },
       "LinkReferenceTypeEnum": {
         "type": "string",
@@ -14205,7 +14205,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TaxExtension` complex type of the SAP Business One Service Layer."
+        "description": "The `TaxExtension` complex type of the SAP Business One Service Layer"
       },
       "DocumentPackage": {
         "type": "object",
@@ -14233,7 +14233,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentPackage` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentPackage` complex type of the SAP Business One Service Layer"
       },
       "LandedCostBaseDocumentTypeEnum": {
         "type": "string",
@@ -14472,7 +14472,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentAdditionalExpense` complex type of the SAP Business One Service Layer"
       },
       "ImportProcess": {
         "type": "object",
@@ -14533,7 +14533,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ImportProcess` complex type of the SAP Business One Service Layer."
+        "description": "The `ImportProcess` complex type of the SAP Business One Service Layer"
       },
       "BoAdEpnsTaxTypes": {
         "type": "string",
@@ -14628,7 +14628,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer."
+        "description": "The `LineTaxJurisdiction` complex type of the SAP Business One Service Layer"
       },
       "BoItemTreeTypes": {
         "type": "string",
@@ -14707,7 +14707,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer."
+        "description": "The `DocFreightEBooksDetail` complex type of the SAP Business One Service Layer"
       },
       "BoFatherCardTypes": {
         "type": "string",
@@ -14735,7 +14735,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PurchaseCreditNotes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PurchaseCreditNotes` entities returned by the SAP Business One Service Layer"
       },
       "BoTaxInvoiceTypes": {
         "type": "string",
@@ -14871,7 +14871,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DocumentSpecialLine` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentSpecialLine` complex type of the SAP Business One Service Layer"
       },
       "CCDNumber": {
         "type": "object",
@@ -14912,7 +14912,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CCDNumber` complex type of the SAP Business One Service Layer."
+        "description": "The `CCDNumber` complex type of the SAP Business One Service Layer"
       },
       "DownPaymentToDrawDetails": {
         "type": "object",
@@ -15017,7 +15017,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer."
+        "description": "The `DownPaymentToDrawDetails` complex type of the SAP Business One Service Layer"
       },
       "DocumentInstallment": {
         "type": "object",
@@ -15063,7 +15063,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `DocumentInstallment` complex type of the SAP Business One Service Layer."
+        "description": "The `DocumentInstallment` complex type of the SAP Business One Service Layer"
       },
       "LandedCostItemLine": {
         "type": "object",
@@ -15362,7 +15362,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `LandedCost_ItemLine` complex type of the SAP Business One Service Layer."
+        "description": "The `LandedCost_ItemLine` complex type of the SAP Business One Service Layer"
       },
       "BoDocumentTypes": {
         "type": "string",
@@ -15391,7 +15391,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `LandedCostParams` complex type of the SAP Business One Service Layer."
+        "description": "The `LandedCostParams` complex type of the SAP Business One Service Layer"
       },
       "LandedCostDocStatusEnum": {
         "type": "string",
@@ -15516,7 +15516,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `WithholdingTaxLine` complex type of the SAP Business One Service Layer."
+        "description": "The `WithholdingTaxLine` complex type of the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -15626,7 +15626,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

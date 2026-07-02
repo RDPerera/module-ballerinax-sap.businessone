@@ -20,7 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeletePriorities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeletePriorities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeletePriorities_body record {
     @jsondata:Name {value: "PMC_PriorityCollection"}
     PMCPriorityData[] pMCPriorityCollection?;
@@ -29,7 +29,7 @@ public type ProjectManagementConfigurationService_DeletePriorities_body record {
 # OData EnumType 'PMOperationTypeEnum'. Serialised by the Service Layer as the member name
 public type PMOperationTypeEnum "pm_op_Ignore"|"pm_op_Add"|"pm_op_Subtract";
 
-# The `PMS_SummaryData` complex type of the SAP Business One Service Layer.
+# The `PMS_SummaryData` complex type of the SAP Business One Service Layer
 public type PMSSummaryData record {|
     @jsondata:Name {value: "AccumOpenAmountSales"}
     decimal accumOpenAmountSales?;
@@ -104,7 +104,7 @@ public type PMSSummaryData record {|
 # OData EnumType 'AmountCatTypeEnum'. Serialised by the Service Layer as the member name
 public type AmountCatTypeEnum "act_Open"|"act_Invoiced";
 
-# The `PM_ProjectDocumentData` entity of the SAP Business One Service Layer.
+# The `PM_ProjectDocumentData` entity of the SAP Business One Service Layer
 public type PMProjectDocumentData record {
     int:Signed32 AbsEntry?;
     int:Signed32 Owner?;
@@ -137,33 +137,33 @@ public type PMProjectDocumentData record {
     PMDocumentData[] PM_DocumentsCollection?;
     PMActivityData[] PM_ActivitiesCollection?;
     PMWorkOrderData[] PM_WorkOrdersCollection?;
-    # The `PM_SummaryData` complex type of the SAP Business One Service Layer.
+    # The `PM_SummaryData` complex type of the SAP Business One Service Layer
     PMSummaryData PM_SummaryData?;
     PMDocAttachement[] PM_DocAttachements?;
     PMStageAttachement[] PM_StageAttachements?;
-    # The `Project` entity of the SAP Business One Service Layer.
+    # The `Project` entity of the SAP Business One Service Layer
     Project Project?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeleteActivities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeleteActivities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeleteActivities_body record {
     @jsondata:Name {value: "PMC_ActivityCollection"}
     PMCActivityData[] pMCActivityCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddTasks` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddTasks` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddTasks_body record {
     @jsondata:Name {value: "PMC_TaskCollection"}
     PMCTaskData[] pMCTaskCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementService_UpdateSubproject` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementService_UpdateSubproject` operation of the SAP Business One Service Layer
 public type ProjectManagementService_UpdateSubproject_body record {
     @jsondata:Name {value: "PM_SubprojectDocumentData"}
     PMSubprojectDocumentData pMSubprojectDocumentData?;
 };
 
-# The `PM_TimeSheetData` entity of the SAP Business One Service Layer.
+# The `PM_TimeSheetData` entity of the SAP Business One Service Layer
 public type PMTimeSheetData record {
     int:Signed32 AbsEntry?;
     int:Signed32 DocNumber?;
@@ -182,7 +182,7 @@ public type PMTimeSheetData record {
     PMTimeSheetLineData[] PM_TimeSheetLineDataCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdateSubprojectTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdateSubprojectTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdateSubprojectTypes_body record {
     @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
     PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
@@ -208,7 +208,7 @@ public type GetProjectManagementsQueries record {
     string dollarSelect?;
 };
 
-# The `PMC_StageTypeData` complex type of the SAP Business One Service Layer.
+# The `PMC_StageTypeData` complex type of the SAP Business One Service Layer
 public type PMCStageTypeData record {|
     @jsondata:Name {value: "StageDescription"}
     string stageDescription?;
@@ -218,7 +218,7 @@ public type PMCStageTypeData record {|
     int:Signed32 stageID?;
 |};
 
-# The `PMC_TaskData` complex type of the SAP Business One Service Layer.
+# The `PMC_TaskData` complex type of the SAP Business One Service Layer
 public type PMCTaskData record {|
     @jsondata:Name {value: "TaskID"}
     int:Signed32 taskID?;
@@ -235,7 +235,7 @@ public type BoYesNoEnum "tNO"|"tYES";
 # OData EnumType 'RiskLevelTypeEnum'. Serialised by the Service Layer as the member name
 public type RiskLevelTypeEnum "rlt_Low"|"rlt_Medium"|"rlt_High";
 
-# The `ExpenseTypeData` entity of the SAP Business One Service Layer.
+# The `ExpenseTypeData` entity of the SAP Business One Service Layer
 public type ExpenseTypeData record {|
     @jsondata:Name {value: "ExpenseAccount"}
     string expenseAccount?;
@@ -249,7 +249,7 @@ public type ExpenseTypeData record {|
     BoYesNoEnum paidByCompany?;
 |};
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddStageTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddStageTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddStageTypes_body record {
     @jsondata:Name {value: "PMC_StageTypeCollection"}
     PMCStageTypeData[] pMCStageTypeCollection?;
@@ -265,7 +265,7 @@ public type ListExpenseTypesHeaders record {
 # OData EnumType 'PMDocumentTypeEnum'. Serialised by the Service Layer as the member name
 public type PMDocumentTypeEnum "pmdt_DocumentDraft"|"pmdt_ManualJournalEntry"|"pmdt_SalesQuotation"|"pmdt_SalesOrder"|"pmdt_Delivery"|"pmdt_Return"|"pmdt_ReturnRequest"|"pmdt_ARDownPaymentRequest"|"pmdt_ARDownPaymentInvoice"|"pmdt_ARInvoice"|"pmdt_ARCreditMemo"|"pmdt_ARReserveInvoice"|"pmdt_PurchaseQuotation"|"pmdt_PurchaseOrder"|"pmdt_PurchaseRequest"|"pmdt_GoodsReceiptPO"|"pmdt_GoodsReturn"|"pmdt_GoodsReturnRequest"|"pmdt_APDownPaymentRequest"|"pmdt_APDownPaymentInvoice"|"pmdt_APInvoice"|"pmdt_APCreditMemo"|"pmdt_APReserveInvoice"|"pmdt_ServiceCall"|"pmdt_GoodsReceipt"|"pmdt_GoodsIssue"|"pmdt_ARCorrectionInvoice"|"pmdt_ARCorrectionInvoiceReversal"|"pmdt_APCorrectionInvoice"|"pmdt_APCorrectionInvoiceReversal";
 
-# The `PMS_WorkOrderData` complex type of the SAP Business One Service Layer.
+# The `PMS_WorkOrderData` complex type of the SAP Business One Service Layer
 public type PMSWorkOrderData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -273,7 +273,7 @@ public type PMSWorkOrderData record {
     int:Signed32 DocEntry?;
 };
 
-# The `PM_SummaryData` complex type of the SAP Business One Service Layer.
+# The `PM_SummaryData` complex type of the SAP Business One Service Layer
 public type PMSummaryData record {|
     @jsondata:Name {value: "AccumOpenAmountSales"}
     decimal accumOpenAmountSales?;
@@ -345,7 +345,7 @@ public type PMSummaryData record {|
     decimal subprojectBudget?;
 |};
 
-# The `PMC_SubprojectTypeData` complex type of the SAP Business One Service Layer.
+# The `PMC_SubprojectTypeData` complex type of the SAP Business One Service Layer
 public type PMCSubprojectTypeData record {|
     @jsondata:Name {value: "SubprojectTypeID"}
     int:Signed32 subprojectTypeID?;
@@ -353,7 +353,7 @@ public type PMCSubprojectTypeData record {|
     string subprojectTypeName?;
 |};
 
-# A paged collection of `Projects` entities returned by the SAP Business One Service Layer.
+# A paged collection of `Projects` entities returned by the SAP Business One Service Layer
 public type ProjectsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -362,7 +362,7 @@ public type ProjectsCollectionResponse record {
     string odataNextLink?;
 };
 
-# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
+# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint
 @display {label: "Connection Config"}
 public type ConnectionConfig record {|
     # The HTTP version understood by the client
@@ -400,23 +400,23 @@ public type ConnectionConfig record {|
     # Enables the inbound payload validation functionality which provided by the constraint package. Enabled by default
     boolean validation = true;
     # Enables relaxed data binding on the client side. When enabled, `nil` values are treated as optional, 
-    # and absent fields are handled as `nilable` types. Enabled by default.
+    # and absent fields are handled as `nilable` types. Enabled by default
     boolean laxDataBinding = true;
 |};
 
-# The `PM_SubprojectDocumentParams` complex type of the SAP Business One Service Layer.
+# The `PM_SubprojectDocumentParams` complex type of the SAP Business One Service Layer
 public type PMSubprojectDocumentParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
 |};
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdatePriorities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdatePriorities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdatePriorities_body record {
     @jsondata:Name {value: "PMC_PriorityCollection"}
     PMCPriorityData[] pMCPriorityCollection?;
 };
 
-# A paged collection of `ExpenseTypes` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ExpenseTypes` entities returned by the SAP Business One Service Layer
 public type ExpenseTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -435,27 +435,27 @@ public type GetProjectsQueries record {
     string dollarSelect?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetTasks` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetTasks` operation of the SAP Business One Service Layer
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCTaskData[] value?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdateActivities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdateActivities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdateActivities_body record {
     @jsondata:Name {value: "PMC_ActivityCollection"}
     PMCActivityData[] pMCActivityCollection?;
 };
 
-# Represents the response payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMSubprojectDocumentParams[] value?;
 };
 
-# The `PMC_AreaData` complex type of the SAP Business One Service Layer.
+# The `PMC_AreaData` complex type of the SAP Business One Service Layer
 public type PMCAreaData record {|
     @jsondata:Name {value: "AreaName"}
     string areaName?;
@@ -463,32 +463,32 @@ public type PMCAreaData record {|
     int:Signed32 areaID?;
 |};
 
-# Represents the response payload for the `ProjectsService_GetProjectList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectsService_GetProjectList` operation of the SAP Business One Service Layer
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ProjectParams[] value?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeleteAreas` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeleteAreas` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeleteAreas_body record {
     @jsondata:Name {value: "PMC_AreaCollection"}
     PMCAreaData[] pMCAreaCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdateTasks` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdateTasks` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdateTasks_body record {
     @jsondata:Name {value: "PMC_TaskCollection"}
     PMCTaskData[] pMCTaskCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeleteSubprojectTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeleteSubprojectTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeleteSubprojectTypes_body record {
     @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
     PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
 };
 
-# The `PMS_DocAttachement` complex type of the SAP Business One Service Layer.
+# The `PMS_DocAttachement` complex type of the SAP Business One Service Layer
 public type PMSDocAttachement record {|
     @jsondata:Name {value: "SourcePath"}
     string sourcePath?;
@@ -507,7 +507,7 @@ public type PMSDocAttachement record {|
 # OData EnumType 'ProjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ProjectTypeEnum "pt_External"|"pt_Internal";
 
-# The `PM_DocumentData` complex type of the SAP Business One Service Layer.
+# The `PM_DocumentData` complex type of the SAP Business One Service Layer
 public type PMDocumentData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -527,7 +527,7 @@ public type PMDocumentData record {
     PMOperationTypeEnum Operation?;
 };
 
-# The `Project` entity of the SAP Business One Service Layer.
+# The `Project` entity of the SAP Business One Service Layer
 public type Project record {
     string Code?;
     string Name?;
@@ -541,7 +541,7 @@ public type Project record {
 # OData EnumType 'TimeSheetTypeEnum'. Serialised by the Service Layer as the member name
 public type TimeSheetTypeEnum "tsh_Employee"|"tsh_User"|"tsh_Other";
 
-# The `PMC_ActivityData` complex type of the SAP Business One Service Layer.
+# The `PMC_ActivityData` complex type of the SAP Business One Service Layer
 public type PMCActivityData record {|
     @jsondata:Name {value: "ActivityID"}
     int:Signed32 activityID?;
@@ -555,41 +555,41 @@ public type PMCActivityData record {|
     BoYesNoEnum isAbsence?;
 |};
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddAreas` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddAreas` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddAreas_body record {
     @jsondata:Name {value: "PMC_AreaCollection"}
     PMCAreaData[] pMCAreaCollection?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetAreas` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetAreas` operation of the SAP Business One Service Layer
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCAreaData[] value?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetPriorities` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetPriorities` operation of the SAP Business One Service Layer
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCPriorityData[] value?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetStageTypes` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetStageTypes` operation of the SAP Business One Service Layer
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCStageTypeData[] value?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetSubprojectTypes` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetSubprojectTypes` operation of the SAP Business One Service Layer
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCSubprojectTypeData[] value?;
 };
 
-# The `PM_StageData` complex type of the SAP Business One Service Layer.
+# The `PM_StageData` complex type of the SAP Business One Service Layer
 public type PMStageData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -632,13 +632,13 @@ public type PMStageData record {
 # OData EnumType 'SubprojectStatusTypeEnum'. Serialised by the Service Layer as the member name
 public type SubprojectStatusTypeEnum "sst_Open"|"sst_Closed";
 
-# Represents the request payload for the `ProjectManagementService_GetSubproject` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementService_GetSubproject` operation of the SAP Business One Service Layer
 public type ProjectManagementService_GetSubproject_body record {
     @jsondata:Name {value: "PM_SubprojectDocumentParams"}
     PMSubprojectDocumentParams pMSubprojectDocumentParams?;
 };
 
-# The `PM_SubprojectParams` complex type of the SAP Business One Service Layer.
+# The `PM_SubprojectParams` complex type of the SAP Business One Service Layer
 public type PMSubprojectParams record {|
     @jsondata:Name {value: "AbsEntry"}
     int:Signed32 absEntry?;
@@ -646,25 +646,25 @@ public type PMSubprojectParams record {|
     BoYesNoEnum isSubproject?;
 |};
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeleteStageTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeleteStageTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeleteStageTypes_body record {
     @jsondata:Name {value: "PMC_StageTypeCollection"}
     PMCStageTypeData[] pMCStageTypeCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementService_AddSubproject` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementService_AddSubproject` operation of the SAP Business One Service Layer
 public type ProjectManagementService_AddSubproject_body record {
     @jsondata:Name {value: "PM_SubprojectDocumentData"}
     PMSubprojectDocumentData pMSubprojectDocumentData?;
 };
 
-# Represents the request payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementService_GetSubprojectsList` operation of the SAP Business One Service Layer
 public type ProjectManagementService_GetSubprojectsList_body record {
     @jsondata:Name {value: "PM_SubprojectParams"}
     PMSubprojectParams pMSubprojectParams?;
 };
 
-# The `ProjectParams` complex type of the SAP Business One Service Layer.
+# The `ProjectParams` complex type of the SAP Business One Service Layer
 public type ProjectParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -675,7 +675,7 @@ public type ProjectParams record {|
 # OData EnumType 'ProjectStatusTypeEnum'. Serialised by the Service Layer as the member name
 public type ProjectStatusTypeEnum "pst_Started"|"pst_Paused"|"pst_Stopped"|"pst_Finished"|"pst_Canceled";
 
-# The `PMS_DocumentData` complex type of the SAP Business One Service Layer.
+# The `PMS_DocumentData` complex type of the SAP Business One Service Layer
 public type PMSDocumentData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -727,7 +727,7 @@ public type ListExpenseTypesQueries record {
     string dollarSelect?;
 };
 
-# The `PM_DocAttachement` complex type of the SAP Business One Service Layer.
+# The `PM_DocAttachement` complex type of the SAP Business One Service Layer
 public type PMDocAttachement record {|
     @jsondata:Name {value: "SourcePath"}
     string sourcePath?;
@@ -743,7 +743,7 @@ public type PMDocAttachement record {|
     int:Signed32 absEntry?;
 |};
 
-# The `PM_TimeSheetLineData` complex type of the SAP Business One Service Layer.
+# The `PM_TimeSheetLineData` complex type of the SAP Business One Service Layer
 public type PMTimeSheetLineData record {
     int:Signed32 LineID?;
     string Date?;
@@ -769,14 +769,14 @@ public type PMTimeSheetLineData record {
     int:Signed32 StageID?;
 };
 
-# Represents the response payload for the `ProjectManagementConfigurationService_GetActivities` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ProjectManagementConfigurationService_GetActivities` operation of the SAP Business One Service Layer
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PMCActivityData[] value?;
 };
 
-# The `PM_OpenIssueData` complex type of the SAP Business One Service Layer.
+# The `PM_OpenIssueData` complex type of the SAP Business One Service Layer
 public type PMOpenIssueData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -792,13 +792,13 @@ public type PMOpenIssueData record {
     decimal Effort?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddPriorities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddPriorities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddPriorities_body record {
     @jsondata:Name {value: "PMC_PriorityCollection"}
     PMCPriorityData[] pMCPriorityCollection?;
 };
 
-# The `PMC_PriorityData` complex type of the SAP Business One Service Layer.
+# The `PMC_PriorityData` complex type of the SAP Business One Service Layer
 public type PMCPriorityData record {|
     @jsondata:Name {value: "PriorityName"}
     string priorityName?;
@@ -809,7 +809,7 @@ public type PMCPriorityData record {|
 # OData EnumType 'LineStatusTypeEnum'. Serialised by the Service Layer as the member name
 public type LineStatusTypeEnum "lst_Open"|"lst_Closed";
 
-# A paged collection of `ProjectManagements` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ProjectManagements` entities returned by the SAP Business One Service Layer
 public type ProjectManagementsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -818,7 +818,7 @@ public type ProjectManagementsCollectionResponse record {
     string odataNextLink?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_DeleteTasks` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_DeleteTasks` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_DeleteTasks_body record {
     @jsondata:Name {value: "PMC_TaskCollection"}
     PMCTaskData[] pMCTaskCollection?;
@@ -831,7 +831,7 @@ public type ListProjectManagementsHeaders record {
     string prefer?;
 };
 
-# The `PMS_StageAttachement` complex type of the SAP Business One Service Layer.
+# The `PMS_StageAttachement` complex type of the SAP Business One Service Layer
 public type PMSStageAttachement record {|
     @jsondata:Name {value: "SourcePath"}
     string sourcePath?;
@@ -847,32 +847,32 @@ public type PMSStageAttachement record {|
     int:Signed32 absEntry?;
 |};
 
-# The `PM_ActivityData` complex type of the SAP Business One Service Layer.
+# The `PM_ActivityData` complex type of the SAP Business One Service Layer
 public type PMActivityData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
     int:Signed32 ActivityID?;
 };
 
-# Represents the request payload for the `ProjectManagementService_DeleteSubproject` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementService_DeleteSubproject` operation of the SAP Business One Service Layer
 public type ProjectManagementService_DeleteSubproject_body record {
     @jsondata:Name {value: "PM_SubprojectDocumentParams"}
     PMSubprojectDocumentParams pMSubprojectDocumentParams?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddSubprojectTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddSubprojectTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddSubprojectTypes_body record {
     @jsondata:Name {value: "PMC_SubprojectTypesCollection"}
     PMCSubprojectTypeData[] pMCSubprojectTypesCollection?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdateStageTypes` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdateStageTypes` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdateStageTypes_body record {
     @jsondata:Name {value: "PMC_StageTypeCollection"}
     PMCStageTypeData[] pMCStageTypeCollection?;
 };
 
-# The `PM_SubprojectDocumentData` complex type of the SAP Business One Service Layer.
+# The `PM_SubprojectDocumentData` complex type of the SAP Business One Service Layer
 public type PMSubprojectDocumentData record {
     int:Signed32 AbsEntry?;
     int:Signed32 Owner?;
@@ -896,7 +896,7 @@ public type PMSubprojectDocumentData record {
     PMSDocumentData[] PMS_DocumentsCollection?;
     PMSActivityData[] PMS_ActivitiesCollection?;
     PMSWorkOrderData[] PMS_WorkOrdersCollection?;
-    # The `PMS_SummaryData` complex type of the SAP Business One Service Layer.
+    # The `PMS_SummaryData` complex type of the SAP Business One Service Layer
     PMSSummaryData PMS_SummaryData?;
     PMSDocAttachement[] PMS_DocAttachements?;
     PMSStageAttachement[] PMS_StageAttachements?;
@@ -952,7 +952,7 @@ public type ListProjectManagementTimeSheetQueries record {
     string dollarSelect?;
 };
 
-# The `PM_StageAttachement` complex type of the SAP Business One Service Layer.
+# The `PM_StageAttachement` complex type of the SAP Business One Service Layer
 public type PMStageAttachement record {|
     @jsondata:Name {value: "SourcePath"}
     string sourcePath?;
@@ -978,14 +978,14 @@ public type GetExpenseTypesQueries record {
     string dollarSelect?;
 };
 
-# The `PMS_ActivityData` complex type of the SAP Business One Service Layer.
+# The `PMS_ActivityData` complex type of the SAP Business One Service Layer
 public type PMSActivityData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
     int:Signed32 ActivityID?;
 };
 
-# The `PMS_StageData` complex type of the SAP Business One Service Layer.
+# The `PMS_StageData` complex type of the SAP Business One Service Layer
 public type PMSStageData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -1024,7 +1024,7 @@ public type PMSStageData record {
     string FinishedDate?;
 };
 
-# A paged collection of `ProjectManagementTimeSheet` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ProjectManagementTimeSheet` entities returned by the SAP Business One Service Layer
 public type ProjectManagementTimeSheetCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1036,13 +1036,13 @@ public type ProjectManagementTimeSheetCollectionResponse record {
 # OData EnumType 'StageDepTypeEnum'. Serialised by the Service Layer as the member name
 public type StageDepTypeEnum "sdt_Project"|"sdt_Subproject";
 
-# Represents the request payload for the `ProjectManagementConfigurationService_UpdateAreas` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_UpdateAreas` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_UpdateAreas_body record {
     @jsondata:Name {value: "PMC_AreaCollection"}
     PMCAreaData[] pMCAreaCollection?;
 };
 
-# The `PMS_OpenIssueData` complex type of the SAP Business One Service Layer.
+# The `PMS_OpenIssueData` complex type of the SAP Business One Service Layer
 public type PMSOpenIssueData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -1058,7 +1058,7 @@ public type PMSOpenIssueData record {
     decimal Effort?;
 };
 
-# The `PM_WorkOrderData` complex type of the SAP Business One Service Layer.
+# The `PM_WorkOrderData` complex type of the SAP Business One Service Layer
 public type PMWorkOrderData record {
     int:Signed32 LineID?;
     int:Signed32 StageID?;
@@ -1091,7 +1091,7 @@ public type ListProjectsQueries record {
     string dollarSelect?;
 };
 
-# Represents the request payload for the `ProjectManagementConfigurationService_AddActivities` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ProjectManagementConfigurationService_AddActivities` operation of the SAP Business One Service Layer
 public type ProjectManagementConfigurationService_AddActivities_body record {
     @jsondata:Name {value: "PMC_ActivityCollection"}
     PMCActivityData[] pMCActivityCollection?;

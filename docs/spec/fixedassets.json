@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Fixed Assets",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "summary": "Query the AssetCapitalization collection.",
+        "summary": "Query the AssetCapitalization collection",
         "operationId": "List_AssetCapitalization",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "summary": "Create a new AssetDocument.",
+        "summary": "Create a new AssetDocument",
         "operationId": "Create_AssetCapitalization",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "summary": "Get a single AssetDocument by key.",
+        "summary": "Get a single AssetDocument by key",
         "operationId": "Get_AssetCapitalization",
         "parameters": [
           {
@@ -162,7 +162,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +172,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -187,7 +187,7 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "summary": "Delete a AssetDocument.",
+        "summary": "Delete a AssetDocument",
         "operationId": "Delete_AssetCapitalization",
         "parameters": [
           {
@@ -208,7 +208,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -223,7 +223,7 @@
         "tags": [
           "AssetCapitalization"
         ],
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics)",
         "operationId": "Update_AssetCapitalization",
         "parameters": [
           {
@@ -254,7 +254,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -271,7 +271,7 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "summary": "Query the AssetCapitalizationCreditMemo collection.",
+        "summary": "Query the AssetCapitalizationCreditMemo collection",
         "operationId": "List_AssetCapitalizationCreditMemo",
         "parameters": [
           {
@@ -311,7 +311,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -326,7 +326,7 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "summary": "Create a new AssetDocument.",
+        "summary": "Create a new AssetDocument",
         "operationId": "Create_AssetCapitalizationCreditMemo",
         "requestBody": {
           "content": {
@@ -350,7 +350,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -367,7 +367,7 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "summary": "Get a single AssetDocument by key.",
+        "summary": "Get a single AssetDocument by key",
         "operationId": "Get_AssetCapitalizationCreditMemo",
         "parameters": [
           {
@@ -401,7 +401,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -411,7 +411,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -426,7 +426,7 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "summary": "Delete a AssetDocument.",
+        "summary": "Delete a AssetDocument",
         "operationId": "Delete_AssetCapitalizationCreditMemo",
         "parameters": [
           {
@@ -447,7 +447,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -462,7 +462,7 @@
         "tags": [
           "AssetCapitalizationCreditMemo"
         ],
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics)",
         "operationId": "Update_AssetCapitalizationCreditMemo",
         "parameters": [
           {
@@ -493,7 +493,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -510,7 +510,7 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "summary": "Cancel.",
+        "summary": "Cancel",
         "operationId": "AssetCapitalizationCreditMemoService_Cancel",
         "requestBody": {
           "content": {
@@ -527,7 +527,7 @@
                     "x-ballerina-name": "assetDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `AssetCapitalizationCreditMemoService_Cancel` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `AssetCapitalizationCreditMemoService_Cancel` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -538,7 +538,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -555,7 +555,7 @@
         "tags": [
           "AssetCapitalizationCreditMemoService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetCapitalizationCreditMemoService_GetList",
         "responses": {
           "200": {
@@ -576,13 +576,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetCapitalizationCreditMemoService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetCapitalizationCreditMemoService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -599,7 +599,7 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "summary": "Cancel.",
+        "summary": "Cancel",
         "operationId": "AssetCapitalizationService_Cancel",
         "requestBody": {
           "content": {
@@ -616,7 +616,7 @@
                     "x-ballerina-name": "assetDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `AssetCapitalizationService_Cancel` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `AssetCapitalizationService_Cancel` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -627,7 +627,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -644,7 +644,7 @@
         "tags": [
           "AssetCapitalizationService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetCapitalizationService_GetList",
         "responses": {
           "200": {
@@ -665,13 +665,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetCapitalizationService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetCapitalizationService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -688,7 +688,7 @@
         "tags": [
           "AssetClasses"
         ],
-        "summary": "Query the AssetClasses collection.",
+        "summary": "Query the AssetClasses collection",
         "operationId": "List_AssetClasses",
         "parameters": [
           {
@@ -728,7 +728,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -743,7 +743,7 @@
         "tags": [
           "AssetClasses"
         ],
-        "summary": "Create a new AssetClass.",
+        "summary": "Create a new AssetClass",
         "operationId": "Create_AssetClasses",
         "requestBody": {
           "content": {
@@ -767,7 +767,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -784,7 +784,7 @@
         "tags": [
           "AssetClasses"
         ],
-        "summary": "Get a single AssetClass by key.",
+        "summary": "Get a single AssetClass by key",
         "operationId": "Get_AssetClasses",
         "parameters": [
           {
@@ -817,7 +817,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -827,7 +827,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -842,7 +842,7 @@
         "tags": [
           "AssetClasses"
         ],
-        "summary": "Delete a AssetClass.",
+        "summary": "Delete a AssetClass",
         "operationId": "Delete_AssetClasses",
         "parameters": [
           {
@@ -862,7 +862,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -877,7 +877,7 @@
         "tags": [
           "AssetClasses"
         ],
-        "summary": "Partially update a AssetClass (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetClass (PATCH/MERGE semantics)",
         "operationId": "Update_AssetClasses",
         "parameters": [
           {
@@ -907,7 +907,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -924,7 +924,7 @@
         "tags": [
           "AssetClassesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetClassesService_GetList",
         "responses": {
           "200": {
@@ -945,13 +945,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetClassesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetClassesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -968,7 +968,7 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "summary": "Query the AssetDepreciationGroups collection.",
+        "summary": "Query the AssetDepreciationGroups collection",
         "operationId": "List_AssetDepreciationGroups",
         "parameters": [
           {
@@ -1008,7 +1008,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1023,7 +1023,7 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "summary": "Create a new AssetDepreciationGroup.",
+        "summary": "Create a new AssetDepreciationGroup",
         "operationId": "Create_AssetDepreciationGroups",
         "requestBody": {
           "content": {
@@ -1047,7 +1047,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1064,7 +1064,7 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "summary": "Get a single AssetDepreciationGroup by key.",
+        "summary": "Get a single AssetDepreciationGroup by key",
         "operationId": "Get_AssetDepreciationGroups",
         "parameters": [
           {
@@ -1097,7 +1097,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1107,7 +1107,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1122,7 +1122,7 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "summary": "Delete a AssetDepreciationGroup.",
+        "summary": "Delete a AssetDepreciationGroup",
         "operationId": "Delete_AssetDepreciationGroups",
         "parameters": [
           {
@@ -1142,7 +1142,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1157,7 +1157,7 @@
         "tags": [
           "AssetDepreciationGroups"
         ],
-        "summary": "Partially update a AssetDepreciationGroup (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDepreciationGroup (PATCH/MERGE semantics)",
         "operationId": "Update_AssetDepreciationGroups",
         "parameters": [
           {
@@ -1187,7 +1187,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1204,7 +1204,7 @@
         "tags": [
           "AssetDepreciationGroupsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetDepreciationGroupsService_GetList",
         "responses": {
           "200": {
@@ -1225,13 +1225,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetDepreciationGroupsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetDepreciationGroupsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1248,7 +1248,7 @@
         "tags": [
           "AssetGroups"
         ],
-        "summary": "Query the AssetGroups collection.",
+        "summary": "Query the AssetGroups collection",
         "operationId": "List_AssetGroups",
         "parameters": [
           {
@@ -1288,7 +1288,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1303,7 +1303,7 @@
         "tags": [
           "AssetGroups"
         ],
-        "summary": "Create a new AssetGroup.",
+        "summary": "Create a new AssetGroup",
         "operationId": "Create_AssetGroups",
         "requestBody": {
           "content": {
@@ -1327,7 +1327,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1344,7 +1344,7 @@
         "tags": [
           "AssetGroups"
         ],
-        "summary": "Get a single AssetGroup by key.",
+        "summary": "Get a single AssetGroup by key",
         "operationId": "Get_AssetGroups",
         "parameters": [
           {
@@ -1377,7 +1377,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1387,7 +1387,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1402,7 +1402,7 @@
         "tags": [
           "AssetGroups"
         ],
-        "summary": "Delete a AssetGroup.",
+        "summary": "Delete a AssetGroup",
         "operationId": "Delete_AssetGroups",
         "parameters": [
           {
@@ -1422,7 +1422,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1437,7 +1437,7 @@
         "tags": [
           "AssetGroups"
         ],
-        "summary": "Partially update a AssetGroup (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetGroup (PATCH/MERGE semantics)",
         "operationId": "Update_AssetGroups",
         "parameters": [
           {
@@ -1467,7 +1467,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1484,7 +1484,7 @@
         "tags": [
           "AssetGroupsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetGroupsService_GetList",
         "responses": {
           "200": {
@@ -1505,13 +1505,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetGroupsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetGroupsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1528,7 +1528,7 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "summary": "Query the AssetManualDepreciation collection.",
+        "summary": "Query the AssetManualDepreciation collection",
         "operationId": "List_AssetManualDepreciation",
         "parameters": [
           {
@@ -1568,7 +1568,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1583,7 +1583,7 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "summary": "Create a new AssetDocument.",
+        "summary": "Create a new AssetDocument",
         "operationId": "Create_AssetManualDepreciation",
         "requestBody": {
           "content": {
@@ -1607,7 +1607,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1624,7 +1624,7 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "summary": "Get a single AssetDocument by key.",
+        "summary": "Get a single AssetDocument by key",
         "operationId": "Get_AssetManualDepreciation",
         "parameters": [
           {
@@ -1658,7 +1658,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1668,7 +1668,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1683,7 +1683,7 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "summary": "Delete a AssetDocument.",
+        "summary": "Delete a AssetDocument",
         "operationId": "Delete_AssetManualDepreciation",
         "parameters": [
           {
@@ -1704,7 +1704,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1719,7 +1719,7 @@
         "tags": [
           "AssetManualDepreciation"
         ],
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics)",
         "operationId": "Update_AssetManualDepreciation",
         "parameters": [
           {
@@ -1750,7 +1750,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1767,7 +1767,7 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "summary": "Cancel.",
+        "summary": "Cancel",
         "operationId": "AssetManualDepreciationService_Cancel",
         "requestBody": {
           "content": {
@@ -1784,7 +1784,7 @@
                     "x-ballerina-name": "assetDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `AssetManualDepreciationService_Cancel` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `AssetManualDepreciationService_Cancel` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1795,7 +1795,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1812,7 +1812,7 @@
         "tags": [
           "AssetManualDepreciationService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetManualDepreciationService_GetList",
         "responses": {
           "200": {
@@ -1833,13 +1833,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetManualDepreciationService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetManualDepreciationService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1856,7 +1856,7 @@
         "tags": [
           "AssetRetirement"
         ],
-        "summary": "Query the AssetRetirement collection.",
+        "summary": "Query the AssetRetirement collection",
         "operationId": "List_AssetRetirement",
         "parameters": [
           {
@@ -1896,7 +1896,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1911,7 +1911,7 @@
         "tags": [
           "AssetRetirement"
         ],
-        "summary": "Create a new AssetDocument.",
+        "summary": "Create a new AssetDocument",
         "operationId": "Create_AssetRetirement",
         "requestBody": {
           "content": {
@@ -1935,7 +1935,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1952,7 +1952,7 @@
         "tags": [
           "AssetRetirement"
         ],
-        "summary": "Get a single AssetDocument by key.",
+        "summary": "Get a single AssetDocument by key",
         "operationId": "Get_AssetRetirement",
         "parameters": [
           {
@@ -1986,7 +1986,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1996,7 +1996,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2011,7 +2011,7 @@
         "tags": [
           "AssetRetirement"
         ],
-        "summary": "Delete a AssetDocument.",
+        "summary": "Delete a AssetDocument",
         "operationId": "Delete_AssetRetirement",
         "parameters": [
           {
@@ -2032,7 +2032,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2047,7 +2047,7 @@
         "tags": [
           "AssetRetirement"
         ],
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics)",
         "operationId": "Update_AssetRetirement",
         "parameters": [
           {
@@ -2078,7 +2078,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2095,7 +2095,7 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "summary": "Cancel.",
+        "summary": "Cancel",
         "operationId": "AssetRetirementService_Cancel",
         "requestBody": {
           "content": {
@@ -2112,7 +2112,7 @@
                     "x-ballerina-name": "assetDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `AssetRetirementService_Cancel` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `AssetRetirementService_Cancel` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -2123,7 +2123,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2140,7 +2140,7 @@
         "tags": [
           "AssetRetirementService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetRetirementService_GetList",
         "responses": {
           "200": {
@@ -2161,13 +2161,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetRetirementService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetRetirementService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2184,7 +2184,7 @@
         "tags": [
           "AssetRevaluationService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetRevaluationService_GetList",
         "responses": {
           "200": {
@@ -2205,13 +2205,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetRevaluationService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetRevaluationService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2228,7 +2228,7 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "summary": "Query the AssetRevaluations collection.",
+        "summary": "Query the AssetRevaluations collection",
         "operationId": "List_AssetRevaluations",
         "parameters": [
           {
@@ -2268,7 +2268,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2283,7 +2283,7 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "summary": "Create a new AssetRevaluation.",
+        "summary": "Create a new AssetRevaluation",
         "operationId": "Create_AssetRevaluations",
         "requestBody": {
           "content": {
@@ -2307,7 +2307,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2324,7 +2324,7 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "summary": "Get a single AssetRevaluation by key.",
+        "summary": "Get a single AssetRevaluation by key",
         "operationId": "Get_AssetRevaluations",
         "parameters": [
           {
@@ -2358,7 +2358,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2368,7 +2368,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2383,7 +2383,7 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "summary": "Delete a AssetRevaluation.",
+        "summary": "Delete a AssetRevaluation",
         "operationId": "Delete_AssetRevaluations",
         "parameters": [
           {
@@ -2404,7 +2404,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2419,7 +2419,7 @@
         "tags": [
           "AssetRevaluations"
         ],
-        "summary": "Partially update a AssetRevaluation (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetRevaluation (PATCH/MERGE semantics)",
         "operationId": "Update_AssetRevaluations",
         "parameters": [
           {
@@ -2450,7 +2450,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2467,7 +2467,7 @@
         "tags": [
           "AssetTransfer"
         ],
-        "summary": "Query the AssetTransfer collection.",
+        "summary": "Query the AssetTransfer collection",
         "operationId": "List_AssetTransfer",
         "parameters": [
           {
@@ -2507,7 +2507,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2522,7 +2522,7 @@
         "tags": [
           "AssetTransfer"
         ],
-        "summary": "Create a new AssetDocument.",
+        "summary": "Create a new AssetDocument",
         "operationId": "Create_AssetTransfer",
         "requestBody": {
           "content": {
@@ -2546,7 +2546,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2563,7 +2563,7 @@
         "tags": [
           "AssetTransfer"
         ],
-        "summary": "Get a single AssetDocument by key.",
+        "summary": "Get a single AssetDocument by key",
         "operationId": "Get_AssetTransfer",
         "parameters": [
           {
@@ -2597,7 +2597,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2607,7 +2607,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2622,7 +2622,7 @@
         "tags": [
           "AssetTransfer"
         ],
-        "summary": "Delete a AssetDocument.",
+        "summary": "Delete a AssetDocument",
         "operationId": "Delete_AssetTransfer",
         "parameters": [
           {
@@ -2643,7 +2643,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2658,7 +2658,7 @@
         "tags": [
           "AssetTransfer"
         ],
-        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics).",
+        "summary": "Partially update a AssetDocument (PATCH/MERGE semantics)",
         "operationId": "Update_AssetTransfer",
         "parameters": [
           {
@@ -2689,7 +2689,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2706,7 +2706,7 @@
         "tags": [
           "AssetTransferService"
         ],
-        "summary": "Cancel.",
+        "summary": "Cancel",
         "operationId": "AssetTransferService_Cancel",
         "requestBody": {
           "content": {
@@ -2723,7 +2723,7 @@
                     "x-ballerina-name": "assetDocumentParams"
                   }
                 },
-                "description": "Represents the request payload for the `AssetTransferService_Cancel` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `AssetTransferService_Cancel` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -2734,7 +2734,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2751,7 +2751,7 @@
         "tags": [
           "AssetTransferService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "AssetTransferService_GetList",
         "responses": {
           "200": {
@@ -2772,13 +2772,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `AssetTransferService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `AssetTransferService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2795,7 +2795,7 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "summary": "Query the DepreciationAreas collection.",
+        "summary": "Query the DepreciationAreas collection",
         "operationId": "List_DepreciationAreas",
         "parameters": [
           {
@@ -2835,7 +2835,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2850,7 +2850,7 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "summary": "Create a new DepreciationArea.",
+        "summary": "Create a new DepreciationArea",
         "operationId": "Create_DepreciationAreas",
         "requestBody": {
           "content": {
@@ -2874,7 +2874,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2891,7 +2891,7 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "summary": "Get a single DepreciationArea by key.",
+        "summary": "Get a single DepreciationArea by key",
         "operationId": "Get_DepreciationAreas",
         "parameters": [
           {
@@ -2924,7 +2924,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2934,7 +2934,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2949,7 +2949,7 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "summary": "Delete a DepreciationArea.",
+        "summary": "Delete a DepreciationArea",
         "operationId": "Delete_DepreciationAreas",
         "parameters": [
           {
@@ -2969,7 +2969,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2984,7 +2984,7 @@
         "tags": [
           "DepreciationAreas"
         ],
-        "summary": "Partially update a DepreciationArea (PATCH/MERGE semantics).",
+        "summary": "Partially update a DepreciationArea (PATCH/MERGE semantics)",
         "operationId": "Update_DepreciationAreas",
         "parameters": [
           {
@@ -3014,7 +3014,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3031,7 +3031,7 @@
         "tags": [
           "DepreciationAreasService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "DepreciationAreasService_GetList",
         "responses": {
           "200": {
@@ -3052,13 +3052,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `DepreciationAreasService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `DepreciationAreasService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3075,7 +3075,7 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "summary": "Query the DepreciationTypePools collection.",
+        "summary": "Query the DepreciationTypePools collection",
         "operationId": "List_DepreciationTypePools",
         "parameters": [
           {
@@ -3115,7 +3115,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3130,7 +3130,7 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "summary": "Create a new DepreciationTypePool.",
+        "summary": "Create a new DepreciationTypePool",
         "operationId": "Create_DepreciationTypePools",
         "requestBody": {
           "content": {
@@ -3154,7 +3154,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3171,7 +3171,7 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "summary": "Get a single DepreciationTypePool by key.",
+        "summary": "Get a single DepreciationTypePool by key",
         "operationId": "Get_DepreciationTypePools",
         "parameters": [
           {
@@ -3204,7 +3204,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3214,7 +3214,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3229,7 +3229,7 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "summary": "Delete a DepreciationTypePool.",
+        "summary": "Delete a DepreciationTypePool",
         "operationId": "Delete_DepreciationTypePools",
         "parameters": [
           {
@@ -3249,7 +3249,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3264,7 +3264,7 @@
         "tags": [
           "DepreciationTypePools"
         ],
-        "summary": "Partially update a DepreciationTypePool (PATCH/MERGE semantics).",
+        "summary": "Partially update a DepreciationTypePool (PATCH/MERGE semantics)",
         "operationId": "Update_DepreciationTypePools",
         "parameters": [
           {
@@ -3294,7 +3294,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3311,7 +3311,7 @@
         "tags": [
           "DepreciationTypePoolsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "DepreciationTypePoolsService_GetList",
         "responses": {
           "200": {
@@ -3332,13 +3332,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `DepreciationTypePoolsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `DepreciationTypePoolsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3355,7 +3355,7 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "summary": "Query the DepreciationTypes collection.",
+        "summary": "Query the DepreciationTypes collection",
         "operationId": "List_DepreciationTypes",
         "parameters": [
           {
@@ -3395,7 +3395,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3410,7 +3410,7 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "summary": "Create a new DepreciationType.",
+        "summary": "Create a new DepreciationType",
         "operationId": "Create_DepreciationTypes",
         "requestBody": {
           "content": {
@@ -3434,7 +3434,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3451,7 +3451,7 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "summary": "Get a single DepreciationType by key.",
+        "summary": "Get a single DepreciationType by key",
         "operationId": "Get_DepreciationTypes",
         "parameters": [
           {
@@ -3484,7 +3484,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3494,7 +3494,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3509,7 +3509,7 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "summary": "Delete a DepreciationType.",
+        "summary": "Delete a DepreciationType",
         "operationId": "Delete_DepreciationTypes",
         "parameters": [
           {
@@ -3529,7 +3529,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3544,7 +3544,7 @@
         "tags": [
           "DepreciationTypes"
         ],
-        "summary": "Partially update a DepreciationType (PATCH/MERGE semantics).",
+        "summary": "Partially update a DepreciationType (PATCH/MERGE semantics)",
         "operationId": "Update_DepreciationTypes",
         "parameters": [
           {
@@ -3574,7 +3574,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3591,7 +3591,7 @@
         "tags": [
           "DepreciationTypesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "DepreciationTypesService_GetList",
         "responses": {
           "200": {
@@ -3612,13 +3612,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `DepreciationTypesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `DepreciationTypesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3635,7 +3635,7 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "summary": "Query the FAAccountDeterminations collection.",
+        "summary": "Query the FAAccountDeterminations collection",
         "operationId": "List_FAAccountDeterminations",
         "parameters": [
           {
@@ -3675,7 +3675,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3690,7 +3690,7 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "summary": "Create a new FAAccountDetermination.",
+        "summary": "Create a new FAAccountDetermination",
         "operationId": "Create_FAAccountDeterminations",
         "requestBody": {
           "content": {
@@ -3714,7 +3714,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3731,7 +3731,7 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "summary": "Get a single FAAccountDetermination by key.",
+        "summary": "Get a single FAAccountDetermination by key",
         "operationId": "Get_FAAccountDeterminations",
         "parameters": [
           {
@@ -3764,7 +3764,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3774,7 +3774,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3789,7 +3789,7 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "summary": "Delete a FAAccountDetermination.",
+        "summary": "Delete a FAAccountDetermination",
         "operationId": "Delete_FAAccountDeterminations",
         "parameters": [
           {
@@ -3809,7 +3809,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3824,7 +3824,7 @@
         "tags": [
           "FAAccountDeterminations"
         ],
-        "summary": "Partially update a FAAccountDetermination (PATCH/MERGE semantics).",
+        "summary": "Partially update a FAAccountDetermination (PATCH/MERGE semantics)",
         "operationId": "Update_FAAccountDeterminations",
         "parameters": [
           {
@@ -3854,7 +3854,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3871,7 +3871,7 @@
         "tags": [
           "FAAccountDeterminationsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "FAAccountDeterminationsService_GetList",
         "responses": {
           "200": {
@@ -3892,13 +3892,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `FAAccountDeterminationsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `FAAccountDeterminationsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3915,7 +3915,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Get asset end balance.",
+        "summary": "Get asset end balance",
         "operationId": "FixedAssetItemsService_GetAssetEndBalance",
         "requestBody": {
           "content": {
@@ -3932,7 +3932,7 @@
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
                 },
-                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetEndBalance` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetEndBalance` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -3950,7 +3950,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3967,7 +3967,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Get asset values list.",
+        "summary": "Get asset values list",
         "operationId": "FixedAssetItemsService_GetAssetValuesList",
         "requestBody": {
           "content": {
@@ -3984,7 +3984,7 @@
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
                 },
-                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4009,13 +4009,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `FixedAssetItemsService_GetAssetValuesList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4032,7 +4032,7 @@
         "tags": [
           "FixedAssetItemsService"
         ],
-        "summary": "Update asset end balance.",
+        "summary": "Update asset end balance",
         "operationId": "FixedAssetItemsService_UpdateAssetEndBalance",
         "requestBody": {
           "content": {
@@ -4057,7 +4057,7 @@
                     "x-ballerina-name": "fixedAssetValuesParams"
                   }
                 },
-                "description": "Represents the request payload for the `FixedAssetItemsService_UpdateAssetEndBalance` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `FixedAssetItemsService_UpdateAssetEndBalance` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -4068,7 +4068,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4154,7 +4154,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetRevaluationLine` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetRevaluationLine` complex type of the SAP Business One Service Layer"
       },
       "AcquisitionProRataTypeEnum": {
         "type": "string",
@@ -4220,7 +4220,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `FixedAssetEndBalance` complex type of the SAP Business One Service Layer."
+        "description": "The `FixedAssetEndBalance` complex type of the SAP Business One Service Layer"
       },
       "AssetTypeEnum": {
         "type": "string",
@@ -4250,7 +4250,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationTypePool` entity of the SAP Business One Service Layer."
+        "description": "The `DepreciationTypePool` entity of the SAP Business One Service Layer"
       },
       "FixedAssetValuesParams": {
         "type": "object",
@@ -4269,7 +4269,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `FixedAssetValuesParams` complex type of the SAP Business One Service Layer."
+        "description": "The `FixedAssetValuesParams` complex type of the SAP Business One Service Layer"
       },
       "DepreciationTypePoolsCollectionResponse": {
         "type": "object",
@@ -4289,7 +4289,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `DepreciationTypePools` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `DepreciationTypePools` entities returned by the SAP Business One Service Layer"
       },
       "CalculationBaseEnum": {
         "type": "string",
@@ -4424,7 +4424,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationArea` entity of the SAP Business One Service Layer."
+        "description": "The `DepreciationArea` entity of the SAP Business One Service Layer"
       },
       "AssetManualDepreciationCollectionResponse": {
         "type": "object",
@@ -4444,7 +4444,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetManualDepreciation` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetManualDepreciation` entities returned by the SAP Business One Service Layer"
       },
       "AssetDocument": {
         "type": "object",
@@ -4589,7 +4589,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `AssetDocument` entity of the SAP Business One Service Layer."
+        "description": "The `AssetDocument` entity of the SAP Business One Service Layer"
       },
       "AcquisitionPeriodControlEnum": {
         "type": "string",
@@ -4614,7 +4614,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationAreaParams` complex type of the SAP Business One Service Layer."
+        "description": "The `DepreciationAreaParams` complex type of the SAP Business One Service Layer"
       },
       "AssetRevaluationParams": {
         "type": "object",
@@ -4626,7 +4626,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetRevaluationParams` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetRevaluationParams` complex type of the SAP Business One Service Layer"
       },
       "AssetDocumentLine": {
         "type": "object",
@@ -4700,7 +4700,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `AssetDocumentLine` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetDocumentLine` complex type of the SAP Business One Service Layer"
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -4786,7 +4786,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `FixedAssetValues` complex type of the SAP Business One Service Layer."
+        "description": "The `FixedAssetValues` complex type of the SAP Business One Service Layer"
       },
       "AssetDocumentTypeEnum": {
         "type": "string",
@@ -4833,7 +4833,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetGroupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetGroupParams` complex type of the SAP Business One Service Layer"
       },
       "AssetCapitalizationCreditMemoCollectionResponse": {
         "type": "object",
@@ -4853,7 +4853,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetCapitalizationCreditMemo` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetCapitalizationCreditMemo` entities returned by the SAP Business One Service Layer"
       },
       "SpecialDepreciationMaximumFlagEnum": {
         "type": "string",
@@ -4881,7 +4881,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetDepreciationGroups` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetDepreciationGroups` entities returned by the SAP Business One Service Layer"
       },
       "AssetDocumentParams": {
         "type": "object",
@@ -4906,7 +4906,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetDocumentParams` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetDocumentParams` complex type of the SAP Business One Service Layer"
       },
       "DepreciationCalculationBaseEnum": {
         "type": "string",
@@ -4950,7 +4950,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `DepreciationAreas` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `DepreciationAreas` entities returned by the SAP Business One Service Layer"
       },
       "AssetDepreciationGroup": {
         "type": "object",
@@ -4969,7 +4969,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetDepreciationGroup` entity of the SAP Business One Service Layer."
+        "description": "The `AssetDepreciationGroup` entity of the SAP Business One Service Layer"
       },
       "RetirementProRataTypeEnum": {
         "type": "string",
@@ -4998,7 +4998,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetRevaluations` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetRevaluations` entities returned by the SAP Business One Service Layer"
       },
       "AssetClass": {
         "type": "object",
@@ -5048,7 +5048,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetClass` entity of the SAP Business One Service Layer."
+        "description": "The `AssetClass` entity of the SAP Business One Service Layer"
       },
       "AssetCapitalizationCollectionResponse": {
         "type": "object",
@@ -5068,7 +5068,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetCapitalization` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetCapitalization` entities returned by the SAP Business One Service Layer"
       },
       "AssetClassesCollectionResponse": {
         "type": "object",
@@ -5088,7 +5088,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetClasses` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetClasses` entities returned by the SAP Business One Service Layer"
       },
       "AssetDepreciationGroupParams": {
         "type": "object",
@@ -5103,7 +5103,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetDepreciationGroupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetDepreciationGroupParams` complex type of the SAP Business One Service Layer"
       },
       "AssetTransactionTypeEnum": {
         "type": "string",
@@ -5133,7 +5133,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `DepreciationTypeParams` complex type of the SAP Business One Service Layer"
       },
       "AssetTransferCollectionResponse": {
         "type": "object",
@@ -5153,7 +5153,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetTransfer` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetTransfer` entities returned by the SAP Business One Service Layer"
       },
       "AssetClassLine": {
         "type": "object",
@@ -5194,7 +5194,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetClassLine` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetClassLine` complex type of the SAP Business One Service Layer"
       },
       "AssetDocumentStatusEnum": {
         "type": "string",
@@ -5259,7 +5259,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetDocumentNewLoc` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetDocumentNewLoc` complex type of the SAP Business One Service Layer"
       },
       "AssetGroupsCollectionResponse": {
         "type": "object",
@@ -5279,7 +5279,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetGroups` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetGroups` entities returned by the SAP Business One Service Layer"
       },
       "DepreciationType": {
         "type": "object",
@@ -5614,7 +5614,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationType` entity of the SAP Business One Service Layer."
+        "description": "The `DepreciationType` entity of the SAP Business One Service Layer"
       },
       "AssetRetirementCollectionResponse": {
         "type": "object",
@@ -5634,7 +5634,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `AssetRetirement` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `AssetRetirement` entities returned by the SAP Business One Service Layer"
       },
       "RetirementMethodEnum": {
         "type": "string",
@@ -5662,7 +5662,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `DepreciationTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `DepreciationTypes` entities returned by the SAP Business One Service Layer"
       },
       "PostingOfDepreciationEnum": {
         "type": "string",
@@ -5709,7 +5709,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetDocumentAreaJournal` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetDocumentAreaJournal` complex type of the SAP Business One Service Layer"
       },
       "AssetOriginalTypeEnum": {
         "type": "string",
@@ -5853,7 +5853,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetRevaluation` entity of the SAP Business One Service Layer."
+        "description": "The `AssetRevaluation` entity of the SAP Business One Service Layer"
       },
       "DepreciationTypePoolParams": {
         "type": "object",
@@ -5868,7 +5868,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationTypePoolParams` complex type of the SAP Business One Service Layer."
+        "description": "The `DepreciationTypePoolParams` complex type of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -5894,7 +5894,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "RetirementPeriodControlEnum": {
         "type": "string",
@@ -5938,7 +5938,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `DepreciationLevel` complex type of the SAP Business One Service Layer."
+        "description": "The `DepreciationLevel` complex type of the SAP Business One Service Layer"
       },
       "FAAccountDeterminationsCollectionResponse": {
         "type": "object",
@@ -5958,7 +5958,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `FAAccountDeterminations` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `FAAccountDeterminations` entities returned by the SAP Business One Service Layer"
       },
       "DepreciationMethodEnum": {
         "type": "string",
@@ -6006,7 +6006,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `FAAccountDeterminationParams` complex type of the SAP Business One Service Layer."
+        "description": "The `FAAccountDeterminationParams` complex type of the SAP Business One Service Layer"
       },
       "AssetClassParams": {
         "type": "object",
@@ -6021,7 +6021,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetClassParams` complex type of the SAP Business One Service Layer."
+        "description": "The `AssetClassParams` complex type of the SAP Business One Service Layer"
       },
       "TransferTargetProRataTypeEnum": {
         "type": "string",
@@ -6045,7 +6045,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `AssetGroup` entity of the SAP Business One Service Layer."
+        "description": "The `AssetGroup` entity of the SAP Business One Service Layer"
       },
       "FAAccountDetermination": {
         "type": "object",
@@ -6136,7 +6136,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `FAAccountDetermination` entity of the SAP Business One Service Layer."
+        "description": "The `FAAccountDetermination` entity of the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -6246,7 +6246,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

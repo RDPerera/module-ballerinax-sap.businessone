@@ -17,10 +17,10 @@ import ballerina/http;
 import ballerina/jballerina.java;
 import ballerina/mime;
 
-# The `sap.businessone` client return type for the HTTP client actions.
+# The `sap.businessone` client return type for the HTTP client actions
 public type TargetType http:Response|anydata;
 
-# SAP Business One Service Layer session credentials.
+# SAP Business One Service Layer session credentials
 #
 # + companyDb - The company database (schema) to connect to
 # + username - SAP Business One user code
@@ -32,11 +32,11 @@ public type SessionConfig record {|
 |};
 
 # The `sap.businessone` client provides the capability for initiating contact with the SAP Business One
-# Service Layer. The API it provides includes the functions for the standard HTTP methods.
+# Service Layer. The API it provides includes the functions for the standard HTTP methods
 #
 # Authentication is session based: the client logs in to the Service Layer with the configured
 # company database, user name, and password, and transparently re-logs in and replays the request
-# once when the session expires (HTTP 401).
+# once when the session expires (HTTP 401)
 public client isolated class Client {
 
     final http:Client httpClient;
@@ -46,9 +46,9 @@ public client isolated class Client {
     private string sessionCookies = "";
 
     # Gets invoked to initialize the `client`. During initialization, the configurations provided through the `config`
-    # record is used to determine which type of additional behaviours are added to the endpoint (e.g.
+    # record is used to determine which type of additional behaviours are added to the endpoint (e.g.,
     # security, circuit breaking). The Service Layer session (`B1SESSION` and `ROUTEID` cookies) is captured
-    # from the login response and attached to every request by the client itself.
+    # from the login response and attached to every request by the client itself
     #
     # + url - URL of the target Service Layer endpoint (e.g. `https://host:50000/b1s/v1`)
     # + session - The Service Layer session credentials
@@ -62,7 +62,7 @@ public client isolated class Client {
         return;
     }
 
-    # The client resource function to send HTTP POST requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP POST requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + message - An HTTP outbound request or any allowed payload
@@ -78,7 +78,7 @@ public client isolated class Client {
         name: "postResource"
     } external;
 
-    # The `Client.post()` function can be used to send HTTP POST requests to the SAP Business One Service Layer.
+    # The `Client.post()` function can be used to send HTTP POST requests to the SAP Business One Service Layer
     #
     # + path - Resource path
     # + message - An HTTP outbound request or any allowed payload
@@ -108,7 +108,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP PUT requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP PUT requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + message - An HTTP outbound request or any allowed payload
@@ -124,7 +124,7 @@ public client isolated class Client {
         name: "putResource"
     } external;
 
-    # The `Client.put()` function can be used to send HTTP PUT requests to the SAP Business One Service Layer.
+    # The `Client.put()` function can be used to send HTTP PUT requests to the SAP Business One Service Layer
     #
     # + path - Resource path
     # + message - An HTTP outbound request or any allowed payload
@@ -154,7 +154,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP PATCH requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP PATCH requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + message - An HTTP outbound request or any allowed payload
@@ -170,7 +170,7 @@ public client isolated class Client {
         name: "patchResource"
     } external;
 
-    # The `Client.patch()` function can be used to send HTTP PATCH requests to the SAP Business One Service Layer.
+    # The `Client.patch()` function can be used to send HTTP PATCH requests to the SAP Business One Service Layer
     #
     # + path - Resource path
     # + message - An HTTP outbound request or any allowed payload
@@ -200,7 +200,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP DELETE requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP DELETE requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + message - An optional HTTP outbound request or any allowed payload
@@ -216,7 +216,7 @@ public client isolated class Client {
         name: "deleteResource"
     } external;
 
-    # The `Client.delete()` function can be used to send HTTP DELETE requests to the SAP Business One Service Layer.
+    # The `Client.delete()` function can be used to send HTTP DELETE requests to the SAP Business One Service Layer
     #
     # + path - Resource path
     # + message - An optional HTTP outbound request message or any allowed payload
@@ -246,7 +246,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP HEAD requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP HEAD requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + headers - The entity headers
@@ -258,7 +258,7 @@ public client isolated class Client {
         name: "headResource"
     } external;
 
-    # The `Client.head()` function can be used to send HTTP HEAD requests to the SAP Business One Service Layer.
+    # The `Client.head()` function can be used to send HTTP HEAD requests to the SAP Business One Service Layer
     #
     # + path - Resource path
     # + headers - The entity headers
@@ -276,7 +276,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP GET requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP GET requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + headers - The entity headers
@@ -290,7 +290,7 @@ public client isolated class Client {
         name: "getResource"
     } external;
 
-    # The `Client.get()` function can be used to send HTTP GET requests to the SAP Business One Service Layer.
+    # The `Client.get()` function can be used to send HTTP GET requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + headers - The entity headers
@@ -317,7 +317,7 @@ public client isolated class Client {
         return response;
     }
 
-    # The client resource function to send HTTP OPTIONS requests to the SAP Business One Service Layer.
+    # The client resource function to send HTTP OPTIONS requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + headers - The entity headers
@@ -331,7 +331,7 @@ public client isolated class Client {
         name: "optionsResource"
     } external;
 
-    # The `Client.options()` function can be used to send HTTP OPTIONS requests to the SAP Business One Service Layer.
+    # The `Client.options()` function can be used to send HTTP OPTIONS requests to the SAP Business One Service Layer
     #
     # + path - Request path
     # + headers - The entity headers
@@ -358,7 +358,7 @@ public client isolated class Client {
         return response;
     }
 
-    # Ends the current Service Layer session.
+    # Ends the current Service Layer session
     #
     # + return - A `sap.businessone:ClientError` if the logout failed
     remote isolated function logout() returns ClientError? {
@@ -373,7 +373,7 @@ public client isolated class Client {
         return;
     }
 
-    # Logs in to the Service Layer if there is no active session, or unconditionally when `refresh` is set.
+    # Logs in to the Service Layer if there is no active session, or unconditionally when `refresh` is set
     #
     # + refresh - Forces a new login even when a session is believed to be active
     # + return - A `sap.businessone:LoginFailure` if the Service Layer rejects the login
@@ -418,7 +418,7 @@ public client isolated class Client {
         return;
     }
 
-    # Returns the `Cookie` header value carrying the active Service Layer session.
+    # Returns the `Cookie` header value carrying the active Service Layer session
     #
     # + return - The session cookies, or an empty string when no session is active
     isolated function sessionCookieHeader() returns string {

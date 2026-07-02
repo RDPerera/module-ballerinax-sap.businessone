@@ -21,14 +21,14 @@ import ballerina/data.jsondata;
 import ballerina/http;
 import ballerinax/sap.businessone;
 
-# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').
+# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1')
 # 
-# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.
+# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session
 # 
-# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.
+# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging
 public isolated client class Client {
     final businessone:Client clientEp;
-    # Gets invoked to initialize the `connector`.
+    # Gets invoked to initialize the `connector`
     #
     # + session - SAP Business One Service Layer session credentials 
     # + config - The configurations to be used when initializing the `connector` 
@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Query the EmployeeIDType collection.
+    # Query the EmployeeIDType collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -51,7 +51,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeIDType.
+    # Create a new EmployeeIDType
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -64,7 +64,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeIDType by key.
+    # Get a single EmployeeIDType by key
     #
     # + iDType - Key property 'IDType' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -76,7 +76,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeIDType.
+    # Delete a EmployeeIDType
     #
     # + iDType - Key property 'IDType' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -86,7 +86,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeIDType (PATCH/MERGE semantics).
+    # Partially update a EmployeeIDType (PATCH/MERGE semantics)
     #
     # + iDType - Key property 'IDType' (Edm.String)
     # + payload - Request payload 
@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -110,7 +110,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmployeeImages collection.
+    # Query the EmployeeImages collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -122,7 +122,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeImage.
+    # Create a new EmployeeImage
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -135,7 +135,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeImage by key.
+    # Get a single EmployeeImage by key
     #
     # + employeeNo - Key property 'EmployeeNo' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -147,7 +147,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeImage.
+    # Delete a EmployeeImage
     #
     # + employeeNo - Key property 'EmployeeNo' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -157,7 +157,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeImage (PATCH/MERGE semantics).
+    # Partially update a EmployeeImage (PATCH/MERGE semantics)
     #
     # + employeeNo - Key property 'EmployeeNo' (Edm.Int32)
     # + payload - Request payload 
@@ -171,7 +171,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the EmployeePosition collection.
+    # Query the EmployeePosition collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -183,7 +183,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeePosition.
+    # Create a new EmployeePosition
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -196,7 +196,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeePosition by key.
+    # Get a single EmployeePosition by key
     #
     # + positionID - Key property 'PositionID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -208,7 +208,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeePosition.
+    # Delete a EmployeePosition
     #
     # + positionID - Key property 'PositionID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -218,7 +218,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeePosition (PATCH/MERGE semantics).
+    # Partially update a EmployeePosition (PATCH/MERGE semantics)
     #
     # + positionID - Key property 'PositionID' (Edm.Int32)
     # + payload - Request payload 
@@ -232,7 +232,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -242,7 +242,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmployeeRolesSetup collection.
+    # Query the EmployeeRolesSetup collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -254,7 +254,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeRoleSetup.
+    # Create a new EmployeeRoleSetup
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -267,7 +267,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeRoleSetup by key.
+    # Get a single EmployeeRoleSetup by key
     #
     # + typeID - Key property 'TypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -279,7 +279,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeRoleSetup.
+    # Delete a EmployeeRoleSetup
     #
     # + typeID - Key property 'TypeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -289,7 +289,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeRoleSetup (PATCH/MERGE semantics).
+    # Partially update a EmployeeRoleSetup (PATCH/MERGE semantics)
     #
     # + typeID - Key property 'TypeID' (Edm.Int32)
     # + payload - Request payload 
@@ -303,7 +303,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get employee role setup list.
+    # Get employee role setup list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -313,7 +313,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmployeeStatus collection.
+    # Query the EmployeeStatus collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -325,7 +325,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeStatus.
+    # Create a new EmployeeStatus
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -338,7 +338,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeStatus by key.
+    # Get a single EmployeeStatus by key
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -350,7 +350,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeStatus.
+    # Delete a EmployeeStatus
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -360,7 +360,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeStatus (PATCH/MERGE semantics).
+    # Partially update a EmployeeStatus (PATCH/MERGE semantics)
     #
     # + statusId - Key property 'StatusId' (Edm.Int32)
     # + payload - Request payload 
@@ -374,7 +374,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -384,7 +384,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmployeeTransfers collection.
+    # Query the EmployeeTransfers collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -396,7 +396,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeTransfer.
+    # Create a new EmployeeTransfer
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -409,7 +409,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeTransfer by key.
+    # Get a single EmployeeTransfer by key
     #
     # + transferID - Key property 'TransferID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -421,7 +421,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeTransfer.
+    # Delete a EmployeeTransfer
     #
     # + transferID - Key property 'TransferID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -431,7 +431,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeTransfer (PATCH/MERGE semantics).
+    # Partially update a EmployeeTransfer (PATCH/MERGE semantics)
     #
     # + transferID - Key property 'TransferID' (Edm.Int32)
     # + payload - Request payload 
@@ -445,7 +445,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get employee transfer list.
+    # Get employee transfer list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -455,7 +455,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmployeesInfo collection.
+    # Query the EmployeesInfo collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -467,7 +467,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmployeeInfo.
+    # Create a new EmployeeInfo
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -480,7 +480,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmployeeInfo by key.
+    # Get a single EmployeeInfo by key
     #
     # + employeeID - Key property 'EmployeeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -492,7 +492,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmployeeInfo.
+    # Delete a EmployeeInfo
     #
     # + employeeID - Key property 'EmployeeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -502,7 +502,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmployeeInfo (PATCH/MERGE semantics).
+    # Partially update a EmployeeInfo (PATCH/MERGE semantics)
     #
     # + employeeID - Key property 'EmployeeID' (Edm.Int32)
     # + payload - Request payload 
@@ -516,7 +516,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on EmployeesInfo (binding type EmployeeInfo).
+    # Bound action 'Cancel' on EmployeesInfo (binding type EmployeeInfo)
     #
     # + employeeID - Key property 'EmployeeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -527,7 +527,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'Close' on EmployeesInfo (binding type EmployeeInfo).
+    # Bound action 'Close' on EmployeesInfo (binding type EmployeeInfo)
     #
     # + employeeID - Key property 'EmployeeID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -538,7 +538,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get employment category list.
+    # Get employment category list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -548,7 +548,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the EmploymentCategorys collection.
+    # Query the EmploymentCategorys collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -560,7 +560,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new EmploymentCategory.
+    # Create a new EmploymentCategory
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -573,7 +573,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single EmploymentCategory by key.
+    # Get a single EmploymentCategory by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -585,7 +585,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a EmploymentCategory.
+    # Delete a EmploymentCategory
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -595,7 +595,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a EmploymentCategory (PATCH/MERGE semantics).
+    # Partially update a EmploymentCategory (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -609,7 +609,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the Genders collection.
+    # Query the Genders collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -621,7 +621,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Gender.
+    # Create a new Gender
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -634,7 +634,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Gender by key.
+    # Get a single Gender by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -646,7 +646,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Gender.
+    # Delete a Gender
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -656,7 +656,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Gender (PATCH/MERGE semantics).
+    # Partially update a Gender (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -670,7 +670,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -680,7 +680,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the Teams collection.
+    # Query the Teams collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -692,7 +692,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Team.
+    # Create a new Team
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -705,7 +705,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Team by key.
+    # Get a single Team by key
     #
     # + teamID - Key property 'TeamID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -717,7 +717,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Team.
+    # Delete a Team
     #
     # + teamID - Key property 'TeamID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -727,7 +727,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Team (PATCH/MERGE semantics).
+    # Partially update a Team (PATCH/MERGE semantics)
     #
     # + teamID - Key property 'TeamID' (Edm.Int32)
     # + payload - Request payload 
@@ -741,7 +741,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the TerminationReason collection.
+    # Query the TerminationReason collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -753,7 +753,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new TerminationReason.
+    # Create a new TerminationReason
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -766,7 +766,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single TerminationReason by key.
+    # Get a single TerminationReason by key
     #
     # + reasonID - Key property 'ReasonID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -778,7 +778,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a TerminationReason.
+    # Delete a TerminationReason
     #
     # + reasonID - Key property 'ReasonID' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -788,7 +788,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a TerminationReason (PATCH/MERGE semantics).
+    # Partially update a TerminationReason (PATCH/MERGE semantics)
     #
     # + reasonID - Key property 'ReasonID' (Edm.Int32)
     # + payload - Request payload 
@@ -802,7 +802,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -812,7 +812,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Ends the active SAP Business One Service Layer session.
+    # Ends the active SAP Business One Service Layer session
     #
     # + return - An error if the logout failed
     remote isolated function logout() returns error? {

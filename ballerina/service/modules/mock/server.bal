@@ -17,7 +17,7 @@ import ballerina/http;
 
 # Mock SAP Business One Service Layer for the service connector tests. Session
 # protected and served over TLS with the shared self-signed certificate, like
-# the real Service Layer.
+# the real Service Layer
 
 const string SESSION = "mock-session";
 

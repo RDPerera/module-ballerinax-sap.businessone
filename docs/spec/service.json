@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Service",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "ContractTemplates"
         ],
-        "summary": "Query the ContractTemplates collection.",
+        "summary": "Query the ContractTemplates collection",
         "operationId": "List_ContractTemplates",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "ContractTemplates"
         ],
-        "summary": "Create a new ContractTemplate.",
+        "summary": "Create a new ContractTemplate",
         "operationId": "Create_ContractTemplates",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "ContractTemplates"
         ],
-        "summary": "Get a single ContractTemplate by key.",
+        "summary": "Get a single ContractTemplate by key",
         "operationId": "Get_ContractTemplates",
         "parameters": [
           {
@@ -161,7 +161,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -171,7 +171,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -186,7 +186,7 @@
         "tags": [
           "ContractTemplates"
         ],
-        "summary": "Delete a ContractTemplate.",
+        "summary": "Delete a ContractTemplate",
         "operationId": "Delete_ContractTemplates",
         "parameters": [
           {
@@ -206,7 +206,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -221,7 +221,7 @@
         "tags": [
           "ContractTemplates"
         ],
-        "summary": "Partially update a ContractTemplate (PATCH/MERGE semantics).",
+        "summary": "Partially update a ContractTemplate (PATCH/MERGE semantics)",
         "operationId": "Update_ContractTemplates",
         "parameters": [
           {
@@ -251,7 +251,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -268,7 +268,7 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "summary": "Query the CustomerEquipmentCards collection.",
+        "summary": "Query the CustomerEquipmentCards collection",
         "operationId": "List_CustomerEquipmentCards",
         "parameters": [
           {
@@ -308,7 +308,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -323,7 +323,7 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "summary": "Create a new CustomerEquipmentCard.",
+        "summary": "Create a new CustomerEquipmentCard",
         "operationId": "Create_CustomerEquipmentCards",
         "requestBody": {
           "content": {
@@ -347,7 +347,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -364,7 +364,7 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "summary": "Get a single CustomerEquipmentCard by key.",
+        "summary": "Get a single CustomerEquipmentCard by key",
         "operationId": "Get_CustomerEquipmentCards",
         "parameters": [
           {
@@ -398,7 +398,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -408,7 +408,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -423,7 +423,7 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "summary": "Delete a CustomerEquipmentCard.",
+        "summary": "Delete a CustomerEquipmentCard",
         "operationId": "Delete_CustomerEquipmentCards",
         "parameters": [
           {
@@ -444,7 +444,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -459,7 +459,7 @@
         "tags": [
           "CustomerEquipmentCards"
         ],
-        "summary": "Partially update a CustomerEquipmentCard (PATCH/MERGE semantics).",
+        "summary": "Partially update a CustomerEquipmentCard (PATCH/MERGE semantics)",
         "operationId": "Update_CustomerEquipmentCards",
         "parameters": [
           {
@@ -490,7 +490,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -507,7 +507,7 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "summary": "Query the KnowledgeBaseSolutions collection.",
+        "summary": "Query the KnowledgeBaseSolutions collection",
         "operationId": "List_KnowledgeBaseSolutions",
         "parameters": [
           {
@@ -547,7 +547,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -562,7 +562,7 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "summary": "Create a new KnowledgeBaseSolution.",
+        "summary": "Create a new KnowledgeBaseSolution",
         "operationId": "Create_KnowledgeBaseSolutions",
         "requestBody": {
           "content": {
@@ -586,7 +586,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -603,7 +603,7 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "summary": "Get a single KnowledgeBaseSolution by key.",
+        "summary": "Get a single KnowledgeBaseSolution by key",
         "operationId": "Get_KnowledgeBaseSolutions",
         "parameters": [
           {
@@ -637,7 +637,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -647,7 +647,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -662,7 +662,7 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "summary": "Delete a KnowledgeBaseSolution.",
+        "summary": "Delete a KnowledgeBaseSolution",
         "operationId": "Delete_KnowledgeBaseSolutions",
         "parameters": [
           {
@@ -683,7 +683,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -698,7 +698,7 @@
         "tags": [
           "KnowledgeBaseSolutions"
         ],
-        "summary": "Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics).",
+        "summary": "Partially update a KnowledgeBaseSolution (PATCH/MERGE semantics)",
         "operationId": "Update_KnowledgeBaseSolutions",
         "parameters": [
           {
@@ -729,7 +729,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -746,7 +746,7 @@
         "tags": [
           "Queue"
         ],
-        "summary": "Query the Queue collection.",
+        "summary": "Query the Queue collection",
         "operationId": "List_Queue",
         "parameters": [
           {
@@ -786,7 +786,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -801,7 +801,7 @@
         "tags": [
           "Queue"
         ],
-        "summary": "Create a new Queue.",
+        "summary": "Create a new Queue",
         "operationId": "Create_Queue",
         "requestBody": {
           "content": {
@@ -825,7 +825,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -842,7 +842,7 @@
         "tags": [
           "Queue"
         ],
-        "summary": "Get a single Queue by key.",
+        "summary": "Get a single Queue by key",
         "operationId": "Get_Queue",
         "parameters": [
           {
@@ -875,7 +875,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -885,7 +885,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -900,7 +900,7 @@
         "tags": [
           "Queue"
         ],
-        "summary": "Delete a Queue.",
+        "summary": "Delete a Queue",
         "operationId": "Delete_Queue",
         "parameters": [
           {
@@ -920,7 +920,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -935,7 +935,7 @@
         "tags": [
           "Queue"
         ],
-        "summary": "Partially update a Queue (PATCH/MERGE semantics).",
+        "summary": "Partially update a Queue (PATCH/MERGE semantics)",
         "operationId": "Update_Queue",
         "parameters": [
           {
@@ -965,7 +965,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -982,7 +982,7 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "summary": "Query the ServiceCallOrigins collection.",
+        "summary": "Query the ServiceCallOrigins collection",
         "operationId": "List_ServiceCallOrigins",
         "parameters": [
           {
@@ -1022,7 +1022,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1037,7 +1037,7 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "summary": "Create a new ServiceCallOrigin.",
+        "summary": "Create a new ServiceCallOrigin",
         "operationId": "Create_ServiceCallOrigins",
         "requestBody": {
           "content": {
@@ -1061,7 +1061,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1078,7 +1078,7 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "summary": "Get a single ServiceCallOrigin by key.",
+        "summary": "Get a single ServiceCallOrigin by key",
         "operationId": "Get_ServiceCallOrigins",
         "parameters": [
           {
@@ -1112,7 +1112,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1122,7 +1122,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1137,7 +1137,7 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "summary": "Delete a ServiceCallOrigin.",
+        "summary": "Delete a ServiceCallOrigin",
         "operationId": "Delete_ServiceCallOrigins",
         "parameters": [
           {
@@ -1158,7 +1158,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1173,7 +1173,7 @@
         "tags": [
           "ServiceCallOrigins"
         ],
-        "summary": "Partially update a ServiceCallOrigin (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallOrigin (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallOrigins",
         "parameters": [
           {
@@ -1204,7 +1204,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1221,7 +1221,7 @@
         "tags": [
           "ServiceCallOriginsService"
         ],
-        "summary": "Get service call origin list.",
+        "summary": "Get service call origin list",
         "operationId": "ServiceCallOriginsService_GetServiceCallOriginList",
         "responses": {
           "200": {
@@ -1242,13 +1242,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallOriginsService_GetServiceCallOriginList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallOriginsService_GetServiceCallOriginList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1265,7 +1265,7 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "summary": "Query the ServiceCallProblemSubTypes collection.",
+        "summary": "Query the ServiceCallProblemSubTypes collection",
         "operationId": "List_ServiceCallProblemSubTypes",
         "parameters": [
           {
@@ -1305,7 +1305,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1320,7 +1320,7 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "summary": "Create a new ServiceCallProblemSubType.",
+        "summary": "Create a new ServiceCallProblemSubType",
         "operationId": "Create_ServiceCallProblemSubTypes",
         "requestBody": {
           "content": {
@@ -1344,7 +1344,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1361,7 +1361,7 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "summary": "Get a single ServiceCallProblemSubType by key.",
+        "summary": "Get a single ServiceCallProblemSubType by key",
         "operationId": "Get_ServiceCallProblemSubTypes",
         "parameters": [
           {
@@ -1395,7 +1395,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1405,7 +1405,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1420,7 +1420,7 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "summary": "Delete a ServiceCallProblemSubType.",
+        "summary": "Delete a ServiceCallProblemSubType",
         "operationId": "Delete_ServiceCallProblemSubTypes",
         "parameters": [
           {
@@ -1441,7 +1441,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1456,7 +1456,7 @@
         "tags": [
           "ServiceCallProblemSubTypes"
         ],
-        "summary": "Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallProblemSubType (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallProblemSubTypes",
         "parameters": [
           {
@@ -1487,7 +1487,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1504,7 +1504,7 @@
         "tags": [
           "ServiceCallProblemSubTypesService"
         ],
-        "summary": "Get service call problem sub type list.",
+        "summary": "Get service call problem sub type list",
         "operationId": "ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList",
         "responses": {
           "200": {
@@ -1525,13 +1525,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallProblemSubTypesService_GetServiceCallProblemSubTypeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1548,7 +1548,7 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "summary": "Query the ServiceCallProblemTypes collection.",
+        "summary": "Query the ServiceCallProblemTypes collection",
         "operationId": "List_ServiceCallProblemTypes",
         "parameters": [
           {
@@ -1588,7 +1588,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1603,7 +1603,7 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "summary": "Create a new ServiceCallProblemType.",
+        "summary": "Create a new ServiceCallProblemType",
         "operationId": "Create_ServiceCallProblemTypes",
         "requestBody": {
           "content": {
@@ -1627,7 +1627,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1644,7 +1644,7 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "summary": "Get a single ServiceCallProblemType by key.",
+        "summary": "Get a single ServiceCallProblemType by key",
         "operationId": "Get_ServiceCallProblemTypes",
         "parameters": [
           {
@@ -1678,7 +1678,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1688,7 +1688,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1703,7 +1703,7 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "summary": "Delete a ServiceCallProblemType.",
+        "summary": "Delete a ServiceCallProblemType",
         "operationId": "Delete_ServiceCallProblemTypes",
         "parameters": [
           {
@@ -1724,7 +1724,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1739,7 +1739,7 @@
         "tags": [
           "ServiceCallProblemTypes"
         ],
-        "summary": "Partially update a ServiceCallProblemType (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallProblemType (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallProblemTypes",
         "parameters": [
           {
@@ -1770,7 +1770,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1787,7 +1787,7 @@
         "tags": [
           "ServiceCallProblemTypesService"
         ],
-        "summary": "Get service call problem type list.",
+        "summary": "Get service call problem type list",
         "operationId": "ServiceCallProblemTypesService_GetServiceCallProblemTypeList",
         "responses": {
           "200": {
@@ -1808,13 +1808,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallProblemTypesService_GetServiceCallProblemTypeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallProblemTypesService_GetServiceCallProblemTypeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1831,7 +1831,7 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "summary": "Query the ServiceCallSolutionStatus collection.",
+        "summary": "Query the ServiceCallSolutionStatus collection",
         "operationId": "List_ServiceCallSolutionStatus",
         "parameters": [
           {
@@ -1871,7 +1871,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1886,7 +1886,7 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "summary": "Create a new ServiceCallSolutionStatus.",
+        "summary": "Create a new ServiceCallSolutionStatus",
         "operationId": "Create_ServiceCallSolutionStatus",
         "requestBody": {
           "content": {
@@ -1910,7 +1910,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1927,7 +1927,7 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "summary": "Get a single ServiceCallSolutionStatus by key.",
+        "summary": "Get a single ServiceCallSolutionStatus by key",
         "operationId": "Get_ServiceCallSolutionStatus",
         "parameters": [
           {
@@ -1961,7 +1961,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1971,7 +1971,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1986,7 +1986,7 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "summary": "Delete a ServiceCallSolutionStatus.",
+        "summary": "Delete a ServiceCallSolutionStatus",
         "operationId": "Delete_ServiceCallSolutionStatus",
         "parameters": [
           {
@@ -2007,7 +2007,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2022,7 +2022,7 @@
         "tags": [
           "ServiceCallSolutionStatus"
         ],
-        "summary": "Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallSolutionStatus (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallSolutionStatus",
         "parameters": [
           {
@@ -2053,7 +2053,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2070,7 +2070,7 @@
         "tags": [
           "ServiceCallSolutionStatusService"
         ],
-        "summary": "Get service call solution status list.",
+        "summary": "Get service call solution status list",
         "operationId": "ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList",
         "responses": {
           "200": {
@@ -2091,13 +2091,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallSolutionStatusService_GetServiceCallSolutionStatusList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2114,7 +2114,7 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "summary": "Query the ServiceCallStatus collection.",
+        "summary": "Query the ServiceCallStatus collection",
         "operationId": "List_ServiceCallStatus",
         "parameters": [
           {
@@ -2154,7 +2154,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2169,7 +2169,7 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "summary": "Create a new ServiceCallStatus.",
+        "summary": "Create a new ServiceCallStatus",
         "operationId": "Create_ServiceCallStatus",
         "requestBody": {
           "content": {
@@ -2193,7 +2193,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2210,7 +2210,7 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "summary": "Get a single ServiceCallStatus by key.",
+        "summary": "Get a single ServiceCallStatus by key",
         "operationId": "Get_ServiceCallStatus",
         "parameters": [
           {
@@ -2244,7 +2244,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2254,7 +2254,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2269,7 +2269,7 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "summary": "Delete a ServiceCallStatus.",
+        "summary": "Delete a ServiceCallStatus",
         "operationId": "Delete_ServiceCallStatus",
         "parameters": [
           {
@@ -2290,7 +2290,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2305,7 +2305,7 @@
         "tags": [
           "ServiceCallStatus"
         ],
-        "summary": "Partially update a ServiceCallStatus (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallStatus (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallStatus",
         "parameters": [
           {
@@ -2336,7 +2336,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2353,7 +2353,7 @@
         "tags": [
           "ServiceCallStatusService"
         ],
-        "summary": "Get service call status list.",
+        "summary": "Get service call status list",
         "operationId": "ServiceCallStatusService_GetServiceCallStatusList",
         "responses": {
           "200": {
@@ -2374,13 +2374,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallStatusService_GetServiceCallStatusList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallStatusService_GetServiceCallStatusList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2397,7 +2397,7 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "summary": "Query the ServiceCallTypes collection.",
+        "summary": "Query the ServiceCallTypes collection",
         "operationId": "List_ServiceCallTypes",
         "parameters": [
           {
@@ -2437,7 +2437,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2452,7 +2452,7 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "summary": "Create a new ServiceCallType.",
+        "summary": "Create a new ServiceCallType",
         "operationId": "Create_ServiceCallTypes",
         "requestBody": {
           "content": {
@@ -2476,7 +2476,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2493,7 +2493,7 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "summary": "Get a single ServiceCallType by key.",
+        "summary": "Get a single ServiceCallType by key",
         "operationId": "Get_ServiceCallTypes",
         "parameters": [
           {
@@ -2527,7 +2527,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2537,7 +2537,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2552,7 +2552,7 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "summary": "Delete a ServiceCallType.",
+        "summary": "Delete a ServiceCallType",
         "operationId": "Delete_ServiceCallTypes",
         "parameters": [
           {
@@ -2573,7 +2573,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2588,7 +2588,7 @@
         "tags": [
           "ServiceCallTypes"
         ],
-        "summary": "Partially update a ServiceCallType (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCallType (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCallTypes",
         "parameters": [
           {
@@ -2619,7 +2619,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2636,7 +2636,7 @@
         "tags": [
           "ServiceCallTypesService"
         ],
-        "summary": "Get service call type list.",
+        "summary": "Get service call type list",
         "operationId": "ServiceCallTypesService_GetServiceCallTypeList",
         "responses": {
           "200": {
@@ -2657,13 +2657,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ServiceCallTypesService_GetServiceCallTypeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ServiceCallTypesService_GetServiceCallTypeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2680,7 +2680,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Query the ServiceCalls collection.",
+        "summary": "Query the ServiceCalls collection",
         "operationId": "List_ServiceCalls",
         "parameters": [
           {
@@ -2720,7 +2720,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2735,7 +2735,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Create a new ServiceCall.",
+        "summary": "Create a new ServiceCall",
         "operationId": "Create_ServiceCalls",
         "requestBody": {
           "content": {
@@ -2759,7 +2759,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2776,7 +2776,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Get a single ServiceCall by key.",
+        "summary": "Get a single ServiceCall by key",
         "operationId": "Get_ServiceCalls",
         "parameters": [
           {
@@ -2810,7 +2810,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2820,7 +2820,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2835,7 +2835,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Delete a ServiceCall.",
+        "summary": "Delete a ServiceCall",
         "operationId": "Delete_ServiceCalls",
         "parameters": [
           {
@@ -2856,7 +2856,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2871,7 +2871,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Partially update a ServiceCall (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceCall (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceCalls",
         "parameters": [
           {
@@ -2902,7 +2902,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2919,7 +2919,7 @@
         "tags": [
           "ServiceCalls"
         ],
-        "summary": "Bound action 'Close' on ServiceCalls (binding type ServiceCall).",
+        "summary": "Bound action 'Close' on ServiceCalls (binding type ServiceCall)",
         "operationId": "ServiceCalls_Close",
         "parameters": [
           {
@@ -2940,7 +2940,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2957,7 +2957,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Query the ServiceContracts collection.",
+        "summary": "Query the ServiceContracts collection",
         "operationId": "List_ServiceContracts",
         "parameters": [
           {
@@ -2997,7 +2997,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3012,7 +3012,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Create a new ServiceContract.",
+        "summary": "Create a new ServiceContract",
         "operationId": "Create_ServiceContracts",
         "requestBody": {
           "content": {
@@ -3036,7 +3036,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3053,7 +3053,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Get a single ServiceContract by key.",
+        "summary": "Get a single ServiceContract by key",
         "operationId": "Get_ServiceContracts",
         "parameters": [
           {
@@ -3087,7 +3087,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3097,7 +3097,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3112,7 +3112,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Delete a ServiceContract.",
+        "summary": "Delete a ServiceContract",
         "operationId": "Delete_ServiceContracts",
         "parameters": [
           {
@@ -3133,7 +3133,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3148,7 +3148,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Partially update a ServiceContract (PATCH/MERGE semantics).",
+        "summary": "Partially update a ServiceContract (PATCH/MERGE semantics)",
         "operationId": "Update_ServiceContracts",
         "parameters": [
           {
@@ -3179,7 +3179,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3196,7 +3196,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Bound action 'Cancel' on ServiceContracts (binding type ServiceContract).",
+        "summary": "Bound action 'Cancel' on ServiceContracts (binding type ServiceContract)",
         "operationId": "ServiceContracts_Cancel",
         "parameters": [
           {
@@ -3217,7 +3217,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3234,7 +3234,7 @@
         "tags": [
           "ServiceContracts"
         ],
-        "summary": "Bound action 'Close' on ServiceContracts (binding type ServiceContract).",
+        "summary": "Bound action 'Close' on ServiceContracts (binding type ServiceContract)",
         "operationId": "ServiceContracts_Close",
         "parameters": [
           {
@@ -3255,7 +3255,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3326,7 +3326,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceContract_Line` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceContract_Line` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallActivity": {
         "type": "object",
@@ -3341,7 +3341,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCallActivity` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallActivity` complex type of the SAP Business One Service Layer"
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -3367,7 +3367,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CustomerEquipmentCardBusinessPartner` complex type of the SAP Business One Service Layer."
+        "description": "The `CustomerEquipmentCardBusinessPartner` complex type of the SAP Business One Service Layer"
       },
       "CustomerEquipmentCard": {
         "type": "object",
@@ -3513,7 +3513,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CustomerEquipmentCard` entity of the SAP Business One Service Layer."
+        "description": "The `CustomerEquipmentCard` entity of the SAP Business One Service Layer"
       },
       "ServiceCallSolutionStatusCollectionResponse": {
         "type": "object",
@@ -3533,7 +3533,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallSolutionStatus` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallSolutionStatus` entities returned by the SAP Business One Service Layer"
       },
       "BoContractTypes": {
         "type": "string",
@@ -3562,7 +3562,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `KnowledgeBaseSolutions` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `KnowledgeBaseSolutions` entities returned by the SAP Business One Service Layer"
       },
       "BoSerialNumberStatus": {
         "type": "string",
@@ -3744,7 +3744,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCallScheduling` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallScheduling` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallStatusParams": {
         "type": "object",
@@ -3760,7 +3760,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallStatusParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallStatusParams` complex type of the SAP Business One Service Layer"
       },
       "QueueMember": {
         "type": "object",
@@ -3774,7 +3774,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `QueueMember` complex type of the SAP Business One Service Layer."
+        "description": "The `QueueMember` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallTypesCollectionResponse": {
         "type": "object",
@@ -3794,7 +3794,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallTypes` entities returned by the SAP Business One Service Layer"
       },
       "ServiceCallProblemSubTypesCollectionResponse": {
         "type": "object",
@@ -3814,7 +3814,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallProblemSubTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallProblemSubTypes` entities returned by the SAP Business One Service Layer"
       },
       "BoSvcEpxDocTypes": {
         "type": "string",
@@ -3857,7 +3857,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Queue` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Queue` entities returned by the SAP Business One Service Layer"
       },
       "ServiceCallSolutionStatus": {
         "type": "object",
@@ -3892,7 +3892,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallSolutionStatus` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallSolutionStatus` entity of the SAP Business One Service Layer"
       },
       "ServiceCallsCollectionResponse": {
         "type": "object",
@@ -3912,7 +3912,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCalls` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCalls` entities returned by the SAP Business One Service Layer"
       },
       "BoRemindUnits": {
         "type": "string",
@@ -3936,7 +3936,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCallSolution` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallSolution` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallOriginsCollectionResponse": {
         "type": "object",
@@ -3956,7 +3956,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallOrigins` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallOrigins` entities returned by the SAP Business One Service Layer"
       },
       "BoSvcCallPriorities": {
         "type": "string",
@@ -3985,7 +3985,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallStatus` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallStatus` entities returned by the SAP Business One Service Layer"
       },
       "ServiceCallOriginParams": {
         "type": "object",
@@ -4001,7 +4001,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallOriginParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallOriginParams` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallType": {
         "type": "object",
@@ -4036,7 +4036,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallType` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallType` entity of the SAP Business One Service Layer"
       },
       "ServiceCallProblemSubType": {
         "type": "object",
@@ -4071,7 +4071,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallProblemSubType` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallProblemSubType` entity of the SAP Business One Service Layer"
       },
       "ServiceCallProblemSubTypeParams": {
         "type": "object",
@@ -4087,7 +4087,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallProblemSubTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallProblemSubTypeParams` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallBPAddressComponent": {
         "type": "object",
@@ -4172,7 +4172,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCallBPAddressComponent` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallBPAddressComponent` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallOrigin": {
         "type": "object",
@@ -4207,7 +4207,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallOrigin` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallOrigin` entity of the SAP Business One Service Layer"
       },
       "ServiceCallStatus": {
         "type": "object",
@@ -4242,7 +4242,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallStatus` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallStatus` entity of the SAP Business One Service Layer"
       },
       "BoSvcContractStatus": {
         "type": "string",
@@ -4287,7 +4287,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallProblemType` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCallProblemType` entity of the SAP Business One Service Layer"
       },
       "ContractTemplatesCollectionResponse": {
         "type": "object",
@@ -4307,7 +4307,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ContractTemplates` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ContractTemplates` entities returned by the SAP Business One Service Layer"
       },
       "Queue": {
         "type": "object",
@@ -4342,7 +4342,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Queue` entity of the SAP Business One Service Layer."
+        "description": "The `Queue` entity of the SAP Business One Service Layer"
       },
       "ServiceCallProblemTypeParams": {
         "type": "object",
@@ -4358,7 +4358,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallProblemTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallProblemTypeParams` complex type of the SAP Business One Service Layer"
       },
       "ServiceContractsCollectionResponse": {
         "type": "object",
@@ -4378,7 +4378,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceContracts` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceContracts` entities returned by the SAP Business One Service Layer"
       },
       "BoEquipmentBPType": {
         "type": "string",
@@ -4730,7 +4730,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCall` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceCall` entity of the SAP Business One Service Layer"
       },
       "CustomerEquipmentCardsCollectionResponse": {
         "type": "object",
@@ -4750,7 +4750,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CustomerEquipmentCards` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CustomerEquipmentCards` entities returned by the SAP Business One Service Layer"
       },
       "ServiceCallProblemTypesCollectionResponse": {
         "type": "object",
@@ -4770,7 +4770,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ServiceCallProblemTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ServiceCallProblemTypes` entities returned by the SAP Business One Service Layer"
       },
       "ServiceContract": {
         "type": "object",
@@ -4959,7 +4959,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceContract` entity of the SAP Business One Service Layer."
+        "description": "The `ServiceContract` entity of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4985,7 +4985,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "ServiceCallSolutionStatusParams": {
         "type": "object",
@@ -5001,7 +5001,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallSolutionStatusParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallSolutionStatusParams` complex type of the SAP Business One Service Layer"
       },
       "ContractTemplate": {
         "type": "object",
@@ -5136,7 +5136,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ContractTemplate` entity of the SAP Business One Service Layer."
+        "description": "The `ContractTemplate` entity of the SAP Business One Service Layer"
       },
       "KnowledgeBaseSolution": {
         "type": "object",
@@ -5193,7 +5193,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `KnowledgeBaseSolution` entity of the SAP Business One Service Layer."
+        "description": "The `KnowledgeBaseSolution` entity of the SAP Business One Service Layer"
       },
       "BoDurations": {
         "type": "string",
@@ -5243,7 +5243,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ServiceCallInventoryExpense` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallInventoryExpense` complex type of the SAP Business One Service Layer"
       },
       "ServiceCallTypeParams": {
         "type": "object",
@@ -5259,7 +5259,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ServiceCallTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ServiceCallTypeParams` complex type of the SAP Business One Service Layer"
       },
       "BoResolutionUnits": {
         "type": "string",
@@ -5377,7 +5377,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

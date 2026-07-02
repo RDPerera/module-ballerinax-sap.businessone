@@ -20,7 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
-# A paged collection of `CampaignResponseType` entities returned by the SAP Business One Service Layer.
+# A paged collection of `CampaignResponseType` entities returned by the SAP Business One Service Layer
 public type CampaignResponseTypeCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -39,7 +39,7 @@ public type GetActivityStatusesQueries record {
     string dollarSelect?;
 };
 
-# The `CampaignParams` complex type of the SAP Business One Service Layer.
+# The `CampaignParams` complex type of the SAP Business One Service Layer
 public type CampaignParams record {|
     @jsondata:Name {value: "CampaignNumber"}
     int:Signed32 campaignNumber?;
@@ -47,7 +47,7 @@ public type CampaignParams record {|
     string campaignName?;
 |};
 
-# The `Activity` entity of the SAP Business One Service Layer.
+# The `Activity` entity of the SAP Business One Service Layer
 public type Activity record {
     int:Signed32 ActivityCode?;
     string CardCode?;
@@ -150,15 +150,15 @@ public type Activity record {
     BoYesNoEnum EmailedFlag?;
     CheckInParams[] CheckInListParams?;
     ActivityMultipleRecipient[] ActivityMultipleRecipients?;
-    # The `ActivitySubject` entity of the SAP Business One Service Layer.
+    # The `ActivitySubject` entity of the SAP Business One Service Layer
     ActivitySubject ActivitySubject?;
-    # The `ActivityType` entity of the SAP Business One Service Layer.
+    # The `ActivityType` entity of the SAP Business One Service Layer
     ActivityType ActivityType2?;
-    # The `ActivityLocation` entity of the SAP Business One Service Layer.
+    # The `ActivityLocation` entity of the SAP Business One Service Layer
     ActivityLocation ActivityLocation?;
-    # The `ActivityStatus` entity of the SAP Business One Service Layer.
+    # The `ActivityStatus` entity of the SAP Business One Service Layer
     ActivityStatus ActivityStatus?;
-    # The `ActivityRecipientList` entity of the SAP Business One Service Layer.
+    # The `ActivityRecipientList` entity of the SAP Business One Service Layer
     ActivityRecipientList ActivityRecipientList?;
 };
 
@@ -190,7 +190,7 @@ public type ListSalesOpportunityInterestsSetupQueries record {
 # OData EnumType 'CampaignTypeEnum'. Serialised by the Service Layer as the member name
 public type CampaignTypeEnum "ctEmail"|"ctMail"|"ctFax"|"ctPhoneCall"|"ctMeeting"|"ctSMS"|"ctWeb"|"ctOthers";
 
-# The `ActivitySubjectParams` complex type of the SAP Business One Service Layer.
+# The `ActivitySubjectParams` complex type of the SAP Business One Service Layer
 public type ActivitySubjectParams record {|
     @jsondata:Name {value: "Description"}
     string description?;
@@ -265,7 +265,7 @@ public type ActivityRecipientObjTypeEnum "arotUser"|"arotEmployee"|"arotRecipien
 # OData EnumType 'CampaignAssignToEnum'. Serialised by the Service Layer as the member name
 public type CampaignAssignToEnum "catUser"|"catEmployee";
 
-# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
+# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint
 @display {label: "Connection Config"}
 public type ConnectionConfig record {|
     # The HTTP version understood by the client
@@ -303,11 +303,11 @@ public type ConnectionConfig record {|
     # Enables the inbound payload validation functionality which provided by the constraint package. Enabled by default
     boolean validation = true;
     # Enables relaxed data binding on the client side. When enabled, `nil` values are treated as optional, 
-    # and absent fields are handled as `nilable` types. Enabled by default.
+    # and absent fields are handled as `nilable` types. Enabled by default
     boolean laxDataBinding = true;
 |};
 
-# The `SalesOpportunityCompetitorSetupParams` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunityCompetitorSetupParams` complex type of the SAP Business One Service Layer
 public type SalesOpportunityCompetitorSetupParams record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -342,7 +342,7 @@ public type ListSalesOpportunityCompetitorsSetupQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `SalesOpportunityReasonsSetup` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesOpportunityReasonsSetup` entities returned by the SAP Business One Service Layer
 public type SalesOpportunityReasonsSetupCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -351,7 +351,7 @@ public type SalesOpportunityReasonsSetupCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `CampaignBusinessPartner` complex type of the SAP Business One Service Layer.
+# The `CampaignBusinessPartner` complex type of the SAP Business One Service Layer
 public type CampaignBusinessPartner record {
     int:Signed32 CampaignNumber?;
     int:Signed32 CampaignLineNumber?;
@@ -422,7 +422,7 @@ public type ListSalesOpportunityCompetitorsSetupHeaders record {
     string prefer?;
 };
 
-# A paged collection of `ActivityLocations` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ActivityLocations` entities returned by the SAP Business One Service Layer
 public type ActivityLocationsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -434,7 +434,7 @@ public type ActivityLocationsCollectionResponse record {
 # OData EnumType 'BoSoOsStatus'. Serialised by the Service Layer as the member name
 public type BoSoOsStatus "sos_Open"|"sos_Missed"|"sos_Sold";
 
-# The `SalesOpportunityCompetitorSetup` entity of the SAP Business One Service Layer.
+# The `SalesOpportunityCompetitorSetup` entity of the SAP Business One Service Layer
 public type SalesOpportunityCompetitorSetup record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -446,7 +446,7 @@ public type SalesOpportunityCompetitorSetup record {|
     string name?;
 |};
 
-# The `SalesOpportunitySourceSetupParams` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitySourceSetupParams` complex type of the SAP Business One Service Layer
 public type SalesOpportunitySourceSetupParams record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -457,7 +457,7 @@ public type SalesOpportunitySourceSetupParams record {|
 # OData EnumType 'RecipientTypeEnum'. Serialised by the Service Layer as the member name
 public type RecipientTypeEnum "rtUser"|"rtEmployee";
 
-# The `CampaignResponseTypeParams` complex type of the SAP Business One Service Layer.
+# The `CampaignResponseTypeParams` complex type of the SAP Business One Service Layer
 public type CampaignResponseTypeParams record {|
     @jsondata:Name {value: "ResponseTypeDescription"}
     string responseTypeDescription?;
@@ -467,7 +467,7 @@ public type CampaignResponseTypeParams record {|
     string responseType?;
 |};
 
-# The `ActivityMultipleRecipient` complex type of the SAP Business One Service Layer.
+# The `ActivityMultipleRecipient` complex type of the SAP Business One Service Layer
 public type ActivityMultipleRecipient record {
     int:Signed32 LineNumer?;
     # OData EnumType 'ActivityRecipientObjTypeEnum'. Serialised by the Service Layer as the member name
@@ -476,7 +476,7 @@ public type ActivityMultipleRecipient record {
 };
 
 
-# The `ActivityStatus` entity of the SAP Business One Service Layer.
+# The `ActivityStatus` entity of the SAP Business One Service Layer
 public type ActivityStatus record {
     string StatusDescription?;
     int:Signed32 StatusId?;
@@ -494,7 +494,7 @@ public type ListPartnersSetupsHeaders record {
     string prefer?;
 };
 
-# The `SalesOpportunityReasonSetupParams` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunityReasonSetupParams` complex type of the SAP Business One Service Layer
 public type SalesOpportunityReasonSetupParams record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -502,19 +502,19 @@ public type SalesOpportunityReasonSetupParams record {|
     string description?;
 |};
 
-# Represents the request payload for the `ActivitiesService_GetSingleInstanceFromSeries` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitiesService_GetSingleInstanceFromSeries` operation of the SAP Business One Service Layer
 public type ActivitiesService_GetSingleInstanceFromSeries_body record {
     @jsondata:Name {value: "ActivityInstanceParams"}
     ActivityInstanceParams activityInstanceParams?;
 };
 
-# Represents the request payload for the `ActivitiesService_DeleteSingleInstanceFromSeries` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitiesService_DeleteSingleInstanceFromSeries` operation of the SAP Business One Service Layer
 public type ActivitiesService_DeleteSingleInstanceFromSeries_body record {
     @jsondata:Name {value: "ActivityInstanceParams"}
     ActivityInstanceParams activityInstanceParams?;
 };
 
-# The `PartnersSetup` entity of the SAP Business One Service Layer.
+# The `PartnersSetup` entity of the SAP Business One Service Layer
 public type PartnersSetup record {|
     @jsondata:Name {value: "DefaultRelationship"}
     int:Signed32 defaultRelationship?;
@@ -553,7 +553,7 @@ public type ListActivitiesQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `ActivitySubjects` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ActivitySubjects` entities returned by the SAP Business One Service Layer
 public type ActivitySubjectsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -590,7 +590,7 @@ public type ListActivityLocationsQueries record {
     string dollarSelect?;
 };
 
-# The `ActivityRecipientListParams` complex type of the SAP Business One Service Layer.
+# The `ActivityRecipientListParams` complex type of the SAP Business One Service Layer
 public type ActivityRecipientListParams record {|
     @jsondata:Name {value: "Active"}
     BoYesNoEnum active?;
@@ -602,7 +602,7 @@ public type ActivityRecipientListParams record {|
     string name?;
 |};
 
-# The `SalesOpportunityInterestSetupParams` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunityInterestSetupParams` complex type of the SAP Business One Service Layer
 public type SalesOpportunityInterestSetupParams record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -610,7 +610,7 @@ public type SalesOpportunityInterestSetupParams record {|
     string description?;
 |};
 
-# A paged collection of `Activities` entities returned by the SAP Business One Service Layer.
+# A paged collection of `Activities` entities returned by the SAP Business One Service Layer
 public type ActivitiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -619,7 +619,7 @@ public type ActivitiesCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer.
+# The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer
 public type SalesOpportunityReasonSetup record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -644,7 +644,7 @@ public type GetSalesOpportunityInterestsSetupQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `SalesOpportunities` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesOpportunities` entities returned by the SAP Business One Service Layer
 public type SalesOpportunitiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -660,7 +660,7 @@ public type ListActivityStatusesHeaders record {
     string prefer?;
 };
 
-# A paged collection of `SalesOpportunityCompetitorsSetup` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesOpportunityCompetitorsSetup` entities returned by the SAP Business One Service Layer
 public type SalesOpportunityCompetitorsSetupCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -669,7 +669,7 @@ public type SalesOpportunityCompetitorsSetupCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `ActivitySubject` entity of the SAP Business One Service Layer.
+# The `ActivitySubject` entity of the SAP Business One Service Layer
 public type ActivitySubject record {|
     @jsondata:Name {value: "Activities"}
     Activity[] activities?;
@@ -685,7 +685,7 @@ public type ActivitySubject record {|
     ActivityType activityType2?;
 |};
 
-# The `ActivityRecipient` complex type of the SAP Business One Service Layer.
+# The `ActivityRecipient` complex type of the SAP Business One Service Layer
 public type ActivityRecipient record {|
     @jsondata:Name {value: "RecipientType"}
     RecipientTypeEnum recipientType?;
@@ -695,7 +695,7 @@ public type ActivityRecipient record {|
     string recipientCode?;
 |};
 
-# The `CampaignItem` complex type of the SAP Business One Service Layer.
+# The `CampaignItem` complex type of the SAP Business One Service Layer
 public type CampaignItem record {
     int:Signed32 CampaignNumber?;
     int:Signed32 CampaignLineNumber?;
@@ -745,7 +745,7 @@ public type ListSalesStagesQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `SalesOpportunitySourcesSetup` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesOpportunitySourcesSetup` entities returned by the SAP Business One Service Layer
 public type SalesOpportunitySourcesSetupCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -817,7 +817,7 @@ public type ListActivityRecipientListsHeaders record {
     string prefer?;
 };
 
-# The `SalesOpportunitiesPartner` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitiesPartner` complex type of the SAP Business One Service Layer
 public type SalesOpportunitiesPartner record {
     int:Signed32 RowNo?;
     int:Signed32 Partners?;
@@ -851,7 +851,7 @@ public type ListSalesOpportunitiesQueries record {
     string dollarSelect?;
 };
 
-# The `CampaignPartner` complex type of the SAP Business One Service Layer.
+# The `CampaignPartner` complex type of the SAP Business One Service Layer
 public type CampaignPartner record {
     int:Signed32 CampaignNumber?;
     int:Signed32 CampaignLineNumber?;
@@ -861,7 +861,7 @@ public type CampaignPartner record {
     string Details?;
 };
 
-# The `ActivityParams` complex type of the SAP Business One Service Layer.
+# The `ActivityParams` complex type of the SAP Business One Service Layer
 public type ActivityParams record {|
     @jsondata:Name {value: "EndTime"}
     string endTime?;
@@ -949,7 +949,7 @@ public type GetActivityRecipientListsQueries record {
     string dollarSelect?;
 };
 
-# The `TargetGroup` entity of the SAP Business One Service Layer.
+# The `TargetGroup` entity of the SAP Business One Service Layer
 public type TargetGroup record {|
     @jsondata:Name {value: "TargetGroupType"}
     TargetGroupTypeEnum targetGroupType?;
@@ -988,7 +988,7 @@ public type ListCampaignsQueries record {
     string dollarSelect?;
 };
 
-# The `ActivityLocation` entity of the SAP Business One Service Layer.
+# The `ActivityLocation` entity of the SAP Business One Service Layer
 public type ActivityLocation record {
     int:Signed32 Code?;
     string Name?;
@@ -1012,7 +1012,7 @@ public type ListActivitiesHeaders record {
     string prefer?;
 };
 
-# The `ActivityInstancesListParams` complex type of the SAP Business One Service Layer.
+# The `ActivityInstancesListParams` complex type of the SAP Business One Service Layer
 public type ActivityInstancesListParams record {|
     @jsondata:Name {value: "StartDate"}
     string startDate?;
@@ -1020,7 +1020,7 @@ public type ActivityInstancesListParams record {|
     int:Signed32 instanceCount?;
 |};
 
-# The `PartnersSetupParams` complex type of the SAP Business One Service Layer.
+# The `PartnersSetupParams` complex type of the SAP Business One Service Layer
 public type PartnersSetupParams record {|
     @jsondata:Name {value: "DefaultRelationship"}
     int:Signed32 defaultRelationship?;
@@ -1047,7 +1047,7 @@ public type GetActivityTypesQueries record {
 # OData EnumType 'RecurrenceSequenceEnum'. Serialised by the Service Layer as the member name
 public type RecurrenceSequenceEnum "rsFirst"|"rsSecond"|"rsThird"|"rsFourth"|"rsLast";
 
-# Represents the response payload for the `SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList` operation of the SAP Business One Service Layer
 public type inline_response_200_9 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1057,21 +1057,21 @@ public type inline_response_200_9 record {
 # OData EnumType 'ThreatLevelEnum'. Serialised by the Service Layer as the member name
 public type ThreatLevelEnum "tlLow"|"tlMedium"|"tlHigh";
 
-# Represents the response payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ActivitySubjectParams[] value?;
 };
 
-# Represents the response payload for the `CampaignResponseTypeService_GetResponseTypeList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `CampaignResponseTypeService_GetResponseTypeList` operation of the SAP Business One Service Layer
 public type inline_response_200_6 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CampaignResponseTypeParams[] value?;
 };
 
-# The `SalesOpportunitiesInterest` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitiesInterest` complex type of the SAP Business One Service Layer
 public type SalesOpportunitiesInterest record {
     int:Signed32 RowNo?;
     int:Signed32 SequenceNo?;
@@ -1080,21 +1080,21 @@ public type SalesOpportunitiesInterest record {
     int:Signed32 InterestId?;
 };
 
-# Represents the response payload for the `CampaignsService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `CampaignsService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_7 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     CampaignParams[] value?;
 };
 
-# Represents the response payload for the `PartnersSetupsService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `PartnersSetupsService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_8 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     PartnersSetupParams[] value?;
 };
 
-# The `SalesOpportunitiesCompetitionItem` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitiesCompetitionItem` complex type of the SAP Business One Service Layer
 public type SalesOpportunitiesCompetitionItem record {
     int:Signed32 RowNo?;
     int:Signed32 Competition?;
@@ -1105,7 +1105,7 @@ public type SalesOpportunitiesCompetitionItem record {
     ThreatLevelEnum ThreatLevel?;
 };
 
-# A paged collection of `SalesStages` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesStages` entities returned by the SAP Business One Service Layer
 public type SalesStagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1114,7 +1114,7 @@ public type SalesStagesCollectionResponse record {
     string odataNextLink?;
 };
 
-# A paged collection of `ActivityRecipientLists` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ActivityRecipientLists` entities returned by the SAP Business One Service Layer
 public type ActivityRecipientListsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1161,7 +1161,7 @@ public type GetActivitiesQueries record {
     string dollarSelect?;
 };
 
-# The `ActivityInstanceParams` complex type of the SAP Business One Service Layer.
+# The `ActivityInstanceParams` complex type of the SAP Business One Service Layer
 public type ActivityInstanceParams record {|
     @jsondata:Name {value: "ActivityCode"}
     int:Signed32 activityCode?;
@@ -1169,7 +1169,7 @@ public type ActivityInstanceParams record {|
     string instanceDate?;
 |};
 
-# The `Campaign` entity of the SAP Business One Service Layer.
+# The `Campaign` entity of the SAP Business One Service Layer
 public type Campaign record {
     int:Signed32 CampaignNumber?;
     string CampaignName?;
@@ -1190,37 +1190,37 @@ public type Campaign record {
     CampaignBusinessPartner[] CampaignBusinessPartners?;
     CampaignItem[] CampaignItems?;
     CampaignPartner[] CampaignPartners?;
-    # The `TargetGroup` entity of the SAP Business One Service Layer.
+    # The `TargetGroup` entity of the SAP Business One Service Layer
     TargetGroup TargetGroup2?;
 };
 
-# Represents the request payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer
 public type ActivitiesService_GetTopNActivityInstances_body record {
     @jsondata:Name {value: "ActivityInstancesListParams"}
     ActivityInstancesListParams activityInstancesListParams?;
 };
 
-# Represents the response payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ActivityParams[] value?;
 };
 
-# Represents the request payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer
 public type ActivitySubjectService_GetListByTypeCode_body record {
     @jsondata:Name {value: "ActivitySubject"}
     ActivitySubject activitySubject?;
 };
 
-# Represents the response payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ActivityInstanceParams[] value?;
 };
 
-# A paged collection of `SalesOpportunityInterestsSetup` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesOpportunityInterestsSetup` entities returned by the SAP Business One Service Layer
 public type SalesOpportunityInterestsSetupCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1229,14 +1229,14 @@ public type SalesOpportunityInterestsSetupCollectionResponse record {
     string odataNextLink?;
 };
 
-# Represents the response payload for the `ActivityRecipientListsService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivityRecipientListsService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ActivityRecipientListParams[] value?;
 };
 
-# The `ActivityRecipientList` entity of the SAP Business One Service Layer.
+# The `ActivityRecipientList` entity of the SAP Business One Service Layer
 public type ActivityRecipientList record {|
     @jsondata:Name {value: "Activities"}
     Activity[] activities?;
@@ -1252,7 +1252,7 @@ public type ActivityRecipientList record {|
     string name?;
 |};
 
-# Represents the response payload for the `ActivitySubjectService_GetActivitySubjectList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivitySubjectService_GetActivitySubjectList` operation of the SAP Business One Service Layer
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1262,7 +1262,7 @@ public type inline_response_200_4 record {
 # OData EnumType 'BoAPARDocumentTypes'. Serialised by the Service Layer as the member name
 public type BoAPARDocumentTypes "bodt_Invoice"|"bodt_CreditNote"|"bodt_DeliveryNote"|"bodt_Return"|"bodt_Order"|"bodt_PurchaseInvoice"|"bodt_PurchaseCreditNote"|"bodt_PurchaseDeliveryNote"|"bodt_PurchaseReturn"|"bodt_PurchaseOrder"|"bodt_Quotation"|"bodt_CorrectionAPInvoice"|"bodt_CorrectionARInvoice"|"bodt_Zero"|"bodt_MinusOne"|"bodt_PurchaseQutation";
 
-# The `SalesOpportunitiesLine` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitiesLine` complex type of the SAP Business One Service Layer
 public type SalesOpportunitiesLine record {
     int:Signed32 LineNum?;
     int:Signed32 SalesPerson?;
@@ -1306,7 +1306,7 @@ public type ListCampaignResponseTypeHeaders record {
     string prefer?;
 };
 
-# Represents the response payload for the `SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList` operation of the SAP Business One Service Layer
 public type inline_response_200_11 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1320,28 +1320,28 @@ public type ListSalesOpportunitiesHeaders record {
     string prefer?;
 };
 
-# Represents the response payload for the `SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList` operation of the SAP Business One Service Layer
 public type inline_response_200_10 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     SalesOpportunityInterestSetupParams[] value?;
 };
 
-# Represents the response payload for the `TargetGroupsService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `TargetGroupsService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_13 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     TargetGroupParams[] value?;
 };
 
-# Represents the response payload for the `SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList` operation of the SAP Business One Service Layer
 public type inline_response_200_12 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     SalesOpportunitySourceSetupParams[] value?;
 };
 
-# The `SalesOpportunities` entity of the SAP Business One Service Layer.
+# The `SalesOpportunities` entity of the SAP Business One Service Layer
 public type SalesOpportunities record {
     int:Signed32 SequentialNo?;
     string CardCode?;
@@ -1399,20 +1399,20 @@ public type SalesOpportunities record {
     SalesOpportunitiesPartner[] SalesOpportunitiesPartners?;
     SalesOpportunitiesInterest[] SalesOpportunitiesInterests?;
     SalesOpportunitiesReason[] SalesOpportunitiesReasons?;
-    # The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer.
+    # The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer
     SalesOpportunitySourceSetup SalesOpportunitySourceSetup?;
-    # The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer.
+    # The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer
     SalesOpportunityInterestSetup SalesOpportunityInterestSetup?;
-    # The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer.
+    # The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer
     SalesOpportunityReasonSetup SalesOpportunityReasonSetup?;
-    # The `SalesStage` entity of the SAP Business One Service Layer.
+    # The `SalesStage` entity of the SAP Business One Service Layer
     SalesStage SalesStage?;
 };
 
 # OData EnumType 'RecurrencePatternEnum'. Serialised by the Service Layer as the member name
 public type RecurrencePatternEnum "rpNone"|"rpDaily"|"rpWeekly"|"rpMonthly"|"rpAnnually";
 
-# The `TargetGroupsDetail` complex type of the SAP Business One Service Layer.
+# The `TargetGroupsDetail` complex type of the SAP Business One Service Layer
 public type TargetGroupsDetail record {|
     @jsondata:Name {value: "Building"}
     string building?;
@@ -1470,7 +1470,7 @@ public type ListSalesOpportunityInterestsSetupHeaders record {
 # OData EnumType 'CampaignItemTypeEnum'. Serialised by the Service Layer as the member name
 public type CampaignItemTypeEnum "citItems"|"citLabel"|"citTravel";
 
-# The `TargetGroupParams` complex type of the SAP Business One Service Layer.
+# The `TargetGroupParams` complex type of the SAP Business One Service Layer
 public type TargetGroupParams record {|
     @jsondata:Name {value: "TargetGroupCode"}
     string targetGroupCode?;
@@ -1478,7 +1478,7 @@ public type TargetGroupParams record {|
     string targetGroupName?;
 |};
 
-# The `CampaignResponseType` entity of the SAP Business One Service Layer.
+# The `CampaignResponseType` entity of the SAP Business One Service Layer
 public type CampaignResponseType record {|
     @jsondata:Name {value: "ResponseTypeDescription"}
     string responseTypeDescription?;
@@ -1488,7 +1488,7 @@ public type CampaignResponseType record {|
     string responseType?;
 |};
 
-# Represents the request payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer
 public type ActivitiesService_GetListByAttendUser_body record {
     @jsondata:Name {value: "Activity"}
     Activity activity?;
@@ -1529,14 +1529,14 @@ public type ListCampaignsHeaders record {
 # OData EnumType 'BoActivities'. Serialised by the Service Layer as the member name
 public type BoActivities "cn_Conversation"|"cn_Meeting"|"cn_Task"|"cn_Other"|"cn_Note"|"cn_Campaign"|"cn_Email";
 
-# Represents the response payload for the `ActivitiesService_GetActivityList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ActivitiesService_GetActivityList` operation of the SAP Business One Service Layer
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ActivityParams[] value?;
 };
 
-# A paged collection of `ActivityStatuses` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ActivityStatuses` entities returned by the SAP Business One Service Layer
 public type ActivityStatusesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1558,7 +1558,7 @@ public type GetSalesOpportunityCompetitorsSetupQueries record {
 # OData EnumType 'RecurrenceDayOfWeekEnum'. Serialised by the Service Layer as the member name
 public type RecurrenceDayOfWeekEnum "rdowDay"|"rdowWeekDay"|"rdowWeekendDay"|"rdowSun"|"rdowMon"|"rdowTue"|"rdowWed"|"rdowThu"|"rdowFri"|"rdowSat";
 
-# A paged collection of `ActivityTypes` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ActivityTypes` entities returned by the SAP Business One Service Layer
 public type ActivityTypesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1635,7 +1635,7 @@ public type ListActivityStatusesQueries record {
     string dollarSelect?;
 };
 
-# The `SalesStage` entity of the SAP Business One Service Layer.
+# The `SalesStage` entity of the SAP Business One Service Layer
 public type SalesStage record {
     int:Signed32 SequenceNo?;
     string Name?;
@@ -1650,7 +1650,7 @@ public type SalesStage record {
     SalesOpportunities[] SalesOpportunities?;
 };
 
-# The `ActivityType` entity of the SAP Business One Service Layer.
+# The `ActivityType` entity of the SAP Business One Service Layer
 public type ActivityType record {
     int:Signed32 Code?;
     string Name?;
@@ -1658,7 +1658,7 @@ public type ActivityType record {
     Activity[] Activities?;
 };
 
-# A paged collection of `Campaigns` entities returned by the SAP Business One Service Layer.
+# A paged collection of `Campaigns` entities returned by the SAP Business One Service Layer
 public type CampaignsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1667,7 +1667,7 @@ public type CampaignsCollectionResponse record {
     string odataNextLink?;
 };
 
-# A paged collection of `PartnersSetups` entities returned by the SAP Business One Service Layer.
+# A paged collection of `PartnersSetups` entities returned by the SAP Business One Service Layer
 public type PartnersSetupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1676,7 +1676,7 @@ public type PartnersSetupsCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer.
+# The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer
 public type SalesOpportunityInterestSetup record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -1695,13 +1695,13 @@ public type ListSalesStagesHeaders record {
     string prefer?;
 };
 
-# Represents the request payload for the `ActivitiesService_UpdateSingleInstanceInSeries` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ActivitiesService_UpdateSingleInstanceInSeries` operation of the SAP Business One Service Layer
 public type ActivitiesService_UpdateSingleInstanceInSeries_body record {
     @jsondata:Name {value: "Activity"}
     Activity activity?;
 };
 
-# The `SalesOpportunitiesReason` complex type of the SAP Business One Service Layer.
+# The `SalesOpportunitiesReason` complex type of the SAP Business One Service Layer
 public type SalesOpportunitiesReason record {
     int:Signed32 RowNo?;
     int:Signed32 SequenceNo?;
@@ -1711,7 +1711,7 @@ public type SalesOpportunitiesReason record {
 # OData EnumType 'BoDurations'. Serialised by the Service Layer as the member name
 public type BoDurations "du_Seconds"|"du_Minuts"|"du_Hours"|"du_Days";
 
-# The `CheckInParams` complex type of the SAP Business One Service Layer.
+# The `CheckInParams` complex type of the SAP Business One Service Layer
 public type CheckInParams record {|
     @jsondata:Name {value: "HandledBy"}
     int:Signed32 handledBy?;
@@ -1762,7 +1762,7 @@ public type ListTargetGroupsQueries record {
     string dollarSelect?;
 };
 
-# The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer.
+# The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer
 public type SalesOpportunitySourceSetup record {|
     @jsondata:Name {value: "SequenceNo"}
     int:Signed32 sequenceNo?;
@@ -1837,7 +1837,7 @@ public type ListActivityRecipientListsQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `TargetGroups` entities returned by the SAP Business One Service Layer.
+# A paged collection of `TargetGroups` entities returned by the SAP Business One Service Layer
 public type TargetGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;

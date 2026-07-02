@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - Production & MRP",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "ProductTrees"
         ],
-        "summary": "Query the ProductTrees collection.",
+        "summary": "Query the ProductTrees collection",
         "operationId": "List_ProductTrees",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "ProductTrees"
         ],
-        "summary": "Create a new ProductTree.",
+        "summary": "Create a new ProductTree",
         "operationId": "Create_ProductTrees",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "ProductTrees"
         ],
-        "summary": "Get a single ProductTree by key.",
+        "summary": "Get a single ProductTree by key",
         "operationId": "Get_ProductTrees",
         "parameters": [
           {
@@ -161,7 +161,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -171,7 +171,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -186,7 +186,7 @@
         "tags": [
           "ProductTrees"
         ],
-        "summary": "Delete a ProductTree.",
+        "summary": "Delete a ProductTree",
         "operationId": "Delete_ProductTrees",
         "parameters": [
           {
@@ -206,7 +206,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -221,7 +221,7 @@
         "tags": [
           "ProductTrees"
         ],
-        "summary": "Partially update a ProductTree (PATCH/MERGE semantics).",
+        "summary": "Partially update a ProductTree (PATCH/MERGE semantics)",
         "operationId": "Update_ProductTrees",
         "parameters": [
           {
@@ -251,7 +251,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -268,7 +268,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Query the ProductionOrders collection.",
+        "summary": "Query the ProductionOrders collection",
         "operationId": "List_ProductionOrders",
         "parameters": [
           {
@@ -308,7 +308,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -323,7 +323,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Create a new ProductionOrder.",
+        "summary": "Create a new ProductionOrder",
         "operationId": "Create_ProductionOrders",
         "requestBody": {
           "content": {
@@ -347,7 +347,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -364,7 +364,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Get a single ProductionOrder by key.",
+        "summary": "Get a single ProductionOrder by key",
         "operationId": "Get_ProductionOrders",
         "parameters": [
           {
@@ -398,7 +398,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -408,7 +408,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -423,7 +423,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Delete a ProductionOrder.",
+        "summary": "Delete a ProductionOrder",
         "operationId": "Delete_ProductionOrders",
         "parameters": [
           {
@@ -444,7 +444,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -459,7 +459,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Partially update a ProductionOrder (PATCH/MERGE semantics).",
+        "summary": "Partially update a ProductionOrder (PATCH/MERGE semantics)",
         "operationId": "Update_ProductionOrders",
         "parameters": [
           {
@@ -490,7 +490,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -507,7 +507,7 @@
         "tags": [
           "ProductionOrders"
         ],
-        "summary": "Bound action 'Cancel' on ProductionOrders (binding type ProductionOrder).",
+        "summary": "Bound action 'Cancel' on ProductionOrders (binding type ProductionOrder)",
         "operationId": "ProductionOrders_Cancel",
         "parameters": [
           {
@@ -528,7 +528,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -545,7 +545,7 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "summary": "Query the ResourceCapacities collection.",
+        "summary": "Query the ResourceCapacities collection",
         "operationId": "List_ResourceCapacities",
         "parameters": [
           {
@@ -585,7 +585,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -600,7 +600,7 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "summary": "Create a new ResourceCapacity.",
+        "summary": "Create a new ResourceCapacity",
         "operationId": "Create_ResourceCapacities",
         "requestBody": {
           "content": {
@@ -624,7 +624,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -641,7 +641,7 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "summary": "Get a single ResourceCapacity by key.",
+        "summary": "Get a single ResourceCapacity by key",
         "operationId": "Get_ResourceCapacities",
         "parameters": [
           {
@@ -675,7 +675,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -685,7 +685,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -700,7 +700,7 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "summary": "Delete a ResourceCapacity.",
+        "summary": "Delete a ResourceCapacity",
         "operationId": "Delete_ResourceCapacities",
         "parameters": [
           {
@@ -721,7 +721,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -736,7 +736,7 @@
         "tags": [
           "ResourceCapacities"
         ],
-        "summary": "Partially update a ResourceCapacity (PATCH/MERGE semantics).",
+        "summary": "Partially update a ResourceCapacity (PATCH/MERGE semantics)",
         "operationId": "Update_ResourceCapacities",
         "parameters": [
           {
@@ -767,7 +767,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -784,7 +784,7 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "ResourceCapacitiesService_GetList",
         "responses": {
           "200": {
@@ -805,13 +805,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -828,7 +828,7 @@
         "tags": [
           "ResourceCapacitiesService"
         ],
-        "summary": "Get list with filter.",
+        "summary": "Get list with filter",
         "operationId": "ResourceCapacitiesService_GetListWithFilter",
         "requestBody": {
           "content": {
@@ -845,7 +845,7 @@
                     "x-ballerina-name": "resourceCapacityWithFilterParams"
                   }
                 },
-                "description": "Represents the request payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -870,13 +870,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -893,7 +893,7 @@
         "tags": [
           "ResourceGroups"
         ],
-        "summary": "Query the ResourceGroups collection.",
+        "summary": "Query the ResourceGroups collection",
         "operationId": "List_ResourceGroups",
         "parameters": [
           {
@@ -933,7 +933,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -948,7 +948,7 @@
         "tags": [
           "ResourceGroups"
         ],
-        "summary": "Create a new ResourceGroup.",
+        "summary": "Create a new ResourceGroup",
         "operationId": "Create_ResourceGroups",
         "requestBody": {
           "content": {
@@ -972,7 +972,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -989,7 +989,7 @@
         "tags": [
           "ResourceGroups"
         ],
-        "summary": "Get a single ResourceGroup by key.",
+        "summary": "Get a single ResourceGroup by key",
         "operationId": "Get_ResourceGroups",
         "parameters": [
           {
@@ -1023,7 +1023,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1033,7 +1033,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1048,7 +1048,7 @@
         "tags": [
           "ResourceGroups"
         ],
-        "summary": "Delete a ResourceGroup.",
+        "summary": "Delete a ResourceGroup",
         "operationId": "Delete_ResourceGroups",
         "parameters": [
           {
@@ -1069,7 +1069,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1084,7 +1084,7 @@
         "tags": [
           "ResourceGroups"
         ],
-        "summary": "Partially update a ResourceGroup (PATCH/MERGE semantics).",
+        "summary": "Partially update a ResourceGroup (PATCH/MERGE semantics)",
         "operationId": "Update_ResourceGroups",
         "parameters": [
           {
@@ -1115,7 +1115,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1132,7 +1132,7 @@
         "tags": [
           "ResourceGroupsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "ResourceGroupsService_GetList",
         "responses": {
           "200": {
@@ -1153,13 +1153,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ResourceGroupsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ResourceGroupsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1176,7 +1176,7 @@
         "tags": [
           "ResourceProperties"
         ],
-        "summary": "Query the ResourceProperties collection.",
+        "summary": "Query the ResourceProperties collection",
         "operationId": "List_ResourceProperties",
         "parameters": [
           {
@@ -1216,7 +1216,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1231,7 +1231,7 @@
         "tags": [
           "ResourceProperties"
         ],
-        "summary": "Create a new ResourceProperty.",
+        "summary": "Create a new ResourceProperty",
         "operationId": "Create_ResourceProperties",
         "requestBody": {
           "content": {
@@ -1255,7 +1255,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1272,7 +1272,7 @@
         "tags": [
           "ResourceProperties"
         ],
-        "summary": "Get a single ResourceProperty by key.",
+        "summary": "Get a single ResourceProperty by key",
         "operationId": "Get_ResourceProperties",
         "parameters": [
           {
@@ -1306,7 +1306,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1316,7 +1316,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1331,7 +1331,7 @@
         "tags": [
           "ResourceProperties"
         ],
-        "summary": "Delete a ResourceProperty.",
+        "summary": "Delete a ResourceProperty",
         "operationId": "Delete_ResourceProperties",
         "parameters": [
           {
@@ -1352,7 +1352,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1367,7 +1367,7 @@
         "tags": [
           "ResourceProperties"
         ],
-        "summary": "Partially update a ResourceProperty (PATCH/MERGE semantics).",
+        "summary": "Partially update a ResourceProperty (PATCH/MERGE semantics)",
         "operationId": "Update_ResourceProperties",
         "parameters": [
           {
@@ -1398,7 +1398,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1415,7 +1415,7 @@
         "tags": [
           "ResourcePropertiesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "ResourcePropertiesService_GetList",
         "responses": {
           "200": {
@@ -1436,13 +1436,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ResourcePropertiesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ResourcePropertiesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1459,7 +1459,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Query the Resources collection.",
+        "summary": "Query the Resources collection",
         "operationId": "List_Resources",
         "parameters": [
           {
@@ -1499,7 +1499,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1514,7 +1514,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Create a new Resource.",
+        "summary": "Create a new Resource",
         "operationId": "Create_Resources",
         "requestBody": {
           "content": {
@@ -1538,7 +1538,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1555,7 +1555,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Get a single Resource by key.",
+        "summary": "Get a single Resource by key",
         "operationId": "Get_Resources",
         "parameters": [
           {
@@ -1588,7 +1588,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1598,7 +1598,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1613,7 +1613,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Delete a Resource.",
+        "summary": "Delete a Resource",
         "operationId": "Delete_Resources",
         "parameters": [
           {
@@ -1633,7 +1633,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1648,7 +1648,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Partially update a Resource (PATCH/MERGE semantics).",
+        "summary": "Partially update a Resource (PATCH/MERGE semantics)",
         "operationId": "Update_Resources",
         "parameters": [
           {
@@ -1678,7 +1678,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1695,7 +1695,7 @@
         "tags": [
           "Resources"
         ],
-        "summary": "Bound action 'CreateLinkedItem' on Resources (binding type Resource).",
+        "summary": "Bound action 'CreateLinkedItem' on Resources (binding type Resource)",
         "operationId": "Resources_CreateLinkedItem",
         "parameters": [
           {
@@ -1715,7 +1715,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1732,7 +1732,7 @@
         "tags": [
           "ResourcesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "ResourcesService_GetList",
         "responses": {
           "200": {
@@ -1753,13 +1753,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ResourcesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ResourcesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1776,7 +1776,7 @@
         "tags": [
           "RouteStages"
         ],
-        "summary": "Query the RouteStages collection.",
+        "summary": "Query the RouteStages collection",
         "operationId": "List_RouteStages",
         "parameters": [
           {
@@ -1816,7 +1816,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1831,7 +1831,7 @@
         "tags": [
           "RouteStages"
         ],
-        "summary": "Create a new RouteStage.",
+        "summary": "Create a new RouteStage",
         "operationId": "Create_RouteStages",
         "requestBody": {
           "content": {
@@ -1855,7 +1855,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1872,7 +1872,7 @@
         "tags": [
           "RouteStages"
         ],
-        "summary": "Get a single RouteStage by key.",
+        "summary": "Get a single RouteStage by key",
         "operationId": "Get_RouteStages",
         "parameters": [
           {
@@ -1906,7 +1906,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1916,7 +1916,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1931,7 +1931,7 @@
         "tags": [
           "RouteStages"
         ],
-        "summary": "Delete a RouteStage.",
+        "summary": "Delete a RouteStage",
         "operationId": "Delete_RouteStages",
         "parameters": [
           {
@@ -1952,7 +1952,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1967,7 +1967,7 @@
         "tags": [
           "RouteStages"
         ],
-        "summary": "Partially update a RouteStage (PATCH/MERGE semantics).",
+        "summary": "Partially update a RouteStage (PATCH/MERGE semantics)",
         "operationId": "Update_RouteStages",
         "parameters": [
           {
@@ -1998,7 +1998,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2015,7 +2015,7 @@
         "tags": [
           "RouteStagesService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "RouteStagesService_GetList",
         "responses": {
           "200": {
@@ -2036,13 +2036,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `RouteStagesService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `RouteStagesService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2059,7 +2059,7 @@
         "tags": [
           "RoutingDateCalculationService"
         ],
-        "summary": "Calculate.",
+        "summary": "Calculate",
         "operationId": "RoutingDateCalculationService_Calculate",
         "requestBody": {
           "content": {
@@ -2076,7 +2076,7 @@
                     "x-ballerina-name": "routingDateCalculationInput"
                   }
                 },
-                "description": "Represents the request payload for the `RoutingDateCalculationService_Calculate` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `RoutingDateCalculationService_Calculate` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -2094,7 +2094,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2111,7 +2111,7 @@
         "tags": [
           "SalesForecast"
         ],
-        "summary": "Query the SalesForecast collection.",
+        "summary": "Query the SalesForecast collection",
         "operationId": "List_SalesForecast",
         "parameters": [
           {
@@ -2151,7 +2151,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2166,7 +2166,7 @@
         "tags": [
           "SalesForecast"
         ],
-        "summary": "Create a new SalesForecast.",
+        "summary": "Create a new SalesForecast",
         "operationId": "Create_SalesForecast",
         "requestBody": {
           "content": {
@@ -2190,7 +2190,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2207,7 +2207,7 @@
         "tags": [
           "SalesForecast"
         ],
-        "summary": "Get a single SalesForecast by key.",
+        "summary": "Get a single SalesForecast by key",
         "operationId": "Get_SalesForecast",
         "parameters": [
           {
@@ -2241,7 +2241,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2251,7 +2251,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2266,7 +2266,7 @@
         "tags": [
           "SalesForecast"
         ],
-        "summary": "Delete a SalesForecast.",
+        "summary": "Delete a SalesForecast",
         "operationId": "Delete_SalesForecast",
         "parameters": [
           {
@@ -2287,7 +2287,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2302,7 +2302,7 @@
         "tags": [
           "SalesForecast"
         ],
-        "summary": "Partially update a SalesForecast (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesForecast (PATCH/MERGE semantics)",
         "operationId": "Update_SalesForecast",
         "parameters": [
           {
@@ -2333,7 +2333,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2366,7 +2366,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ResourceCapacities` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ResourceCapacities` entities returned by the SAP Business One Service Layer"
       },
       "ResourceTypeEnum": {
         "type": "string",
@@ -2449,7 +2449,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductTree` entity of the SAP Business One Service Layer."
+        "description": "The `ProductTree` entity of the SAP Business One Service Layer"
       },
       "SalesForecastCollectionResponse": {
         "type": "object",
@@ -2469,7 +2469,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesForecast` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesForecast` entities returned by the SAP Business One Service Layer"
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -2678,7 +2678,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductionOrder` entity of the SAP Business One Service Layer."
+        "description": "The `ProductionOrder` entity of the SAP Business One Service Layer"
       },
       "RoutingDateCalculationOutput": {
         "type": "object",
@@ -2695,7 +2695,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RoutingDateCalculationOutput` complex type of the SAP Business One Service Layer."
+        "description": "The `RoutingDateCalculationOutput` complex type of the SAP Business One Service Layer"
       },
       "BatchNumber": {
         "type": "object",
@@ -2752,7 +2752,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer."
+        "description": "The `BatchNumber` complex type of the SAP Business One Service Layer"
       },
       "Resource": {
         "type": "object",
@@ -3127,7 +3127,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Resource` entity of the SAP Business One Service Layer."
+        "description": "The `Resource` entity of the SAP Business One Service Layer"
       },
       "ProductionItemType": {
         "type": "string",
@@ -3151,7 +3151,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceFixedAsset` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceFixedAsset` complex type of the SAP Business One Service Layer"
       },
       "ProductionOrdersCollectionResponse": {
         "type": "object",
@@ -3171,7 +3171,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ProductionOrders` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ProductionOrders` entities returned by the SAP Business One Service Layer"
       },
       "ResourceGroupParams": {
         "type": "object",
@@ -3187,7 +3187,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceGroupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceGroupParams` complex type of the SAP Business One Service Layer"
       },
       "ResourcePropertyParams": {
         "type": "object",
@@ -3203,7 +3203,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourcePropertyParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourcePropertyParams` complex type of the SAP Business One Service Layer"
       },
       "SalesForecast": {
         "type": "object",
@@ -3237,7 +3237,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesForecast` entity of the SAP Business One Service Layer."
+        "description": "The `SalesForecast` entity of the SAP Business One Service Layer"
       },
       "ResourceCapacityParams": {
         "type": "object",
@@ -3384,7 +3384,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceCapacityParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceCapacityParams` complex type of the SAP Business One Service Layer"
       },
       "RouteStageParams": {
         "type": "object",
@@ -3418,7 +3418,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RouteStageParams` complex type of the SAP Business One Service Layer."
+        "description": "The `RouteStageParams` complex type of the SAP Business One Service Layer"
       },
       "BoProductionOrderStatusEnum": {
         "type": "string",
@@ -3474,7 +3474,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductionOrdersStage` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductionOrdersStage` complex type of the SAP Business One Service Layer"
       },
       "SerialNumber": {
         "type": "object",
@@ -3539,7 +3539,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer."
+        "description": "The `SerialNumber` complex type of the SAP Business One Service Layer"
       },
       "ResourceCapacityBaseTypeEnum": {
         "type": "string",
@@ -3583,7 +3583,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductionOrdersDocumentReference` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductionOrdersDocumentReference` complex type of the SAP Business One Service Layer"
       },
       "RoutingDateCalculationInput": {
         "type": "object",
@@ -3636,7 +3636,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RoutingDateCalculationInput` complex type of the SAP Business One Service Layer."
+        "description": "The `RoutingDateCalculationInput` complex type of the SAP Business One Service Layer"
       },
       "RouteStagesCollectionResponse": {
         "type": "object",
@@ -3656,7 +3656,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `RouteStages` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `RouteStages` entities returned by the SAP Business One Service Layer"
       },
       "RouteStage": {
         "type": "object",
@@ -3690,7 +3690,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `RouteStage` entity of the SAP Business One Service Layer."
+        "description": "The `RouteStage` entity of the SAP Business One Service Layer"
       },
       "ResourceDailyCapacity": {
         "type": "object",
@@ -3743,7 +3743,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceDailyCapacity` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceDailyCapacity` complex type of the SAP Business One Service Layer"
       },
       "BoIssueMethod": {
         "type": "string",
@@ -3782,7 +3782,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductionOrdersSalesOrderLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductionOrdersSalesOrderLine` complex type of the SAP Business One Service Layer"
       },
       "ProductTreeStage": {
         "type": "object",
@@ -3811,7 +3811,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductTreeStage` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductTreeStage` complex type of the SAP Business One Service Layer"
       },
       "ProductTreeLine": {
         "type": "object",
@@ -3897,7 +3897,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductTreeLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductTreeLine` complex type of the SAP Business One Service Layer"
       },
       "ResourceWarehouse": {
         "type": "object",
@@ -3913,7 +3913,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ResourceWarehouse` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceWarehouse` complex type of the SAP Business One Service Layer"
       },
       "ResourceCapacityActionEnum": {
         "type": "string",
@@ -3949,7 +3949,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesForecastLine` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesForecastLine` complex type of the SAP Business One Service Layer"
       },
       "BoProductionOrderOriginEnum": {
         "type": "string",
@@ -3987,7 +3987,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceEmployee` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceEmployee` complex type of the SAP Business One Service Layer"
       },
       "ReferencedObjectTypeEnum": {
         "type": "string",
@@ -4166,7 +4166,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceGroup` entity of the SAP Business One Service Layer."
+        "description": "The `ResourceGroup` entity of the SAP Business One Service Layer"
       },
       "ResourceParams": {
         "type": "object",
@@ -4177,7 +4177,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceParams` complex type of the SAP Business One Service Layer"
       },
       "BoItemTreeTypes": {
         "type": "string",
@@ -4209,7 +4209,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ResourceProperties` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ResourceProperties` entities returned by the SAP Business One Service Layer"
       },
       "ProductionOrderLine": {
         "type": "object",
@@ -4333,7 +4333,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ProductionOrderLine` complex type of the SAP Business One Service Layer."
+        "description": "The `ProductionOrderLine` complex type of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -4359,7 +4359,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "ResourceCapacityMemoSourceEnum": {
         "type": "string",
@@ -4406,7 +4406,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ProductTrees` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ProductTrees` entities returned by the SAP Business One Service Layer"
       },
       "ResourceCapacity": {
         "type": "object",
@@ -4561,7 +4561,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceCapacity` entity of the SAP Business One Service Layer."
+        "description": "The `ResourceCapacity` entity of the SAP Business One Service Layer"
       },
       "ResourceProperty": {
         "type": "object",
@@ -4577,7 +4577,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceProperty` entity of the SAP Business One Service Layer."
+        "description": "The `ResourceProperty` entity of the SAP Business One Service Layer"
       },
       "ResourcesCollectionResponse": {
         "type": "object",
@@ -4597,7 +4597,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Resources` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Resources` entities returned by the SAP Business One Service Layer"
       },
       "ResourceCapacityWithFilterParams": {
         "type": "object",
@@ -4625,7 +4625,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ResourceCapacityWithFilterParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ResourceCapacityWithFilterParams` complex type of the SAP Business One Service Layer"
       },
       "ResourceGroupsCollectionResponse": {
         "type": "object",
@@ -4645,7 +4645,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ResourceGroups` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ResourceGroups` entities returned by the SAP Business One Service Layer"
       },
       "BoProductionOrderTypeEnum": {
         "type": "string",
@@ -4774,7 +4774,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

@@ -16,8 +16,8 @@
 
 import ballerina/http;
 
-# Defines the possible client error types.
+# Defines the possible client error types
 public type ClientError http:ClientError;
 
-# Represents an error, which occurred while logging in to the SAP Business One Service Layer.
+# Represents an error, which occurred while logging in to the SAP Business One Service Layer
 public type LoginFailure http:ClientError;

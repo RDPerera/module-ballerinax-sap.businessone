@@ -2,20 +2,20 @@
   "openapi": "3.0.3",
   "info": {
     "title": "SAP Business One Service Layer - CRM (Activities, Campaigns & Opportunities)",
-    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.",
+    "description": "OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').\n\nAuthentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.\n\nCollection responses use the OData V3 envelope `{ \"odata.metadata\": ..., \"value\": [ ... ], \"odata.nextLink\": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging",
     "version": "v1"
   },
   "servers": [
     {
       "url": "https://{server}:{port}/b1s/v1",
-      "description": "SAP Business One Service Layer (OData V3 endpoint).",
+      "description": "SAP Business One Service Layer (OData V3 endpoint)",
       "variables": {
         "server": {
-          "description": "Service Layer host.",
+          "description": "Service Layer host",
           "default": "localhost"
         },
         "port": {
-          "description": "Service Layer HTTPS port (default 50000).",
+          "description": "Service Layer HTTPS port (default 50000)",
           "default": "50000"
         }
       }
@@ -32,7 +32,7 @@
         "tags": [
           "Activities"
         ],
-        "summary": "Query the Activities collection.",
+        "summary": "Query the Activities collection",
         "operationId": "List_Activities",
         "parameters": [
           {
@@ -72,7 +72,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +87,7 @@
         "tags": [
           "Activities"
         ],
-        "summary": "Create a new Activity.",
+        "summary": "Create a new Activity",
         "operationId": "Create_Activities",
         "requestBody": {
           "content": {
@@ -111,7 +111,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
         "tags": [
           "Activities"
         ],
-        "summary": "Get a single Activity by key.",
+        "summary": "Get a single Activity by key",
         "operationId": "Get_Activities",
         "parameters": [
           {
@@ -162,7 +162,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +172,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -187,7 +187,7 @@
         "tags": [
           "Activities"
         ],
-        "summary": "Delete a Activity.",
+        "summary": "Delete a Activity",
         "operationId": "Delete_Activities",
         "parameters": [
           {
@@ -208,7 +208,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -223,7 +223,7 @@
         "tags": [
           "Activities"
         ],
-        "summary": "Partially update a Activity (PATCH/MERGE semantics).",
+        "summary": "Partially update a Activity (PATCH/MERGE semantics)",
         "operationId": "Update_Activities",
         "parameters": [
           {
@@ -254,7 +254,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -271,7 +271,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Delete single instance from series.",
+        "summary": "Delete single instance from series",
         "operationId": "ActivitiesService_DeleteSingleInstanceFromSeries",
         "requestBody": {
           "content": {
@@ -288,7 +288,7 @@
                     "x-ballerina-name": "activityInstanceParams"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitiesService_DeleteSingleInstanceFromSeries` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitiesService_DeleteSingleInstanceFromSeries` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -299,7 +299,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -316,7 +316,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Get activity list.",
+        "summary": "Get activity list",
         "operationId": "ActivitiesService_GetActivityList",
         "responses": {
           "200": {
@@ -337,13 +337,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivitiesService_GetActivityList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivitiesService_GetActivityList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -360,7 +360,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Get list by attend user.",
+        "summary": "Get list by attend user",
         "operationId": "ActivitiesService_GetListByAttendUser",
         "requestBody": {
           "content": {
@@ -377,7 +377,7 @@
                     "x-ballerina-name": "activity"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -402,13 +402,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivitiesService_GetListByAttendUser` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -425,7 +425,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Get single instance from series.",
+        "summary": "Get single instance from series",
         "operationId": "ActivitiesService_GetSingleInstanceFromSeries",
         "requestBody": {
           "content": {
@@ -442,7 +442,7 @@
                     "x-ballerina-name": "activityInstanceParams"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitiesService_GetSingleInstanceFromSeries` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitiesService_GetSingleInstanceFromSeries` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -460,7 +460,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -477,7 +477,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Get top N activity instances.",
+        "summary": "Get top N activity instances",
         "operationId": "ActivitiesService_GetTopNActivityInstances",
         "requestBody": {
           "content": {
@@ -494,7 +494,7 @@
                     "x-ballerina-name": "activityInstancesListParams"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -519,13 +519,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivitiesService_GetTopNActivityInstances` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -542,7 +542,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Init data.",
+        "summary": "Init data",
         "operationId": "ActivitiesService_InitData",
         "responses": {
           "200": {
@@ -556,7 +556,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -573,7 +573,7 @@
         "tags": [
           "ActivitiesService"
         ],
-        "summary": "Update single instance in series.",
+        "summary": "Update single instance in series",
         "operationId": "ActivitiesService_UpdateSingleInstanceInSeries",
         "requestBody": {
           "content": {
@@ -590,7 +590,7 @@
                     "x-ballerina-name": "activity"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitiesService_UpdateSingleInstanceInSeries` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitiesService_UpdateSingleInstanceInSeries` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -608,7 +608,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -625,7 +625,7 @@
         "tags": [
           "ActivityLocations"
         ],
-        "summary": "Query the ActivityLocations collection.",
+        "summary": "Query the ActivityLocations collection",
         "operationId": "List_ActivityLocations",
         "parameters": [
           {
@@ -665,7 +665,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -680,7 +680,7 @@
         "tags": [
           "ActivityLocations"
         ],
-        "summary": "Create a new ActivityLocation.",
+        "summary": "Create a new ActivityLocation",
         "operationId": "Create_ActivityLocations",
         "requestBody": {
           "content": {
@@ -704,7 +704,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -721,7 +721,7 @@
         "tags": [
           "ActivityLocations"
         ],
-        "summary": "Get a single ActivityLocation by key.",
+        "summary": "Get a single ActivityLocation by key",
         "operationId": "Get_ActivityLocations",
         "parameters": [
           {
@@ -755,7 +755,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -765,7 +765,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -780,7 +780,7 @@
         "tags": [
           "ActivityLocations"
         ],
-        "summary": "Delete a ActivityLocation.",
+        "summary": "Delete a ActivityLocation",
         "operationId": "Delete_ActivityLocations",
         "parameters": [
           {
@@ -801,7 +801,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -816,7 +816,7 @@
         "tags": [
           "ActivityLocations"
         ],
-        "summary": "Partially update a ActivityLocation (PATCH/MERGE semantics).",
+        "summary": "Partially update a ActivityLocation (PATCH/MERGE semantics)",
         "operationId": "Update_ActivityLocations",
         "parameters": [
           {
@@ -847,7 +847,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -864,7 +864,7 @@
         "tags": [
           "ActivityRecipientLists"
         ],
-        "summary": "Query the ActivityRecipientLists collection.",
+        "summary": "Query the ActivityRecipientLists collection",
         "operationId": "List_ActivityRecipientLists",
         "parameters": [
           {
@@ -904,7 +904,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -919,7 +919,7 @@
         "tags": [
           "ActivityRecipientLists"
         ],
-        "summary": "Create a new ActivityRecipientList.",
+        "summary": "Create a new ActivityRecipientList",
         "operationId": "Create_ActivityRecipientLists",
         "requestBody": {
           "content": {
@@ -943,7 +943,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -960,7 +960,7 @@
         "tags": [
           "ActivityRecipientLists"
         ],
-        "summary": "Get a single ActivityRecipientList by key.",
+        "summary": "Get a single ActivityRecipientList by key",
         "operationId": "Get_ActivityRecipientLists",
         "parameters": [
           {
@@ -994,7 +994,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1004,7 +1004,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1019,7 +1019,7 @@
         "tags": [
           "ActivityRecipientLists"
         ],
-        "summary": "Delete a ActivityRecipientList.",
+        "summary": "Delete a ActivityRecipientList",
         "operationId": "Delete_ActivityRecipientLists",
         "parameters": [
           {
@@ -1040,7 +1040,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1055,7 +1055,7 @@
         "tags": [
           "ActivityRecipientLists"
         ],
-        "summary": "Partially update a ActivityRecipientList (PATCH/MERGE semantics).",
+        "summary": "Partially update a ActivityRecipientList (PATCH/MERGE semantics)",
         "operationId": "Update_ActivityRecipientLists",
         "parameters": [
           {
@@ -1086,7 +1086,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1103,7 +1103,7 @@
         "tags": [
           "ActivityRecipientListsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "ActivityRecipientListsService_GetList",
         "responses": {
           "200": {
@@ -1124,13 +1124,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivityRecipientListsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivityRecipientListsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1147,7 +1147,7 @@
         "tags": [
           "ActivityStatuses"
         ],
-        "summary": "Query the ActivityStatuses collection.",
+        "summary": "Query the ActivityStatuses collection",
         "operationId": "List_ActivityStatuses",
         "parameters": [
           {
@@ -1187,7 +1187,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1202,7 +1202,7 @@
         "tags": [
           "ActivityStatuses"
         ],
-        "summary": "Create a new ActivityStatus.",
+        "summary": "Create a new ActivityStatus",
         "operationId": "Create_ActivityStatuses",
         "requestBody": {
           "content": {
@@ -1226,7 +1226,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1243,7 +1243,7 @@
         "tags": [
           "ActivityStatuses"
         ],
-        "summary": "Get a single ActivityStatus by key.",
+        "summary": "Get a single ActivityStatus by key",
         "operationId": "Get_ActivityStatuses",
         "parameters": [
           {
@@ -1277,7 +1277,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1287,7 +1287,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1302,7 +1302,7 @@
         "tags": [
           "ActivityStatuses"
         ],
-        "summary": "Delete a ActivityStatus.",
+        "summary": "Delete a ActivityStatus",
         "operationId": "Delete_ActivityStatuses",
         "parameters": [
           {
@@ -1323,7 +1323,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1338,7 +1338,7 @@
         "tags": [
           "ActivityStatuses"
         ],
-        "summary": "Partially update a ActivityStatus (PATCH/MERGE semantics).",
+        "summary": "Partially update a ActivityStatus (PATCH/MERGE semantics)",
         "operationId": "Update_ActivityStatuses",
         "parameters": [
           {
@@ -1369,7 +1369,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1386,7 +1386,7 @@
         "tags": [
           "ActivitySubjectService"
         ],
-        "summary": "Get activity subject list.",
+        "summary": "Get activity subject list",
         "operationId": "ActivitySubjectService_GetActivitySubjectList",
         "responses": {
           "200": {
@@ -1407,13 +1407,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivitySubjectService_GetActivitySubjectList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivitySubjectService_GetActivitySubjectList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1430,7 +1430,7 @@
         "tags": [
           "ActivitySubjectService"
         ],
-        "summary": "Get list by type code.",
+        "summary": "Get list by type code",
         "operationId": "ActivitySubjectService_GetListByTypeCode",
         "requestBody": {
           "content": {
@@ -1447,7 +1447,7 @@
                     "x-ballerina-name": "activitySubject"
                   }
                 },
-                "description": "Represents the request payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer."
+                "description": "Represents the request payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer"
               }
             }
           },
@@ -1472,13 +1472,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `ActivitySubjectService_GetListByTypeCode` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1495,7 +1495,7 @@
         "tags": [
           "ActivitySubjects"
         ],
-        "summary": "Query the ActivitySubjects collection.",
+        "summary": "Query the ActivitySubjects collection",
         "operationId": "List_ActivitySubjects",
         "parameters": [
           {
@@ -1535,7 +1535,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1550,7 +1550,7 @@
         "tags": [
           "ActivitySubjects"
         ],
-        "summary": "Create a new ActivitySubject.",
+        "summary": "Create a new ActivitySubject",
         "operationId": "Create_ActivitySubjects",
         "requestBody": {
           "content": {
@@ -1574,7 +1574,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1591,7 +1591,7 @@
         "tags": [
           "ActivitySubjects"
         ],
-        "summary": "Get a single ActivitySubject by key.",
+        "summary": "Get a single ActivitySubject by key",
         "operationId": "Get_ActivitySubjects",
         "parameters": [
           {
@@ -1625,7 +1625,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1635,7 +1635,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1650,7 +1650,7 @@
         "tags": [
           "ActivitySubjects"
         ],
-        "summary": "Delete a ActivitySubject.",
+        "summary": "Delete a ActivitySubject",
         "operationId": "Delete_ActivitySubjects",
         "parameters": [
           {
@@ -1671,7 +1671,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1686,7 +1686,7 @@
         "tags": [
           "ActivitySubjects"
         ],
-        "summary": "Partially update a ActivitySubject (PATCH/MERGE semantics).",
+        "summary": "Partially update a ActivitySubject (PATCH/MERGE semantics)",
         "operationId": "Update_ActivitySubjects",
         "parameters": [
           {
@@ -1717,7 +1717,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1734,7 +1734,7 @@
         "tags": [
           "ActivityTypes"
         ],
-        "summary": "Query the ActivityTypes collection.",
+        "summary": "Query the ActivityTypes collection",
         "operationId": "List_ActivityTypes",
         "parameters": [
           {
@@ -1774,7 +1774,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1789,7 +1789,7 @@
         "tags": [
           "ActivityTypes"
         ],
-        "summary": "Create a new ActivityType.",
+        "summary": "Create a new ActivityType",
         "operationId": "Create_ActivityTypes",
         "requestBody": {
           "content": {
@@ -1813,7 +1813,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1830,7 +1830,7 @@
         "tags": [
           "ActivityTypes"
         ],
-        "summary": "Get a single ActivityType by key.",
+        "summary": "Get a single ActivityType by key",
         "operationId": "Get_ActivityTypes",
         "parameters": [
           {
@@ -1864,7 +1864,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -1874,7 +1874,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1889,7 +1889,7 @@
         "tags": [
           "ActivityTypes"
         ],
-        "summary": "Delete a ActivityType.",
+        "summary": "Delete a ActivityType",
         "operationId": "Delete_ActivityTypes",
         "parameters": [
           {
@@ -1910,7 +1910,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1925,7 +1925,7 @@
         "tags": [
           "ActivityTypes"
         ],
-        "summary": "Partially update a ActivityType (PATCH/MERGE semantics).",
+        "summary": "Partially update a ActivityType (PATCH/MERGE semantics)",
         "operationId": "Update_ActivityTypes",
         "parameters": [
           {
@@ -1956,7 +1956,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1973,7 +1973,7 @@
         "tags": [
           "CampaignResponseType"
         ],
-        "summary": "Query the CampaignResponseType collection.",
+        "summary": "Query the CampaignResponseType collection",
         "operationId": "List_CampaignResponseType",
         "parameters": [
           {
@@ -2013,7 +2013,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2028,7 +2028,7 @@
         "tags": [
           "CampaignResponseType"
         ],
-        "summary": "Create a new CampaignResponseType.",
+        "summary": "Create a new CampaignResponseType",
         "operationId": "Create_CampaignResponseType",
         "requestBody": {
           "content": {
@@ -2052,7 +2052,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2069,7 +2069,7 @@
         "tags": [
           "CampaignResponseType"
         ],
-        "summary": "Get a single CampaignResponseType by key.",
+        "summary": "Get a single CampaignResponseType by key",
         "operationId": "Get_CampaignResponseType",
         "parameters": [
           {
@@ -2102,7 +2102,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2112,7 +2112,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2127,7 +2127,7 @@
         "tags": [
           "CampaignResponseType"
         ],
-        "summary": "Delete a CampaignResponseType.",
+        "summary": "Delete a CampaignResponseType",
         "operationId": "Delete_CampaignResponseType",
         "parameters": [
           {
@@ -2147,7 +2147,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2162,7 +2162,7 @@
         "tags": [
           "CampaignResponseType"
         ],
-        "summary": "Partially update a CampaignResponseType (PATCH/MERGE semantics).",
+        "summary": "Partially update a CampaignResponseType (PATCH/MERGE semantics)",
         "operationId": "Update_CampaignResponseType",
         "parameters": [
           {
@@ -2192,7 +2192,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2209,7 +2209,7 @@
         "tags": [
           "CampaignResponseTypeService"
         ],
-        "summary": "Get response type list.",
+        "summary": "Get response type list",
         "operationId": "CampaignResponseTypeService_GetResponseTypeList",
         "responses": {
           "200": {
@@ -2230,13 +2230,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `CampaignResponseTypeService_GetResponseTypeList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `CampaignResponseTypeService_GetResponseTypeList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2253,7 +2253,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Query the Campaigns collection.",
+        "summary": "Query the Campaigns collection",
         "operationId": "List_Campaigns",
         "parameters": [
           {
@@ -2293,7 +2293,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2308,7 +2308,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Create a new Campaign.",
+        "summary": "Create a new Campaign",
         "operationId": "Create_Campaigns",
         "requestBody": {
           "content": {
@@ -2332,7 +2332,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2349,7 +2349,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Get a single Campaign by key.",
+        "summary": "Get a single Campaign by key",
         "operationId": "Get_Campaigns",
         "parameters": [
           {
@@ -2383,7 +2383,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2393,7 +2393,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2408,7 +2408,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Delete a Campaign.",
+        "summary": "Delete a Campaign",
         "operationId": "Delete_Campaigns",
         "parameters": [
           {
@@ -2429,7 +2429,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2444,7 +2444,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Partially update a Campaign (PATCH/MERGE semantics).",
+        "summary": "Partially update a Campaign (PATCH/MERGE semantics)",
         "operationId": "Update_Campaigns",
         "parameters": [
           {
@@ -2475,7 +2475,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2492,7 +2492,7 @@
         "tags": [
           "Campaigns"
         ],
-        "summary": "Bound action 'Cancel' on Campaigns (binding type Campaign).",
+        "summary": "Bound action 'Cancel' on Campaigns (binding type Campaign)",
         "operationId": "Campaigns_Cancel",
         "parameters": [
           {
@@ -2513,7 +2513,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2530,7 +2530,7 @@
         "tags": [
           "CampaignsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "CampaignsService_GetList",
         "responses": {
           "200": {
@@ -2551,13 +2551,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `CampaignsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `CampaignsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2574,7 +2574,7 @@
         "tags": [
           "PartnersSetups"
         ],
-        "summary": "Query the PartnersSetups collection.",
+        "summary": "Query the PartnersSetups collection",
         "operationId": "List_PartnersSetups",
         "parameters": [
           {
@@ -2614,7 +2614,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2629,7 +2629,7 @@
         "tags": [
           "PartnersSetups"
         ],
-        "summary": "Create a new PartnersSetup.",
+        "summary": "Create a new PartnersSetup",
         "operationId": "Create_PartnersSetups",
         "requestBody": {
           "content": {
@@ -2653,7 +2653,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2670,7 +2670,7 @@
         "tags": [
           "PartnersSetups"
         ],
-        "summary": "Get a single PartnersSetup by key.",
+        "summary": "Get a single PartnersSetup by key",
         "operationId": "Get_PartnersSetups",
         "parameters": [
           {
@@ -2704,7 +2704,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2714,7 +2714,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2729,7 +2729,7 @@
         "tags": [
           "PartnersSetups"
         ],
-        "summary": "Delete a PartnersSetup.",
+        "summary": "Delete a PartnersSetup",
         "operationId": "Delete_PartnersSetups",
         "parameters": [
           {
@@ -2750,7 +2750,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2765,7 +2765,7 @@
         "tags": [
           "PartnersSetups"
         ],
-        "summary": "Partially update a PartnersSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a PartnersSetup (PATCH/MERGE semantics)",
         "operationId": "Update_PartnersSetups",
         "parameters": [
           {
@@ -2796,7 +2796,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2813,7 +2813,7 @@
         "tags": [
           "PartnersSetupsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "PartnersSetupsService_GetList",
         "responses": {
           "200": {
@@ -2834,13 +2834,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `PartnersSetupsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `PartnersSetupsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2857,7 +2857,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Query the SalesOpportunities collection.",
+        "summary": "Query the SalesOpportunities collection",
         "operationId": "List_SalesOpportunities",
         "parameters": [
           {
@@ -2897,7 +2897,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2912,7 +2912,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Create a new SalesOpportunities.",
+        "summary": "Create a new SalesOpportunities",
         "operationId": "Create_SalesOpportunities",
         "requestBody": {
           "content": {
@@ -2936,7 +2936,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2953,7 +2953,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Get a single SalesOpportunities by key.",
+        "summary": "Get a single SalesOpportunities by key",
         "operationId": "Get_SalesOpportunities",
         "parameters": [
           {
@@ -2987,7 +2987,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2997,7 +2997,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3012,7 +3012,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Delete a SalesOpportunities.",
+        "summary": "Delete a SalesOpportunities",
         "operationId": "Delete_SalesOpportunities",
         "parameters": [
           {
@@ -3033,7 +3033,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3048,7 +3048,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Partially update a SalesOpportunities (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesOpportunities (PATCH/MERGE semantics)",
         "operationId": "Update_SalesOpportunities",
         "parameters": [
           {
@@ -3079,7 +3079,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3096,7 +3096,7 @@
         "tags": [
           "SalesOpportunities"
         ],
-        "summary": "Bound action 'Close' on SalesOpportunities (binding type SalesOpportunities).",
+        "summary": "Bound action 'Close' on SalesOpportunities (binding type SalesOpportunities)",
         "operationId": "SalesOpportunities_Close",
         "parameters": [
           {
@@ -3117,7 +3117,7 @@
             "description": "Success. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3134,7 +3134,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetup"
         ],
-        "summary": "Query the SalesOpportunityCompetitorsSetup collection.",
+        "summary": "Query the SalesOpportunityCompetitorsSetup collection",
         "operationId": "List_SalesOpportunityCompetitorsSetup",
         "parameters": [
           {
@@ -3174,7 +3174,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3189,7 +3189,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetup"
         ],
-        "summary": "Create a new SalesOpportunityCompetitorSetup.",
+        "summary": "Create a new SalesOpportunityCompetitorSetup",
         "operationId": "Create_SalesOpportunityCompetitorsSetup",
         "requestBody": {
           "content": {
@@ -3213,7 +3213,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3230,7 +3230,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetup"
         ],
-        "summary": "Get a single SalesOpportunityCompetitorSetup by key.",
+        "summary": "Get a single SalesOpportunityCompetitorSetup by key",
         "operationId": "Get_SalesOpportunityCompetitorsSetup",
         "parameters": [
           {
@@ -3264,7 +3264,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3274,7 +3274,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3289,7 +3289,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetup"
         ],
-        "summary": "Delete a SalesOpportunityCompetitorSetup.",
+        "summary": "Delete a SalesOpportunityCompetitorSetup",
         "operationId": "Delete_SalesOpportunityCompetitorsSetup",
         "parameters": [
           {
@@ -3310,7 +3310,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3325,7 +3325,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetup"
         ],
-        "summary": "Partially update a SalesOpportunityCompetitorSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesOpportunityCompetitorSetup (PATCH/MERGE semantics)",
         "operationId": "Update_SalesOpportunityCompetitorsSetup",
         "parameters": [
           {
@@ -3356,7 +3356,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3373,7 +3373,7 @@
         "tags": [
           "SalesOpportunityCompetitorsSetupService"
         ],
-        "summary": "Get sales opportunity competitor setup list.",
+        "summary": "Get sales opportunity competitor setup list",
         "operationId": "SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList",
         "responses": {
           "200": {
@@ -3394,13 +3394,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `SalesOpportunityCompetitorsSetupService_GetSalesOpportunityCompetitorSetupList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3417,7 +3417,7 @@
         "tags": [
           "SalesOpportunityInterestsSetup"
         ],
-        "summary": "Query the SalesOpportunityInterestsSetup collection.",
+        "summary": "Query the SalesOpportunityInterestsSetup collection",
         "operationId": "List_SalesOpportunityInterestsSetup",
         "parameters": [
           {
@@ -3457,7 +3457,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3472,7 +3472,7 @@
         "tags": [
           "SalesOpportunityInterestsSetup"
         ],
-        "summary": "Create a new SalesOpportunityInterestSetup.",
+        "summary": "Create a new SalesOpportunityInterestSetup",
         "operationId": "Create_SalesOpportunityInterestsSetup",
         "requestBody": {
           "content": {
@@ -3496,7 +3496,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3513,7 +3513,7 @@
         "tags": [
           "SalesOpportunityInterestsSetup"
         ],
-        "summary": "Get a single SalesOpportunityInterestSetup by key.",
+        "summary": "Get a single SalesOpportunityInterestSetup by key",
         "operationId": "Get_SalesOpportunityInterestsSetup",
         "parameters": [
           {
@@ -3547,7 +3547,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3557,7 +3557,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3572,7 +3572,7 @@
         "tags": [
           "SalesOpportunityInterestsSetup"
         ],
-        "summary": "Delete a SalesOpportunityInterestSetup.",
+        "summary": "Delete a SalesOpportunityInterestSetup",
         "operationId": "Delete_SalesOpportunityInterestsSetup",
         "parameters": [
           {
@@ -3593,7 +3593,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3608,7 +3608,7 @@
         "tags": [
           "SalesOpportunityInterestsSetup"
         ],
-        "summary": "Partially update a SalesOpportunityInterestSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesOpportunityInterestSetup (PATCH/MERGE semantics)",
         "operationId": "Update_SalesOpportunityInterestsSetup",
         "parameters": [
           {
@@ -3639,7 +3639,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3656,7 +3656,7 @@
         "tags": [
           "SalesOpportunityInterestsSetupService"
         ],
-        "summary": "Get sales opportunity interest setup list.",
+        "summary": "Get sales opportunity interest setup list",
         "operationId": "SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList",
         "responses": {
           "200": {
@@ -3677,13 +3677,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `SalesOpportunityInterestsSetupService_GetSalesOpportunityInterestSetupList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3700,7 +3700,7 @@
         "tags": [
           "SalesOpportunityReasonsSetup"
         ],
-        "summary": "Query the SalesOpportunityReasonsSetup collection.",
+        "summary": "Query the SalesOpportunityReasonsSetup collection",
         "operationId": "List_SalesOpportunityReasonsSetup",
         "parameters": [
           {
@@ -3740,7 +3740,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3755,7 +3755,7 @@
         "tags": [
           "SalesOpportunityReasonsSetup"
         ],
-        "summary": "Create a new SalesOpportunityReasonSetup.",
+        "summary": "Create a new SalesOpportunityReasonSetup",
         "operationId": "Create_SalesOpportunityReasonsSetup",
         "requestBody": {
           "content": {
@@ -3779,7 +3779,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3796,7 +3796,7 @@
         "tags": [
           "SalesOpportunityReasonsSetup"
         ],
-        "summary": "Get a single SalesOpportunityReasonSetup by key.",
+        "summary": "Get a single SalesOpportunityReasonSetup by key",
         "operationId": "Get_SalesOpportunityReasonsSetup",
         "parameters": [
           {
@@ -3830,7 +3830,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3840,7 +3840,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3855,7 +3855,7 @@
         "tags": [
           "SalesOpportunityReasonsSetup"
         ],
-        "summary": "Delete a SalesOpportunityReasonSetup.",
+        "summary": "Delete a SalesOpportunityReasonSetup",
         "operationId": "Delete_SalesOpportunityReasonsSetup",
         "parameters": [
           {
@@ -3876,7 +3876,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3891,7 +3891,7 @@
         "tags": [
           "SalesOpportunityReasonsSetup"
         ],
-        "summary": "Partially update a SalesOpportunityReasonSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesOpportunityReasonSetup (PATCH/MERGE semantics)",
         "operationId": "Update_SalesOpportunityReasonsSetup",
         "parameters": [
           {
@@ -3922,7 +3922,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3939,7 +3939,7 @@
         "tags": [
           "SalesOpportunityReasonsSetupService"
         ],
-        "summary": "Get sales opportunity reason setup list.",
+        "summary": "Get sales opportunity reason setup list",
         "operationId": "SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList",
         "responses": {
           "200": {
@@ -3960,13 +3960,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `SalesOpportunityReasonsSetupService_GetSalesOpportunityReasonSetupList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3983,7 +3983,7 @@
         "tags": [
           "SalesOpportunitySourcesSetup"
         ],
-        "summary": "Query the SalesOpportunitySourcesSetup collection.",
+        "summary": "Query the SalesOpportunitySourcesSetup collection",
         "operationId": "List_SalesOpportunitySourcesSetup",
         "parameters": [
           {
@@ -4023,7 +4023,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4038,7 +4038,7 @@
         "tags": [
           "SalesOpportunitySourcesSetup"
         ],
-        "summary": "Create a new SalesOpportunitySourceSetup.",
+        "summary": "Create a new SalesOpportunitySourceSetup",
         "operationId": "Create_SalesOpportunitySourcesSetup",
         "requestBody": {
           "content": {
@@ -4062,7 +4062,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4079,7 +4079,7 @@
         "tags": [
           "SalesOpportunitySourcesSetup"
         ],
-        "summary": "Get a single SalesOpportunitySourceSetup by key.",
+        "summary": "Get a single SalesOpportunitySourceSetup by key",
         "operationId": "Get_SalesOpportunitySourcesSetup",
         "parameters": [
           {
@@ -4113,7 +4113,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4123,7 +4123,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4138,7 +4138,7 @@
         "tags": [
           "SalesOpportunitySourcesSetup"
         ],
-        "summary": "Delete a SalesOpportunitySourceSetup.",
+        "summary": "Delete a SalesOpportunitySourceSetup",
         "operationId": "Delete_SalesOpportunitySourcesSetup",
         "parameters": [
           {
@@ -4159,7 +4159,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4174,7 +4174,7 @@
         "tags": [
           "SalesOpportunitySourcesSetup"
         ],
-        "summary": "Partially update a SalesOpportunitySourceSetup (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesOpportunitySourceSetup (PATCH/MERGE semantics)",
         "operationId": "Update_SalesOpportunitySourcesSetup",
         "parameters": [
           {
@@ -4205,7 +4205,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4222,7 +4222,7 @@
         "tags": [
           "SalesOpportunitySourcesSetupService"
         ],
-        "summary": "Get sales opportunity source setup list.",
+        "summary": "Get sales opportunity source setup list",
         "operationId": "SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList",
         "responses": {
           "200": {
@@ -4243,13 +4243,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `SalesOpportunitySourcesSetupService_GetSalesOpportunitySourceSetupList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4266,7 +4266,7 @@
         "tags": [
           "SalesStages"
         ],
-        "summary": "Query the SalesStages collection.",
+        "summary": "Query the SalesStages collection",
         "operationId": "List_SalesStages",
         "parameters": [
           {
@@ -4306,7 +4306,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4321,7 +4321,7 @@
         "tags": [
           "SalesStages"
         ],
-        "summary": "Create a new SalesStage.",
+        "summary": "Create a new SalesStage",
         "operationId": "Create_SalesStages",
         "requestBody": {
           "content": {
@@ -4345,7 +4345,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4362,7 +4362,7 @@
         "tags": [
           "SalesStages"
         ],
-        "summary": "Get a single SalesStage by key.",
+        "summary": "Get a single SalesStage by key",
         "operationId": "Get_SalesStages",
         "parameters": [
           {
@@ -4396,7 +4396,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4406,7 +4406,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4421,7 +4421,7 @@
         "tags": [
           "SalesStages"
         ],
-        "summary": "Delete a SalesStage.",
+        "summary": "Delete a SalesStage",
         "operationId": "Delete_SalesStages",
         "parameters": [
           {
@@ -4442,7 +4442,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4457,7 +4457,7 @@
         "tags": [
           "SalesStages"
         ],
-        "summary": "Partially update a SalesStage (PATCH/MERGE semantics).",
+        "summary": "Partially update a SalesStage (PATCH/MERGE semantics)",
         "operationId": "Update_SalesStages",
         "parameters": [
           {
@@ -4488,7 +4488,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4505,7 +4505,7 @@
         "tags": [
           "TargetGroups"
         ],
-        "summary": "Query the TargetGroups collection.",
+        "summary": "Query the TargetGroups collection",
         "operationId": "List_TargetGroups",
         "parameters": [
           {
@@ -4545,7 +4545,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4560,7 +4560,7 @@
         "tags": [
           "TargetGroups"
         ],
-        "summary": "Create a new TargetGroup.",
+        "summary": "Create a new TargetGroup",
         "operationId": "Create_TargetGroups",
         "requestBody": {
           "content": {
@@ -4584,7 +4584,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4601,7 +4601,7 @@
         "tags": [
           "TargetGroups"
         ],
-        "summary": "Get a single TargetGroup by key.",
+        "summary": "Get a single TargetGroup by key",
         "operationId": "Get_TargetGroups",
         "parameters": [
           {
@@ -4634,7 +4634,7 @@
             }
           },
           "404": {
-            "description": "Entity not found.",
+            "description": "Entity not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -4644,7 +4644,7 @@
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4659,7 +4659,7 @@
         "tags": [
           "TargetGroups"
         ],
-        "summary": "Delete a TargetGroup.",
+        "summary": "Delete a TargetGroup",
         "operationId": "Delete_TargetGroups",
         "parameters": [
           {
@@ -4679,7 +4679,7 @@
             "description": "Deleted. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4694,7 +4694,7 @@
         "tags": [
           "TargetGroups"
         ],
-        "summary": "Partially update a TargetGroup (PATCH/MERGE semantics).",
+        "summary": "Partially update a TargetGroup (PATCH/MERGE semantics)",
         "operationId": "Update_TargetGroups",
         "parameters": [
           {
@@ -4724,7 +4724,7 @@
             "description": "Updated. No content returned"
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4741,7 +4741,7 @@
         "tags": [
           "TargetGroupsService"
         ],
-        "summary": "Get list.",
+        "summary": "Get list",
         "operationId": "TargetGroupsService_GetList",
         "responses": {
           "200": {
@@ -4762,13 +4762,13 @@
                       }
                     }
                   },
-                  "description": "Represents the response payload for the `TargetGroupsService_GetList` operation of the SAP Business One Service Layer."
+                  "description": "Represents the response payload for the `TargetGroupsService_GetList` operation of the SAP Business One Service Layer"
                 }
               }
             }
           },
           "default": {
-            "description": "Service Layer error.",
+            "description": "Service Layer error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4815,7 +4815,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunitiesPartner` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitiesPartner` complex type of the SAP Business One Service Layer"
       },
       "CampaignResponseTypeCollectionResponse": {
         "type": "object",
@@ -4835,7 +4835,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `CampaignResponseType` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `CampaignResponseType` entities returned by the SAP Business One Service Layer"
       },
       "CampaignPartner": {
         "type": "object",
@@ -4864,7 +4864,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CampaignPartner` complex type of the SAP Business One Service Layer."
+        "description": "The `CampaignPartner` complex type of the SAP Business One Service Layer"
       },
       "ActivityParams": {
         "type": "object",
@@ -5001,7 +5001,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityParams` complex type of the SAP Business One Service Layer"
       },
       "CampaignParams": {
         "type": "object",
@@ -5017,7 +5017,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CampaignParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CampaignParams` complex type of the SAP Business One Service Layer"
       },
       "Activity": {
         "type": "object",
@@ -5307,7 +5307,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Activity` entity of the SAP Business One Service Layer."
+        "description": "The `Activity` entity of the SAP Business One Service Layer"
       },
       "CampaignTypeEnum": {
         "type": "string",
@@ -5337,7 +5337,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivitySubjectParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivitySubjectParams` complex type of the SAP Business One Service Layer"
       },
       "BoYesNoEnum": {
         "type": "string",
@@ -5390,7 +5390,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TargetGroup` entity of the SAP Business One Service Layer."
+        "description": "The `TargetGroup` entity of the SAP Business One Service Layer"
       },
       "ActivityLocation": {
         "type": "object",
@@ -5410,7 +5410,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ActivityLocation` entity of the SAP Business One Service Layer."
+        "description": "The `ActivityLocation` entity of the SAP Business One Service Layer"
       },
       "ActivityRecipientObjTypeEnum": {
         "type": "string",
@@ -5444,7 +5444,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityInstancesListParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityInstancesListParams` complex type of the SAP Business One Service Layer"
       },
       "PartnersSetupParams": {
         "type": "object",
@@ -5473,7 +5473,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PartnersSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `PartnersSetupParams` complex type of the SAP Business One Service Layer"
       },
       "RecurrenceSequenceEnum": {
         "type": "string",
@@ -5508,7 +5508,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityCompetitorSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityCompetitorSetupParams` complex type of the SAP Business One Service Layer"
       },
       "ThreatLevelEnum": {
         "type": "string",
@@ -5537,7 +5537,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesOpportunityReasonsSetup` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesOpportunityReasonsSetup` entities returned by the SAP Business One Service Layer"
       },
       "SalesOpportunitiesInterest": {
         "type": "object",
@@ -5559,7 +5559,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunitiesInterest` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitiesInterest` complex type of the SAP Business One Service Layer"
       },
       "CampaignBusinessPartner": {
         "type": "object",
@@ -5698,7 +5698,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CampaignBusinessPartner` complex type of the SAP Business One Service Layer."
+        "description": "The `CampaignBusinessPartner` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunitiesCompetitionItem": {
         "type": "object",
@@ -5726,7 +5726,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunitiesCompetitionItem` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitiesCompetitionItem` complex type of the SAP Business One Service Layer"
       },
       "SalesStagesCollectionResponse": {
         "type": "object",
@@ -5746,7 +5746,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesStages` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesStages` entities returned by the SAP Business One Service Layer"
       },
       "ActivityRecipientListsCollectionResponse": {
         "type": "object",
@@ -5766,7 +5766,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ActivityRecipientLists` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ActivityRecipientLists` entities returned by the SAP Business One Service Layer"
       },
       "BoMsgPriorities": {
         "type": "string",
@@ -5803,7 +5803,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ActivityLocations` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ActivityLocations` entities returned by the SAP Business One Service Layer"
       },
       "BoSoOsStatus": {
         "type": "string",
@@ -5840,7 +5840,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityCompetitorSetup` entity of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityCompetitorSetup` entity of the SAP Business One Service Layer"
       },
       "SalesOpportunitySourceSetupParams": {
         "type": "object",
@@ -5856,7 +5856,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunitySourceSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitySourceSetupParams` complex type of the SAP Business One Service Layer"
       },
       "RecipientTypeEnum": {
         "type": "string",
@@ -5881,7 +5881,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityInstanceParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityInstanceParams` complex type of the SAP Business One Service Layer"
       },
       "Campaign": {
         "type": "object",
@@ -5950,7 +5950,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `Campaign` entity of the SAP Business One Service Layer."
+        "description": "The `Campaign` entity of the SAP Business One Service Layer"
       },
       "CampaignResponseTypeParams": {
         "type": "object",
@@ -5973,7 +5973,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CampaignResponseTypeParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CampaignResponseTypeParams` complex type of the SAP Business One Service Layer"
       },
       "ActivityMultipleRecipient": {
         "type": "object",
@@ -5990,7 +5990,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ActivityMultipleRecipient` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityMultipleRecipient` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunityInterestsSetupCollectionResponse": {
         "type": "object",
@@ -6010,7 +6010,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesOpportunityInterestsSetup` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesOpportunityInterestsSetup` entities returned by the SAP Business One Service Layer"
       },
       "ActivityRecipientList": {
         "type": "object",
@@ -6056,7 +6056,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityRecipientList` entity of the SAP Business One Service Layer."
+        "description": "The `ActivityRecipientList` entity of the SAP Business One Service Layer"
       },
       "BoAPARDocumentTypes": {
         "type": "string",
@@ -6166,7 +6166,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunitiesLine` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitiesLine` complex type of the SAP Business One Service Layer"
       },
       "ActivityStatus": {
         "type": "object",
@@ -6189,7 +6189,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ActivityStatus` entity of the SAP Business One Service Layer."
+        "description": "The `ActivityStatus` entity of the SAP Business One Service Layer"
       },
       "SalesOpportunities": {
         "type": "object",
@@ -6416,7 +6416,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunities` entity of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunities` entity of the SAP Business One Service Layer"
       },
       "RecurrencePatternEnum": {
         "type": "string",
@@ -6535,7 +6535,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TargetGroupsDetail` complex type of the SAP Business One Service Layer."
+        "description": "The `TargetGroupsDetail` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunityReasonSetupParams": {
         "type": "object",
@@ -6551,7 +6551,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityReasonSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityReasonSetupParams` complex type of the SAP Business One Service Layer"
       },
       "CampaignItemTypeEnum": {
         "type": "string",
@@ -6589,7 +6589,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `PartnersSetup` entity of the SAP Business One Service Layer."
+        "description": "The `PartnersSetup` entity of the SAP Business One Service Layer"
       },
       "TargetGroupParams": {
         "type": "object",
@@ -6604,7 +6604,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `TargetGroupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `TargetGroupParams` complex type of the SAP Business One Service Layer"
       },
       "CampaignResponseType": {
         "type": "object",
@@ -6627,7 +6627,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CampaignResponseType` entity of the SAP Business One Service Layer."
+        "description": "The `CampaignResponseType` entity of the SAP Business One Service Layer"
       },
       "ActivitySubjectsCollectionResponse": {
         "type": "object",
@@ -6647,7 +6647,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ActivitySubjects` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ActivitySubjects` entities returned by the SAP Business One Service Layer"
       },
       "BoSoStatus": {
         "type": "string",
@@ -6687,7 +6687,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityRecipientListParams` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityRecipientListParams` complex type of the SAP Business One Service Layer"
       },
       "BoActivities": {
         "type": "string",
@@ -6716,7 +6716,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityInterestSetupParams` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityInterestSetupParams` complex type of the SAP Business One Service Layer"
       },
       "ActivityStatusesCollectionResponse": {
         "type": "object",
@@ -6736,7 +6736,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ActivityStatuses` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ActivityStatuses` entities returned by the SAP Business One Service Layer"
       },
       "ActivitiesCollectionResponse": {
         "type": "object",
@@ -6756,7 +6756,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Activities` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Activities` entities returned by the SAP Business One Service Layer"
       },
       "RecurrenceDayOfWeekEnum": {
         "type": "string",
@@ -6800,7 +6800,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityReasonSetup` entity of the SAP Business One Service Layer"
       },
       "ActivityTypesCollectionResponse": {
         "type": "object",
@@ -6820,7 +6820,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `ActivityTypes` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `ActivityTypes` entities returned by the SAP Business One Service Layer"
       },
       "CampaignStatusEnum": {
         "type": "string",
@@ -6878,7 +6878,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesStage` entity of the SAP Business One Service Layer."
+        "description": "The `SalesStage` entity of the SAP Business One Service Layer"
       },
       "SalesOpportunitiesCollectionResponse": {
         "type": "object",
@@ -6898,7 +6898,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesOpportunities` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesOpportunities` entities returned by the SAP Business One Service Layer"
       },
       "ActivityType": {
         "type": "object",
@@ -6924,7 +6924,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `ActivityType` entity of the SAP Business One Service Layer."
+        "description": "The `ActivityType` entity of the SAP Business One Service Layer"
       },
       "ServiceLayerError": {
         "type": "object",
@@ -6950,7 +6950,7 @@
             }
           }
         },
-        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer."
+        "description": "Represents the `ServiceLayerError` type of the SAP Business One Service Layer"
       },
       "CampaignsCollectionResponse": {
         "type": "object",
@@ -6970,7 +6970,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `Campaigns` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `Campaigns` entities returned by the SAP Business One Service Layer"
       },
       "PartnersSetupsCollectionResponse": {
         "type": "object",
@@ -6990,7 +6990,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `PartnersSetups` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `PartnersSetups` entities returned by the SAP Business One Service Layer"
       },
       "SalesOpportunityCompetitorsSetupCollectionResponse": {
         "type": "object",
@@ -7010,7 +7010,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesOpportunityCompetitorsSetup` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesOpportunityCompetitorsSetup` entities returned by the SAP Business One Service Layer"
       },
       "SalesOpportunityInterestSetup": {
         "type": "object",
@@ -7038,7 +7038,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunityInterestSetup` entity of the SAP Business One Service Layer"
       },
       "ActivitySubject": {
         "type": "object",
@@ -7082,7 +7082,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivitySubject` entity of the SAP Business One Service Layer."
+        "description": "The `ActivitySubject` entity of the SAP Business One Service Layer"
       },
       "ActivityRecipient": {
         "type": "object",
@@ -7106,7 +7106,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `ActivityRecipient` complex type of the SAP Business One Service Layer."
+        "description": "The `ActivityRecipient` complex type of the SAP Business One Service Layer"
       },
       "CampaignItem": {
         "type": "object",
@@ -7133,7 +7133,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `CampaignItem` complex type of the SAP Business One Service Layer."
+        "description": "The `CampaignItem` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunitiesReason": {
         "type": "object",
@@ -7152,7 +7152,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "The `SalesOpportunitiesReason` complex type of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitiesReason` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunitySourcesSetupCollectionResponse": {
         "type": "object",
@@ -7172,7 +7172,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `SalesOpportunitySourcesSetup` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `SalesOpportunitySourcesSetup` entities returned by the SAP Business One Service Layer"
       },
       "BoDurations": {
         "type": "string",
@@ -7237,7 +7237,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `CheckInParams` complex type of the SAP Business One Service Layer."
+        "description": "The `CheckInParams` complex type of the SAP Business One Service Layer"
       },
       "SalesOpportunitySourceSetup": {
         "type": "object",
@@ -7265,7 +7265,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer."
+        "description": "The `SalesOpportunitySourceSetup` entity of the SAP Business One Service Layer"
       },
       "BoSoClosedInTypes": {
         "type": "string",
@@ -7310,7 +7310,7 @@
             "x-ballerina-name": "odataNextLink"
           }
         },
-        "description": "A paged collection of `TargetGroups` entities returned by the SAP Business One Service Layer."
+        "description": "A paged collection of `TargetGroups` entities returned by the SAP Business One Service Layer"
       }
     },
     "parameters": {
@@ -7420,7 +7420,7 @@
     "securitySchemes": {
       "B1Session": {
         "type": "apiKey",
-        "description": "Session cookie returned by POST /Login.",
+        "description": "Session cookie returned by POST /Login",
         "name": "B1SESSION",
         "in": "cookie",
         "x-ballerina-name": "b1SESSION"

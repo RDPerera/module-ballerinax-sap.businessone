@@ -20,7 +20,7 @@
 import ballerina/data.jsondata;
 import ballerina/http;
 
-# A paged collection of `ResourceCapacities` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ResourceCapacities` entities returned by the SAP Business One Service Layer
 public type ResourceCapacitiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -52,7 +52,7 @@ public type GetResourcesQueries record {
     string dollarSelect?;
 };
 
-# The `ProductTree` entity of the SAP Business One Service Layer.
+# The `ProductTree` entity of the SAP Business One Service Layer
 public type ProductTree record {
     string TreeCode?;
     # OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name
@@ -76,7 +76,7 @@ public type ProductTree record {
     ProductionOrder[] ProductionOrders?;
 };
 
-# A paged collection of `SalesForecast` entities returned by the SAP Business One Service Layer.
+# A paged collection of `SalesForecast` entities returned by the SAP Business One Service Layer
 public type SalesForecastCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -104,7 +104,7 @@ public type GetProductionOrdersQueries record {
 # OData EnumType 'BoUpdateAllocationEnum'. Serialised by the Service Layer as the member name
 public type BoUpdateAllocationEnum "bouaManual"|"bouaCalculated"|"bouaRunCalculation";
 
-# Represents the request payload for the `RoutingDateCalculationService_Calculate` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `RoutingDateCalculationService_Calculate` operation of the SAP Business One Service Layer
 public type RoutingDateCalculationService_Calculate_body record {
     @jsondata:Name {value: "RoutingDateCalculationInput"}
     RoutingDateCalculationInput routingDateCalculationInput?;
@@ -163,7 +163,7 @@ public type ListResourceGroupsQueries record {
     string dollarSelect?;
 };
 
-# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
+# Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint
 @display {label: "Connection Config"}
 public type ConnectionConfig record {|
     # The HTTP version understood by the client
@@ -201,11 +201,11 @@ public type ConnectionConfig record {|
     # Enables the inbound payload validation functionality which provided by the constraint package. Enabled by default
     boolean validation = true;
     # Enables relaxed data binding on the client side. When enabled, `nil` values are treated as optional, 
-    # and absent fields are handled as `nilable` types. Enabled by default.
+    # and absent fields are handled as `nilable` types. Enabled by default
     boolean laxDataBinding = true;
 |};
 
-# The `ProductionOrder` entity of the SAP Business One Service Layer.
+# The `ProductionOrder` entity of the SAP Business One Service Layer
 public type ProductionOrder record {
     int:Signed32 AbsoluteEntry?;
     int:Signed32 DocumentNumber?;
@@ -257,7 +257,7 @@ public type ProductionOrder record {
     ProductionOrdersSalesOrderLine[] ProductionOrdersSalesOrderLines?;
     ProductionOrdersStage[] ProductionOrdersStages?;
     ProductionOrdersDocumentReference[] ProductionOrdersDocumentReferences?;
-    # The `ProductTree` entity of the SAP Business One Service Layer.
+    # The `ProductTree` entity of the SAP Business One Service Layer
     ProductTree ProductTree?;
 };
 
@@ -268,14 +268,14 @@ public type ListResourcesHeaders record {
     string prefer?;
 };
 
-# Represents the response payload for the `RouteStagesService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `RouteStagesService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_5 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     RouteStageParams[] value?;
 };
 
-# The `RoutingDateCalculationOutput` complex type of the SAP Business One Service Layer.
+# The `RoutingDateCalculationOutput` complex type of the SAP Business One Service Layer
 public type RoutingDateCalculationOutput record {|
     @jsondata:Name {value: "Proportion"}
     decimal proportion?;
@@ -283,7 +283,7 @@ public type RoutingDateCalculationOutput record {|
     string resultDate?;
 |};
 
-# The `BatchNumber` complex type of the SAP Business One Service Layer.
+# The `BatchNumber` complex type of the SAP Business One Service Layer
 public type BatchNumber record {
     string BatchNumber?;
     string ManufacturerSerialNumber?;
@@ -301,7 +301,7 @@ public type BatchNumber record {
     int:Signed32 SystemSerialNumber?;
 };
 
-# The `Resource` entity of the SAP Business One Service Layer.
+# The `Resource` entity of the SAP Business One Service Layer
 public type Resource record {
     string Code?;
     string VisCode?;
@@ -486,14 +486,14 @@ public type Resource record {
     ResourceEmployee[] ResourceEmployees?;
     ResourceDailyCapacity[] ResourceDailyCapacities?;
     ResourceCapacity[] ResourceCapacities?;
-    # The `ResourceGroup` entity of the SAP Business One Service Layer.
+    # The `ResourceGroup` entity of the SAP Business One Service Layer
     ResourceGroup ResourceGroup?;
 };
 
 # OData EnumType 'ProductionItemType'. Serialised by the Service Layer as the member name
 public type ProductionItemType "pit_Item"|"pit_Resource"|"pit_Text";
 
-# The `ResourceFixedAsset` complex type of the SAP Business One Service Layer.
+# The `ResourceFixedAsset` complex type of the SAP Business One Service Layer
 public type ResourceFixedAsset record {|
     @jsondata:Name {value: "ItemCode"}
     string itemCode?;
@@ -501,7 +501,7 @@ public type ResourceFixedAsset record {|
     string code?;
 |};
 
-# A paged collection of `ProductionOrders` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ProductionOrders` entities returned by the SAP Business One Service Layer
 public type ProductionOrdersCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -510,7 +510,7 @@ public type ProductionOrdersCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `ResourceGroupParams` complex type of the SAP Business One Service Layer.
+# The `ResourceGroupParams` complex type of the SAP Business One Service Layer
 public type ResourceGroupParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -543,7 +543,7 @@ public type ListSalesForecastQueries record {
     string dollarSelect?;
 };
 
-# The `ResourcePropertyParams` complex type of the SAP Business One Service Layer.
+# The `ResourcePropertyParams` complex type of the SAP Business One Service Layer
 public type ResourcePropertyParams record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -551,7 +551,7 @@ public type ResourcePropertyParams record {|
     string name?;
 |};
 
-# The `SalesForecast` entity of the SAP Business One Service Layer.
+# The `SalesForecast` entity of the SAP Business One Service Layer
 public type SalesForecast record {
     string ForecastStartDate?;
     string ForecastEndDate?;
@@ -563,7 +563,7 @@ public type SalesForecast record {
     SalesForecastLine[] SalesForecastLines?;
 };
 
-# The `ResourceCapacityParams` complex type of the SAP Business One Service Layer.
+# The `ResourceCapacityParams` complex type of the SAP Business One Service Layer
 public type ResourceCapacityParams record {|
     @jsondata:Name {value: "RevertedEntry"}
     int:Signed32 revertedEntry?;
@@ -622,7 +622,7 @@ public type ListSalesForecastHeaders record {
     string prefer?;
 };
 
-# The `RouteStageParams` complex type of the SAP Business One Service Layer.
+# The `RouteStageParams` complex type of the SAP Business One Service Layer
 public type RouteStageParams record {|
     @jsondata:Name {value: "CreationDate"}
     string creationDate?;
@@ -641,7 +641,7 @@ public type RouteStageParams record {|
 # OData EnumType 'BoProductionOrderStatusEnum'. Serialised by the Service Layer as the member name
 public type BoProductionOrderStatusEnum "boposPlanned"|"boposReleased"|"boposClosed"|"boposCancelled";
 
-# The `SerialNumber` complex type of the SAP Business One Service Layer.
+# The `SerialNumber` complex type of the SAP Business One Service Layer
 public type SerialNumber record {
     string ManufacturerSerialNumber?;
     string InternalSerialNumber?;
@@ -661,7 +661,7 @@ public type SerialNumber record {
     string ItemCode?;
 };
 
-# The `ProductionOrdersStage` complex type of the SAP Business One Service Layer.
+# The `ProductionOrdersStage` complex type of the SAP Business One Service Layer
 public type ProductionOrdersStage record {
     int:Signed32 DocEntry?;
     int:Signed32 StageID?;
@@ -678,28 +678,28 @@ public type ProductionOrdersStage record {
 # OData EnumType 'ResourceCapacityBaseTypeEnum'. Serialised by the Service Layer as the member name
 public type ResourceCapacityBaseTypeEnum "rcbtNone"|"rcbtProductionOrder";
 
-# Represents the response payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer
 public type inline_response_200_1 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ResourceCapacityParams[] value?;
 };
 
-# Represents the response payload for the `ResourceGroupsService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ResourceGroupsService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_2 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ResourceGroupParams[] value?;
 };
 
-# Represents the response payload for the `ResourcePropertiesService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ResourcePropertiesService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_3 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ResourcePropertyParams[] value?;
 };
 
-# The `ProductionOrdersDocumentReference` complex type of the SAP Business One Service Layer.
+# The `ProductionOrdersDocumentReference` complex type of the SAP Business One Service Layer
 public type ProductionOrdersDocumentReference record {
     int:Signed32 DocEntry?;
     int:Signed32 LineNumber?;
@@ -712,14 +712,14 @@ public type ProductionOrdersDocumentReference record {
     string Remark?;
 };
 
-# Represents the response payload for the `ResourcesService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ResourcesService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200_4 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ResourceParams[] value?;
 };
 
-# The `RoutingDateCalculationInput` complex type of the SAP Business One Service Layer.
+# The `RoutingDateCalculationInput` complex type of the SAP Business One Service Layer
 public type RoutingDateCalculationInput record {|
     @jsondata:Name {value: "CapacitySum"}
     decimal capacitySum?;
@@ -742,7 +742,7 @@ public type RoutingDateCalculationInput record {|
 |};
 
 
-# A paged collection of `RouteStages` entities returned by the SAP Business One Service Layer.
+# A paged collection of `RouteStages` entities returned by the SAP Business One Service Layer
 public type RouteStagesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -761,7 +761,7 @@ public type GetResourceCapacitiesQueries record {
     string dollarSelect?;
 };
 
-# The `RouteStage` entity of the SAP Business One Service Layer.
+# The `RouteStage` entity of the SAP Business One Service Layer
 public type RouteStage record {|
     @jsondata:Name {value: "CreationDate"}
     string creationDate?;
@@ -777,7 +777,7 @@ public type RouteStage record {|
     string code?;
 |};
 
-# The `ResourceDailyCapacity` complex type of the SAP Business One Service Layer.
+# The `ResourceDailyCapacity` complex type of the SAP Business One Service Layer
 public type ResourceDailyCapacity record {|
     @jsondata:Name {value: "Factor2"}
     decimal factor2?;
@@ -805,7 +805,7 @@ public type BoIssueMethod "im_Backflush"|"im_Manual";
 # OData EnumType 'ResourceCapacityRevertedTypeEnum'. Serialised by the Service Layer as the member name
 public type ResourceCapacityRevertedTypeEnum "rcrtNone"|"rcrtIssueForProduction";
 
-# The `ProductionOrdersSalesOrderLine` complex type of the SAP Business One Service Layer.
+# The `ProductionOrdersSalesOrderLine` complex type of the SAP Business One Service Layer
 public type ProductionOrdersSalesOrderLine record {
     int:Signed32 DocEntry?;
     int:Signed32 BaseNumber?;
@@ -813,13 +813,13 @@ public type ProductionOrdersSalesOrderLine record {
     int:Signed32 BaseLine?;
 };
 
-# Represents the request payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer.
+# Represents the request payload for the `ResourceCapacitiesService_GetListWithFilter` operation of the SAP Business One Service Layer
 public type ResourceCapacitiesService_GetListWithFilter_body record {
     @jsondata:Name {value: "ResourceCapacityWithFilterParams"}
     ResourceCapacityWithFilterParams resourceCapacityWithFilterParams?;
 };
 
-# The `ProductTreeStage` complex type of the SAP Business One Service Layer.
+# The `ProductTreeStage` complex type of the SAP Business One Service Layer
 public type ProductTreeStage record {
     string Father?;
     int:Signed32 StageID?;
@@ -849,7 +849,7 @@ public type GetResourcePropertiesQueries record {
     string dollarSelect?;
 };
 
-# The `ProductTreeLine` complex type of the SAP Business One Service Layer.
+# The `ProductTreeLine` complex type of the SAP Business One Service Layer
 public type ProductTreeLine record {
     string ItemCode?;
     decimal Quantity?;
@@ -879,7 +879,7 @@ public type ProductTreeLine record {
     string ItemName?;
 };
 
-# The `ResourceWarehouse` complex type of the SAP Business One Service Layer.
+# The `ResourceWarehouse` complex type of the SAP Business One Service Layer
 public type ResourceWarehouse record {
     string Code?;
     string Warehouse?;
@@ -890,7 +890,7 @@ public type ResourceWarehouse record {
 # OData EnumType 'ResourceCapacityActionEnum'. Serialised by the Service Layer as the member name
 public type ResourceCapacityActionEnum "rcaUnknown"|"rcaProductionOrderCreate"|"rcaProductionOrderClose"|"rcaProductionOrderReschedule"|"rcaProductionOrderAddLine"|"rcaProductionOrderDeleteLine"|"rcaProductionOrderUpdateLine"|"rcaIssueForProductionCreate"|"rcaReceiptFromProductionCreate";
 
-# The `SalesForecastLine` complex type of the SAP Business One Service Layer.
+# The `SalesForecastLine` complex type of the SAP Business One Service Layer
 public type SalesForecastLine record {
     decimal Quantity?;
     string ForecastedDay?;
@@ -928,14 +928,14 @@ public type GetResourceGroupsQueries record {
     string dollarSelect?;
 };
 
-# Represents the response payload for the `ResourceCapacitiesService_GetList` operation of the SAP Business One Service Layer.
+# Represents the response payload for the `ResourceCapacitiesService_GetList` operation of the SAP Business One Service Layer
 public type inline_response_200 record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
     ResourceCapacityParams[] value?;
 };
 
-# The `ResourceEmployee` complex type of the SAP Business One Service Layer.
+# The `ResourceEmployee` complex type of the SAP Business One Service Layer
 public type ResourceEmployee record {|
     @jsondata:Name {value: "Employee"}
     string employee?;
@@ -971,7 +971,7 @@ public type ListResourcesQueries record {
 # OData EnumType 'ReferencedObjectTypeEnum'. Serialised by the Service Layer as the member name
 public type ReferencedObjectTypeEnum "rot_ExternalDocument"|"rot_SalesQuotation"|"rot_SalesOrder"|"rot_DeliveryNotes"|"rot_ReturnRequest"|"rot_Return"|"rot_DownPaymentIncoming"|"rot_SalesInvoice"|"rot_SalesCreditNote"|"rot_CorrectionSalesInvoice"|"rot_SalesTaxInvoice"|"rot_PurchaseQuotation"|"rot_PurchaseOrder"|"rot_GoodsReceiptPO"|"rot_GoodsReturnRequest"|"rot_GoodsReturn"|"rot_DownPaymentOutgoing"|"rot_PurchaseInvoice"|"rot_PurchaseCreditNote"|"rot_CorrectionPurchaseInvoice"|"rot_PurchaseTaxInvoice"|"rot_LandedCosts"|"rot_IncomingPayments"|"rot_JournalEntry"|"rot_ProductionOrder"|"rot_InternalReconciliation"|"rot_OriginalInvoice"|"rot_OriginalARDownPayment"|"rot_PurchaseRequest"|"rot_GoodsReceipt"|"rot_GoodsIssue"|"rot_InventoryTransferRequest"|"rot_InventoryTransfer"|"rot_ChecksforPayment"|"rot_MaterialRevaluation"|"rot_InventoryCounting"|"rot_InventoryPosting"|"rot_OutgoingPayments";
 
-# The `ResourceGroup` entity of the SAP Business One Service Layer.
+# The `ResourceGroup` entity of the SAP Business One Service Layer
 public type ResourceGroup record {|
     @jsondata:Name {value: "Cost1"}
     decimal cost1?;
@@ -1042,7 +1042,7 @@ public type ListProductTreesHeaders record {
     string prefer?;
 };
 
-# The `ResourceParams` complex type of the SAP Business One Service Layer.
+# The `ResourceParams` complex type of the SAP Business One Service Layer
 public type ResourceParams record {|
     @jsondata:Name {value: "Code"}
     string code?;
@@ -1051,7 +1051,7 @@ public type ResourceParams record {|
 # OData EnumType 'BoItemTreeTypes'. Serialised by the Service Layer as the member name
 public type BoItemTreeTypes "iNotATree"|"iAssemblyTree"|"iSalesTree"|"iProductionTree"|"iTemplateTree"|"iIngredient";
 
-# A paged collection of `ResourceProperties` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ResourceProperties` entities returned by the SAP Business One Service Layer
 public type ResourcePropertiesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1092,7 +1092,7 @@ public type ListProductTreesQueries record {
     string dollarSelect?;
 };
 
-# The `ProductionOrderLine` complex type of the SAP Business One Service Layer.
+# The `ProductionOrderLine` complex type of the SAP Business One Service Layer
 public type ProductionOrderLine record {
     int:Signed32 DocumentAbsoluteEntry?;
     int:Signed32 LineNumber?;
@@ -1197,7 +1197,7 @@ public type ListResourceCapacitiesHeaders record {
     string prefer?;
 };
 
-# A paged collection of `ProductTrees` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ProductTrees` entities returned by the SAP Business One Service Layer
 public type ProductTreesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1231,7 +1231,7 @@ public type ListResourceCapacitiesQueries record {
     string dollarSelect?;
 };
 
-# The `ResourceCapacity` entity of the SAP Business One Service Layer.
+# The `ResourceCapacity` entity of the SAP Business One Service Layer
 public type ResourceCapacity record {|
     @jsondata:Name {value: "Warehouse"}
     string warehouse?;
@@ -1285,7 +1285,7 @@ public type ResourceCapacity record {|
     string memo?;
 |};
 
-# The `ResourceProperty` entity of the SAP Business One Service Layer.
+# The `ResourceProperty` entity of the SAP Business One Service Layer
 public type ResourceProperty record {|
     @jsondata:Name {value: "Code"}
     int:Signed32 code?;
@@ -1303,7 +1303,7 @@ public type GetRouteStagesQueries record {
     string dollarSelect?;
 };
 
-# A paged collection of `Resources` entities returned by the SAP Business One Service Layer.
+# A paged collection of `Resources` entities returned by the SAP Business One Service Layer
 public type ResourcesCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;
@@ -1312,7 +1312,7 @@ public type ResourcesCollectionResponse record {
     string odataNextLink?;
 };
 
-# The `ResourceCapacityWithFilterParams` complex type of the SAP Business One Service Layer.
+# The `ResourceCapacityWithFilterParams` complex type of the SAP Business One Service Layer
 public type ResourceCapacityWithFilterParams record {|
     @jsondata:Name {value: "Warehouse"}
     string warehouse?;
@@ -1327,7 +1327,7 @@ public type ResourceCapacityWithFilterParams record {|
 # OData EnumType 'BoProductionOrderTypeEnum'. Serialised by the Service Layer as the member name
 public type BoProductionOrderTypeEnum "bopotStandard"|"bopotSpecial"|"bopotDisassembly";
 
-# A paged collection of `ResourceGroups` entities returned by the SAP Business One Service Layer.
+# A paged collection of `ResourceGroups` entities returned by the SAP Business One Service Layer
 public type ResourceGroupsCollectionResponse record {
     @jsondata:Name {value: "odata.metadata"}
     string odataMetadata?;

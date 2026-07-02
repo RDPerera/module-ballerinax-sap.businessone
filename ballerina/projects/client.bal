@@ -21,14 +21,14 @@ import ballerina/data.jsondata;
 import ballerina/http;
 import ballerinax/sap.businessone;
 
-# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').
+# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1')
 # 
-# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.
+# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session
 # 
-# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.
+# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging
 public isolated client class Client {
     final businessone:Client clientEp;
-    # Gets invoked to initialize the `connector`.
+    # Gets invoked to initialize the `connector`
     #
     # + session - SAP Business One Service Layer session credentials 
     # + config - The configurations to be used when initializing the `connector` 
@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Query the ExpenseTypes collection.
+    # Query the ExpenseTypes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -51,7 +51,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ExpenseTypeData.
+    # Create a new ExpenseTypeData
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -64,7 +64,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ExpenseTypeData by key.
+    # Get a single ExpenseTypeData by key
     #
     # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -76,7 +76,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ExpenseTypeData.
+    # Delete a ExpenseTypeData
     #
     # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -86,7 +86,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ExpenseTypeData (PATCH/MERGE semantics).
+    # Partially update a ExpenseTypeData (PATCH/MERGE semantics)
     #
     # + expenseType - Key property 'ExpenseType' (Edm.String)
     # + payload - Request payload 
@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Add activities.
+    # Add activities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -113,7 +113,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add areas.
+    # Add areas
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -126,7 +126,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add priorities.
+    # Add priorities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -139,7 +139,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add stage types.
+    # Add stage types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -152,7 +152,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add subproject types.
+    # Add subproject types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -165,7 +165,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add tasks.
+    # Add tasks
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -178,7 +178,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete activities.
+    # Delete activities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -191,7 +191,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete areas.
+    # Delete areas
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -204,7 +204,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete priorities.
+    # Delete priorities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -217,7 +217,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete stage types.
+    # Delete stage types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -230,7 +230,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete subproject types.
+    # Delete subproject types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -243,7 +243,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete tasks.
+    # Delete tasks
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -256,7 +256,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get activities.
+    # Get activities
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -266,7 +266,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get areas.
+    # Get areas
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -276,7 +276,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get priorities.
+    # Get priorities
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -286,7 +286,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get stage types.
+    # Get stage types
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -296,7 +296,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get subproject types.
+    # Get subproject types
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -306,7 +306,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get tasks.
+    # Get tasks
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -316,7 +316,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update activities.
+    # Update activities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -329,7 +329,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update areas.
+    # Update areas
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -342,7 +342,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update priorities.
+    # Update priorities
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -355,7 +355,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update stage types.
+    # Update stage types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -368,7 +368,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update subproject types.
+    # Update subproject types
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -381,7 +381,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update tasks.
+    # Update tasks
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -394,7 +394,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Add subproject.
+    # Add subproject
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -407,7 +407,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Delete subproject.
+    # Delete subproject
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -420,7 +420,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get subproject.
+    # Get subproject
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -433,7 +433,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get subprojects list.
+    # Get subprojects list
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -446,7 +446,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Update subproject.
+    # Update subproject
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -459,7 +459,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ProjectManagementTimeSheet collection.
+    # Query the ProjectManagementTimeSheet collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -471,7 +471,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PM_TimeSheetData.
+    # Create a new PM_TimeSheetData
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -484,7 +484,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PM_TimeSheetData by key.
+    # Get a single PM_TimeSheetData by key
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -496,7 +496,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PM_TimeSheetData.
+    # Delete a PM_TimeSheetData
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -506,7 +506,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PM_TimeSheetData (PATCH/MERGE semantics).
+    # Partially update a PM_TimeSheetData (PATCH/MERGE semantics)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -520,7 +520,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the ProjectManagements collection.
+    # Query the ProjectManagements collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -532,7 +532,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PM_ProjectDocumentData.
+    # Create a new PM_ProjectDocumentData
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -545,7 +545,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PM_ProjectDocumentData by key.
+    # Get a single PM_ProjectDocumentData by key
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -557,7 +557,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PM_ProjectDocumentData.
+    # Delete a PM_ProjectDocumentData
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -567,7 +567,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics).
+    # Partially update a PM_ProjectDocumentData (PATCH/MERGE semantics)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -581,7 +581,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData).
+    # Bound action 'CancelProject' on ProjectManagements (binding type PM_ProjectDocumentData)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -592,7 +592,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the Projects collection.
+    # Query the Projects collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -604,7 +604,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Project.
+    # Create a new Project
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -617,7 +617,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Project by key.
+    # Get a single Project by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -629,7 +629,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Project.
+    # Delete a Project
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -639,7 +639,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Project (PATCH/MERGE semantics).
+    # Partially update a Project (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -653,7 +653,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get project list.
+    # Get project list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -663,7 +663,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Ends the active SAP Business One Service Layer session.
+    # Ends the active SAP Business One Service Layer session
     #
     # + return - An error if the logout failed
     remote isolated function logout() returns error? {

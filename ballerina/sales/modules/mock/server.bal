@@ -16,7 +16,7 @@
 import ballerina/http;
 
 # Mock SAP Business One Service Layer exposing the Orders endpoints used by
-# the sales connector tests. Session-protected like the real Service Layer.
+# the sales connector tests. Session-protected like the real Service Layer
 
 const string SESSION = "mock-session";
 

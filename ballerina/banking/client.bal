@@ -21,14 +21,14 @@ import ballerina/data.jsondata;
 import ballerina/http;
 import ballerinax/sap.businessone;
 
-# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1').
+# OpenAPI 3.0.3 description generated directly from the SAP Business One Service Layer OData V3 $metadata (namespace 'SAPB1')
 # 
-# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session.
+# Authentication is session based: call `POST /Login` with company/user/password; the Service Layer returns a `B1SESSION` cookie (and a `ROUTEID` cookie when load balanced) that must be sent on every subsequent request. Call `POST /Logout` to end the session
 # 
-# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging.
+# Collection responses use the OData V3 envelope `{ "odata.metadata": ..., "value": [ ... ], "odata.nextLink": ... }`. Use `$inlinecount=allpages` to obtain the total count and the `Prefer: odata.maxpagesize=N` header to control server paging
 public isolated client class Client {
     final businessone:Client clientEp;
-    # Gets invoked to initialize the `connector`.
+    # Gets invoked to initialize the `connector`
     #
     # + session - SAP Business One Service Layer session credentials 
     # + config - The configurations to be used when initializing the `connector` 
@@ -39,7 +39,7 @@ public isolated client class Client {
         self.clientEp = check new (serviceUrl, session, httpClientConfig);
     }
 
-    # Query the BOEDocumentTypes collection.
+    # Query the BOEDocumentTypes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -51,7 +51,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BOEDocumentType.
+    # Create a new BOEDocumentType
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -64,7 +64,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BOEDocumentType by key.
+    # Get a single BOEDocumentType by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -76,7 +76,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BOEDocumentType.
+    # Delete a BOEDocumentType
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -86,7 +86,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BOEDocumentType (PATCH/MERGE semantics).
+    # Partially update a BOEDocumentType (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -100,7 +100,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get BOE document type list.
+    # Get BOE document type list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -110,7 +110,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the BOEInstructions collection.
+    # Query the BOEInstructions collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -122,7 +122,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BOEInstruction.
+    # Create a new BOEInstruction
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -135,7 +135,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BOEInstruction by key.
+    # Get a single BOEInstruction by key
     #
     # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -147,7 +147,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BOEInstruction.
+    # Delete a BOEInstruction
     #
     # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -157,7 +157,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BOEInstruction (PATCH/MERGE semantics).
+    # Partially update a BOEInstruction (PATCH/MERGE semantics)
     #
     # + instructionEntry - Key property 'InstructionEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -171,7 +171,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get BOE instruction list.
+    # Get BOE instruction list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -181,7 +181,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get BOE line.
+    # Get BOE line
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -194,7 +194,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the BOEPortfolios collection.
+    # Query the BOEPortfolios collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -206,7 +206,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BOEPortfolio.
+    # Create a new BOEPortfolio
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -219,7 +219,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BOEPortfolio by key.
+    # Get a single BOEPortfolio by key
     #
     # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -231,7 +231,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BOEPortfolio.
+    # Delete a BOEPortfolio
     #
     # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -241,7 +241,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BOEPortfolio (PATCH/MERGE semantics).
+    # Partially update a BOEPortfolio (PATCH/MERGE semantics)
     #
     # + portfolioEntry - Key property 'PortfolioEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -255,7 +255,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get BOE portfolio list.
+    # Get BOE portfolio list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -265,7 +265,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the BankChargesAllocationCodes collection.
+    # Query the BankChargesAllocationCodes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -277,7 +277,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BankChargesAllocationCode.
+    # Create a new BankChargesAllocationCode
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -290,7 +290,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BankChargesAllocationCode by key.
+    # Get a single BankChargesAllocationCode by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -302,7 +302,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BankChargesAllocationCode.
+    # Delete a BankChargesAllocationCode
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -312,7 +312,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BankChargesAllocationCode (PATCH/MERGE semantics).
+    # Partially update a BankChargesAllocationCode (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -326,7 +326,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'SetDefaultBankChargesAllocationCode' on BankChargesAllocationCodes (binding type BankChargesAllocationCode).
+    # Bound action 'SetDefaultBankChargesAllocationCode' on BankChargesAllocationCodes (binding type BankChargesAllocationCode)
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -337,7 +337,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get bank charges allocation code list.
+    # Get bank charges allocation code list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -347,7 +347,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the BankPages collection.
+    # Query the BankPages collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -359,7 +359,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BankPage.
+    # Create a new BankPage
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -372,7 +372,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BankPage by key.
+    # Get a single BankPage by key
     #
     # + accountCode - Composite key part 'AccountCode' (Edm.String)
     # + sequence - Composite key part 'Sequence' (Edm.Int32)
@@ -385,7 +385,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BankPage.
+    # Delete a BankPage
     #
     # + accountCode - Composite key part 'AccountCode' (Edm.String)
     # + sequence - Composite key part 'Sequence' (Edm.Int32)
@@ -396,7 +396,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BankPage (PATCH/MERGE semantics).
+    # Partially update a BankPage (PATCH/MERGE semantics)
     #
     # + accountCode - Composite key part 'AccountCode' (Edm.String)
     # + sequence - Composite key part 'Sequence' (Edm.Int32)
@@ -411,7 +411,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the BankStatements collection.
+    # Query the BankStatements collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -423,7 +423,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BankStatement.
+    # Create a new BankStatement
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -436,7 +436,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BankStatement by key.
+    # Get a single BankStatement by key
     #
     # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -448,7 +448,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BankStatement.
+    # Delete a BankStatement
     #
     # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -458,7 +458,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BankStatement (PATCH/MERGE semantics).
+    # Partially update a BankStatement (PATCH/MERGE semantics)
     #
     # + internalNumber - Key property 'InternalNumber' (Edm.Int32)
     # + payload - Request payload 
@@ -472,7 +472,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get bank statement list.
+    # Get bank statement list
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -485,7 +485,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the Banks collection.
+    # Query the Banks collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -497,7 +497,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Bank.
+    # Create a new Bank
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -510,7 +510,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Bank by key.
+    # Get a single Bank by key
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -522,7 +522,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Bank.
+    # Delete a Bank
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -532,7 +532,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Bank (PATCH/MERGE semantics).
+    # Partially update a Bank (PATCH/MERGE semantics)
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -546,7 +546,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the BillOfExchangeTransactions collection.
+    # Query the BillOfExchangeTransactions collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -558,7 +558,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new BillOfExchangeTransaction.
+    # Create a new BillOfExchangeTransaction
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -571,7 +571,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single BillOfExchangeTransaction by key.
+    # Get a single BillOfExchangeTransaction by key
     #
     # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -583,7 +583,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a BillOfExchangeTransaction.
+    # Delete a BillOfExchangeTransaction
     #
     # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -593,7 +593,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a BillOfExchangeTransaction (PATCH/MERGE semantics).
+    # Partially update a BillOfExchangeTransaction (PATCH/MERGE semantics)
     #
     # + bOETransactionkey - Key property 'BOETransactionkey' (Edm.Int32)
     # + payload - Request payload 
@@ -607,7 +607,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the CentralBankIndicator collection.
+    # Query the CentralBankIndicator collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -619,7 +619,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new CentralBankIndicator.
+    # Create a new CentralBankIndicator
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -632,7 +632,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single CentralBankIndicator by key.
+    # Get a single CentralBankIndicator by key
     #
     # + indicator - Key property 'Indicator' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -644,7 +644,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a CentralBankIndicator.
+    # Delete a CentralBankIndicator
     #
     # + indicator - Key property 'Indicator' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -654,7 +654,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a CentralBankIndicator (PATCH/MERGE semantics).
+    # Partially update a CentralBankIndicator (PATCH/MERGE semantics)
     #
     # + indicator - Key property 'Indicator' (Edm.String)
     # + payload - Request payload 
@@ -668,7 +668,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -678,7 +678,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get check line.
+    # Get check line
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -691,7 +691,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get valid check line list.
+    # Get valid check line list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -701,7 +701,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the ChecksforPayment collection.
+    # Query the ChecksforPayment collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -713,7 +713,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new ChecksforPayment.
+    # Create a new ChecksforPayment
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -726,7 +726,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single ChecksforPayment by key.
+    # Get a single ChecksforPayment by key
     #
     # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -738,7 +738,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a ChecksforPayment.
+    # Delete a ChecksforPayment
     #
     # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -748,7 +748,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a ChecksforPayment (PATCH/MERGE semantics).
+    # Partially update a ChecksforPayment (PATCH/MERGE semantics)
     #
     # + checkKey - Key property 'CheckKey' (Edm.Int32)
     # + payload - Request payload 
@@ -762,7 +762,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the CreditCardPayments collection.
+    # Query the CreditCardPayments collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -774,7 +774,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new CreditCardPayment.
+    # Create a new CreditCardPayment
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -787,7 +787,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single CreditCardPayment by key.
+    # Get a single CreditCardPayment by key
     #
     # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -799,7 +799,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a CreditCardPayment.
+    # Delete a CreditCardPayment
     #
     # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -809,7 +809,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a CreditCardPayment (PATCH/MERGE semantics).
+    # Partially update a CreditCardPayment (PATCH/MERGE semantics)
     #
     # + dueDateCode - Key property 'DueDateCode' (Edm.String)
     # + payload - Request payload 
@@ -823,7 +823,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the CreditCards collection.
+    # Query the CreditCards collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -835,7 +835,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new CreditCard.
+    # Create a new CreditCard
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -848,7 +848,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single CreditCard by key.
+    # Get a single CreditCard by key
     #
     # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -860,7 +860,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a CreditCard.
+    # Delete a CreditCard
     #
     # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -870,7 +870,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a CreditCard (PATCH/MERGE semantics).
+    # Partially update a CreditCard (PATCH/MERGE semantics)
     #
     # + creditCardCode - Key property 'CreditCardCode' (Edm.Int32)
     # + payload - Request payload 
@@ -884,7 +884,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get credit line.
+    # Get credit line
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -897,7 +897,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get valid credit line list.
+    # Get valid credit line list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -907,7 +907,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the CreditPaymentMethods collection.
+    # Query the CreditPaymentMethods collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -919,7 +919,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new CreditPaymentMethod.
+    # Create a new CreditPaymentMethod
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -932,7 +932,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single CreditPaymentMethod by key.
+    # Get a single CreditPaymentMethod by key
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -944,7 +944,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a CreditPaymentMethod.
+    # Delete a CreditPaymentMethod
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -954,7 +954,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a CreditPaymentMethod (PATCH/MERGE semantics).
+    # Partially update a CreditPaymentMethod (PATCH/MERGE semantics)
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.Int32)
     # + payload - Request payload 
@@ -968,7 +968,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the Deposits collection.
+    # Query the Deposits collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -980,7 +980,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Deposit.
+    # Create a new Deposit
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -993,7 +993,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Deposit by key.
+    # Get a single Deposit by key
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1005,7 +1005,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Deposit.
+    # Delete a Deposit
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1015,7 +1015,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Deposit (PATCH/MERGE semantics).
+    # Partially update a Deposit (PATCH/MERGE semantics)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1029,7 +1029,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelDeposit' on Deposits (binding type Deposit).
+    # Bound action 'CancelDeposit' on Deposits (binding type Deposit)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1040,7 +1040,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelDepositbyCurrentSystemDate' on Deposits (binding type Deposit).
+    # Bound action 'CancelDepositbyCurrentSystemDate' on Deposits (binding type Deposit)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1051,7 +1051,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel check row.
+    # Cancel check row
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1064,7 +1064,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel check rowby current system date.
+    # Cancel check rowby current system date
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1077,7 +1077,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get deposit list.
+    # Get deposit list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1087,7 +1087,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Cancel reconciliation.
+    # Cancel reconciliation
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1100,7 +1100,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get reconciliation.
+    # Get reconciliation
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1113,7 +1113,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get reconciliation list.
+    # Get reconciliation list
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1126,7 +1126,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Reconcile.
+    # Reconcile
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1139,7 +1139,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the FactoringIndicators collection.
+    # Query the FactoringIndicators collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1151,7 +1151,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new FactoringIndicator.
+    # Create a new FactoringIndicator
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1164,7 +1164,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single FactoringIndicator by key.
+    # Get a single FactoringIndicator by key
     #
     # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -1176,7 +1176,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a FactoringIndicator.
+    # Delete a FactoringIndicator
     #
     # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -1186,7 +1186,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a FactoringIndicator (PATCH/MERGE semantics).
+    # Partially update a FactoringIndicator (PATCH/MERGE semantics)
     #
     # + indicatorCode - Key property 'IndicatorCode' (Edm.String)
     # + payload - Request payload 
@@ -1200,7 +1200,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the GovPayCodes collection.
+    # Query the GovPayCodes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1212,7 +1212,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new GovPayCode.
+    # Create a new GovPayCode
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1225,7 +1225,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single GovPayCode by key.
+    # Get a single GovPayCode by key
     #
     # + absId - Key property 'AbsId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1237,7 +1237,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a GovPayCode.
+    # Delete a GovPayCode
     #
     # + absId - Key property 'AbsId' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1247,7 +1247,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a GovPayCode (PATCH/MERGE semantics).
+    # Partially update a GovPayCode (PATCH/MERGE semantics)
     #
     # + absId - Key property 'AbsId' (Edm.Int32)
     # + payload - Request payload 
@@ -1261,7 +1261,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1271,7 +1271,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the HouseBankAccounts collection.
+    # Query the HouseBankAccounts collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1283,7 +1283,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new HouseBankAccount.
+    # Create a new HouseBankAccount
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1296,7 +1296,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single HouseBankAccount by key.
+    # Get a single HouseBankAccount by key
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1308,7 +1308,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a HouseBankAccount.
+    # Delete a HouseBankAccount
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1318,7 +1318,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a HouseBankAccount (PATCH/MERGE semantics).
+    # Partially update a HouseBankAccount (PATCH/MERGE semantics)
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1332,7 +1332,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the IncomingPayments collection.
+    # Query the IncomingPayments collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1344,7 +1344,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Payment.
+    # Create a new Payment
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1357,7 +1357,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Payment by key.
+    # Get a single Payment by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1369,7 +1369,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Payment.
+    # Delete a Payment
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1379,7 +1379,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Payment (PATCH/MERGE semantics).
+    # Partially update a Payment (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1393,7 +1393,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on IncomingPayments (binding type Payment).
+    # Bound action 'Cancel' on IncomingPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1404,7 +1404,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelbyCurrentSystemDate' on IncomingPayments (binding type Payment).
+    # Bound action 'CancelbyCurrentSystemDate' on IncomingPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1415,7 +1415,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'GetApprovalTemplates' on IncomingPayments (binding type Payment).
+    # Bound action 'GetApprovalTemplates' on IncomingPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1426,7 +1426,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'RequestApproveCancellation' on IncomingPayments (binding type Payment).
+    # Bound action 'RequestApproveCancellation' on IncomingPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1437,7 +1437,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'SaveDraftToDocument' on IncomingPayments (binding type Payment).
+    # Bound action 'SaveDraftToDocument' on IncomingPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1448,7 +1448,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1458,7 +1458,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the InternalReconciliations collection.
+    # Query the InternalReconciliations collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1470,7 +1470,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new InternalReconciliation.
+    # Create a new InternalReconciliation
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1483,7 +1483,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single InternalReconciliation by key.
+    # Get a single InternalReconciliation by key
     #
     # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1495,7 +1495,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a InternalReconciliation.
+    # Delete a InternalReconciliation
     #
     # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1505,7 +1505,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a InternalReconciliation (PATCH/MERGE semantics).
+    # Partially update a InternalReconciliation (PATCH/MERGE semantics)
     #
     # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + payload - Request payload 
@@ -1519,7 +1519,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on InternalReconciliations (binding type InternalReconciliation).
+    # Bound action 'Cancel' on InternalReconciliations (binding type InternalReconciliation)
     #
     # + reconNum - Key property 'ReconNum' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1530,7 +1530,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get open transactions.
+    # Get open transactions
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1543,7 +1543,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Request approve cancellation.
+    # Request approve cancellation
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1556,7 +1556,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PaymentBlocks collection.
+    # Query the PaymentBlocks collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1568,7 +1568,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PaymentBlock.
+    # Create a new PaymentBlock
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1581,7 +1581,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PaymentBlock by key.
+    # Get a single PaymentBlock by key
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1593,7 +1593,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PaymentBlock.
+    # Delete a PaymentBlock
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1603,7 +1603,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PaymentBlock (PATCH/MERGE semantics).
+    # Partially update a PaymentBlock (PATCH/MERGE semantics)
     #
     # + absEntry - Key property 'AbsEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1617,7 +1617,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get payment block list.
+    # Get payment block list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1627,7 +1627,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get payment amount.
+    # Get payment amount
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1640,7 +1640,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PaymentDrafts collection.
+    # Query the PaymentDrafts collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1652,7 +1652,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Payment.
+    # Create a new Payment
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1665,7 +1665,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Payment by key.
+    # Get a single Payment by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1677,7 +1677,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Payment.
+    # Delete a Payment
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1687,7 +1687,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Payment (PATCH/MERGE semantics).
+    # Partially update a Payment (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1701,7 +1701,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on PaymentDrafts (binding type Payment).
+    # Bound action 'Cancel' on PaymentDrafts (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1712,7 +1712,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelbyCurrentSystemDate' on PaymentDrafts (binding type Payment).
+    # Bound action 'CancelbyCurrentSystemDate' on PaymentDrafts (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1723,7 +1723,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'GetApprovalTemplates' on PaymentDrafts (binding type Payment).
+    # Bound action 'GetApprovalTemplates' on PaymentDrafts (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1734,7 +1734,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'RequestApproveCancellation' on PaymentDrafts (binding type Payment).
+    # Bound action 'RequestApproveCancellation' on PaymentDrafts (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1745,7 +1745,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'SaveDraftToDocument' on PaymentDrafts (binding type Payment).
+    # Bound action 'SaveDraftToDocument' on PaymentDrafts (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1756,7 +1756,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -1766,7 +1766,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get payment reason code list.
+    # Get payment reason code list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1776,7 +1776,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PaymentReasonCodes collection.
+    # Query the PaymentReasonCodes collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1788,7 +1788,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PaymentReasonCode.
+    # Create a new PaymentReasonCode
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1801,7 +1801,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PaymentReasonCode by key.
+    # Get a single PaymentReasonCode by key
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -1813,7 +1813,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PaymentReasonCode.
+    # Delete a PaymentReasonCode
     #
     # + code - Key property 'Code' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -1823,7 +1823,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PaymentReasonCode (PATCH/MERGE semantics).
+    # Partially update a PaymentReasonCode (PATCH/MERGE semantics)
     #
     # + code - Key property 'Code' (Edm.String)
     # + payload - Request payload 
@@ -1837,7 +1837,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the PaymentRunExport collection.
+    # Query the PaymentRunExport collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1849,7 +1849,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PaymentRunExport.
+    # Create a new PaymentRunExport
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1862,7 +1862,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PaymentRunExport by key.
+    # Get a single PaymentRunExport by key
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1874,7 +1874,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PaymentRunExport.
+    # Delete a PaymentRunExport
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1884,7 +1884,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PaymentRunExport (PATCH/MERGE semantics).
+    # Partially update a PaymentRunExport (PATCH/MERGE semantics)
     #
     # + absoluteEntry - Key property 'AbsoluteEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -1898,7 +1898,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Get list.
+    # Get list
     #
     # + headers - Headers to be sent with the request 
     # + return - Function result 
@@ -1908,7 +1908,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the PaymentWizards collection.
+    # Query the PaymentWizards collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1920,7 +1920,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new PaymentWizard.
+    # Create a new PaymentWizard
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1933,7 +1933,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single PaymentWizard by key.
+    # Get a single PaymentWizard by key
     #
     # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1945,7 +1945,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a PaymentWizard.
+    # Delete a PaymentWizard
     #
     # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -1955,7 +1955,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a PaymentWizard (PATCH/MERGE semantics).
+    # Partially update a PaymentWizard (PATCH/MERGE semantics)
     #
     # + idNumber - Key property 'IdNumber' (Edm.Int32)
     # + payload - Request payload 
@@ -1969,7 +1969,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Query the VendorPayments collection.
+    # Query the VendorPayments collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -1981,7 +1981,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new Payment.
+    # Create a new Payment
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -1994,7 +1994,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single Payment by key.
+    # Get a single Payment by key
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2006,7 +2006,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a Payment.
+    # Delete a Payment
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2016,7 +2016,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a Payment (PATCH/MERGE semantics).
+    # Partially update a Payment (PATCH/MERGE semantics)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + payload - Request payload 
@@ -2030,7 +2030,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Bound action 'Cancel' on VendorPayments (binding type Payment).
+    # Bound action 'Cancel' on VendorPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2041,7 +2041,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'CancelbyCurrentSystemDate' on VendorPayments (binding type Payment).
+    # Bound action 'CancelbyCurrentSystemDate' on VendorPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2052,7 +2052,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'GetApprovalTemplates' on VendorPayments (binding type Payment).
+    # Bound action 'GetApprovalTemplates' on VendorPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2063,7 +2063,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'RequestApproveCancellation' on VendorPayments (binding type Payment).
+    # Bound action 'RequestApproveCancellation' on VendorPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2074,7 +2074,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Bound action 'SaveDraftToDocument' on VendorPayments (binding type Payment).
+    # Bound action 'SaveDraftToDocument' on VendorPayments (binding type Payment)
     #
     # + docEntry - Key property 'DocEntry' (Edm.Int32)
     # + headers - Headers to be sent with the request 
@@ -2085,7 +2085,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Handle approval request.
+    # Handle approval request
     #
     # + headers - Headers to be sent with the request 
     # + return - Success. No content returned 
@@ -2095,7 +2095,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Query the WizardPaymentMethods collection.
+    # Query the WizardPaymentMethods collection
     #
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
@@ -2107,7 +2107,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, httpHeaders);
     }
 
-    # Create a new WizardPaymentMethod.
+    # Create a new WizardPaymentMethod
     #
     # + payload - Request payload 
     # + headers - Headers to be sent with the request 
@@ -2120,7 +2120,7 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    # Get a single WizardPaymentMethod by key.
+    # Get a single WizardPaymentMethod by key
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -2132,7 +2132,7 @@ public isolated client class Client {
         return self.clientEp->get(resourcePath, headers);
     }
 
-    # Delete a WizardPaymentMethod.
+    # Delete a WizardPaymentMethod
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + headers - Headers to be sent with the request 
@@ -2142,7 +2142,7 @@ public isolated client class Client {
         return self.clientEp->delete(resourcePath, headers = headers);
     }
 
-    # Partially update a WizardPaymentMethod (PATCH/MERGE semantics).
+    # Partially update a WizardPaymentMethod (PATCH/MERGE semantics)
     #
     # + paymentMethodCode - Key property 'PaymentMethodCode' (Edm.String)
     # + payload - Request payload 
@@ -2156,7 +2156,7 @@ public isolated client class Client {
         return self.clientEp->patch(resourcePath, request, headers);
     }
 
-    # Ends the active SAP Business One Service Layer session.
+    # Ends the active SAP Business One Service Layer session
     #
     # + return - An error if the logout failed
     remote isolated function logout() returns error? {
